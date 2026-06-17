@@ -1,0 +1,424 @@
+"""Build orchestrator for Poke Research.
+
+This is the single command that turns the cached, normalized pokemontcg.io data
+into the JSON the static frontend consumes. It wires every owned module together
+in the order the contract mandates and writes ``site/data/*.json``.
+
+Pipeline (see CONTRACT.md, "Build orchestrator")::
+
+    load cached normalized cards/sets
+      -> pullrates.rarity_counts
+      -> ev.ev_for_set            (per set)
+      -> signals.compute_features
+      -> inject real pull_cost     (pullrates.pull_cost per card)
+      -> market_dynamics.compute   (stub; eBay snapshot history)
+      -> model.fit + model.export
+      -> iq_score                  (0-100 blend of scarcity, char_premium, set_rank)
+      -> write site/data/{cards,sets,leaderboard,model,meta}.json
+
+Run from the project root::
+
+    ./.venv/bin/python -m pipeline.build
+
+Only the standard library and numpy are used (numpy lives inside the owned
+modules; build.py itself is pure stdlib).
+"""
+from __future__ import annotations
+
+import json
+from datetime import date, datetime
+from pathlib import Path
+from typing import Dict, List, Optional
+
+from . import config, ev, market_dynamics, model, pullrates, signals
+from collectors import ebay
+
+
+# ---------------------------------------------------------------------------
+# IQ score
+# ---------------------------------------------------------------------------
+# The IQ score is the at-a-glance "card score" (0-100): a weighted mean of the
+# card's normalized live signals. It is intentionally separate from
+# residual_pct (the over/under-valuation signal). scarcity and char_premium are
+# already on a 0-10 scale; set_rank is already 0-1. We normalize each to 0-1
+# and blend. momentum (a price/saturation trend) is folded in only when real
+# market history exists; with the eBay feed stubbed it is absent, so the blend
+# uses the three live signals.
+IQ_WEIGHTS = {
+    "scarcity": 0.40,       # rarity + out-of-print pressure
+    "char_premium": 0.35,   # character desirability
+    "set_rank": 0.25,       # standing within its own set
+}
+
+
+def iq_score(feats: Dict[str, float], momentum: Optional[float] = None) -> float:
+    """Blend a card's live signals into a 0-100 IQ score.
+
+    Parameters
+    ----------
+    feats:
+        The card's feature dict (needs ``scarcity`` 0-10, ``char_premium`` 0-10,
+        ``set_rank`` 0-1).
+    momentum:
+        Optional 0-1 market-momentum signal. When present it is blended in with
+        a small weight and the live weights are rescaled so the result stays in
+        [0, 100]. With the eBay feed stubbed this is ``None`` for every card.
+
+    Returns
+    -------
+    float
+        IQ score in ``[0, 100]``, rounded to 2 dp.
+    """
+    # Normalize each live signal to 0-1.
+    norm = {
+        "scarcity": _clamp01(feats.get("scarcity", 0.0) / 10.0),
+        "char_premium": _clamp01(feats.get("char_premium", 0.0) / 10.0),
+        "set_rank": _clamp01(feats.get("set_rank", 0.5)),
+    }
+    weights = dict(IQ_WEIGHTS)
+    if momentum is not None:
+        # Reserve 20% for momentum and proportionally shrink the live weights.
+        scale = 0.80
+        weights = {k: w * scale for k, w in weights.items()}
+        weights["momentum"] = 0.20
+        norm["momentum"] = _clamp01(momentum)
+
+    total_w = sum(weights.values())
+    blended = sum(norm[k] * w for k, w in weights.items()) / total_w
+    return round(100.0 * _clamp01(blended), 2)
+
+
+def _clamp01(x: float) -> float:
+    """Clamp a float into ``[0, 1]``."""
+    if x < 0.0:
+        return 0.0
+    if x > 1.0:
+        return 1.0
+    return float(x)
+
+
+# ---------------------------------------------------------------------------
+# Loaders
+# ---------------------------------------------------------------------------
+def _load_json(path: Path):
+    return json.loads(Path(path).read_text())
+
+
+def _load_cards() -> List[dict]:
+    return _load_json(config.NORMALIZED / "cards.json")
+
+
+def _load_sets() -> List[dict]:
+    return _load_json(config.NORMALIZED / "sets.json")
+
+
+def _load_ebay_history(out_dir: Path) -> Dict[str, List[dict]]:
+    """Load every ``ebay-<date>.json`` snapshot into per-card history.
+
+    Returns ``{card_id: [snapshot_row + {'date': <file date>}, ...]}`` sorted by
+    date, ready for :func:`market_dynamics.compute`. With the collector stubbed
+    every row is neutral/empty, so compute() returns the awaiting-data fallback —
+    which is exactly what we want to surface honestly in the UI.
+    """
+    history: Dict[str, List[dict]] = {}
+    for f in sorted(Path(out_dir).glob("ebay-*.json")):
+        # Filename is ebay-YYYY-MM-DD.json -> the snapshot date.
+        snap_date = f.stem.replace("ebay-", "")
+        try:
+            rows = _load_json(f)
+        except (json.JSONDecodeError, OSError):
+            continue
+        for card_id, row in rows.items():
+            stamped = dict(row)
+            stamped["date"] = snap_date
+            history.setdefault(card_id, []).append(stamped)
+    return history
+
+
+# ---------------------------------------------------------------------------
+# Per-stage builders
+# ---------------------------------------------------------------------------
+def build_sets(
+    cards: List[dict], sets: List[dict], counts: Dict[str, Dict[str, int]]
+) -> List[dict]:
+    """Build the per-set EV leaderboard rows (sets.json payload).
+
+    Each row is the SetRecord merged with the EV fields from
+    :func:`ev.ev_for_set`. Rows are ordered best-bang-for-buck first
+    (highest ``signal_pct`` -> most undervalued box).
+    """
+    by_set: Dict[str, List[dict]] = {}
+    for c in cards:
+        by_set.setdefault(c["set_id"], []).append(c)
+
+    rows: List[dict] = []
+    for s in sets:
+        sid = s["set_id"]
+        ev_fields = ev.ev_for_set(by_set.get(sid, []), s, counts)
+        row = dict(s)
+        row.update(ev_fields)
+        rows.append(row)
+
+    # Best value (most undervalued box) first; None signals sort last.
+    rows.sort(
+        key=lambda r: (r["signal_pct"] is None, -(r["signal_pct"] or 0.0))
+    )
+    return rows
+
+
+def build_dynamics(
+    cards: List[dict], ebay_history: Dict[str, List[dict]]
+) -> Dict[str, dict]:
+    """Compute market-dynamics signals per card from the eBay snapshot history.
+
+    With the collector stubbed this is the neutral ``awaiting_data`` fallback for
+    every card; the schema is the deliverable and a real feed drops straight in.
+    """
+    return {
+        c["id"]: market_dynamics.compute(c["id"], ebay_history) for c in cards
+    }
+
+
+def build_cards(
+    cards: List[dict],
+    features: Dict[str, Dict[str, float]],
+    result: "model.ModelResult",
+    dynamics: Dict[str, dict],
+) -> List[dict]:
+    """Assemble the enriched per-card records for cards.json.
+
+    Each record is the NormalizedCard plus: ``features``, ``cluster``,
+    ``expected_price``, ``residual_pct``, ``iq_score``, ``contributions``,
+    ``dynamics`` and ``image_small`` (already present, kept explicit).
+    """
+    out: List[dict] = []
+    for c in cards:
+        cid = c["id"]
+        feats = features.get(cid, {})
+        pred = result.get(cid)
+
+        record = dict(c)  # keep all NormalizedCard fields (incl. image_small)
+        record["features"] = feats
+        record["iq_score"] = iq_score(feats)
+        record["dynamics"] = dynamics.get(cid, dict(market_dynamics.NEUTRAL))
+
+        if pred is not None:
+            record["cluster"] = pred.cluster
+            record["expected_price"] = round(pred.expected_price, 4)
+            record["residual_pct"] = (
+                round(pred.residual_pct, 6) if pred.residual_pct is not None else None
+            )
+            record["contributions"] = {
+                k: round(v, 6) for k, v in pred.contributions.items()
+            }
+        else:
+            record["cluster"] = c.get("rarity") or "Unknown"
+            record["expected_price"] = None
+            record["residual_pct"] = None
+            record["contributions"] = {}
+
+        out.append(record)
+    return out
+
+
+def build_leaderboard(card_records: List[dict]) -> dict:
+    """Build the undervalued / overvalued / movers leaderboards.
+
+    Cards are ranked by RAW dollar gap (expected - market), like the reference
+    site, and cards under ``config.LEADERBOARD_MIN_PRICE`` are dropped so penny
+    cards (huge, meaningless % swings) don't crowd out real-dollar movers.
+
+    * ``undervalued`` — biggest positive ``expected - market`` (largest $ discount).
+    * ``overvalued``  — biggest negative ``expected - market`` (largest $ premium).
+    * ``movers``      — biggest market movers. Primary key is the saturation
+      shift from market_dynamics (``|supply_saturation - 1|``); with the eBay
+      feed stubbed there is no real shift, so we fall back to the largest
+      absolute dollar gap and flag ``awaiting_data`` so the UI never implies a
+      feed we don't have.
+    """
+    floor = getattr(config, "LEADERBOARD_MIN_PRICE", 0.0)
+    size = getattr(config, "LEADERBOARD_SIZE", 50)
+    pool = [
+        r
+        for r in card_records
+        if r.get("residual_pct") is not None
+        and r.get("market_price") is not None
+        and r.get("expected_price") is not None
+        and r["market_price"] >= floor
+    ]
+
+    def raw_diff(r: dict) -> float:
+        return r["expected_price"] - r["market_price"]
+
+    by_diff = sorted(pool, key=raw_diff, reverse=True)
+    undervalued = [_leader_row(r) for r in by_diff[:size]]            # biggest $ discount
+    overvalued = [_leader_row(r) for r in sorted(pool, key=raw_diff)[:size]]  # biggest $ premium
+
+    # Movers: prefer real saturation shift; fall back to dollar-gap magnitude.
+    def saturation_shift(r: dict) -> float:
+        sat = (r.get("dynamics") or {}).get("supply_saturation")
+        return abs(sat - 1.0) if sat is not None else 0.0
+
+    have_real_shift = any(saturation_shift(r) > 0.0 for r in pool)
+    if have_real_shift:
+        movers_sorted = sorted(pool, key=saturation_shift, reverse=True)
+        movers_basis = "saturation_shift"
+    else:
+        movers_sorted = sorted(pool, key=lambda r: abs(raw_diff(r)), reverse=True)
+        movers_basis = "price_signal_fallback"
+
+    movers = []
+    for r in movers_sorted[:size]:
+        row = _leader_row(r)
+        row["mover_basis"] = movers_basis
+        row["awaiting_data"] = not have_real_shift
+        movers.append(row)
+
+    return {
+        "undervalued": undervalued,
+        "overvalued": overvalued,
+        "movers": movers,
+        "movers_basis": "saturation_shift" if have_real_shift else "price_signal_fallback",
+        "min_price": floor,
+    }
+
+
+def _leader_row(r: dict) -> dict:
+    """Slim card record for a leaderboard entry (enough for a card row + modal)."""
+    return {
+        "id": r["id"],
+        "name": r["name"],
+        "set_name": r["set_name"],
+        "set_id": r["set_id"],
+        "rarity": r["rarity"],
+        "number": r.get("number"),
+        "image_small": r.get("image_small"),
+        "image_large": r.get("image_large"),
+        "market_price": r.get("market_price"),
+        "expected_price": r.get("expected_price"),
+        "raw_diff": (
+            round(r["expected_price"] - r["market_price"], 2)
+            if r.get("expected_price") is not None and r.get("market_price") is not None
+            else None
+        ),
+        "residual_pct": r.get("residual_pct"),
+        "iq_score": r.get("iq_score"),
+        "cluster": r.get("cluster"),
+        "dynamics": r.get("dynamics"),
+    }
+
+
+# ---------------------------------------------------------------------------
+# Orchestration
+# ---------------------------------------------------------------------------
+def build(today: Optional[date] = None) -> dict:
+    """Run the whole pipeline on the cached data and write ``site/data/*.json``.
+
+    Returns a small summary dict (also the basis of meta.json). ``today`` is
+    threaded through so months_since_release / the build timestamp are
+    reproducible in tests.
+    """
+    out_dir = config.SITE_DATA
+    out_dir.mkdir(parents=True, exist_ok=True)
+
+    # --- 1. load cached, normalized inputs --------------------------------
+    cards = _load_cards()
+    sets = _load_sets()
+    set_by_id = {s["set_id"]: s for s in sets}
+    priced = [c for c in cards if c.get("market_price") is not None]
+
+    # --- 2. pull rates ----------------------------------------------------
+    counts = pullrates.rarity_counts(cards)
+
+    # --- 3. sealed EV per set --------------------------------------------
+    set_rows = build_sets(cards, sets, counts)
+
+    # --- 4. live + stub features -----------------------------------------
+    features = signals.compute_features(cards, today=today)
+
+    # --- 5. inject the REAL pull_cost (pack_price / pull_rate) ------------
+    # signals.py deliberately omits pull_cost so it never imports pullrates;
+    # we compute it here per card using its set's pack price and merge it in.
+    pull_costs: Dict[str, float] = {}
+    for c in cards:
+        sid = c["set_id"]
+        set_rec = set_by_id.get(sid)
+        pack_price = set_rec["pack_price"] if set_rec else 0.0
+        pc = pullrates.pull_cost(c["rarity"], sid, counts, pack_price)
+        # Guard the model against a non-finite feature (unknown set/rarity).
+        pull_costs[c["id"]] = pc if pc != float("inf") else 0.0
+    signals.inject_pull_cost(features, pull_costs)
+
+    # --- 6. market dynamics (eBay snapshot history; stubbed -> neutral) ---
+    # Refresh today's stub snapshot so the history loader always has a file,
+    # then load the full snapshot series for compute().
+    ebay.collect_snapshot(cards, out_dir=config.SNAPSHOTS, snapshot_date=today)
+    ebay_history = _load_ebay_history(config.SNAPSHOTS)
+    dynamics = build_dynamics(cards, ebay_history)
+
+    # --- 7. fit the clustered ridge model + export model.json ------------
+    result = model.fit(cards, features)
+    model_payload = result.export(out_dir / "model.json")
+
+    # --- 8. assemble enriched cards + IQ scores --------------------------
+    card_records = build_cards(cards, features, result, dynamics)
+
+    # --- 9. leaderboards -------------------------------------------------
+    leaderboard = build_leaderboard(card_records)
+
+    # --- 10. meta --------------------------------------------------------
+    built_at = (today or date.today()).isoformat()
+    signal_status = {
+        name: meta.get("status", "live") for name, meta in config.FEATURES.items()
+    }
+    meta = {
+        "built_at": datetime.now().replace(microsecond=0).isoformat(),
+        "built_for_date": built_at,
+        "sets": len(sets),
+        "cards": len(cards),
+        "priced": len(priced),
+        "clusters": len(model_payload["clusters"]),
+        "model_r2_log": round(result.r2_log(), 6),
+        "sources": {
+            "cards": "pokemontcg.io (cached, normalized)",
+            "prices": "pokemontcg.io TCGplayer market prices (cached)",
+            "ebay": "stub (awaiting Browse API key)",
+            "psa": "stub (awaiting PSA pop feed)",
+            "trends": "stub (awaiting Google Trends feed)",
+        },
+        "signal_status": signal_status,
+    }
+
+    # --- 11. write all outputs -------------------------------------------
+    _write(out_dir / "cards.json", card_records)
+    _write(out_dir / "sets.json", set_rows)
+    _write(out_dir / "leaderboard.json", leaderboard)
+    _write(out_dir / "meta.json", meta)
+    # model.json already written by result.export above.
+
+    return {
+        "cards": len(card_records),
+        "priced": len(priced),
+        "sets": len(set_rows),
+        "clusters": len(model_payload["clusters"]),
+        "r2_log": result.r2_log(),
+        "out_dir": str(out_dir),
+    }
+
+
+def _write(path: Path, obj) -> None:
+    """Serialize ``obj`` to ``path`` as pretty JSON (NaN/inf -> null-safe)."""
+    Path(path).write_text(json.dumps(obj, indent=2, allow_nan=False))
+
+
+# ---------------------------------------------------------------------------
+# Entry point
+# ---------------------------------------------------------------------------
+if __name__ == "__main__":
+    summary = build()
+    print("Build complete:")
+    for k, v in summary.items():
+        if isinstance(v, float):
+            print(f"  {k:10} {v:.4f}")
+        else:
+            print(f"  {k:10} {v}")

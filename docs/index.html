@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Poke Research — Pokémon card price intelligence</title>
+  <meta name="description" content="Poke Research — a Pokémon card analytics lab. Sealed EV leaderboards, undervalued and overvalued cards, and a live price model you can tune yourself." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="./styles.css" />
+</head>
+<body>
+  <!-- promo banner -->
+  <div class="promo-banner" id="promoBanner">
+    <span class="promo-text">Beta · prices updated daily</span>
+    <span class="promo-pill" id="promoPill">via pokemontcg.io</span>
+  </div>
+
+  <!-- top nav -->
+  <header class="nav" id="nav">
+    <div class="nav-inner">
+      <a class="wordmark" href="#/" aria-label="Poke Research home">
+        <span class="wordmark-mark" aria-hidden="true"></span>
+        <span class="wordmark-text">Poke&nbsp;Research</span>
+      </a>
+
+      <nav class="nav-tabs" id="navTabs" aria-label="Primary">
+        <a class="nav-tab" href="#/sets" data-route="sets">Sets</a>
+        <a class="nav-tab" href="#/pricelab" data-route="pricelab">Price Lab</a>
+        <a class="nav-tab" href="#/movers" data-route="movers">Movers</a>
+        <a class="nav-tab" href="#/search" data-route="search">Search</a>
+      </nav>
+
+      <div class="nav-right">
+        <a class="button button-primary nav-cta" href="#/sets">Get the data</a>
+        <button class="nav-hamburger" id="navHamburger" aria-label="Open menu" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+    <nav class="nav-mobile" id="navMobile" aria-label="Mobile">
+      <a class="nav-mobile-link" href="#/sets" data-route="sets">Sets</a>
+      <a class="nav-mobile-link" href="#/pricelab" data-route="pricelab">Price Lab</a>
+      <a class="nav-mobile-link" href="#/movers" data-route="movers">Movers</a>
+      <a class="nav-mobile-link" href="#/search" data-route="search">Search</a>
+    </nav>
+  </header>
+
+  <main id="view" class="view" aria-live="polite">
+    <!-- views render here -->
+  </main>
+
+  <!-- card-detail modal mount -->
+  <div class="modal-backdrop" id="modalBackdrop" hidden>
+    <div class="modal" id="modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+      <!-- modal content rendered by app.js -->
+    </div>
+  </div>
+
+  <footer class="footer">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <a class="wordmark wordmark--dark" href="#/">
+          <span class="wordmark-mark" aria-hidden="true"></span>
+          <span class="wordmark-text">Poke&nbsp;Research</span>
+        </a>
+        <p class="footer-tagline">A free Pokémon card analytics lab. Sealed EV, a clustered price model, and tunable market signals.</p>
+        <p class="footer-credit">Card data &amp; prices via <a href="https://pokemontcg.io" target="_blank" rel="noopener">pokemontcg.io</a> (TCGplayer market). Not affiliated with Nintendo / The Pokémon Company.</p>
+      </div>
+      <div class="footer-cols">
+        <div class="footer-col">
+          <h4 class="footer-col-title">Product</h4>
+          <a href="#/sets">Sets / Market Trends</a>
+          <a href="#/pricelab">Price Lab</a>
+          <a href="#/movers">Biggest Movers</a>
+          <a href="#/search">Search</a>
+        </div>
+        <div class="footer-col">
+          <h4 class="footer-col-title">Data sources</h4>
+          <a href="https://pokemontcg.io" target="_blank" rel="noopener">pokemontcg.io</a>
+          <span class="footer-stub">eBay — awaiting data</span>
+          <span class="footer-stub">PSA pop — awaiting data</span>
+          <span class="footer-stub">Trends — awaiting data</span>
+        </div>
+        <div class="footer-col">
+          <h4 class="footer-col-title">About</h4>
+          <a href="#/">Methodology</a>
+          <a href="#/pricelab">Price model</a>
+          <span class="footer-stub" id="footerBuilt">Built —</span>
+        </div>
+        <div class="footer-col">
+          <h4 class="footer-col-title">Code</h4>
+          <a href="https://github.com" target="_blank" rel="noopener">GitHub</a>
+          <a href="https://pokemontcg.io/about" target="_blank" rel="noopener">API docs</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-base">
+      <span>© 2026 Poke Research · research &amp; education only, not financial advice</span>
+    </div>
+  </footer>
+
+  <script src="./app.js"></script>
+</body>
+</html>
