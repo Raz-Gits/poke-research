@@ -29,11 +29,11 @@
     "pack_price": 6.0,
     "packs_per_box": 36,
     "box_price": 216.0,
-    "ev_per_pack": 8.953630263490135,
-    "ev_per_box": 322.3306894856449,
-    "signal_pct": 0.4922717105816893,
-    "avg_loss_per_pack": -2.953630263490135,
-    "raw_value_per_pack": 8.953630263490135
+    "ev_per_pack": 8.584098692581042,
+    "ev_per_box": 309.0275529329175,
+    "signal_pct": 0.4306831154301736,
+    "avg_loss_per_pack": -2.5840986925810423,
+    "raw_value_per_pack": 8.584098692581042
   },
   {
     "set_id": "sv4pt5",
@@ -119,29 +119,11 @@
     "pack_price": 5.5,
     "packs_per_box": 36,
     "box_price": 198.0,
-    "ev_per_pack": 5.066855257142858,
-    "ev_per_box": 182.40678925714286,
-    "signal_pct": -0.07875358961038958,
-    "avg_loss_per_pack": 0.43314474285714244,
-    "raw_value_per_pack": 5.066855257142858
-  },
-  {
-    "set_id": "me4",
-    "name": "Chaos Rising",
-    "series": "Mega Evolution",
-    "release_date": "2026-05-22",
-    "printed_total": 86,
-    "total": 122,
-    "logo": "https://images.scrydex.com/pokemon/me4-logo/logo",
-    "symbol": "https://images.scrydex.com/pokemon/me4-symbol/symbol",
-    "pack_price": 4.5,
-    "packs_per_box": 36,
-    "box_price": 162.0,
-    "ev_per_pack": 4.108122741136056,
-    "ev_per_box": 147.89241868089803,
-    "signal_pct": -0.08708383530309857,
-    "avg_loss_per_pack": 0.39187725886394364,
-    "raw_value_per_pack": 4.108122741136056
+    "ev_per_pack": 4.981739745142859,
+    "ev_per_box": 179.34263082514292,
+    "signal_pct": -0.09422913724675293,
+    "avg_loss_per_pack": 0.5182602548571413,
+    "raw_value_per_pack": 4.981739745142859
   },
   {
     "set_id": "sv8",
@@ -162,22 +144,22 @@
     "raw_value_per_pack": 3.2375008527667983
   },
   {
-    "set_id": "me3",
-    "name": "Perfect Order",
+    "set_id": "me4",
+    "name": "Chaos Rising",
     "series": "Mega Evolution",
-    "release_date": "2026-03-27",
-    "printed_total": 88,
-    "total": 124,
-    "logo": "https://images.scrydex.com/pokemon/me3-logo/logo",
-    "symbol": "https://images.scrydex.com/pokemon/me3-symbol/symbol",
-    "pack_price": 5.0,
+    "release_date": "2026-05-22",
+    "printed_total": 86,
+    "total": 122,
+    "logo": "https://images.scrydex.com/pokemon/me4-logo/logo",
+    "symbol": "https://images.scrydex.com/pokemon/me4-symbol/symbol",
+    "pack_price": 4.5,
     "packs_per_box": 36,
-    "box_price": 180.0,
-    "ev_per_pack": 3.31884497979798,
-    "ev_per_box": 119.47841927272728,
-    "signal_pct": -0.336231004040404,
-    "avg_loss_per_pack": 1.68115502020202,
-    "raw_value_per_pack": 3.31884497979798
+    "box_price": 162.0,
+    "ev_per_pack": 3.2339190756815115,
+    "ev_per_box": 116.42108672453442,
+    "signal_pct": -0.28135131651521966,
+    "avg_loss_per_pack": 1.2660809243184885,
+    "raw_value_per_pack": 3.2339190756815115
   },
   {
     "set_id": "sv8pt5",
@@ -196,5 +178,23 @@
     "signal_pct": -0.4324572570346319,
     "avg_loss_per_pack": 3.8921153133116873,
     "raw_value_per_pack": 5.107884686688313
+  },
+  {
+    "set_id": "me3",
+    "name": "Perfect Order",
+    "series": "Mega Evolution",
+    "release_date": "2026-03-27",
+    "printed_total": 88,
+    "total": 124,
+    "logo": "https://images.scrydex.com/pokemon/me3-logo/logo",
+    "symbol": "https://images.scrydex.com/pokemon/me3-symbol/symbol",
+    "pack_price": 5.0,
+    "packs_per_box": 36,
+    "box_price": 180.0,
+    "ev_per_pack": 2.8184489834343434,
+    "ev_per_box": 101.46416340363636,
+    "signal_pct": -0.4363102033131313,
+    "avg_loss_per_pack": 2.1815510165656566,
+    "raw_value_per_pack": 2.8184489834343434
   }
 ]

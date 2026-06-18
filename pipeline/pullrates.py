@@ -81,17 +81,37 @@ SET_TIER_PROB: Dict[str, Dict[str, float]] = {
         "Shiny Rare": 0.25,                # "baby shinies", 1 in 4
         "Shiny Ultra Rare": 0.075,         # 1 in 13
     },
-    # Shrouded Fable (sv6pt5) — special shiny set; PROVISIONAL shiny rates
-    # (no large public sample yet).
-    "sv6pt5": {
-        "Shiny Rare": 0.20,
-        "Shiny Ultra Rare": 0.05,
+    # ----- Mega-era sets: "any card of that rarity" per-pack odds from large-
+    # sample community/TCGplayer-style data (IR ~1/9 across the Mega era; SIR and
+    # Hyper drift set-to-set). Hyper/MHR biased to the conservative source so EV
+    # doesn't overestimate upside.
+    # Ascended Heroes (me2pt5) — loosest top end of the four.
+    "me2pt5": {
+        "Illustration Rare": 0.1111,          # 1 in 9
+        "Special Illustration Rare": 0.014286,  # 1 in 70
+        "Mega Hyper Rare": 0.001852,          # 1 in 540
     },
-    # Mega Evolution sets — PROVISIONAL: thin community data so far, so they use
-    # the base table + the Mega tiers. Update when real openings accumulate.
-    "me2pt5": {},
-    "me3": {},
-    "me4": {},
+    # Perfect Order (me3) — SIR harder, Hyper pushed way out (Obsidia 3,500+ packs
+    # = 1 in 1,786; conservative choice over the 1/1,260 alt).
+    "me3": {
+        "Illustration Rare": 0.1111,          # 1 in 9
+        "Special Illustration Rare": 0.012346,  # 1 in 81
+        "Mega Hyper Rare": 0.00056,           # 1 in 1,786
+    },
+    # Chaos Rising (me4) — SIR a touch harder than Perfect Order, Hyper a bit kinder.
+    "me4": {
+        "Illustration Rare": 0.1111,          # 1 in 9
+        "Special Illustration Rare": 0.011111,  # 1 in 90
+        "Mega Hyper Rare": 0.000909,          # 1 in 1,100
+    },
+    # Shrouded Fable (sv6pt5) — mini special set; cards carry STANDARD rarity
+    # names in our data (not "Shiny *"). IR/SIR from community aggregates; Hyper
+    # is still a small-sample estimate until a large write-up lands.
+    "sv6pt5": {
+        "Illustration Rare": 0.083333,        # 1 in 12 (mini set, tougher IR)
+        "Special Illustration Rare": 0.014925,  # 1 in 67
+        "Hyper Rare": 0.004167,               # ~1 in 240 (ESTIMATE)
+    },
 }
 
 _DEFAULT_PROB = BASE_TIER_PROB["Unknown"]

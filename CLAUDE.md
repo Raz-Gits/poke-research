@@ -40,9 +40,10 @@ the browser). Verify a deploy by curling `…/data/<file>.json?cb=$(date +%s)`.
 - **fetch.py** — normalize cards; fills Mega-set prices from TCGdex (pokemontcg.io
   doesn't price them). `base_name` is supertype-aware.
 - **pullrates.py** — `BASE_TIER_PROB` + per-set `SET_TIER_PROB`. SV sets (151,
-  Prismatic, Paldean Fates) have real community samples; the 4 Mega-era sets are
-  **PROVISIONAL** estimates (thin data — improve when real box breaks exist).
-  pull_cost = pack_price ÷ (tier_prob ÷ #cards-of-that-rarity-in-set).
+  Prismatic, Paldean Fates) and the 4 Mega-era sets (Ascended Heroes, Perfect
+  Order, Chaos Rising, Shrouded Fable) now have data-backed per-rarity odds
+  (only Shrouded's Hyper is still a small-sample estimate). pull_cost =
+  pack_price ÷ (tier_prob ÷ #cards-of-that-rarity-in-set).
 - **signals.py** — `char_premium_table` (uses popularity.py + structural
   fallback), `scarcity` = 10·(0.7·rarity_rank + 0.3·age_factor), `set_rank`,
   stub features (demand_pressure/grading/universal_appeal).
@@ -80,5 +81,6 @@ rating" flags are art-driven Illustration Rares (card art ≠ character fame).
 - eBay demand feed: waiting on the owner's Production key → `.env` (see
   `EBAY_SETUP.md`). After it's live: fix the demand-gauge scale + relabel the
   movers chip stub→live in `docs/app.js`.
-- Mega-era set pull rates are provisional — improve with real per-rarity odds.
+- Shrouded Fable's Hyper rate is the one remaining small-sample estimate
+  (~1/240) — tighten when a large box-break write-up lands.
 - Possible future signal: Google Trends "universal appeal".
