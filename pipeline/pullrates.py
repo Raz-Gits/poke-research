@@ -35,6 +35,9 @@ TIER_PROB: Dict[str, float] = {
     "Hyper Rare": 0.02,
     "Shiny Rare": 0.20,
     "Shiny Ultra Rare": 0.033,
+    # Mega Evolution series (2026) tiers
+    "MEGA_ATTACK_RARE": 0.06,
+    "Mega Hyper Rare": 0.02,
     "Unknown": 0.05,
 }
 

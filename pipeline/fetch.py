@@ -20,21 +20,25 @@ import urllib.parse
 import urllib.request
 from datetime import date
 
-from pipeline import config
+from pipeline import config, pricing_tcgdex
 
 # Suffix tokens that are card mechanics, not part of the character name.
 _SUFFIX_TOKENS = {"ex", "EX", "V", "VMAX", "VSTAR", "GX", "BREAK", "LV.X", "δ", "Prime", "Star"}
 
 
-def base_name(name: str) -> str:
-    """Reduce a printed card name to its underlying Pokémon/character.
+def base_name(name: str, supertype: str = "Pokémon") -> str:
+    """Reduce a printed card name to its underlying character identity.
 
-    'Team Rocket's Moltres ex' -> 'Moltres'; 'N's Zoroark ex' -> 'Zoroark';
-    'Blastoise ex' -> 'Blastoise'; 'Iono' -> 'Iono'.
+    For Pokémon, drop the "Owner's" possessive (a real Pokémon follows it) and
+    the mechanic suffix: 'Team Rocket's Moltres ex' -> 'Moltres', 'Blastoise ex'
+    -> 'Blastoise'. For Trainers/Energy the possessive IS the card's identity
+    (a Supporter, not a Pokémon), so keep it: 'Morty's Conviction' ->
+    'Morty's Conviction', 'Iono' -> 'Iono'.
     """
     n = name.strip()
-    # Drop trainer-owner possessive prefix: keep text after the last "'s ".
-    if "'s " in n:
+    # Only Pokémon use the "Owner's Pokémon" form; for Trainers "X's Y" is the
+    # card name itself, so stripping it would invent a fake character.
+    if supertype == "Pokémon" and "'s " in n:
         n = n.rsplit("'s ", 1)[1]
     tokens = n.split()
     while tokens and tokens[-1] in _SUFFIX_TOKENS:
@@ -85,10 +89,12 @@ def normalize_card(c: dict) -> dict:
     market, variant = _pick_price(c.get("tcgplayer"))
     s = c.get("set", {})
     rel = (s.get("releaseDate") or "").replace("/", "-") or None
+    supertype = c.get("supertype") or "Pokémon"
     return {
         "id": c["id"],
         "name": c["name"],
-        "base_name": base_name(c["name"]),
+        "base_name": base_name(c["name"], supertype),
+        "supertype": supertype,
         "number": c.get("number"),
         "rarity": c.get("rarity") or "Unknown",
         "set_id": s.get("id"),
@@ -128,8 +134,20 @@ def main() -> None:
             "packs_per_box": cfg["packs_per_box"],
             "box_price": box_price,
         })
-        for c in raw:
-            all_cards.append(normalize_card(c))
+        set_cards = [normalize_card(c) for c in raw]
+        # Fill prices for sets pokemontcg.io catalogues but doesn't price yet
+        # (e.g. Mega Evolution series) from TCGdex -> TCGplayer market price.
+        if set_id in pricing_tcgdex.SET_ID_MAP and not any(c["market_price"] for c in set_cards):
+            print(f"    no pokemontcg.io prices for {set_id} — pulling TCGplayer prices via TCGdex ...", flush=True)
+            tdx = pricing_tcgdex.prices_for_set(set_id)
+            filled = 0
+            for c in set_cards:
+                hit = tdx.get(pricing_tcgdex.normalize_number(c["number"]))
+                if hit and c["market_price"] is None:
+                    c["market_price"], c["price_variant"], c["price_updated"] = hit
+                    filled += 1
+            print(f"    filled {filled}/{len(set_cards)} cards from TCGdex", flush=True)
+        all_cards.extend(set_cards)
 
     (config.NORMALIZED / "cards.json").write_text(json.dumps(all_cards, indent=1))
     (config.NORMALIZED / "sets.json").write_text(json.dumps(set_records, indent=1))

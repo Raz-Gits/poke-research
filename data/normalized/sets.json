@@ -102,5 +102,44 @@
   "pack_price": 4.0,
   "packs_per_box": 36,
   "box_price": 144.0
+ },
+ {
+  "set_id": "me2pt5",
+  "name": "Ascended Heroes",
+  "series": "Mega Evolution",
+  "release_date": "2026-01-30",
+  "printed_total": 217,
+  "total": 295,
+  "logo": "https://images.scrydex.com/pokemon/me2pt5-logo/logo",
+  "symbol": "https://images.scrydex.com/pokemon/me2pt5-symbol/symbol",
+  "pack_price": 6.0,
+  "packs_per_box": 36,
+  "box_price": 216.0
+ },
+ {
+  "set_id": "me3",
+  "name": "Perfect Order",
+  "series": "Mega Evolution",
+  "release_date": "2026-03-27",
+  "printed_total": 88,
+  "total": 124,
+  "logo": "https://images.scrydex.com/pokemon/me3-logo/logo",
+  "symbol": "https://images.scrydex.com/pokemon/me3-symbol/symbol",
+  "pack_price": 5.0,
+  "packs_per_box": 36,
+  "box_price": 180.0
+ },
+ {
+  "set_id": "me4",
+  "name": "Chaos Rising",
+  "series": "Mega Evolution",
+  "release_date": "2026-05-22",
+  "printed_total": 86,
+  "total": 122,
+  "logo": "https://images.scrydex.com/pokemon/me4-logo/logo",
+  "symbol": "https://images.scrydex.com/pokemon/me4-symbol/symbol",
+  "pack_price": 4.5,
+  "packs_per_box": 36,
+  "box_price": 162.0
  }
 ]

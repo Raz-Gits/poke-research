@@ -52,6 +52,10 @@ SETS = {
     "sv7":    {"name": "Stellar Crown",        "pack_price": 4.0, "packs_per_box": 36},
     "sv6":    {"name": "Twilight Masquerade",  "pack_price": 4.0, "packs_per_box": 36},
     "sv5":    {"name": "Temporal Forces",      "pack_price": 4.0, "packs_per_box": 36},
+    # Mega Evolution series (2026) — pack prices are ESTIMATEs, tune to market
+    "me2pt5": {"name": "Ascended Heroes",      "pack_price": 6.0, "packs_per_box": 36},
+    "me3":    {"name": "Perfect Order",        "pack_price": 5.0, "packs_per_box": 36},
+    "me4":    {"name": "Chaos Rising",         "pack_price": 4.5, "packs_per_box": 36},
 }
 
 # ---------------------------------------------------------------------------

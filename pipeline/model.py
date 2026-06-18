@@ -277,9 +277,28 @@ class ModelResult:
 # ---------------------------------------------------------------------------
 # Public API
 # ---------------------------------------------------------------------------
+# Brand-new rarities with too few cards to fit their own cluster — map each to
+# the established tier with the closest price profile so they DON'T fall back to
+# the (cheap-card-dominated) global model and get wildly under-predicted. The
+# card's real rarity is unchanged (still used for display + pull rates).
+_RARITY_CLUSTER_ALIAS = {
+    "MEGA_ATTACK_RARE": "Hyper Rare",                 # $4-72 ~ Hyper Rare
+    "Mega Hyper Rare": "Special Illustration Rare",   # $168-629 ~ SIR chase tier
+}
+
+
 def _cluster_key(card: dict) -> str:
-    """Cluster a card by its rarity tier (falling back to 'Unknown')."""
-    return card.get("rarity") or "Unknown"
+    """Cluster a card by supertype + rarity tier (with alias for new rarities).
+
+    Splitting Trainers/Energy from Pokémon matters: a Supporter's price isn't
+    driven by Pokémon-character popularity, so mixing them into one rarity
+    cluster pollutes the fit. e.g. 'Pokémon · Special Illustration Rare' vs
+    'Trainer · Special Illustration Rare'. Small clusters fall back to global.
+    """
+    supertype = card.get("supertype") or "Pokémon"
+    rarity = card.get("rarity") or "Unknown"
+    rarity = _RARITY_CLUSTER_ALIAS.get(rarity, rarity)
+    return f"{supertype} · {rarity}"
 
 
 def _build_matrix(
