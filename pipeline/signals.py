@@ -67,11 +67,14 @@ RARITY_ORDER: List[str] = [
     "Double Rare",
     "ACE SPEC Rare",
     "Ultra Rare",
+    "MEGA_ATTACK_RARE",
     "Shiny Rare",
     "Illustration Rare",
     "Shiny Ultra Rare",
     "Special Illustration Rare",
     "Hyper Rare",
+    "Mega Hyper Rare",       # Mega-era top gold
+    "Black White Rare",      # Black Bolt/White Flare textured top secret
 ]
 _RARITY_RANK = {r: i / (len(RARITY_ORDER) - 1) for i, r in enumerate(RARITY_ORDER)}
 _NEUTRAL_RARITY_RANK = 0.5
