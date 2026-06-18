@@ -63,7 +63,7 @@ SETS = {
     "sv6":    {"name": "Twilight Masquerade",  "pack_price": 5.0,  "retail_pack_price": 4.49, "packs_per_etb": _ETB, "etb_price": 70.0},
     "sv5":    {"name": "Temporal Forces",      "pack_price": 6.0,  "retail_pack_price": 4.49, "packs_per_etb": _ETB, "etb_price": 130.0},
     # Mega Evolution series (2026)
-    "me2pt5": {"name": "Ascended Heroes",      "pack_price": 9.0,  "retail_pack_price": 4.99, "packs_per_etb": _ETB, "etb_price": 180.0},
+    "me2pt5": {"name": "Ascended Heroes",      "pack_price": 13.58, "retail_pack_price": 4.99, "packs_per_etb": _ETB, "etb_price": 181.75},  # TCGplayer actual
     "me3":    {"name": "Perfect Order",        "pack_price": 6.0,  "retail_pack_price": 4.99, "packs_per_etb": _ETB, "etb_price": 90.0},
     "me4":    {"name": "Chaos Rising",         "pack_price": 6.0,  "retail_pack_price": 4.99, "packs_per_etb": _ETB, "etb_price": 92.0},
 }
