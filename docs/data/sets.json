@@ -65,11 +65,11 @@
     "pack_price": 4.0,
     "packs_per_box": 36,
     "box_price": 144.0,
-    "ev_per_pack": 4.805023282588463,
-    "ev_per_box": 172.98083817318468,
-    "signal_pct": 0.20125582064711584,
-    "avg_loss_per_pack": -0.8050232825884631,
-    "raw_value_per_pack": 4.805023282588463
+    "ev_per_pack": 4.662525753255127,
+    "ev_per_box": 167.85092711718457,
+    "signal_pct": 0.16563143831378171,
+    "avg_loss_per_pack": -0.6625257532551272,
+    "raw_value_per_pack": 4.662525753255127
   },
   {
     "set_id": "sv6",
@@ -83,11 +83,11 @@
     "pack_price": 4.0,
     "packs_per_box": 36,
     "box_price": 144.0,
-    "ev_per_pack": 3.976586331966278,
-    "ev_per_box": 143.157107950786,
-    "signal_pct": -0.005853417008430463,
-    "avg_loss_per_pack": 0.0234136680337218,
-    "raw_value_per_pack": 3.976586331966278
+    "ev_per_pack": 3.868076924390521,
+    "ev_per_box": 139.25076927805875,
+    "signal_pct": -0.032980768902369756,
+    "avg_loss_per_pack": 0.13192307560947913,
+    "raw_value_per_pack": 3.868076924390521
   },
   {
     "set_id": "sv7",
@@ -101,11 +101,11 @@
     "pack_price": 4.0,
     "packs_per_box": 36,
     "box_price": 144.0,
-    "ev_per_pack": 3.945177422310085,
-    "ev_per_box": 142.02638720316304,
-    "signal_pct": -0.01370564442247889,
-    "avg_loss_per_pack": 0.054822577689915164,
-    "raw_value_per_pack": 3.945177422310085
+    "ev_per_pack": 3.8304426856434177,
+    "ev_per_box": 137.89593668316303,
+    "signal_pct": -0.04238932858914563,
+    "avg_loss_per_pack": 0.16955731435658228,
+    "raw_value_per_pack": 3.8304426856434177
   },
   {
     "set_id": "sv6pt5",
@@ -126,24 +126,6 @@
     "raw_value_per_pack": 5.05299341114286
   },
   {
-    "set_id": "sv8",
-    "name": "Surging Sparks",
-    "series": "Scarlet & Violet",
-    "release_date": "2024-11-08",
-    "printed_total": 191,
-    "total": 252,
-    "logo": "https://images.pokemontcg.io/sv8/logo.png",
-    "symbol": "https://images.pokemontcg.io/sv8/symbol.png",
-    "pack_price": 4.5,
-    "packs_per_box": 36,
-    "box_price": 162.0,
-    "ev_per_pack": 3.2375008527667983,
-    "ev_per_box": 116.55003069960475,
-    "signal_pct": -0.2805553660518226,
-    "avg_loss_per_pack": 1.2624991472332017,
-    "raw_value_per_pack": 3.2375008527667983
-  },
-  {
     "set_id": "me4",
     "name": "Chaos Rising",
     "series": "Mega Evolution",
@@ -160,6 +142,24 @@
     "signal_pct": -0.28135131651521966,
     "avg_loss_per_pack": 1.2660809243184885,
     "raw_value_per_pack": 3.2339190756815115
+  },
+  {
+    "set_id": "sv8",
+    "name": "Surging Sparks",
+    "series": "Scarlet & Violet",
+    "release_date": "2024-11-08",
+    "printed_total": 191,
+    "total": 252,
+    "logo": "https://images.pokemontcg.io/sv8/logo.png",
+    "symbol": "https://images.pokemontcg.io/sv8/symbol.png",
+    "pack_price": 4.5,
+    "packs_per_box": 36,
+    "box_price": 162.0,
+    "ev_per_pack": 2.9247759054940707,
+    "ev_per_box": 105.29193259778654,
+    "signal_pct": -0.3500497987790954,
+    "avg_loss_per_pack": 1.5752240945059293,
+    "raw_value_per_pack": 2.9247759054940707
   },
   {
     "set_id": "sv8pt5",

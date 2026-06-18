@@ -10282,14 +10282,14 @@
       }
     },
     "cluster": "Pok\u00e9mon \u00b7 Special Illustration Rare",
-    "expected_price": 84.4895,
-    "residual_pct": 0.596885,
+    "expected_price": 84.2146,
+    "residual_pct": 0.602097,
     "contributions": {
-      "char_premium": -0.120556,
-      "scarcity": -0.018433,
-      "pull_cost": -0.463149,
-      "months_since_release": -0.013718,
-      "set_rank": 0.491387,
+      "char_premium": -0.120715,
+      "scarcity": -0.018277,
+      "pull_cost": -0.463352,
+      "months_since_release": -0.015889,
+      "set_rank": 0.490506,
       "demand_pressure": 0.0,
       "grading_intensity": 0.0,
       "universal_appeal": 0.0
@@ -10334,14 +10334,14 @@
       }
     },
     "cluster": "Pok\u00e9mon \u00b7 Special Illustration Rare",
-    "expected_price": 358.1822,
-    "residual_pct": 0.338955,
+    "expected_price": 357.5525,
+    "residual_pct": 0.341313,
     "contributions": {
-      "char_premium": 1.193436,
-      "scarcity": -0.018433,
-      "pull_cost": -0.463149,
-      "months_since_release": -0.013718,
-      "set_rank": 0.621809,
+      "char_premium": 1.19501,
+      "scarcity": -0.018277,
+      "pull_cost": -0.463352,
+      "months_since_release": -0.015889,
+      "set_rank": 0.620695,
       "demand_pressure": 0.0,
       "grading_intensity": 0.0,
       "universal_appeal": 0.0
@@ -10386,14 +10386,14 @@
       }
     },
     "cluster": "Pok\u00e9mon \u00b7 Special Illustration Rare",
-    "expected_price": 175.4779,
-    "residual_pct": -0.074014,
+    "expected_price": 175.0398,
+    "residual_pct": -0.071697,
     "contributions": {
-      "char_premium": 0.544446,
-      "scarcity": -0.018433,
-      "pull_cost": -0.463149,
-      "months_since_release": -0.013718,
-      "set_rank": 0.55727,
+      "char_premium": 0.545164,
+      "scarcity": -0.018277,
+      "pull_cost": -0.463352,
+      "months_since_release": -0.015889,
+      "set_rank": 0.556271,
       "demand_pressure": 0.0,
       "grading_intensity": 0.0,
       "universal_appeal": 0.0
@@ -10438,14 +10438,14 @@
       }
     },
     "cluster": "Pok\u00e9mon \u00b7 Special Illustration Rare",
-    "expected_price": 45.4956,
-    "residual_pct": 0.8582,
+    "expected_price": 45.3654,
+    "residual_pct": 0.863533,
     "contributions": {
-      "char_premium": -0.350989,
-      "scarcity": -0.018433,
-      "pull_cost": -0.463149,
-      "months_since_release": -0.013718,
-      "set_rank": 0.102808,
+      "char_premium": -0.351452,
+      "scarcity": -0.018277,
+      "pull_cost": -0.463352,
+      "months_since_release": -0.015889,
+      "set_rank": 0.102624,
       "demand_pressure": 0.0,
       "grading_intensity": 0.0,
       "universal_appeal": 0.0
@@ -10490,14 +10490,14 @@
       }
     },
     "cluster": "Trainer \u00b7 Hyper Rare",
-    "expected_price": 15.2374,
-    "residual_pct": -0.824773,
+    "expected_price": 15.0089,
+    "residual_pct": -0.822105,
     "contributions": {
-      "char_premium": -0.053535,
-      "scarcity": 2.221361,
-      "pull_cost": 0.002617,
-      "months_since_release": -0.02468,
-      "set_rank": 0.802396,
+      "char_premium": -0.05423,
+      "scarcity": 2.208253,
+      "pull_cost": -0.001732,
+      "months_since_release": -0.025815,
+      "set_rank": 0.806574,
       "demand_pressure": 0.0,
       "grading_intensity": 0.0,
       "universal_appeal": 0.0
@@ -10542,14 +10542,14 @@
       }
     },
     "cluster": "Pok\u00e9mon \u00b7 Special Illustration Rare",
-    "expected_price": 52.3465,
-    "residual_pct": 1.186776,
+    "expected_price": 52.1749,
+    "residual_pct": 1.193968,
     "contributions": {
-      "char_premium": -0.404338,
-      "scarcity": -0.018433,
-      "pull_cost": -0.463149,
-      "months_since_release": -0.013718,
-      "set_rank": 0.296425,
+      "char_premium": -0.404871,
+      "scarcity": -0.018277,
+      "pull_cost": -0.463352,
+      "months_since_release": -0.015889,
+      "set_rank": 0.295894,
       "demand_pressure": 0.0,
       "grading_intensity": 0.0,
       "universal_appeal": 0.0
@@ -10594,14 +10594,14 @@
       }
     },
     "cluster": "Trainer \u00b7 Special Illustration Rare",
-    "expected_price": 17.3137,
-    "residual_pct": 0.301284,
+    "expected_price": 17.289,
+    "residual_pct": 0.303138,
     "contributions": {
-      "char_premium": 0.001636,
-      "scarcity": -0.007207,
-      "pull_cost": -0.26177,
-      "months_since_release": -0.006669,
-      "set_rank": -0.186565,
+      "char_premium": 0.001599,
+      "scarcity": -0.008077,
+      "pull_cost": -0.261987,
+      "months_since_release": -0.007539,
+      "set_rank": -0.185995,
       "demand_pressure": 0.0,
       "grading_intensity": 0.0,
       "universal_appeal": 0.0
@@ -10646,14 +10646,14 @@
       }
     },
     "cluster": "Trainer \u00b7 Special Illustration Rare",
-    "expected_price": 12.9921,
-    "residual_pct": 0.384686,
+    "expected_price": 12.9845,
+    "residual_pct": 0.385496,
     "contributions": {
-      "char_premium": 0.003579,
-      "scarcity": -0.007207,
-      "pull_cost": -0.26177,
-      "months_since_release": -0.006669,
-      "set_rank": -0.475661,
+      "char_premium": 0.003498,
+      "scarcity": -0.008077,
+      "pull_cost": -0.261987,
+      "months_since_release": -0.007539,
+      "set_rank": -0.474209,
       "demand_pressure": 0.0,
       "grading_intensity": 0.0,
       "universal_appeal": 0.0
@@ -10698,14 +10698,14 @@
       }
     },
     "cluster": "Pok\u00e9mon \u00b7 Hyper Rare",
-    "expected_price": 47.8523,
-    "residual_pct": -0.272553,
+    "expected_price": 54.4279,
+    "residual_pct": -0.360438,
     "contributions": {
-      "char_premium": 0.989148,
-      "scarcity": -0.097145,
-      "pull_cost": -0.205237,
-      "months_since_release": 0.233012,
-      "set_rank": 0.351552,
+      "char_premium": 1.071247,
+      "scarcity": 0.048175,
+      "pull_cost": -0.02531,
+      "months_since_release": 0.052264,
+      "set_rank": 0.253712,
       "demand_pressure": 0.0,
       "grading_intensity": 0.0,
       "universal_appeal": 0.0
@@ -10750,14 +10750,14 @@
       }
     },
     "cluster": "Energy \u00b7 Hyper Rare",
-    "expected_price": 17.9751,
-    "residual_pct": -0.67455,
+    "expected_price": 17.7224,
+    "residual_pct": -0.669909,
     "contributions": {
-      "char_premium": -0.042067,
-      "scarcity": 2.221361,
-      "pull_cost": 0.002617,
-      "months_since_release": -0.02468,
-      "set_rank": 0.956166,
+      "char_premium": -0.042613,
+      "scarcity": 2.208253,
+      "pull_cost": -0.001732,
+      "months_since_release": -0.025815,
+      "set_rank": 0.961144,
       "demand_pressure": 0.0,
       "grading_intensity": 0.0,
       "universal_appeal": 0.0
@@ -18238,14 +18238,14 @@
       }
     },
     "cluster": "Pok\u00e9mon \u00b7 Special Illustration Rare",
-    "expected_price": 294.3293,
-    "residual_pct": 0.125338,
+    "expected_price": 293.4737,
+    "residual_pct": 0.128619,
     "contributions": {
-      "char_premium": 0.15723,
-      "scarcity": -0.003561,
-      "pull_cost": 0.498475,
-      "months_since_release": -0.001105,
-      "set_rank": 0.472563,
+      "char_premium": 0.157437,
+      "scarcity": -0.00353,
+      "pull_cost": 0.496348,
+      "months_since_release": -0.001279,
+      "set_rank": 0.471716,
       "demand_pressure": 0.0,
       "grading_intensity": 0.0,
       "universal_appeal": 0.0
@@ -18290,14 +18290,14 @@
       }
     },
     "cluster": "Pok\u00e9mon \u00b7 Special Illustration Rare",
-    "expected_price": 28.3364,
-    "residual_pct": -0.145623,
+    "expected_price": 28.3245,
+    "residual_pct": -0.145263,
     "contributions": {
-      "char_premium": -0.391019,
-      "scarcity": -0.003561,
-      "pull_cost": 0.498475,
-      "months_since_release": -0.001105,
-      "set_rank": -1.319738,
+      "char_premium": -0.391535,
+      "scarcity": -0.00353,
+      "pull_cost": 0.496348,
+      "months_since_release": -0.001279,
+      "set_rank": -1.317372,
       "demand_pressure": 0.0,
       "grading_intensity": 0.0,
       "universal_appeal": 0.0
@@ -18342,14 +18342,14 @@
       }
     },
     "cluster": "Pok\u00e9mon \u00b7 Special Illustration Rare",
-    "expected_price": 91.2021,
-    "residual_pct": 0.102057,
+    "expected_price": 90.9868,
+    "residual_pct": 0.104666,
     "contributions": {
-      "char_premium": -0.34211,
-      "scarcity": -0.003561,
-      "pull_cost": 0.498475,
-      "months_since_release": -0.001105,
-      "set_rank": -0.199718,
+      "char_premium": -0.342561,
+      "scarcity": -0.00353,
+      "pull_cost": 0.496348,
+      "months_since_release": -0.001279,
+      "set_rank": -0.19936,
       "demand_pressure": 0.0,
       "grading_intensity": 0.0,
       "universal_appeal": 0.0
@@ -18394,14 +18394,14 @@
       }
     },
     "cluster": "Pok\u00e9mon \u00b7 Special Illustration Rare",
-    "expected_price": 121.8029,
-    "residual_pct": 0.723523,
+    "expected_price": 121.4203,
+    "residual_pct": 0.728953,
     "contributions": {
-      "char_premium": -0.426573,
-      "scarcity": -0.003561,
-      "pull_cost": 0.498475,
-      "months_since_release": -0.001105,
-      "set_rank": 0.17407,
+      "char_premium": -0.427135,
+      "scarcity": -0.00353,
+      "pull_cost": 0.496348,
+      "months_since_release": -0.001279,
+      "set_rank": 0.173758,
       "demand_pressure": 0.0,
       "grading_intensity": 0.0,
       "universal_appeal": 0.0
@@ -18446,14 +18446,14 @@
       }
     },
     "cluster": "Pok\u00e9mon \u00b7 Special Illustration Rare",
-    "expected_price": 56.6258,
-    "residual_pct": -0.155685,
+    "expected_price": 56.5352,
+    "residual_pct": -0.154333,
     "contributions": {
-      "char_premium": -0.370985,
-      "scarcity": -0.003561,
-      "pull_cost": 0.498475,
-      "months_since_release": -0.001105,
-      "set_rank": -0.647457,
+      "char_premium": -0.371474,
+      "scarcity": -0.00353,
+      "pull_cost": 0.496348,
+      "months_since_release": -0.001279,
+      "set_rank": -0.646297,
       "demand_pressure": 0.0,
       "grading_intensity": 0.0,
       "universal_appeal": 0.0
@@ -18498,14 +18498,14 @@
       }
     },
     "cluster": "Pok\u00e9mon \u00b7 Special Illustration Rare",
-    "expected_price": 156.9503,
-    "residual_pct": 0.307166,
+    "expected_price": 156.5463,
+    "residual_pct": 0.310539,
     "contributions": {
-      "char_premium": -0.097752,
-      "scarcity": -0.003561,
-      "pull_cost": 0.498475,
-      "months_since_release": -0.001105,
-      "set_rank": 0.098775,
+      "char_premium": -0.097881,
+      "scarcity": -0.00353,
+      "pull_cost": 0.496348,
+      "months_since_release": -0.001279,
+      "set_rank": 0.098598,
       "demand_pressure": 0.0,
       "grading_intensity": 0.0,
       "universal_appeal": 0.0
@@ -18550,14 +18550,14 @@
       }
     },
     "cluster": "Pok\u00e9mon \u00b7 Special Illustration Rare",
-    "expected_price": 23.1605,
-    "residual_pct": -0.126961,
+    "expected_price": 23.1554,
+    "residual_pct": -0.12677,
     "contributions": {
-      "char_premium": -0.44213,
-      "scarcity": -0.003561,
-      "pull_cost": 0.498475,
-      "months_since_release": -0.001105,
-      "set_rank": -1.470329,
+      "char_premium": -0.442713,
+      "scarcity": -0.00353,
+      "pull_cost": 0.496348,
+      "months_since_release": -0.001279,
+      "set_rank": -1.467693,
       "demand_pressure": 0.0,
       "grading_intensity": 0.0,
       "universal_appeal": 0.0
@@ -18602,14 +18602,14 @@
       }
     },
     "cluster": "Pok\u00e9mon \u00b7 Special Illustration Rare",
-    "expected_price": 257.5522,
-    "residual_pct": 0.165589,
+    "expected_price": 256.9377,
+    "residual_pct": 0.168376,
     "contributions": {
-      "char_premium": 0.248295,
-      "scarcity": -0.003561,
-      "pull_cost": 0.498475,
-      "months_since_release": -0.001105,
-      "set_rank": 0.248021,
+      "char_premium": 0.248622,
+      "scarcity": -0.00353,
+      "pull_cost": 0.496348,
+      "months_since_release": -0.001279,
+      "set_rank": 0.247576,
       "demand_pressure": 0.0,
       "grading_intensity": 0.0,
       "universal_appeal": 0.0
@@ -18654,14 +18654,14 @@
       }
     },
     "cluster": "Pok\u00e9mon \u00b7 Special Illustration Rare",
-    "expected_price": 21.7014,
-    "residual_pct": -0.168255,
+    "expected_price": 21.6998,
+    "residual_pct": -0.168194,
     "contributions": {
-      "char_premium": -0.433251,
-      "scarcity": -0.003561,
-      "pull_cost": 0.498475,
-      "months_since_release": -0.001105,
-      "set_rank": -1.54428,
+      "char_premium": -0.433822,
+      "scarcity": -0.00353,
+      "pull_cost": 0.496348,
+      "months_since_release": -0.001279,
+      "set_rank": -1.541512,
       "demand_pressure": 0.0,
       "grading_intensity": 0.0,
       "universal_appeal": 0.0
@@ -18706,14 +18706,14 @@
       }
     },
     "cluster": "Pok\u00e9mon \u00b7 Special Illustration Rare",
-    "expected_price": 221.363,
-    "residual_pct": 0.359125,
+    "expected_price": 220.7391,
+    "residual_pct": 0.362967,
     "contributions": {
-      "char_premium": 0.021581,
-      "scarcity": -0.003561,
-      "pull_cost": 0.498475,
-      "months_since_release": -0.001105,
-      "set_rank": 0.323317,
+      "char_premium": 0.021609,
+      "scarcity": -0.00353,
+      "pull_cost": 0.496348,
+      "months_since_release": -0.001279,
+      "set_rank": 0.322737,
       "demand_pressure": 0.0,
       "grading_intensity": 0.0,
       "universal_appeal": 0.0
@@ -18758,14 +18758,14 @@
       }
     },
     "cluster": "Pok\u00e9mon \u00b7 Special Illustration Rare",
-    "expected_price": 39.0622,
-    "residual_pct": -0.035641,
+    "expected_price": 39.0079,
+    "residual_pct": -0.034299,
     "contributions": {
-      "char_premium": -0.517751,
-      "scarcity": -0.003561,
-      "pull_cost": 0.498475,
-      "months_since_release": -0.001105,
-      "set_rank": -0.871999,
+      "char_premium": -0.518434,
+      "scarcity": -0.00353,
+      "pull_cost": 0.496348,
+      "months_since_release": -0.001279,
+      "set_rank": -0.870436,
       "demand_pressure": 0.0,
       "grading_intensity": 0.0,
       "universal_appeal": 0.0
@@ -18810,14 +18810,14 @@
       }
     },
     "cluster": "Pok\u00e9mon \u00b7 Special Illustration Rare",
-    "expected_price": 316.1473,
-    "residual_pct": 0.015856,
+    "expected_price": 315.3318,
+    "residual_pct": 0.018483,
     "contributions": {
-      "char_premium": 0.304034,
-      "scarcity": -0.003561,
-      "pull_cost": 0.498475,
-      "months_since_release": -0.001105,
-      "set_rank": 0.397268,
+      "char_premium": 0.304435,
+      "scarcity": -0.00353,
+      "pull_cost": 0.496348,
+      "months_since_release": -0.001279,
+      "set_rank": 0.396555,
       "demand_pressure": 0.0,
       "grading_intensity": 0.0,
       "universal_appeal": 0.0
@@ -18862,14 +18862,14 @@
       }
     },
     "cluster": "Pok\u00e9mon \u00b7 Special Illustration Rare",
-    "expected_price": 68.1385,
-    "residual_pct": 0.118016,
+    "expected_price": 67.983,
+    "residual_pct": 0.120573,
     "contributions": {
-      "char_premium": -0.484399,
-      "scarcity": -0.003561,
-      "pull_cost": 0.498475,
-      "months_since_release": -0.001105,
-      "set_rank": -0.348964,
+      "char_premium": -0.485038,
+      "scarcity": -0.00353,
+      "pull_cost": 0.496348,
+      "months_since_release": -0.001279,
+      "set_rank": -0.348339,
       "demand_pressure": 0.0,
       "grading_intensity": 0.0,
       "universal_appeal": 0.0
@@ -18914,14 +18914,14 @@
       }
     },
     "cluster": "Pok\u00e9mon \u00b7 Special Illustration Rare",
-    "expected_price": 503.7003,
-    "residual_pct": 0.021957,
+    "expected_price": 502.4763,
+    "residual_pct": 0.024446,
     "contributions": {
-      "char_premium": 0.620561,
-      "scarcity": -0.003561,
-      "pull_cost": 0.498475,
-      "months_since_release": -0.001105,
-      "set_rank": 0.546514,
+      "char_premium": 0.621379,
+      "scarcity": -0.00353,
+      "pull_cost": 0.496348,
+      "months_since_release": -0.001279,
+      "set_rank": 0.545534,
       "demand_pressure": 0.0,
       "grading_intensity": 0.0,
       "universal_appeal": 0.0
@@ -18966,14 +18966,14 @@
       }
     },
     "cluster": "Pok\u00e9mon \u00b7 Special Illustration Rare",
-    "expected_price": 43.0904,
-    "residual_pct": -0.136931,
+    "expected_price": 43.0462,
+    "residual_pct": -0.136045,
     "contributions": {
-      "char_premium": -0.344311,
-      "scarcity": -0.003561,
-      "pull_cost": 0.498475,
-      "months_since_release": -0.001105,
-      "set_rank": -0.947295,
+      "char_premium": -0.344765,
+      "scarcity": -0.00353,
+      "pull_cost": 0.496348,
+      "months_since_release": -0.001279,
+      "set_rank": -0.945596,
       "demand_pressure": 0.0,
       "grading_intensity": 0.0,
       "universal_appeal": 0.0
@@ -19018,14 +19018,14 @@
       }
     },
     "cluster": "Pok\u00e9mon \u00b7 Special Illustration Rare",
-    "expected_price": 28.2188,
-    "residual_pct": -0.005982,
+    "expected_price": 28.1937,
+    "residual_pct": -0.005096,
     "contributions": {
-      "char_premium": -0.544426,
-      "scarcity": -0.003561,
-      "pull_cost": 0.498475,
-      "months_since_release": -0.001105,
-      "set_rank": -1.170492,
+      "char_premium": -0.545144,
+      "scarcity": -0.00353,
+      "pull_cost": 0.496348,
+      "months_since_release": -0.001279,
+      "set_rank": -1.168394,
       "demand_pressure": 0.0,
       "grading_intensity": 0.0,
       "universal_appeal": 0.0
@@ -19070,14 +19070,14 @@
       }
     },
     "cluster": "Pok\u00e9mon \u00b7 Special Illustration Rare",
-    "expected_price": 18.6098,
-    "residual_pct": -0.090265,
+    "expected_price": 18.6133,
+    "residual_pct": -0.090436,
     "contributions": {
-      "char_premium": -0.43769,
-      "scarcity": -0.003561,
-      "pull_cost": 0.498475,
-      "months_since_release": -0.001105,
-      "set_rank": -1.693527,
+      "char_premium": -0.438267,
+      "scarcity": -0.00353,
+      "pull_cost": 0.496348,
+      "months_since_release": -0.001279,
+      "set_rank": -1.690491,
       "demand_pressure": 0.0,
       "grading_intensity": 0.0,
       "universal_appeal": 0.0
@@ -19122,14 +19122,14 @@
       }
     },
     "cluster": "Pok\u00e9mon \u00b7 Special Illustration Rare",
-    "expected_price": 93.6974,
-    "residual_pct": 0.896745,
+    "expected_price": 93.436,
+    "residual_pct": 0.902051,
     "contributions": {
-      "char_premium": -0.464365,
-      "scarcity": -0.003561,
-      "pull_cost": 0.498475,
-      "months_since_release": -0.001105,
-      "set_rank": -0.050472,
+      "char_premium": -0.464977,
+      "scarcity": -0.00353,
+      "pull_cost": 0.496348,
+      "months_since_release": -0.001279,
+      "set_rank": -0.050381,
       "demand_pressure": 0.0,
       "grading_intensity": 0.0,
       "universal_appeal": 0.0
@@ -19174,14 +19174,14 @@
       }
     },
     "cluster": "Pok\u00e9mon \u00b7 Special Illustration Rare",
-    "expected_price": 546.481,
-    "residual_pct": 1.890494,
+    "expected_price": 545.084,
+    "residual_pct": 1.897902,
     "contributions": {
-      "char_premium": 0.626784,
-      "scarcity": -0.003561,
-      "pull_cost": 0.498475,
-      "months_since_release": -0.001105,
-      "set_rank": 0.621809,
+      "char_premium": 0.62761,
+      "scarcity": -0.00353,
+      "pull_cost": 0.496348,
+      "months_since_release": -0.001279,
+      "set_rank": 0.620695,
       "demand_pressure": 0.0,
       "grading_intensity": 0.0,
       "universal_appeal": 0.0
@@ -19226,14 +19226,14 @@
       }
     },
     "cluster": "Pok\u00e9mon \u00b7 Special Illustration Rare",
-    "expected_price": 39.9293,
-    "residual_pct": -0.141483,
+    "expected_price": 39.8935,
+    "residual_pct": -0.140713,
     "contributions": {
-      "char_premium": -0.346549,
-      "scarcity": -0.003561,
-      "pull_cost": 0.498475,
-      "months_since_release": -0.001105,
-      "set_rank": -1.021246,
+      "char_premium": -0.347006,
+      "scarcity": -0.00353,
+      "pull_cost": 0.496348,
+      "months_since_release": -0.001279,
+      "set_rank": -1.019415,
       "demand_pressure": 0.0,
       "grading_intensity": 0.0,
       "universal_appeal": 0.0
@@ -19278,14 +19278,14 @@
       }
     },
     "cluster": "Pok\u00e9mon \u00b7 Special Illustration Rare",
-    "expected_price": 152.9012,
-    "residual_pct": -0.64755,
+    "expected_price": 152.8217,
+    "residual_pct": -0.647367,
     "contributions": {
-      "char_premium": 0.548392,
-      "scarcity": -0.003561,
-      "pull_cost": 0.498475,
-      "months_since_release": -0.001105,
-      "set_rank": -0.573506,
+      "char_premium": 0.549115,
+      "scarcity": -0.00353,
+      "pull_cost": 0.496348,
+      "months_since_release": -0.001279,
+      "set_rank": -0.572478,
       "demand_pressure": 0.0,
       "grading_intensity": 0.0,
       "universal_appeal": 0.0
@@ -19330,14 +19330,14 @@
       }
     },
     "cluster": "Pok\u00e9mon \u00b7 Special Illustration Rare",
-    "expected_price": 244.0507,
-    "residual_pct": -0.427127,
+    "expected_price": 243.7344,
+    "residual_pct": -0.426384,
     "contributions": {
-      "char_premium": 0.568237,
-      "scarcity": -0.003561,
-      "pull_cost": 0.498475,
-      "months_since_release": -0.001105,
-      "set_rank": -0.125767,
+      "char_premium": 0.568986,
+      "scarcity": -0.00353,
+      "pull_cost": 0.496348,
+      "months_since_release": -0.001279,
+      "set_rank": -0.125542,
       "demand_pressure": 0.0,
       "grading_intensity": 0.0,
       "universal_appeal": 0.0
@@ -19382,14 +19382,14 @@
       }
     },
     "cluster": "Pok\u00e9mon \u00b7 Special Illustration Rare",
-    "expected_price": 73.6743,
-    "residual_pct": -0.010646,
+    "expected_price": 73.531,
+    "residual_pct": -0.008717,
     "contributions": {
-      "char_premium": -0.330992,
-      "scarcity": -0.003561,
-      "pull_cost": 0.498475,
-      "months_since_release": -0.001105,
-      "set_rank": -0.42426,
+      "char_premium": -0.331429,
+      "scarcity": -0.00353,
+      "pull_cost": 0.496348,
+      "months_since_release": -0.001279,
+      "set_rank": -0.423499,
       "demand_pressure": 0.0,
       "grading_intensity": 0.0,
       "universal_appeal": 0.0
@@ -19434,14 +19434,14 @@
       }
     },
     "cluster": "Pok\u00e9mon \u00b7 Special Illustration Rare",
-    "expected_price": 438.5383,
-    "residual_pct": -0.569639,
+    "expected_price": 438.1034,
+    "residual_pct": -0.569211,
     "contributions": {
-      "char_premium": 1.003717,
-      "scarcity": -0.003561,
-      "pull_cost": 0.498475,
-      "months_since_release": -0.001105,
-      "set_rank": 0.024824,
+      "char_premium": 1.005041,
+      "scarcity": -0.00353,
+      "pull_cost": 0.496348,
+      "months_since_release": -0.001279,
+      "set_rank": 0.024779,
       "demand_pressure": 0.0,
       "grading_intensity": 0.0,
       "universal_appeal": 0.0
@@ -19486,14 +19486,14 @@
       }
     },
     "cluster": "Pok\u00e9mon \u00b7 Special Illustration Rare",
-    "expected_price": 84.9635,
-    "residual_pct": -0.033586,
+    "expected_price": 84.7748,
+    "residual_pct": -0.031434,
     "contributions": {
-      "char_premium": -0.33767,
-      "scarcity": -0.003561,
-      "pull_cost": 0.498475,
-      "months_since_release": -0.001105,
-      "set_rank": -0.275014,
+      "char_premium": -0.338116,
+      "scarcity": -0.00353,
+      "pull_cost": 0.496348,
+      "months_since_release": -0.001279,
+      "set_rank": -0.274521,
       "demand_pressure": 0.0,
       "grading_intensity": 0.0,
       "universal_appeal": 0.0
@@ -19538,14 +19538,14 @@
       }
     },
     "cluster": "Pok\u00e9mon \u00b7 Special Illustration Rare",
-    "expected_price": 50.2488,
-    "residual_pct": -0.212917,
+    "expected_price": 50.1841,
+    "residual_pct": -0.211902,
     "contributions": {
-      "char_premium": -0.339871,
-      "scarcity": -0.003561,
-      "pull_cost": 0.498475,
-      "months_since_release": -0.001105,
-      "set_rank": -0.798048,
+      "char_premium": -0.340319,
+      "scarcity": -0.00353,
+      "pull_cost": 0.496348,
+      "months_since_release": -0.001279,
+      "set_rank": -0.796618,
       "demand_pressure": 0.0,
       "grading_intensity": 0.0,
       "universal_appeal": 0.0
@@ -19590,14 +19590,14 @@
       }
     },
     "cluster": "Trainer \u00b7 Special Illustration Rare",
-    "expected_price": 15.5253,
-    "residual_pct": 0.036372,
+    "expected_price": 15.514,
+    "residual_pct": 0.037126,
     "contributions": {
-      "char_premium": 0.004991,
-      "scarcity": 0.001324,
-      "pull_cost": 0.579449,
-      "months_since_release": 0.001226,
-      "set_rank": -1.156591,
+      "char_premium": 0.004879,
+      "scarcity": 0.001484,
+      "pull_cost": 0.574984,
+      "months_since_release": 0.001386,
+      "set_rank": -1.15306,
       "demand_pressure": 0.0,
       "grading_intensity": 0.0,
       "universal_appeal": 0.0
@@ -19642,14 +19642,14 @@
       }
     },
     "cluster": "Trainer \u00b7 Special Illustration Rare",
-    "expected_price": 38.8322,
-    "residual_pct": 0.096769,
+    "expected_price": 38.7051,
+    "residual_pct": 0.100373,
     "contributions": {
-      "char_premium": -0.007639,
-      "scarcity": 0.001324,
-      "pull_cost": 0.579449,
-      "months_since_release": 0.001226,
-      "set_rank": -0.227181,
+      "char_premium": -0.007468,
+      "scarcity": 0.001484,
+      "pull_cost": 0.574984,
+      "months_since_release": 0.001386,
+      "set_rank": -0.226488,
       "demand_pressure": 0.0,
       "grading_intensity": 0.0,
       "universal_appeal": 0.0
@@ -19694,14 +19694,14 @@
       }
     },
     "cluster": "Pok\u00e9mon \u00b7 Hyper Rare",
-    "expected_price": 8.3225,
-    "residual_pct": -0.250228,
+    "expected_price": 7.9573,
+    "residual_pct": -0.215818,
     "contributions": {
-      "char_premium": -0.156889,
-      "scarcity": -0.043656,
-      "pull_cost": 0.277571,
-      "months_since_release": -0.051146,
-      "set_rank": -0.503704,
+      "char_premium": -0.16991,
+      "scarcity": 0.02165,
+      "pull_cost": 0.000556,
+      "months_since_release": -0.011472,
+      "set_rank": -0.363518,
       "demand_pressure": 0.0,
       "grading_intensity": 0.0,
       "universal_appeal": 0.0
@@ -19746,14 +19746,14 @@
       }
     },
     "cluster": "Trainer \u00b7 Special Illustration Rare",
-    "expected_price": 21.3521,
-    "residual_pct": -0.04178,
+    "expected_price": 21.3214,
+    "residual_pct": -0.0404,
     "contributions": {
-      "char_premium": -0.008434,
-      "scarcity": 0.001324,
-      "pull_cost": 0.579449,
-      "months_since_release": 0.001226,
-      "set_rank": -0.824488,
+      "char_premium": -0.008245,
+      "scarcity": 0.001484,
+      "pull_cost": 0.574984,
+      "months_since_release": 0.001386,
+      "set_rank": -0.821971,
       "demand_pressure": 0.0,
       "grading_intensity": 0.0,
       "universal_appeal": 0.0
@@ -19798,14 +19798,14 @@
       }
     },
     "cluster": "Pok\u00e9mon \u00b7 Hyper Rare",
-    "expected_price": 9.4977,
-    "residual_pct": 0.168702,
+    "expected_price": 8.6828,
+    "residual_pct": 0.278387,
     "contributions": {
-      "char_premium": -0.179234,
-      "scarcity": -0.043656,
-      "pull_cost": 0.277571,
-      "months_since_release": -0.051146,
-      "set_rank": -0.349273,
+      "char_premium": -0.19411,
+      "scarcity": 0.02165,
+      "pull_cost": 0.000556,
+      "months_since_release": -0.011472,
+      "set_rank": -0.252067,
       "demand_pressure": 0.0,
       "grading_intensity": 0.0,
       "universal_appeal": 0.0
@@ -19850,14 +19850,14 @@
       }
     },
     "cluster": "Pok\u00e9mon \u00b7 Hyper Rare",
-    "expected_price": 8.7326,
-    "residual_pct": -0.227032,
+    "expected_price": 8.2661,
+    "residual_pct": -0.183417,
     "contributions": {
-      "char_premium": -0.147575,
-      "scarcity": -0.043656,
-      "pull_cost": 0.277571,
-      "months_since_release": -0.051146,
-      "set_rank": -0.464923,
+      "char_premium": -0.159824,
+      "scarcity": 0.02165,
+      "pull_cost": 0.000556,
+      "months_since_release": -0.011472,
+      "set_rank": -0.335531,
       "demand_pressure": 0.0,
       "grading_intensity": 0.0,
       "universal_appeal": 0.0
@@ -19902,14 +19902,14 @@
       }
     },
     "cluster": "Pok\u00e9mon \u00b7 Hyper Rare",
-    "expected_price": 9.5364,
-    "residual_pct": 0.130404,
+    "expected_price": 8.8442,
+    "residual_pct": 0.218878,
     "contributions": {
-      "char_premium": -0.136387,
-      "scarcity": -0.043656,
-      "pull_cost": 0.277571,
-      "months_since_release": -0.051146,
-      "set_rank": -0.388054,
+      "char_premium": -0.147707,
+      "scarcity": 0.02165,
+      "pull_cost": 0.000556,
+      "months_since_release": -0.011472,
+      "set_rank": -0.280055,
       "demand_pressure": 0.0,
       "grading_intensity": 0.0,
       "universal_appeal": 0.0
@@ -19954,14 +19954,14 @@
       }
     },
     "cluster": "Trainer \u00b7 Special Illustration Rare",
-    "expected_price": 17.5213,
-    "residual_pct": 0.00164,
+    "expected_price": 17.506,
+    "residual_pct": 0.002511,
     "contributions": {
-      "char_premium": -0.006667,
-      "scarcity": 0.001324,
-      "pull_cost": 0.579449,
-      "months_since_release": 0.001226,
-      "set_rank": -1.023989,
+      "char_premium": -0.006518,
+      "scarcity": 0.001484,
+      "pull_cost": 0.574984,
+      "months_since_release": 0.001386,
+      "set_rank": -1.020863,
       "demand_pressure": 0.0,
       "grading_intensity": 0.0,
       "universal_appeal": 0.0
@@ -20006,14 +20006,14 @@
       }
     },
     "cluster": "Trainer \u00b7 Special Illustration Rare",
-    "expected_price": 24.4271,
-    "residual_pct": 0.109013,
+    "expected_price": 24.3811,
+    "residual_pct": 0.111108,
     "contributions": {
-      "char_premium": -0.006491,
-      "scarcity": 0.001324,
-      "pull_cost": 0.579449,
-      "months_since_release": 0.001226,
-      "set_rank": -0.691886,
+      "char_premium": -0.006345,
+      "scarcity": 0.001484,
+      "pull_cost": 0.574984,
+      "months_since_release": 0.001386,
+      "set_rank": -0.689774,
       "demand_pressure": 0.0,
       "grading_intensity": 0.0,
       "universal_appeal": 0.0
@@ -20058,14 +20058,14 @@
       }
     },
     "cluster": "Trainer \u00b7 Special Illustration Rare",
-    "expected_price": 27.844,
-    "residual_pct": 0.036488,
+    "expected_price": 27.7813,
+    "residual_pct": 0.038827,
     "contributions": {
-      "char_premium": -0.008168,
-      "scarcity": 0.001324,
-      "pull_cost": 0.579449,
-      "months_since_release": 0.001226,
-      "set_rank": -0.559284,
+      "char_premium": -0.007985,
+      "scarcity": 0.001484,
+      "pull_cost": 0.574984,
+      "months_since_release": 0.001386,
+      "set_rank": -0.557577,
       "demand_pressure": 0.0,
       "grading_intensity": 0.0,
       "universal_appeal": 0.0
@@ -20110,14 +20110,14 @@
       }
     },
     "cluster": "Pok\u00e9mon \u00b7 Hyper Rare",
-    "expected_price": 71.5844,
-    "residual_pct": -0.013751,
+    "expected_price": 60.2561,
+    "residual_pct": 0.171665,
     "contributions": {
-      "char_premium": 1.148077,
-      "scarcity": -0.043656,
-      "pull_cost": 0.277571,
-      "months_since_release": -0.051146,
-      "set_rank": 0.343241,
+      "char_premium": 1.243367,
+      "scarcity": 0.02165,
+      "pull_cost": 0.000556,
+      "months_since_release": -0.011472,
+      "set_rank": 0.247714,
       "demand_pressure": 0.0,
       "grading_intensity": 0.0,
       "universal_appeal": 0.0
@@ -30042,14 +30042,14 @@
       }
     },
     "cluster": "Energy \u00b7 ACE SPEC Rare",
-    "expected_price": 2.7284,
-    "residual_pct": 0.638338,
+    "expected_price": 2.7368,
+    "residual_pct": 0.633286,
     "contributions": {
-      "char_premium": -0.083104,
-      "scarcity": 0.34522,
-      "pull_cost": -0.109537,
-      "months_since_release": -0.000336,
-      "set_rank": 1.075871,
+      "char_premium": -0.084182,
+      "scarcity": 0.343183,
+      "pull_cost": -0.108919,
+      "months_since_release": -0.000352,
+      "set_rank": 1.081472,
       "demand_pressure": 0.0,
       "grading_intensity": 0.0,
       "universal_appeal": 0.0
@@ -32367,7 +32367,7 @@
       "demand_pressure": 0.0,
       "grading_intensity": 5.0,
       "universal_appeal": 5.0,
-      "pull_cost": 4194.9152542372885
+      "pull_cost": 4256.965944272446
     },
     "iq_score": 71.43,
     "dynamics": {
@@ -32382,14 +32382,14 @@
       }
     },
     "cluster": "Pok\u00e9mon \u00b7 Special Illustration Rare",
-    "expected_price": 51.6789,
-    "residual_pct": -0.296038,
+    "expected_price": 51.8246,
+    "residual_pct": -0.298017,
     "contributions": {
-      "char_premium": -0.653362,
-      "scarcity": -0.005716,
-      "pull_cost": -0.255838,
-      "months_since_release": -0.002933,
-      "set_rank": 0.301804,
+      "char_premium": -0.654224,
+      "scarcity": -0.005668,
+      "pull_cost": -0.251206,
+      "months_since_release": -0.003397,
+      "set_rank": 0.301263,
       "demand_pressure": 0.0,
       "grading_intensity": 0.0,
       "universal_appeal": 0.0
@@ -32419,7 +32419,7 @@
       "demand_pressure": 0.0,
       "grading_intensity": 5.0,
       "universal_appeal": 5.0,
-      "pull_cost": 4194.9152542372885
+      "pull_cost": 4256.965944272446
     },
     "iq_score": 80.43,
     "dynamics": {
@@ -32434,14 +32434,14 @@
       }
     },
     "cluster": "Pok\u00e9mon \u00b7 Special Illustration Rare",
-    "expected_price": 162.7189,
-    "residual_pct": -0.121737,
+    "expected_price": 163.3158,
+    "residual_pct": -0.124947,
     "contributions": {
-      "char_premium": 0.279826,
-      "scarcity": -0.005716,
-      "pull_cost": -0.255838,
-      "months_since_release": -0.002933,
-      "set_rank": 0.515589,
+      "char_premium": 0.280195,
+      "scarcity": -0.005668,
+      "pull_cost": -0.251206,
+      "months_since_release": -0.003397,
+      "set_rank": 0.514665,
       "demand_pressure": 0.0,
       "grading_intensity": 0.0,
       "universal_appeal": 0.0
@@ -32471,7 +32471,7 @@
       "demand_pressure": 0.0,
       "grading_intensity": 5.0,
       "universal_appeal": 5.0,
-      "pull_cost": 4194.9152542372885
+      "pull_cost": 4256.965944272446
     },
     "iq_score": 89.06,
     "dynamics": {
@@ -32486,14 +32486,14 @@
       }
     },
     "cluster": "Pok\u00e9mon \u00b7 Special Illustration Rare",
-    "expected_price": 451.1746,
-    "residual_pct": -0.205718,
+    "expected_price": 453.2893,
+    "residual_pct": -0.209423,
     "contributions": {
-      "char_premium": 1.193436,
-      "scarcity": -0.005716,
-      "pull_cost": -0.255838,
-      "months_since_release": -0.002933,
-      "set_rank": 0.621809,
+      "char_premium": 1.19501,
+      "scarcity": -0.005668,
+      "pull_cost": -0.251206,
+      "months_since_release": -0.003397,
+      "set_rank": 0.620695,
       "demand_pressure": 0.0,
       "grading_intensity": 0.0,
       "universal_appeal": 0.0
@@ -32523,7 +32523,7 @@
       "demand_pressure": 0.0,
       "grading_intensity": 5.0,
       "universal_appeal": 5.0,
-      "pull_cost": 4194.9152542372885
+      "pull_cost": 4256.965944272446
     },
     "iq_score": 78.74,
     "dynamics": {
@@ -32538,14 +32538,14 @@
       }
     },
     "cluster": "Pok\u00e9mon \u00b7 Special Illustration Rare",
-    "expected_price": 141.2822,
-    "residual_pct": 0.376323,
+    "expected_price": 141.7509,
+    "residual_pct": 0.371772,
     "contributions": {
-      "char_premium": 0.086123,
-      "scarcity": -0.005716,
-      "pull_cost": -0.255838,
-      "months_since_release": -0.002933,
-      "set_rank": 0.568027,
+      "char_premium": 0.086237,
+      "scarcity": -0.005668,
+      "pull_cost": -0.251206,
+      "months_since_release": -0.003397,
+      "set_rank": 0.567009,
       "demand_pressure": 0.0,
       "grading_intensity": 0.0,
       "universal_appeal": 0.0
@@ -32575,7 +32575,7 @@
       "demand_pressure": 0.0,
       "grading_intensity": 5.0,
       "universal_appeal": 5.0,
-      "pull_cost": 4194.9152542372885
+      "pull_cost": 4256.965944272446
     },
     "iq_score": 81.52,
     "dynamics": {
@@ -32590,14 +32590,14 @@
       }
     },
     "cluster": "Pok\u00e9mon \u00b7 Special Illustration Rare",
-    "expected_price": 168.0407,
-    "residual_pct": -0.74167,
+    "expected_price": 168.7208,
+    "residual_pct": -0.742711,
     "contributions": {
-      "char_premium": 0.419573,
-      "scarcity": -0.005716,
-      "pull_cost": -0.255838,
-      "months_since_release": -0.002933,
-      "set_rank": 0.408024,
+      "char_premium": 0.420126,
+      "scarcity": -0.005668,
+      "pull_cost": -0.251206,
+      "months_since_release": -0.003397,
+      "set_rank": 0.407293,
       "demand_pressure": 0.0,
       "grading_intensity": 0.0,
       "universal_appeal": 0.0
@@ -32627,7 +32627,7 @@
       "demand_pressure": 0.0,
       "grading_intensity": 5.0,
       "universal_appeal": 5.0,
-      "pull_cost": 4194.9152542372885
+      "pull_cost": 4256.965944272446
     },
     "iq_score": 72.72,
     "dynamics": {
@@ -32642,14 +32642,14 @@
       }
     },
     "cluster": "Pok\u00e9mon \u00b7 Special Illustration Rare",
-    "expected_price": 46.0441,
-    "residual_pct": -0.700287,
+    "expected_price": 46.2128,
+    "residual_pct": -0.701382,
     "contributions": {
-      "char_premium": -0.448808,
-      "scarcity": -0.005716,
-      "pull_cost": -0.255838,
-      "months_since_release": -0.002933,
-      "set_rank": -0.018202,
+      "char_premium": -0.4494,
+      "scarcity": -0.005668,
+      "pull_cost": -0.251206,
+      "months_since_release": -0.003397,
+      "set_rank": -0.01817,
       "demand_pressure": 0.0,
       "grading_intensity": 0.0,
       "universal_appeal": 0.0
@@ -32679,7 +32679,7 @@
       "demand_pressure": 0.0,
       "grading_intensity": 5.0,
       "universal_appeal": 5.0,
-      "pull_cost": 4194.9152542372885
+      "pull_cost": 4256.965944272446
     },
     "iq_score": 72.21,
     "dynamics": {
@@ -32694,14 +32694,14 @@
       }
     },
     "cluster": "Pok\u00e9mon \u00b7 Special Illustration Rare",
-    "expected_price": 51.7056,
-    "residual_pct": -0.338756,
+    "expected_price": 51.8685,
+    "residual_pct": -0.340833,
     "contributions": {
-      "char_premium": -0.546627,
-      "scarcity": -0.005716,
-      "pull_cost": -0.255838,
-      "months_since_release": -0.002933,
-      "set_rank": 0.195583,
+      "char_premium": -0.547348,
+      "scarcity": -0.005668,
+      "pull_cost": -0.251206,
+      "months_since_release": -0.003397,
+      "set_rank": 0.195233,
       "demand_pressure": 0.0,
       "grading_intensity": 0.0,
       "universal_appeal": 0.0
@@ -32731,7 +32731,7 @@
       "demand_pressure": 0.0,
       "grading_intensity": 5.0,
       "universal_appeal": 5.0,
-      "pull_cost": 4194.9152542372885
+      "pull_cost": 4256.965944272446
     },
     "iq_score": 68.31,
     "dynamics": {
@@ -32746,14 +32746,14 @@
       }
     },
     "cluster": "Trainer \u00b7 Special Illustration Rare",
-    "expected_price": 21.5186,
-    "residual_pct": -0.57711,
+    "expected_price": 21.6012,
+    "residual_pct": -0.578727,
     "contributions": {
-      "char_premium": 0.006934,
-      "scarcity": 8.8e-05,
-      "pull_cost": -0.080417,
-      "months_since_release": 8.2e-05,
-      "set_rank": -0.16984,
+      "char_premium": 0.006778,
+      "scarcity": 9.9e-05,
+      "pull_cost": -0.07697,
+      "months_since_release": 9.2e-05,
+      "set_rank": -0.169321,
       "demand_pressure": 0.0,
       "grading_intensity": 0.0,
       "universal_appeal": 0.0
@@ -32783,7 +32783,7 @@
       "demand_pressure": 0.0,
       "grading_intensity": 5.0,
       "universal_appeal": 5.0,
-      "pull_cost": 4194.9152542372885
+      "pull_cost": 4256.965944272446
     },
     "iq_score": 71.37,
     "dynamics": {
@@ -32798,14 +32798,14 @@
       }
     },
     "cluster": "Trainer \u00b7 Special Illustration Rare",
-    "expected_price": 20.2374,
-    "residual_pct": -0.560714,
+    "expected_price": 20.3243,
+    "residual_pct": -0.562592,
     "contributions": {
-      "char_premium": -0.006667,
-      "scarcity": 8.8e-05,
-      "pull_cost": -0.080417,
-      "months_since_release": 8.2e-05,
-      "set_rank": -0.217625,
+      "char_premium": -0.006518,
+      "scarcity": 9.9e-05,
+      "pull_cost": -0.07697,
+      "months_since_release": 9.2e-05,
+      "set_rank": -0.21696,
       "demand_pressure": 0.0,
       "grading_intensity": 0.0,
       "universal_appeal": 0.0
@@ -32835,7 +32835,7 @@
       "demand_pressure": 0.0,
       "grading_intensity": 5.0,
       "universal_appeal": 5.0,
-      "pull_cost": 4194.9152542372885
+      "pull_cost": 4256.965944272446
     },
     "iq_score": 70.52,
     "dynamics": {
@@ -32850,14 +32850,14 @@
       }
     },
     "cluster": "Trainer \u00b7 Special Illustration Rare",
-    "expected_price": 39.6532,
-    "residual_pct": -0.397778,
+    "expected_price": 39.7342,
+    "residual_pct": -0.399007,
     "contributions": {
-      "char_premium": 0.002961,
-      "scarcity": 8.8e-05,
-      "pull_cost": -0.080417,
-      "months_since_release": 8.2e-05,
-      "set_rank": 0.445386,
+      "char_premium": 0.002894,
+      "scarcity": 9.9e-05,
+      "pull_cost": -0.07697,
+      "months_since_release": 9.2e-05,
+      "set_rank": 0.444027,
       "demand_pressure": 0.0,
       "grading_intensity": 0.0,
       "universal_appeal": 0.0
@@ -32887,7 +32887,7 @@
       "demand_pressure": 0.0,
       "grading_intensity": 5.0,
       "universal_appeal": 5.0,
-      "pull_cost": 4194.9152542372885
+      "pull_cost": 4256.965944272446
     },
     "iq_score": 71.11,
     "dynamics": {
@@ -32902,14 +32902,14 @@
       }
     },
     "cluster": "Trainer \u00b7 Special Illustration Rare",
-    "expected_price": 43.5566,
-    "residual_pct": -0.247875,
+    "expected_price": 43.6345,
+    "residual_pct": -0.249219,
     "contributions": {
-      "char_premium": 0.001281,
-      "scarcity": 8.8e-05,
-      "pull_cost": -0.080417,
-      "months_since_release": 8.2e-05,
-      "set_rank": 0.540955,
+      "char_premium": 0.001253,
+      "scarcity": 9.9e-05,
+      "pull_cost": -0.07697,
+      "months_since_release": 9.2e-05,
+      "set_rank": 0.539304,
       "demand_pressure": 0.0,
       "grading_intensity": 0.0,
       "universal_appeal": 0.0
@@ -32939,7 +32939,7 @@
       "demand_pressure": 0.0,
       "grading_intensity": 5.0,
       "universal_appeal": 5.0,
-      "pull_cost": 1459.4594594594594
+      "pull_cost": 5076.1421319796955
     },
     "iq_score": 91.56,
     "dynamics": {
@@ -32954,14 +32954,14 @@
       }
     },
     "cluster": "Pok\u00e9mon \u00b7 Hyper Rare",
-    "expected_price": 85.8234,
-    "residual_pct": 0.111701,
+    "expected_price": 91.3305,
+    "residual_pct": 0.044668,
     "contributions": {
-      "char_premium": 1.148077,
-      "scarcity": -0.051409,
-      "pull_cost": -0.068899,
-      "months_since_release": -0.009963,
-      "set_rank": 0.837697,
+      "char_premium": 1.243367,
+      "scarcity": 0.025494,
+      "pull_cost": 0.046511,
+      "months_since_release": -0.002235,
+      "set_rank": 0.604558,
       "demand_pressure": 0.0,
       "grading_intensity": 0.0,
       "universal_appeal": 0.0
@@ -32991,7 +32991,7 @@
       "demand_pressure": 0.0,
       "grading_intensity": 5.0,
       "universal_appeal": 5.0,
-      "pull_cost": 1459.4594594594594
+      "pull_cost": 5076.1421319796955
     },
     "iq_score": 74.22,
     "dynamics": {
@@ -33006,14 +33006,14 @@
       }
     },
     "cluster": "Pok\u00e9mon \u00b7 Hyper Rare",
-    "expected_price": 13.9753,
-    "residual_pct": -0.222913,
+    "expected_price": 14.5552,
+    "residual_pct": -0.253874,
     "contributions": {
-      "char_premium": -0.309588,
-      "scarcity": -0.051409,
-      "pull_cost": -0.068899,
-      "months_since_release": -0.009963,
-      "set_rank": 0.480359,
+      "char_premium": -0.335283,
+      "scarcity": 0.025494,
+      "pull_cost": 0.046511,
+      "months_since_release": -0.002235,
+      "set_rank": 0.346671,
       "demand_pressure": 0.0,
       "grading_intensity": 0.0,
       "universal_appeal": 0.0
@@ -33043,7 +33043,7 @@
       "demand_pressure": 0.0,
       "grading_intensity": 5.0,
       "universal_appeal": 5.0,
-      "pull_cost": 1459.4594594594594
+      "pull_cost": 5076.1421319796955
     },
     "iq_score": 69.79,
     "dynamics": {
@@ -33058,14 +33058,14 @@
       }
     },
     "cluster": "Trainer \u00b7 Hyper Rare",
-    "expected_price": 17.2521,
-    "residual_pct": -0.776259,
+    "expected_price": 31.9194,
+    "residual_pct": -0.879071,
     "contributions": {
-      "char_premium": 0.00983,
-      "scarcity": 1.960461,
-      "pull_cost": 0.077134,
-      "months_since_release": -0.000336,
-      "set_rank": 1.025251,
+      "char_premium": 0.009957,
+      "scarcity": 1.948892,
+      "pull_cost": 0.698536,
+      "months_since_release": -0.000352,
+      "set_rank": 1.030589,
       "demand_pressure": 0.0,
       "grading_intensity": 0.0,
       "universal_appeal": 0.0
@@ -33095,7 +33095,7 @@
       "demand_pressure": 0.0,
       "grading_intensity": 5.0,
       "universal_appeal": 5.0,
-      "pull_cost": 1459.4594594594594
+      "pull_cost": 5076.1421319796955
     },
     "iq_score": 70.66,
     "dynamics": {
@@ -33110,14 +33110,14 @@
       }
     },
     "cluster": "Trainer \u00b7 Hyper Rare",
-    "expected_price": 22.8512,
-    "residual_pct": -0.547508,
+    "expected_price": 42.3335,
+    "residual_pct": -0.755749,
     "contributions": {
-      "char_premium": -0.012499,
-      "scarcity": 1.960461,
-      "pull_cost": 0.077134,
-      "months_since_release": -0.000336,
-      "set_rank": 1.328652,
+      "char_premium": -0.012661,
+      "scarcity": 1.948892,
+      "pull_cost": 0.698536,
+      "months_since_release": -0.000352,
+      "set_rank": 1.33557,
       "demand_pressure": 0.0,
       "grading_intensity": 0.0,
       "universal_appeal": 0.0
@@ -33147,7 +33147,7 @@
       "demand_pressure": 0.0,
       "grading_intensity": 5.0,
       "universal_appeal": 5.0,
-      "pull_cost": 1459.4594594594594
+      "pull_cost": 5076.1421319796955
     },
     "iq_score": 73.99,
     "dynamics": {
@@ -33162,14 +33162,14 @@
       }
     },
     "cluster": "Trainer \u00b7 Hyper Rare",
-    "expected_price": 23.4632,
-    "residual_pct": -0.56485,
+    "expected_price": 43.4907,
+    "residual_pct": -0.765237,
     "contributions": {
-      "char_premium": 0.039398,
-      "scarcity": 1.960461,
-      "pull_cost": 0.077134,
-      "months_since_release": -0.000336,
-      "set_rank": 1.303183,
+      "char_premium": 0.039909,
+      "scarcity": 1.948892,
+      "pull_cost": 0.698536,
+      "months_since_release": -0.000352,
+      "set_rank": 1.309968,
       "demand_pressure": 0.0,
       "grading_intensity": 0.0,
       "universal_appeal": 0.0
@@ -33199,7 +33199,7 @@
       "demand_pressure": 0.0,
       "grading_intensity": 5.0,
       "universal_appeal": 5.0,
-      "pull_cost": 1459.4594594594594
+      "pull_cost": 5076.1421319796955
     },
     "iq_score": 66.88,
     "dynamics": {
@@ -33214,14 +33214,14 @@
       }
     },
     "cluster": "Energy \u00b7 Hyper Rare",
-    "expected_price": 18.0756,
-    "residual_pct": -0.707893,
+    "expected_price": 33.437,
+    "residual_pct": -0.842091,
     "contributions": {
-      "char_premium": -0.044781,
-      "scarcity": 1.960461,
-      "pull_cost": 0.077134,
-      "months_since_release": -0.000336,
-      "set_rank": 1.126491,
+      "char_premium": -0.045362,
+      "scarcity": 1.948892,
+      "pull_cost": 0.698536,
+      "months_since_release": -0.000352,
+      "set_rank": 1.132356,
       "demand_pressure": 0.0,
       "grading_intensity": 0.0,
       "universal_appeal": 0.0
@@ -36334,14 +36334,14 @@
       }
     },
     "cluster": "Trainer \u00b7 Rare",
-    "expected_price": 0.1309,
-    "residual_pct": -0.006566,
+    "expected_price": 0.13,
+    "residual_pct": -0.000159,
     "contributions": {
-      "char_premium": -0.085818,
-      "scarcity": -0.011903,
-      "pull_cost": -0.171001,
-      "months_since_release": -0.017253,
-      "set_rank": -1.523252,
+      "char_premium": -0.086931,
+      "scarcity": -0.011832,
+      "pull_cost": -0.167662,
+      "months_since_release": -0.018046,
+      "set_rank": -1.531183,
       "demand_pressure": 0.0,
       "grading_intensity": 0.0,
       "universal_appeal": 0.0
@@ -36386,14 +36386,14 @@
       }
     },
     "cluster": "Trainer \u00b7 Rare",
-    "expected_price": 0.1861,
-    "residual_pct": -0.086465,
+    "expected_price": 0.1852,
+    "residual_pct": -0.082258,
     "contributions": {
-      "char_premium": -0.085818,
-      "scarcity": -0.011903,
-      "pull_cost": -0.171001,
-      "months_since_release": -0.017253,
-      "set_rank": -1.171142,
+      "char_premium": -0.086931,
+      "scarcity": -0.011832,
+      "pull_cost": -0.167662,
+      "months_since_release": -0.018046,
+      "set_rank": -1.17724,
       "demand_pressure": 0.0,
       "grading_intensity": 0.0,
       "universal_appeal": 0.0
@@ -44134,14 +44134,14 @@
       }
     },
     "cluster": "Pok\u00e9mon \u00b7 Special Illustration Rare",
-    "expected_price": 326.8564,
-    "residual_pct": 2.120973,
+    "expected_price": 326.3,
+    "residual_pct": 2.126295,
     "contributions": {
-      "char_premium": 1.003717,
-      "scarcity": -0.014553,
-      "pull_cost": -0.372122,
-      "months_since_release": -0.010427,
-      "set_rank": 0.621809,
+      "char_premium": 1.005041,
+      "scarcity": -0.01443,
+      "pull_cost": -0.372507,
+      "months_since_release": -0.012078,
+      "set_rank": 0.620695,
       "demand_pressure": 0.0,
       "grading_intensity": 0.0,
       "universal_appeal": 0.0
@@ -44186,14 +44186,14 @@
       }
     },
     "cluster": "Trainer \u00b7 Special Illustration Rare",
-    "expected_price": 6.3252,
-    "residual_pct": 0.203127,
+    "expected_price": 6.3373,
+    "residual_pct": 0.200836,
     "contributions": {
-      "char_premium": 0.008613,
-      "scarcity": -0.004981,
-      "pull_cost": -0.182141,
-      "months_since_release": -0.00461,
-      "set_rank": -1.284415,
+      "char_premium": 0.00842,
+      "scarcity": -0.005583,
+      "pull_cost": -0.182759,
+      "months_since_release": -0.005211,
+      "set_rank": -1.280494,
       "demand_pressure": 0.0,
       "grading_intensity": 0.0,
       "universal_appeal": 0.0
@@ -44602,14 +44602,14 @@
       }
     },
     "cluster": "Trainer \u00b7 Special Illustration Rare",
-    "expected_price": 9.4557,
-    "residual_pct": 0.067081,
+    "expected_price": 9.4602,
+    "residual_pct": 0.066569,
     "contributions": {
-      "char_premium": 0.018859,
-      "scarcity": -0.004981,
-      "pull_cost": -0.182141,
-      "months_since_release": -0.00461,
-      "set_rank": -0.892581,
+      "char_premium": 0.018436,
+      "scarcity": -0.005583,
+      "pull_cost": -0.182759,
+      "months_since_release": -0.005211,
+      "set_rank": -0.889857,
       "demand_pressure": 0.0,
       "grading_intensity": 0.0,
       "universal_appeal": 0.0
@@ -44654,14 +44654,14 @@
       }
     },
     "cluster": "Pok\u00e9mon \u00b7 Hyper Rare",
-    "expected_price": 16.596,
-    "residual_pct": -0.023864,
+    "expected_price": 13.5287,
+    "residual_pct": 0.197453,
     "contributions": {
-      "char_premium": -0.251865,
-      "scarcity": -0.08319,
-      "pull_cost": 0.093087,
-      "months_since_release": 0.158885,
-      "set_rank": 0.295458,
+      "char_premium": -0.272769,
+      "scarcity": 0.041255,
+      "pull_cost": -0.009327,
+      "months_since_release": 0.035637,
+      "set_rank": 0.213229,
       "demand_pressure": 0.0,
       "grading_intensity": 0.0,
       "universal_appeal": 0.0
@@ -45122,14 +45122,14 @@
       }
     },
     "cluster": "Pok\u00e9mon \u00b7 Special Illustration Rare",
-    "expected_price": 223.1271,
-    "residual_pct": -0.15649,
+    "expected_price": 222.7115,
+    "residual_pct": -0.154916,
     "contributions": {
-      "char_premium": 0.732192,
-      "scarcity": -0.014553,
-      "pull_cost": -0.372122,
-      "months_since_release": -0.010427,
-      "set_rank": 0.511555,
+      "char_premium": 0.733157,
+      "scarcity": -0.01443,
+      "pull_cost": -0.372507,
+      "months_since_release": -0.012078,
+      "set_rank": 0.510638,
       "demand_pressure": 0.0,
       "grading_intensity": 0.0,
       "universal_appeal": 0.0
@@ -45174,14 +45174,14 @@
       }
     },
     "cluster": "Trainer \u00b7 Special Illustration Rare",
-    "expected_price": 31.6044,
-    "residual_pct": -0.049184,
+    "expected_price": 31.5135,
+    "residual_pct": -0.04644,
     "contributions": {
-      "char_premium": 0.002254,
-      "scarcity": -0.004981,
-      "pull_cost": -0.182141,
-      "months_since_release": -0.00461,
-      "set_rank": 0.330703,
+      "char_premium": 0.002203,
+      "scarcity": -0.005583,
+      "pull_cost": -0.182759,
+      "months_since_release": -0.005211,
+      "set_rank": 0.329694,
       "demand_pressure": 0.0,
       "grading_intensity": 0.0,
       "universal_appeal": 0.0
@@ -45226,14 +45226,14 @@
       }
     },
     "cluster": "Pok\u00e9mon \u00b7 Hyper Rare",
-    "expected_price": 11.9336,
-    "residual_pct": -0.012873,
+    "expected_price": 10.4853,
+    "residual_pct": 0.12348,
     "contributions": {
-      "char_premium": -0.298431,
-      "scarcity": -0.08319,
-      "pull_cost": 0.093087,
-      "months_since_release": 0.158885,
-      "set_rank": 0.01222,
+      "char_premium": -0.3232,
+      "scarcity": 0.041255,
+      "pull_cost": -0.009327,
+      "months_since_release": 0.035637,
+      "set_rank": 0.008819,
       "demand_pressure": 0.0,
       "grading_intensity": 0.0,
       "universal_appeal": 0.0
@@ -45278,14 +45278,14 @@
       }
     },
     "cluster": "Pok\u00e9mon \u00b7 Hyper Rare",
-    "expected_price": 5.0042,
-    "residual_pct": 0.314904,
+    "expected_price": 5.1794,
+    "residual_pct": 0.270405,
     "contributions": {
-      "char_premium": -0.514479,
-      "scarcity": -0.08319,
-      "pull_cost": 0.093087,
-      "months_since_release": 0.158885,
-      "set_rank": -0.640821,
+      "char_premium": -0.55718,
+      "scarcity": 0.041255,
+      "pull_cost": -0.009327,
+      "months_since_release": 0.035637,
+      "set_rank": -0.462475,
       "demand_pressure": 0.0,
       "grading_intensity": 0.0,
       "universal_appeal": 0.0
@@ -45694,14 +45694,14 @@
       }
     },
     "cluster": "Pok\u00e9mon \u00b7 Special Illustration Rare",
-    "expected_price": 373.9465,
-    "residual_pct": -0.10193,
+    "expected_price": 373.4402,
+    "residual_pct": -0.100713,
     "contributions": {
-      "char_premium": 1.193436,
-      "scarcity": -0.014553,
-      "pull_cost": -0.372122,
-      "months_since_release": -0.010427,
-      "set_rank": 0.566682,
+      "char_premium": 1.19501,
+      "scarcity": -0.01443,
+      "pull_cost": -0.372507,
+      "months_since_release": -0.012078,
+      "set_rank": 0.565666,
       "demand_pressure": 0.0,
       "grading_intensity": 0.0,
       "universal_appeal": 0.0
@@ -45746,14 +45746,14 @@
       }
     },
     "cluster": "Trainer \u00b7 Special Illustration Rare",
-    "expected_price": 35.0856,
-    "residual_pct": -0.103907,
+    "expected_price": 34.9691,
+    "residual_pct": -0.10092,
     "contributions": {
-      "char_premium": 0.00879,
-      "scarcity": -0.004981,
-      "pull_cost": -0.182141,
-      "months_since_release": -0.00461,
-      "set_rank": 0.428662,
+      "char_premium": 0.008592,
+      "scarcity": -0.005583,
+      "pull_cost": -0.182759,
+      "months_since_release": -0.005211,
+      "set_rank": 0.427353,
       "demand_pressure": 0.0,
       "grading_intensity": 0.0,
       "universal_appeal": 0.0
@@ -45798,14 +45798,14 @@
       }
     },
     "cluster": "Trainer \u00b7 Special Illustration Rare",
-    "expected_price": 23.9049,
-    "residual_pct": -0.191798,
+    "expected_price": 23.8497,
+    "residual_pct": -0.189926,
     "contributions": {
-      "char_premium": 0.016916,
-      "scarcity": -0.004981,
-      "pull_cost": -0.182141,
-      "months_since_release": -0.00461,
-      "set_rank": 0.036828,
+      "char_premium": 0.016536,
+      "scarcity": -0.005583,
+      "pull_cost": -0.182759,
+      "months_since_release": -0.005211,
+      "set_rank": 0.036716,
       "demand_pressure": 0.0,
       "grading_intensity": 0.0,
       "universal_appeal": 0.0
@@ -45850,14 +45850,14 @@
       }
     },
     "cluster": "Pok\u00e9mon \u00b7 Hyper Rare",
-    "expected_price": 6.7471,
-    "residual_pct": 0.13086,
+    "expected_price": 6.4608,
+    "residual_pct": 0.180967,
     "contributions": {
-      "char_premium": -0.499571,
-      "scarcity": -0.08319,
-      "pull_cost": 0.093087,
-      "months_since_release": 0.158885,
-      "set_rank": -0.356891,
+      "char_premium": -0.541035,
+      "scarcity": 0.041255,
+      "pull_cost": -0.009327,
+      "months_since_release": 0.035637,
+      "set_rank": -0.257565,
       "demand_pressure": 0.0,
       "grading_intensity": 0.0,
       "universal_appeal": 0.0
@@ -45902,14 +45902,14 @@
       }
     },
     "cluster": "Pok\u00e9mon \u00b7 Hyper Rare",
-    "expected_price": 11.6668,
-    "residual_pct": 0.073133,
+    "expected_price": 9.7225,
+    "residual_pct": 0.287741,
     "contributions": {
-      "char_premium": -0.462318,
-      "scarcity": -0.08319,
-      "pull_cost": 0.093087,
-      "months_since_release": 0.158885,
-      "set_rank": 0.153492,
+      "char_premium": -0.50069,
+      "scarcity": 0.041255,
+      "pull_cost": -0.009327,
+      "months_since_release": 0.035637,
+      "set_rank": 0.110774,
       "demand_pressure": 0.0,
       "grading_intensity": 0.0,
       "universal_appeal": 0.0
@@ -45954,14 +45954,14 @@
       }
     },
     "cluster": "Pok\u00e9mon \u00b7 Hyper Rare",
-    "expected_price": 14.5682,
-    "residual_pct": -0.110391,
+    "expected_price": 12.24,
+    "residual_pct": 0.058824,
     "contributions": {
-      "char_premium": -0.268616,
-      "scarcity": -0.08319,
-      "pull_cost": 0.093087,
-      "months_since_release": 0.158885,
-      "set_rank": 0.181886,
+      "char_premium": -0.29091,
+      "scarcity": 0.041255,
+      "pull_cost": -0.009327,
+      "months_since_release": 0.035637,
+      "set_rank": 0.131265,
       "demand_pressure": 0.0,
       "grading_intensity": 0.0,
       "universal_appeal": 0.0
@@ -50634,14 +50634,14 @@
       }
     },
     "cluster": "Pok\u00e9mon \u00b7 Special Illustration Rare",
-    "expected_price": 8.6578,
-    "residual_pct": 1.545675,
+    "expected_price": 8.6688,
+    "residual_pct": 1.542464,
     "contributions": {
-      "char_premium": -0.382103,
-      "scarcity": -0.008734,
-      "pull_cost": -0.455302,
-      "months_since_release": -0.005492,
-      "set_rank": -1.551003,
+      "char_premium": -0.382606,
+      "scarcity": -0.00866,
+      "pull_cost": -0.455521,
+      "months_since_release": -0.006361,
+      "set_rank": -1.548222,
       "demand_pressure": 0.0,
       "grading_intensity": 0.0,
       "universal_appeal": 0.0
@@ -50686,14 +50686,14 @@
       }
     },
     "cluster": "Pok\u00e9mon \u00b7 Special Illustration Rare",
-    "expected_price": 5.851,
-    "residual_pct": 2.290019,
+    "expected_price": 5.8628,
+    "residual_pct": 2.283403,
     "contributions": {
-      "char_premium": -0.366546,
-      "scarcity": -0.008734,
-      "pull_cost": -0.455302,
-      "months_since_release": -0.005492,
-      "set_rank": -1.958405,
+      "char_premium": -0.367029,
+      "scarcity": -0.00866,
+      "pull_cost": -0.455521,
+      "months_since_release": -0.006361,
+      "set_rank": -1.954894,
       "demand_pressure": 0.0,
       "grading_intensity": 0.0,
       "universal_appeal": 0.0
@@ -50738,14 +50738,14 @@
       }
     },
     "cluster": "Pok\u00e9mon \u00b7 Special Illustration Rare",
-    "expected_price": 35.3529,
-    "residual_pct": 0.298903,
+    "expected_price": 35.3138,
+    "residual_pct": 0.300343,
     "contributions": {
-      "char_premium": -0.333193,
-      "scarcity": -0.008734,
-      "pull_cost": -0.455302,
-      "months_since_release": -0.005492,
-      "set_rank": -0.192995,
+      "char_premium": -0.333632,
+      "scarcity": -0.00866,
+      "pull_cost": -0.455521,
+      "months_since_release": -0.006361,
+      "set_rank": -0.192649,
       "demand_pressure": 0.0,
       "grading_intensity": 0.0,
       "universal_appeal": 0.0
@@ -50790,14 +50790,14 @@
       }
     },
     "cluster": "Pok\u00e9mon \u00b7 Special Illustration Rare",
-    "expected_price": 13.4829,
-    "residual_pct": 0.916508,
+    "expected_price": 13.4907,
+    "residual_pct": 0.9154,
     "contributions": {
-      "char_premium": -0.346549,
-      "scarcity": -0.008734,
-      "pull_cost": -0.455302,
-      "months_since_release": -0.005492,
-      "set_rank": -1.143601,
+      "char_premium": -0.347006,
+      "scarcity": -0.00866,
+      "pull_cost": -0.455521,
+      "months_since_release": -0.006361,
+      "set_rank": -1.141551,
       "demand_pressure": 0.0,
       "grading_intensity": 0.0,
       "universal_appeal": 0.0
@@ -50842,14 +50842,14 @@
       }
     },
     "cluster": "Trainer \u00b7 Special Illustration Rare",
-    "expected_price": 21.2511,
-    "residual_pct": 0.975898,
+    "expected_price": 21.2371,
+    "residual_pct": 0.977201,
     "contributions": {
-      "char_premium": 0.000222,
-      "scarcity": -0.001643,
-      "pull_cost": -0.254906,
-      "months_since_release": -0.00152,
-      "set_rank": 0.002184,
+      "char_premium": 0.000217,
+      "scarcity": -0.001842,
+      "pull_cost": -0.255157,
+      "months_since_release": -0.001718,
+      "set_rank": 0.002178,
       "demand_pressure": 0.0,
       "grading_intensity": 0.0,
       "universal_appeal": 0.0
@@ -50894,14 +50894,14 @@
       }
     },
     "cluster": "Pok\u00e9mon \u00b7 Hyper Rare",
-    "expected_price": 21.6494,
-    "residual_pct": 0.071626,
+    "expected_price": 11.2241,
+    "residual_pct": 1.066974,
     "contributions": {
-      "char_premium": -0.141981,
-      "scarcity": -0.062263,
-      "pull_cost": 0.763793,
-      "months_since_release": 0.047692,
-      "set_rank": -0.129053,
+      "char_premium": -0.153765,
+      "scarcity": 0.030877,
+      "pull_cost": 0.026605,
+      "months_since_release": 0.010697,
+      "set_rank": -0.093137,
       "demand_pressure": 0.0,
       "grading_intensity": 0.0,
       "universal_appeal": 0.0
@@ -50946,14 +50946,14 @@
       }
     },
     "cluster": "Trainer \u00b7 Hyper Rare",
-    "expected_price": 27.6984,
-    "residual_pct": -0.255192,
+    "expected_price": 26.7546,
+    "residual_pct": -0.228918,
     "contributions": {
-      "char_premium": 0.020088,
-      "scarcity": 2.022378,
-      "pull_cost": 0.532251,
-      "months_since_release": -0.006113,
-      "set_rank": 0.977178,
+      "char_premium": 0.020348,
+      "scarcity": 2.010444,
+      "pull_cost": 0.504449,
+      "months_since_release": -0.006394,
+      "set_rank": 0.982266,
       "demand_pressure": 0.0,
       "grading_intensity": 0.0,
       "universal_appeal": 0.0
@@ -50998,14 +50998,14 @@
       }
     },
     "cluster": "Trainer \u00b7 Hyper Rare",
-    "expected_price": 27.8793,
-    "residual_pct": -0.231329,
+    "expected_price": 26.9249,
+    "residual_pct": -0.204082,
     "contributions": {
-      "char_premium": -0.005557,
-      "scarcity": 2.022378,
-      "pull_cost": 0.532251,
-      "months_since_release": -0.006113,
-      "set_rank": 1.009333,
+      "char_premium": -0.005629,
+      "scarcity": 2.010444,
+      "pull_cost": 0.504449,
+      "months_since_release": -0.006394,
+      "set_rank": 1.014588,
       "demand_pressure": 0.0,
       "grading_intensity": 0.0,
       "universal_appeal": 0.0
@@ -51050,14 +51050,14 @@
       }
     },
     "cluster": "Energy \u00b7 Hyper Rare",
-    "expected_price": 45.951,
-    "residual_pct": 0.458291,
+    "expected_price": 44.4885,
+    "residual_pct": 0.506233,
     "contributions": {
-      "char_premium": -0.020342,
-      "scarcity": 2.022378,
-      "pull_cost": 0.532251,
-      "months_since_release": -0.006113,
-      "set_rank": 1.523809,
+      "char_premium": -0.020605,
+      "scarcity": 2.010444,
+      "pull_cost": 0.504449,
+      "months_since_release": -0.006394,
+      "set_rank": 1.531743,
       "demand_pressure": 0.0,
       "grading_intensity": 0.0,
       "universal_appeal": 0.0
@@ -51102,14 +51102,14 @@
       }
     },
     "cluster": "Energy \u00b7 Hyper Rare",
-    "expected_price": 35.4321,
-    "residual_pct": 0.044814,
+    "expected_price": 34.2573,
+    "residual_pct": 0.080647,
     "contributions": {
-      "char_premium": -0.02306,
-      "scarcity": 2.022378,
-      "pull_cost": 0.532251,
-      "months_since_release": -0.006113,
-      "set_rank": 1.266571,
+      "char_premium": -0.02336,
+      "scarcity": 2.010444,
+      "pull_cost": 0.504449,
+      "months_since_release": -0.006394,
+      "set_rank": 1.273165,
       "demand_pressure": 0.0,
       "grading_intensity": 0.0,
       "universal_appeal": 0.0
@@ -59771,7 +59771,7 @@
       "demand_pressure": 0.0,
       "grading_intensity": 5.0,
       "universal_appeal": 5.0,
-      "pull_cost": 2033.898305084746
+      "pull_cost": 2063.9834881320953
     },
     "iq_score": 73.72,
     "dynamics": {
@@ -59786,14 +59786,14 @@
       }
     },
     "cluster": "Pok\u00e9mon \u00b7 Special Illustration Rare",
-    "expected_price": 53.3824,
-    "residual_pct": -0.239076,
+    "expected_price": 53.4097,
+    "residual_pct": -0.239463,
     "contributions": {
-      "char_premium": -0.446607,
-      "scarcity": -0.007441,
-      "pull_cost": -0.439076,
-      "months_since_release": -0.004395,
-      "set_rank": 0.313905,
+      "char_premium": -0.447196,
+      "scarcity": -0.007378,
+      "pull_cost": -0.436782,
+      "months_since_release": -0.005091,
+      "set_rank": 0.313342,
       "demand_pressure": 0.0,
       "grading_intensity": 0.0,
       "universal_appeal": 0.0
@@ -59823,7 +59823,7 @@
       "demand_pressure": 0.0,
       "grading_intensity": 5.0,
       "universal_appeal": 5.0,
-      "pull_cost": 2033.898305084746
+      "pull_cost": 2063.9834881320953
     },
     "iq_score": 73.34,
     "dynamics": {
@@ -59838,14 +59838,14 @@
       }
     },
     "cluster": "Pok\u00e9mon \u00b7 Special Illustration Rare",
-    "expected_price": 48.1426,
-    "residual_pct": -0.512282,
+    "expected_price": 48.1721,
+    "residual_pct": -0.512581,
     "contributions": {
-      "char_premium": -0.473281,
-      "scarcity": -0.007441,
-      "pull_cost": -0.439076,
-      "months_since_release": -0.004395,
-      "set_rank": 0.237265,
+      "char_premium": -0.473906,
+      "scarcity": -0.007378,
+      "pull_cost": -0.436782,
+      "months_since_release": -0.005091,
+      "set_rank": 0.236839,
       "demand_pressure": 0.0,
       "grading_intensity": 0.0,
       "universal_appeal": 0.0
@@ -59875,7 +59875,7 @@
       "demand_pressure": 0.0,
       "grading_intensity": 5.0,
       "universal_appeal": 5.0,
-      "pull_cost": 2033.898305084746
+      "pull_cost": 2063.9834881320953
     },
     "iq_score": 74.5,
     "dynamics": {
@@ -59890,14 +59890,14 @@
       }
     },
     "cluster": "Pok\u00e9mon \u00b7 Special Illustration Rare",
-    "expected_price": 65.7259,
-    "residual_pct": 0.198157,
+    "expected_price": 65.7458,
+    "residual_pct": 0.197794,
     "contributions": {
-      "char_premium": -0.39322,
-      "scarcity": -0.007441,
-      "pull_cost": -0.439076,
-      "months_since_release": -0.004395,
-      "set_rank": 0.468529,
+      "char_premium": -0.393739,
+      "scarcity": -0.007378,
+      "pull_cost": -0.436782,
+      "months_since_release": -0.005091,
+      "set_rank": 0.467689,
       "demand_pressure": 0.0,
       "grading_intensity": 0.0,
       "universal_appeal": 0.0
@@ -59927,7 +59927,7 @@
       "demand_pressure": 0.0,
       "grading_intensity": 5.0,
       "universal_appeal": 5.0,
-      "pull_cost": 2033.898305084746
+      "pull_cost": 2063.9834881320953
     },
     "iq_score": 74.85,
     "dynamics": {
@@ -59942,14 +59942,14 @@
       }
     },
     "cluster": "Pok\u00e9mon \u00b7 Special Illustration Rare",
-    "expected_price": 64.2128,
-    "residual_pct": -0.024805,
+    "expected_price": 64.2456,
+    "residual_pct": -0.025303,
     "contributions": {
-      "char_premium": -0.339871,
-      "scarcity": -0.007441,
-      "pull_cost": -0.439076,
-      "months_since_release": -0.004395,
-      "set_rank": 0.391889,
+      "char_premium": -0.340319,
+      "scarcity": -0.007378,
+      "pull_cost": -0.436782,
+      "months_since_release": -0.005091,
+      "set_rank": 0.391187,
       "demand_pressure": 0.0,
       "grading_intensity": 0.0,
       "universal_appeal": 0.0
@@ -59979,7 +59979,7 @@
       "demand_pressure": 0.0,
       "grading_intensity": 5.0,
       "universal_appeal": 5.0,
-      "pull_cost": 2033.898305084746
+      "pull_cost": 2063.9834881320953
     },
     "iq_score": 72.28,
     "dynamics": {
@@ -59994,14 +59994,14 @@
       }
     },
     "cluster": "Trainer \u00b7 Special Illustration Rare",
-    "expected_price": 28.5162,
-    "residual_pct": -0.540963,
+    "expected_price": 28.5422,
+    "residual_pct": -0.54138,
     "contributions": {
-      "char_premium": -0.004459,
-      "scarcity": -0.000901,
-      "pull_cost": -0.240712,
-      "months_since_release": -0.000834,
-      "set_rank": 0.285308,
+      "char_premium": -0.004359,
+      "scarcity": -0.00101,
+      "pull_cost": -0.238814,
+      "months_since_release": -0.000942,
+      "set_rank": 0.284437,
       "demand_pressure": 0.0,
       "grading_intensity": 0.0,
       "universal_appeal": 0.0
@@ -60031,7 +60031,7 @@
       "demand_pressure": 0.0,
       "grading_intensity": 5.0,
       "universal_appeal": 5.0,
-      "pull_cost": 2033.898305084746
+      "pull_cost": 2063.9834881320953
     },
     "iq_score": 73.71,
     "dynamics": {
@@ -60046,14 +60046,14 @@
       }
     },
     "cluster": "Trainer \u00b7 Special Illustration Rare",
-    "expected_price": 37.3053,
-    "residual_pct": -0.435469,
+    "expected_price": 37.3113,
+    "residual_pct": -0.43556,
     "contributions": {
-      "char_premium": -0.008168,
-      "scarcity": -0.000901,
-      "pull_cost": -0.240712,
-      "months_since_release": -0.000834,
-      "set_rank": 0.55768,
+      "char_premium": -0.007985,
+      "scarcity": -0.00101,
+      "pull_cost": -0.238814,
+      "months_since_release": -0.000942,
+      "set_rank": 0.555977,
       "demand_pressure": 0.0,
       "grading_intensity": 0.0,
       "universal_appeal": 0.0
@@ -60083,7 +60083,7 @@
       "demand_pressure": 0.0,
       "grading_intensity": 5.0,
       "universal_appeal": 5.0,
-      "pull_cost": 648.6486486486486
+      "pull_cost": 1644.0608302507194
     },
     "iq_score": 76.22,
     "dynamics": {
@@ -60098,14 +60098,14 @@
       }
     },
     "cluster": "Pok\u00e9mon \u00b7 Hyper Rare",
-    "expected_price": 12.0911,
-    "residual_pct": -0.066253,
+    "expected_price": 15.8123,
+    "residual_pct": -0.286,
     "contributions": {
-      "char_premium": -0.136387,
-      "scarcity": -0.057612,
-      "pull_cost": -0.338875,
-      "months_since_release": 0.022984,
-      "set_rank": 0.405568,
+      "char_premium": -0.147707,
+      "scarcity": 0.02857,
+      "pull_cost": -0.014712,
+      "months_since_release": 0.005155,
+      "set_rank": 0.292695,
       "demand_pressure": 0.0,
       "grading_intensity": 0.0,
       "universal_appeal": 0.0
@@ -60135,7 +60135,7 @@
       "demand_pressure": 0.0,
       "grading_intensity": 5.0,
       "universal_appeal": 5.0,
-      "pull_cost": 648.6486486486486
+      "pull_cost": 1644.0608302507194
     },
     "iq_score": 74.03,
     "dynamics": {
@@ -60150,14 +60150,14 @@
       }
     },
     "cluster": "Trainer \u00b7 Hyper Rare",
-    "expected_price": 21.7938,
-    "residual_pct": -0.424606,
+    "expected_price": 25.7678,
+    "residual_pct": -0.513346,
     "contributions": {
-      "char_premium": 0.028538,
-      "scarcity": 1.995842,
-      "pull_cost": -0.070425,
-      "months_since_release": -0.003637,
-      "set_rank": 1.355713,
+      "char_premium": 0.028908,
+      "scarcity": 1.984065,
+      "pull_cost": 0.101593,
+      "months_since_release": -0.003805,
+      "set_rank": 1.362771,
       "demand_pressure": 0.0,
       "grading_intensity": 0.0,
       "universal_appeal": 0.0
@@ -60187,7 +60187,7 @@
       "demand_pressure": 0.0,
       "grading_intensity": 5.0,
       "universal_appeal": 5.0,
-      "pull_cost": 648.6486486486486
+      "pull_cost": 1644.0608302507194
     },
     "iq_score": 67.74,
     "dynamics": {
@@ -60202,14 +60202,14 @@
       }
     },
     "cluster": "Trainer \u00b7 Hyper Rare",
-    "expected_price": 17.1906,
-    "residual_pct": -0.705653,
+    "expected_price": 20.2885,
+    "residual_pct": -0.750598,
     "contributions": {
-      "char_premium": -0.045085,
-      "scarcity": 1.995842,
-      "pull_cost": -0.070425,
-      "months_since_release": -0.003637,
-      "set_rank": 1.192074,
+      "char_premium": -0.04567,
+      "scarcity": 1.984065,
+      "pull_cost": 0.101593,
+      "months_since_release": -0.003805,
+      "set_rank": 1.19828,
       "demand_pressure": 0.0,
       "grading_intensity": 0.0,
       "universal_appeal": 0.0
@@ -68834,14 +68834,14 @@
       }
     },
     "cluster": "Energy \u00b7 Uncommon",
-    "expected_price": 0.3504,
-    "residual_pct": -0.258067,
+    "expected_price": 0.3508,
+    "residual_pct": -0.258893,
     "contributions": {
-      "char_premium": -0.160646,
-      "scarcity": -0.356295,
-      "pull_cost": -0.148434,
-      "months_since_release": -0.010239,
-      "set_rank": -0.148557,
+      "char_premium": -0.16273,
+      "scarcity": -0.354193,
+      "pull_cost": -0.146094,
+      "months_since_release": -0.01071,
+      "set_rank": -0.14933,
       "demand_pressure": 0.0,
       "grading_intensity": 0.0,
       "universal_appeal": 0.0
@@ -68886,14 +68886,14 @@
       }
     },
     "cluster": "Energy \u00b7 ACE SPEC Rare",
-    "expected_price": 2.3635,
-    "residual_pct": 0.662758,
+    "expected_price": 2.3684,
+    "residual_pct": 0.659378,
     "contributions": {
-      "char_premium": -0.086421,
-      "scarcity": 0.451326,
-      "pull_cost": -0.135848,
-      "months_since_release": -0.010239,
-      "set_rank": 0.865751,
+      "char_premium": -0.087541,
+      "scarcity": 0.448662,
+      "pull_cost": -0.134066,
+      "months_since_release": -0.01071,
+      "set_rank": 0.870258,
       "demand_pressure": 0.0,
       "grading_intensity": 0.0,
       "universal_appeal": 0.0
@@ -71107,7 +71107,7 @@
       "demand_pressure": 0.0,
       "grading_intensity": 5.0,
       "universal_appeal": 5.0,
-      "pull_cost": 3728.813559322034
+      "pull_cost": 3783.9697282421744
     },
     "iq_score": 74.44,
     "dynamics": {
@@ -71122,14 +71122,14 @@
       }
     },
     "cluster": "Pok\u00e9mon \u00b7 Special Illustration Rare",
-    "expected_price": 48.6194,
-    "residual_pct": -0.403118,
+    "expected_price": 48.7409,
+    "residual_pct": -0.404607,
     "contributions": {
-      "char_premium": -0.391019,
-      "scarcity": -0.010888,
-      "pull_cost": -0.29536,
-      "months_since_release": -0.00732,
-      "set_rank": 0.027513,
+      "char_premium": -0.391535,
+      "scarcity": -0.010796,
+      "pull_cost": -0.291232,
+      "months_since_release": -0.008478,
+      "set_rank": 0.027464,
       "demand_pressure": 0.0,
       "grading_intensity": 0.0,
       "universal_appeal": 0.0
@@ -71159,7 +71159,7 @@
       "demand_pressure": 0.0,
       "grading_intensity": 5.0,
       "universal_appeal": 5.0,
-      "pull_cost": 3728.813559322034
+      "pull_cost": 3783.9697282421744
     },
     "iq_score": 72.63,
     "dynamics": {
@@ -71174,14 +71174,14 @@
       }
     },
     "cluster": "Pok\u00e9mon \u00b7 Special Illustration Rare",
-    "expected_price": 43.9139,
-    "residual_pct": -0.24352,
+    "expected_price": 44.0016,
+    "residual_pct": -0.245028,
     "contributions": {
-      "char_premium": -0.611131,
-      "scarcity": -0.010888,
-      "pull_cost": -0.29536,
-      "months_since_release": -0.00732,
-      "set_rank": 0.145834,
+      "char_premium": -0.611937,
+      "scarcity": -0.010796,
+      "pull_cost": -0.291232,
+      "months_since_release": -0.008478,
+      "set_rank": 0.145573,
       "demand_pressure": 0.0,
       "grading_intensity": 0.0,
       "universal_appeal": 0.0
@@ -71211,7 +71211,7 @@
       "demand_pressure": 0.0,
       "grading_intensity": 5.0,
       "universal_appeal": 5.0,
-      "pull_cost": 3728.813559322034
+      "pull_cost": 3783.9697282421744
     },
     "iq_score": 87.68,
     "dynamics": {
@@ -71226,14 +71226,14 @@
       }
     },
     "cluster": "Pok\u00e9mon \u00b7 Special Illustration Rare",
-    "expected_price": 328.2175,
-    "residual_pct": 0.220136,
+    "expected_price": 329.2583,
+    "residual_pct": 0.216279,
     "contributions": {
-      "char_premium": 0.924339,
-      "scarcity": -0.010888,
-      "pull_cost": -0.29536,
-      "months_since_release": -0.00732,
-      "set_rank": 0.621809,
+      "char_premium": 0.925558,
+      "scarcity": -0.010796,
+      "pull_cost": -0.291232,
+      "months_since_release": -0.008478,
+      "set_rank": 0.620695,
       "demand_pressure": 0.0,
       "grading_intensity": 0.0,
       "universal_appeal": 0.0
@@ -71263,7 +71263,7 @@
       "demand_pressure": 0.0,
       "grading_intensity": 5.0,
       "universal_appeal": 5.0,
-      "pull_cost": 3728.813559322034
+      "pull_cost": 3783.9697282421744
     },
     "iq_score": 72.75,
     "dynamics": {
@@ -71278,14 +71278,14 @@
       }
     },
     "cluster": "Pok\u00e9mon \u00b7 Special Illustration Rare",
-    "expected_price": 24.0013,
-    "residual_pct": -0.484612,
+    "expected_price": 24.088,
+    "residual_pct": -0.486466,
     "contributions": {
-      "char_premium": -0.44213,
-      "scarcity": -0.010888,
-      "pull_cost": -0.29536,
-      "months_since_release": -0.00732,
-      "set_rank": -0.627289,
+      "char_premium": -0.442713,
+      "scarcity": -0.010796,
+      "pull_cost": -0.291232,
+      "months_since_release": -0.008478,
+      "set_rank": -0.626164,
       "demand_pressure": 0.0,
       "grading_intensity": 0.0,
       "universal_appeal": 0.0
@@ -71315,7 +71315,7 @@
       "demand_pressure": 0.0,
       "grading_intensity": 5.0,
       "universal_appeal": 5.0,
-      "pull_cost": 3728.813559322034
+      "pull_cost": 3783.9697282421744
     },
     "iq_score": 73.61,
     "dynamics": {
@@ -71330,14 +71330,14 @@
       }
     },
     "cluster": "Pok\u00e9mon \u00b7 Special Illustration Rare",
-    "expected_price": 36.7377,
-    "residual_pct": -0.522561,
+    "expected_price": 36.8432,
+    "residual_pct": -0.523928,
     "contributions": {
-      "char_premium": -0.433251,
-      "scarcity": -0.010888,
-      "pull_cost": -0.29536,
-      "months_since_release": -0.00732,
-      "set_rank": -0.210475,
+      "char_premium": -0.433822,
+      "scarcity": -0.010796,
+      "pull_cost": -0.291232,
+      "months_since_release": -0.008478,
+      "set_rank": -0.210097,
       "demand_pressure": 0.0,
       "grading_intensity": 0.0,
       "universal_appeal": 0.0
@@ -71367,7 +71367,7 @@
       "demand_pressure": 0.0,
       "grading_intensity": 5.0,
       "universal_appeal": 5.0,
-      "pull_cost": 3728.813559322034
+      "pull_cost": 3783.9697282421744
     },
     "iq_score": 73.34,
     "dynamics": {
@@ -71382,14 +71382,14 @@
       }
     },
     "cluster": "Pok\u00e9mon \u00b7 Special Illustration Rare",
-    "expected_price": 32.4499,
-    "residual_pct": -0.505391,
+    "expected_price": 32.5499,
+    "residual_pct": -0.506911,
     "contributions": {
-      "char_premium": -0.43769,
-      "scarcity": -0.010888,
-      "pull_cost": -0.29536,
-      "months_since_release": -0.00732,
-      "set_rank": -0.330141,
+      "char_premium": -0.438267,
+      "scarcity": -0.010796,
+      "pull_cost": -0.291232,
+      "months_since_release": -0.008478,
+      "set_rank": -0.329549,
       "demand_pressure": 0.0,
       "grading_intensity": 0.0,
       "universal_appeal": 0.0
@@ -71419,7 +71419,7 @@
       "demand_pressure": 0.0,
       "grading_intensity": 5.0,
       "universal_appeal": 5.0,
-      "pull_cost": 3728.813559322034
+      "pull_cost": 3783.9697282421744
     },
     "iq_score": 75.49,
     "dynamics": {
@@ -71434,14 +71434,14 @@
       }
     },
     "cluster": "Pok\u00e9mon \u00b7 Special Illustration Rare",
-    "expected_price": 69.0285,
-    "residual_pct": -0.328248,
+    "expected_price": 69.1691,
+    "residual_pct": -0.329614,
     "contributions": {
-      "char_premium": -0.33767,
-      "scarcity": -0.010888,
-      "pull_cost": -0.29536,
-      "months_since_release": -0.00732,
-      "set_rank": 0.324661,
+      "char_premium": -0.338116,
+      "scarcity": -0.010796,
+      "pull_cost": -0.291232,
+      "months_since_release": -0.008478,
+      "set_rank": 0.324079,
       "demand_pressure": 0.0,
       "grading_intensity": 0.0,
       "universal_appeal": 0.0
@@ -71471,7 +71471,7 @@
       "demand_pressure": 0.0,
       "grading_intensity": 5.0,
       "universal_appeal": 5.0,
-      "pull_cost": 3728.813559322034
+      "pull_cost": 3783.9697282421744
     },
     "iq_score": 74.59,
     "dynamics": {
@@ -71486,14 +71486,14 @@
       }
     },
     "cluster": "Trainer \u00b7 Special Illustration Rare",
-    "expected_price": 43.8251,
-    "residual_pct": -0.215518,
+    "expected_price": 43.8595,
+    "residual_pct": -0.216133,
     "contributions": {
-      "char_premium": -0.008434,
-      "scarcity": -0.002879,
-      "pull_cost": -0.114991,
-      "months_since_release": -0.002664,
-      "set_rank": 0.597102,
+      "char_premium": -0.008245,
+      "scarcity": -0.003226,
+      "pull_cost": -0.111877,
+      "months_since_release": -0.003012,
+      "set_rank": 0.595279,
       "demand_pressure": 0.0,
       "grading_intensity": 0.0,
       "universal_appeal": 0.0
@@ -71523,7 +71523,7 @@
       "demand_pressure": 0.0,
       "grading_intensity": 5.0,
       "universal_appeal": 5.0,
-      "pull_cost": 3728.813559322034
+      "pull_cost": 3783.9697282421744
     },
     "iq_score": 72.71,
     "dynamics": {
@@ -71538,14 +71538,14 @@
       }
     },
     "cluster": "Trainer \u00b7 Special Illustration Rare",
-    "expected_price": 46.6434,
-    "residual_pct": -0.154221,
+    "expected_price": 46.6634,
+    "residual_pct": -0.154583,
     "contributions": {
-      "char_premium": 0.000134,
-      "scarcity": -0.002879,
-      "pull_cost": -0.114991,
-      "months_since_release": -0.002664,
-      "set_rank": 0.65086,
+      "char_premium": 0.000131,
+      "scarcity": -0.003226,
+      "pull_cost": -0.111877,
+      "months_since_release": -0.003012,
+      "set_rank": 0.648873,
       "demand_pressure": 0.0,
       "grading_intensity": 0.0,
       "universal_appeal": 0.0
@@ -71575,7 +71575,7 @@
       "demand_pressure": 0.0,
       "grading_intensity": 5.0,
       "universal_appeal": 5.0,
-      "pull_cost": 3728.813559322034
+      "pull_cost": 3783.9697282421744
     },
     "iq_score": 74.99,
     "dynamics": {
@@ -71590,14 +71590,14 @@
       }
     },
     "cluster": "Trainer \u00b7 Special Illustration Rare",
-    "expected_price": 54.1539,
-    "residual_pct": 0.335639,
+    "expected_price": 54.1612,
+    "residual_pct": 0.335459,
     "contributions": {
-      "char_premium": -0.008257,
-      "scarcity": -0.002879,
-      "pull_cost": -0.114991,
-      "months_since_release": -0.002664,
-      "set_rank": 0.808549,
+      "char_premium": -0.008072,
+      "scarcity": -0.003226,
+      "pull_cost": -0.111877,
+      "months_since_release": -0.003012,
+      "set_rank": 0.80608,
       "demand_pressure": 0.0,
       "grading_intensity": 0.0,
       "universal_appeal": 0.0
@@ -71627,7 +71627,7 @@
       "demand_pressure": 0.0,
       "grading_intensity": 5.0,
       "universal_appeal": 5.0,
-      "pull_cost": 3728.813559322034
+      "pull_cost": 3783.9697282421744
     },
     "iq_score": 74.1,
     "dynamics": {
@@ -71642,14 +71642,14 @@
       }
     },
     "cluster": "Trainer \u00b7 Special Illustration Rare",
-    "expected_price": 60.5167,
-    "residual_pct": 2.06494,
+    "expected_price": 60.4987,
+    "residual_pct": 2.06585,
     "contributions": {
-      "char_premium": -0.003488,
-      "scarcity": -0.002879,
-      "pull_cost": -0.114991,
-      "months_since_release": -0.002664,
-      "set_rank": 0.914869,
+      "char_premium": -0.00341,
+      "scarcity": -0.003226,
+      "pull_cost": -0.111877,
+      "months_since_release": -0.003012,
+      "set_rank": 0.912077,
       "demand_pressure": 0.0,
       "grading_intensity": 0.0,
       "universal_appeal": 0.0
@@ -71679,7 +71679,7 @@
       "demand_pressure": 0.0,
       "grading_intensity": 5.0,
       "universal_appeal": 5.0,
-      "pull_cost": 1297.2972972972973
+      "pull_cost": 3504.161191414805
     },
     "iq_score": 75.69,
     "dynamics": {
@@ -71694,14 +71694,14 @@
       }
     },
     "cluster": "Pok\u00e9mon \u00b7 Hyper Rare",
-    "expected_price": 12.1604,
-    "residual_pct": -0.144762,
+    "expected_price": 13.5863,
+    "residual_pct": -0.234525,
     "contributions": {
-      "char_premium": -0.179234,
-      "scarcity": -0.07001,
-      "pull_cost": -0.122894,
-      "months_since_release": 0.088874,
-      "set_rank": 0.184656,
+      "char_premium": -0.19411,
+      "scarcity": 0.034719,
+      "pull_cost": 0.018469,
+      "months_since_release": 0.019934,
+      "set_rank": 0.133264,
       "demand_pressure": 0.0,
       "grading_intensity": 0.0,
       "universal_appeal": 0.0
@@ -71731,7 +71731,7 @@
       "demand_pressure": 0.0,
       "grading_intensity": 5.0,
       "universal_appeal": 5.0,
-      "pull_cost": 1297.2972972972973
+      "pull_cost": 3504.161191414805
     },
     "iq_score": 76.07,
     "dynamics": {
@@ -71746,14 +71746,14 @@
       }
     },
     "cluster": "Pok\u00e9mon \u00b7 Hyper Rare",
-    "expected_price": 12.3345,
-    "residual_pct": -0.247639,
+    "expected_price": 13.9499,
+    "residual_pct": -0.334764,
     "contributions": {
-      "char_premium": -0.134543,
-      "scarcity": -0.07001,
-      "pull_cost": -0.122894,
-      "months_since_release": 0.088874,
-      "set_rank": 0.154185,
+      "char_premium": -0.14571,
+      "scarcity": 0.034719,
+      "pull_cost": 0.018469,
+      "months_since_release": 0.019934,
+      "set_rank": 0.111274,
       "demand_pressure": 0.0,
       "grading_intensity": 0.0,
       "universal_appeal": 0.0
@@ -71783,7 +71783,7 @@
       "demand_pressure": 0.0,
       "grading_intensity": 5.0,
       "universal_appeal": 5.0,
-      "pull_cost": 1297.2972972972973
+      "pull_cost": 3504.161191414805
     },
     "iq_score": 75.32,
     "dynamics": {
@@ -71798,14 +71798,14 @@
       }
     },
     "cluster": "Trainer \u00b7 Hyper Rare",
-    "expected_price": 24.8359,
-    "residual_pct": -0.414557,
+    "expected_price": 36.032,
+    "residual_pct": -0.59647,
     "contributions": {
-      "char_premium": 0.044527,
-      "scarcity": 2.066567,
-      "pull_cost": 0.047622,
-      "months_since_release": -0.010239,
-      "set_rank": 1.28822,
+      "char_premium": 0.045105,
+      "scarcity": 2.054372,
+      "pull_cost": 0.425121,
+      "months_since_release": -0.01071,
+      "set_rank": 1.294927,
       "demand_pressure": 0.0,
       "grading_intensity": 0.0,
       "universal_appeal": 0.0
@@ -71835,7 +71835,7 @@
       "demand_pressure": 0.0,
       "grading_intensity": 5.0,
       "universal_appeal": 5.0,
-      "pull_cost": 1297.2972972972973
+      "pull_cost": 3504.161191414805
     },
     "iq_score": 69.38,
     "dynamics": {
@@ -71850,14 +71850,14 @@
       }
     },
     "cluster": "Trainer \u00b7 Hyper Rare",
-    "expected_price": 19.5965,
-    "residual_pct": -0.67086,
+    "expected_price": 28.3807,
+    "residual_pct": -0.772733,
     "contributions": {
-      "char_premium": -0.023359,
-      "scarcity": 2.066567,
-      "pull_cost": 0.047622,
-      "months_since_release": -0.010239,
-      "set_rank": 1.119168,
+      "char_premium": -0.023662,
+      "scarcity": 2.054372,
+      "pull_cost": 0.425121,
+      "months_since_release": -0.01071,
+      "set_rank": 1.124995,
       "demand_pressure": 0.0,
       "grading_intensity": 0.0,
       "universal_appeal": 0.0
@@ -71887,7 +71887,7 @@
       "demand_pressure": 0.0,
       "grading_intensity": 5.0,
       "universal_appeal": 5.0,
-      "pull_cost": 1297.2972972972973
+      "pull_cost": 3504.161191414805
     },
     "iq_score": 68.8,
     "dynamics": {
@@ -71902,14 +71902,14 @@
       }
     },
     "cluster": "Trainer \u00b7 Hyper Rare",
-    "expected_price": 14.593,
-    "residual_pct": -0.815665,
+    "expected_price": 21.1067,
+    "residual_pct": -0.872552,
     "contributions": {
-      "char_premium": 0.005607,
-      "scarcity": 2.066567,
-      "pull_cost": 0.047622,
-      "months_since_release": -0.010239,
-      "set_rank": 0.795392,
+      "char_premium": 0.00568,
+      "scarcity": 2.054372,
+      "pull_cost": 0.425121,
+      "months_since_release": -0.01071,
+      "set_rank": 0.799533,
       "demand_pressure": 0.0,
       "grading_intensity": 0.0,
       "universal_appeal": 0.0
@@ -71939,7 +71939,7 @@
       "demand_pressure": 0.0,
       "grading_intensity": 5.0,
       "universal_appeal": 5.0,
-      "pull_cost": 1297.2972972972973
+      "pull_cost": 3504.161191414805
     },
     "iq_score": 66.94,
     "dynamics": {
@@ -71954,14 +71954,14 @@
       }
     },
     "cluster": "Energy \u00b7 Hyper Rare",
-    "expected_price": 16.6935,
-    "residual_pct": -0.677719,
+    "expected_price": 24.1526,
+    "residual_pct": -0.777249,
     "contributions": {
-      "char_premium": -0.042974,
-      "scarcity": 2.066567,
-      "pull_cost": 0.047622,
-      "months_since_release": -0.010239,
-      "set_rank": 0.978451,
+      "char_premium": -0.043531,
+      "scarcity": 2.054372,
+      "pull_cost": 0.425121,
+      "months_since_release": -0.01071,
+      "set_rank": 0.983546,
       "demand_pressure": 0.0,
       "grading_intensity": 0.0,
       "universal_appeal": 0.0
@@ -80326,14 +80326,14 @@
       }
     },
     "cluster": "Energy \u00b7 Uncommon",
-    "expected_price": 1.0474,
-    "residual_pct": 1.911861,
+    "expected_price": 1.0545,
+    "residual_pct": 1.89223,
     "contributions": {
-      "char_premium": -0.090648,
-      "scarcity": -0.316491,
-      "pull_cost": -0.148434,
-      "months_since_release": -0.013952,
-      "set_rank": 0.840281,
+      "char_premium": -0.091824,
+      "scarcity": -0.314623,
+      "pull_cost": -0.146094,
+      "months_since_release": -0.014594,
+      "set_rank": 0.844657,
       "demand_pressure": 0.0,
       "grading_intensity": 0.0,
       "universal_appeal": 0.0
@@ -80378,14 +80378,14 @@
       }
     },
     "cluster": "Energy \u00b7 ACE SPEC Rare",
-    "expected_price": 3.6614,
-    "residual_pct": 4.186549,
+    "expected_price": 3.6741,
+    "residual_pct": 4.168577,
     "contributions": {
-      "char_premium": -0.062583,
-      "scarcity": 0.49113,
-      "pull_cost": -0.127078,
-      "months_since_release": -0.013952,
-      "set_rank": 1.234734,
+      "char_premium": -0.063395,
+      "scarcity": 0.488232,
+      "pull_cost": -0.125684,
+      "months_since_release": -0.014594,
+      "set_rank": 1.241163,
       "demand_pressure": 0.0,
       "grading_intensity": 0.0,
       "universal_appeal": 0.0
@@ -82495,7 +82495,7 @@
       "demand_pressure": 0.0,
       "grading_intensity": 5.0,
       "universal_appeal": 5.0,
-      "pull_cost": 3389.830508474576
+      "pull_cost": 3439.9724802201586
     },
     "iq_score": 75.06,
     "dynamics": {
@@ -82510,14 +82510,14 @@
       }
     },
     "cluster": "Pok\u00e9mon \u00b7 Special Illustration Rare",
-    "expected_price": 47.2527,
-    "residual_pct": -0.08492,
+    "expected_price": 47.3455,
+    "residual_pct": -0.086714,
     "contributions": {
-      "char_premium": -0.364345,
-      "scarcity": -0.012828,
-      "pull_cost": -0.324104,
-      "months_since_release": -0.008965,
-      "set_rank": 0.004655,
+      "char_premium": -0.364825,
+      "scarcity": -0.01272,
+      "pull_cost": -0.320342,
+      "months_since_release": -0.010384,
+      "set_rank": 0.004647,
       "demand_pressure": 0.0,
       "grading_intensity": 0.0,
       "universal_appeal": 0.0
@@ -82547,7 +82547,7 @@
       "demand_pressure": 0.0,
       "grading_intensity": 5.0,
       "universal_appeal": 5.0,
-      "pull_cost": 3389.830508474576
+      "pull_cost": 3439.9724802201586
     },
     "iq_score": 75.21,
     "dynamics": {
@@ -82562,14 +82562,14 @@
       }
     },
     "cluster": "Pok\u00e9mon \u00b7 Special Illustration Rare",
-    "expected_price": 58.531,
-    "residual_pct": 0.035861,
+    "expected_price": 58.6174,
+    "residual_pct": 0.034334,
     "contributions": {
-      "char_premium": -0.397697,
-      "scarcity": -0.012828,
-      "pull_cost": -0.324104,
-      "months_since_release": -0.008965,
-      "set_rank": 0.252055,
+      "char_premium": -0.398222,
+      "scarcity": -0.01272,
+      "pull_cost": -0.320342,
+      "months_since_release": -0.010384,
+      "set_rank": 0.251603,
       "demand_pressure": 0.0,
       "grading_intensity": 0.0,
       "universal_appeal": 0.0
@@ -82599,7 +82599,7 @@
       "demand_pressure": 0.0,
       "grading_intensity": 5.0,
       "universal_appeal": 5.0,
-      "pull_cost": 3389.830508474576
+      "pull_cost": 3439.9724802201586
     },
     "iq_score": 75.85,
     "dynamics": {
@@ -82614,14 +82614,14 @@
       }
     },
     "cluster": "Pok\u00e9mon \u00b7 Special Illustration Rare",
-    "expected_price": 69.2503,
-    "residual_pct": -0.081303,
+    "expected_price": 69.3412,
+    "residual_pct": -0.082507,
     "contributions": {
-      "char_premium": -0.353227,
-      "scarcity": -0.012828,
-      "pull_cost": -0.324104,
-      "months_since_release": -0.008965,
-      "set_rank": 0.375755,
+      "char_premium": -0.353693,
+      "scarcity": -0.01272,
+      "pull_cost": -0.320342,
+      "months_since_release": -0.010384,
+      "set_rank": 0.375081,
       "demand_pressure": 0.0,
       "grading_intensity": 0.0,
       "universal_appeal": 0.0
@@ -82651,7 +82651,7 @@
       "demand_pressure": 0.0,
       "grading_intensity": 5.0,
       "universal_appeal": 5.0,
-      "pull_cost": 3389.830508474576
+      "pull_cost": 3439.9724802201586
     },
     "iq_score": 73.96,
     "dynamics": {
@@ -82666,14 +82666,14 @@
       }
     },
     "cluster": "Pok\u00e9mon \u00b7 Special Illustration Rare",
-    "expected_price": 28.2773,
-    "residual_pct": -0.000258,
+    "expected_price": 28.3572,
+    "residual_pct": -0.003074,
     "contributions": {
-      "char_premium": -0.384341,
-      "scarcity": -0.012828,
-      "pull_cost": -0.324104,
-      "months_since_release": -0.008965,
-      "set_rank": -0.488799,
+      "char_premium": -0.384848,
+      "scarcity": -0.01272,
+      "pull_cost": -0.320342,
+      "months_since_release": -0.010384,
+      "set_rank": -0.487923,
       "demand_pressure": 0.0,
       "grading_intensity": 0.0,
       "universal_appeal": 0.0
@@ -82703,7 +82703,7 @@
       "demand_pressure": 0.0,
       "grading_intensity": 5.0,
       "universal_appeal": 5.0,
-      "pull_cost": 3389.830508474576
+      "pull_cost": 3439.9724802201586
     },
     "iq_score": 75.59,
     "dynamics": {
@@ -82718,14 +82718,14 @@
       }
     },
     "cluster": "Pok\u00e9mon \u00b7 Special Illustration Rare",
-    "expected_price": 58.0378,
-    "residual_pct": 0.01589,
+    "expected_price": 58.134,
+    "residual_pct": 0.014209,
     "contributions": {
-      "char_premium": -0.344311,
-      "scarcity": -0.012828,
-      "pull_cost": -0.324104,
-      "months_since_release": -0.008965,
-      "set_rank": 0.190205,
+      "char_premium": -0.344765,
+      "scarcity": -0.01272,
+      "pull_cost": -0.320342,
+      "months_since_release": -0.010384,
+      "set_rank": 0.189864,
       "demand_pressure": 0.0,
       "grading_intensity": 0.0,
       "universal_appeal": 0.0
@@ -82755,7 +82755,7 @@
       "demand_pressure": 0.0,
       "grading_intensity": 5.0,
       "universal_appeal": 5.0,
-      "pull_cost": 3389.830508474576
+      "pull_cost": 3439.9724802201586
     },
     "iq_score": 76.28,
     "dynamics": {
@@ -82770,14 +82770,14 @@
       }
     },
     "cluster": "Pok\u00e9mon \u00b7 Special Illustration Rare",
-    "expected_price": 80.0232,
-    "residual_pct": -0.103885,
+    "expected_price": 80.113,
+    "residual_pct": -0.10489,
     "contributions": {
-      "char_premium": -0.330992,
-      "scarcity": -0.012828,
-      "pull_cost": -0.324104,
-      "months_since_release": -0.008965,
-      "set_rank": 0.49811,
+      "char_premium": -0.331429,
+      "scarcity": -0.01272,
+      "pull_cost": -0.320342,
+      "months_since_release": -0.010384,
+      "set_rank": 0.497217,
       "demand_pressure": 0.0,
       "grading_intensity": 0.0,
       "universal_appeal": 0.0
@@ -82807,7 +82807,7 @@
       "demand_pressure": 0.0,
       "grading_intensity": 5.0,
       "universal_appeal": 5.0,
-      "pull_cost": 3389.830508474576
+      "pull_cost": 3439.9724802201586
     },
     "iq_score": 71.52,
     "dynamics": {
@@ -82822,14 +82822,14 @@
       }
     },
     "cluster": "Trainer \u00b7 Special Illustration Rare",
-    "expected_price": 25.967,
-    "residual_pct": 0.125276,
+    "expected_price": 26.0081,
+    "residual_pct": 0.123494,
     "contributions": {
-      "char_premium": 0.001988,
-      "scarcity": -0.003992,
-      "pull_cost": -0.140135,
-      "months_since_release": -0.003694,
-      "set_rank": 0.090586,
+      "char_premium": 0.001944,
+      "scarcity": -0.004474,
+      "pull_cost": -0.137265,
+      "months_since_release": -0.004176,
+      "set_rank": 0.090309,
       "demand_pressure": 0.0,
       "grading_intensity": 0.0,
       "universal_appeal": 0.0
@@ -82859,7 +82859,7 @@
       "demand_pressure": 0.0,
       "grading_intensity": 5.0,
       "universal_appeal": 5.0,
-      "pull_cost": 3389.830508474576
+      "pull_cost": 3439.9724802201586
     },
     "iq_score": 72.25,
     "dynamics": {
@@ -82874,14 +82874,14 @@
       }
     },
     "cluster": "Trainer \u00b7 Special Illustration Rare",
-    "expected_price": 15.7345,
-    "residual_pct": 0.086151,
+    "expected_price": 15.7859,
+    "residual_pct": 0.082614,
     "contributions": {
-      "char_premium": -0.005607,
-      "scarcity": -0.003992,
-      "pull_cost": -0.140135,
-      "months_since_release": -0.003694,
-      "set_rank": -0.40279,
+      "char_premium": -0.005482,
+      "scarcity": -0.004474,
+      "pull_cost": -0.137265,
+      "months_since_release": -0.004176,
+      "set_rank": -0.40156,
       "demand_pressure": 0.0,
       "grading_intensity": 0.0,
       "universal_appeal": 0.0
@@ -82911,7 +82911,7 @@
       "demand_pressure": 0.0,
       "grading_intensity": 5.0,
       "universal_appeal": 5.0,
-      "pull_cost": 3389.830508474576
+      "pull_cost": 3439.9724802201586
     },
     "iq_score": 74.2,
     "dynamics": {
@@ -82926,14 +82926,14 @@
       }
     },
     "cluster": "Trainer \u00b7 Special Illustration Rare",
-    "expected_price": 58.8251,
-    "residual_pct": 0.331745,
+    "expected_price": 58.7762,
+    "residual_pct": 0.332853,
     "contributions": {
-      "char_premium": -0.002163,
-      "scarcity": -0.003992,
-      "pull_cost": -0.140135,
-      "months_since_release": -0.003694,
-      "set_rank": 0.91248,
+      "char_premium": -0.002115,
+      "scarcity": -0.004474,
+      "pull_cost": -0.137265,
+      "months_since_release": -0.004176,
+      "set_rank": 0.909695,
       "demand_pressure": 0.0,
       "grading_intensity": 0.0,
       "universal_appeal": 0.0
@@ -82963,7 +82963,7 @@
       "demand_pressure": 0.0,
       "grading_intensity": 5.0,
       "universal_appeal": 5.0,
-      "pull_cost": 3389.830508474576
+      "pull_cost": 3439.9724802201586
     },
     "iq_score": 70.68,
     "dynamics": {
@@ -82978,14 +82978,14 @@
       }
     },
     "cluster": "Trainer \u00b7 Special Illustration Rare",
-    "expected_price": 19.7748,
-    "residual_pct": 0.024032,
+    "expected_price": 19.8222,
+    "residual_pct": 0.021583,
     "contributions": {
-      "char_premium": 0.003137,
-      "scarcity": -0.003992,
-      "pull_cost": -0.140135,
-      "months_since_release": -0.003694,
-      "set_rank": -0.182981,
+      "char_premium": 0.003067,
+      "scarcity": -0.004474,
+      "pull_cost": -0.137265,
+      "months_since_release": -0.004176,
+      "set_rank": -0.182422,
       "demand_pressure": 0.0,
       "grading_intensity": 0.0,
       "universal_appeal": 0.0
@@ -83015,7 +83015,7 @@
       "demand_pressure": 0.0,
       "grading_intensity": 5.0,
       "universal_appeal": 5.0,
-      "pull_cost": 1297.2972972972973
+      "pull_cost": 3336.1134278565473
     },
     "iq_score": 74.99,
     "dynamics": {
@@ -83030,14 +83030,14 @@
       }
     },
     "cluster": "Pok\u00e9mon \u00b7 Hyper Rare",
-    "expected_price": 8.7924,
-    "residual_pct": 0.041812,
+    "expected_price": 10.6991,
+    "residual_pct": -0.143853,
     "contributions": {
-      "char_premium": -0.156889,
-      "scarcity": -0.076987,
-      "pull_cost": -0.122894,
-      "months_since_release": 0.125938,
-      "set_rank": -0.192072,
+      "char_premium": -0.16991,
+      "scarcity": 0.038179,
+      "pull_cost": 0.015471,
+      "months_since_release": 0.028247,
+      "set_rank": -0.138617,
       "demand_pressure": 0.0,
       "grading_intensity": 0.0,
       "universal_appeal": 0.0
@@ -83067,7 +83067,7 @@
       "demand_pressure": 0.0,
       "grading_intensity": 5.0,
       "universal_appeal": 5.0,
-      "pull_cost": 1297.2972972972973
+      "pull_cost": 3336.1134278565473
     },
     "iq_score": 75.72,
     "dynamics": {
@@ -83082,14 +83082,14 @@
       }
     },
     "cluster": "Pok\u00e9mon \u00b7 Hyper Rare",
-    "expected_price": 11.3811,
-    "residual_pct": 0.382117,
+    "expected_price": 12.7599,
+    "residual_pct": 0.232764,
     "contributions": {
-      "char_premium": -0.184828,
-      "scarcity": -0.076987,
-      "pull_cost": -0.122894,
-      "months_since_release": 0.125938,
-      "set_rank": 0.093936,
+      "char_premium": -0.200169,
+      "scarcity": 0.038179,
+      "pull_cost": 0.015471,
+      "months_since_release": 0.028247,
+      "set_rank": 0.067793,
       "demand_pressure": 0.0,
       "grading_intensity": 0.0,
       "universal_appeal": 0.0
@@ -83119,7 +83119,7 @@
       "demand_pressure": 0.0,
       "grading_intensity": 5.0,
       "universal_appeal": 5.0,
-      "pull_cost": 1297.2972972972973
+      "pull_cost": 3336.1134278565473
     },
     "iq_score": 75.9,
     "dynamics": {
@@ -83134,14 +83134,14 @@
       }
     },
     "cluster": "Pok\u00e9mon \u00b7 Hyper Rare",
-    "expected_price": 11.0916,
-    "residual_pct": 0.257709,
+    "expected_price": 12.6946,
+    "residual_pct": 0.098894,
     "contributions": {
-      "char_premium": -0.147575,
-      "scarcity": -0.076987,
-      "pull_cost": -0.122894,
-      "months_since_release": 0.125938,
-      "set_rank": 0.030917,
+      "char_premium": -0.159824,
+      "scarcity": 0.038179,
+      "pull_cost": 0.015471,
+      "months_since_release": 0.028247,
+      "set_rank": 0.022313,
       "demand_pressure": 0.0,
       "grading_intensity": 0.0,
       "universal_appeal": 0.0
@@ -83171,7 +83171,7 @@
       "demand_pressure": 0.0,
       "grading_intensity": 5.0,
       "universal_appeal": 5.0,
-      "pull_cost": 1297.2972972972973
+      "pull_cost": 3336.1134278565473
     },
     "iq_score": 75.29,
     "dynamics": {
@@ -83186,14 +83186,14 @@
       }
     },
     "cluster": "Pok\u00e9mon \u00b7 Hyper Rare",
-    "expected_price": 9.2306,
-    "residual_pct": 0.001019,
+    "expected_price": 11.1487,
+    "residual_pct": -0.171206,
     "contributions": {
-      "char_premium": -0.140106,
-      "scarcity": -0.076987,
-      "pull_cost": -0.122894,
-      "months_since_release": 0.125938,
-      "set_rank": -0.160217,
+      "char_premium": -0.151734,
+      "scarcity": 0.038179,
+      "pull_cost": 0.015471,
+      "months_since_release": 0.028247,
+      "set_rank": -0.115627,
       "demand_pressure": 0.0,
       "grading_intensity": 0.0,
       "universal_appeal": 0.0
@@ -83223,7 +83223,7 @@
       "demand_pressure": 0.0,
       "grading_intensity": 5.0,
       "universal_appeal": 5.0,
-      "pull_cost": 1297.2972972972973
+      "pull_cost": 3336.1134278565473
     },
     "iq_score": 75.04,
     "dynamics": {
@@ -83238,14 +83238,14 @@
       }
     },
     "cluster": "Pok\u00e9mon \u00b7 Hyper Rare",
-    "expected_price": 9.2151,
-    "residual_pct": 0.005956,
+    "expected_price": 11.0011,
+    "residual_pct": -0.157359,
     "contributions": {
-      "char_premium": -0.17364,
-      "scarcity": -0.076987,
-      "pull_cost": -0.122894,
-      "months_since_release": 0.125938,
-      "set_rank": -0.128361,
+      "char_premium": -0.188052,
+      "scarcity": 0.038179,
+      "pull_cost": 0.015471,
+      "months_since_release": 0.028247,
+      "set_rank": -0.092637,
       "demand_pressure": 0.0,
       "grading_intensity": 0.0,
       "universal_appeal": 0.0
@@ -83275,7 +83275,7 @@
       "demand_pressure": 0.0,
       "grading_intensity": 5.0,
       "universal_appeal": 5.0,
-      "pull_cost": 1297.2972972972973
+      "pull_cost": 3336.1134278565473
     },
     "iq_score": 76.22,
     "dynamics": {
@@ -83290,14 +83290,14 @@
       }
     },
     "cluster": "Pok\u00e9mon \u00b7 Hyper Rare",
-    "expected_price": 11.6578,
-    "residual_pct": 0.198337,
+    "expected_price": 13.2479,
+    "residual_pct": 0.054508,
     "contributions": {
-      "char_premium": -0.128949,
-      "scarcity": -0.076987,
-      "pull_cost": -0.122894,
-      "months_since_release": 0.125938,
-      "set_rank": 0.062081,
+      "char_premium": -0.139651,
+      "scarcity": 0.038179,
+      "pull_cost": 0.015471,
+      "months_since_release": 0.028247,
+      "set_rank": 0.044803,
       "demand_pressure": 0.0,
       "grading_intensity": 0.0,
       "universal_appeal": 0.0
@@ -94522,14 +94522,14 @@
       }
     },
     "cluster": "Energy \u00b7 Uncommon",
-    "expected_price": 0.3642,
-    "residual_pct": 0.098347,
+    "expected_price": 0.3662,
+    "residual_pct": 0.092185,
     "contributions": {
-      "char_premium": -0.127761,
-      "scarcity": -0.745453,
-      "pull_cost": -0.113128,
-      "months_since_release": 0.02607,
-      "set_rank": 0.174582,
+      "char_premium": -0.129418,
+      "scarcity": -0.741054,
+      "pull_cost": -0.112352,
+      "months_since_release": 0.027269,
+      "set_rank": 0.175491,
       "demand_pressure": 0.0,
       "grading_intensity": 0.0,
       "universal_appeal": 0.0
@@ -94574,14 +94574,14 @@
       }
     },
     "cluster": "Energy \u00b7 Uncommon",
-    "expected_price": 0.3808,
-    "residual_pct": 0.129324,
+    "expected_price": 0.383,
+    "residual_pct": 0.122718,
     "contributions": {
-      "char_premium": -0.126551,
-      "scarcity": -0.745453,
-      "pull_cost": -0.113128,
-      "months_since_release": 0.02607,
-      "set_rank": 0.21788,
+      "char_premium": -0.128192,
+      "scarcity": -0.741054,
+      "pull_cost": -0.112352,
+      "months_since_release": 0.027269,
+      "set_rank": 0.219014,
       "demand_pressure": 0.0,
       "grading_intensity": 0.0,
       "universal_appeal": 0.0
@@ -97070,14 +97070,14 @@
       }
     },
     "cluster": "Pok\u00e9mon \u00b7 Hyper Rare",
-    "expected_price": 13.7733,
-    "residual_pct": -0.038718,
+    "expected_price": 13.0455,
+    "residual_pct": 0.014906,
     "contributions": {
-      "char_premium": 0.045873,
-      "scarcity": 0.234171,
-      "pull_cost": -0.149301,
-      "months_since_release": -0.27353,
-      "set_rank": 0.168728,
+      "char_premium": 0.04968,
+      "scarcity": -0.116128,
+      "pull_cost": -0.022313,
+      "months_since_release": -0.061352,
+      "set_rank": 0.121769,
       "demand_pressure": 0.0,
       "grading_intensity": 0.0,
       "universal_appeal": 0.0
@@ -97122,14 +97122,14 @@
       }
     },
     "cluster": "Pok\u00e9mon \u00b7 Hyper Rare",
-    "expected_price": 4.5728,
-    "residual_pct": -0.013743,
+    "expected_price": 5.0978,
+    "residual_pct": -0.115298,
     "contributions": {
-      "char_premium": -0.352435,
-      "scarcity": 0.234171,
-      "pull_cost": -0.149301,
-      "months_since_release": -0.27353,
-      "set_rank": -0.535559,
+      "char_premium": -0.381686,
+      "scarcity": -0.116128,
+      "pull_cost": -0.022313,
+      "months_since_release": -0.061352,
+      "set_rank": -0.386508,
       "demand_pressure": 0.0,
       "grading_intensity": 0.0,
       "universal_appeal": 0.0
@@ -97174,14 +97174,14 @@
       }
     },
     "cluster": "Pok\u00e9mon \u00b7 Hyper Rare",
-    "expected_price": 11.0683,
-    "residual_pct": -0.205839,
+    "expected_price": 11.2063,
+    "residual_pct": -0.215618,
     "contributions": {
-      "char_premium": 0.061988,
-      "scarcity": 0.234171,
-      "pull_cost": -0.149301,
-      "months_since_release": -0.27353,
-      "set_rank": -0.066035,
+      "char_premium": 0.067133,
+      "scarcity": -0.116128,
+      "pull_cost": -0.022313,
+      "months_since_release": -0.061352,
+      "set_rank": -0.047657,
       "demand_pressure": 0.0,
       "grading_intensity": 0.0,
       "universal_appeal": 0.0
@@ -97226,14 +97226,14 @@
       }
     },
     "cluster": "Pok\u00e9mon \u00b7 Hyper Rare",
-    "expected_price": 10.1192,
-    "residual_pct": -0.308249,
+    "expected_price": 10.8829,
+    "residual_pct": -0.356791,
     "contributions": {
-      "char_premium": 0.160016,
-      "scarcity": 0.234171,
-      "pull_cost": -0.149301,
-      "months_since_release": -0.27353,
-      "set_rank": -0.253706,
+      "char_premium": 0.173297,
+      "scarcity": -0.116128,
+      "pull_cost": -0.022313,
+      "months_since_release": -0.061352,
+      "set_rank": -0.183097,
       "demand_pressure": 0.0,
       "grading_intensity": 0.0,
       "universal_appeal": 0.0
@@ -97278,14 +97278,14 @@
       }
     },
     "cluster": "Pok\u00e9mon \u00b7 Hyper Rare",
-    "expected_price": 54.97,
-    "residual_pct": 0.307258,
+    "expected_price": 52.7489,
+    "residual_pct": 0.362303,
     "contributions": {
-      "char_premium": 1.148077,
-      "scarcity": 0.234171,
-      "pull_cost": -0.149301,
-      "months_since_release": -0.27353,
-      "set_rank": 0.450581,
+      "char_premium": 1.243367,
+      "scarcity": -0.116128,
+      "pull_cost": -0.022313,
+      "months_since_release": -0.061352,
+      "set_rank": 0.32518,
       "demand_pressure": 0.0,
       "grading_intensity": 0.0,
       "universal_appeal": 0.0
@@ -97330,14 +97330,14 @@
       }
     },
     "cluster": "Pok\u00e9mon \u00b7 Hyper Rare",
-    "expected_price": 5.2054,
-    "residual_pct": 0.004727,
+    "expected_price": 5.6694,
+    "residual_pct": -0.077506,
     "contributions": {
-      "char_premium": -0.317057,
-      "scarcity": 0.234171,
-      "pull_cost": -0.149301,
-      "months_since_release": -0.27353,
-      "set_rank": -0.441377,
+      "char_premium": -0.343373,
+      "scarcity": -0.116128,
+      "pull_cost": -0.022313,
+      "months_since_release": -0.061352,
+      "set_rank": -0.318538,
       "demand_pressure": 0.0,
       "grading_intensity": 0.0,
       "universal_appeal": 0.0
@@ -97382,14 +97382,14 @@
       }
     },
     "cluster": "Pok\u00e9mon \u00b7 Hyper Rare",
-    "expected_price": 34.0877,
-    "residual_pct": 0.600578,
+    "expected_price": 31.9779,
+    "residual_pct": 0.706179,
     "contributions": {
-      "char_premium": 0.717316,
-      "scarcity": 0.234171,
-      "pull_cost": -0.149301,
-      "months_since_release": -0.27353,
-      "set_rank": 0.40349,
+      "char_premium": 0.776853,
+      "scarcity": -0.116128,
+      "pull_cost": -0.022313,
+      "months_since_release": -0.061352,
+      "set_rank": 0.291195,
       "demand_pressure": 0.0,
       "grading_intensity": 0.0,
       "universal_appeal": 0.0
@@ -97434,14 +97434,14 @@
       }
     },
     "cluster": "Pok\u00e9mon \u00b7 Special Illustration Rare",
-    "expected_price": 63.2377,
-    "residual_pct": 0.68349,
+    "expected_price": 63.145,
+    "residual_pct": 0.68596,
     "contributions": {
-      "char_premium": -0.768977,
-      "scarcity": 0.00808,
-      "pull_cost": 0.171931,
-      "months_since_release": 0.008766,
-      "set_rank": 0.166003,
+      "char_premium": -0.769991,
+      "scarcity": 0.008012,
+      "pull_cost": 0.170458,
+      "months_since_release": 0.010154,
+      "set_rank": 0.165705,
       "demand_pressure": 0.0,
       "grading_intensity": 0.0,
       "universal_appeal": 0.0
@@ -97486,14 +97486,14 @@
       }
     },
     "cluster": "Pok\u00e9mon \u00b7 Special Illustration Rare",
-    "expected_price": 41.4999,
-    "residual_pct": 0.758799,
+    "expected_price": 41.469,
+    "residual_pct": 0.760111,
     "contributions": {
-      "char_premium": -0.780095,
-      "scarcity": 0.00808,
-      "pull_cost": 0.171931,
-      "months_since_release": 0.008766,
-      "set_rank": -0.244089,
+      "char_premium": -0.781123,
+      "scarcity": 0.008012,
+      "pull_cost": 0.170458,
+      "months_since_release": 0.010154,
+      "set_rank": -0.243651,
       "demand_pressure": 0.0,
       "grading_intensity": 0.0,
       "universal_appeal": 0.0
@@ -97538,14 +97538,14 @@
       }
     },
     "cluster": "Pok\u00e9mon \u00b7 Special Illustration Rare",
-    "expected_price": 158.3773,
-    "residual_pct": 0.187228,
+    "expected_price": 158.3143,
+    "residual_pct": 0.1877,
     "contributions": {
-      "char_premium": 0.103388,
-      "scarcity": 0.00808,
-      "pull_cost": 0.171931,
-      "months_since_release": 0.008766,
-      "set_rank": 0.211718,
+      "char_premium": 0.103524,
+      "scarcity": 0.008012,
+      "pull_cost": 0.170458,
+      "months_since_release": 0.010154,
+      "set_rank": 0.211338,
       "demand_pressure": 0.0,
       "grading_intensity": 0.0,
       "universal_appeal": 0.0
@@ -97590,14 +97590,14 @@
       }
     },
     "cluster": "Pok\u00e9mon \u00b7 Special Illustration Rare",
-    "expected_price": 105.2597,
-    "residual_pct": -0.137466,
+    "expected_price": 105.221,
+    "residual_pct": -0.137149,
     "contributions": {
-      "char_premium": -0.122302,
-      "scarcity": 0.00808,
-      "pull_cost": 0.171931,
-      "months_since_release": 0.008766,
-      "set_rank": 0.028857,
+      "char_premium": -0.122463,
+      "scarcity": 0.008012,
+      "pull_cost": 0.170458,
+      "months_since_release": 0.010154,
+      "set_rank": 0.028806,
       "demand_pressure": 0.0,
       "grading_intensity": 0.0,
       "universal_appeal": 0.0
@@ -97642,14 +97642,14 @@
       }
     },
     "cluster": "Pok\u00e9mon \u00b7 Special Illustration Rare",
-    "expected_price": 678.1746,
-    "residual_pct": 0.998084,
+    "expected_price": 678.4367,
+    "residual_pct": 0.997312,
     "contributions": {
-      "char_premium": 1.193436,
-      "scarcity": 0.00808,
-      "pull_cost": 0.171931,
-      "months_since_release": 0.008766,
-      "set_rank": 0.576094,
+      "char_premium": 1.19501,
+      "scarcity": 0.008012,
+      "pull_cost": 0.170458,
+      "months_since_release": 0.010154,
+      "set_rank": 0.575061,
       "demand_pressure": 0.0,
       "grading_intensity": 0.0,
       "universal_appeal": 0.0
@@ -97694,14 +97694,14 @@
       }
     },
     "cluster": "Pok\u00e9mon \u00b7 Special Illustration Rare",
-    "expected_price": 591.2621,
-    "residual_pct": -0.210299,
+    "expected_price": 591.6361,
+    "residual_pct": -0.210799,
     "contributions": {
-      "char_premium": 1.193436,
-      "scarcity": 0.00808,
-      "pull_cost": 0.171931,
-      "months_since_release": 0.008766,
-      "set_rank": 0.438949,
+      "char_premium": 1.19501,
+      "scarcity": 0.008012,
+      "pull_cost": 0.170458,
+      "months_since_release": 0.010154,
+      "set_rank": 0.438162,
       "demand_pressure": 0.0,
       "grading_intensity": 0.0,
       "universal_appeal": 0.0
@@ -97746,14 +97746,14 @@
       }
     },
     "cluster": "Pok\u00e9mon \u00b7 Special Illustration Rare",
-    "expected_price": 39.624,
-    "residual_pct": 0.193468,
+    "expected_price": 39.6202,
+    "residual_pct": 0.193582,
     "contributions": {
-      "char_premium": -0.597775,
-      "scarcity": 0.00808,
-      "pull_cost": 0.171931,
-      "months_since_release": 0.008766,
-      "set_rank": -0.472664,
+      "char_premium": -0.598563,
+      "scarcity": 0.008012,
+      "pull_cost": 0.170458,
+      "months_since_release": 0.010154,
+      "set_rank": -0.471817,
       "demand_pressure": 0.0,
       "grading_intensity": 0.0,
       "universal_appeal": 0.0
@@ -97798,14 +97798,14 @@
       }
     },
     "cluster": "Pok\u00e9mon \u00b7 Special Illustration Rare",
-    "expected_price": 58.2592,
-    "residual_pct": 0.267612,
+    "expected_price": 58.2335,
+    "residual_pct": 0.26817,
     "contributions": {
-      "char_premium": -0.4866,
-      "scarcity": 0.00808,
-      "pull_cost": 0.171931,
-      "months_since_release": 0.008766,
-      "set_rank": -0.198374,
+      "char_premium": -0.487241,
+      "scarcity": 0.008012,
+      "pull_cost": 0.170458,
+      "months_since_release": 0.010154,
+      "set_rank": -0.198018,
       "demand_pressure": 0.0,
       "grading_intensity": 0.0,
       "universal_appeal": 0.0
@@ -97850,14 +97850,14 @@
       }
     },
     "cluster": "Pok\u00e9mon \u00b7 Special Illustration Rare",
-    "expected_price": 112.6481,
-    "residual_pct": 0.851961,
+    "expected_price": 112.5207,
+    "residual_pct": 0.854058,
     "contributions": {
-      "char_premium": -0.328754,
-      "scarcity": 0.00808,
-      "pull_cost": 0.171931,
-      "months_since_release": 0.008766,
-      "set_rank": 0.303148,
+      "char_premium": -0.329187,
+      "scarcity": 0.008012,
+      "pull_cost": 0.170458,
+      "months_since_release": 0.010154,
+      "set_rank": 0.302605,
       "demand_pressure": 0.0,
       "grading_intensity": 0.0,
       "universal_appeal": 0.0
@@ -97902,14 +97902,14 @@
       }
     },
     "cluster": "Pok\u00e9mon \u00b7 Special Illustration Rare",
-    "expected_price": 467.8605,
-    "residual_pct": -0.047472,
+    "expected_price": 468.0765,
+    "residual_pct": -0.047912,
     "contributions": {
-      "char_premium": 1.003717,
-      "scarcity": 0.00808,
-      "pull_cost": 0.171931,
-      "months_since_release": 0.008766,
-      "set_rank": 0.394578,
+      "char_premium": 1.005041,
+      "scarcity": 0.008012,
+      "pull_cost": 0.170458,
+      "months_since_release": 0.010154,
+      "set_rank": 0.393871,
       "demand_pressure": 0.0,
       "grading_intensity": 0.0,
       "universal_appeal": 0.0
@@ -97954,14 +97954,14 @@
       }
     },
     "cluster": "Pok\u00e9mon \u00b7 Special Illustration Rare",
-    "expected_price": 89.4922,
-    "residual_pct": -0.153446,
+    "expected_price": 89.4907,
+    "residual_pct": -0.153432,
     "contributions": {
-      "char_premium": -0.103064,
-      "scarcity": 0.00808,
-      "pull_cost": 0.171931,
-      "months_since_release": 0.008766,
-      "set_rank": -0.152658,
+      "char_premium": -0.1032,
+      "scarcity": 0.008012,
+      "pull_cost": 0.170458,
+      "months_since_release": 0.010154,
+      "set_rank": -0.152385,
       "demand_pressure": 0.0,
       "grading_intensity": 0.0,
       "universal_appeal": 0.0
@@ -98006,14 +98006,14 @@
       }
     },
     "cluster": "Pok\u00e9mon \u00b7 Special Illustration Rare",
-    "expected_price": 105.3076,
-    "residual_pct": -0.274506,
+    "expected_price": 105.3135,
+    "residual_pct": -0.274547,
     "contributions": {
-      "char_premium": 0.013954,
-      "scarcity": 0.00808,
-      "pull_cost": 0.171931,
-      "months_since_release": 0.008766,
-      "set_rank": -0.106943,
+      "char_premium": 0.013973,
+      "scarcity": 0.008012,
+      "pull_cost": 0.170458,
+      "months_since_release": 0.010154,
+      "set_rank": -0.106752,
       "demand_pressure": 0.0,
       "grading_intensity": 0.0,
       "universal_appeal": 0.0
@@ -98058,14 +98058,14 @@
       }
     },
     "cluster": "Pok\u00e9mon \u00b7 Special Illustration Rare",
-    "expected_price": 709.897,
-    "residual_pct": 1.048438,
+    "expected_price": 710.1132,
+    "residual_pct": 1.047814,
     "contributions": {
-      "char_premium": 1.193436,
-      "scarcity": 0.00808,
-      "pull_cost": 0.171931,
-      "months_since_release": 0.008766,
-      "set_rank": 0.621809,
+      "char_premium": 1.19501,
+      "scarcity": 0.008012,
+      "pull_cost": 0.170458,
+      "months_since_release": 0.010154,
+      "set_rank": 0.620695,
       "demand_pressure": 0.0,
       "grading_intensity": 0.0,
       "universal_appeal": 0.0
@@ -98110,14 +98110,14 @@
       }
     },
     "cluster": "Pok\u00e9mon \u00b7 Special Illustration Rare",
-    "expected_price": 62.3712,
-    "residual_pct": 0.247051,
+    "expected_price": 62.3227,
+    "residual_pct": 0.248021,
     "contributions": {
-      "char_premium": -0.555543,
-      "scarcity": 0.00808,
-      "pull_cost": 0.171931,
-      "months_since_release": 0.008766,
-      "set_rank": -0.061228,
+      "char_premium": -0.556276,
+      "scarcity": 0.008012,
+      "pull_cost": 0.170458,
+      "months_since_release": 0.010154,
+      "set_rank": -0.061118,
       "demand_pressure": 0.0,
       "grading_intensity": 0.0,
       "universal_appeal": 0.0
@@ -98162,14 +98162,14 @@
       }
     },
     "cluster": "Pok\u00e9mon \u00b7 Special Illustration Rare",
-    "expected_price": 261.9975,
-    "residual_pct": -0.258733,
+    "expected_price": 262.0299,
+    "residual_pct": -0.258825,
     "contributions": {
-      "char_premium": 0.561027,
-      "scarcity": 0.00808,
-      "pull_cost": 0.171931,
-      "months_since_release": 0.008766,
-      "set_rank": 0.257433,
+      "char_premium": 0.561767,
+      "scarcity": 0.008012,
+      "pull_cost": 0.170458,
+      "months_since_release": 0.010154,
+      "set_rank": 0.256972,
       "demand_pressure": 0.0,
       "grading_intensity": 0.0,
       "universal_appeal": 0.0
@@ -98214,14 +98214,14 @@
       }
     },
     "cluster": "Pok\u00e9mon \u00b7 Special Illustration Rare",
-    "expected_price": 109.6968,
-    "residual_pct": -0.236897,
+    "expected_price": 109.6781,
+    "residual_pct": -0.236766,
     "contributions": {
-      "char_premium": -0.035297,
-      "scarcity": 0.00808,
-      "pull_cost": 0.171931,
-      "months_since_release": 0.008766,
-      "set_rank": -0.016858,
+      "char_premium": -0.035343,
+      "scarcity": 0.008012,
+      "pull_cost": 0.170458,
+      "months_since_release": 0.010154,
+      "set_rank": -0.016827,
       "demand_pressure": 0.0,
       "grading_intensity": 0.0,
       "universal_appeal": 0.0
@@ -98266,14 +98266,14 @@
       }
     },
     "cluster": "Pok\u00e9mon \u00b7 Special Illustration Rare",
-    "expected_price": 61.9841,
-    "residual_pct": 0.15933,
+    "expected_price": 61.9795,
+    "residual_pct": 0.159416,
     "contributions": {
-      "char_premium": -0.333193,
-      "scarcity": 0.00808,
-      "pull_cost": 0.171931,
-      "months_since_release": 0.008766,
-      "set_rank": -0.289804,
+      "char_premium": -0.333632,
+      "scarcity": 0.008012,
+      "pull_cost": 0.170458,
+      "months_since_release": 0.010154,
+      "set_rank": -0.289284,
       "demand_pressure": 0.0,
       "grading_intensity": 0.0,
       "universal_appeal": 0.0
@@ -98318,14 +98318,14 @@
       }
     },
     "cluster": "Pok\u00e9mon \u00b7 Special Illustration Rare",
-    "expected_price": 189.1774,
-    "residual_pct": -0.437406,
+    "expected_price": 189.2003,
+    "residual_pct": -0.437474,
     "contributions": {
-      "char_premium": 0.372523,
-      "scarcity": 0.00808,
-      "pull_cost": 0.171931,
-      "months_since_release": 0.008766,
-      "set_rank": 0.120288,
+      "char_premium": 0.373014,
+      "scarcity": 0.008012,
+      "pull_cost": 0.170458,
+      "months_since_release": 0.010154,
+      "set_rank": 0.120072,
       "demand_pressure": 0.0,
       "grading_intensity": 0.0,
       "universal_appeal": 0.0
@@ -98370,14 +98370,14 @@
       }
     },
     "cluster": "Pok\u00e9mon \u00b7 Special Illustration Rare",
-    "expected_price": 387.407,
-    "residual_pct": 1.272623,
+    "expected_price": 387.3258,
+    "residual_pct": 1.273099,
     "contributions": {
-      "char_premium": 0.679222,
-      "scarcity": 0.00808,
-      "pull_cost": 0.171931,
-      "months_since_release": 0.008766,
-      "set_rank": 0.530379,
+      "char_premium": 0.680118,
+      "scarcity": 0.008012,
+      "pull_cost": 0.170458,
+      "months_since_release": 0.010154,
+      "set_rank": 0.529428,
       "demand_pressure": 0.0,
       "grading_intensity": 0.0,
       "universal_appeal": 0.0
@@ -98422,14 +98422,14 @@
       }
     },
     "cluster": "Trainer \u00b7 Special Illustration Rare",
-    "expected_price": 38.7293,
-    "residual_pct": 0.252024,
+    "expected_price": 38.6832,
+    "residual_pct": 0.253517,
     "contributions": {
-      "char_premium": -0.000307,
-      "scarcity": 0.008002,
-      "pull_cost": 0.293792,
-      "months_since_release": 0.007405,
-      "set_rank": 0.035634,
+      "char_premium": -0.000301,
+      "scarcity": 0.008969,
+      "pull_cost": 0.29077,
+      "months_since_release": 0.008371,
+      "set_rank": 0.035525,
       "demand_pressure": 0.0,
       "grading_intensity": 0.0,
       "universal_appeal": 0.0
@@ -98474,14 +98474,14 @@
       }
     },
     "cluster": "Trainer \u00b7 Special Illustration Rare",
-    "expected_price": 36.0451,
-    "residual_pct": 0.108334,
+    "expected_price": 36.0043,
+    "residual_pct": 0.109589,
     "contributions": {
-      "char_premium": 0.007906,
-      "scarcity": 0.008002,
-      "pull_cost": 0.293792,
-      "months_since_release": 0.007405,
-      "set_rank": -0.044406,
+      "char_premium": 0.007729,
+      "scarcity": 0.008969,
+      "pull_cost": 0.29077,
+      "months_since_release": 0.008371,
+      "set_rank": -0.04427,
       "demand_pressure": 0.0,
       "grading_intensity": 0.0,
       "universal_appeal": 0.0
@@ -98526,14 +98526,14 @@
       }
     },
     "cluster": "Trainer \u00b7 Special Illustration Rare",
-    "expected_price": 32.7694,
-    "residual_pct": -0.078713,
+    "expected_price": 32.7507,
+    "residual_pct": -0.078189,
     "contributions": {
-      "char_premium": -0.006137,
-      "scarcity": 0.008002,
-      "pull_cost": 0.293792,
-      "months_since_release": 0.007405,
-      "set_rank": -0.125639,
+      "char_premium": -0.005999,
+      "scarcity": 0.008969,
+      "pull_cost": 0.29077,
+      "months_since_release": 0.008371,
+      "set_rank": -0.125256,
       "demand_pressure": 0.0,
       "grading_intensity": 0.0,
       "universal_appeal": 0.0
@@ -98578,14 +98578,14 @@
       }
     },
     "cluster": "Pok\u00e9mon \u00b7 Special Illustration Rare",
-    "expected_price": 516.1549,
-    "residual_pct": 0.218607,
+    "expected_price": 516.4511,
+    "residual_pct": 0.217908,
     "contributions": {
-      "char_premium": 1.193436,
-      "scarcity": 0.060568,
-      "pull_cost": -0.062124,
-      "months_since_release": 0.008766,
-      "set_rank": 0.484664,
+      "char_premium": 1.19501,
+      "scarcity": 0.060055,
+      "pull_cost": -0.06313,
+      "months_since_release": 0.010154,
+      "set_rank": 0.483795,
       "demand_pressure": 0.0,
       "grading_intensity": 0.0,
       "universal_appeal": 0.0
@@ -98630,14 +98630,14 @@
       }
     },
     "cluster": "Pok\u00e9mon \u00b7 Special Illustration Rare",
-    "expected_price": 269.4526,
-    "residual_pct": 0.224743,
+    "expected_price": 269.4901,
+    "residual_pct": 0.224572,
     "contributions": {
-      "char_premium": 0.679222,
-      "scarcity": 0.060568,
-      "pull_cost": -0.062124,
-      "months_since_release": 0.008766,
-      "set_rank": 0.348863,
+      "char_premium": 0.680118,
+      "scarcity": 0.060055,
+      "pull_cost": -0.06313,
+      "months_since_release": 0.010154,
+      "set_rank": 0.348238,
       "demand_pressure": 0.0,
       "grading_intensity": 0.0,
       "universal_appeal": 0.0
@@ -103102,14 +103102,14 @@
       }
     },
     "cluster": "Energy \u00b7 Rare",
-    "expected_price": 0.1577,
-    "residual_pct": 0.141638,
+    "expected_price": 0.1579,
+    "residual_pct": 0.140019,
     "contributions": {
-      "char_premium": -0.207414,
-      "scarcity": -0.511627,
-      "pull_cost": -0.178462,
-      "months_since_release": 0.02937,
-      "set_rank": -0.754722,
+      "char_premium": -0.210105,
+      "scarcity": -0.508608,
+      "pull_cost": -0.174793,
+      "months_since_release": 0.030721,
+      "set_rank": -0.758651,
       "demand_pressure": 0.0,
       "grading_intensity": 0.0,
       "universal_appeal": 0.0
@@ -103154,14 +103154,14 @@
       }
     },
     "cluster": "Energy \u00b7 Rare",
-    "expected_price": 0.235,
-    "residual_pct": -0.148941,
+    "expected_price": 0.2359,
+    "residual_pct": -0.152004,
     "contributions": {
-      "char_premium": -0.193536,
-      "scarcity": -0.511627,
-      "pull_cost": -0.178462,
-      "months_since_release": 0.02937,
-      "set_rank": -0.369501,
+      "char_premium": -0.196047,
+      "scarcity": -0.508608,
+      "pull_cost": -0.174793,
+      "months_since_release": 0.030721,
+      "set_rank": -0.371425,
       "demand_pressure": 0.0,
       "grading_intensity": 0.0,
       "universal_appeal": 0.0
@@ -103206,14 +103206,14 @@
       }
     },
     "cluster": "Energy \u00b7 Rare",
-    "expected_price": 0.5012,
-    "residual_pct": -0.441382,
+    "expected_price": 0.5052,
+    "residual_pct": -0.445749,
     "contributions": {
-      "char_premium": -0.154915,
-      "scarcity": -0.511627,
-      "pull_cost": -0.178462,
-      "months_since_release": 0.02937,
-      "set_rank": 0.349364,
+      "char_premium": -0.156924,
+      "scarcity": -0.508608,
+      "pull_cost": -0.174793,
+      "months_since_release": 0.030721,
+      "set_rank": 0.351183,
       "demand_pressure": 0.0,
       "grading_intensity": 0.0,
       "universal_appeal": 0.0
@@ -104766,14 +104766,14 @@
       }
     },
     "cluster": "Pok\u00e9mon \u00b7 Special Illustration Rare",
-    "expected_price": 121.9947,
-    "residual_pct": -0.4967,
+    "expected_price": 122.2142,
+    "residual_pct": -0.497603,
     "contributions": {
-      "char_premium": 0.548392,
-      "scarcity": 0.009805,
-      "pull_cost": -0.405495,
-      "months_since_release": 0.010229,
-      "set_rank": 0.079951,
+      "char_premium": 0.549115,
+      "scarcity": 0.009722,
+      "pull_cost": -0.405814,
+      "months_since_release": 0.011848,
+      "set_rank": 0.079808,
       "demand_pressure": 0.0,
       "grading_intensity": 0.0,
       "universal_appeal": 0.0
@@ -104818,14 +104818,14 @@
       }
     },
     "cluster": "Pok\u00e9mon \u00b7 Special Illustration Rare",
-    "expected_price": 54.7727,
-    "residual_pct": 0.303935,
+    "expected_price": 54.7578,
+    "residual_pct": 0.304289,
     "contributions": {
-      "char_premium": -0.577778,
-      "scarcity": 0.009805,
-      "pull_cost": -0.405495,
-      "months_since_release": 0.010229,
-      "set_rank": 0.405335,
+      "char_premium": -0.57854,
+      "scarcity": 0.009722,
+      "pull_cost": -0.405814,
+      "months_since_release": 0.011848,
+      "set_rank": 0.404608,
       "demand_pressure": 0.0,
       "grading_intensity": 0.0,
       "universal_appeal": 0.0
@@ -104870,14 +104870,14 @@
       }
     },
     "cluster": "Pok\u00e9mon \u00b7 Special Illustration Rare",
-    "expected_price": 81.8657,
-    "residual_pct": -0.157034,
+    "expected_price": 81.9147,
+    "residual_pct": -0.157538,
     "contributions": {
-      "char_premium": -0.06698,
-      "scarcity": 0.009805,
-      "pull_cost": -0.405495,
-      "months_since_release": 0.010229,
-      "set_rank": 0.296425,
+      "char_premium": -0.067068,
+      "scarcity": 0.009722,
+      "pull_cost": -0.405814,
+      "months_since_release": 0.011848,
+      "set_rank": 0.295894,
       "demand_pressure": 0.0,
       "grading_intensity": 0.0,
       "universal_appeal": 0.0
@@ -104922,14 +104922,14 @@
       }
     },
     "cluster": "Pok\u00e9mon \u00b7 Special Illustration Rare",
-    "expected_price": 209.7332,
-    "residual_pct": -0.155689,
+    "expected_price": 209.9065,
+    "residual_pct": -0.156386,
     "contributions": {
-      "char_premium": 0.548392,
-      "scarcity": 0.009805,
-      "pull_cost": -0.405495,
-      "months_since_release": 0.010229,
-      "set_rank": 0.621809,
+      "char_premium": 0.549115,
+      "scarcity": 0.009722,
+      "pull_cost": -0.405814,
+      "months_since_release": 0.011848,
+      "set_rank": 0.620695,
       "demand_pressure": 0.0,
       "grading_intensity": 0.0,
       "universal_appeal": 0.0
@@ -104974,14 +104974,14 @@
       }
     },
     "cluster": "Trainer \u00b7 Special Illustration Rare",
-    "expected_price": 33.3945,
-    "residual_pct": 0.030708,
+    "expected_price": 33.4108,
+    "residual_pct": 0.030206,
     "contributions": {
-      "char_premium": 0.001105,
-      "scarcity": 0.008991,
-      "pull_cost": -0.211336,
-      "months_since_release": 0.00832,
-      "set_rank": 0.389239,
+      "char_premium": 0.00108,
+      "scarcity": 0.010077,
+      "pull_cost": -0.211806,
+      "months_since_release": 0.009405,
+      "set_rank": 0.388051,
       "demand_pressure": 0.0,
       "grading_intensity": 0.0,
       "universal_appeal": 0.0
@@ -105026,14 +105026,14 @@
       }
     },
     "cluster": "Trainer \u00b7 Special Illustration Rare",
-    "expected_price": 40.366,
-    "residual_pct": 0.657585,
+    "expected_price": 40.3644,
+    "residual_pct": 0.657648,
     "contributions": {
-      "char_premium": -0.001632,
-      "scarcity": 0.008991,
-      "pull_cost": -0.211336,
-      "months_since_release": 0.00832,
-      "set_rank": 0.581572,
+      "char_premium": -0.001596,
+      "scarcity": 0.010077,
+      "pull_cost": -0.211806,
+      "months_since_release": 0.009405,
+      "set_rank": 0.579797,
       "demand_pressure": 0.0,
       "grading_intensity": 0.0,
       "universal_appeal": 0.0
@@ -105078,14 +105078,14 @@
       }
     },
     "cluster": "Pok\u00e9mon \u00b7 Special Illustration Rare",
-    "expected_price": 185.8757,
-    "residual_pct": -0.096278,
+    "expected_price": 185.6273,
+    "residual_pct": -0.095069,
     "contributions": {
-      "char_premium": -0.06698,
-      "scarcity": 0.062293,
-      "pull_cost": 0.14554,
-      "months_since_release": 0.010229,
-      "set_rank": 0.5129,
+      "char_premium": -0.067068,
+      "scarcity": 0.061765,
+      "pull_cost": 0.144119,
+      "months_since_release": 0.011848,
+      "set_rank": 0.51198,
       "demand_pressure": 0.0,
       "grading_intensity": 0.0,
       "universal_appeal": 0.0
@@ -109602,14 +109602,14 @@
       }
     },
     "cluster": "Energy \u00b7 Rare",
-    "expected_price": 0.1359,
-    "residual_pct": 0.32431,
+    "expected_price": 0.1361,
+    "residual_pct": 0.322744,
     "contributions": {
-      "char_premium": -0.207414,
-      "scarcity": -0.54697,
-      "pull_cost": -0.178644,
-      "months_since_release": 0.032671,
-      "set_rank": -0.870925,
+      "char_premium": -0.210105,
+      "scarcity": -0.543743,
+      "pull_cost": -0.174967,
+      "months_since_release": 0.034174,
+      "set_rank": -0.875459,
       "demand_pressure": 0.0,
       "grading_intensity": 0.0,
       "universal_appeal": 0.0
@@ -109655,13 +109655,13 @@
     },
     "cluster": "Energy \u00b7 Rare",
     "expected_price": 0.1125,
-    "residual_pct": 0.511062,
+    "residual_pct": 0.510837,
     "contributions": {
-      "char_premium": -0.213753,
-      "scarcity": -0.54697,
-      "pull_cost": -0.178644,
-      "months_since_release": 0.032671,
-      "set_rank": -1.053666,
+      "char_premium": -0.216526,
+      "scarcity": -0.543743,
+      "pull_cost": -0.174967,
+      "months_since_release": 0.034174,
+      "set_rank": -1.059152,
       "demand_pressure": 0.0,
       "grading_intensity": 0.0,
       "universal_appeal": 0.0
@@ -109759,13 +109759,13 @@
     },
     "cluster": "Energy \u00b7 Rare",
     "expected_price": 0.1125,
-    "residual_pct": 0.511062,
+    "residual_pct": 0.510837,
     "contributions": {
-      "char_premium": -0.213753,
-      "scarcity": -0.54697,
-      "pull_cost": -0.178644,
-      "months_since_release": 0.032671,
-      "set_rank": -1.053666,
+      "char_premium": -0.216526,
+      "scarcity": -0.543743,
+      "pull_cost": -0.174967,
+      "months_since_release": 0.034174,
+      "set_rank": -1.059152,
       "demand_pressure": 0.0,
       "grading_intensity": 0.0,
       "universal_appeal": 0.0
@@ -110902,14 +110902,14 @@
       }
     },
     "cluster": "Pok\u00e9mon \u00b7 Special Illustration Rare",
-    "expected_price": 42.6474,
-    "residual_pct": 0.139108,
+    "expected_price": 42.6606,
+    "residual_pct": 0.138755,
     "contributions": {
-      "char_premium": -0.606654,
-      "scarcity": 0.011528,
-      "pull_cost": -0.405488,
-      "months_since_release": 0.011691,
-      "set_rank": 0.180793,
+      "char_premium": -0.607454,
+      "scarcity": 0.01143,
+      "pull_cost": -0.405807,
+      "months_since_release": 0.013542,
+      "set_rank": 0.180469,
       "demand_pressure": 0.0,
       "grading_intensity": 0.0,
       "universal_appeal": 0.0
@@ -110954,14 +110954,14 @@
       }
     },
     "cluster": "Pok\u00e9mon \u00b7 Special Illustration Rare",
-    "expected_price": 84.5527,
-    "residual_pct": 0.009429,
+    "expected_price": 84.5972,
+    "residual_pct": 0.008898,
     "contributions": {
-      "char_premium": -0.142753,
-      "scarcity": 0.011528,
-      "pull_cost": -0.405488,
-      "months_since_release": 0.011691,
-      "set_rank": 0.401301,
+      "char_premium": -0.142942,
+      "scarcity": 0.01143,
+      "pull_cost": -0.405807,
+      "months_since_release": 0.013542,
+      "set_rank": 0.400582,
       "demand_pressure": 0.0,
       "grading_intensity": 0.0,
       "universal_appeal": 0.0
@@ -111006,14 +111006,14 @@
       }
     },
     "cluster": "Trainer \u00b7 Special Illustration Rare",
-    "expected_price": 36.5282,
-    "residual_pct": 0.111744,
+    "expected_price": 36.5454,
+    "residual_pct": 0.111221,
     "contributions": {
-      "char_premium": 0.000487,
-      "scarcity": 0.009979,
-      "pull_cost": -0.211329,
-      "months_since_release": 0.009236,
-      "set_rank": 0.477641,
+      "char_premium": 0.000476,
+      "scarcity": 0.011185,
+      "pull_cost": -0.2118,
+      "months_since_release": 0.01044,
+      "set_rank": 0.476183,
       "demand_pressure": 0.0,
       "grading_intensity": 0.0,
       "universal_appeal": 0.0
@@ -111162,14 +111162,14 @@
       }
     },
     "cluster": "Pok\u00e9mon \u00b7 Special Illustration Rare",
-    "expected_price": 75.6944,
-    "residual_pct": -0.245386,
+    "expected_price": 75.7492,
+    "residual_pct": -0.245932,
     "contributions": {
-      "char_premium": -0.143171,
-      "scarcity": 0.011528,
-      "pull_cost": -0.405488,
-      "months_since_release": 0.011691,
-      "set_rank": 0.291047,
+      "char_premium": -0.14336,
+      "scarcity": 0.01143,
+      "pull_cost": -0.405807,
+      "months_since_release": 0.013542,
+      "set_rank": 0.290525,
       "demand_pressure": 0.0,
       "grading_intensity": 0.0,
       "universal_appeal": 0.0
@@ -111266,14 +111266,14 @@
       }
     },
     "cluster": "Pok\u00e9mon \u00b7 Special Illustration Rare",
-    "expected_price": 306.4258,
-    "residual_pct": 0.105586,
+    "expected_price": 306.8975,
+    "residual_pct": 0.103886,
     "contributions": {
-      "char_premium": 0.924339,
-      "scarcity": 0.011528,
-      "pull_cost": -0.405488,
-      "months_since_release": 0.011691,
-      "set_rank": 0.621809,
+      "char_premium": 0.925558,
+      "scarcity": 0.01143,
+      "pull_cost": -0.405807,
+      "months_since_release": 0.013542,
+      "set_rank": 0.620695,
       "demand_pressure": 0.0,
       "grading_intensity": 0.0,
       "universal_appeal": 0.0
@@ -111318,14 +111318,14 @@
       }
     },
     "cluster": "Trainer \u00b7 Special Illustration Rare",
-    "expected_price": 33.1343,
-    "residual_pct": 0.056912,
+    "expected_price": 33.1594,
+    "residual_pct": 0.056109,
     "contributions": {
-      "char_premium": 0.000929,
-      "scarcity": 0.009979,
-      "pull_cost": -0.211329,
-      "months_since_release": 0.009236,
-      "set_rank": 0.379682,
+      "char_premium": 0.000908,
+      "scarcity": 0.011185,
+      "pull_cost": -0.2118,
+      "months_since_release": 0.01044,
+      "set_rank": 0.378523,
       "demand_pressure": 0.0,
       "grading_intensity": 0.0,
       "universal_appeal": 0.0
@@ -111422,14 +111422,14 @@
       }
     },
     "cluster": "Pok\u00e9mon \u00b7 Special Illustration Rare",
-    "expected_price": 358.1409,
-    "residual_pct": -0.256075,
+    "expected_price": 358.4504,
+    "residual_pct": -0.256717,
     "contributions": {
-      "char_premium": 0.924339,
-      "scarcity": 0.064016,
-      "pull_cost": -0.191771,
-      "months_since_release": 0.011691,
-      "set_rank": 0.511555,
+      "char_premium": 0.925558,
+      "scarcity": 0.063473,
+      "pull_cost": -0.192517,
+      "months_since_release": 0.013542,
+      "set_rank": 0.510638,
       "demand_pressure": 0.0,
       "grading_intensity": 0.0,
       "universal_appeal": 0.0

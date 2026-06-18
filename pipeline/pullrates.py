@@ -81,6 +81,26 @@ SET_TIER_PROB: Dict[str, Dict[str, float]] = {
         "Shiny Rare": 0.25,                # "baby shinies", 1 in 4
         "Shiny Ultra Rare": 0.075,         # 1 in 13
     },
+    # ----- Standard SV sets — Temporal Forces reset the "harder" baseline. SIR
+    # holds at 1 in 86 across all four (≈ the base table); Hyper varies with how
+    # many golds TPCi printed. TCGplayer 8,000+ pack samples. (Big fix: base
+    # Hyper was 1/54 — these are 1/137-188.)
+    "sv5": {  # Temporal Forces
+        "Special Illustration Rare": 0.011628,  # 1 in 86
+        "Hyper Rare": 0.007194,               # 1 in 139
+    },
+    "sv6": {  # Twilight Masquerade
+        "Special Illustration Rare": 0.011628,  # 1 in 86
+        "Hyper Rare": 0.006849,               # 1 in 146
+    },
+    "sv7": {  # Stellar Crown
+        "Special Illustration Rare": 0.011628,  # 1 in 86
+        "Hyper Rare": 0.007299,               # 1 in 137
+    },
+    "sv8": {  # Surging Sparks
+        "Special Illustration Rare": 0.011628,  # 1 in 86
+        "Hyper Rare": 0.005319,               # 1 in 188
+    },
     # ----- Mega-era sets: "any card of that rarity" per-pack odds from large-
     # sample community/TCGplayer-style data (IR ~1/9 across the Mega era; SIR and
     # Hyper drift set-to-set). Hyper/MHR biased to the conservative source so EV
