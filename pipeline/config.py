@@ -62,7 +62,11 @@ SETS = {
     "sv7":    {"name": "Stellar Crown",        "pack_price": 6.0,  "retail_pack_price": 4.49, "packs_per_etb": _ETB, "etb_price": 130.0},
     "sv6":    {"name": "Twilight Masquerade",  "pack_price": 5.0,  "retail_pack_price": 4.49, "packs_per_etb": _ETB, "etb_price": 70.0},
     "sv5":    {"name": "Temporal Forces",      "pack_price": 6.0,  "retail_pack_price": 4.49, "packs_per_etb": _ETB, "etb_price": 130.0},
-    # Mega Evolution series (2026)
+    "sv9":    {"name": "Journey Together",     "pack_price": 6.81,  "retail_pack_price": 4.49, "packs_per_etb": _ETB, "etb_price": 131.08},  # TCGplayer actual
+    "sv10":   {"name": "Destined Rivals",      "pack_price": 10.62, "retail_pack_price": 4.49, "packs_per_etb": _ETB, "etb_price": 208.13},  # TCGplayer actual
+    "zsv10pt5": {"name": "Black Bolt",         "pack_price": 13.58, "retail_pack_price": 4.49, "packs_per_etb": _ETB, "etb_price": 172.27},  # TCGplayer actual
+    # Mega Evolution series (2025-2026)
+    "me1":    {"name": "Mega Evolution",       "pack_price": 7.50,  "retail_pack_price": 4.99, "packs_per_etb": _ETB, "etb_price": 120.19},  # TCGplayer actual
     "me2pt5": {"name": "Ascended Heroes",      "pack_price": 13.58, "retail_pack_price": 4.99, "packs_per_etb": _ETB, "etb_price": 181.75},  # TCGplayer actual
     "me3":    {"name": "Perfect Order",        "pack_price": 6.0,  "retail_pack_price": 4.99, "packs_per_etb": _ETB, "etb_price": 90.0},
     "me4":    {"name": "Chaos Rising",         "pack_price": 6.0,  "retail_pack_price": 4.99, "packs_per_etb": _ETB, "etb_price": 92.0},

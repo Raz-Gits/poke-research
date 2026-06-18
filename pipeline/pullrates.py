@@ -101,6 +101,16 @@ SET_TIER_PROB: Dict[str, Dict[str, float]] = {
         "Special Illustration Rare": 0.011628,  # 1 in 86
         "Hyper Rare": 0.005319,               # 1 in 188
     },
+    "sv9": {  # Journey Together — SIR confirmed 1/86; Hyper PLACEHOLDER (~1/150)
+        "Special Illustration Rare": 0.011628,  # 1 in 86
+        "Hyper Rare": 0.006667,               # ~1 in 150 (PLACEHOLDER — get exact)
+    },
+    "sv10": {  # Destined Rivals — SIR confirmed 1/86; Hyper PLACEHOLDER (~1/150)
+        "Special Illustration Rare": 0.011628,  # 1 in 86
+        "Hyper Rare": 0.006667,               # ~1 in 150 (PLACEHOLDER — get exact)
+    },
+    # Black Bolt (zsv10pt5) + Mega Evolution (me1): PROVISIONAL — use base tiers
+    # until real per-rarity odds land (special / Mega-era; rates differ).
     # ----- Mega-era sets: "any card of that rarity" per-pack odds from large-
     # sample community/TCGplayer-style data (IR ~1/9 across the Mega era; SIR and
     # Hyper drift set-to-set). Hyper/MHR biased to the conservative source so EV
