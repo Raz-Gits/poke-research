@@ -3,5 +3,8 @@ __pycache__/
 *.pyc
 .DS_Store
 data/raw/
+# raw TCGCSV daily archives (~380MB, re-downloadable); keep the derived
+# data/history/ panel (small) so the backtest reruns without re-fetching.
+data/tcgcsv_archive/
 # secrets — never commit your eBay keys
 .env

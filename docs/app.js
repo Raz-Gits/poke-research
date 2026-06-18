@@ -84,7 +84,7 @@ function iqChip(iq) {
 /* ---------- global state ---------- */
 const STATE = {
   cards: null, sets: null, leaderboard: null, model: null, meta: null,
-  byId: new Map(), loaded: false, error: null,
+  backtest: null, byId: new Map(), loaded: false, error: null,
 };
 
 async function loadData() {
@@ -96,6 +96,11 @@ async function loadData() {
   }));
   [STATE.cards, STATE.sets, STATE.leaderboard, STATE.model, STATE.meta] = results;
   STATE.byId = new Map(STATE.cards.map((c) => [c.id, c]));
+  /* backtest.json is optional — never block boot if it's absent */
+  try {
+    const r = await fetch('./data/backtest.json', { cache: 'no-cache' });
+    if (r.ok) STATE.backtest = await r.json();
+  } catch (_) { /* no track record yet */ }
   STATE.loaded = true;
 }
 
@@ -827,6 +832,127 @@ function fmtFeat(f, v) {
 }
 
 /* ============================================================
+   5. TRACK RECORD — backtest of the model vs real TCGplayer history
+   ============================================================ */
+function trIcColor(ic) {
+  if (ic == null) return '#868e96';
+  if (ic >= 0.04) return 'var(--success-accent)';
+  if (ic <= -0.02) return 'var(--brand-red-dark)';
+  return '#868e96';
+}
+const trIc = (ic) => ic == null ? '—' : (ic >= 0 ? '+' : '') + Number(ic).toFixed(3);
+const icCell = (ic) => el('span', { style: 'font-weight:600;color:' + trIcColor(ic), text: trIc(ic) });
+
+function trHeadlineCard(title, c, verdict) {
+  const tone = trIcColor(c.ic);
+  return el('div', { style: 'flex:1 1 220px;min-width:200px;background:var(--surface,#fff);border:1px solid var(--line,#ECECF1);border-radius:16px;padding:20px;border-top:4px solid ' + tone }, [
+    el('div', { class: 'micro', text: title }),
+    el('div', { style: 'font-size:40px;font-weight:700;line-height:1.1;margin:6px 0;color:' + tone, text: trIc(c.ic) }),
+    el('div', { class: 'caption', text: 'rank IC · 28-day' }),
+    el('div', { class: 'micro', style: 'margin-top:8px', text: 'HAC t = ' + (c.nw_t == null ? '—' : c.nw_t) + ' · ' + c.sign_pos + '/' + c.n_dates + ' weeks positive' }),
+    el('div', { style: 'margin-top:10px;font-weight:700;color:' + tone, text: verdict }),
+    el('p', { class: 'caption', style: 'margin-top:8px', text: c.note || '' }),
+  ]);
+}
+
+function trMiniTable(caption, headers, rows) {
+  const head = el('thead', {}, el('tr', {}, headers.map((hh, i) => el('th', { class: i ? 'num' : '', text: hh }))));
+  const body = el('tbody', {}, rows.map((r) => el('tr', {}, r.map((cell, i) =>
+    (cell && cell.nodeType) ? el('td', { class: i ? 'num' : '' }, cell)
+                            : el('td', { class: i ? 'num' : '', text: String(cell) })))));
+  return el('div', {}, [
+    caption ? el('p', { class: 'micro section-eyebrow', text: caption }) : null,
+    el('div', { class: 'table-card' }, el('div', { class: 'table-scroll' }, el('table', { class: 'lb' }, [head, body]))),
+  ]);
+}
+
+function trSparkline(series) {
+  const max = Math.max(0.3, ...series.map((s) => Math.abs(s.ic)));
+  return el('div', { style: 'display:flex;gap:2px;align-items:flex-end;height:48px;overflow-x:auto;padding-top:4px' },
+    series.map((s) => el('div', {
+      title: s.date + ': IC ' + trIc(s.ic),
+      style: 'width:5px;flex:0 0 5px;height:' + Math.max(2, Math.round(Math.abs(s.ic) / max * 44)) + 'px;border-radius:1px;background:' + (s.ic >= 0 ? 'var(--success-accent)' : 'var(--brand-red-dark)'),
+    })));
+}
+
+function viewTrackRecord() {
+  const bt = STATE.backtest;
+  if (!bt) {
+    setView(el('section', { class: 'section container' }, el('div', { class: 'section-head' }, el('div', {}, [
+      el('p', { class: 'micro section-eyebrow', text: 'Track Record' }),
+      el('h2', { class: 'h2', text: 'Track record is being prepared' }),
+      el('p', { class: 'section-sub', text: 'The backtest appears here after the next data refresh publishes it.' }),
+    ]))));
+    highlightNav('trackrecord');
+    return;
+  }
+  const p = bt.panel, h = bt.headline, hr = bt.hit_rates || {}, dec = bt.decile || {};
+
+  const heads = el('div', { style: 'display:flex;flex-wrap:wrap;gap:14px;margin-top:6px' }, [
+    h.fresh_release ? trHeadlineCard('Fresh releases (≤35 days old)', h.fresh_release, 'Strong & robust') : null,
+    h.mature_liquid ? trHeadlineCard('Mature & liquid (>90d, >$10)', h.mature_liquid, '≈ no edge — honest') : null,
+    h.all_cards ? trHeadlineCard('All cards ($2+)', h.all_cards, 'Modest') : null,
+  ]);
+
+  const freshPct = (h.fresh_release && h.fresh_release.mean_fwd_return != null)
+    ? Math.round(Math.abs(h.fresh_release.mean_fwd_return) * 100) + '%' : '~10%';
+  const verdict = el('div', { style: 'background:var(--surface-soft,#F7F7FB);border-radius:16px;padding:18px 20px;margin-top:18px' }, [
+    el('p', { class: 'h3', style: 'margin:0 0 6px', text: 'What the numbers say' }),
+    el('p', { class: 'section-sub', style: 'margin:0', html:
+      'The model is genuinely good at <strong>one valuable thing</strong>: spotting freshly-released cards that are overpriced and about to fall. Fresh cards drop about <strong>' + freshPct +
+      '</strong> in their first month, and the model reliably ranks which fall hardest. On established, liquid cards it has little measurable edge — treat it as a value gauge, not a crystal ball.' }),
+  ]);
+
+  const ageTable = trMiniTable('Edge by card age (since release)',
+    ['Age bucket', 'IC', 'Avg 28d return', 'Obs'],
+    (bt.by_age_bucket || []).map((r) => [r.bucket, icCell(r.ic), signedPct(r.mean_return, 0), r.n_obs.toLocaleString()]));
+  const floorTable = trMiniTable('Edge by price floor',
+    ['Min price', 'IC', 'Significance', 'Weeks'],
+    (bt.floor_sensitivity || []).map((r) => ['$' + r.floor.toFixed(0) + '+', icCell(r.ic), 'HAC t ' + (r.nw_t == null ? '—' : r.nw_t), r.n_dates]));
+  const rarTable = trMiniTable('Edge by rarity',
+    ['Rarity', 'IC', 'Avg 28d return', 'Frac up', 'n'],
+    (bt.by_rarity || []).map((r) => [r.key, icCell(r.ic), signedPct(r.mean_return, 0), PCT(r.frac_up, 0), r.n.toLocaleString()]));
+
+  const fine = el('p', { class: 'caption', html:
+    'Confident calls: undervalued cards rose <strong>' + PCT(hr.under, 0) + '</strong> of the time, overvalued fell <strong>' + PCT(hr.over, 0) +
+    '</strong> — vs a ' + PCT(hr.base_up, 0) + ' coin-flip base rate. Most-undervalued decile returned ' + signedPct(dec.top_undervalued_return, 0) +
+    ' vs ' + signedPct(dec.bottom_overvalued_return, 0) + ' for the most-overvalued (28-day).' });
+
+  const section = el('section', { class: 'section container' }, [
+    el('div', { class: 'section-head' }, [
+      el('div', {}, [
+        el('p', { class: 'micro section-eyebrow', text: 'Track Record · backtested on real TCGplayer history' }),
+        el('h2', { class: 'h2', text: 'Does the model actually work?' }),
+        el('p', { class: 'section-sub', text:
+          'We replayed the model across ' + p.n_dates + ' weekly snapshots (' + p.first_date + ' → ' + p.last_date +
+          '), refitting it with only the prices known on each date, then checked its over/under calls against what prices actually did ' +
+          p.primary_horizon_days + ' days later. “Rank IC” measures how well the calls ranked future winners (0 = coin flip).' }),
+      ]),
+      el('span', { class: 'chip chip--lavender', text: p.n_dates + ' weeks · ' + p.primary_horizon_days + 'd horizon' }),
+    ]),
+    heads,
+    verdict,
+    el('div', { class: 'lab-grid', style: 'margin-top:20px' }, [ageTable, floorTable]),
+    el('div', { style: 'margin-top:20px' }, rarTable),
+    el('div', { style: 'margin-top:20px' }, [
+      el('p', { class: 'micro section-eyebrow', text: 'Weekly rank IC (all cards, 28-day) — green = the model ranked that week right' }),
+      trSparkline(bt.ic_timeseries || []),
+    ]),
+    fine,
+    el('div', { style: 'margin-top:14px' }, [
+      el('p', { class: 'micro section-eyebrow', text: 'Honest caveats' }),
+      el('ul', { class: 'caption', style: 'margin:6px 0 0;padding-left:18px' },
+        (bt.caveats || []).map((c) => el('li', { text: c }))),
+    ]),
+    el('p', { class: 'caption', style: 'margin-top:12px', html:
+      'Source: daily TCGplayer price history via tcgcsv.com (free, no scraping). Significance uses overlap-corrected (Newey-West) t-stats. This is a backtest of a statistical model, <strong>not</strong> investment advice.' }),
+  ]);
+
+  setView(section);
+  highlightNav('trackrecord');
+}
+
+/* ============================================================
    Router
    ============================================================ */
 const ROUTES = {
@@ -835,6 +961,7 @@ const ROUTES = {
   '/sets': viewSets,
   '/pricelab': viewPriceLab,
   '/movers': viewMovers,
+  '/trackrecord': viewTrackRecord,
   '/search': viewSearch,
 };
 

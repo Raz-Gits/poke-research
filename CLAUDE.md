@@ -4,8 +4,9 @@ Free Pokémon TCG analytics site modeled on mycollectrics.com ("Collectrics IQ /
 Price Lab"), aiming to match-or-beat it. Scores cards as over/under/fair-valued
 from a clustered price model, surfaces undervalued/overvalued cards + sealed EV.
 
-- **Local:** `~/Pokemon Bot/poke-research` · **GitHub:** Raz-Gits/poke-research
-- **Live:** https://raz-gits.github.io/poke-research/ (GitHub Pages from `/docs`)
+- **Local:** `~/Pokemon Bot/poke-research` · **GitHub:** Raz-Gits/poke-research (**private**)
+- **Live:** deployed on **Netlify** (auto-deploys from `main` on every push;
+  `netlify.toml` pins publish dir = `docs`). GitHub Pages is **disabled**.
 - **Owner:** values accuracy and honest signals; this is a clean analytics tool —
   **never** build scalping / anti-bot evasion / auto-checkout.
 
@@ -31,12 +32,19 @@ fetch.py ──→ data/normalized/cards.json ──→ build.py ──→ docs/
 ./.venv/bin/python -m collectors.wikipopularity  # refresh Wikipedia views (rarely)
 ./run_daily.sh            # fetch + build (DEPLOY=1 to also git commit+push docs/data)
 ```
-Deploy = commit `docs/data` and push; Pages CDN swaps in ~1-2 min (hard-refresh
-the browser). Verify a deploy by curling `…/data/<file>.json?cb=$(date +%s)`.
+```bash
+# Backtest pipeline (validates the model against real TCGplayer history)
+./.venv/bin/python -m collectors.tcgcsv idmap   # rebuild card->TCGplayer id-map (+ coverage)
+./.venv/bin/python -m collectors.tcgcsv         # download archives + backfill data/history/
+./.venv/bin/python -m pipeline.backtest         # walk-forward backtest -> docs/data/backtest.json
+```
+Deploy = commit + push to `main`; **Netlify** rebuilds and swaps in ~1 min
+(hard-refresh). No GitHub Pages anymore. `pip install -r requirements.txt`
+(numpy, py7zr) into `.venv` on a fresh clone.
 
 ## Pipeline modules (`pipeline/`)
 
-- **config.py** — `SETS` (11: SV + Mega-era), `FEATURES` (label/status/min/max →
+- **config.py** — `SETS` (15: SV + Mega-era), `FEATURES` (label/status/min/max →
   drives the frontend sliders), model constants, `SITE_DATA = docs/data`.
 - **fetch.py** — normalize cards; fills Mega-set prices from TCGdex (pokemontcg.io
   doesn't price them). `base_name` is supertype-aware.
@@ -57,6 +65,29 @@ the browser). Verify a deploy by curling `…/data/<file>.json?cb=$(date +%s)`.
   then dynamics stays `awaiting_data` — the live site must NEVER present
   simulated data as real.
 - **collectors/wikipopularity.py** — caches Wikipedia article views.
+- **collectors/tcgcsv.py** — real TCGplayer price *history* from tcgcsv.com (free
+  mirror of TCGplayer's price API; NOT a scrape). Builds the card→productId
+  id-map by (set→group)+(collector number), name-validated (2937/2937);
+  downloads daily `.ppmd.7z` archives → `data/history/price-<date>.json` panel.
+  `SET_TO_GROUP` + `RARITY_CORRECTIONS` (fetch.py) handle source quirks.
+- **backtest.py** — walk-forward backtest: refit the model as-of each historical
+  date (no lookahead), score over/under calls vs real later prices. Newey-West
+  (HAC) significance, age-gating, floor sweep → `docs/data/backtest.json`
+  (the Track Record page). build.py also writes `pred-<date>.json` each run for
+  forward self-grading.
+
+## Backtest / Track Record — what it found (honest)
+
+The model's edge is **real but specific** (28-day horizon, HAC t):
+- **Strong on fresh releases** (post-release ≤35d): IC ≈ +0.22, HAC t ≈ 8,
+  positive 57/64 weeks — fresh chase cards are overpriced and fall ~10%/month,
+  and the model ranks which fall hardest.
+- **≈ zero on mature, liquid cards** (>90d & >$10): IC ≈ −0.02. Not a crystal
+  ball for blue-chips. Edge also collapses above a ~$10 floor (cheap-card noise).
+4 adversarial agents verified: no look-ahead leakage, id-map correct. They caught
+the inflated naive t (10→~6 after HAC), the presale-window effect (TCGCSV carries
+presale prices; headline fresh-cut excludes negative ages), and the ME variant
+bug — all fixed. Present these numbers honestly; never lead with the inflated IC.
 
 ## Character premium — how it works (important, heavily iterated)
 
@@ -81,7 +112,13 @@ rating" flags are art-driven Illustration Rares (card art ≠ character fame).
 
 - eBay demand feed: waiting on the owner's Production key → `.env` (see
   `EBAY_SETUP.md`). After it's live: fix the demand-gauge scale + relabel the
-  movers chip stub→live in `docs/app.js`.
-- Shrouded Fable's Hyper rate is the one remaining small-sample estimate
-  (~1/240) — tighten when a large box-break write-up lands.
+  movers chip stub→live in `docs/app.js`. The backtest's Hyper-Rare/blue-chip
+  blind spot is exactly what this demand signal should fill — re-run the backtest
+  after to measure the lift.
+- Black Bolt (zsv10pt5) + Mega Evolution (me1) pull odds are special-set
+  ESTIMATES (`pullrates.py`), pending the owner's large-sample numbers. Shrouded
+  Fable's Hyper is also a small-sample estimate (~1/240).
+- The id-map is built from TODAY's live TCGplayer products (mild survivorship);
+  delisted cards never enter the backtest. Re-runs need `data/tcgcsv_archive/`
+  (gitignored, ~380MB) re-downloaded — `data/history/` panel is committed.
 - Possible future signal: Google Trends "universal appeal".
