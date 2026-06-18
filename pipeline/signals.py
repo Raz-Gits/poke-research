@@ -54,6 +54,8 @@ from typing import Dict, Iterable, List, Optional
 
 import numpy as np
 
+from . import popularity
+
 # Rarity tiers ordered from most common (0.0) to rarest (1.0). Used by the
 # scarcity signal. This is an *ordering* of tiers, independent of the precise
 # pull-rate probabilities in pullrates.py (which scarcity deliberately does not
@@ -116,45 +118,12 @@ _CHARPREM_CHASE_WEIGHT = {
 }
 
 # ---------------------------------------------------------------------------
-# Curated popularity prior. Seeded from an external price-residual popularity
-# ranking of Kanto Pokémon (same residual method this model uses). Blended into
-# the computed premium for listed characters at _CURATED_BLEND weight: it injects
-# human-validated fame the print-metadata signal can't see (e.g. popularity built
-# in older sets outside our 11-set window) and lifts iconic Pokémon's expected
-# price so they aren't falsely flagged "overvalued". Scores are on the same 0-10
-# scale; Mega/form variants inherit the base Pokémon's score. Extend freely
-# (Gen 2, etc.) — just add rows.
+# Popularity prior. The cross-generation, price-INDEPENDENT popularity ground
+# truth (2020 "Pokémon of the Year" global poll + hand-pinned user anchors) now
+# lives in `popularity.py`. char_premium_table() takes that prior where it
+# exists and falls back to the structural signal — compressed below the poll
+# floor — for unranked / Gen 9 characters. See popularity.popularity_prior().
 # ---------------------------------------------------------------------------
-_CURATED_BLEND = 1.0  # weight on the curated prior for listed characters (1.0 = override)
-_CURATED_POPULARITY: Dict[str, float] = {
-    # Kanto top 25 (rank 1 = most popular)
-    "Gengar": 10.0, "Charizard": 10.0, "Pikachu": 10.0, "Snorlax": 9.63,
-    "Squirtle": 9.5, "Bulbasaur": 9.38, "Mew": 9.25, "Psyduck": 9.13,
-    "Eevee": 9.0, "Gyarados": 8.88, "Dragonite": 8.75, "Blastoise": 8.63,
-    "Vaporeon": 8.5, "Flareon": 8.38, "Jolteon": 8.25, "Charmander": 8.13,
-    "Mewtwo": 8.0, "Magikarp": 7.88, "Ditto": 7.75, "Dragonair": 7.63,
-    "Alakazam": 7.5, "Arcanine": 7.38, "Ninetales": 7.25, "Vulpix": 7.13,
-    "Venusaur": 7.0,
-    # Manual additions (user-set; fan-favorites outside the Kanto video)
-    "Umbreon": 9.5,
-    # Kanto bottom 10 (least popular)
-    "Ekans": 3.0, "Geodude": 2.72, "Spearow": 2.44, "Venonat": 2.17,
-    "Seaking": 1.89, "Parasect": 1.61, "Doduo": 1.33, "Shellder": 1.06,
-    "Goldeen": 0.78, "Paras": 0.5,
-}
-
-
-def _curated_popularity(base_name: str) -> Optional[float]:
-    """Curated popularity for a character (or None). Mega/form variants inherit
-    the base Pokémon's score: 'Mega Gengar' -> Gengar, 'Mega Charizard Y' ->
-    Charizard."""
-    if base_name in _CURATED_POPULARITY:
-        return _CURATED_POPULARITY[base_name]
-    stem = base_name[5:] if base_name.startswith("Mega ") else base_name
-    parts = stem.split()
-    if len(parts) >= 2 and parts[-1] in {"X", "Y", "Z"}:
-        stem = " ".join(parts[:-1])
-    return _CURATED_POPULARITY.get(stem)
 
 
 # ---------------------------------------------------------------------------
@@ -300,17 +269,21 @@ def char_premium_table(cards: List[dict]) -> Dict[str, float]:
         price_pct = p_price.get(nm, 0.5)
         blended[nm] = _CHARPREM_W_INDEP * indep + _CHARPREM_W_PRICE * price_pct
 
-    # Final clean 0-10 percentile (de-skew to a ~uniform distribution).
+    # Final clean 0-10 percentile of the structural signal (de-skewed).
     final_pct = _charprem_percentile_table(blended)
-    premium = {nm: round(10.0 * final_pct[nm], 4) for nm in all_names}
+    structural = {nm: 10.0 * final_pct[nm] for nm in all_names}
 
-    # Apply the curated popularity prior for listed characters (and their Mega/
-    # form variants). At _CURATED_BLEND=1.0 this overrides the computed value
-    # with the hand-validated popularity score.
+    # Anchor to the cross-gen popularity prior (2020 poll + user overrides) where
+    # it exists; otherwise fall back to the structural signal, COMPRESSED into
+    # [0, POLL_FLOOR) so any poll-ranked classic outranks any unranked / Gen 9
+    # newcomer (whose fame the in-set structural signal can't reliably gauge).
+    premium: Dict[str, float] = {}
     for nm in all_names:
-        cur = _curated_popularity(nm)
-        if cur is not None:
-            premium[nm] = round(_CURATED_BLEND * cur + (1.0 - _CURATED_BLEND) * premium[nm], 4)
+        prior, _src = popularity.popularity_prior(nm)
+        if prior is not None:
+            premium[nm] = round(prior, 4)
+        else:
+            premium[nm] = round(structural[nm] / 10.0 * popularity.POLL_FLOOR, 4)
     return premium
 
 
