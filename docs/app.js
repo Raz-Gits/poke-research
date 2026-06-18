@@ -752,7 +752,7 @@ function buildModalContent(card) {
         priceBlock,
         (card.features && card.features.pull_cost)
           ? el('p', { class: 'caption', html:
-              `<strong>Cost to pull one at retail ≈ ${USD0(card.features.pull_cost)}</strong> — expected spend on booster packs (at MSRP) to hit this exact card once. Buying the single at ${USD(card.market_price)} is ${card.features.pull_cost > (card.market_price || 0) ? 'far cheaper' : 'pricier'} than chasing it.` })
+              `<strong>Cost to pull one ≈ ${USD0(card.features.pull_cost)}</strong> — expected spend on booster packs (at today's market pack price) to hit this exact card once. Buying the single at ${USD(card.market_price)} is ${card.features.pull_cost > (card.market_price || 0) ? 'far cheaper' : 'pricier'} than chasing it.` })
           : null,
         el('div', { class: 'iq-row' }, [
           el('span', { class: 'iq-badge' }, [
