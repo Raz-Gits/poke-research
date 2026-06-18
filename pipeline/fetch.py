@@ -120,7 +120,6 @@ def main() -> None:
             print(f"    !! no cards returned for {set_id}")
             continue
         s = raw[0].get("set", {})
-        box_price = cfg.get("box_price") or round(cfg["pack_price"] * cfg["packs_per_box"], 2)
         set_records.append({
             "set_id": set_id,
             "name": s.get("name", cfg["name"]),
@@ -131,8 +130,8 @@ def main() -> None:
             "logo": (s.get("images") or {}).get("logo"),
             "symbol": (s.get("images") or {}).get("symbol"),
             "pack_price": cfg["pack_price"],
-            "packs_per_box": cfg["packs_per_box"],
-            "box_price": box_price,
+            "packs_per_etb": cfg.get("packs_per_etb", 9),
+            "etb_price": cfg.get("etb_price"),
         })
         set_cards = [normalize_card(c) for c in raw]
         # Fill prices for sets pokemontcg.io catalogues but doesn't price yet

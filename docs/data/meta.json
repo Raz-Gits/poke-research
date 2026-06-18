@@ -1,11 +1,11 @@
 {
-  "built_at": "2026-06-18T13:03:33",
+  "built_at": "2026-06-18T13:24:01",
   "built_for_date": "2026-06-18",
   "sets": 11,
   "cards": 2143,
   "priced": 2142,
   "clusters": 15,
-  "model_r2_log": 0.96289,
+  "model_r2_log": 0.963717,
   "sources": {
     "cards": "pokemontcg.io (cached, normalized)",
     "prices": "pokemontcg.io TCGplayer market prices (cached)",

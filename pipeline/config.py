@@ -38,24 +38,31 @@ VARIANT_PRIORITY = [
 ]
 
 # ---------------------------------------------------------------------------
-# Sets to track. pack_price = current secondary price of ONE booster pack,
-# packs_per_box = packs in a sealed box. box_price (optional) overrides
-# pack_price * packs_per_box for the "rip cost" used in sealed-EV.
-# All ESTIMATE — update from live sealed prices.
+# Sets to track. Sealed EV is reported two ways so you can compare:
+#   * single loose booster pack:  pack_price  (ev_per_pack vs this)
+#   * Elite Trainer Box (ETB):    etb_price + packs_per_etb (ev_per_etb vs this)
+# We use ETBs (not booster boxes) because every set ships a 9-pack standard ETB,
+# while booster boxes don't exist for the special/Mega-era sets. All STANDARD
+# (non-Pokémon-Center) ETBs = 9 packs; PC ETBs are 11.
+#
+# PRICES are TCGplayer-sourced mid-2026 estimates (TCGplayer is JS-rendered, so
+# they can't be live-scraped — paste exact numbers here to lock them in). Two
+# ETB prices flagged lower-confidence below.
 # ---------------------------------------------------------------------------
+_ETB = 9  # packs in a standard Elite Trainer Box (SV era)
 SETS = {
-    "sv3pt5": {"name": "151",                  "pack_price": 7.0, "packs_per_box": 36},
-    "sv8pt5": {"name": "Prismatic Evolutions", "pack_price": 9.0, "packs_per_box": 36},
-    "sv8":    {"name": "Surging Sparks",       "pack_price": 4.5, "packs_per_box": 36},
-    "sv4pt5": {"name": "Paldean Fates",        "pack_price": 6.0, "packs_per_box": 36},
-    "sv6pt5": {"name": "Shrouded Fable",       "pack_price": 5.5, "packs_per_box": 36},
-    "sv7":    {"name": "Stellar Crown",        "pack_price": 4.0, "packs_per_box": 36},
-    "sv6":    {"name": "Twilight Masquerade",  "pack_price": 4.0, "packs_per_box": 36},
-    "sv5":    {"name": "Temporal Forces",      "pack_price": 4.0, "packs_per_box": 36},
-    # Mega Evolution series (2026) — pack prices are ESTIMATEs, tune to market
-    "me2pt5": {"name": "Ascended Heroes",      "pack_price": 6.0, "packs_per_box": 36},
-    "me3":    {"name": "Perfect Order",        "pack_price": 5.0, "packs_per_box": 36},
-    "me4":    {"name": "Chaos Rising",         "pack_price": 4.5, "packs_per_box": 36},
+    "sv3pt5": {"name": "151",                  "pack_price": 12.0, "packs_per_etb": _ETB, "etb_price": 135.0},
+    "sv8pt5": {"name": "Prismatic Evolutions", "pack_price": 18.0, "packs_per_etb": _ETB, "etb_price": 155.0},
+    "sv8":    {"name": "Surging Sparks",       "pack_price": 7.0,  "packs_per_etb": _ETB, "etb_price": 120.0},
+    "sv4pt5": {"name": "Paldean Fates",        "pack_price": 10.0, "packs_per_etb": _ETB, "etb_price": 110.0},  # etb low-confidence
+    "sv6pt5": {"name": "Shrouded Fable",       "pack_price": 10.0, "packs_per_etb": _ETB, "etb_price": 110.0},  # etb low-confidence
+    "sv7":    {"name": "Stellar Crown",        "pack_price": 6.0,  "packs_per_etb": _ETB, "etb_price": 130.0},
+    "sv6":    {"name": "Twilight Masquerade",  "pack_price": 5.0,  "packs_per_etb": _ETB, "etb_price": 70.0},
+    "sv5":    {"name": "Temporal Forces",      "pack_price": 6.0,  "packs_per_etb": _ETB, "etb_price": 130.0},
+    # Mega Evolution series (2026)
+    "me2pt5": {"name": "Ascended Heroes",      "pack_price": 9.0,  "packs_per_etb": _ETB, "etb_price": 180.0},
+    "me3":    {"name": "Perfect Order",        "pack_price": 6.0,  "packs_per_etb": _ETB, "etb_price": 90.0},
+    "me4":    {"name": "Chaos Rising",         "pack_price": 6.0,  "packs_per_etb": _ETB, "etb_price": 92.0},
 }
 
 # ---------------------------------------------------------------------------

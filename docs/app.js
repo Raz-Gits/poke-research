@@ -208,7 +208,7 @@ function viewHome() {
       ]),
     ]),
     el('div', { class: 'explainer-row' }, [
-      explainerCard('bg-yellow', '◎', 'Sealed EV', 'Per-card pull rates × market prices roll up to an expected value per pack and box, versus the real box price.'),
+      explainerCard('bg-yellow', '◎', 'Sealed EV', 'Per-card pull rates × market prices roll up to an expected value per pack and per Elite Trainer Box, versus what each actually costs.'),
       explainerCard('bg-teal', '◈', 'Fair-price model', 'A ridge regression per rarity cluster predicts log price from scarcity, character premium and in-set rank — recomputed live as you move sliders.'),
       explainerCard('bg-coral', '◇', 'Honest stubs', 'Demand pressure, grading intensity and supply saturation need eBay / PSA feeds we don’t have yet, so they’re labeled "awaiting data".'),
     ]),
@@ -256,10 +256,12 @@ function viewSets() {
   const head = el('thead', {}, el('tr', {}, [
     el('th', { class: 'lb-rank', text: '#' }),
     el('th', { text: 'Set' }),
-    el('th', { class: 'num', text: 'Box price' }),
+    el('th', { class: 'num', text: 'Pack' }),
     el('th', { class: 'num', text: 'EV / pack' }),
-    el('th', { class: 'num', text: 'EV / box' }),
-    el('th', { class: 'num', text: 'Verdict' }),
+    el('th', { class: 'num', text: 'Pack verdict' }),
+    el('th', { class: 'num', text: 'ETB' }),
+    el('th', { class: 'num', text: 'EV / ETB' }),
+    el('th', { class: 'num', text: 'ETB verdict' }),
   ]));
   const body = el('tbody', {}, sets.map((s, i) => {
     const logo = el('img', { class: 'lb-logo', src: s.logo || PLACEHOLDER, alt: s.name, loading: 'lazy' });
@@ -270,13 +272,15 @@ function viewSets() {
         logo,
         el('div', {}, [
           el('div', { class: 'lb-name', text: s.name }),
-          el('div', { class: 'lb-sub', text: `${s.series} · ${s.packs_per_box} packs/box` }),
+          el('div', { class: 'lb-sub', text: `${s.series} · ${s.packs_per_etb} packs/ETB` }),
         ]),
       ])),
-      el('td', { class: 'num lb-price', text: USD0(s.box_price) }),
-      el('td', { class: 'num lb-price', text: USD(s.raw_value_per_pack) }),
-      el('td', { class: 'num lb-price', text: USD0(s.ev_per_box) }),
-      el('td', { class: 'num' }, evSignalPill(s.signal_pct)),
+      el('td', { class: 'num lb-price', text: USD(s.pack_price) }),
+      el('td', { class: 'num lb-price', text: USD(s.ev_per_pack) }),
+      el('td', { class: 'num' }, evSignalPill(s.pack_signal_pct)),
+      el('td', { class: 'num lb-price', text: USD0(s.etb_price) }),
+      el('td', { class: 'num lb-price', text: USD0(s.ev_per_etb) }),
+      el('td', { class: 'num' }, evSignalPill(s.etb_signal_pct)),
     ]);
   }));
   const table = el('div', { class: 'table-card' },
@@ -288,12 +292,12 @@ function viewSets() {
         el('p', { class: 'micro section-eyebrow', text: 'Sets · Market Trends' }),
         el('h2', { class: 'h2', text: 'Undervalued & overvalued sets' }),
         el('p', { class: 'section-sub', text:
-          'Sealed expected value = Σ (per-card pull rate × market price) × packs per box, vs the real box price. Green “Undervalued” = the cards inside are worth more than the sealed box (good to rip / hold); red “Overvalued” = you pay a premium for sealed (buy singles). A value signal, not a price-trend forecast.' }),
+          'Sealed expected value = Σ (per-card pull rate × market price), shown per single pack and per Elite Trainer Box (9 packs), each vs what that product costs. Green “Undervalued” = the cards inside are worth more than the sealed product (good to rip / hold); red “Overvalued” = you pay a premium for sealed (buy singles). A value signal, not a price-trend forecast.' }),
       ]),
       el('span', { class: 'chip chip--teal', text: 'live · pokemontcg.io' }),
     ]),
     table,
-    el('p', { class: 'caption', html: 'Pull rates are an <strong>estimate</strong> (configurable per rarity tier); they are not official pull rates. Box / pack prices are seeded market estimates.' }),
+    el('p', { class: 'caption', html: 'Pull rates are sourced from large community / TCGplayer-style samples (SIR &amp; Hyper Rare per set). Pack &amp; ETB prices are TCGplayer-sourced estimates — Paldean Fates and Shrouded Fable ETB prices are lower-confidence.' }),
   ]);
 
   setView(section);
