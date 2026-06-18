@@ -14,28 +14,35 @@ anchors the character-premium feature so *genuine fame* drives the score instead
 of in-set chase frequency (which only sees our handful of Scarlet & Violet sets
 and inflates whichever modern Legendaries happen to have pricey chase cards).
 
-HOW the 0-10 score is built (RANK-based, deliberately top-compressed):
-  Card-value popularity is a *tier*, not a fine gradient — a Mew or Mewtwo sells
-  broadly even if a favorites poll ranks niche picks above them. So we don't map
-  votes linearly; instead we map poll RANK through a two-segment curve with a
-  high plateau and a tunable cutoff:
-    * Ranks 1..ELITE_RANK (the "premium tier") map from POLL_TOP (9.9) down to
-      only ELITE_BOTTOM (9.4) — so every well-known Pokemon lands ~9.4-9.9 with
-      just minor separation at the top.
-    * Ranks ELITE_RANK..240 taper from ELITE_BOTTOM down to POLL_FLOOR (7.5) —
-      this is where the real drop-off lives. Move ELITE_RANK / the floors to
-      slide the cutoff.
-  * USER_OVERRIDES win over the poll (hand-pinned anchors). 10.0 is reserved for
-    them so the user's named icons (Charizard/Pikachu/Gengar) sit at the very top.
-  * Characters NOT in the poll (all Gen 9 newcomers, plus poll ranks 241+) get
-    no prior here -> signals.py falls back to the structural signal, compressed
-    BELOW POLL_FLOOR so any poll-ranked classic outranks any unranked newcomer.
+HOW the 0-10 score is built — TWO recognition signals, combined by max():
+  A favorites poll measures *enthusiast* preference (it over-rates competitive/
+  design darlings like Hydreigon and under-rates household names like Mewtwo).
+  So we pair it with a mainstream-recognition signal and take the better of the
+  two — a Pokemon is famous if it's broadly recognized OR a fan favorite:
+    * WIKIPEDIA pageviews (data/wiki_pageviews.json) — en.wikipedia 12-month
+      article views = how many people actually look it up. Captures mainstream
+      icons (Pikachu, Charizard, Mewtwo, Gengar, Eevee). log10 -> [6.5, 9.9].
+    * 2020 POLL vote count — fan favorites (Greninja, Umbreon, Sylveon, Rayquaza
+      — many of whom have no Wikipedia article). log10 -> [POLL_FLOOR, 9.3].
+  This is the fix for the "Hydreigon 9.6 / Mewtwo 7" problem: Mewtwo's 223k
+  Wikipedia views lift it to ~9.3 despite a poll rank of 39, while Hydreigon (no
+  article, poll rank 27) stays ~8.0.
+  * USER_OVERRIDES win over both (hand-pinned anchors). 10.0 is reserved for them
+    so the user's named icons (Charizard/Pikachu/Gengar) sit at the very top.
+  * The scores are a STARTING POINT — pipeline/review_premium.py flags the
+    biggest price-vs-recognition discrepancies for manual override.
+  * Characters with NEITHER signal (Gen 9 newcomers, obscure mons) get no prior
+    -> signals.py falls back to the structural signal, compressed BELOW
+    POLL_FLOOR so any recognized Pokemon outranks any unrecognized one.
 
 Mega / regional / form variants inherit the base Pokemon's score
 ("Mega Charizard Y" -> Charizard).
 """
 from __future__ import annotations
 
+import json
+import math
+import os
 from typing import Dict, Optional, Tuple
 
 # ---------------------------------------------------------------------------
@@ -300,34 +307,76 @@ POLL_VOTES: Dict[str, int] = {
 }
 
 # ---------------------------------------------------------------------------
-# Rank -> 0-10 score mapping. TOP-COMPRESSED on purpose: the famous Pokemon all
-# cluster high (minor separation), and the real drop-off happens at a tunable
-# cutoff. THESE FOUR KNOBS are the dials to slide — raise ELITE_RANK to widen the
-# premium tier, raise POLL_FLOOR to lift everyone, etc.
+# Wikipedia pageviews — the MAINSTREAM-recognition signal (how many people
+# actually look a Pokemon up). Cached into data/wiki_pageviews.json (en.wikipedia
+# 12-month article views, matched to the specific Pokemon's article). Only ~50
+# Pokemon are culturally famous enough to have their own standalone article; the
+# rest rely on the poll. Regenerate with collectors/wikipopularity.py.
 # ---------------------------------------------------------------------------
-POLL_TOP = 9.9      # rank-1 score (10.0 reserved for USER_OVERRIDES)
-ELITE_RANK = 50     # ranks 1..ELITE_RANK are the "premium tier" (cluster high)
-ELITE_BOTTOM = 9.4  # score at rank ELITE_RANK — premium tier spans [9.4, 9.9]
-POLL_FLOOR = 7.5    # score at the last poll rank (240); unranked stay below this
+_WIKI_PATH = os.path.join(
+    os.path.dirname(os.path.dirname(__file__)), "data", "wiki_pageviews.json"
+)
+try:
+    with open(_WIKI_PATH, encoding="utf-8") as _f:
+        WIKI_VIEWS: Dict[str, int] = json.load(_f).get("views", {})
+except (OSError, ValueError):
+    WIKI_VIEWS = {}
 
-# Poll rank by name (insertion order == rank order, 1-based).
-_RANK = {name: i + 1 for i, name in enumerate(POLL_VOTES)}
-_LAST_RANK = len(POLL_VOTES)
+# ---------------------------------------------------------------------------
+# Two recognition signals -> a 0-10 score each, COMBINED by max(): a Pokemon is
+# "famous" if it's a mainstream icon (high Wikipedia traffic) OR a fan favorite
+# (high poll vote count). This is the key fix: Mewtwo has a mediocre poll rank
+# but huge Wikipedia traffic, while Hydreigon has a decent poll rank but no
+# article -> Mewtwo rightly outranks Hydreigon. These scores are a STARTING
+# POINT, not gospel — pipeline/review_premium.py flags price-vs-recognition
+# discrepancies for you to override via USER_OVERRIDES. 10.0 is reserved for
+# those overrides.
+# ---------------------------------------------------------------------------
+POLL_FLOOR = 6.0      # poll/structural floor; unranked characters stay below this
+WIKI_ONLY_CAP = 8.3   # cap for mainstream traffic the fan poll doesn't corroborate
+                      # (keeps nostalgic Gen-1 traffic — Jynx, Butterfree, Cubone —
+                      #  from cracking the top tier on Wikipedia views alone)
 
 
-def _poll_score(rank: int) -> float:
-    """Two-segment rank curve: a high plateau then a taper to POLL_FLOOR."""
-    if rank <= ELITE_RANK:
-        frac = (rank - 1) / (ELITE_RANK - 1)
-        return POLL_TOP - frac * (POLL_TOP - ELITE_BOTTOM)
-    frac = (rank - ELITE_RANK) / (_LAST_RANK - ELITE_RANK)
-    return ELITE_BOTTOM - frac * (ELITE_BOTTOM - POLL_FLOOR)
+def _wiki_score(views: int) -> float:
+    """Mainstream recognition from en.wikipedia 12-mo article views (log10 map:
+    ~1k -> 6.5, ~100k -> 9.0, 1M -> 9.9). 10.0 is reserved for USER_OVERRIDES."""
+    if views <= 0:
+        return 0.0
+    return max(6.5, min(9.9, math.log10(views) + 4.0))
 
 
-# Precomputed name -> score for the poll.
-POLL_SCORE: Dict[str, float] = {
-    name: round(_poll_score(_RANK[name]), 4) for name in POLL_VOTES
-}
+def _poll_score(votes: int) -> float:
+    """Fan recognition from the 2020 poll vote count (log10 map: winner ~140k ->
+    9.3, rank-240 tail ~6k -> POLL_FLOOR)."""
+    return max(POLL_FLOOR, min(9.3, 2.44 * math.log10(votes) - 3.27))
+
+
+WIKI_SCORE: Dict[str, float] = {n: round(_wiki_score(v), 4) for n, v in WIKI_VIEWS.items()}
+POLL_SCORE: Dict[str, float] = {n: round(_poll_score(v), 4) for n, v in POLL_VOTES.items()}
+
+
+def _combined(name: str) -> Tuple[Optional[float], Optional[str]]:
+    """Combine the wiki and poll signals a character has (or (None, None)).
+
+    Both present  -> max() (each can lift the other; e.g. wiki rescues Mewtwo).
+    Poll only     -> poll (the fan poll is Pokemon-specific, trustworthy alone).
+    Wiki only     -> wiki capped at WIKI_ONLY_CAP (uncorroborated mainstream
+                     traffic is general-culture noise, not card demand).
+    """
+    w = WIKI_SCORE.get(name)
+    p = POLL_SCORE.get(name)
+    if w is None and p is None:
+        return None, None
+    if w is not None and p is not None:
+        # Reward corroboration: blend toward agreement so a high-wiki/low-poll
+        # spike (Raichu: 228k views but poll rank 165) is tempered, while signals
+        # that agree stay high. 0.7*stronger + 0.3*weaker.
+        hi, lo = (w, p) if w >= p else (p, w)
+        return 0.7 * hi + 0.3 * lo, ("wiki" if w >= p else "poll")
+    if p is not None:
+        return p, "poll"
+    return min(w, WIKI_ONLY_CAP), "wiki"
 
 
 def _variant_keys(base_name: str):
@@ -345,9 +394,9 @@ def _variant_keys(base_name: str):
 def popularity_prior(base_name: str) -> Tuple[Optional[float], Optional[str]]:
     """Return (score, source) for a character, or (None, None) if not anchored.
 
-    source is 'user' (hand-pinned override, wins) or 'poll' (2020 poll). Mega/
-    form variants inherit the base Pokemon. Characters with no prior return
-    (None, None) so the caller can fall back to the structural signal.
+    source is 'user' (hand-pinned override, wins), 'wiki' (mainstream Wikipedia
+    traffic), or 'poll' (2020 fan poll). Mega/form variants inherit the base
+    Pokemon. (None, None) -> caller falls back to the structural signal.
     """
     if not base_name:
         return None, None
@@ -356,6 +405,7 @@ def popularity_prior(base_name: str) -> Tuple[Optional[float], Optional[str]]:
         if k in USER_OVERRIDES:
             return USER_OVERRIDES[k], "user"
     for k in keys:
-        if k in POLL_SCORE:
-            return POLL_SCORE[k], "poll"
+        score, src = _combined(k)
+        if score is not None:
+            return round(score, 4), src
     return None, None
