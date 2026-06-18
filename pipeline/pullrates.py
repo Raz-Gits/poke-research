@@ -48,7 +48,8 @@ BASE_TIER_PROB: Dict[str, float] = {
     "Shiny Rare": 0.0,                    # shiny sets only (override)
     "Shiny Ultra Rare": 0.0,              # shiny sets only (override)
     "MEGA_ATTACK_RARE": 0.06,             # PROVISIONAL (new Mega Evolution tier)
-    "Mega Hyper Rare": 0.0185,            # PROVISIONAL (~Hyper Rare)
+    "Mega Hyper Rare": 0.005,             # PROVISIONAL — single gold Mega chase, ~1 in 200
+                                          # (was 0.0185/1-in-54, far too easy for a top gold)
     "Unknown": 0.05,
 }
 
