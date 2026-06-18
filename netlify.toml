@@ -1,0 +1,7 @@
+# Poke Research is a static site (no build step). Netlify must serve it from
+# /docs — that's where index.html, app.js and the data/*.json live (the same
+# directory GitHub Pages used). Without this, Netlify publishes the repo root,
+# which has no index.html -> "Page not found".
+[build]
+  publish = "docs"
+  command = ""
