@@ -42,42 +42,6 @@
     "raw_value_per_pack": 7.6179110833333326
   },
   {
-    "set_id": "zsv10pt5",
-    "name": "Black Bolt",
-    "series": "Scarlet & Violet",
-    "release_date": "2025-07-18",
-    "printed_total": 86,
-    "total": 172,
-    "logo": "https://images.pokemontcg.io/zsv10pt5/logo.png",
-    "symbol": "https://images.pokemontcg.io/zsv10pt5/symbol.png",
-    "pack_price": 13.58,
-    "retail_pack_price": 4.49,
-    "packs_per_etb": 9,
-    "etb_price": 172.27,
-    "sealed": {
-      "as_of": "2026-06-18",
-      "pack": {
-        "price": 13.58,
-        "change_24h": -0.51,
-        "sold_today": 4,
-        "listings": 791
-      },
-      "etb": {
-        "price": 172.27,
-        "change_24h": 1.39,
-        "sold_today": 2,
-        "listings": 118
-      }
-    },
-    "ev_per_pack": 9.960771355189335,
-    "pack_signal_pct": -0.2665116822393715,
-    "ev_per_etb": 89.64694219670402,
-    "etb_signal_pct": -0.4796137331125326,
-    "signal_pct": -0.4796137331125326,
-    "avg_loss_per_pack": 3.619228644810665,
-    "raw_value_per_pack": 9.960771355189335
-  },
-  {
     "set_id": "sv6",
     "name": "Twilight Masquerade",
     "series": "Scarlet & Violet",
@@ -156,6 +120,42 @@
     "raw_value_per_pack": 7.981933945438184
   },
   {
+    "set_id": "zsv10pt5",
+    "name": "Black Bolt",
+    "series": "Scarlet & Violet",
+    "release_date": "2025-07-18",
+    "printed_total": 86,
+    "total": 172,
+    "logo": "https://images.pokemontcg.io/zsv10pt5/logo.png",
+    "symbol": "https://images.pokemontcg.io/zsv10pt5/symbol.png",
+    "pack_price": 13.58,
+    "retail_pack_price": 4.49,
+    "packs_per_etb": 9,
+    "etb_price": 172.27,
+    "sealed": {
+      "as_of": "2026-06-18",
+      "pack": {
+        "price": 13.58,
+        "change_24h": -0.51,
+        "sold_today": 4,
+        "listings": 791
+      },
+      "etb": {
+        "price": 172.27,
+        "change_24h": 1.39,
+        "sold_today": 2,
+        "listings": 118
+      }
+    },
+    "ev_per_pack": 7.256485855862216,
+    "pack_signal_pct": -0.4656490533238427,
+    "ev_per_etb": 65.30837270275995,
+    "etb_signal_pct": -0.6208952649749814,
+    "signal_pct": -0.6208952649749814,
+    "avg_loss_per_pack": 6.323514144137784,
+    "raw_value_per_pack": 7.256485855862216
+  },
+  {
     "set_id": "sv5",
     "name": "Temporal Forces",
     "series": "Scarlet & Violet",
@@ -196,42 +196,6 @@
     "signal_pct": -0.6836383512920261,
     "avg_loss_per_pack": 2.7660809243184885,
     "raw_value_per_pack": 3.2339190756815115
-  },
-  {
-    "set_id": "me1",
-    "name": "Mega Evolution",
-    "series": "Mega Evolution",
-    "release_date": "2025-09-26",
-    "printed_total": 132,
-    "total": 188,
-    "logo": "https://images.pokemontcg.io/me1/logo.png",
-    "symbol": "https://images.pokemontcg.io/me1/symbol.png",
-    "pack_price": 7.5,
-    "retail_pack_price": 4.99,
-    "packs_per_etb": 9,
-    "etb_price": 120.19,
-    "sealed": {
-      "as_of": "2026-06-18",
-      "pack": {
-        "price": 7.5,
-        "change_24h": -1.96,
-        "sold_today": 0,
-        "listings": 6997
-      },
-      "etb": {
-        "price": 120.19,
-        "change_24h": 1.11,
-        "sold_today": 7,
-        "listings": 82
-      }
-    },
-    "ev_per_pack": 4.092911789913014,
-    "pack_signal_pct": -0.4542784280115981,
-    "ev_per_etb": 36.83620610921713,
-    "etb_signal_pct": -0.6935168806954228,
-    "signal_pct": -0.6935168806954228,
-    "avg_loss_per_pack": 3.407088210086986,
-    "raw_value_per_pack": 4.092911789913014
   },
   {
     "set_id": "sv8pt5",
@@ -295,6 +259,42 @@
     "signal_pct": -0.7362605680679732,
     "avg_loss_per_pack": 2.1904304276485025,
     "raw_value_per_pack": 3.8095695723514975
+  },
+  {
+    "set_id": "me1",
+    "name": "Mega Evolution",
+    "series": "Mega Evolution",
+    "release_date": "2025-09-26",
+    "printed_total": 132,
+    "total": 188,
+    "logo": "https://images.pokemontcg.io/me1/logo.png",
+    "symbol": "https://images.pokemontcg.io/me1/symbol.png",
+    "pack_price": 7.5,
+    "retail_pack_price": 4.99,
+    "packs_per_etb": 9,
+    "etb_price": 120.19,
+    "sealed": {
+      "as_of": "2026-06-18",
+      "pack": {
+        "price": 7.5,
+        "change_24h": -1.96,
+        "sold_today": 0,
+        "listings": 6997
+      },
+      "etb": {
+        "price": 120.19,
+        "change_24h": 1.11,
+        "sold_today": 7,
+        "listings": 82
+      }
+    },
+    "ev_per_pack": 3.2018906372766502,
+    "pack_signal_pct": -0.5730812483631134,
+    "ev_per_etb": 28.817015735489854,
+    "etb_signal_pct": -0.7602378256469767,
+    "signal_pct": -0.7602378256469767,
+    "avg_loss_per_pack": 4.29810936272335,
+    "raw_value_per_pack": 3.2018906372766502
   },
   {
     "set_id": "sv8",

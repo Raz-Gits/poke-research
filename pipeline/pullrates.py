@@ -110,20 +110,29 @@ SET_TIER_PROB: Dict[str, Dict[str, float]] = {
         "Special Illustration Rare": 0.011628,  # 1 in 86
         "Hyper Rare": 0.006667,               # ~1 in 150 (PLACEHOLDER — get exact)
     },
-    # Black Bolt (zsv10pt5) — special high-end set (Black Bolt / White Flare pair).
-    # ESTIMATES pending a large-sample box-break (the base table is flat-out wrong
-    # here: it left the "Black White Rare" secret on the 1-in-20 Unknown default and
-    # treated a mis-labeled $577 Victini as a guaranteed Rare slot — sealed EV blew
-    # up to +515%). These rarities/rates reflect the IR-rich special-set structure;
-    # "Black White Rare" is the textured top secret (2 in the full set).
+    # Black Bolt (zsv10pt5) — DATA-BACKED (owner, mid-2026 community openings).
+    # IR-rich special set; the top secret is "Black White Rare" (2 in Black Bolt —
+    # Victini #171, Zekrom ex #172; the other 2 BWRs live in White Flare, untracked).
+    # NOTE: the Poke Ball (1/3) & Master Ball (1/19) pattern foils are NOT separate
+    # cards in pokemontcg.io's data, so they can't be valued here -> our EV slightly
+    # UNDER-counts (omits pattern-foil value).
     "zsv10pt5": {
-        "Illustration Rare": 0.18,            # IR-rich set, multiple IR per box
-        "Ultra Rare": 0.065,
-        "Double Rare": 0.13,
-        "Special Illustration Rare": 0.014,   # ~1 in 71
-        "Black White Rare": 0.006,            # ~1 in 167 for the tier (top secret)
+        "Double Rare": 0.211,                 # 1 in ~5
+        "Illustration Rare": 0.164,           # 1 in ~6 (≈2x a standard SV set)
+        "Ultra Rare": 0.0645,                 # 1 in 14-17 (midpoint ~1/15.5)
+        "Special Illustration Rare": 0.01227, # 1 in 80-83 (midpoint ~1/81.5)
+        "Black White Rare": 0.002016,         # 1 in 496 per pack (either BWR); ~1/992 each
     },
-    # Mega Evolution (me1): PROVISIONAL — use base tiers until real odds land.
+    # Mega Evolution (me1) — DATA-BACKED (owner, mid-2026). ~19% Double-Rare-or-better
+    # hit rate; an extremely hard Mega Hyper Rare (~35 boxes/pull) — don't lean box EV
+    # on it; the 1-in-101 SIR is the realistic chase ceiling.
+    "me1": {
+        "Double Rare": 0.209,                 # 1 in ~5
+        "Illustration Rare": 0.109,           # 1 in ~9
+        "Ultra Rare": 0.082,                  # 1 in ~12
+        "Special Illustration Rare": 0.009901,  # 1 in 101
+        "Mega Hyper Rare": 0.000794,          # 1 in 1,260 per pack (either MHR)
+    },
     # ----- Mega-era sets: "any card of that rarity" per-pack odds from large-
     # sample community/TCGplayer-style data (IR ~1/9 across the Mega era; SIR and
     # Hyper drift set-to-set). Hyper/MHR biased to the conservative source so EV
