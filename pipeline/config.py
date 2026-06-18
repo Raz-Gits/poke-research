@@ -73,7 +73,7 @@ RIDGE_ALPHA = 1.0              # L2 regularization for the per-cluster ridge
 FEATURES = {
     "char_premium":          {"label": "Character Premium",   "status": "live",  "min": 0, "max": 10},
     "scarcity":              {"label": "Scarcity Score",      "status": "live",  "min": 0, "max": 10},
-    "pull_cost":             {"label": "Pull Cost ($)",       "status": "live",  "min": 0, "max": 5000},
+    "pull_cost":             {"label": "Pull Cost ($)",       "status": "live",  "min": 0, "max": 20000},
     "months_since_release":  {"label": "Months Since Release","status": "live",  "min": 0, "max": 60},
     "set_rank":              {"label": "In-Set Rank",         "status": "live",  "min": 0, "max": 1},
     "demand_pressure":       {"label": "Demand Pressure (%)", "status": "stub",  "min": 0, "max": 20},

@@ -14,13 +14,19 @@ anchors the character-premium feature so *genuine fame* drives the score instead
 of in-set chase frequency (which only sees our handful of Scarlet & Violet sets
 and inflates whichever modern Legendaries happen to have pricey chase cards).
 
-HOW the 0-10 score is built:
-  * Poll vote counts are sqrt-compressed and mapped to [POLL_FLOOR, POLL_CEIL]
-    = [5.5, 9.8]. The poll winner (Greninja, 140,559 votes) sits at 9.8; the
-    rank-240 tail (Froakie, 6,293) sits at 5.5. Being in the top 240 of ~890
-    Pokemon means upper-half fame, hence the 5.5 floor.
+HOW the 0-10 score is built (RANK-based, deliberately top-compressed):
+  Card-value popularity is a *tier*, not a fine gradient — a Mew or Mewtwo sells
+  broadly even if a favorites poll ranks niche picks above them. So we don't map
+  votes linearly; instead we map poll RANK through a two-segment curve with a
+  high plateau and a tunable cutoff:
+    * Ranks 1..ELITE_RANK (the "premium tier") map from POLL_TOP (9.9) down to
+      only ELITE_BOTTOM (9.4) — so every well-known Pokemon lands ~9.4-9.9 with
+      just minor separation at the top.
+    * Ranks ELITE_RANK..240 taper from ELITE_BOTTOM down to POLL_FLOOR (7.5) —
+      this is where the real drop-off lives. Move ELITE_RANK / the floors to
+      slide the cutoff.
   * USER_OVERRIDES win over the poll (hand-pinned anchors). 10.0 is reserved for
-    them so the user's named icons stay at the very top.
+    them so the user's named icons (Charizard/Pikachu/Gengar) sit at the very top.
   * Characters NOT in the poll (all Gen 9 newcomers, plus poll ranks 241+) get
     no prior here -> signals.py falls back to the structural signal, compressed
     BELOW POLL_FLOOR so any poll-ranked classic outranks any unranked newcomer.
@@ -30,7 +36,6 @@ Mega / regional / form variants inherit the base Pokemon's score
 """
 from __future__ import annotations
 
-import math
 from typing import Dict, Optional, Tuple
 
 # ---------------------------------------------------------------------------
@@ -43,7 +48,9 @@ USER_OVERRIDES: Dict[str, float] = {
     "Charizard": 10.0,
     "Pikachu": 10.0,
     "Gengar": 10.0,
-    "Umbreon": 9.5,
+    # Umbreon is no longer hard-pinned: at poll rank 5 the top-compressed curve
+    # places it ~9.85 anyway, and pinning 9.5 would wrongly sink it below
+    # less-popular Pokemon (Eevee, Sylveon). Re-add a line here to force a value.
 }
 
 # ---------------------------------------------------------------------------
@@ -293,24 +300,33 @@ POLL_VOTES: Dict[str, int] = {
 }
 
 # ---------------------------------------------------------------------------
-# Vote -> 0-10 score mapping.
+# Rank -> 0-10 score mapping. TOP-COMPRESSED on purpose: the famous Pokemon all
+# cluster high (minor separation), and the real drop-off happens at a tunable
+# cutoff. THESE FOUR KNOBS are the dials to slide — raise ELITE_RANK to widen the
+# premium tier, raise POLL_FLOOR to lift everyone, etc.
 # ---------------------------------------------------------------------------
-POLL_CEIL = 9.8   # poll winner maps here; 10.0 reserved for USER_OVERRIDES
-POLL_FLOOR = 5.5  # rank-240 maps here; unranked characters stay below this
+POLL_TOP = 9.9      # rank-1 score (10.0 reserved for USER_OVERRIDES)
+ELITE_RANK = 50     # ranks 1..ELITE_RANK are the "premium tier" (cluster high)
+ELITE_BOTTOM = 9.4  # score at rank ELITE_RANK — premium tier spans [9.4, 9.9]
+POLL_FLOOR = 7.5    # score at the last poll rank (240); unranked stay below this
 
-_SQRT_MAX = math.sqrt(max(POLL_VOTES.values()))
-_SQRT_MIN = math.sqrt(min(POLL_VOTES.values()))
+# Poll rank by name (insertion order == rank order, 1-based).
+_RANK = {name: i + 1 for i, name in enumerate(POLL_VOTES)}
+_LAST_RANK = len(POLL_VOTES)
 
 
-def _poll_score(votes: int) -> float:
-    """sqrt-compressed vote count -> [POLL_FLOOR, POLL_CEIL]."""
-    frac = (math.sqrt(votes) - _SQRT_MIN) / (_SQRT_MAX - _SQRT_MIN)
-    return POLL_FLOOR + frac * (POLL_CEIL - POLL_FLOOR)
+def _poll_score(rank: int) -> float:
+    """Two-segment rank curve: a high plateau then a taper to POLL_FLOOR."""
+    if rank <= ELITE_RANK:
+        frac = (rank - 1) / (ELITE_RANK - 1)
+        return POLL_TOP - frac * (POLL_TOP - ELITE_BOTTOM)
+    frac = (rank - ELITE_RANK) / (_LAST_RANK - ELITE_RANK)
+    return ELITE_BOTTOM - frac * (ELITE_BOTTOM - POLL_FLOOR)
 
 
 # Precomputed name -> score for the poll.
 POLL_SCORE: Dict[str, float] = {
-    name: round(_poll_score(v), 4) for name, v in POLL_VOTES.items()
+    name: round(_poll_score(_RANK[name]), 4) for name in POLL_VOTES
 }
 
 
