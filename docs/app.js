@@ -259,7 +259,7 @@ function viewSets() {
     el('th', { class: 'num', text: 'Box price' }),
     el('th', { class: 'num', text: 'EV / pack' }),
     el('th', { class: 'num', text: 'EV / box' }),
-    el('th', { class: 'num', text: 'Box signal' }),
+    el('th', { class: 'num', text: 'Verdict' }),
   ]));
   const body = el('tbody', {}, sets.map((s, i) => {
     const logo = el('img', { class: 'lb-logo', src: s.logo || PLACEHOLDER, alt: s.name, loading: 'lazy' });
@@ -286,9 +286,9 @@ function viewSets() {
     el('div', { class: 'section-head' }, [
       el('div', {}, [
         el('p', { class: 'micro section-eyebrow', text: 'Sets · Market Trends' }),
-        el('h2', { class: 'h2', text: 'Sealed expected value' }),
+        el('h2', { class: 'h2', text: 'Undervalued & overvalued sets' }),
         el('p', { class: 'section-sub', text:
-          'Expected value per box = Σ (per-card pull rate × market price) × packs per box, against the real box price. Positive box signal means the cards inside are worth more than the sealed product.' }),
+          'Sealed expected value = Σ (per-card pull rate × market price) × packs per box, vs the real box price. Green “Undervalued” = the cards inside are worth more than the sealed box (good to rip / hold); red “Overvalued” = you pay a premium for sealed (buy singles). A value signal, not a price-trend forecast.' }),
       ]),
       el('span', { class: 'chip chip--teal', text: 'live · pokemontcg.io' }),
     ]),
@@ -300,10 +300,12 @@ function viewSets() {
   highlightNav('sets');
 }
 function evSignalPill(pct) {
-  /* positive signal_pct = box undervalued (good buy) = green ; negative = overvalued = red */
+  /* positive signal_pct = sealed box cheaper than the cards inside = undervalued (green);
+     negative = paying a premium for sealed = overvalued (red) */
   if (pct == null) return el('span', { class: 'delta delta--flat', text: '—' });
-  const cls = pct >= 0 ? 'delta delta--down' : 'delta delta--up';
-  return el('span', { class: cls, text: signedPct(pct, 0) });
+  const verdict = pct >= 0.10 ? 'Undervalued' : pct <= -0.10 ? 'Overvalued' : 'Fair';
+  const cls = pct >= 0.10 ? 'delta delta--down' : pct <= -0.10 ? 'delta delta--up' : 'delta delta--flat';
+  return el('span', { class: cls, text: `${verdict} ${signedPct(pct, 0)}` });
 }
 
 /* ============================================================
