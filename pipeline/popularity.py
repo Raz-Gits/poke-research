@@ -55,9 +55,12 @@ USER_OVERRIDES: Dict[str, float] = {
     "Charizard": 10.0,
     "Pikachu": 10.0,
     "Gengar": 10.0,
-    # Umbreon is no longer hard-pinned: at poll rank 5 the top-compressed curve
-    # places it ~9.85 anyway, and pinning 9.5 would wrongly sink it below
-    # less-popular Pokemon (Eevee, Sylveon). Re-add a line here to force a value.
+    # Hand-pinned by the user from the review pass — marquee icons the blended
+    # signal under-rated (the poll takes them for granted; their durable card
+    # value is higher). Add a line here to pin any character.
+    "Mew": 9.5,
+    "Mewtwo": 9.5,
+    "Snorlax": 9.3,
 }
 
 # ---------------------------------------------------------------------------
