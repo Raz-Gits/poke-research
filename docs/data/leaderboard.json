@@ -10,78 +10,21 @@
       "image_small": "https://images.scrydex.com/pokemon/me3-124/small",
       "image_large": "https://images.scrydex.com/pokemon/me3-124/large",
       "market_price": 167.98,
-      "expected_price": 322.2001,
-      "raw_diff": 154.22,
-      "residual_pct": -0.478647,
+      "expected_price": 313.4722,
+      "raw_diff": 145.49,
+      "residual_pct": -0.464131,
       "iq_score": 72.02,
       "cluster": "Pok\u00e9mon \u00b7 Special Illustration Rare",
       "dynamics": {
         "demand_pressure": null,
         "supply_saturation": 1.0,
-        "status": "awaiting_data"
-      }
-    },
-    {
-      "id": "sv8pt5-144",
-      "name": "Leafeon ex",
-      "set_name": "Prismatic Evolutions",
-      "set_id": "sv8pt5",
-      "rarity": "Special Illustration Rare",
-      "number": "144",
-      "image_small": "https://images.pokemontcg.io/sv8pt5/144.png",
-      "image_large": "https://images.pokemontcg.io/sv8pt5/144_hires.png",
-      "market_price": 331.22,
-      "expected_price": 400.2225,
-      "raw_diff": 69.0,
-      "residual_pct": -0.17241,
-      "iq_score": 86.85,
-      "cluster": "Pok\u00e9mon \u00b7 Special Illustration Rare",
-      "dynamics": {
-        "demand_pressure": null,
-        "supply_saturation": 1.0,
-        "status": "awaiting_data"
-      }
-    },
-    {
-      "id": "sv8-240",
-      "name": "Hydreigon ex",
-      "set_name": "Surging Sparks",
-      "set_id": "sv8",
-      "rarity": "Special Illustration Rare",
-      "number": "240",
-      "image_small": "https://images.pokemontcg.io/sv8/240.png",
-      "image_large": "https://images.pokemontcg.io/sv8/240_hires.png",
-      "market_price": 43.41,
-      "expected_price": 107.9719,
-      "raw_diff": 64.56,
-      "residual_pct": -0.597951,
-      "iq_score": 84.11,
-      "cluster": "Pok\u00e9mon \u00b7 Special Illustration Rare",
-      "dynamics": {
-        "demand_pressure": null,
-        "supply_saturation": 1.0,
-        "status": "awaiting_data"
-      }
-    },
-    {
-      "id": "me4-122",
-      "name": "Mega Greninja ex",
-      "set_name": "Chaos Rising",
-      "set_id": "me4",
-      "rarity": "Mega Hyper Rare",
-      "number": "122",
-      "image_small": "https://images.scrydex.com/pokemon/me4-122/small",
-      "image_large": "https://images.scrydex.com/pokemon/me4-122/large",
-      "market_price": 266.43,
-      "expected_price": 329.2825,
-      "raw_diff": 62.85,
-      "residual_pct": -0.190877,
-      "iq_score": 71.79,
-      "cluster": "Pok\u00e9mon \u00b7 Special Illustration Rare",
-      "dynamics": {
-        "demand_pressure": null,
-        "supply_saturation": 1.0,
-        "status": "awaiting_data"
+        "status": "awaiting_data",
+        "active_listings": null,
+        "sold_7d": null,
+        "new_7d": null,
+        "basis": {
+          "days": 1
+        }
       }
     },
     {
@@ -94,414 +37,21 @@
       "image_small": "https://images.pokemontcg.io/sv5/208.png",
       "image_large": "https://images.pokemontcg.io/sv5/208_hires.png",
       "market_price": 71.71,
-      "expected_price": 129.5781,
-      "raw_diff": 57.87,
-      "residual_pct": -0.446589,
+      "expected_price": 142.5671,
+      "raw_diff": 70.86,
+      "residual_pct": -0.497009,
       "iq_score": 90.24,
       "cluster": "Pok\u00e9mon \u00b7 Special Illustration Rare",
       "dynamics": {
         "demand_pressure": null,
         "supply_saturation": 1.0,
-        "status": "awaiting_data"
-      }
-    },
-    {
-      "id": "sv6-216",
-      "name": "Bloodmoon Ursaluna ex",
-      "set_name": "Twilight Masquerade",
-      "set_id": "sv6",
-      "rarity": "Special Illustration Rare",
-      "number": "216",
-      "image_small": "https://images.pokemontcg.io/sv6/216.png",
-      "image_large": "https://images.pokemontcg.io/sv6/216_hires.png",
-      "market_price": 46.37,
-      "expected_price": 102.9477,
-      "raw_diff": 56.58,
-      "residual_pct": -0.549577,
-      "iq_score": 89.4,
-      "cluster": "Pok\u00e9mon \u00b7 Special Illustration Rare",
-      "dynamics": {
-        "demand_pressure": null,
-        "supply_saturation": 1.0,
-        "status": "awaiting_data"
-      }
-    },
-    {
-      "id": "sv7-168",
-      "name": "Galvantula ex",
-      "set_name": "Stellar Crown",
-      "set_id": "sv7",
-      "rarity": "Special Illustration Rare",
-      "number": "168",
-      "image_small": "https://images.pokemontcg.io/sv7/168.png",
-      "image_large": "https://images.pokemontcg.io/sv7/168_hires.png",
-      "market_price": 23.48,
-      "expected_price": 79.1391,
-      "raw_diff": 55.66,
-      "residual_pct": -0.703307,
-      "iq_score": 86.42,
-      "cluster": "Pok\u00e9mon \u00b7 Special Illustration Rare",
-      "dynamics": {
-        "demand_pressure": null,
-        "supply_saturation": 1.0,
-        "status": "awaiting_data"
-      }
-    },
-    {
-      "id": "sv8-236",
-      "name": "Durant ex",
-      "set_name": "Surging Sparks",
-      "set_id": "sv8",
-      "rarity": "Special Illustration Rare",
-      "number": "236",
-      "image_small": "https://images.pokemontcg.io/sv8/236.png",
-      "image_large": "https://images.pokemontcg.io/sv8/236_hires.png",
-      "market_price": 36.38,
-      "expected_price": 89.8207,
-      "raw_diff": 53.44,
-      "residual_pct": -0.594971,
-      "iq_score": 83.4,
-      "cluster": "Pok\u00e9mon \u00b7 Special Illustration Rare",
-      "dynamics": {
-        "demand_pressure": null,
-        "supply_saturation": 1.0,
-        "status": "awaiting_data"
-      }
-    },
-    {
-      "id": "me4-119",
-      "name": "Cinccino ex",
-      "set_name": "Chaos Rising",
-      "set_id": "me4",
-      "rarity": "Special Illustration Rare",
-      "number": "119",
-      "image_small": "https://images.scrydex.com/pokemon/me4-119/small",
-      "image_large": "https://images.scrydex.com/pokemon/me4-119/large",
-      "market_price": 85.35,
-      "expected_price": 138.4954,
-      "raw_diff": 53.15,
-      "residual_pct": -0.383734,
-      "iq_score": 84.18,
-      "cluster": "Pok\u00e9mon \u00b7 Special Illustration Rare",
-      "dynamics": {
-        "demand_pressure": null,
-        "supply_saturation": 1.0,
-        "status": "awaiting_data"
-      }
-    },
-    {
-      "id": "me3-119",
-      "name": "Mega Clefable ex",
-      "set_name": "Perfect Order",
-      "set_id": "me3",
-      "rarity": "Special Illustration Rare",
-      "number": "119",
-      "image_small": "https://images.scrydex.com/pokemon/me3-119/small",
-      "image_large": "https://images.scrydex.com/pokemon/me3-119/large",
-      "market_price": 71.42,
-      "expected_price": 122.4549,
-      "raw_diff": 51.03,
-      "residual_pct": -0.416765,
-      "iq_score": 81.45,
-      "cluster": "Pok\u00e9mon \u00b7 Special Illustration Rare",
-      "dynamics": {
-        "demand_pressure": null,
-        "supply_saturation": 1.0,
-        "status": "awaiting_data"
-      }
-    },
-    {
-      "id": "sv8pt5-168",
-      "name": "Bloodmoon Ursaluna ex",
-      "set_name": "Prismatic Evolutions",
-      "set_id": "sv8pt5",
-      "rarity": "Special Illustration Rare",
-      "number": "168",
-      "image_small": "https://images.pokemontcg.io/sv8pt5/168.png",
-      "image_large": "https://images.pokemontcg.io/sv8pt5/168_hires.png",
-      "market_price": 82.11,
-      "expected_price": 132.5435,
-      "raw_diff": 50.43,
-      "residual_pct": -0.380505,
-      "iq_score": 86.72,
-      "cluster": "Pok\u00e9mon \u00b7 Special Illustration Rare",
-      "dynamics": {
-        "demand_pressure": null,
-        "supply_saturation": 1.0,
-        "status": "awaiting_data"
-      }
-    },
-    {
-      "id": "sv7-167",
-      "name": "Hydrapple ex",
-      "set_name": "Stellar Crown",
-      "set_id": "sv7",
-      "rarity": "Special Illustration Rare",
-      "number": "167",
-      "image_small": "https://images.pokemontcg.io/sv7/167.png",
-      "image_large": "https://images.pokemontcg.io/sv7/167_hires.png",
-      "market_price": 40.62,
-      "expected_price": 90.5206,
-      "raw_diff": 49.9,
-      "residual_pct": -0.551263,
-      "iq_score": 86.97,
-      "cluster": "Pok\u00e9mon \u00b7 Special Illustration Rare",
-      "dynamics": {
-        "demand_pressure": null,
-        "supply_saturation": 1.0,
-        "status": "awaiting_data"
-      }
-    },
-    {
-      "id": "sv8-241",
-      "name": "Archaludon ex",
-      "set_name": "Surging Sparks",
-      "set_id": "sv8",
-      "rarity": "Special Illustration Rare",
-      "number": "241",
-      "image_small": "https://images.pokemontcg.io/sv8/241.png",
-      "image_large": "https://images.pokemontcg.io/sv8/241_hires.png",
-      "market_price": 13.8,
-      "expected_price": 61.9543,
-      "raw_diff": 48.15,
-      "residual_pct": -0.777255,
-      "iq_score": 85.95,
-      "cluster": "Pok\u00e9mon \u00b7 Special Illustration Rare",
-      "dynamics": {
-        "demand_pressure": null,
-        "supply_saturation": 1.0,
-        "status": "awaiting_data"
-      }
-    },
-    {
-      "id": "sv8pt5-147",
-      "name": "Ceruledge ex",
-      "set_name": "Prismatic Evolutions",
-      "set_id": "sv8pt5",
-      "rarity": "Special Illustration Rare",
-      "number": "147",
-      "image_small": "https://images.pokemontcg.io/sv8pt5/147.png",
-      "image_large": "https://images.pokemontcg.io/sv8pt5/147_hires.png",
-      "market_price": 100.51,
-      "expected_price": 148.491,
-      "raw_diff": 47.98,
-      "residual_pct": -0.323124,
-      "iq_score": 86.8,
-      "cluster": "Pok\u00e9mon \u00b7 Special Illustration Rare",
-      "dynamics": {
-        "demand_pressure": null,
-        "supply_saturation": 1.0,
-        "status": "awaiting_data"
-      }
-    },
-    {
-      "id": "sv8-242",
-      "name": "Alolan Exeggutor ex",
-      "set_name": "Surging Sparks",
-      "set_id": "sv8",
-      "rarity": "Special Illustration Rare",
-      "number": "242",
-      "image_small": "https://images.pokemontcg.io/sv8/242.png",
-      "image_large": "https://images.pokemontcg.io/sv8/242_hires.png",
-      "market_price": 34.19,
-      "expected_price": 81.2741,
-      "raw_diff": 47.08,
-      "residual_pct": -0.579325,
-      "iq_score": 84.85,
-      "cluster": "Pok\u00e9mon \u00b7 Special Illustration Rare",
-      "dynamics": {
-        "demand_pressure": null,
-        "supply_saturation": 1.0,
-        "status": "awaiting_data"
-      }
-    },
-    {
-      "id": "sv7-170",
-      "name": "Terapagos ex",
-      "set_name": "Stellar Crown",
-      "set_id": "sv7",
-      "rarity": "Special Illustration Rare",
-      "number": "170",
-      "image_small": "https://images.pokemontcg.io/sv7/170.png",
-      "image_large": "https://images.pokemontcg.io/sv7/170_hires.png",
-      "market_price": 62.62,
-      "expected_price": 108.8594,
-      "raw_diff": 46.24,
-      "residual_pct": -0.424762,
-      "iq_score": 88.76,
-      "cluster": "Pok\u00e9mon \u00b7 Special Illustration Rare",
-      "dynamics": {
-        "demand_pressure": null,
-        "supply_saturation": 1.0,
-        "status": "awaiting_data"
-      }
-    },
-    {
-      "id": "me4-118",
-      "name": "Mega Dragalge ex",
-      "set_name": "Chaos Rising",
-      "set_id": "me4",
-      "rarity": "Special Illustration Rare",
-      "number": "118",
-      "image_small": "https://images.scrydex.com/pokemon/me4-118/small",
-      "image_large": "https://images.scrydex.com/pokemon/me4-118/large",
-      "market_price": 57.12,
-      "expected_price": 102.6294,
-      "raw_diff": 45.51,
-      "residual_pct": -0.443434,
-      "iq_score": 80.66,
-      "cluster": "Pok\u00e9mon \u00b7 Special Illustration Rare",
-      "dynamics": {
-        "demand_pressure": null,
-        "supply_saturation": 1.0,
-        "status": "awaiting_data"
-      }
-    },
-    {
-      "id": "sv5-205",
-      "name": "Walking Wake ex",
-      "set_name": "Temporal Forces",
-      "set_id": "sv5",
-      "rarity": "Special Illustration Rare",
-      "number": "205",
-      "image_small": "https://images.pokemontcg.io/sv5/205.png",
-      "image_large": "https://images.pokemontcg.io/sv5/205_hires.png",
-      "market_price": 63.62,
-      "expected_price": 105.8455,
-      "raw_diff": 42.23,
-      "residual_pct": -0.398935,
-      "iq_score": 89.67,
-      "cluster": "Pok\u00e9mon \u00b7 Special Illustration Rare",
-      "dynamics": {
-        "demand_pressure": null,
-        "supply_saturation": 1.0,
-        "status": "awaiting_data"
-      }
-    },
-    {
-      "id": "me3-120",
-      "name": "Mega Zygarde ex",
-      "set_name": "Perfect Order",
-      "set_id": "me3",
-      "rarity": "Special Illustration Rare",
-      "number": "120",
-      "image_small": "https://images.scrydex.com/pokemon/me3-120/small",
-      "image_large": "https://images.scrydex.com/pokemon/me3-120/large",
-      "market_price": 69.01,
-      "expected_price": 110.0502,
-      "raw_diff": 41.04,
-      "residual_pct": -0.372922,
-      "iq_score": 82.82,
-      "cluster": "Pok\u00e9mon \u00b7 Special Illustration Rare",
-      "dynamics": {
-        "demand_pressure": null,
-        "supply_saturation": 1.0,
-        "status": "awaiting_data"
-      }
-    },
-    {
-      "id": "sv7-169",
-      "name": "Dachsbun ex",
-      "set_name": "Stellar Crown",
-      "set_id": "sv7",
-      "rarity": "Special Illustration Rare",
-      "number": "169",
-      "image_small": "https://images.pokemontcg.io/sv7/169.png",
-      "image_large": "https://images.pokemontcg.io/sv7/169_hires.png",
-      "market_price": 78.75,
-      "expected_price": 118.6757,
-      "raw_diff": 39.93,
-      "residual_pct": -0.336427,
-      "iq_score": 88.08,
-      "cluster": "Pok\u00e9mon \u00b7 Special Illustration Rare",
-      "dynamics": {
-        "demand_pressure": null,
-        "supply_saturation": 1.0,
-        "status": "awaiting_data"
-      }
-    },
-    {
-      "id": "me4-117",
-      "name": "Mega Floette ex",
-      "set_name": "Chaos Rising",
-      "set_id": "me4",
-      "rarity": "Special Illustration Rare",
-      "number": "117",
-      "image_small": "https://images.scrydex.com/pokemon/me4-117/small",
-      "image_large": "https://images.scrydex.com/pokemon/me4-117/large",
-      "market_price": 48.58,
-      "expected_price": 85.7577,
-      "raw_diff": 37.18,
-      "residual_pct": -0.43352,
-      "iq_score": 80.22,
-      "cluster": "Pok\u00e9mon \u00b7 Special Illustration Rare",
-      "dynamics": {
-        "demand_pressure": null,
-        "supply_saturation": 1.0,
-        "status": "awaiting_data"
-      }
-    },
-    {
-      "id": "sv6-211",
-      "name": "Teal Mask Ogerpon ex",
-      "set_name": "Twilight Masquerade",
-      "set_id": "sv6",
-      "rarity": "Special Illustration Rare",
-      "number": "211",
-      "image_small": "https://images.pokemontcg.io/sv6/211.png",
-      "image_large": "https://images.pokemontcg.io/sv6/211_hires.png",
-      "market_price": 29.02,
-      "expected_price": 63.0107,
-      "raw_diff": 33.99,
-      "residual_pct": -0.539444,
-      "iq_score": 88.03,
-      "cluster": "Pok\u00e9mon \u00b7 Special Illustration Rare",
-      "dynamics": {
-        "demand_pressure": null,
-        "supply_saturation": 1.0,
-        "status": "awaiting_data"
-      }
-    },
-    {
-      "id": "sv6-210",
-      "name": "Sinistcha ex",
-      "set_name": "Twilight Masquerade",
-      "set_id": "sv6",
-      "rarity": "Special Illustration Rare",
-      "number": "210",
-      "image_small": "https://images.pokemontcg.io/sv6/210.png",
-      "image_large": "https://images.pokemontcg.io/sv6/210_hires.png",
-      "market_price": 33.22,
-      "expected_price": 66.2819,
-      "raw_diff": 33.06,
-      "residual_pct": -0.498807,
-      "iq_score": 84.87,
-      "cluster": "Pok\u00e9mon \u00b7 Special Illustration Rare",
-      "dynamics": {
-        "demand_pressure": null,
-        "supply_saturation": 1.0,
-        "status": "awaiting_data"
-      }
-    },
-    {
-      "id": "sv8pt5-166",
-      "name": "Raging Bolt ex",
-      "set_name": "Prismatic Evolutions",
-      "set_id": "sv8pt5",
-      "rarity": "Special Illustration Rare",
-      "number": "166",
-      "image_small": "https://images.pokemontcg.io/sv8pt5/166.png",
-      "image_large": "https://images.pokemontcg.io/sv8pt5/166_hires.png",
-      "market_price": 72.89,
-      "expected_price": 105.6819,
-      "raw_diff": 32.79,
-      "residual_pct": -0.310289,
-      "iq_score": 86.55,
-      "cluster": "Pok\u00e9mon \u00b7 Special Illustration Rare",
-      "dynamics": {
-        "demand_pressure": null,
-        "supply_saturation": 1.0,
-        "status": "awaiting_data"
+        "status": "awaiting_data",
+        "active_listings": null,
+        "sold_7d": null,
+        "new_7d": null,
+        "basis": {
+          "days": 1
+        }
       }
     },
     {
@@ -514,393 +64,264 @@
       "image_small": "https://images.scrydex.com/pokemon/me2pt5-289/small",
       "image_large": "https://images.scrydex.com/pokemon/me2pt5-289/large",
       "market_price": 106.43,
-      "expected_price": 138.6537,
-      "raw_diff": 32.22,
-      "residual_pct": -0.232404,
+      "expected_price": 172.955,
+      "raw_diff": 66.53,
+      "residual_pct": -0.384637,
       "iq_score": 84.63,
       "cluster": "Pok\u00e9mon \u00b7 Special Illustration Rare",
       "dynamics": {
         "demand_pressure": null,
         "supply_saturation": 1.0,
-        "status": "awaiting_data"
+        "status": "awaiting_data",
+        "active_listings": null,
+        "sold_7d": null,
+        "new_7d": null,
+        "basis": {
+          "days": 1
+        }
       }
     },
     {
-      "id": "sv8pt5-157",
-      "name": "Iron Valiant ex",
-      "set_name": "Prismatic Evolutions",
-      "set_id": "sv8pt5",
+      "id": "sv8-240",
+      "name": "Hydreigon ex",
+      "set_name": "Surging Sparks",
+      "set_id": "sv8",
       "rarity": "Special Illustration Rare",
-      "number": "157",
-      "image_small": "https://images.pokemontcg.io/sv8pt5/157.png",
-      "image_large": "https://images.pokemontcg.io/sv8pt5/157_hires.png",
-      "market_price": 76.18,
-      "expected_price": 108.2711,
-      "raw_diff": 32.09,
-      "residual_pct": -0.296396,
-      "iq_score": 84.33,
+      "number": "240",
+      "image_small": "https://images.pokemontcg.io/sv8/240.png",
+      "image_large": "https://images.pokemontcg.io/sv8/240_hires.png",
+      "market_price": 43.41,
+      "expected_price": 109.6741,
+      "raw_diff": 66.26,
+      "residual_pct": -0.604191,
+      "iq_score": 84.11,
       "cluster": "Pok\u00e9mon \u00b7 Special Illustration Rare",
       "dynamics": {
         "demand_pressure": null,
         "supply_saturation": 1.0,
-        "status": "awaiting_data"
+        "status": "awaiting_data",
+        "active_listings": null,
+        "sold_7d": null,
+        "new_7d": null,
+        "basis": {
+          "days": 1
+        }
       }
     },
     {
-      "id": "sv8pt5-165",
-      "name": "Dragapult ex",
-      "set_name": "Prismatic Evolutions",
-      "set_id": "sv8pt5",
-      "rarity": "Special Illustration Rare",
-      "number": "165",
-      "image_small": "https://images.pokemontcg.io/sv8pt5/165.png",
-      "image_large": "https://images.pokemontcg.io/sv8pt5/165_hires.png",
-      "market_price": 139.81,
-      "expected_price": 165.7902,
-      "raw_diff": 25.98,
-      "residual_pct": -0.156705,
-      "iq_score": 86.83,
-      "cluster": "Pok\u00e9mon \u00b7 Special Illustration Rare",
-      "dynamics": {
-        "demand_pressure": null,
-        "supply_saturation": 1.0,
-        "status": "awaiting_data"
-      }
-    },
-    {
-      "id": "sv8pt5-151",
-      "name": "Palafin ex",
-      "set_name": "Prismatic Evolutions",
-      "set_id": "sv8pt5",
-      "rarity": "Special Illustration Rare",
-      "number": "151",
-      "image_small": "https://images.pokemontcg.io/sv8pt5/151.png",
-      "image_large": "https://images.pokemontcg.io/sv8pt5/151_hires.png",
-      "market_price": 47.81,
-      "expected_price": 73.0926,
-      "raw_diff": 25.28,
-      "residual_pct": -0.345898,
-      "iq_score": 85.52,
-      "cluster": "Pok\u00e9mon \u00b7 Special Illustration Rare",
-      "dynamics": {
-        "demand_pressure": null,
-        "supply_saturation": 1.0,
-        "status": "awaiting_data"
-      }
-    },
-    {
-      "id": "sv6-213",
-      "name": "Wellspring Mask Ogerpon ex",
+      "id": "sv6-216",
+      "name": "Bloodmoon Ursaluna ex",
       "set_name": "Twilight Masquerade",
       "set_id": "sv6",
       "rarity": "Special Illustration Rare",
-      "number": "213",
-      "image_small": "https://images.pokemontcg.io/sv6/213.png",
-      "image_large": "https://images.pokemontcg.io/sv6/213_hires.png",
-      "market_price": 17.54,
-      "expected_price": 42.5395,
-      "raw_diff": 25.0,
-      "residual_pct": -0.587677,
-      "iq_score": 86.94,
+      "number": "216",
+      "image_small": "https://images.pokemontcg.io/sv6/216.png",
+      "image_large": "https://images.pokemontcg.io/sv6/216_hires.png",
+      "market_price": 46.37,
+      "expected_price": 112.3149,
+      "raw_diff": 65.94,
+      "residual_pct": -0.587143,
+      "iq_score": 89.4,
       "cluster": "Pok\u00e9mon \u00b7 Special Illustration Rare",
       "dynamics": {
         "demand_pressure": null,
         "supply_saturation": 1.0,
-        "status": "awaiting_data"
+        "status": "awaiting_data",
+        "active_listings": null,
+        "sold_7d": null,
+        "new_7d": null,
+        "basis": {
+          "days": 1
+        }
       }
     },
     {
-      "id": "sv5-204",
-      "name": "Gouging Fire ex",
+      "id": "sv8-236",
+      "name": "Durant ex",
+      "set_name": "Surging Sparks",
+      "set_id": "sv8",
+      "rarity": "Special Illustration Rare",
+      "number": "236",
+      "image_small": "https://images.pokemontcg.io/sv8/236.png",
+      "image_large": "https://images.pokemontcg.io/sv8/236_hires.png",
+      "market_price": 36.38,
+      "expected_price": 91.2107,
+      "raw_diff": 54.83,
+      "residual_pct": -0.601143,
+      "iq_score": 83.4,
+      "cluster": "Pok\u00e9mon \u00b7 Special Illustration Rare",
+      "dynamics": {
+        "demand_pressure": null,
+        "supply_saturation": 1.0,
+        "status": "awaiting_data",
+        "active_listings": null,
+        "sold_7d": null,
+        "new_7d": null,
+        "basis": {
+          "days": 1
+        }
+      }
+    },
+    {
+      "id": "sv5-205",
+      "name": "Walking Wake ex",
       "set_name": "Temporal Forces",
       "set_id": "sv5",
       "rarity": "Special Illustration Rare",
-      "number": "204",
-      "image_small": "https://images.pokemontcg.io/sv5/204.png",
-      "image_large": "https://images.pokemontcg.io/sv5/204_hires.png",
-      "market_price": 60.63,
-      "expected_price": 85.1372,
-      "raw_diff": 24.51,
-      "residual_pct": -0.287855,
-      "iq_score": 88.76,
+      "number": "205",
+      "image_small": "https://images.pokemontcg.io/sv5/205.png",
+      "image_large": "https://images.pokemontcg.io/sv5/205_hires.png",
+      "market_price": 63.62,
+      "expected_price": 116.5266,
+      "raw_diff": 52.91,
+      "residual_pct": -0.45403,
+      "iq_score": 89.67,
       "cluster": "Pok\u00e9mon \u00b7 Special Illustration Rare",
       "dynamics": {
         "demand_pressure": null,
         "supply_saturation": 1.0,
-        "status": "awaiting_data"
+        "status": "awaiting_data",
+        "active_listings": null,
+        "sold_7d": null,
+        "new_7d": null,
+        "basis": {
+          "days": 1
+        }
       }
     },
     {
-      "id": "sv8pt5-164",
-      "name": "Gholdengo ex",
-      "set_name": "Prismatic Evolutions",
-      "set_id": "sv8pt5",
-      "rarity": "Special Illustration Rare",
-      "number": "164",
-      "image_small": "https://images.pokemontcg.io/sv8pt5/164.png",
-      "image_large": "https://images.pokemontcg.io/sv8pt5/164_hires.png",
-      "market_price": 53.89,
-      "expected_price": 77.9883,
-      "raw_diff": 24.1,
-      "residual_pct": -0.308999,
-      "iq_score": 84.39,
-      "cluster": "Pok\u00e9mon \u00b7 Special Illustration Rare",
-      "dynamics": {
-        "demand_pressure": null,
-        "supply_saturation": 1.0,
-        "status": "awaiting_data"
-      }
-    },
-    {
-      "id": "sv5-206",
-      "name": "Iron Crown ex",
-      "set_name": "Temporal Forces",
-      "set_id": "sv5",
-      "rarity": "Special Illustration Rare",
-      "number": "206",
-      "image_small": "https://images.pokemontcg.io/sv5/206.png",
-      "image_large": "https://images.pokemontcg.io/sv5/206_hires.png",
-      "market_price": 58.96,
-      "expected_price": 79.9003,
-      "raw_diff": 20.94,
-      "residual_pct": -0.26208,
-      "iq_score": 89.46,
-      "cluster": "Pok\u00e9mon \u00b7 Special Illustration Rare",
-      "dynamics": {
-        "demand_pressure": null,
-        "supply_saturation": 1.0,
-        "status": "awaiting_data"
-      }
-    },
-    {
-      "id": "me3-121",
-      "name": "Meowth ex",
-      "set_name": "Perfect Order",
-      "set_id": "me3",
-      "rarity": "Special Illustration Rare",
-      "number": "121",
-      "image_small": "https://images.scrydex.com/pokemon/me3-121/small",
-      "image_large": "https://images.scrydex.com/pokemon/me3-121/large",
-      "market_price": 177.08,
-      "expected_price": 197.8495,
-      "raw_diff": 20.77,
-      "residual_pct": -0.104976,
-      "iq_score": 85.57,
-      "cluster": "Pok\u00e9mon \u00b7 Special Illustration Rare",
-      "dynamics": {
-        "demand_pressure": null,
-        "supply_saturation": 1.0,
-        "status": "awaiting_data"
-      }
-    },
-    {
-      "id": "sv8-197",
-      "name": "Ceruledge",
-      "set_name": "Surging Sparks",
-      "set_id": "sv8",
-      "rarity": "Illustration Rare",
-      "number": "197",
-      "image_small": "https://images.pokemontcg.io/sv8/197.png",
-      "image_large": "https://images.pokemontcg.io/sv8/197_hires.png",
-      "market_price": 24.47,
-      "expected_price": 44.7103,
-      "raw_diff": 20.24,
-      "residual_pct": -0.452699,
-      "iq_score": 82.19,
-      "cluster": "Pok\u00e9mon \u00b7 Illustration Rare",
-      "dynamics": {
-        "demand_pressure": null,
-        "supply_saturation": 1.0,
-        "status": "awaiting_data"
-      }
-    },
-    {
-      "id": "sv6-186",
-      "name": "Tatsugiri",
-      "set_name": "Twilight Masquerade",
-      "set_id": "sv6",
-      "rarity": "Illustration Rare",
-      "number": "186",
-      "image_small": "https://images.pokemontcg.io/sv6/186.png",
-      "image_large": "https://images.pokemontcg.io/sv6/186_hires.png",
-      "market_price": 22.15,
-      "expected_price": 41.7549,
-      "raw_diff": 19.6,
-      "residual_pct": -0.469523,
-      "iq_score": 81.97,
-      "cluster": "Pok\u00e9mon \u00b7 Illustration Rare",
-      "dynamics": {
-        "demand_pressure": null,
-        "supply_saturation": 1.0,
-        "status": "awaiting_data"
-      }
-    },
-    {
-      "id": "sv8pt5-169",
-      "name": "Terapagos ex",
-      "set_name": "Prismatic Evolutions",
-      "set_id": "sv8pt5",
-      "rarity": "Special Illustration Rare",
-      "number": "169",
-      "image_small": "https://images.pokemontcg.io/sv8pt5/169.png",
-      "image_large": "https://images.pokemontcg.io/sv8pt5/169_hires.png",
-      "market_price": 39.55,
-      "expected_price": 59.0184,
-      "raw_diff": 19.47,
-      "residual_pct": -0.32987,
-      "iq_score": 85.72,
-      "cluster": "Pok\u00e9mon \u00b7 Special Illustration Rare",
-      "dynamics": {
-        "demand_pressure": null,
-        "supply_saturation": 1.0,
-        "status": "awaiting_data"
-      }
-    },
-    {
-      "id": "sv6-215",
-      "name": "Cornerstone Mask Ogerpon ex",
-      "set_name": "Twilight Masquerade",
-      "set_id": "sv6",
-      "rarity": "Special Illustration Rare",
-      "number": "215",
-      "image_small": "https://images.pokemontcg.io/sv6/215.png",
-      "image_large": "https://images.pokemontcg.io/sv6/215_hires.png",
-      "market_price": 16.05,
-      "expected_price": 35.2677,
-      "raw_diff": 19.22,
-      "residual_pct": -0.54491,
-      "iq_score": 86.65,
-      "cluster": "Pok\u00e9mon \u00b7 Special Illustration Rare",
-      "dynamics": {
-        "demand_pressure": null,
-        "supply_saturation": 1.0,
-        "status": "awaiting_data"
-      }
-    },
-    {
-      "id": "sv8-251",
-      "name": "Night Stretcher",
-      "set_name": "Surging Sparks",
-      "set_id": "sv8",
-      "rarity": "Hyper Rare",
-      "number": "251",
-      "image_small": "https://images.pokemontcg.io/sv8/251.png",
-      "image_large": "https://images.pokemontcg.io/sv8/251_hires.png",
-      "market_price": 10.21,
-      "expected_price": 29.4051,
-      "raw_diff": 19.2,
-      "residual_pct": -0.652781,
-      "iq_score": 86.73,
-      "cluster": "Trainer \u00b7 Hyper Rare",
-      "dynamics": {
-        "demand_pressure": null,
-        "supply_saturation": 1.0,
-        "status": "awaiting_data"
-      }
-    },
-    {
-      "id": "sv8-250",
-      "name": "Gravity Mountain",
-      "set_name": "Surging Sparks",
-      "set_id": "sv8",
-      "rarity": "Hyper Rare",
-      "number": "250",
-      "image_small": "https://images.pokemontcg.io/sv8/250.png",
-      "image_large": "https://images.pokemontcg.io/sv8/250_hires.png",
-      "market_price": 10.34,
-      "expected_price": 29.3283,
-      "raw_diff": 18.99,
-      "residual_pct": -0.64744,
-      "iq_score": 81.05,
-      "cluster": "Trainer \u00b7 Hyper Rare",
-      "dynamics": {
-        "demand_pressure": null,
-        "supply_saturation": 1.0,
-        "status": "awaiting_data"
-      }
-    },
-    {
-      "id": "sv6-224",
-      "name": "Enhanced Hammer",
-      "set_name": "Twilight Masquerade",
-      "set_id": "sv6",
-      "rarity": "Hyper Rare",
-      "number": "224",
-      "image_small": "https://images.pokemontcg.io/sv6/224.png",
-      "image_large": "https://images.pokemontcg.io/sv6/224_hires.png",
-      "market_price": 6.45,
-      "expected_price": 24.957,
-      "raw_diff": 18.51,
-      "residual_pct": -0.741556,
-      "iq_score": 79.28,
-      "cluster": "Trainer \u00b7 Hyper Rare",
-      "dynamics": {
-        "demand_pressure": null,
-        "supply_saturation": 1.0,
-        "status": "awaiting_data"
-      }
-    },
-    {
-      "id": "sv8-252",
-      "name": "Jet Energy",
-      "set_name": "Surging Sparks",
-      "set_id": "sv8",
-      "rarity": "Hyper Rare",
-      "number": "252",
-      "image_small": "https://images.pokemontcg.io/sv8/252.png",
-      "image_large": "https://images.pokemontcg.io/sv8/252_hires.png",
-      "market_price": 5.28,
-      "expected_price": 23.3755,
-      "raw_diff": 18.1,
-      "residual_pct": -0.774123,
-      "iq_score": 75.8,
-      "cluster": "Energy \u00b7 Hyper Rare",
-      "dynamics": {
-        "demand_pressure": null,
-        "supply_saturation": 1.0,
-        "status": "awaiting_data"
-      }
-    },
-    {
-      "id": "sv7-175",
-      "name": "Bravery Charm",
+      "id": "sv7-168",
+      "name": "Galvantula ex",
       "set_name": "Stellar Crown",
       "set_id": "sv7",
-      "rarity": "Hyper Rare",
-      "number": "175",
-      "image_small": "https://images.pokemontcg.io/sv7/175.png",
-      "image_large": "https://images.pokemontcg.io/sv7/175_hires.png",
-      "market_price": 5.06,
-      "expected_price": 23.0596,
-      "raw_diff": 18.0,
-      "residual_pct": -0.780569,
-      "iq_score": 76.65,
-      "cluster": "Trainer \u00b7 Hyper Rare",
+      "rarity": "Special Illustration Rare",
+      "number": "168",
+      "image_small": "https://images.pokemontcg.io/sv7/168.png",
+      "image_large": "https://images.pokemontcg.io/sv7/168_hires.png",
+      "market_price": 23.48,
+      "expected_price": 73.7809,
+      "raw_diff": 50.3,
+      "residual_pct": -0.68176,
+      "iq_score": 86.42,
+      "cluster": "Pok\u00e9mon \u00b7 Special Illustration Rare",
       "dynamics": {
         "demand_pressure": null,
         "supply_saturation": 1.0,
-        "status": "awaiting_data"
+        "status": "awaiting_data",
+        "active_listings": null,
+        "sold_7d": null,
+        "new_7d": null,
+        "basis": {
+          "days": 1
+        }
       }
     },
     {
-      "id": "sv8-249",
-      "name": "Counter Gain",
+      "id": "sv8-241",
+      "name": "Archaludon ex",
       "set_name": "Surging Sparks",
       "set_id": "sv8",
-      "rarity": "Hyper Rare",
-      "number": "249",
-      "image_small": "https://images.pokemontcg.io/sv8/249.png",
-      "image_large": "https://images.pokemontcg.io/sv8/249_hires.png",
-      "market_price": 3.86,
-      "expected_price": 21.7048,
-      "raw_diff": 17.84,
-      "residual_pct": -0.822159,
-      "iq_score": 81.2,
-      "cluster": "Trainer \u00b7 Hyper Rare",
+      "rarity": "Special Illustration Rare",
+      "number": "241",
+      "image_small": "https://images.pokemontcg.io/sv8/241.png",
+      "image_large": "https://images.pokemontcg.io/sv8/241_hires.png",
+      "market_price": 13.8,
+      "expected_price": 63.9819,
+      "raw_diff": 50.18,
+      "residual_pct": -0.784314,
+      "iq_score": 85.95,
+      "cluster": "Pok\u00e9mon \u00b7 Special Illustration Rare",
       "dynamics": {
         "demand_pressure": null,
         "supply_saturation": 1.0,
-        "status": "awaiting_data"
+        "status": "awaiting_data",
+        "active_listings": null,
+        "sold_7d": null,
+        "new_7d": null,
+        "basis": {
+          "days": 1
+        }
+      }
+    },
+    {
+      "id": "sv8-242",
+      "name": "Alolan Exeggutor ex",
+      "set_name": "Surging Sparks",
+      "set_id": "sv8",
+      "rarity": "Special Illustration Rare",
+      "number": "242",
+      "image_small": "https://images.pokemontcg.io/sv8/242.png",
+      "image_large": "https://images.pokemontcg.io/sv8/242_hires.png",
+      "market_price": 34.19,
+      "expected_price": 83.1818,
+      "raw_diff": 48.99,
+      "residual_pct": -0.588973,
+      "iq_score": 84.85,
+      "cluster": "Pok\u00e9mon \u00b7 Special Illustration Rare",
+      "dynamics": {
+        "demand_pressure": null,
+        "supply_saturation": 1.0,
+        "status": "awaiting_data",
+        "active_listings": null,
+        "sold_7d": null,
+        "new_7d": null,
+        "basis": {
+          "days": 1
+        }
+      }
+    },
+    {
+      "id": "me4-122",
+      "name": "Mega Greninja ex",
+      "set_name": "Chaos Rising",
+      "set_id": "me4",
+      "rarity": "Mega Hyper Rare",
+      "number": "122",
+      "image_small": "https://images.scrydex.com/pokemon/me4-122/small",
+      "image_large": "https://images.scrydex.com/pokemon/me4-122/large",
+      "market_price": 266.43,
+      "expected_price": 311.9944,
+      "raw_diff": 45.56,
+      "residual_pct": -0.146042,
+      "iq_score": 71.79,
+      "cluster": "Pok\u00e9mon \u00b7 Special Illustration Rare",
+      "dynamics": {
+        "demand_pressure": null,
+        "supply_saturation": 1.0,
+        "status": "awaiting_data",
+        "active_listings": null,
+        "sold_7d": null,
+        "new_7d": null,
+        "basis": {
+          "days": 1
+        }
+      }
+    },
+    {
+      "id": "sv7-167",
+      "name": "Hydrapple ex",
+      "set_name": "Stellar Crown",
+      "set_id": "sv7",
+      "rarity": "Special Illustration Rare",
+      "number": "167",
+      "image_small": "https://images.pokemontcg.io/sv7/167.png",
+      "image_large": "https://images.pokemontcg.io/sv7/167_hires.png",
+      "market_price": 40.62,
+      "expected_price": 84.422,
+      "raw_diff": 43.8,
+      "residual_pct": -0.518846,
+      "iq_score": 86.97,
+      "cluster": "Pok\u00e9mon \u00b7 Special Illustration Rare",
+      "dynamics": {
+        "demand_pressure": null,
+        "supply_saturation": 1.0,
+        "status": "awaiting_data",
+        "active_listings": null,
+        "sold_7d": null,
+        "new_7d": null,
+        "basis": {
+          "days": 1
+        }
       }
     },
     {
@@ -913,99 +334,534 @@
       "image_small": "https://images.scrydex.com/pokemon/me2pt5-275/small",
       "image_large": "https://images.scrydex.com/pokemon/me2pt5-275/large",
       "market_price": 90.79,
-      "expected_price": 108.2042,
-      "raw_diff": 17.41,
-      "residual_pct": -0.160938,
+      "expected_price": 133.7759,
+      "raw_diff": 42.99,
+      "residual_pct": -0.321328,
       "iq_score": 81.73,
       "cluster": "Pok\u00e9mon \u00b7 Special Illustration Rare",
       "dynamics": {
         "demand_pressure": null,
         "supply_saturation": 1.0,
-        "status": "awaiting_data"
+        "status": "awaiting_data",
+        "active_listings": null,
+        "sold_7d": null,
+        "new_7d": null,
+        "basis": {
+          "days": 1
+        }
       }
     },
     {
-      "id": "sv3pt5-207",
-      "name": "Basic Psychic Energy",
-      "set_name": "151",
-      "set_id": "sv3pt5",
-      "rarity": "Hyper Rare",
-      "number": "207",
-      "image_small": "https://images.pokemontcg.io/sv3pt5/207.png",
-      "image_large": "https://images.pokemontcg.io/sv3pt5/207_hires.png",
-      "market_price": 5.85,
-      "expected_price": 23.0449,
-      "raw_diff": 17.19,
-      "residual_pct": -0.746148,
-      "iq_score": 77.49,
-      "cluster": "Energy \u00b7 Hyper Rare",
+      "id": "sv8pt5-168",
+      "name": "Bloodmoon Ursaluna ex",
+      "set_name": "Prismatic Evolutions",
+      "set_id": "sv8pt5",
+      "rarity": "Special Illustration Rare",
+      "number": "168",
+      "image_small": "https://images.pokemontcg.io/sv8pt5/168.png",
+      "image_large": "https://images.pokemontcg.io/sv8pt5/168_hires.png",
+      "market_price": 82.11,
+      "expected_price": 122.7123,
+      "raw_diff": 40.6,
+      "residual_pct": -0.330874,
+      "iq_score": 86.72,
+      "cluster": "Pok\u00e9mon \u00b7 Special Illustration Rare",
       "dynamics": {
         "demand_pressure": null,
         "supply_saturation": 1.0,
-        "status": "awaiting_data"
+        "status": "awaiting_data",
+        "active_listings": null,
+        "sold_7d": null,
+        "new_7d": null,
+        "basis": {
+          "days": 1
+        }
       }
     },
     {
-      "id": "sv7-172",
-      "name": "Lacey",
+      "id": "sv6-211",
+      "name": "Teal Mask Ogerpon ex",
+      "set_name": "Twilight Masquerade",
+      "set_id": "sv6",
+      "rarity": "Special Illustration Rare",
+      "number": "211",
+      "image_small": "https://images.pokemontcg.io/sv6/211.png",
+      "image_large": "https://images.pokemontcg.io/sv6/211_hires.png",
+      "market_price": 29.02,
+      "expected_price": 68.8486,
+      "raw_diff": 39.83,
+      "residual_pct": -0.578496,
+      "iq_score": 88.03,
+      "cluster": "Pok\u00e9mon \u00b7 Special Illustration Rare",
+      "dynamics": {
+        "demand_pressure": null,
+        "supply_saturation": 1.0,
+        "status": "awaiting_data",
+        "active_listings": null,
+        "sold_7d": null,
+        "new_7d": null,
+        "basis": {
+          "days": 1
+        }
+      }
+    },
+    {
+      "id": "sv7-170",
+      "name": "Terapagos ex",
       "set_name": "Stellar Crown",
       "set_id": "sv7",
       "rarity": "Special Illustration Rare",
-      "number": "172",
-      "image_small": "https://images.pokemontcg.io/sv7/172.png",
-      "image_large": "https://images.pokemontcg.io/sv7/172_hires.png",
-      "market_price": 21.06,
-      "expected_price": 38.2222,
-      "raw_diff": 17.16,
-      "residual_pct": -0.449012,
-      "iq_score": 87.13,
-      "cluster": "Trainer \u00b7 Special Illustration Rare",
+      "number": "170",
+      "image_small": "https://images.pokemontcg.io/sv7/170.png",
+      "image_large": "https://images.pokemontcg.io/sv7/170_hires.png",
+      "market_price": 62.62,
+      "expected_price": 102.0323,
+      "raw_diff": 39.41,
+      "residual_pct": -0.386273,
+      "iq_score": 88.76,
+      "cluster": "Pok\u00e9mon \u00b7 Special Illustration Rare",
       "dynamics": {
         "demand_pressure": null,
         "supply_saturation": 1.0,
-        "status": "awaiting_data"
+        "status": "awaiting_data",
+        "active_listings": null,
+        "sold_7d": null,
+        "new_7d": null,
+        "basis": {
+          "days": 1
+        }
       }
     },
     {
-      "id": "sv3pt5-206",
-      "name": "Switch",
-      "set_name": "151",
-      "set_id": "sv3pt5",
-      "rarity": "Hyper Rare",
-      "number": "206",
-      "image_small": "https://images.pokemontcg.io/sv3pt5/206.png",
-      "image_large": "https://images.pokemontcg.io/sv3pt5/206_hires.png",
-      "market_price": 2.67,
-      "expected_price": 19.5346,
-      "raw_diff": 16.86,
-      "residual_pct": -0.863319,
-      "iq_score": 74.98,
-      "cluster": "Trainer \u00b7 Hyper Rare",
-      "dynamics": {
-        "demand_pressure": null,
-        "supply_saturation": 1.0,
-        "status": "awaiting_data"
-      }
-    },
-    {
-      "id": "sv6-223",
-      "name": "Buddy-Buddy Poffin",
+      "id": "sv6-210",
+      "name": "Sinistcha ex",
       "set_name": "Twilight Masquerade",
       "set_id": "sv6",
-      "rarity": "Hyper Rare",
-      "number": "223",
-      "image_small": "https://images.pokemontcg.io/sv6/223.png",
-      "image_large": "https://images.pokemontcg.io/sv6/223_hires.png",
-      "market_price": 14.54,
-      "expected_price": 30.866,
-      "raw_diff": 16.33,
-      "residual_pct": -0.528932,
-      "iq_score": 88.29,
-      "cluster": "Trainer \u00b7 Hyper Rare",
+      "rarity": "Special Illustration Rare",
+      "number": "210",
+      "image_small": "https://images.pokemontcg.io/sv6/210.png",
+      "image_large": "https://images.pokemontcg.io/sv6/210_hires.png",
+      "market_price": 33.22,
+      "expected_price": 71.3719,
+      "raw_diff": 38.15,
+      "residual_pct": -0.534551,
+      "iq_score": 84.87,
+      "cluster": "Pok\u00e9mon \u00b7 Special Illustration Rare",
       "dynamics": {
         "demand_pressure": null,
         "supply_saturation": 1.0,
-        "status": "awaiting_data"
+        "status": "awaiting_data",
+        "active_listings": null,
+        "sold_7d": null,
+        "new_7d": null,
+        "basis": {
+          "days": 1
+        }
+      }
+    },
+    {
+      "id": "me2pt5-287",
+      "name": "Marnie's Grimmsnarl ex",
+      "set_name": "Ascended Heroes",
+      "set_id": "me2pt5",
+      "rarity": "Special Illustration Rare",
+      "number": "287",
+      "image_small": "https://images.scrydex.com/pokemon/me2pt5-287/small",
+      "image_large": "https://images.scrydex.com/pokemon/me2pt5-287/large",
+      "market_price": 83.71,
+      "expected_price": 121.8578,
+      "raw_diff": 38.15,
+      "residual_pct": -0.313052,
+      "iq_score": 81.1,
+      "cluster": "Pok\u00e9mon \u00b7 Special Illustration Rare",
+      "dynamics": {
+        "demand_pressure": null,
+        "supply_saturation": 1.0,
+        "status": "awaiting_data",
+        "active_listings": null,
+        "sold_7d": null,
+        "new_7d": null,
+        "basis": {
+          "days": 1
+        }
+      }
+    },
+    {
+      "id": "me2pt5-285",
+      "name": "Mega Scrafty ex",
+      "set_name": "Ascended Heroes",
+      "set_id": "me2pt5",
+      "rarity": "Special Illustration Rare",
+      "number": "285",
+      "image_small": "https://images.scrydex.com/pokemon/me2pt5-285/small",
+      "image_large": "https://images.scrydex.com/pokemon/me2pt5-285/large",
+      "market_price": 77.78,
+      "expected_price": 115.2084,
+      "raw_diff": 37.43,
+      "residual_pct": -0.324875,
+      "iq_score": 81.29,
+      "cluster": "Pok\u00e9mon \u00b7 Special Illustration Rare",
+      "dynamics": {
+        "demand_pressure": null,
+        "supply_saturation": 1.0,
+        "status": "awaiting_data",
+        "active_listings": null,
+        "sold_7d": null,
+        "new_7d": null,
+        "basis": {
+          "days": 1
+        }
+      }
+    },
+    {
+      "id": "sv8pt5-147",
+      "name": "Ceruledge ex",
+      "set_name": "Prismatic Evolutions",
+      "set_id": "sv8pt5",
+      "rarity": "Special Illustration Rare",
+      "number": "147",
+      "image_small": "https://images.pokemontcg.io/sv8pt5/147.png",
+      "image_large": "https://images.pokemontcg.io/sv8pt5/147_hires.png",
+      "market_price": 100.51,
+      "expected_price": 137.2808,
+      "raw_diff": 36.77,
+      "residual_pct": -0.267851,
+      "iq_score": 86.8,
+      "cluster": "Pok\u00e9mon \u00b7 Special Illustration Rare",
+      "dynamics": {
+        "demand_pressure": null,
+        "supply_saturation": 1.0,
+        "status": "awaiting_data",
+        "active_listings": null,
+        "sold_7d": null,
+        "new_7d": null,
+        "basis": {
+          "days": 1
+        }
+      }
+    },
+    {
+      "id": "me2pt5-272",
+      "name": "Mega Meganium ex",
+      "set_name": "Ascended Heroes",
+      "set_id": "me2pt5",
+      "rarity": "Special Illustration Rare",
+      "number": "272",
+      "image_small": "https://images.scrydex.com/pokemon/me2pt5-272/small",
+      "image_large": "https://images.scrydex.com/pokemon/me2pt5-272/large",
+      "market_price": 106.46,
+      "expected_price": 141.6876,
+      "raw_diff": 35.23,
+      "residual_pct": -0.248629,
+      "iq_score": 78.43,
+      "cluster": "Pok\u00e9mon \u00b7 Special Illustration Rare",
+      "dynamics": {
+        "demand_pressure": null,
+        "supply_saturation": 1.0,
+        "status": "awaiting_data",
+        "active_listings": null,
+        "sold_7d": null,
+        "new_7d": null,
+        "basis": {
+          "days": 1
+        }
+      }
+    },
+    {
+      "id": "sv8pt5-144",
+      "name": "Leafeon ex",
+      "set_name": "Prismatic Evolutions",
+      "set_id": "sv8pt5",
+      "rarity": "Special Illustration Rare",
+      "number": "144",
+      "image_small": "https://images.pokemontcg.io/sv8pt5/144.png",
+      "image_large": "https://images.pokemontcg.io/sv8pt5/144_hires.png",
+      "market_price": 331.22,
+      "expected_price": 364.5122,
+      "raw_diff": 33.29,
+      "residual_pct": -0.091334,
+      "iq_score": 86.85,
+      "cluster": "Pok\u00e9mon \u00b7 Special Illustration Rare",
+      "dynamics": {
+        "demand_pressure": null,
+        "supply_saturation": 1.0,
+        "status": "awaiting_data",
+        "active_listings": null,
+        "sold_7d": null,
+        "new_7d": null,
+        "basis": {
+          "days": 1
+        }
+      }
+    },
+    {
+      "id": "sv5-204",
+      "name": "Gouging Fire ex",
+      "set_name": "Temporal Forces",
+      "set_id": "sv5",
+      "rarity": "Special Illustration Rare",
+      "number": "204",
+      "image_small": "https://images.pokemontcg.io/sv5/204.png",
+      "image_large": "https://images.pokemontcg.io/sv5/204_hires.png",
+      "market_price": 60.63,
+      "expected_price": 93.6668,
+      "raw_diff": 33.04,
+      "residual_pct": -0.352705,
+      "iq_score": 88.76,
+      "cluster": "Pok\u00e9mon \u00b7 Special Illustration Rare",
+      "dynamics": {
+        "demand_pressure": null,
+        "supply_saturation": 1.0,
+        "status": "awaiting_data",
+        "active_listings": null,
+        "sold_7d": null,
+        "new_7d": null,
+        "basis": {
+          "days": 1
+        }
+      }
+    },
+    {
+      "id": "sv7-169",
+      "name": "Dachsbun ex",
+      "set_name": "Stellar Crown",
+      "set_id": "sv7",
+      "rarity": "Special Illustration Rare",
+      "number": "169",
+      "image_small": "https://images.pokemontcg.io/sv7/169.png",
+      "image_large": "https://images.pokemontcg.io/sv7/169_hires.png",
+      "market_price": 78.75,
+      "expected_price": 110.7572,
+      "raw_diff": 32.01,
+      "residual_pct": -0.288985,
+      "iq_score": 88.08,
+      "cluster": "Pok\u00e9mon \u00b7 Special Illustration Rare",
+      "dynamics": {
+        "demand_pressure": null,
+        "supply_saturation": 1.0,
+        "status": "awaiting_data",
+        "active_listings": null,
+        "sold_7d": null,
+        "new_7d": null,
+        "basis": {
+          "days": 1
+        }
+      }
+    },
+    {
+      "id": "me2pt5-283",
+      "name": "Mega Hawlucha ex",
+      "set_name": "Ascended Heroes",
+      "set_id": "me2pt5",
+      "rarity": "Special Illustration Rare",
+      "number": "283",
+      "image_small": "https://images.scrydex.com/pokemon/me2pt5-283/small",
+      "image_large": "https://images.scrydex.com/pokemon/me2pt5-283/large",
+      "market_price": 76.4,
+      "expected_price": 107.588,
+      "raw_diff": 31.19,
+      "residual_pct": -0.289883,
+      "iq_score": 81.24,
+      "cluster": "Pok\u00e9mon \u00b7 Special Illustration Rare",
+      "dynamics": {
+        "demand_pressure": null,
+        "supply_saturation": 1.0,
+        "status": "awaiting_data",
+        "active_listings": null,
+        "sold_7d": null,
+        "new_7d": null,
+        "basis": {
+          "days": 1
+        }
+      }
+    },
+    {
+      "id": "sv5-206",
+      "name": "Iron Crown ex",
+      "set_name": "Temporal Forces",
+      "set_id": "sv5",
+      "rarity": "Special Illustration Rare",
+      "number": "206",
+      "image_small": "https://images.pokemontcg.io/sv5/206.png",
+      "image_large": "https://images.pokemontcg.io/sv5/206_hires.png",
+      "market_price": 58.96,
+      "expected_price": 88.2628,
+      "raw_diff": 29.3,
+      "residual_pct": -0.331995,
+      "iq_score": 89.46,
+      "cluster": "Pok\u00e9mon \u00b7 Special Illustration Rare",
+      "dynamics": {
+        "demand_pressure": null,
+        "supply_saturation": 1.0,
+        "status": "awaiting_data",
+        "active_listings": null,
+        "sold_7d": null,
+        "new_7d": null,
+        "basis": {
+          "days": 1
+        }
+      }
+    },
+    {
+      "id": "sv6-213",
+      "name": "Wellspring Mask Ogerpon ex",
+      "set_name": "Twilight Masquerade",
+      "set_id": "sv6",
+      "rarity": "Special Illustration Rare",
+      "number": "213",
+      "image_small": "https://images.pokemontcg.io/sv6/213.png",
+      "image_large": "https://images.pokemontcg.io/sv6/213_hires.png",
+      "market_price": 17.54,
+      "expected_price": 46.5387,
+      "raw_diff": 29.0,
+      "residual_pct": -0.62311,
+      "iq_score": 86.94,
+      "cluster": "Pok\u00e9mon \u00b7 Special Illustration Rare",
+      "dynamics": {
+        "demand_pressure": null,
+        "supply_saturation": 1.0,
+        "status": "awaiting_data",
+        "active_listings": null,
+        "sold_7d": null,
+        "new_7d": null,
+        "basis": {
+          "days": 1
+        }
+      }
+    },
+    {
+      "id": "sv8pt5-166",
+      "name": "Raging Bolt ex",
+      "set_name": "Prismatic Evolutions",
+      "set_id": "sv8pt5",
+      "rarity": "Special Illustration Rare",
+      "number": "166",
+      "image_small": "https://images.pokemontcg.io/sv8pt5/166.png",
+      "image_large": "https://images.pokemontcg.io/sv8pt5/166_hires.png",
+      "market_price": 72.89,
+      "expected_price": 98.1083,
+      "raw_diff": 25.22,
+      "residual_pct": -0.257046,
+      "iq_score": 86.55,
+      "cluster": "Pok\u00e9mon \u00b7 Special Illustration Rare",
+      "dynamics": {
+        "demand_pressure": null,
+        "supply_saturation": 1.0,
+        "status": "awaiting_data",
+        "active_listings": null,
+        "sold_7d": null,
+        "new_7d": null,
+        "basis": {
+          "days": 1
+        }
+      }
+    },
+    {
+      "id": "me2pt5-280",
+      "name": "Lillie's Clefairy ex",
+      "set_name": "Ascended Heroes",
+      "set_id": "me2pt5",
+      "rarity": "Special Illustration Rare",
+      "number": "280",
+      "image_small": "https://images.scrydex.com/pokemon/me2pt5-280/small",
+      "image_large": "https://images.scrydex.com/pokemon/me2pt5-280/large",
+      "market_price": 208.62,
+      "expected_price": 233.4732,
+      "raw_diff": 24.85,
+      "residual_pct": -0.10645,
+      "iq_score": 85.45,
+      "cluster": "Pok\u00e9mon \u00b7 Special Illustration Rare",
+      "dynamics": {
+        "demand_pressure": null,
+        "supply_saturation": 1.0,
+        "status": "awaiting_data",
+        "active_listings": null,
+        "sold_7d": null,
+        "new_7d": null,
+        "basis": {
+          "days": 1
+        }
+      }
+    },
+    {
+      "id": "me2pt5-279",
+      "name": "Iono's Bellibolt ex",
+      "set_name": "Ascended Heroes",
+      "set_id": "me2pt5",
+      "rarity": "Special Illustration Rare",
+      "number": "279",
+      "image_small": "https://images.scrydex.com/pokemon/me2pt5-279/small",
+      "image_large": "https://images.scrydex.com/pokemon/me2pt5-279/large",
+      "market_price": 73.85,
+      "expected_price": 97.7531,
+      "raw_diff": 23.9,
+      "residual_pct": -0.244525,
+      "iq_score": 82.09,
+      "cluster": "Pok\u00e9mon \u00b7 Special Illustration Rare",
+      "dynamics": {
+        "demand_pressure": null,
+        "supply_saturation": 1.0,
+        "status": "awaiting_data",
+        "active_listings": null,
+        "sold_7d": null,
+        "new_7d": null,
+        "basis": {
+          "days": 1
+        }
+      }
+    },
+    {
+      "id": "sv8pt5-157",
+      "name": "Iron Valiant ex",
+      "set_name": "Prismatic Evolutions",
+      "set_id": "sv8pt5",
+      "rarity": "Special Illustration Rare",
+      "number": "157",
+      "image_small": "https://images.pokemontcg.io/sv8pt5/157.png",
+      "image_large": "https://images.pokemontcg.io/sv8pt5/157_hires.png",
+      "market_price": 76.18,
+      "expected_price": 99.5043,
+      "raw_diff": 23.32,
+      "residual_pct": -0.234405,
+      "iq_score": 84.33,
+      "cluster": "Pok\u00e9mon \u00b7 Special Illustration Rare",
+      "dynamics": {
+        "demand_pressure": null,
+        "supply_saturation": 1.0,
+        "status": "awaiting_data",
+        "active_listings": null,
+        "sold_7d": null,
+        "new_7d": null,
+        "basis": {
+          "days": 1
+        }
+      }
+    },
+    {
+      "id": "sv6-215",
+      "name": "Cornerstone Mask Ogerpon ex",
+      "set_name": "Twilight Masquerade",
+      "set_id": "sv6",
+      "rarity": "Special Illustration Rare",
+      "number": "215",
+      "image_small": "https://images.pokemontcg.io/sv6/215.png",
+      "image_large": "https://images.pokemontcg.io/sv6/215_hires.png",
+      "market_price": 16.05,
+      "expected_price": 38.6452,
+      "raw_diff": 22.6,
+      "residual_pct": -0.584683,
+      "iq_score": 86.65,
+      "cluster": "Pok\u00e9mon \u00b7 Special Illustration Rare",
+      "dynamics": {
+        "demand_pressure": null,
+        "supply_saturation": 1.0,
+        "status": "awaiting_data",
+        "active_listings": null,
+        "sold_7d": null,
+        "new_7d": null,
+        "basis": {
+          "days": 1
+        }
       }
     },
     {
@@ -1018,61 +874,484 @@
       "image_small": "https://images.pokemontcg.io/sv5/203.png",
       "image_large": "https://images.pokemontcg.io/sv5/203_hires.png",
       "market_price": 43.24,
-      "expected_price": 59.2772,
-      "raw_diff": 16.04,
-      "residual_pct": -0.270545,
+      "expected_price": 65.5941,
+      "raw_diff": 22.35,
+      "residual_pct": -0.340794,
       "iq_score": 88.81,
       "cluster": "Pok\u00e9mon \u00b7 Special Illustration Rare",
       "dynamics": {
         "demand_pressure": null,
         "supply_saturation": 1.0,
-        "status": "awaiting_data"
+        "status": "awaiting_data",
+        "active_listings": null,
+        "sold_7d": null,
+        "new_7d": null,
+        "basis": {
+          "days": 1
+        }
       }
     },
     {
-      "id": "sv6-226",
-      "name": "Luminous Energy",
-      "set_name": "Twilight Masquerade",
-      "set_id": "sv6",
-      "rarity": "Hyper Rare",
-      "number": "226",
-      "image_small": "https://images.pokemontcg.io/sv6/226.png",
-      "image_large": "https://images.pokemontcg.io/sv6/226_hires.png",
-      "market_price": 5.38,
-      "expected_price": 21.3454,
-      "raw_diff": 15.97,
-      "residual_pct": -0.747956,
-      "iq_score": 75.95,
-      "cluster": "Energy \u00b7 Hyper Rare",
-      "dynamics": {
-        "demand_pressure": null,
-        "supply_saturation": 1.0,
-        "status": "awaiting_data"
-      }
-    }
-  ],
-  "overvalued": [
-    {
-      "id": "me2pt5-284",
-      "name": "Mega Gengar ex",
+      "id": "me2pt5-288",
+      "name": "Fezandipiti ex",
       "set_name": "Ascended Heroes",
       "set_id": "me2pt5",
       "rarity": "Special Illustration Rare",
-      "number": "284",
-      "image_small": "https://images.scrydex.com/pokemon/me2pt5-284/small",
-      "image_large": "https://images.scrydex.com/pokemon/me2pt5-284/large",
-      "market_price": 1454.18,
-      "expected_price": 307.2996,
-      "raw_diff": -1146.88,
-      "residual_pct": 3.732124,
-      "iq_score": 86.11,
+      "number": "288",
+      "image_small": "https://images.scrydex.com/pokemon/me2pt5-288/small",
+      "image_large": "https://images.scrydex.com/pokemon/me2pt5-288/large",
+      "market_price": 71.86,
+      "expected_price": 94.0334,
+      "raw_diff": 22.17,
+      "residual_pct": -0.235803,
+      "iq_score": 84.28,
       "cluster": "Pok\u00e9mon \u00b7 Special Illustration Rare",
       "dynamics": {
         "demand_pressure": null,
         "supply_saturation": 1.0,
-        "status": "awaiting_data"
+        "status": "awaiting_data",
+        "active_listings": null,
+        "sold_7d": null,
+        "new_7d": null,
+        "basis": {
+          "days": 1
+        }
       }
     },
+    {
+      "id": "sv8-197",
+      "name": "Ceruledge",
+      "set_name": "Surging Sparks",
+      "set_id": "sv8",
+      "rarity": "Illustration Rare",
+      "number": "197",
+      "image_small": "https://images.pokemontcg.io/sv8/197.png",
+      "image_large": "https://images.pokemontcg.io/sv8/197_hires.png",
+      "market_price": 24.47,
+      "expected_price": 44.9925,
+      "raw_diff": 20.52,
+      "residual_pct": -0.456132,
+      "iq_score": 82.19,
+      "cluster": "Pok\u00e9mon \u00b7 Illustration Rare",
+      "dynamics": {
+        "demand_pressure": null,
+        "supply_saturation": 1.0,
+        "status": "awaiting_data",
+        "active_listings": null,
+        "sold_7d": null,
+        "new_7d": null,
+        "basis": {
+          "days": 1
+        }
+      }
+    },
+    {
+      "id": "sv8pt5-151",
+      "name": "Palafin ex",
+      "set_name": "Prismatic Evolutions",
+      "set_id": "sv8pt5",
+      "rarity": "Special Illustration Rare",
+      "number": "151",
+      "image_small": "https://images.pokemontcg.io/sv8pt5/151.png",
+      "image_large": "https://images.pokemontcg.io/sv8pt5/151_hires.png",
+      "market_price": 47.81,
+      "expected_price": 67.9322,
+      "raw_diff": 20.12,
+      "residual_pct": -0.29621,
+      "iq_score": 85.52,
+      "cluster": "Pok\u00e9mon \u00b7 Special Illustration Rare",
+      "dynamics": {
+        "demand_pressure": null,
+        "supply_saturation": 1.0,
+        "status": "awaiting_data",
+        "active_listings": null,
+        "sold_7d": null,
+        "new_7d": null,
+        "basis": {
+          "days": 1
+        }
+      }
+    },
+    {
+      "id": "sv6-186",
+      "name": "Tatsugiri",
+      "set_name": "Twilight Masquerade",
+      "set_id": "sv6",
+      "rarity": "Illustration Rare",
+      "number": "186",
+      "image_small": "https://images.pokemontcg.io/sv6/186.png",
+      "image_large": "https://images.pokemontcg.io/sv6/186_hires.png",
+      "market_price": 22.15,
+      "expected_price": 42.1195,
+      "raw_diff": 19.97,
+      "residual_pct": -0.474115,
+      "iq_score": 81.97,
+      "cluster": "Pok\u00e9mon \u00b7 Illustration Rare",
+      "dynamics": {
+        "demand_pressure": null,
+        "supply_saturation": 1.0,
+        "status": "awaiting_data",
+        "active_listings": null,
+        "sold_7d": null,
+        "new_7d": null,
+        "basis": {
+          "days": 1
+        }
+      }
+    },
+    {
+      "id": "sv8pt5-164",
+      "name": "Gholdengo ex",
+      "set_name": "Prismatic Evolutions",
+      "set_id": "sv8pt5",
+      "rarity": "Special Illustration Rare",
+      "number": "164",
+      "image_small": "https://images.pokemontcg.io/sv8pt5/164.png",
+      "image_large": "https://images.pokemontcg.io/sv8pt5/164_hires.png",
+      "market_price": 53.89,
+      "expected_price": 72.0541,
+      "raw_diff": 18.16,
+      "residual_pct": -0.25209,
+      "iq_score": 84.39,
+      "cluster": "Pok\u00e9mon \u00b7 Special Illustration Rare",
+      "dynamics": {
+        "demand_pressure": null,
+        "supply_saturation": 1.0,
+        "status": "awaiting_data",
+        "active_listings": null,
+        "sold_7d": null,
+        "new_7d": null,
+        "basis": {
+          "days": 1
+        }
+      }
+    },
+    {
+      "id": "me3-119",
+      "name": "Mega Clefable ex",
+      "set_name": "Perfect Order",
+      "set_id": "me3",
+      "rarity": "Special Illustration Rare",
+      "number": "119",
+      "image_small": "https://images.scrydex.com/pokemon/me3-119/small",
+      "image_large": "https://images.scrydex.com/pokemon/me3-119/large",
+      "market_price": 71.42,
+      "expected_price": 89.119,
+      "raw_diff": 17.7,
+      "residual_pct": -0.1986,
+      "iq_score": 81.45,
+      "cluster": "Pok\u00e9mon \u00b7 Special Illustration Rare",
+      "dynamics": {
+        "demand_pressure": null,
+        "supply_saturation": 1.0,
+        "status": "awaiting_data",
+        "active_listings": null,
+        "sold_7d": null,
+        "new_7d": null,
+        "basis": {
+          "days": 1
+        }
+      }
+    },
+    {
+      "id": "sv7-172",
+      "name": "Lacey",
+      "set_name": "Stellar Crown",
+      "set_id": "sv7",
+      "rarity": "Special Illustration Rare",
+      "number": "172",
+      "image_small": "https://images.pokemontcg.io/sv7/172.png",
+      "image_large": "https://images.pokemontcg.io/sv7/172_hires.png",
+      "market_price": 21.06,
+      "expected_price": 37.437,
+      "raw_diff": 16.38,
+      "residual_pct": -0.437455,
+      "iq_score": 87.13,
+      "cluster": "Trainer \u00b7 Special Illustration Rare",
+      "dynamics": {
+        "demand_pressure": null,
+        "supply_saturation": 1.0,
+        "status": "awaiting_data",
+        "active_listings": null,
+        "sold_7d": null,
+        "new_7d": null,
+        "basis": {
+          "days": 1
+        }
+      }
+    },
+    {
+      "id": "sv6-168",
+      "name": "Pinsir",
+      "set_name": "Twilight Masquerade",
+      "set_id": "sv6",
+      "rarity": "Illustration Rare",
+      "number": "168",
+      "image_small": "https://images.pokemontcg.io/sv6/168.png",
+      "image_large": "https://images.pokemontcg.io/sv6/168_hires.png",
+      "market_price": 17.24,
+      "expected_price": 33.1728,
+      "raw_diff": 15.93,
+      "residual_pct": -0.480297,
+      "iq_score": 80.1,
+      "cluster": "Pok\u00e9mon \u00b7 Illustration Rare",
+      "dynamics": {
+        "demand_pressure": null,
+        "supply_saturation": 1.0,
+        "status": "awaiting_data",
+        "active_listings": null,
+        "sold_7d": null,
+        "new_7d": null,
+        "basis": {
+          "days": 1
+        }
+      }
+    },
+    {
+      "id": "me2pt5-282",
+      "name": "Mega Diancie ex",
+      "set_name": "Ascended Heroes",
+      "set_id": "me2pt5",
+      "rarity": "Special Illustration Rare",
+      "number": "282",
+      "image_small": "https://images.scrydex.com/pokemon/me2pt5-282/small",
+      "image_large": "https://images.scrydex.com/pokemon/me2pt5-282/large",
+      "market_price": 75.76,
+      "expected_price": 91.3552,
+      "raw_diff": 15.6,
+      "residual_pct": -0.17071,
+      "iq_score": 78.97,
+      "cluster": "Pok\u00e9mon \u00b7 Special Illustration Rare",
+      "dynamics": {
+        "demand_pressure": null,
+        "supply_saturation": 1.0,
+        "status": "awaiting_data",
+        "active_listings": null,
+        "sold_7d": null,
+        "new_7d": null,
+        "basis": {
+          "days": 1
+        }
+      }
+    },
+    {
+      "id": "sv8pt5-169",
+      "name": "Terapagos ex",
+      "set_name": "Prismatic Evolutions",
+      "set_id": "sv8pt5",
+      "rarity": "Special Illustration Rare",
+      "number": "169",
+      "image_small": "https://images.pokemontcg.io/sv8pt5/169.png",
+      "image_large": "https://images.pokemontcg.io/sv8pt5/169_hires.png",
+      "market_price": 39.55,
+      "expected_price": 55.0796,
+      "raw_diff": 15.53,
+      "residual_pct": -0.281949,
+      "iq_score": 85.72,
+      "cluster": "Pok\u00e9mon \u00b7 Special Illustration Rare",
+      "dynamics": {
+        "demand_pressure": null,
+        "supply_saturation": 1.0,
+        "status": "awaiting_data",
+        "active_listings": null,
+        "sold_7d": null,
+        "new_7d": null,
+        "basis": {
+          "days": 1
+        }
+      }
+    },
+    {
+      "id": "sv7-171",
+      "name": "Briar",
+      "set_name": "Stellar Crown",
+      "set_id": "sv7",
+      "rarity": "Special Illustration Rare",
+      "number": "171",
+      "image_small": "https://images.pokemontcg.io/sv7/171.png",
+      "image_large": "https://images.pokemontcg.io/sv7/171_hires.png",
+      "market_price": 13.09,
+      "expected_price": 28.5382,
+      "raw_diff": 15.45,
+      "residual_pct": -0.541316,
+      "iq_score": 85.13,
+      "cluster": "Trainer \u00b7 Special Illustration Rare",
+      "dynamics": {
+        "demand_pressure": null,
+        "supply_saturation": 1.0,
+        "status": "awaiting_data",
+        "active_listings": null,
+        "sold_7d": null,
+        "new_7d": null,
+        "basis": {
+          "days": 1
+        }
+      }
+    },
+    {
+      "id": "sv8-245",
+      "name": "Jasmine's Gaze",
+      "set_name": "Surging Sparks",
+      "set_id": "sv8",
+      "rarity": "Special Illustration Rare",
+      "number": "245",
+      "image_small": "https://images.pokemontcg.io/sv8/245.png",
+      "image_large": "https://images.pokemontcg.io/sv8/245_hires.png",
+      "market_price": 23.88,
+      "expected_price": 38.9996,
+      "raw_diff": 15.12,
+      "residual_pct": -0.387686,
+      "iq_score": 82.22,
+      "cluster": "Trainer \u00b7 Special Illustration Rare",
+      "dynamics": {
+        "demand_pressure": null,
+        "supply_saturation": 1.0,
+        "status": "awaiting_data",
+        "active_listings": null,
+        "sold_7d": null,
+        "new_7d": null,
+        "basis": {
+          "days": 1
+        }
+      }
+    },
+    {
+      "id": "sv6-224",
+      "name": "Enhanced Hammer",
+      "set_name": "Twilight Masquerade",
+      "set_id": "sv6",
+      "rarity": "Hyper Rare",
+      "number": "224",
+      "image_small": "https://images.pokemontcg.io/sv6/224.png",
+      "image_large": "https://images.pokemontcg.io/sv6/224_hires.png",
+      "market_price": 6.45,
+      "expected_price": 21.3069,
+      "raw_diff": 14.86,
+      "residual_pct": -0.697282,
+      "iq_score": 79.28,
+      "cluster": "Trainer \u00b7 Hyper Rare",
+      "dynamics": {
+        "demand_pressure": null,
+        "supply_saturation": 1.0,
+        "status": "awaiting_data",
+        "active_listings": null,
+        "sold_7d": null,
+        "new_7d": null,
+        "basis": {
+          "days": 1
+        }
+      }
+    },
+    {
+      "id": "me4-118",
+      "name": "Mega Dragalge ex",
+      "set_name": "Chaos Rising",
+      "set_id": "me4",
+      "rarity": "Special Illustration Rare",
+      "number": "118",
+      "image_small": "https://images.scrydex.com/pokemon/me4-118/small",
+      "image_large": "https://images.scrydex.com/pokemon/me4-118/large",
+      "market_price": 57.12,
+      "expected_price": 71.7347,
+      "raw_diff": 14.61,
+      "residual_pct": -0.203733,
+      "iq_score": 80.66,
+      "cluster": "Pok\u00e9mon \u00b7 Special Illustration Rare",
+      "dynamics": {
+        "demand_pressure": null,
+        "supply_saturation": 1.0,
+        "status": "awaiting_data",
+        "active_listings": null,
+        "sold_7d": null,
+        "new_7d": null,
+        "basis": {
+          "days": 1
+        }
+      }
+    },
+    {
+      "id": "sv8-251",
+      "name": "Night Stretcher",
+      "set_name": "Surging Sparks",
+      "set_id": "sv8",
+      "rarity": "Hyper Rare",
+      "number": "251",
+      "image_small": "https://images.pokemontcg.io/sv8/251.png",
+      "image_large": "https://images.pokemontcg.io/sv8/251_hires.png",
+      "market_price": 10.21,
+      "expected_price": 24.7522,
+      "raw_diff": 14.54,
+      "residual_pct": -0.587512,
+      "iq_score": 86.73,
+      "cluster": "Trainer \u00b7 Hyper Rare",
+      "dynamics": {
+        "demand_pressure": null,
+        "supply_saturation": 1.0,
+        "status": "awaiting_data",
+        "active_listings": null,
+        "sold_7d": null,
+        "new_7d": null,
+        "basis": {
+          "days": 1
+        }
+      }
+    },
+    {
+      "id": "sv8-252",
+      "name": "Jet Energy",
+      "set_name": "Surging Sparks",
+      "set_id": "sv8",
+      "rarity": "Hyper Rare",
+      "number": "252",
+      "image_small": "https://images.pokemontcg.io/sv8/252.png",
+      "image_large": "https://images.pokemontcg.io/sv8/252_hires.png",
+      "market_price": 5.28,
+      "expected_price": 19.7844,
+      "raw_diff": 14.5,
+      "residual_pct": -0.733123,
+      "iq_score": 75.8,
+      "cluster": "Energy \u00b7 Hyper Rare",
+      "dynamics": {
+        "demand_pressure": null,
+        "supply_saturation": 1.0,
+        "status": "awaiting_data",
+        "active_listings": null,
+        "sold_7d": null,
+        "new_7d": null,
+        "basis": {
+          "days": 1
+        }
+      }
+    },
+    {
+      "id": "sv8-249",
+      "name": "Counter Gain",
+      "set_name": "Surging Sparks",
+      "set_id": "sv8",
+      "rarity": "Hyper Rare",
+      "number": "249",
+      "image_small": "https://images.pokemontcg.io/sv8/249.png",
+      "image_large": "https://images.pokemontcg.io/sv8/249_hires.png",
+      "market_price": 3.86,
+      "expected_price": 18.3126,
+      "raw_diff": 14.45,
+      "residual_pct": -0.789216,
+      "iq_score": 81.2,
+      "cluster": "Trainer \u00b7 Hyper Rare",
+      "dynamics": {
+        "demand_pressure": null,
+        "supply_saturation": 1.0,
+        "status": "awaiting_data",
+        "active_listings": null,
+        "sold_7d": null,
+        "new_7d": null,
+        "basis": {
+          "days": 1
+        }
+      }
+    }
+  ],
+  "overvalued": [
     {
       "id": "sv8pt5-161",
       "name": "Umbreon ex",
@@ -1083,15 +1362,48 @@
       "image_small": "https://images.pokemontcg.io/sv8pt5/161.png",
       "image_large": "https://images.pokemontcg.io/sv8pt5/161_hires.png",
       "market_price": 1579.6,
-      "expected_price": 498.4762,
-      "raw_diff": -1081.12,
-      "residual_pct": 2.168857,
+      "expected_price": 452.4682,
+      "raw_diff": -1127.13,
+      "residual_pct": 2.491074,
       "iq_score": 86.85,
       "cluster": "Pok\u00e9mon \u00b7 Special Illustration Rare",
       "dynamics": {
         "demand_pressure": null,
         "supply_saturation": 1.0,
-        "status": "awaiting_data"
+        "status": "awaiting_data",
+        "active_listings": null,
+        "sold_7d": null,
+        "new_7d": null,
+        "basis": {
+          "days": 1
+        }
+      }
+    },
+    {
+      "id": "me2pt5-284",
+      "name": "Mega Gengar ex",
+      "set_name": "Ascended Heroes",
+      "set_id": "me2pt5",
+      "rarity": "Special Illustration Rare",
+      "number": "284",
+      "image_small": "https://images.scrydex.com/pokemon/me2pt5-284/small",
+      "image_large": "https://images.scrydex.com/pokemon/me2pt5-284/large",
+      "market_price": 1454.18,
+      "expected_price": 381.132,
+      "raw_diff": -1073.05,
+      "residual_pct": 2.815424,
+      "iq_score": 86.11,
+      "cluster": "Pok\u00e9mon \u00b7 Special Illustration Rare",
+      "dynamics": {
+        "demand_pressure": null,
+        "supply_saturation": 1.0,
+        "status": "awaiting_data",
+        "active_listings": null,
+        "sold_7d": null,
+        "new_7d": null,
+        "basis": {
+          "days": 1
+        }
       }
     },
     {
@@ -1104,15 +1416,21 @@
       "image_small": "https://images.scrydex.com/pokemon/me2pt5-276/small",
       "image_large": "https://images.scrydex.com/pokemon/me2pt5-276/large",
       "market_price": 1355.05,
-      "expected_price": 286.353,
-      "raw_diff": -1068.7,
-      "residual_pct": 3.732096,
+      "expected_price": 355.4051,
+      "raw_diff": -999.64,
+      "residual_pct": 2.812691,
       "iq_score": 86.03,
       "cluster": "Pok\u00e9mon \u00b7 Special Illustration Rare",
       "dynamics": {
         "demand_pressure": null,
         "supply_saturation": 1.0,
-        "status": "awaiting_data"
+        "status": "awaiting_data",
+        "active_listings": null,
+        "sold_7d": null,
+        "new_7d": null,
+        "basis": {
+          "days": 1
+        }
       }
     },
     {
@@ -1125,15 +1443,21 @@
       "image_small": "https://images.pokemontcg.io/sv4pt5/232.png",
       "image_large": "https://images.pokemontcg.io/sv4pt5/232_hires.png",
       "market_price": 1020.11,
-      "expected_price": 144.2024,
-      "raw_diff": -875.91,
-      "residual_pct": 6.074155,
+      "expected_price": 146.0865,
+      "raw_diff": -874.02,
+      "residual_pct": 5.982919,
       "iq_score": 88.32,
       "cluster": "Pok\u00e9mon \u00b7 Special Illustration Rare",
       "dynamics": {
         "demand_pressure": null,
         "supply_saturation": 1.0,
-        "status": "awaiting_data"
+        "status": "awaiting_data",
+        "active_listings": null,
+        "sold_7d": null,
+        "new_7d": null,
+        "basis": {
+          "days": 1
+        }
       }
     },
     {
@@ -1146,15 +1470,21 @@
       "image_small": "https://images.scrydex.com/pokemon/me2pt5-290/small",
       "image_large": "https://images.scrydex.com/pokemon/me2pt5-290/large",
       "market_price": 880.43,
-      "expected_price": 224.9362,
-      "raw_diff": -655.49,
-      "residual_pct": 2.914133,
+      "expected_price": 274.7986,
+      "raw_diff": -605.63,
+      "residual_pct": 2.20391,
       "iq_score": 81.57,
       "cluster": "Pok\u00e9mon \u00b7 Special Illustration Rare",
       "dynamics": {
         "demand_pressure": null,
         "supply_saturation": 1.0,
-        "status": "awaiting_data"
+        "status": "awaiting_data",
+        "active_listings": null,
+        "sold_7d": null,
+        "new_7d": null,
+        "basis": {
+          "days": 1
+        }
       }
     },
     {
@@ -1167,15 +1497,21 @@
       "image_small": "https://images.pokemontcg.io/sv3pt5/199.png",
       "image_large": "https://images.pokemontcg.io/sv3pt5/199_hires.png",
       "market_price": 479.59,
-      "expected_price": 152.9715,
-      "raw_diff": -326.62,
-      "residual_pct": 2.135158,
+      "expected_price": 147.0891,
+      "raw_diff": -332.5,
+      "residual_pct": 2.26054,
       "iq_score": 91.77,
       "cluster": "Pok\u00e9mon \u00b7 Special Illustration Rare",
       "dynamics": {
         "demand_pressure": null,
         "supply_saturation": 1.0,
-        "status": "awaiting_data"
+        "status": "awaiting_data",
+        "active_listings": null,
+        "sold_7d": null,
+        "new_7d": null,
+        "basis": {
+          "days": 1
+        }
       }
     },
     {
@@ -1188,15 +1524,21 @@
       "image_small": "https://images.scrydex.com/pokemon/me2pt5-294/small",
       "image_large": "https://images.scrydex.com/pokemon/me2pt5-294/large",
       "market_price": 628.99,
-      "expected_price": 343.7962,
-      "raw_diff": -285.19,
-      "residual_pct": 0.829543,
+      "expected_price": 347.6389,
+      "raw_diff": -281.35,
+      "residual_pct": 0.80932,
       "iq_score": 74.66,
       "cluster": "Pok\u00e9mon \u00b7 Special Illustration Rare",
       "dynamics": {
         "demand_pressure": null,
         "supply_saturation": 1.0,
-        "status": "awaiting_data"
+        "status": "awaiting_data",
+        "active_listings": null,
+        "sold_7d": null,
+        "new_7d": null,
+        "basis": {
+          "days": 1
+        }
       }
     },
     {
@@ -1209,15 +1551,21 @@
       "image_small": "https://images.scrydex.com/pokemon/me2pt5-281/small",
       "image_large": "https://images.scrydex.com/pokemon/me2pt5-281/large",
       "market_price": 445.65,
-      "expected_price": 164.6156,
-      "raw_diff": -281.03,
-      "residual_pct": 1.707216,
+      "expected_price": 199.5436,
+      "raw_diff": -246.11,
+      "residual_pct": 1.233347,
       "iq_score": 78.69,
       "cluster": "Pok\u00e9mon \u00b7 Special Illustration Rare",
       "dynamics": {
         "demand_pressure": null,
         "supply_saturation": 1.0,
-        "status": "awaiting_data"
+        "status": "awaiting_data",
+        "active_listings": null,
+        "sold_7d": null,
+        "new_7d": null,
+        "basis": {
+          "days": 1
+        }
       }
     },
     {
@@ -1230,78 +1578,21 @@
       "image_small": "https://images.pokemontcg.io/sv6/214.png",
       "image_large": "https://images.pokemontcg.io/sv6/214_hires.png",
       "market_price": 400.47,
-      "expected_price": 158.8179,
-      "raw_diff": -241.65,
-      "residual_pct": 1.521567,
+      "expected_price": 172.0482,
+      "raw_diff": -228.42,
+      "residual_pct": 1.327662,
       "iq_score": 89.31,
       "cluster": "Pok\u00e9mon \u00b7 Special Illustration Rare",
       "dynamics": {
         "demand_pressure": null,
         "supply_saturation": 1.0,
-        "status": "awaiting_data"
-      }
-    },
-    {
-      "id": "me2pt5-277",
-      "name": "Pikachu ex",
-      "set_name": "Ascended Heroes",
-      "set_id": "me2pt5",
-      "rarity": "Special Illustration Rare",
-      "number": "277",
-      "image_small": "https://images.scrydex.com/pokemon/me2pt5-277/small",
-      "image_large": "https://images.scrydex.com/pokemon/me2pt5-277/large",
-      "market_price": 466.92,
-      "expected_price": 231.6974,
-      "raw_diff": -235.22,
-      "residual_pct": 1.015215,
-      "iq_score": 85.77,
-      "cluster": "Pok\u00e9mon \u00b7 Special Illustration Rare",
-      "dynamics": {
-        "demand_pressure": null,
-        "supply_saturation": 1.0,
-        "status": "awaiting_data"
-      }
-    },
-    {
-      "id": "sv4pt5-234",
-      "name": "Charizard ex",
-      "set_name": "Paldean Fates",
-      "set_id": "sv4pt5",
-      "rarity": "Special Illustration Rare",
-      "number": "234",
-      "image_small": "https://images.pokemontcg.io/sv4pt5/234.png",
-      "image_large": "https://images.pokemontcg.io/sv4pt5/234_hires.png",
-      "market_price": 335.83,
-      "expected_price": 146.7267,
-      "raw_diff": -189.1,
-      "residual_pct": 1.288813,
-      "iq_score": 90.84,
-      "cluster": "Pok\u00e9mon \u00b7 Special Illustration Rare",
-      "dynamics": {
-        "demand_pressure": null,
-        "supply_saturation": 1.0,
-        "status": "awaiting_data"
-      }
-    },
-    {
-      "id": "sv8-238",
-      "name": "Pikachu ex",
-      "set_name": "Surging Sparks",
-      "set_id": "sv8",
-      "rarity": "Special Illustration Rare",
-      "number": "238",
-      "image_small": "https://images.pokemontcg.io/sv8/238.png",
-      "image_large": "https://images.pokemontcg.io/sv8/238_hires.png",
-      "market_price": 358.36,
-      "expected_price": 179.3786,
-      "raw_diff": -178.98,
-      "residual_pct": 0.997786,
-      "iq_score": 89.06,
-      "cluster": "Pok\u00e9mon \u00b7 Special Illustration Rare",
-      "dynamics": {
-        "demand_pressure": null,
-        "supply_saturation": 1.0,
-        "status": "awaiting_data"
+        "status": "awaiting_data",
+        "active_listings": null,
+        "sold_7d": null,
+        "new_7d": null,
+        "basis": {
+          "days": 1
+        }
       }
     },
     {
@@ -1314,15 +1605,102 @@
       "image_small": "https://images.scrydex.com/pokemon/me4-116/small",
       "image_large": "https://images.scrydex.com/pokemon/me4-116/large",
       "market_price": 338.78,
-      "expected_price": 184.3163,
-      "raw_diff": -154.46,
-      "residual_pct": 0.838036,
+      "expected_price": 129.1006,
+      "raw_diff": -209.68,
+      "residual_pct": 1.624155,
       "iq_score": 83.19,
       "cluster": "Pok\u00e9mon \u00b7 Special Illustration Rare",
       "dynamics": {
         "demand_pressure": null,
         "supply_saturation": 1.0,
-        "status": "awaiting_data"
+        "status": "awaiting_data",
+        "active_listings": null,
+        "sold_7d": null,
+        "new_7d": null,
+        "basis": {
+          "days": 1
+        }
+      }
+    },
+    {
+      "id": "sv4pt5-234",
+      "name": "Charizard ex",
+      "set_name": "Paldean Fates",
+      "set_id": "sv4pt5",
+      "rarity": "Special Illustration Rare",
+      "number": "234",
+      "image_small": "https://images.pokemontcg.io/sv4pt5/234.png",
+      "image_large": "https://images.pokemontcg.io/sv4pt5/234_hires.png",
+      "market_price": 335.83,
+      "expected_price": 150.2532,
+      "raw_diff": -185.58,
+      "residual_pct": 1.235093,
+      "iq_score": 90.84,
+      "cluster": "Pok\u00e9mon \u00b7 Special Illustration Rare",
+      "dynamics": {
+        "demand_pressure": null,
+        "supply_saturation": 1.0,
+        "status": "awaiting_data",
+        "active_listings": null,
+        "sold_7d": null,
+        "new_7d": null,
+        "basis": {
+          "days": 1
+        }
+      }
+    },
+    {
+      "id": "me2pt5-277",
+      "name": "Pikachu ex",
+      "set_name": "Ascended Heroes",
+      "set_id": "me2pt5",
+      "rarity": "Special Illustration Rare",
+      "number": "277",
+      "image_small": "https://images.scrydex.com/pokemon/me2pt5-277/small",
+      "image_large": "https://images.scrydex.com/pokemon/me2pt5-277/large",
+      "market_price": 466.92,
+      "expected_price": 288.1832,
+      "raw_diff": -178.74,
+      "residual_pct": 0.62022,
+      "iq_score": 85.77,
+      "cluster": "Pok\u00e9mon \u00b7 Special Illustration Rare",
+      "dynamics": {
+        "demand_pressure": null,
+        "supply_saturation": 1.0,
+        "status": "awaiting_data",
+        "active_listings": null,
+        "sold_7d": null,
+        "new_7d": null,
+        "basis": {
+          "days": 1
+        }
+      }
+    },
+    {
+      "id": "sv8-238",
+      "name": "Pikachu ex",
+      "set_name": "Surging Sparks",
+      "set_id": "sv8",
+      "rarity": "Special Illustration Rare",
+      "number": "238",
+      "image_small": "https://images.pokemontcg.io/sv8/238.png",
+      "image_large": "https://images.pokemontcg.io/sv8/238_hires.png",
+      "market_price": 358.36,
+      "expected_price": 184.7466,
+      "raw_diff": -173.61,
+      "residual_pct": 0.939739,
+      "iq_score": 89.06,
+      "cluster": "Pok\u00e9mon \u00b7 Special Illustration Rare",
+      "dynamics": {
+        "demand_pressure": null,
+        "supply_saturation": 1.0,
+        "status": "awaiting_data",
+        "active_listings": null,
+        "sold_7d": null,
+        "new_7d": null,
+        "basis": {
+          "days": 1
+        }
       }
     },
     {
@@ -1335,15 +1713,21 @@
       "image_small": "https://images.pokemontcg.io/sv6/220.png",
       "image_large": "https://images.pokemontcg.io/sv6/220_hires.png",
       "market_price": 185.48,
-      "expected_price": 59.6835,
-      "raw_diff": -125.8,
-      "residual_pct": 2.107729,
+      "expected_price": 60.4584,
+      "raw_diff": -125.02,
+      "residual_pct": 2.067897,
       "iq_score": 86.8,
       "cluster": "Trainer \u00b7 Special Illustration Rare",
       "dynamics": {
         "demand_pressure": null,
         "supply_saturation": 1.0,
-        "status": "awaiting_data"
+        "status": "awaiting_data",
+        "active_listings": null,
+        "sold_7d": null,
+        "new_7d": null,
+        "basis": {
+          "days": 1
+        }
       }
     },
     {
@@ -1356,15 +1740,48 @@
       "image_small": "https://images.scrydex.com/pokemon/me2pt5-295/small",
       "image_large": "https://images.scrydex.com/pokemon/me2pt5-295/large",
       "market_price": 330.01,
-      "expected_price": 234.9849,
-      "raw_diff": -95.03,
-      "residual_pct": 0.404388,
+      "expected_price": 234.2117,
+      "raw_diff": -95.8,
+      "residual_pct": 0.409025,
       "iq_score": 70.03,
       "cluster": "Pok\u00e9mon \u00b7 Special Illustration Rare",
       "dynamics": {
         "demand_pressure": null,
         "supply_saturation": 1.0,
-        "status": "awaiting_data"
+        "status": "awaiting_data",
+        "active_listings": null,
+        "sold_7d": null,
+        "new_7d": null,
+        "basis": {
+          "days": 1
+        }
+      }
+    },
+    {
+      "id": "sv8pt5-156",
+      "name": "Sylveon ex",
+      "set_name": "Prismatic Evolutions",
+      "set_id": "sv8pt5",
+      "rarity": "Special Illustration Rare",
+      "number": "156",
+      "image_small": "https://images.pokemontcg.io/sv8pt5/156.png",
+      "image_large": "https://images.pokemontcg.io/sv8pt5/156_hires.png",
+      "market_price": 514.76,
+      "expected_price": 422.113,
+      "raw_diff": -92.65,
+      "residual_pct": 0.219484,
+      "iq_score": 87.77,
+      "cluster": "Pok\u00e9mon \u00b7 Special Illustration Rare",
+      "dynamics": {
+        "demand_pressure": null,
+        "supply_saturation": 1.0,
+        "status": "awaiting_data",
+        "active_listings": null,
+        "sold_7d": null,
+        "new_7d": null,
+        "basis": {
+          "days": 1
+        }
       }
     },
     {
@@ -1377,15 +1794,21 @@
       "image_small": "https://images.pokemontcg.io/sv7/143.png",
       "image_large": "https://images.pokemontcg.io/sv7/143_hires.png",
       "market_price": 138.94,
-      "expected_price": 49.7565,
-      "raw_diff": -89.18,
-      "residual_pct": 1.792396,
+      "expected_price": 50.505,
+      "raw_diff": -88.44,
+      "residual_pct": 1.751016,
       "iq_score": 81.66,
       "cluster": "Pok\u00e9mon \u00b7 Illustration Rare",
       "dynamics": {
         "demand_pressure": null,
         "supply_saturation": 1.0,
-        "status": "awaiting_data"
+        "status": "awaiting_data",
+        "active_listings": null,
+        "sold_7d": null,
+        "new_7d": null,
+        "basis": {
+          "days": 1
+        }
       }
     },
     {
@@ -1398,15 +1821,21 @@
       "image_small": "https://images.pokemontcg.io/sv7/148.png",
       "image_large": "https://images.pokemontcg.io/sv7/148_hires.png",
       "market_price": 129.65,
-      "expected_price": 49.2615,
-      "raw_diff": -80.39,
-      "residual_pct": 1.631875,
+      "expected_price": 50.0034,
+      "raw_diff": -79.65,
+      "residual_pct": 1.592821,
       "iq_score": 81.93,
       "cluster": "Pok\u00e9mon \u00b7 Illustration Rare",
       "dynamics": {
         "demand_pressure": null,
         "supply_saturation": 1.0,
-        "status": "awaiting_data"
+        "status": "awaiting_data",
+        "active_listings": null,
+        "sold_7d": null,
+        "new_7d": null,
+        "basis": {
+          "days": 1
+        }
       }
     },
     {
@@ -1419,15 +1848,21 @@
       "image_small": "https://images.pokemontcg.io/sv3pt5/168.png",
       "image_large": "https://images.pokemontcg.io/sv3pt5/168_hires.png",
       "market_price": 125.89,
-      "expected_price": 48.7837,
-      "raw_diff": -77.11,
-      "residual_pct": 1.580574,
+      "expected_price": 47.7288,
+      "raw_diff": -78.16,
+      "residual_pct": 1.637611,
       "iq_score": 79.26,
       "cluster": "Pok\u00e9mon \u00b7 Illustration Rare",
       "dynamics": {
         "demand_pressure": null,
         "supply_saturation": 1.0,
-        "status": "awaiting_data"
+        "status": "awaiting_data",
+        "active_listings": null,
+        "sold_7d": null,
+        "new_7d": null,
+        "basis": {
+          "days": 1
+        }
       }
     },
     {
@@ -1440,15 +1875,21 @@
       "image_small": "https://images.scrydex.com/pokemon/me2pt5-226/small",
       "image_large": "https://images.scrydex.com/pokemon/me2pt5-226/large",
       "market_price": 104.1,
-      "expected_price": 27.4478,
-      "raw_diff": -76.65,
-      "residual_pct": 2.792658,
+      "expected_price": 27.1842,
+      "raw_diff": -76.92,
+      "residual_pct": 2.829437,
       "iq_score": 76.45,
       "cluster": "Pok\u00e9mon \u00b7 Illustration Rare",
       "dynamics": {
         "demand_pressure": null,
         "supply_saturation": 1.0,
-        "status": "awaiting_data"
+        "status": "awaiting_data",
+        "active_listings": null,
+        "sold_7d": null,
+        "new_7d": null,
+        "basis": {
+          "days": 1
+        }
       }
     },
     {
@@ -1461,15 +1902,21 @@
       "image_small": "https://images.pokemontcg.io/sv4pt5/233.png",
       "image_large": "https://images.pokemontcg.io/sv4pt5/233_hires.png",
       "market_price": 188.21,
-      "expected_price": 119.3427,
-      "raw_diff": -68.87,
-      "residual_pct": 0.577055,
+      "expected_price": 120.8875,
+      "raw_diff": -67.32,
+      "residual_pct": 0.556902,
       "iq_score": 87.63,
       "cluster": "Pok\u00e9mon \u00b7 Special Illustration Rare",
       "dynamics": {
         "demand_pressure": null,
         "supply_saturation": 1.0,
-        "status": "awaiting_data"
+        "status": "awaiting_data",
+        "active_listings": null,
+        "sold_7d": null,
+        "new_7d": null,
+        "basis": {
+          "days": 1
+        }
       }
     },
     {
@@ -1490,49 +1937,13 @@
       "dynamics": {
         "demand_pressure": null,
         "supply_saturation": 1.0,
-        "status": "awaiting_data"
-      }
-    },
-    {
-      "id": "me2pt5-274",
-      "name": "Mega Feraligatr ex",
-      "set_name": "Ascended Heroes",
-      "set_id": "me2pt5",
-      "rarity": "Special Illustration Rare",
-      "number": "274",
-      "image_small": "https://images.scrydex.com/pokemon/me2pt5-274/small",
-      "image_large": "https://images.scrydex.com/pokemon/me2pt5-274/large",
-      "market_price": 188.03,
-      "expected_price": 125.4158,
-      "raw_diff": -62.61,
-      "residual_pct": 0.499253,
-      "iq_score": 78.62,
-      "cluster": "Pok\u00e9mon \u00b7 Special Illustration Rare",
-      "dynamics": {
-        "demand_pressure": null,
-        "supply_saturation": 1.0,
-        "status": "awaiting_data"
-      }
-    },
-    {
-      "id": "sv8pt5-156",
-      "name": "Sylveon ex",
-      "set_name": "Prismatic Evolutions",
-      "set_id": "sv8pt5",
-      "rarity": "Special Illustration Rare",
-      "number": "156",
-      "image_small": "https://images.pokemontcg.io/sv8pt5/156.png",
-      "image_large": "https://images.pokemontcg.io/sv8pt5/156_hires.png",
-      "market_price": 514.76,
-      "expected_price": 462.6238,
-      "raw_diff": -52.14,
-      "residual_pct": 0.112697,
-      "iq_score": 87.77,
-      "cluster": "Pok\u00e9mon \u00b7 Special Illustration Rare",
-      "dynamics": {
-        "demand_pressure": null,
-        "supply_saturation": 1.0,
-        "status": "awaiting_data"
+        "status": "awaiting_data",
+        "active_listings": null,
+        "sold_7d": null,
+        "new_7d": null,
+        "basis": {
+          "days": 1
+        }
       }
     },
     {
@@ -1545,36 +1956,48 @@
       "image_small": "https://images.pokemontcg.io/sv3pt5/198.png",
       "image_large": "https://images.pokemontcg.io/sv3pt5/198_hires.png",
       "market_price": 134.92,
-      "expected_price": 83.0044,
-      "raw_diff": -51.92,
-      "residual_pct": 0.625455,
+      "expected_price": 76.8655,
+      "raw_diff": -58.05,
+      "residual_pct": 0.755275,
       "iq_score": 81.03,
       "cluster": "Pok\u00e9mon \u00b7 Special Illustration Rare",
       "dynamics": {
         "demand_pressure": null,
         "supply_saturation": 1.0,
-        "status": "awaiting_data"
+        "status": "awaiting_data",
+        "active_listings": null,
+        "sold_7d": null,
+        "new_7d": null,
+        "basis": {
+          "days": 1
+        }
       }
     },
     {
-      "id": "sv3pt5-170",
-      "name": "Squirtle",
-      "set_name": "151",
-      "set_id": "sv3pt5",
-      "rarity": "Illustration Rare",
-      "number": "170",
-      "image_small": "https://images.pokemontcg.io/sv3pt5/170.png",
-      "image_large": "https://images.pokemontcg.io/sv3pt5/170_hires.png",
-      "market_price": 118.48,
-      "expected_price": 70.6394,
-      "raw_diff": -47.84,
-      "residual_pct": 0.677251,
-      "iq_score": 83.94,
-      "cluster": "Pok\u00e9mon \u00b7 Illustration Rare",
+      "id": "sv8pt5-149",
+      "name": "Vaporeon ex",
+      "set_name": "Prismatic Evolutions",
+      "set_id": "sv8pt5",
+      "rarity": "Special Illustration Rare",
+      "number": "149",
+      "image_small": "https://images.pokemontcg.io/sv8pt5/149.png",
+      "image_large": "https://images.pokemontcg.io/sv8pt5/149_hires.png",
+      "market_price": 300.86,
+      "expected_price": 246.7876,
+      "raw_diff": -54.07,
+      "residual_pct": 0.219105,
+      "iq_score": 82.79,
+      "cluster": "Pok\u00e9mon \u00b7 Special Illustration Rare",
       "dynamics": {
         "demand_pressure": null,
         "supply_saturation": 1.0,
-        "status": "awaiting_data"
+        "status": "awaiting_data",
+        "active_listings": null,
+        "sold_7d": null,
+        "new_7d": null,
+        "basis": {
+          "days": 1
+        }
       }
     },
     {
@@ -1587,15 +2010,75 @@
       "image_small": "https://images.pokemontcg.io/sv3pt5/200.png",
       "image_large": "https://images.pokemontcg.io/sv3pt5/200_hires.png",
       "market_price": 162.49,
-      "expected_price": 114.8211,
-      "raw_diff": -47.67,
-      "residual_pct": 0.415158,
+      "expected_price": 108.5334,
+      "raw_diff": -53.96,
+      "residual_pct": 0.497143,
       "iq_score": 86.86,
       "cluster": "Pok\u00e9mon \u00b7 Special Illustration Rare",
       "dynamics": {
         "demand_pressure": null,
         "supply_saturation": 1.0,
-        "status": "awaiting_data"
+        "status": "awaiting_data",
+        "active_listings": null,
+        "sold_7d": null,
+        "new_7d": null,
+        "basis": {
+          "days": 1
+        }
+      }
+    },
+    {
+      "id": "sv3pt5-170",
+      "name": "Squirtle",
+      "set_name": "151",
+      "set_id": "sv3pt5",
+      "rarity": "Illustration Rare",
+      "number": "170",
+      "image_small": "https://images.pokemontcg.io/sv3pt5/170.png",
+      "image_large": "https://images.pokemontcg.io/sv3pt5/170_hires.png",
+      "market_price": 118.48,
+      "expected_price": 69.2127,
+      "raw_diff": -49.27,
+      "residual_pct": 0.711825,
+      "iq_score": 83.94,
+      "cluster": "Pok\u00e9mon \u00b7 Illustration Rare",
+      "dynamics": {
+        "demand_pressure": null,
+        "supply_saturation": 1.0,
+        "status": "awaiting_data",
+        "active_listings": null,
+        "sold_7d": null,
+        "new_7d": null,
+        "basis": {
+          "days": 1
+        }
+      }
+    },
+    {
+      "id": "sv3pt5-171",
+      "name": "Wartortle",
+      "set_name": "151",
+      "set_id": "sv3pt5",
+      "rarity": "Illustration Rare",
+      "number": "171",
+      "image_small": "https://images.pokemontcg.io/sv3pt5/171.png",
+      "image_large": "https://images.pokemontcg.io/sv3pt5/171_hires.png",
+      "market_price": 77.58,
+      "expected_price": 32.3632,
+      "raw_diff": -45.22,
+      "residual_pct": 1.397164,
+      "iq_score": 77.39,
+      "cluster": "Pok\u00e9mon \u00b7 Illustration Rare",
+      "dynamics": {
+        "demand_pressure": null,
+        "supply_saturation": 1.0,
+        "status": "awaiting_data",
+        "active_listings": null,
+        "sold_7d": null,
+        "new_7d": null,
+        "basis": {
+          "days": 1
+        }
       }
     },
     {
@@ -1616,28 +2099,13 @@
       "dynamics": {
         "demand_pressure": null,
         "supply_saturation": 1.0,
-        "status": "awaiting_data"
-      }
-    },
-    {
-      "id": "sv3pt5-171",
-      "name": "Wartortle",
-      "set_name": "151",
-      "set_id": "sv3pt5",
-      "rarity": "Illustration Rare",
-      "number": "171",
-      "image_small": "https://images.pokemontcg.io/sv3pt5/171.png",
-      "image_large": "https://images.pokemontcg.io/sv3pt5/171_hires.png",
-      "market_price": 77.58,
-      "expected_price": 33.1143,
-      "raw_diff": -44.47,
-      "residual_pct": 1.342793,
-      "iq_score": 77.39,
-      "cluster": "Pok\u00e9mon \u00b7 Illustration Rare",
-      "dynamics": {
-        "demand_pressure": null,
-        "supply_saturation": 1.0,
-        "status": "awaiting_data"
+        "status": "awaiting_data",
+        "active_listings": null,
+        "sold_7d": null,
+        "new_7d": null,
+        "basis": {
+          "days": 1
+        }
       }
     },
     {
@@ -1658,7 +2126,13 @@
       "dynamics": {
         "demand_pressure": null,
         "supply_saturation": 1.0,
-        "status": "awaiting_data"
+        "status": "awaiting_data",
+        "active_listings": null,
+        "sold_7d": null,
+        "new_7d": null,
+        "basis": {
+          "days": 1
+        }
       }
     },
     {
@@ -1671,15 +2145,48 @@
       "image_small": "https://images.pokemontcg.io/sv5/177.png",
       "image_large": "https://images.pokemontcg.io/sv5/177_hires.png",
       "market_price": 112.48,
-      "expected_price": 69.1819,
-      "raw_diff": -43.3,
-      "residual_pct": 0.62586,
+      "expected_price": 69.8117,
+      "raw_diff": -42.67,
+      "residual_pct": 0.611192,
       "iq_score": 83.81,
       "cluster": "Pok\u00e9mon \u00b7 Illustration Rare",
       "dynamics": {
         "demand_pressure": null,
         "supply_saturation": 1.0,
-        "status": "awaiting_data"
+        "status": "awaiting_data",
+        "active_listings": null,
+        "sold_7d": null,
+        "new_7d": null,
+        "basis": {
+          "days": 1
+        }
+      }
+    },
+    {
+      "id": "sv8pt5-150",
+      "name": "Glaceon ex",
+      "set_name": "Prismatic Evolutions",
+      "set_id": "sv8pt5",
+      "rarity": "Special Illustration Rare",
+      "number": "150",
+      "image_small": "https://images.pokemontcg.io/sv8pt5/150.png",
+      "image_large": "https://images.pokemontcg.io/sv8pt5/150_hires.png",
+      "market_price": 300.2,
+      "expected_price": 257.8434,
+      "raw_diff": -42.36,
+      "residual_pct": 0.164273,
+      "iq_score": 86.36,
+      "cluster": "Pok\u00e9mon \u00b7 Special Illustration Rare",
+      "dynamics": {
+        "demand_pressure": null,
+        "supply_saturation": 1.0,
+        "status": "awaiting_data",
+        "active_listings": null,
+        "sold_7d": null,
+        "new_7d": null,
+        "basis": {
+          "days": 1
+        }
       }
     },
     {
@@ -1692,15 +2199,75 @@
       "image_small": "https://images.pokemontcg.io/sv6/188.png",
       "image_large": "https://images.pokemontcg.io/sv6/188_hires.png",
       "market_price": 91.74,
-      "expected_price": 49.2661,
-      "raw_diff": -42.47,
-      "residual_pct": 0.862132,
+      "expected_price": 49.7051,
+      "raw_diff": -42.03,
+      "residual_pct": 0.845685,
       "iq_score": 80.84,
       "cluster": "Pok\u00e9mon \u00b7 Illustration Rare",
       "dynamics": {
         "demand_pressure": null,
         "supply_saturation": 1.0,
-        "status": "awaiting_data"
+        "status": "awaiting_data",
+        "active_listings": null,
+        "sold_7d": null,
+        "new_7d": null,
+        "basis": {
+          "days": 1
+        }
+      }
+    },
+    {
+      "id": "sv3pt5-166",
+      "name": "Bulbasaur",
+      "set_name": "151",
+      "set_id": "sv3pt5",
+      "rarity": "Illustration Rare",
+      "number": "166",
+      "image_small": "https://images.pokemontcg.io/sv3pt5/166.png",
+      "image_large": "https://images.pokemontcg.io/sv3pt5/166_hires.png",
+      "market_price": 98.76,
+      "expected_price": 59.408,
+      "raw_diff": -39.35,
+      "residual_pct": 0.662402,
+      "iq_score": 83.16,
+      "cluster": "Pok\u00e9mon \u00b7 Illustration Rare",
+      "dynamics": {
+        "demand_pressure": null,
+        "supply_saturation": 1.0,
+        "status": "awaiting_data",
+        "active_listings": null,
+        "sold_7d": null,
+        "new_7d": null,
+        "basis": {
+          "days": 1
+        }
+      }
+    },
+    {
+      "id": "sv3pt5-201",
+      "name": "Alakazam ex",
+      "set_name": "151",
+      "set_id": "sv3pt5",
+      "rarity": "Special Illustration Rare",
+      "number": "201",
+      "image_small": "https://images.pokemontcg.io/sv3pt5/201.png",
+      "image_large": "https://images.pokemontcg.io/sv3pt5/201_hires.png",
+      "market_price": 84.54,
+      "expected_price": 45.7388,
+      "raw_diff": -38.8,
+      "residual_pct": 0.848322,
+      "iq_score": 82.06,
+      "cluster": "Pok\u00e9mon \u00b7 Special Illustration Rare",
+      "dynamics": {
+        "demand_pressure": null,
+        "supply_saturation": 1.0,
+        "status": "awaiting_data",
+        "active_listings": null,
+        "sold_7d": null,
+        "new_7d": null,
+        "basis": {
+          "days": 1
+        }
       }
     },
     {
@@ -1721,28 +2288,13 @@
       "dynamics": {
         "demand_pressure": null,
         "supply_saturation": 1.0,
-        "status": "awaiting_data"
-      }
-    },
-    {
-      "id": "sv3pt5-166",
-      "name": "Bulbasaur",
-      "set_name": "151",
-      "set_id": "sv3pt5",
-      "rarity": "Illustration Rare",
-      "number": "166",
-      "image_small": "https://images.pokemontcg.io/sv3pt5/166.png",
-      "image_large": "https://images.pokemontcg.io/sv3pt5/166_hires.png",
-      "market_price": 98.76,
-      "expected_price": 60.6588,
-      "raw_diff": -38.1,
-      "residual_pct": 0.628124,
-      "iq_score": 83.16,
-      "cluster": "Pok\u00e9mon \u00b7 Illustration Rare",
-      "dynamics": {
-        "demand_pressure": null,
-        "supply_saturation": 1.0,
-        "status": "awaiting_data"
+        "status": "awaiting_data",
+        "active_listings": null,
+        "sold_7d": null,
+        "new_7d": null,
+        "basis": {
+          "days": 1
+        }
       }
     },
     {
@@ -1755,57 +2307,102 @@
       "image_small": "https://images.pokemontcg.io/sv8/247.png",
       "image_large": "https://images.pokemontcg.io/sv8/247_hires.png",
       "market_price": 95.41,
-      "expected_price": 58.1359,
-      "raw_diff": -37.27,
-      "residual_pct": 0.641153,
+      "expected_price": 57.9466,
+      "raw_diff": -37.46,
+      "residual_pct": 0.646516,
       "iq_score": 91.56,
       "cluster": "Pok\u00e9mon \u00b7 Hyper Rare",
       "dynamics": {
         "demand_pressure": null,
         "supply_saturation": 1.0,
-        "status": "awaiting_data"
+        "status": "awaiting_data",
+        "active_listings": null,
+        "sold_7d": null,
+        "new_7d": null,
+        "basis": {
+          "days": 1
+        }
       }
     },
     {
-      "id": "sv3pt5-201",
-      "name": "Alakazam ex",
-      "set_name": "151",
-      "set_id": "sv3pt5",
+      "id": "sv8pt5-153",
+      "name": "Jolteon ex",
+      "set_name": "Prismatic Evolutions",
+      "set_id": "sv8pt5",
       "rarity": "Special Illustration Rare",
-      "number": "201",
-      "image_small": "https://images.pokemontcg.io/sv3pt5/201.png",
-      "image_large": "https://images.pokemontcg.io/sv3pt5/201_hires.png",
-      "market_price": 84.54,
-      "expected_price": 48.7711,
-      "raw_diff": -35.77,
-      "residual_pct": 0.733404,
-      "iq_score": 82.06,
+      "number": "153",
+      "image_small": "https://images.pokemontcg.io/sv8pt5/153.png",
+      "image_large": "https://images.pokemontcg.io/sv8pt5/153_hires.png",
+      "market_price": 205.16,
+      "expected_price": 168.6442,
+      "raw_diff": -36.52,
+      "residual_pct": 0.216525,
+      "iq_score": 81.5,
       "cluster": "Pok\u00e9mon \u00b7 Special Illustration Rare",
       "dynamics": {
         "demand_pressure": null,
         "supply_saturation": 1.0,
-        "status": "awaiting_data"
+        "status": "awaiting_data",
+        "active_listings": null,
+        "sold_7d": null,
+        "new_7d": null,
+        "basis": {
+          "days": 1
+        }
       }
     },
     {
-      "id": "sv8-239",
-      "name": "Latias ex",
-      "set_name": "Surging Sparks",
-      "set_id": "sv8",
+      "id": "me2pt5-274",
+      "name": "Mega Feraligatr ex",
+      "set_name": "Ascended Heroes",
+      "set_id": "me2pt5",
       "rarity": "Special Illustration Rare",
-      "number": "239",
-      "image_small": "https://images.pokemontcg.io/sv8/239.png",
-      "image_large": "https://images.pokemontcg.io/sv8/239_hires.png",
-      "market_price": 194.45,
-      "expected_price": 159.0284,
+      "number": "274",
+      "image_small": "https://images.scrydex.com/pokemon/me2pt5-274/small",
+      "image_large": "https://images.scrydex.com/pokemon/me2pt5-274/large",
+      "market_price": 188.03,
+      "expected_price": 152.6126,
       "raw_diff": -35.42,
-      "residual_pct": 0.222738,
-      "iq_score": 88.0,
+      "residual_pct": 0.232074,
+      "iq_score": 78.62,
       "cluster": "Pok\u00e9mon \u00b7 Special Illustration Rare",
       "dynamics": {
         "demand_pressure": null,
         "supply_saturation": 1.0,
-        "status": "awaiting_data"
+        "status": "awaiting_data",
+        "active_listings": null,
+        "sold_7d": null,
+        "new_7d": null,
+        "basis": {
+          "days": 1
+        }
+      }
+    },
+    {
+      "id": "sv6pt5-98",
+      "name": "Basic Darkness Energy",
+      "set_name": "Shrouded Fable",
+      "set_id": "sv6pt5",
+      "rarity": "Hyper Rare",
+      "number": "98",
+      "image_small": "https://images.pokemontcg.io/sv6pt5/98.png",
+      "image_large": "https://images.pokemontcg.io/sv6pt5/98_hires.png",
+      "market_price": 67.01,
+      "expected_price": 32.0826,
+      "raw_diff": -34.93,
+      "residual_pct": 1.088669,
+      "iq_score": 82.34,
+      "cluster": "Energy \u00b7 Hyper Rare",
+      "dynamics": {
+        "demand_pressure": null,
+        "supply_saturation": 1.0,
+        "status": "awaiting_data",
+        "active_listings": null,
+        "sold_7d": null,
+        "new_7d": null,
+        "basis": {
+          "days": 1
+        }
       }
     },
     {
@@ -1818,57 +2415,48 @@
       "image_small": "https://images.scrydex.com/pokemon/me2pt5-269/small",
       "image_large": "https://images.scrydex.com/pokemon/me2pt5-269/large",
       "market_price": 71.86,
-      "expected_price": 38.5961,
-      "raw_diff": -33.26,
-      "residual_pct": 0.861844,
+      "expected_price": 38.2413,
+      "raw_diff": -33.62,
+      "residual_pct": 0.879119,
       "iq_score": 73.22,
       "cluster": "Pok\u00e9mon \u00b7 Hyper Rare",
       "dynamics": {
         "demand_pressure": null,
         "supply_saturation": 1.0,
-        "status": "awaiting_data"
+        "status": "awaiting_data",
+        "active_listings": null,
+        "sold_7d": null,
+        "new_7d": null,
+        "basis": {
+          "days": 1
+        }
       }
     },
     {
-      "id": "me2pt5-286",
-      "name": "N's Zoroark ex",
-      "set_name": "Ascended Heroes",
-      "set_id": "me2pt5",
+      "id": "sv8pt5-155",
+      "name": "Espeon ex",
+      "set_name": "Prismatic Evolutions",
+      "set_id": "sv8pt5",
       "rarity": "Special Illustration Rare",
-      "number": "286",
-      "image_small": "https://images.scrydex.com/pokemon/me2pt5-286/small",
-      "image_large": "https://images.scrydex.com/pokemon/me2pt5-286/large",
-      "market_price": 194.21,
-      "expected_price": 161.5888,
-      "raw_diff": -32.62,
-      "residual_pct": 0.201878,
-      "iq_score": 83.39,
+      "number": "155",
+      "image_small": "https://images.pokemontcg.io/sv8pt5/155.png",
+      "image_large": "https://images.pokemontcg.io/sv8pt5/155_hires.png",
+      "market_price": 321.16,
+      "expected_price": 287.7149,
+      "raw_diff": -33.45,
+      "residual_pct": 0.116244,
+      "iq_score": 83.87,
       "cluster": "Pok\u00e9mon \u00b7 Special Illustration Rare",
       "dynamics": {
         "demand_pressure": null,
         "supply_saturation": 1.0,
-        "status": "awaiting_data"
-      }
-    },
-    {
-      "id": "sv8pt5-179",
-      "name": "Pikachu ex",
-      "set_name": "Prismatic Evolutions",
-      "set_id": "sv8pt5",
-      "rarity": "Hyper Rare",
-      "number": "179",
-      "image_small": "https://images.pokemontcg.io/sv8pt5/179.png",
-      "image_large": "https://images.pokemontcg.io/sv8pt5/179_hires.png",
-      "market_price": 70.6,
-      "expected_price": 38.3297,
-      "raw_diff": -32.27,
-      "residual_pct": 0.841915,
-      "iq_score": 89.31,
-      "cluster": "Pok\u00e9mon \u00b7 Hyper Rare",
-      "dynamics": {
-        "demand_pressure": null,
-        "supply_saturation": 1.0,
-        "status": "awaiting_data"
+        "status": "awaiting_data",
+        "active_listings": null,
+        "sold_7d": null,
+        "new_7d": null,
+        "basis": {
+          "days": 1
+        }
       }
     },
     {
@@ -1881,15 +2469,48 @@
       "image_small": "https://images.pokemontcg.io/sv3pt5/175.png",
       "image_large": "https://images.pokemontcg.io/sv3pt5/175_hires.png",
       "market_price": 82.11,
-      "expected_price": 50.1066,
-      "raw_diff": -32.0,
-      "residual_pct": 0.638706,
+      "expected_price": 49.045,
+      "raw_diff": -33.06,
+      "residual_pct": 0.674177,
       "iq_score": 81.92,
       "cluster": "Pok\u00e9mon \u00b7 Illustration Rare",
       "dynamics": {
         "demand_pressure": null,
         "supply_saturation": 1.0,
-        "status": "awaiting_data"
+        "status": "awaiting_data",
+        "active_listings": null,
+        "sold_7d": null,
+        "new_7d": null,
+        "basis": {
+          "days": 1
+        }
+      }
+    },
+    {
+      "id": "sv8pt5-179",
+      "name": "Pikachu ex",
+      "set_name": "Prismatic Evolutions",
+      "set_id": "sv8pt5",
+      "rarity": "Hyper Rare",
+      "number": "179",
+      "image_small": "https://images.pokemontcg.io/sv8pt5/179.png",
+      "image_large": "https://images.pokemontcg.io/sv8pt5/179_hires.png",
+      "market_price": 70.6,
+      "expected_price": 38.0633,
+      "raw_diff": -32.54,
+      "residual_pct": 0.854806,
+      "iq_score": 89.31,
+      "cluster": "Pok\u00e9mon \u00b7 Hyper Rare",
+      "dynamics": {
+        "demand_pressure": null,
+        "supply_saturation": 1.0,
+        "status": "awaiting_data",
+        "active_listings": null,
+        "sold_7d": null,
+        "new_7d": null,
+        "basis": {
+          "days": 1
+        }
       }
     },
     {
@@ -1902,15 +2523,102 @@
       "image_small": "https://images.pokemontcg.io/sv3pt5/167.png",
       "image_large": "https://images.pokemontcg.io/sv3pt5/167_hires.png",
       "market_price": 60.84,
-      "expected_price": 29.9257,
-      "raw_diff": -30.91,
-      "residual_pct": 1.033039,
+      "expected_price": 29.2385,
+      "raw_diff": -31.6,
+      "residual_pct": 1.080817,
       "iq_score": 76.88,
       "cluster": "Pok\u00e9mon \u00b7 Illustration Rare",
       "dynamics": {
         "demand_pressure": null,
         "supply_saturation": 1.0,
-        "status": "awaiting_data"
+        "status": "awaiting_data",
+        "active_listings": null,
+        "sold_7d": null,
+        "new_7d": null,
+        "basis": {
+          "days": 1
+        }
+      }
+    },
+    {
+      "id": "me3-121",
+      "name": "Meowth ex",
+      "set_name": "Perfect Order",
+      "set_id": "me3",
+      "rarity": "Special Illustration Rare",
+      "number": "121",
+      "image_small": "https://images.scrydex.com/pokemon/me3-121/small",
+      "image_large": "https://images.scrydex.com/pokemon/me3-121/large",
+      "market_price": 177.08,
+      "expected_price": 145.5387,
+      "raw_diff": -31.54,
+      "residual_pct": 0.216721,
+      "iq_score": 85.57,
+      "cluster": "Pok\u00e9mon \u00b7 Special Illustration Rare",
+      "dynamics": {
+        "demand_pressure": null,
+        "supply_saturation": 1.0,
+        "status": "awaiting_data",
+        "active_listings": null,
+        "sold_7d": null,
+        "new_7d": null,
+        "basis": {
+          "days": 1
+        }
+      }
+    },
+    {
+      "id": "sv8-239",
+      "name": "Latias ex",
+      "set_name": "Surging Sparks",
+      "set_id": "sv8",
+      "rarity": "Special Illustration Rare",
+      "number": "239",
+      "image_small": "https://images.pokemontcg.io/sv8/239.png",
+      "image_large": "https://images.pokemontcg.io/sv8/239_hires.png",
+      "market_price": 194.45,
+      "expected_price": 163.333,
+      "raw_diff": -31.12,
+      "residual_pct": 0.190513,
+      "iq_score": 88.0,
+      "cluster": "Pok\u00e9mon \u00b7 Special Illustration Rare",
+      "dynamics": {
+        "demand_pressure": null,
+        "supply_saturation": 1.0,
+        "status": "awaiting_data",
+        "active_listings": null,
+        "sold_7d": null,
+        "new_7d": null,
+        "basis": {
+          "days": 1
+        }
+      }
+    },
+    {
+      "id": "sv3pt5-173",
+      "name": "Pikachu",
+      "set_name": "151",
+      "set_id": "sv3pt5",
+      "rarity": "Illustration Rare",
+      "number": "173",
+      "image_small": "https://images.pokemontcg.io/sv3pt5/173.png",
+      "image_large": "https://images.pokemontcg.io/sv3pt5/173_hires.png",
+      "market_price": 104.93,
+      "expected_price": 74.3505,
+      "raw_diff": -30.58,
+      "residual_pct": 0.411288,
+      "iq_score": 85.45,
+      "cluster": "Pok\u00e9mon \u00b7 Illustration Rare",
+      "dynamics": {
+        "demand_pressure": null,
+        "supply_saturation": 1.0,
+        "status": "awaiting_data",
+        "active_listings": null,
+        "sold_7d": null,
+        "new_7d": null,
+        "basis": {
+          "days": 1
+        }
       }
     },
     {
@@ -1931,28 +2639,40 @@
       "dynamics": {
         "demand_pressure": null,
         "supply_saturation": 1.0,
-        "status": "awaiting_data"
+        "status": "awaiting_data",
+        "active_listings": null,
+        "sold_7d": null,
+        "new_7d": null,
+        "basis": {
+          "days": 1
+        }
       }
     },
     {
-      "id": "sv6pt5-98",
-      "name": "Basic Darkness Energy",
-      "set_name": "Shrouded Fable",
-      "set_id": "sv6pt5",
-      "rarity": "Hyper Rare",
-      "number": "98",
-      "image_small": "https://images.pokemontcg.io/sv6pt5/98.png",
-      "image_large": "https://images.pokemontcg.io/sv6pt5/98_hires.png",
-      "market_price": 67.01,
-      "expected_price": 37.6298,
-      "raw_diff": -29.38,
-      "residual_pct": 0.780769,
-      "iq_score": 82.34,
-      "cluster": "Energy \u00b7 Hyper Rare",
+      "id": "sv3pt5-202",
+      "name": "Zapdos ex",
+      "set_name": "151",
+      "set_id": "sv3pt5",
+      "rarity": "Special Illustration Rare",
+      "number": "202",
+      "image_small": "https://images.pokemontcg.io/sv3pt5/202.png",
+      "image_large": "https://images.pokemontcg.io/sv3pt5/202_hires.png",
+      "market_price": 114.47,
+      "expected_price": 84.8523,
+      "raw_diff": -29.62,
+      "residual_pct": 0.34905,
+      "iq_score": 89.94,
+      "cluster": "Pok\u00e9mon \u00b7 Special Illustration Rare",
       "dynamics": {
         "demand_pressure": null,
         "supply_saturation": 1.0,
-        "status": "awaiting_data"
+        "status": "awaiting_data",
+        "active_listings": null,
+        "sold_7d": null,
+        "new_7d": null,
+        "basis": {
+          "days": 1
+        }
       }
     },
     {
@@ -1973,160 +2693,17 @@
       "dynamics": {
         "demand_pressure": null,
         "supply_saturation": 1.0,
-        "status": "awaiting_data"
-      }
-    },
-    {
-      "id": "sv3pt5-173",
-      "name": "Pikachu",
-      "set_name": "151",
-      "set_id": "sv3pt5",
-      "rarity": "Illustration Rare",
-      "number": "173",
-      "image_small": "https://images.pokemontcg.io/sv3pt5/173.png",
-      "image_large": "https://images.pokemontcg.io/sv3pt5/173_hires.png",
-      "market_price": 104.93,
-      "expected_price": 75.855,
-      "raw_diff": -29.08,
-      "residual_pct": 0.383297,
-      "iq_score": 85.45,
-      "cluster": "Pok\u00e9mon \u00b7 Illustration Rare",
-      "dynamics": {
-        "demand_pressure": null,
-        "supply_saturation": 1.0,
-        "status": "awaiting_data"
-      }
-    },
-    {
-      "id": "sv3pt5-193",
-      "name": "Mew ex",
-      "set_name": "151",
-      "set_id": "sv3pt5",
-      "rarity": "Ultra Rare",
-      "number": "193",
-      "image_small": "https://images.pokemontcg.io/sv3pt5/193.png",
-      "image_large": "https://images.pokemontcg.io/sv3pt5/193_hires.png",
-      "market_price": 49.16,
-      "expected_price": 20.8125,
-      "raw_diff": -28.35,
-      "residual_pct": 1.362037,
-      "iq_score": 76.13,
-      "cluster": "Pok\u00e9mon \u00b7 Ultra Rare",
-      "dynamics": {
-        "demand_pressure": null,
-        "supply_saturation": 1.0,
-        "status": "awaiting_data"
-      }
-    },
-    {
-      "id": "sv3pt5-183",
-      "name": "Charizard ex",
-      "set_name": "151",
-      "set_id": "sv3pt5",
-      "rarity": "Ultra Rare",
-      "number": "183",
-      "image_small": "https://images.pokemontcg.io/sv3pt5/183.png",
-      "image_large": "https://images.pokemontcg.io/sv3pt5/183_hires.png",
-      "market_price": 48.9,
-      "expected_price": 20.5776,
-      "raw_diff": -28.32,
-      "residual_pct": 1.376371,
-      "iq_score": 78.64,
-      "cluster": "Pok\u00e9mon \u00b7 Ultra Rare",
-      "dynamics": {
-        "demand_pressure": null,
-        "supply_saturation": 1.0,
-        "status": "awaiting_data"
-      }
-    },
-    {
-      "id": "sv5-166",
-      "name": "Sawsbuck",
-      "set_name": "Temporal Forces",
-      "set_id": "sv5",
-      "rarity": "Illustration Rare",
-      "number": "166",
-      "image_small": "https://images.pokemontcg.io/sv5/166.png",
-      "image_large": "https://images.pokemontcg.io/sv5/166_hires.png",
-      "market_price": 60.84,
-      "expected_price": 32.7018,
-      "raw_diff": -28.14,
-      "residual_pct": 0.860446,
-      "iq_score": 76.61,
-      "cluster": "Pok\u00e9mon \u00b7 Illustration Rare",
-      "dynamics": {
-        "demand_pressure": null,
-        "supply_saturation": 1.0,
-        "status": "awaiting_data"
-      }
-    },
-    {
-      "id": "me2pt5-271",
-      "name": "Mega Dragonite ex",
-      "set_name": "Ascended Heroes",
-      "set_id": "me2pt5",
-      "rarity": "MEGA_ATTACK_RARE",
-      "number": "271",
-      "image_small": "https://images.scrydex.com/pokemon/me2pt5-271/small",
-      "image_large": "https://images.scrydex.com/pokemon/me2pt5-271/large",
-      "market_price": 54.56,
-      "expected_price": 26.8897,
-      "raw_diff": -27.67,
-      "residual_pct": 1.029027,
-      "iq_score": 68.67,
-      "cluster": "Pok\u00e9mon \u00b7 Hyper Rare",
-      "dynamics": {
-        "demand_pressure": null,
-        "supply_saturation": 1.0,
-        "status": "awaiting_data"
-      }
-    },
-    {
-      "id": "sv6pt5-78",
-      "name": "Persian",
-      "set_name": "Shrouded Fable",
-      "set_id": "sv6pt5",
-      "rarity": "Illustration Rare",
-      "number": "78",
-      "image_small": "https://images.pokemontcg.io/sv6pt5/78.png",
-      "image_large": "https://images.pokemontcg.io/sv6pt5/78_hires.png",
-      "market_price": 80.46,
-      "expected_price": 53.181,
-      "raw_diff": -27.28,
-      "residual_pct": 0.512947,
-      "iq_score": 81.5,
-      "cluster": "Pok\u00e9mon \u00b7 Illustration Rare",
-      "dynamics": {
-        "demand_pressure": null,
-        "supply_saturation": 1.0,
-        "status": "awaiting_data"
+        "status": "awaiting_data",
+        "active_listings": null,
+        "sold_7d": null,
+        "new_7d": null,
+        "basis": {
+          "days": 1
+        }
       }
     }
   ],
   "movers": [
-    {
-      "id": "me2pt5-284",
-      "name": "Mega Gengar ex",
-      "set_name": "Ascended Heroes",
-      "set_id": "me2pt5",
-      "rarity": "Special Illustration Rare",
-      "number": "284",
-      "image_small": "https://images.scrydex.com/pokemon/me2pt5-284/small",
-      "image_large": "https://images.scrydex.com/pokemon/me2pt5-284/large",
-      "market_price": 1454.18,
-      "expected_price": 307.2996,
-      "raw_diff": -1146.88,
-      "residual_pct": 3.732124,
-      "iq_score": 86.11,
-      "cluster": "Pok\u00e9mon \u00b7 Special Illustration Rare",
-      "dynamics": {
-        "demand_pressure": null,
-        "supply_saturation": 1.0,
-        "status": "awaiting_data"
-      },
-      "mover_basis": "price_signal_fallback",
-      "awaiting_data": true
-    },
     {
       "id": "sv8pt5-161",
       "name": "Umbreon ex",
@@ -2137,15 +2714,50 @@
       "image_small": "https://images.pokemontcg.io/sv8pt5/161.png",
       "image_large": "https://images.pokemontcg.io/sv8pt5/161_hires.png",
       "market_price": 1579.6,
-      "expected_price": 498.4762,
-      "raw_diff": -1081.12,
-      "residual_pct": 2.168857,
+      "expected_price": 452.4682,
+      "raw_diff": -1127.13,
+      "residual_pct": 2.491074,
       "iq_score": 86.85,
       "cluster": "Pok\u00e9mon \u00b7 Special Illustration Rare",
       "dynamics": {
         "demand_pressure": null,
         "supply_saturation": 1.0,
-        "status": "awaiting_data"
+        "status": "awaiting_data",
+        "active_listings": null,
+        "sold_7d": null,
+        "new_7d": null,
+        "basis": {
+          "days": 1
+        }
+      },
+      "mover_basis": "price_signal_fallback",
+      "awaiting_data": true
+    },
+    {
+      "id": "me2pt5-284",
+      "name": "Mega Gengar ex",
+      "set_name": "Ascended Heroes",
+      "set_id": "me2pt5",
+      "rarity": "Special Illustration Rare",
+      "number": "284",
+      "image_small": "https://images.scrydex.com/pokemon/me2pt5-284/small",
+      "image_large": "https://images.scrydex.com/pokemon/me2pt5-284/large",
+      "market_price": 1454.18,
+      "expected_price": 381.132,
+      "raw_diff": -1073.05,
+      "residual_pct": 2.815424,
+      "iq_score": 86.11,
+      "cluster": "Pok\u00e9mon \u00b7 Special Illustration Rare",
+      "dynamics": {
+        "demand_pressure": null,
+        "supply_saturation": 1.0,
+        "status": "awaiting_data",
+        "active_listings": null,
+        "sold_7d": null,
+        "new_7d": null,
+        "basis": {
+          "days": 1
+        }
       },
       "mover_basis": "price_signal_fallback",
       "awaiting_data": true
@@ -2160,15 +2772,21 @@
       "image_small": "https://images.scrydex.com/pokemon/me2pt5-276/small",
       "image_large": "https://images.scrydex.com/pokemon/me2pt5-276/large",
       "market_price": 1355.05,
-      "expected_price": 286.353,
-      "raw_diff": -1068.7,
-      "residual_pct": 3.732096,
+      "expected_price": 355.4051,
+      "raw_diff": -999.64,
+      "residual_pct": 2.812691,
       "iq_score": 86.03,
       "cluster": "Pok\u00e9mon \u00b7 Special Illustration Rare",
       "dynamics": {
         "demand_pressure": null,
         "supply_saturation": 1.0,
-        "status": "awaiting_data"
+        "status": "awaiting_data",
+        "active_listings": null,
+        "sold_7d": null,
+        "new_7d": null,
+        "basis": {
+          "days": 1
+        }
       },
       "mover_basis": "price_signal_fallback",
       "awaiting_data": true
@@ -2183,15 +2801,21 @@
       "image_small": "https://images.pokemontcg.io/sv4pt5/232.png",
       "image_large": "https://images.pokemontcg.io/sv4pt5/232_hires.png",
       "market_price": 1020.11,
-      "expected_price": 144.2024,
-      "raw_diff": -875.91,
-      "residual_pct": 6.074155,
+      "expected_price": 146.0865,
+      "raw_diff": -874.02,
+      "residual_pct": 5.982919,
       "iq_score": 88.32,
       "cluster": "Pok\u00e9mon \u00b7 Special Illustration Rare",
       "dynamics": {
         "demand_pressure": null,
         "supply_saturation": 1.0,
-        "status": "awaiting_data"
+        "status": "awaiting_data",
+        "active_listings": null,
+        "sold_7d": null,
+        "new_7d": null,
+        "basis": {
+          "days": 1
+        }
       },
       "mover_basis": "price_signal_fallback",
       "awaiting_data": true
@@ -2206,15 +2830,21 @@
       "image_small": "https://images.scrydex.com/pokemon/me2pt5-290/small",
       "image_large": "https://images.scrydex.com/pokemon/me2pt5-290/large",
       "market_price": 880.43,
-      "expected_price": 224.9362,
-      "raw_diff": -655.49,
-      "residual_pct": 2.914133,
+      "expected_price": 274.7986,
+      "raw_diff": -605.63,
+      "residual_pct": 2.20391,
       "iq_score": 81.57,
       "cluster": "Pok\u00e9mon \u00b7 Special Illustration Rare",
       "dynamics": {
         "demand_pressure": null,
         "supply_saturation": 1.0,
-        "status": "awaiting_data"
+        "status": "awaiting_data",
+        "active_listings": null,
+        "sold_7d": null,
+        "new_7d": null,
+        "basis": {
+          "days": 1
+        }
       },
       "mover_basis": "price_signal_fallback",
       "awaiting_data": true
@@ -2229,15 +2859,21 @@
       "image_small": "https://images.pokemontcg.io/sv3pt5/199.png",
       "image_large": "https://images.pokemontcg.io/sv3pt5/199_hires.png",
       "market_price": 479.59,
-      "expected_price": 152.9715,
-      "raw_diff": -326.62,
-      "residual_pct": 2.135158,
+      "expected_price": 147.0891,
+      "raw_diff": -332.5,
+      "residual_pct": 2.26054,
       "iq_score": 91.77,
       "cluster": "Pok\u00e9mon \u00b7 Special Illustration Rare",
       "dynamics": {
         "demand_pressure": null,
         "supply_saturation": 1.0,
-        "status": "awaiting_data"
+        "status": "awaiting_data",
+        "active_listings": null,
+        "sold_7d": null,
+        "new_7d": null,
+        "basis": {
+          "days": 1
+        }
       },
       "mover_basis": "price_signal_fallback",
       "awaiting_data": true
@@ -2252,15 +2888,21 @@
       "image_small": "https://images.scrydex.com/pokemon/me2pt5-294/small",
       "image_large": "https://images.scrydex.com/pokemon/me2pt5-294/large",
       "market_price": 628.99,
-      "expected_price": 343.7962,
-      "raw_diff": -285.19,
-      "residual_pct": 0.829543,
+      "expected_price": 347.6389,
+      "raw_diff": -281.35,
+      "residual_pct": 0.80932,
       "iq_score": 74.66,
       "cluster": "Pok\u00e9mon \u00b7 Special Illustration Rare",
       "dynamics": {
         "demand_pressure": null,
         "supply_saturation": 1.0,
-        "status": "awaiting_data"
+        "status": "awaiting_data",
+        "active_listings": null,
+        "sold_7d": null,
+        "new_7d": null,
+        "basis": {
+          "days": 1
+        }
       },
       "mover_basis": "price_signal_fallback",
       "awaiting_data": true
@@ -2275,15 +2917,21 @@
       "image_small": "https://images.scrydex.com/pokemon/me2pt5-281/small",
       "image_large": "https://images.scrydex.com/pokemon/me2pt5-281/large",
       "market_price": 445.65,
-      "expected_price": 164.6156,
-      "raw_diff": -281.03,
-      "residual_pct": 1.707216,
+      "expected_price": 199.5436,
+      "raw_diff": -246.11,
+      "residual_pct": 1.233347,
       "iq_score": 78.69,
       "cluster": "Pok\u00e9mon \u00b7 Special Illustration Rare",
       "dynamics": {
         "demand_pressure": null,
         "supply_saturation": 1.0,
-        "status": "awaiting_data"
+        "status": "awaiting_data",
+        "active_listings": null,
+        "sold_7d": null,
+        "new_7d": null,
+        "basis": {
+          "days": 1
+        }
       },
       "mover_basis": "price_signal_fallback",
       "awaiting_data": true
@@ -2298,84 +2946,21 @@
       "image_small": "https://images.pokemontcg.io/sv6/214.png",
       "image_large": "https://images.pokemontcg.io/sv6/214_hires.png",
       "market_price": 400.47,
-      "expected_price": 158.8179,
-      "raw_diff": -241.65,
-      "residual_pct": 1.521567,
+      "expected_price": 172.0482,
+      "raw_diff": -228.42,
+      "residual_pct": 1.327662,
       "iq_score": 89.31,
       "cluster": "Pok\u00e9mon \u00b7 Special Illustration Rare",
       "dynamics": {
         "demand_pressure": null,
         "supply_saturation": 1.0,
-        "status": "awaiting_data"
-      },
-      "mover_basis": "price_signal_fallback",
-      "awaiting_data": true
-    },
-    {
-      "id": "me2pt5-277",
-      "name": "Pikachu ex",
-      "set_name": "Ascended Heroes",
-      "set_id": "me2pt5",
-      "rarity": "Special Illustration Rare",
-      "number": "277",
-      "image_small": "https://images.scrydex.com/pokemon/me2pt5-277/small",
-      "image_large": "https://images.scrydex.com/pokemon/me2pt5-277/large",
-      "market_price": 466.92,
-      "expected_price": 231.6974,
-      "raw_diff": -235.22,
-      "residual_pct": 1.015215,
-      "iq_score": 85.77,
-      "cluster": "Pok\u00e9mon \u00b7 Special Illustration Rare",
-      "dynamics": {
-        "demand_pressure": null,
-        "supply_saturation": 1.0,
-        "status": "awaiting_data"
-      },
-      "mover_basis": "price_signal_fallback",
-      "awaiting_data": true
-    },
-    {
-      "id": "sv4pt5-234",
-      "name": "Charizard ex",
-      "set_name": "Paldean Fates",
-      "set_id": "sv4pt5",
-      "rarity": "Special Illustration Rare",
-      "number": "234",
-      "image_small": "https://images.pokemontcg.io/sv4pt5/234.png",
-      "image_large": "https://images.pokemontcg.io/sv4pt5/234_hires.png",
-      "market_price": 335.83,
-      "expected_price": 146.7267,
-      "raw_diff": -189.1,
-      "residual_pct": 1.288813,
-      "iq_score": 90.84,
-      "cluster": "Pok\u00e9mon \u00b7 Special Illustration Rare",
-      "dynamics": {
-        "demand_pressure": null,
-        "supply_saturation": 1.0,
-        "status": "awaiting_data"
-      },
-      "mover_basis": "price_signal_fallback",
-      "awaiting_data": true
-    },
-    {
-      "id": "sv8-238",
-      "name": "Pikachu ex",
-      "set_name": "Surging Sparks",
-      "set_id": "sv8",
-      "rarity": "Special Illustration Rare",
-      "number": "238",
-      "image_small": "https://images.pokemontcg.io/sv8/238.png",
-      "image_large": "https://images.pokemontcg.io/sv8/238_hires.png",
-      "market_price": 358.36,
-      "expected_price": 179.3786,
-      "raw_diff": -178.98,
-      "residual_pct": 0.997786,
-      "iq_score": 89.06,
-      "cluster": "Pok\u00e9mon \u00b7 Special Illustration Rare",
-      "dynamics": {
-        "demand_pressure": null,
-        "supply_saturation": 1.0,
-        "status": "awaiting_data"
+        "status": "awaiting_data",
+        "active_listings": null,
+        "sold_7d": null,
+        "new_7d": null,
+        "basis": {
+          "days": 1
+        }
       },
       "mover_basis": "price_signal_fallback",
       "awaiting_data": true
@@ -2390,15 +2975,108 @@
       "image_small": "https://images.scrydex.com/pokemon/me4-116/small",
       "image_large": "https://images.scrydex.com/pokemon/me4-116/large",
       "market_price": 338.78,
-      "expected_price": 184.3163,
-      "raw_diff": -154.46,
-      "residual_pct": 0.838036,
+      "expected_price": 129.1006,
+      "raw_diff": -209.68,
+      "residual_pct": 1.624155,
       "iq_score": 83.19,
       "cluster": "Pok\u00e9mon \u00b7 Special Illustration Rare",
       "dynamics": {
         "demand_pressure": null,
         "supply_saturation": 1.0,
-        "status": "awaiting_data"
+        "status": "awaiting_data",
+        "active_listings": null,
+        "sold_7d": null,
+        "new_7d": null,
+        "basis": {
+          "days": 1
+        }
+      },
+      "mover_basis": "price_signal_fallback",
+      "awaiting_data": true
+    },
+    {
+      "id": "sv4pt5-234",
+      "name": "Charizard ex",
+      "set_name": "Paldean Fates",
+      "set_id": "sv4pt5",
+      "rarity": "Special Illustration Rare",
+      "number": "234",
+      "image_small": "https://images.pokemontcg.io/sv4pt5/234.png",
+      "image_large": "https://images.pokemontcg.io/sv4pt5/234_hires.png",
+      "market_price": 335.83,
+      "expected_price": 150.2532,
+      "raw_diff": -185.58,
+      "residual_pct": 1.235093,
+      "iq_score": 90.84,
+      "cluster": "Pok\u00e9mon \u00b7 Special Illustration Rare",
+      "dynamics": {
+        "demand_pressure": null,
+        "supply_saturation": 1.0,
+        "status": "awaiting_data",
+        "active_listings": null,
+        "sold_7d": null,
+        "new_7d": null,
+        "basis": {
+          "days": 1
+        }
+      },
+      "mover_basis": "price_signal_fallback",
+      "awaiting_data": true
+    },
+    {
+      "id": "me2pt5-277",
+      "name": "Pikachu ex",
+      "set_name": "Ascended Heroes",
+      "set_id": "me2pt5",
+      "rarity": "Special Illustration Rare",
+      "number": "277",
+      "image_small": "https://images.scrydex.com/pokemon/me2pt5-277/small",
+      "image_large": "https://images.scrydex.com/pokemon/me2pt5-277/large",
+      "market_price": 466.92,
+      "expected_price": 288.1832,
+      "raw_diff": -178.74,
+      "residual_pct": 0.62022,
+      "iq_score": 85.77,
+      "cluster": "Pok\u00e9mon \u00b7 Special Illustration Rare",
+      "dynamics": {
+        "demand_pressure": null,
+        "supply_saturation": 1.0,
+        "status": "awaiting_data",
+        "active_listings": null,
+        "sold_7d": null,
+        "new_7d": null,
+        "basis": {
+          "days": 1
+        }
+      },
+      "mover_basis": "price_signal_fallback",
+      "awaiting_data": true
+    },
+    {
+      "id": "sv8-238",
+      "name": "Pikachu ex",
+      "set_name": "Surging Sparks",
+      "set_id": "sv8",
+      "rarity": "Special Illustration Rare",
+      "number": "238",
+      "image_small": "https://images.pokemontcg.io/sv8/238.png",
+      "image_large": "https://images.pokemontcg.io/sv8/238_hires.png",
+      "market_price": 358.36,
+      "expected_price": 184.7466,
+      "raw_diff": -173.61,
+      "residual_pct": 0.939739,
+      "iq_score": 89.06,
+      "cluster": "Pok\u00e9mon \u00b7 Special Illustration Rare",
+      "dynamics": {
+        "demand_pressure": null,
+        "supply_saturation": 1.0,
+        "status": "awaiting_data",
+        "active_listings": null,
+        "sold_7d": null,
+        "new_7d": null,
+        "basis": {
+          "days": 1
+        }
       },
       "mover_basis": "price_signal_fallback",
       "awaiting_data": true
@@ -2413,15 +3091,21 @@
       "image_small": "https://images.scrydex.com/pokemon/me3-124/small",
       "image_large": "https://images.scrydex.com/pokemon/me3-124/large",
       "market_price": 167.98,
-      "expected_price": 322.2001,
-      "raw_diff": 154.22,
-      "residual_pct": -0.478647,
+      "expected_price": 313.4722,
+      "raw_diff": 145.49,
+      "residual_pct": -0.464131,
       "iq_score": 72.02,
       "cluster": "Pok\u00e9mon \u00b7 Special Illustration Rare",
       "dynamics": {
         "demand_pressure": null,
         "supply_saturation": 1.0,
-        "status": "awaiting_data"
+        "status": "awaiting_data",
+        "active_listings": null,
+        "sold_7d": null,
+        "new_7d": null,
+        "basis": {
+          "days": 1
+        }
       },
       "mover_basis": "price_signal_fallback",
       "awaiting_data": true
@@ -2436,15 +3120,21 @@
       "image_small": "https://images.pokemontcg.io/sv6/220.png",
       "image_large": "https://images.pokemontcg.io/sv6/220_hires.png",
       "market_price": 185.48,
-      "expected_price": 59.6835,
-      "raw_diff": -125.8,
-      "residual_pct": 2.107729,
+      "expected_price": 60.4584,
+      "raw_diff": -125.02,
+      "residual_pct": 2.067897,
       "iq_score": 86.8,
       "cluster": "Trainer \u00b7 Special Illustration Rare",
       "dynamics": {
         "demand_pressure": null,
         "supply_saturation": 1.0,
-        "status": "awaiting_data"
+        "status": "awaiting_data",
+        "active_listings": null,
+        "sold_7d": null,
+        "new_7d": null,
+        "basis": {
+          "days": 1
+        }
       },
       "mover_basis": "price_signal_fallback",
       "awaiting_data": true
@@ -2459,15 +3149,50 @@
       "image_small": "https://images.scrydex.com/pokemon/me2pt5-295/small",
       "image_large": "https://images.scrydex.com/pokemon/me2pt5-295/large",
       "market_price": 330.01,
-      "expected_price": 234.9849,
-      "raw_diff": -95.03,
-      "residual_pct": 0.404388,
+      "expected_price": 234.2117,
+      "raw_diff": -95.8,
+      "residual_pct": 0.409025,
       "iq_score": 70.03,
       "cluster": "Pok\u00e9mon \u00b7 Special Illustration Rare",
       "dynamics": {
         "demand_pressure": null,
         "supply_saturation": 1.0,
-        "status": "awaiting_data"
+        "status": "awaiting_data",
+        "active_listings": null,
+        "sold_7d": null,
+        "new_7d": null,
+        "basis": {
+          "days": 1
+        }
+      },
+      "mover_basis": "price_signal_fallback",
+      "awaiting_data": true
+    },
+    {
+      "id": "sv8pt5-156",
+      "name": "Sylveon ex",
+      "set_name": "Prismatic Evolutions",
+      "set_id": "sv8pt5",
+      "rarity": "Special Illustration Rare",
+      "number": "156",
+      "image_small": "https://images.pokemontcg.io/sv8pt5/156.png",
+      "image_large": "https://images.pokemontcg.io/sv8pt5/156_hires.png",
+      "market_price": 514.76,
+      "expected_price": 422.113,
+      "raw_diff": -92.65,
+      "residual_pct": 0.219484,
+      "iq_score": 87.77,
+      "cluster": "Pok\u00e9mon \u00b7 Special Illustration Rare",
+      "dynamics": {
+        "demand_pressure": null,
+        "supply_saturation": 1.0,
+        "status": "awaiting_data",
+        "active_listings": null,
+        "sold_7d": null,
+        "new_7d": null,
+        "basis": {
+          "days": 1
+        }
       },
       "mover_basis": "price_signal_fallback",
       "awaiting_data": true
@@ -2482,15 +3207,21 @@
       "image_small": "https://images.pokemontcg.io/sv7/143.png",
       "image_large": "https://images.pokemontcg.io/sv7/143_hires.png",
       "market_price": 138.94,
-      "expected_price": 49.7565,
-      "raw_diff": -89.18,
-      "residual_pct": 1.792396,
+      "expected_price": 50.505,
+      "raw_diff": -88.44,
+      "residual_pct": 1.751016,
       "iq_score": 81.66,
       "cluster": "Pok\u00e9mon \u00b7 Illustration Rare",
       "dynamics": {
         "demand_pressure": null,
         "supply_saturation": 1.0,
-        "status": "awaiting_data"
+        "status": "awaiting_data",
+        "active_listings": null,
+        "sold_7d": null,
+        "new_7d": null,
+        "basis": {
+          "days": 1
+        }
       },
       "mover_basis": "price_signal_fallback",
       "awaiting_data": true
@@ -2505,15 +3236,21 @@
       "image_small": "https://images.pokemontcg.io/sv7/148.png",
       "image_large": "https://images.pokemontcg.io/sv7/148_hires.png",
       "market_price": 129.65,
-      "expected_price": 49.2615,
-      "raw_diff": -80.39,
-      "residual_pct": 1.631875,
+      "expected_price": 50.0034,
+      "raw_diff": -79.65,
+      "residual_pct": 1.592821,
       "iq_score": 81.93,
       "cluster": "Pok\u00e9mon \u00b7 Illustration Rare",
       "dynamics": {
         "demand_pressure": null,
         "supply_saturation": 1.0,
-        "status": "awaiting_data"
+        "status": "awaiting_data",
+        "active_listings": null,
+        "sold_7d": null,
+        "new_7d": null,
+        "basis": {
+          "days": 1
+        }
       },
       "mover_basis": "price_signal_fallback",
       "awaiting_data": true
@@ -2528,15 +3265,21 @@
       "image_small": "https://images.pokemontcg.io/sv3pt5/168.png",
       "image_large": "https://images.pokemontcg.io/sv3pt5/168_hires.png",
       "market_price": 125.89,
-      "expected_price": 48.7837,
-      "raw_diff": -77.11,
-      "residual_pct": 1.580574,
+      "expected_price": 47.7288,
+      "raw_diff": -78.16,
+      "residual_pct": 1.637611,
       "iq_score": 79.26,
       "cluster": "Pok\u00e9mon \u00b7 Illustration Rare",
       "dynamics": {
         "demand_pressure": null,
         "supply_saturation": 1.0,
-        "status": "awaiting_data"
+        "status": "awaiting_data",
+        "active_listings": null,
+        "sold_7d": null,
+        "new_7d": null,
+        "basis": {
+          "days": 1
+        }
       },
       "mover_basis": "price_signal_fallback",
       "awaiting_data": true
@@ -2551,38 +3294,50 @@
       "image_small": "https://images.scrydex.com/pokemon/me2pt5-226/small",
       "image_large": "https://images.scrydex.com/pokemon/me2pt5-226/large",
       "market_price": 104.1,
-      "expected_price": 27.4478,
-      "raw_diff": -76.65,
-      "residual_pct": 2.792658,
+      "expected_price": 27.1842,
+      "raw_diff": -76.92,
+      "residual_pct": 2.829437,
       "iq_score": 76.45,
       "cluster": "Pok\u00e9mon \u00b7 Illustration Rare",
       "dynamics": {
         "demand_pressure": null,
         "supply_saturation": 1.0,
-        "status": "awaiting_data"
+        "status": "awaiting_data",
+        "active_listings": null,
+        "sold_7d": null,
+        "new_7d": null,
+        "basis": {
+          "days": 1
+        }
       },
       "mover_basis": "price_signal_fallback",
       "awaiting_data": true
     },
     {
-      "id": "sv8pt5-144",
-      "name": "Leafeon ex",
-      "set_name": "Prismatic Evolutions",
-      "set_id": "sv8pt5",
+      "id": "sv5-208",
+      "name": "Raging Bolt ex",
+      "set_name": "Temporal Forces",
+      "set_id": "sv5",
       "rarity": "Special Illustration Rare",
-      "number": "144",
-      "image_small": "https://images.pokemontcg.io/sv8pt5/144.png",
-      "image_large": "https://images.pokemontcg.io/sv8pt5/144_hires.png",
-      "market_price": 331.22,
-      "expected_price": 400.2225,
-      "raw_diff": 69.0,
-      "residual_pct": -0.17241,
-      "iq_score": 86.85,
+      "number": "208",
+      "image_small": "https://images.pokemontcg.io/sv5/208.png",
+      "image_large": "https://images.pokemontcg.io/sv5/208_hires.png",
+      "market_price": 71.71,
+      "expected_price": 142.5671,
+      "raw_diff": 70.86,
+      "residual_pct": -0.497009,
+      "iq_score": 90.24,
       "cluster": "Pok\u00e9mon \u00b7 Special Illustration Rare",
       "dynamics": {
         "demand_pressure": null,
         "supply_saturation": 1.0,
-        "status": "awaiting_data"
+        "status": "awaiting_data",
+        "active_listings": null,
+        "sold_7d": null,
+        "new_7d": null,
+        "basis": {
+          "days": 1
+        }
       },
       "mover_basis": "price_signal_fallback",
       "awaiting_data": true
@@ -2597,15 +3352,50 @@
       "image_small": "https://images.pokemontcg.io/sv4pt5/233.png",
       "image_large": "https://images.pokemontcg.io/sv4pt5/233_hires.png",
       "market_price": 188.21,
-      "expected_price": 119.3427,
-      "raw_diff": -68.87,
-      "residual_pct": 0.577055,
+      "expected_price": 120.8875,
+      "raw_diff": -67.32,
+      "residual_pct": 0.556902,
       "iq_score": 87.63,
       "cluster": "Pok\u00e9mon \u00b7 Special Illustration Rare",
       "dynamics": {
         "demand_pressure": null,
         "supply_saturation": 1.0,
-        "status": "awaiting_data"
+        "status": "awaiting_data",
+        "active_listings": null,
+        "sold_7d": null,
+        "new_7d": null,
+        "basis": {
+          "days": 1
+        }
+      },
+      "mover_basis": "price_signal_fallback",
+      "awaiting_data": true
+    },
+    {
+      "id": "me2pt5-289",
+      "name": "Steven's Metagross ex",
+      "set_name": "Ascended Heroes",
+      "set_id": "me2pt5",
+      "rarity": "Special Illustration Rare",
+      "number": "289",
+      "image_small": "https://images.scrydex.com/pokemon/me2pt5-289/small",
+      "image_large": "https://images.scrydex.com/pokemon/me2pt5-289/large",
+      "market_price": 106.43,
+      "expected_price": 172.955,
+      "raw_diff": 66.53,
+      "residual_pct": -0.384637,
+      "iq_score": 84.63,
+      "cluster": "Pok\u00e9mon \u00b7 Special Illustration Rare",
+      "dynamics": {
+        "demand_pressure": null,
+        "supply_saturation": 1.0,
+        "status": "awaiting_data",
+        "active_listings": null,
+        "sold_7d": null,
+        "new_7d": null,
+        "basis": {
+          "days": 1
+        }
       },
       "mover_basis": "price_signal_fallback",
       "awaiting_data": true
@@ -2620,15 +3410,50 @@
       "image_small": "https://images.pokemontcg.io/sv8/240.png",
       "image_large": "https://images.pokemontcg.io/sv8/240_hires.png",
       "market_price": 43.41,
-      "expected_price": 107.9719,
-      "raw_diff": 64.56,
-      "residual_pct": -0.597951,
+      "expected_price": 109.6741,
+      "raw_diff": 66.26,
+      "residual_pct": -0.604191,
       "iq_score": 84.11,
       "cluster": "Pok\u00e9mon \u00b7 Special Illustration Rare",
       "dynamics": {
         "demand_pressure": null,
         "supply_saturation": 1.0,
-        "status": "awaiting_data"
+        "status": "awaiting_data",
+        "active_listings": null,
+        "sold_7d": null,
+        "new_7d": null,
+        "basis": {
+          "days": 1
+        }
+      },
+      "mover_basis": "price_signal_fallback",
+      "awaiting_data": true
+    },
+    {
+      "id": "sv6-216",
+      "name": "Bloodmoon Ursaluna ex",
+      "set_name": "Twilight Masquerade",
+      "set_id": "sv6",
+      "rarity": "Special Illustration Rare",
+      "number": "216",
+      "image_small": "https://images.pokemontcg.io/sv6/216.png",
+      "image_large": "https://images.pokemontcg.io/sv6/216_hires.png",
+      "market_price": 46.37,
+      "expected_price": 112.3149,
+      "raw_diff": 65.94,
+      "residual_pct": -0.587143,
+      "iq_score": 89.4,
+      "cluster": "Pok\u00e9mon \u00b7 Special Illustration Rare",
+      "dynamics": {
+        "demand_pressure": null,
+        "supply_saturation": 1.0,
+        "status": "awaiting_data",
+        "active_listings": null,
+        "sold_7d": null,
+        "new_7d": null,
+        "basis": {
+          "days": 1
+        }
       },
       "mover_basis": "price_signal_fallback",
       "awaiting_data": true
@@ -2651,191 +3476,13 @@
       "dynamics": {
         "demand_pressure": null,
         "supply_saturation": 1.0,
-        "status": "awaiting_data"
-      },
-      "mover_basis": "price_signal_fallback",
-      "awaiting_data": true
-    },
-    {
-      "id": "me4-122",
-      "name": "Mega Greninja ex",
-      "set_name": "Chaos Rising",
-      "set_id": "me4",
-      "rarity": "Mega Hyper Rare",
-      "number": "122",
-      "image_small": "https://images.scrydex.com/pokemon/me4-122/small",
-      "image_large": "https://images.scrydex.com/pokemon/me4-122/large",
-      "market_price": 266.43,
-      "expected_price": 329.2825,
-      "raw_diff": 62.85,
-      "residual_pct": -0.190877,
-      "iq_score": 71.79,
-      "cluster": "Pok\u00e9mon \u00b7 Special Illustration Rare",
-      "dynamics": {
-        "demand_pressure": null,
-        "supply_saturation": 1.0,
-        "status": "awaiting_data"
-      },
-      "mover_basis": "price_signal_fallback",
-      "awaiting_data": true
-    },
-    {
-      "id": "me2pt5-274",
-      "name": "Mega Feraligatr ex",
-      "set_name": "Ascended Heroes",
-      "set_id": "me2pt5",
-      "rarity": "Special Illustration Rare",
-      "number": "274",
-      "image_small": "https://images.scrydex.com/pokemon/me2pt5-274/small",
-      "image_large": "https://images.scrydex.com/pokemon/me2pt5-274/large",
-      "market_price": 188.03,
-      "expected_price": 125.4158,
-      "raw_diff": -62.61,
-      "residual_pct": 0.499253,
-      "iq_score": 78.62,
-      "cluster": "Pok\u00e9mon \u00b7 Special Illustration Rare",
-      "dynamics": {
-        "demand_pressure": null,
-        "supply_saturation": 1.0,
-        "status": "awaiting_data"
-      },
-      "mover_basis": "price_signal_fallback",
-      "awaiting_data": true
-    },
-    {
-      "id": "sv5-208",
-      "name": "Raging Bolt ex",
-      "set_name": "Temporal Forces",
-      "set_id": "sv5",
-      "rarity": "Special Illustration Rare",
-      "number": "208",
-      "image_small": "https://images.pokemontcg.io/sv5/208.png",
-      "image_large": "https://images.pokemontcg.io/sv5/208_hires.png",
-      "market_price": 71.71,
-      "expected_price": 129.5781,
-      "raw_diff": 57.87,
-      "residual_pct": -0.446589,
-      "iq_score": 90.24,
-      "cluster": "Pok\u00e9mon \u00b7 Special Illustration Rare",
-      "dynamics": {
-        "demand_pressure": null,
-        "supply_saturation": 1.0,
-        "status": "awaiting_data"
-      },
-      "mover_basis": "price_signal_fallback",
-      "awaiting_data": true
-    },
-    {
-      "id": "sv6-216",
-      "name": "Bloodmoon Ursaluna ex",
-      "set_name": "Twilight Masquerade",
-      "set_id": "sv6",
-      "rarity": "Special Illustration Rare",
-      "number": "216",
-      "image_small": "https://images.pokemontcg.io/sv6/216.png",
-      "image_large": "https://images.pokemontcg.io/sv6/216_hires.png",
-      "market_price": 46.37,
-      "expected_price": 102.9477,
-      "raw_diff": 56.58,
-      "residual_pct": -0.549577,
-      "iq_score": 89.4,
-      "cluster": "Pok\u00e9mon \u00b7 Special Illustration Rare",
-      "dynamics": {
-        "demand_pressure": null,
-        "supply_saturation": 1.0,
-        "status": "awaiting_data"
-      },
-      "mover_basis": "price_signal_fallback",
-      "awaiting_data": true
-    },
-    {
-      "id": "sv7-168",
-      "name": "Galvantula ex",
-      "set_name": "Stellar Crown",
-      "set_id": "sv7",
-      "rarity": "Special Illustration Rare",
-      "number": "168",
-      "image_small": "https://images.pokemontcg.io/sv7/168.png",
-      "image_large": "https://images.pokemontcg.io/sv7/168_hires.png",
-      "market_price": 23.48,
-      "expected_price": 79.1391,
-      "raw_diff": 55.66,
-      "residual_pct": -0.703307,
-      "iq_score": 86.42,
-      "cluster": "Pok\u00e9mon \u00b7 Special Illustration Rare",
-      "dynamics": {
-        "demand_pressure": null,
-        "supply_saturation": 1.0,
-        "status": "awaiting_data"
-      },
-      "mover_basis": "price_signal_fallback",
-      "awaiting_data": true
-    },
-    {
-      "id": "sv8-236",
-      "name": "Durant ex",
-      "set_name": "Surging Sparks",
-      "set_id": "sv8",
-      "rarity": "Special Illustration Rare",
-      "number": "236",
-      "image_small": "https://images.pokemontcg.io/sv8/236.png",
-      "image_large": "https://images.pokemontcg.io/sv8/236_hires.png",
-      "market_price": 36.38,
-      "expected_price": 89.8207,
-      "raw_diff": 53.44,
-      "residual_pct": -0.594971,
-      "iq_score": 83.4,
-      "cluster": "Pok\u00e9mon \u00b7 Special Illustration Rare",
-      "dynamics": {
-        "demand_pressure": null,
-        "supply_saturation": 1.0,
-        "status": "awaiting_data"
-      },
-      "mover_basis": "price_signal_fallback",
-      "awaiting_data": true
-    },
-    {
-      "id": "me4-119",
-      "name": "Cinccino ex",
-      "set_name": "Chaos Rising",
-      "set_id": "me4",
-      "rarity": "Special Illustration Rare",
-      "number": "119",
-      "image_small": "https://images.scrydex.com/pokemon/me4-119/small",
-      "image_large": "https://images.scrydex.com/pokemon/me4-119/large",
-      "market_price": 85.35,
-      "expected_price": 138.4954,
-      "raw_diff": 53.15,
-      "residual_pct": -0.383734,
-      "iq_score": 84.18,
-      "cluster": "Pok\u00e9mon \u00b7 Special Illustration Rare",
-      "dynamics": {
-        "demand_pressure": null,
-        "supply_saturation": 1.0,
-        "status": "awaiting_data"
-      },
-      "mover_basis": "price_signal_fallback",
-      "awaiting_data": true
-    },
-    {
-      "id": "sv8pt5-156",
-      "name": "Sylveon ex",
-      "set_name": "Prismatic Evolutions",
-      "set_id": "sv8pt5",
-      "rarity": "Special Illustration Rare",
-      "number": "156",
-      "image_small": "https://images.pokemontcg.io/sv8pt5/156.png",
-      "image_large": "https://images.pokemontcg.io/sv8pt5/156_hires.png",
-      "market_price": 514.76,
-      "expected_price": 462.6238,
-      "raw_diff": -52.14,
-      "residual_pct": 0.112697,
-      "iq_score": 87.77,
-      "cluster": "Pok\u00e9mon \u00b7 Special Illustration Rare",
-      "dynamics": {
-        "demand_pressure": null,
-        "supply_saturation": 1.0,
-        "status": "awaiting_data"
+        "status": "awaiting_data",
+        "active_listings": null,
+        "sold_7d": null,
+        "new_7d": null,
+        "basis": {
+          "days": 1
+        }
       },
       "mover_basis": "price_signal_fallback",
       "awaiting_data": true
@@ -2850,153 +3497,79 @@
       "image_small": "https://images.pokemontcg.io/sv3pt5/198.png",
       "image_large": "https://images.pokemontcg.io/sv3pt5/198_hires.png",
       "market_price": 134.92,
-      "expected_price": 83.0044,
-      "raw_diff": -51.92,
-      "residual_pct": 0.625455,
+      "expected_price": 76.8655,
+      "raw_diff": -58.05,
+      "residual_pct": 0.755275,
       "iq_score": 81.03,
       "cluster": "Pok\u00e9mon \u00b7 Special Illustration Rare",
       "dynamics": {
         "demand_pressure": null,
         "supply_saturation": 1.0,
-        "status": "awaiting_data"
+        "status": "awaiting_data",
+        "active_listings": null,
+        "sold_7d": null,
+        "new_7d": null,
+        "basis": {
+          "days": 1
+        }
       },
       "mover_basis": "price_signal_fallback",
       "awaiting_data": true
     },
     {
-      "id": "me3-119",
-      "name": "Mega Clefable ex",
-      "set_name": "Perfect Order",
-      "set_id": "me3",
-      "rarity": "Special Illustration Rare",
-      "number": "119",
-      "image_small": "https://images.scrydex.com/pokemon/me3-119/small",
-      "image_large": "https://images.scrydex.com/pokemon/me3-119/large",
-      "market_price": 71.42,
-      "expected_price": 122.4549,
-      "raw_diff": 51.03,
-      "residual_pct": -0.416765,
-      "iq_score": 81.45,
-      "cluster": "Pok\u00e9mon \u00b7 Special Illustration Rare",
-      "dynamics": {
-        "demand_pressure": null,
-        "supply_saturation": 1.0,
-        "status": "awaiting_data"
-      },
-      "mover_basis": "price_signal_fallback",
-      "awaiting_data": true
-    },
-    {
-      "id": "sv8pt5-168",
-      "name": "Bloodmoon Ursaluna ex",
-      "set_name": "Prismatic Evolutions",
-      "set_id": "sv8pt5",
-      "rarity": "Special Illustration Rare",
-      "number": "168",
-      "image_small": "https://images.pokemontcg.io/sv8pt5/168.png",
-      "image_large": "https://images.pokemontcg.io/sv8pt5/168_hires.png",
-      "market_price": 82.11,
-      "expected_price": 132.5435,
-      "raw_diff": 50.43,
-      "residual_pct": -0.380505,
-      "iq_score": 86.72,
-      "cluster": "Pok\u00e9mon \u00b7 Special Illustration Rare",
-      "dynamics": {
-        "demand_pressure": null,
-        "supply_saturation": 1.0,
-        "status": "awaiting_data"
-      },
-      "mover_basis": "price_signal_fallback",
-      "awaiting_data": true
-    },
-    {
-      "id": "sv7-167",
-      "name": "Hydrapple ex",
-      "set_name": "Stellar Crown",
-      "set_id": "sv7",
-      "rarity": "Special Illustration Rare",
-      "number": "167",
-      "image_small": "https://images.pokemontcg.io/sv7/167.png",
-      "image_large": "https://images.pokemontcg.io/sv7/167_hires.png",
-      "market_price": 40.62,
-      "expected_price": 90.5206,
-      "raw_diff": 49.9,
-      "residual_pct": -0.551263,
-      "iq_score": 86.97,
-      "cluster": "Pok\u00e9mon \u00b7 Special Illustration Rare",
-      "dynamics": {
-        "demand_pressure": null,
-        "supply_saturation": 1.0,
-        "status": "awaiting_data"
-      },
-      "mover_basis": "price_signal_fallback",
-      "awaiting_data": true
-    },
-    {
-      "id": "sv8-241",
-      "name": "Archaludon ex",
+      "id": "sv8-236",
+      "name": "Durant ex",
       "set_name": "Surging Sparks",
       "set_id": "sv8",
       "rarity": "Special Illustration Rare",
-      "number": "241",
-      "image_small": "https://images.pokemontcg.io/sv8/241.png",
-      "image_large": "https://images.pokemontcg.io/sv8/241_hires.png",
-      "market_price": 13.8,
-      "expected_price": 61.9543,
-      "raw_diff": 48.15,
-      "residual_pct": -0.777255,
-      "iq_score": 85.95,
+      "number": "236",
+      "image_small": "https://images.pokemontcg.io/sv8/236.png",
+      "image_large": "https://images.pokemontcg.io/sv8/236_hires.png",
+      "market_price": 36.38,
+      "expected_price": 91.2107,
+      "raw_diff": 54.83,
+      "residual_pct": -0.601143,
+      "iq_score": 83.4,
       "cluster": "Pok\u00e9mon \u00b7 Special Illustration Rare",
       "dynamics": {
         "demand_pressure": null,
         "supply_saturation": 1.0,
-        "status": "awaiting_data"
+        "status": "awaiting_data",
+        "active_listings": null,
+        "sold_7d": null,
+        "new_7d": null,
+        "basis": {
+          "days": 1
+        }
       },
       "mover_basis": "price_signal_fallback",
       "awaiting_data": true
     },
     {
-      "id": "sv8pt5-147",
-      "name": "Ceruledge ex",
+      "id": "sv8pt5-149",
+      "name": "Vaporeon ex",
       "set_name": "Prismatic Evolutions",
       "set_id": "sv8pt5",
       "rarity": "Special Illustration Rare",
-      "number": "147",
-      "image_small": "https://images.pokemontcg.io/sv8pt5/147.png",
-      "image_large": "https://images.pokemontcg.io/sv8pt5/147_hires.png",
-      "market_price": 100.51,
-      "expected_price": 148.491,
-      "raw_diff": 47.98,
-      "residual_pct": -0.323124,
-      "iq_score": 86.8,
+      "number": "149",
+      "image_small": "https://images.pokemontcg.io/sv8pt5/149.png",
+      "image_large": "https://images.pokemontcg.io/sv8pt5/149_hires.png",
+      "market_price": 300.86,
+      "expected_price": 246.7876,
+      "raw_diff": -54.07,
+      "residual_pct": 0.219105,
+      "iq_score": 82.79,
       "cluster": "Pok\u00e9mon \u00b7 Special Illustration Rare",
       "dynamics": {
         "demand_pressure": null,
         "supply_saturation": 1.0,
-        "status": "awaiting_data"
-      },
-      "mover_basis": "price_signal_fallback",
-      "awaiting_data": true
-    },
-    {
-      "id": "sv3pt5-170",
-      "name": "Squirtle",
-      "set_name": "151",
-      "set_id": "sv3pt5",
-      "rarity": "Illustration Rare",
-      "number": "170",
-      "image_small": "https://images.pokemontcg.io/sv3pt5/170.png",
-      "image_large": "https://images.pokemontcg.io/sv3pt5/170_hires.png",
-      "market_price": 118.48,
-      "expected_price": 70.6394,
-      "raw_diff": -47.84,
-      "residual_pct": 0.677251,
-      "iq_score": 83.94,
-      "cluster": "Pok\u00e9mon \u00b7 Illustration Rare",
-      "dynamics": {
-        "demand_pressure": null,
-        "supply_saturation": 1.0,
-        "status": "awaiting_data"
+        "status": "awaiting_data",
+        "active_listings": null,
+        "sold_7d": null,
+        "new_7d": null,
+        "basis": {
+          "days": 1
+        }
       },
       "mover_basis": "price_signal_fallback",
       "awaiting_data": true
@@ -3011,15 +3584,137 @@
       "image_small": "https://images.pokemontcg.io/sv3pt5/200.png",
       "image_large": "https://images.pokemontcg.io/sv3pt5/200_hires.png",
       "market_price": 162.49,
-      "expected_price": 114.8211,
-      "raw_diff": -47.67,
-      "residual_pct": 0.415158,
+      "expected_price": 108.5334,
+      "raw_diff": -53.96,
+      "residual_pct": 0.497143,
       "iq_score": 86.86,
       "cluster": "Pok\u00e9mon \u00b7 Special Illustration Rare",
       "dynamics": {
         "demand_pressure": null,
         "supply_saturation": 1.0,
-        "status": "awaiting_data"
+        "status": "awaiting_data",
+        "active_listings": null,
+        "sold_7d": null,
+        "new_7d": null,
+        "basis": {
+          "days": 1
+        }
+      },
+      "mover_basis": "price_signal_fallback",
+      "awaiting_data": true
+    },
+    {
+      "id": "sv5-205",
+      "name": "Walking Wake ex",
+      "set_name": "Temporal Forces",
+      "set_id": "sv5",
+      "rarity": "Special Illustration Rare",
+      "number": "205",
+      "image_small": "https://images.pokemontcg.io/sv5/205.png",
+      "image_large": "https://images.pokemontcg.io/sv5/205_hires.png",
+      "market_price": 63.62,
+      "expected_price": 116.5266,
+      "raw_diff": 52.91,
+      "residual_pct": -0.45403,
+      "iq_score": 89.67,
+      "cluster": "Pok\u00e9mon \u00b7 Special Illustration Rare",
+      "dynamics": {
+        "demand_pressure": null,
+        "supply_saturation": 1.0,
+        "status": "awaiting_data",
+        "active_listings": null,
+        "sold_7d": null,
+        "new_7d": null,
+        "basis": {
+          "days": 1
+        }
+      },
+      "mover_basis": "price_signal_fallback",
+      "awaiting_data": true
+    },
+    {
+      "id": "sv7-168",
+      "name": "Galvantula ex",
+      "set_name": "Stellar Crown",
+      "set_id": "sv7",
+      "rarity": "Special Illustration Rare",
+      "number": "168",
+      "image_small": "https://images.pokemontcg.io/sv7/168.png",
+      "image_large": "https://images.pokemontcg.io/sv7/168_hires.png",
+      "market_price": 23.48,
+      "expected_price": 73.7809,
+      "raw_diff": 50.3,
+      "residual_pct": -0.68176,
+      "iq_score": 86.42,
+      "cluster": "Pok\u00e9mon \u00b7 Special Illustration Rare",
+      "dynamics": {
+        "demand_pressure": null,
+        "supply_saturation": 1.0,
+        "status": "awaiting_data",
+        "active_listings": null,
+        "sold_7d": null,
+        "new_7d": null,
+        "basis": {
+          "days": 1
+        }
+      },
+      "mover_basis": "price_signal_fallback",
+      "awaiting_data": true
+    },
+    {
+      "id": "sv8-241",
+      "name": "Archaludon ex",
+      "set_name": "Surging Sparks",
+      "set_id": "sv8",
+      "rarity": "Special Illustration Rare",
+      "number": "241",
+      "image_small": "https://images.pokemontcg.io/sv8/241.png",
+      "image_large": "https://images.pokemontcg.io/sv8/241_hires.png",
+      "market_price": 13.8,
+      "expected_price": 63.9819,
+      "raw_diff": 50.18,
+      "residual_pct": -0.784314,
+      "iq_score": 85.95,
+      "cluster": "Pok\u00e9mon \u00b7 Special Illustration Rare",
+      "dynamics": {
+        "demand_pressure": null,
+        "supply_saturation": 1.0,
+        "status": "awaiting_data",
+        "active_listings": null,
+        "sold_7d": null,
+        "new_7d": null,
+        "basis": {
+          "days": 1
+        }
+      },
+      "mover_basis": "price_signal_fallback",
+      "awaiting_data": true
+    },
+    {
+      "id": "sv3pt5-170",
+      "name": "Squirtle",
+      "set_name": "151",
+      "set_id": "sv3pt5",
+      "rarity": "Illustration Rare",
+      "number": "170",
+      "image_small": "https://images.pokemontcg.io/sv3pt5/170.png",
+      "image_large": "https://images.pokemontcg.io/sv3pt5/170_hires.png",
+      "market_price": 118.48,
+      "expected_price": 69.2127,
+      "raw_diff": -49.27,
+      "residual_pct": 0.711825,
+      "iq_score": 83.94,
+      "cluster": "Pok\u00e9mon \u00b7 Illustration Rare",
+      "dynamics": {
+        "demand_pressure": null,
+        "supply_saturation": 1.0,
+        "status": "awaiting_data",
+        "active_listings": null,
+        "sold_7d": null,
+        "new_7d": null,
+        "basis": {
+          "days": 1
+        }
       },
       "mover_basis": "price_signal_fallback",
       "awaiting_data": true
@@ -3034,61 +3729,79 @@
       "image_small": "https://images.pokemontcg.io/sv8/242.png",
       "image_large": "https://images.pokemontcg.io/sv8/242_hires.png",
       "market_price": 34.19,
-      "expected_price": 81.2741,
-      "raw_diff": 47.08,
-      "residual_pct": -0.579325,
+      "expected_price": 83.1818,
+      "raw_diff": 48.99,
+      "residual_pct": -0.588973,
       "iq_score": 84.85,
       "cluster": "Pok\u00e9mon \u00b7 Special Illustration Rare",
       "dynamics": {
         "demand_pressure": null,
         "supply_saturation": 1.0,
-        "status": "awaiting_data"
+        "status": "awaiting_data",
+        "active_listings": null,
+        "sold_7d": null,
+        "new_7d": null,
+        "basis": {
+          "days": 1
+        }
       },
       "mover_basis": "price_signal_fallback",
       "awaiting_data": true
     },
     {
-      "id": "sv7-170",
-      "name": "Terapagos ex",
-      "set_name": "Stellar Crown",
-      "set_id": "sv7",
-      "rarity": "Special Illustration Rare",
-      "number": "170",
-      "image_small": "https://images.pokemontcg.io/sv7/170.png",
-      "image_large": "https://images.pokemontcg.io/sv7/170_hires.png",
-      "market_price": 62.62,
-      "expected_price": 108.8594,
-      "raw_diff": 46.24,
-      "residual_pct": -0.424762,
-      "iq_score": 88.76,
-      "cluster": "Pok\u00e9mon \u00b7 Special Illustration Rare",
-      "dynamics": {
-        "demand_pressure": null,
-        "supply_saturation": 1.0,
-        "status": "awaiting_data"
-      },
-      "mover_basis": "price_signal_fallback",
-      "awaiting_data": true
-    },
-    {
-      "id": "me4-118",
-      "name": "Mega Dragalge ex",
+      "id": "me4-122",
+      "name": "Mega Greninja ex",
       "set_name": "Chaos Rising",
       "set_id": "me4",
-      "rarity": "Special Illustration Rare",
-      "number": "118",
-      "image_small": "https://images.scrydex.com/pokemon/me4-118/small",
-      "image_large": "https://images.scrydex.com/pokemon/me4-118/large",
-      "market_price": 57.12,
-      "expected_price": 102.6294,
-      "raw_diff": 45.51,
-      "residual_pct": -0.443434,
-      "iq_score": 80.66,
+      "rarity": "Mega Hyper Rare",
+      "number": "122",
+      "image_small": "https://images.scrydex.com/pokemon/me4-122/small",
+      "image_large": "https://images.scrydex.com/pokemon/me4-122/large",
+      "market_price": 266.43,
+      "expected_price": 311.9944,
+      "raw_diff": 45.56,
+      "residual_pct": -0.146042,
+      "iq_score": 71.79,
       "cluster": "Pok\u00e9mon \u00b7 Special Illustration Rare",
       "dynamics": {
         "demand_pressure": null,
         "supply_saturation": 1.0,
-        "status": "awaiting_data"
+        "status": "awaiting_data",
+        "active_listings": null,
+        "sold_7d": null,
+        "new_7d": null,
+        "basis": {
+          "days": 1
+        }
+      },
+      "mover_basis": "price_signal_fallback",
+      "awaiting_data": true
+    },
+    {
+      "id": "sv3pt5-171",
+      "name": "Wartortle",
+      "set_name": "151",
+      "set_id": "sv3pt5",
+      "rarity": "Illustration Rare",
+      "number": "171",
+      "image_small": "https://images.pokemontcg.io/sv3pt5/171.png",
+      "image_large": "https://images.pokemontcg.io/sv3pt5/171_hires.png",
+      "market_price": 77.58,
+      "expected_price": 32.3632,
+      "raw_diff": -45.22,
+      "residual_pct": 1.397164,
+      "iq_score": 77.39,
+      "cluster": "Pok\u00e9mon \u00b7 Illustration Rare",
+      "dynamics": {
+        "demand_pressure": null,
+        "supply_saturation": 1.0,
+        "status": "awaiting_data",
+        "active_listings": null,
+        "sold_7d": null,
+        "new_7d": null,
+        "basis": {
+          "days": 1
+        }
       },
       "mover_basis": "price_signal_fallback",
       "awaiting_data": true
@@ -3111,30 +3824,42 @@
       "dynamics": {
         "demand_pressure": null,
         "supply_saturation": 1.0,
-        "status": "awaiting_data"
+        "status": "awaiting_data",
+        "active_listings": null,
+        "sold_7d": null,
+        "new_7d": null,
+        "basis": {
+          "days": 1
+        }
       },
       "mover_basis": "price_signal_fallback",
       "awaiting_data": true
     },
     {
-      "id": "sv3pt5-171",
-      "name": "Wartortle",
-      "set_name": "151",
-      "set_id": "sv3pt5",
-      "rarity": "Illustration Rare",
-      "number": "171",
-      "image_small": "https://images.pokemontcg.io/sv3pt5/171.png",
-      "image_large": "https://images.pokemontcg.io/sv3pt5/171_hires.png",
-      "market_price": 77.58,
-      "expected_price": 33.1143,
-      "raw_diff": -44.47,
-      "residual_pct": 1.342793,
-      "iq_score": 77.39,
-      "cluster": "Pok\u00e9mon \u00b7 Illustration Rare",
+      "id": "sv7-167",
+      "name": "Hydrapple ex",
+      "set_name": "Stellar Crown",
+      "set_id": "sv7",
+      "rarity": "Special Illustration Rare",
+      "number": "167",
+      "image_small": "https://images.pokemontcg.io/sv7/167.png",
+      "image_large": "https://images.pokemontcg.io/sv7/167_hires.png",
+      "market_price": 40.62,
+      "expected_price": 84.422,
+      "raw_diff": 43.8,
+      "residual_pct": -0.518846,
+      "iq_score": 86.97,
+      "cluster": "Pok\u00e9mon \u00b7 Special Illustration Rare",
       "dynamics": {
         "demand_pressure": null,
         "supply_saturation": 1.0,
-        "status": "awaiting_data"
+        "status": "awaiting_data",
+        "active_listings": null,
+        "sold_7d": null,
+        "new_7d": null,
+        "basis": {
+          "days": 1
+        }
       },
       "mover_basis": "price_signal_fallback",
       "awaiting_data": true
@@ -3157,7 +3882,42 @@
       "dynamics": {
         "demand_pressure": null,
         "supply_saturation": 1.0,
-        "status": "awaiting_data"
+        "status": "awaiting_data",
+        "active_listings": null,
+        "sold_7d": null,
+        "new_7d": null,
+        "basis": {
+          "days": 1
+        }
+      },
+      "mover_basis": "price_signal_fallback",
+      "awaiting_data": true
+    },
+    {
+      "id": "me2pt5-275",
+      "name": "Mega Froslass ex",
+      "set_name": "Ascended Heroes",
+      "set_id": "me2pt5",
+      "rarity": "Special Illustration Rare",
+      "number": "275",
+      "image_small": "https://images.scrydex.com/pokemon/me2pt5-275/small",
+      "image_large": "https://images.scrydex.com/pokemon/me2pt5-275/large",
+      "market_price": 90.79,
+      "expected_price": 133.7759,
+      "raw_diff": 42.99,
+      "residual_pct": -0.321328,
+      "iq_score": 81.73,
+      "cluster": "Pok\u00e9mon \u00b7 Special Illustration Rare",
+      "dynamics": {
+        "demand_pressure": null,
+        "supply_saturation": 1.0,
+        "status": "awaiting_data",
+        "active_listings": null,
+        "sold_7d": null,
+        "new_7d": null,
+        "basis": {
+          "days": 1
+        }
       },
       "mover_basis": "price_signal_fallback",
       "awaiting_data": true
@@ -3172,15 +3932,50 @@
       "image_small": "https://images.pokemontcg.io/sv5/177.png",
       "image_large": "https://images.pokemontcg.io/sv5/177_hires.png",
       "market_price": 112.48,
-      "expected_price": 69.1819,
-      "raw_diff": -43.3,
-      "residual_pct": 0.62586,
+      "expected_price": 69.8117,
+      "raw_diff": -42.67,
+      "residual_pct": 0.611192,
       "iq_score": 83.81,
       "cluster": "Pok\u00e9mon \u00b7 Illustration Rare",
       "dynamics": {
         "demand_pressure": null,
         "supply_saturation": 1.0,
-        "status": "awaiting_data"
+        "status": "awaiting_data",
+        "active_listings": null,
+        "sold_7d": null,
+        "new_7d": null,
+        "basis": {
+          "days": 1
+        }
+      },
+      "mover_basis": "price_signal_fallback",
+      "awaiting_data": true
+    },
+    {
+      "id": "sv8pt5-150",
+      "name": "Glaceon ex",
+      "set_name": "Prismatic Evolutions",
+      "set_id": "sv8pt5",
+      "rarity": "Special Illustration Rare",
+      "number": "150",
+      "image_small": "https://images.pokemontcg.io/sv8pt5/150.png",
+      "image_large": "https://images.pokemontcg.io/sv8pt5/150_hires.png",
+      "market_price": 300.2,
+      "expected_price": 257.8434,
+      "raw_diff": -42.36,
+      "residual_pct": 0.164273,
+      "iq_score": 86.36,
+      "cluster": "Pok\u00e9mon \u00b7 Special Illustration Rare",
+      "dynamics": {
+        "demand_pressure": null,
+        "supply_saturation": 1.0,
+        "status": "awaiting_data",
+        "active_listings": null,
+        "sold_7d": null,
+        "new_7d": null,
+        "basis": {
+          "days": 1
+        }
       },
       "mover_basis": "price_signal_fallback",
       "awaiting_data": true
@@ -3195,61 +3990,166 @@
       "image_small": "https://images.pokemontcg.io/sv6/188.png",
       "image_large": "https://images.pokemontcg.io/sv6/188_hires.png",
       "market_price": 91.74,
-      "expected_price": 49.2661,
-      "raw_diff": -42.47,
-      "residual_pct": 0.862132,
+      "expected_price": 49.7051,
+      "raw_diff": -42.03,
+      "residual_pct": 0.845685,
       "iq_score": 80.84,
       "cluster": "Pok\u00e9mon \u00b7 Illustration Rare",
       "dynamics": {
         "demand_pressure": null,
         "supply_saturation": 1.0,
-        "status": "awaiting_data"
+        "status": "awaiting_data",
+        "active_listings": null,
+        "sold_7d": null,
+        "new_7d": null,
+        "basis": {
+          "days": 1
+        }
       },
       "mover_basis": "price_signal_fallback",
       "awaiting_data": true
     },
     {
-      "id": "sv5-205",
-      "name": "Walking Wake ex",
-      "set_name": "Temporal Forces",
-      "set_id": "sv5",
+      "id": "sv8pt5-168",
+      "name": "Bloodmoon Ursaluna ex",
+      "set_name": "Prismatic Evolutions",
+      "set_id": "sv8pt5",
       "rarity": "Special Illustration Rare",
-      "number": "205",
-      "image_small": "https://images.pokemontcg.io/sv5/205.png",
-      "image_large": "https://images.pokemontcg.io/sv5/205_hires.png",
-      "market_price": 63.62,
-      "expected_price": 105.8455,
-      "raw_diff": 42.23,
-      "residual_pct": -0.398935,
-      "iq_score": 89.67,
+      "number": "168",
+      "image_small": "https://images.pokemontcg.io/sv8pt5/168.png",
+      "image_large": "https://images.pokemontcg.io/sv8pt5/168_hires.png",
+      "market_price": 82.11,
+      "expected_price": 122.7123,
+      "raw_diff": 40.6,
+      "residual_pct": -0.330874,
+      "iq_score": 86.72,
       "cluster": "Pok\u00e9mon \u00b7 Special Illustration Rare",
       "dynamics": {
         "demand_pressure": null,
         "supply_saturation": 1.0,
-        "status": "awaiting_data"
+        "status": "awaiting_data",
+        "active_listings": null,
+        "sold_7d": null,
+        "new_7d": null,
+        "basis": {
+          "days": 1
+        }
       },
       "mover_basis": "price_signal_fallback",
       "awaiting_data": true
     },
     {
-      "id": "me3-120",
-      "name": "Mega Zygarde ex",
-      "set_name": "Perfect Order",
-      "set_id": "me3",
+      "id": "sv6-211",
+      "name": "Teal Mask Ogerpon ex",
+      "set_name": "Twilight Masquerade",
+      "set_id": "sv6",
       "rarity": "Special Illustration Rare",
-      "number": "120",
-      "image_small": "https://images.scrydex.com/pokemon/me3-120/small",
-      "image_large": "https://images.scrydex.com/pokemon/me3-120/large",
-      "market_price": 69.01,
-      "expected_price": 110.0502,
-      "raw_diff": 41.04,
-      "residual_pct": -0.372922,
-      "iq_score": 82.82,
+      "number": "211",
+      "image_small": "https://images.pokemontcg.io/sv6/211.png",
+      "image_large": "https://images.pokemontcg.io/sv6/211_hires.png",
+      "market_price": 29.02,
+      "expected_price": 68.8486,
+      "raw_diff": 39.83,
+      "residual_pct": -0.578496,
+      "iq_score": 88.03,
       "cluster": "Pok\u00e9mon \u00b7 Special Illustration Rare",
       "dynamics": {
         "demand_pressure": null,
         "supply_saturation": 1.0,
-        "status": "awaiting_data"
+        "status": "awaiting_data",
+        "active_listings": null,
+        "sold_7d": null,
+        "new_7d": null,
+        "basis": {
+          "days": 1
+        }
+      },
+      "mover_basis": "price_signal_fallback",
+      "awaiting_data": true
+    },
+    {
+      "id": "sv7-170",
+      "name": "Terapagos ex",
+      "set_name": "Stellar Crown",
+      "set_id": "sv7",
+      "rarity": "Special Illustration Rare",
+      "number": "170",
+      "image_small": "https://images.pokemontcg.io/sv7/170.png",
+      "image_large": "https://images.pokemontcg.io/sv7/170_hires.png",
+      "market_price": 62.62,
+      "expected_price": 102.0323,
+      "raw_diff": 39.41,
+      "residual_pct": -0.386273,
+      "iq_score": 88.76,
+      "cluster": "Pok\u00e9mon \u00b7 Special Illustration Rare",
+      "dynamics": {
+        "demand_pressure": null,
+        "supply_saturation": 1.0,
+        "status": "awaiting_data",
+        "active_listings": null,
+        "sold_7d": null,
+        "new_7d": null,
+        "basis": {
+          "days": 1
+        }
+      },
+      "mover_basis": "price_signal_fallback",
+      "awaiting_data": true
+    },
+    {
+      "id": "sv3pt5-166",
+      "name": "Bulbasaur",
+      "set_name": "151",
+      "set_id": "sv3pt5",
+      "rarity": "Illustration Rare",
+      "number": "166",
+      "image_small": "https://images.pokemontcg.io/sv3pt5/166.png",
+      "image_large": "https://images.pokemontcg.io/sv3pt5/166_hires.png",
+      "market_price": 98.76,
+      "expected_price": 59.408,
+      "raw_diff": -39.35,
+      "residual_pct": 0.662402,
+      "iq_score": 83.16,
+      "cluster": "Pok\u00e9mon \u00b7 Illustration Rare",
+      "dynamics": {
+        "demand_pressure": null,
+        "supply_saturation": 1.0,
+        "status": "awaiting_data",
+        "active_listings": null,
+        "sold_7d": null,
+        "new_7d": null,
+        "basis": {
+          "days": 1
+        }
+      },
+      "mover_basis": "price_signal_fallback",
+      "awaiting_data": true
+    },
+    {
+      "id": "sv3pt5-201",
+      "name": "Alakazam ex",
+      "set_name": "151",
+      "set_id": "sv3pt5",
+      "rarity": "Special Illustration Rare",
+      "number": "201",
+      "image_small": "https://images.pokemontcg.io/sv3pt5/201.png",
+      "image_large": "https://images.pokemontcg.io/sv3pt5/201_hires.png",
+      "market_price": 84.54,
+      "expected_price": 45.7388,
+      "raw_diff": -38.8,
+      "residual_pct": 0.848322,
+      "iq_score": 82.06,
+      "cluster": "Pok\u00e9mon \u00b7 Special Illustration Rare",
+      "dynamics": {
+        "demand_pressure": null,
+        "supply_saturation": 1.0,
+        "status": "awaiting_data",
+        "active_listings": null,
+        "sold_7d": null,
+        "new_7d": null,
+        "basis": {
+          "days": 1
+        }
       },
       "mover_basis": "price_signal_fallback",
       "awaiting_data": true

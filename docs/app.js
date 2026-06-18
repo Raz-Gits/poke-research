@@ -348,31 +348,88 @@ function viewPriceLab() {
 }
 
 /* ============================================================
-   4. MOVERS — stub with awaiting-data badge
+   4. MOVERS — saturation-shift when live, price-fallback stub otherwise
    ============================================================ */
+const isSaturationBasis = (basis) => basis === 'saturation_shift';
+
+/* supply-saturation tag: <1 tightening (green), >1 loosening (red), ~1 steady */
+function saturationTag(sat) {
+  if (sat == null) return el('span', { class: 'delta delta--flat', text: '—' });
+  const shiftPct = Math.abs(sat - 1) * 100;
+  if (sat < 0.97) return el('span', { class: 'delta delta--down', text: `tightening −${shiftPct.toFixed(0)}%` });
+  if (sat > 1.03) return el('span', { class: 'delta delta--up', text: `loosening +${shiftPct.toFixed(0)}%` });
+  return el('span', { class: 'delta delta--flat', text: 'steady' });
+}
+
+/* live movers table: rank by |saturation−1|, show tag + active listings + 7d sold */
+function moversTableLive(rows) {
+  const head = el('thead', {}, el('tr', {}, [
+    el('th', { class: 'lb-rank', text: '#' }),
+    el('th', { text: 'Card' }),
+    el('th', { class: 'num', text: 'Saturation' }),
+    el('th', { class: 'num', text: 'Supply shift' }),
+    el('th', { class: 'num', text: 'Active' }),
+    el('th', { class: 'num', text: 'Sold 7d' }),
+  ]));
+  const body = el('tbody', {}, rows.map((r, i) => {
+    const dyn = r.dynamics || {};
+    const awaiting = dyn.status === 'awaiting_data';
+    const sat = dyn.supply_saturation;
+    const thumb = el('img', { class: 'lb-thumb', src: r.image_small || PLACEHOLDER, alt: r.name, loading: 'lazy' });
+    thumb.addEventListener('error', () => imgFallback(thumb));
+    const tr = el('tr', { class: 'clickable', dataset: { id: r.id } }, [
+      el('td', { class: 'lb-rank num', text: String(i + 1) }),
+      el('td', {}, el('div', { class: 'lb-card-cell' }, [
+        thumb,
+        el('div', {}, [
+          el('div', { class: 'lb-name', text: r.name }),
+          el('div', { class: 'lb-sub', text: `${r.set_name} · #${r.number} · ${r.rarity}` }),
+        ]),
+      ])),
+      el('td', { class: 'num lb-price', text: awaiting ? '—' : `${Number(sat).toFixed(2)}×` }),
+      el('td', { class: 'num' }, awaiting ? el('span', { class: 'badge-stub', text: 'awaiting data' }) : saturationTag(sat)),
+      el('td', { class: 'num lb-price', text: awaiting || dyn.active_listings == null ? '—' : dyn.active_listings.toLocaleString() }),
+      el('td', { class: 'num lb-price', text: awaiting || dyn.sold_7d == null ? '—' : dyn.sold_7d.toLocaleString() }),
+    ]);
+    tr.addEventListener('click', () => openModal(r.id));
+    return tr;
+  }));
+  return el('div', { class: 'table-card' },
+    el('div', { class: 'table-scroll' }, el('table', { class: 'lb' }, [head, body])));
+}
+
 function viewMovers() {
   const lb = STATE.leaderboard;
-  const awaiting = lb.movers.length && lb.movers.every((m) => m.awaiting_data);
+  const live = isSaturationBasis(lb.movers_basis);
 
-  const banner = el('div', { class: 'table-card', style: 'padding:20px 24px;display:flex;gap:16px;align-items:center;flex-wrap:wrap;margin-bottom:24px;box-shadow:none;background:var(--surface-soft)' }, [
-    el('span', { class: 'badge-stub', text: 'awaiting eBay data' }),
-    el('p', { class: 'body-sm', style: 'margin:0;color:var(--slate);max-width:62ch', html:
-      'Real day-over-day movers need the <strong>eBay Browse API</strong> (active-listing snapshots, diffed daily to estimate sold/unsold) — which isn’t wired yet. Until then we fall back to the cards whose market price diverges most from the model.' }),
-  ]);
+  const banner = live
+    ? el('div', { class: 'table-card', style: 'padding:20px 24px;display:flex;gap:16px;align-items:center;flex-wrap:wrap;margin-bottom:24px;box-shadow:none;background:var(--surface-soft)' }, [
+        el('span', { class: 'chip chip--teal', text: 'live · eBay supply' }),
+        el('p', { class: 'body-sm', style: 'margin:0;color:var(--slate);max-width:64ch', html:
+          'Ranked by <strong>supply-saturation shift</strong> = mean active listings over the last 7 days vs the last 30 days. <span style="color:var(--success-accent);font-weight:600">Tightening</span> (below 1×) means supply is drying up faster than it’s replenishing; <span style="color:var(--brand-red-dark);font-weight:600">loosening</span> (above 1×) means listings are piling up. Sold figures are estimated by diffing daily active-listing snapshots.' }),
+      ])
+    : el('div', { class: 'table-card', style: 'padding:20px 24px;display:flex;gap:16px;align-items:center;flex-wrap:wrap;margin-bottom:24px;box-shadow:none;background:var(--surface-soft)' }, [
+        el('span', { class: 'badge-stub', text: 'awaiting eBay data' }),
+        el('p', { class: 'body-sm', style: 'margin:0;color:var(--slate);max-width:62ch', html:
+          'Real day-over-day movers need the <strong>eBay Browse API</strong> (active-listing snapshots, diffed daily to estimate sold/unsold) — which isn’t wired yet. Until then we fall back to the cards whose market price diverges most from the model.' }),
+      ]);
 
   const section = el('section', { class: 'section container' }, [
     el('div', { class: 'section-head' }, [
       el('div', {}, [
         el('p', { class: 'micro section-eyebrow', text: 'Movers' }),
         el('h2', { class: 'h2', text: 'Biggest market movers' }),
-        el('p', { class: 'section-sub', text:
-          'When supply data lands, this ranks cards by 7-day vs 30-day listing-supply shift (loosening vs tightening). For now it shows the largest price-vs-model gaps as a placeholder basis.' }),
+        el('p', { class: 'section-sub', text: live
+          ? 'Ranked by 7-day vs 30-day listing-supply shift. Tightening supply (green) tends to precede price strength; loosening supply (red) tends to precede softening.'
+          : 'When supply data lands, this ranks cards by 7-day vs 30-day listing-supply shift (loosening vs tightening). For now it shows the largest price-vs-model gaps as a placeholder basis.' }),
       ]),
-      awaiting ? el('span', { class: 'badge-stub', text: 'stub · price fallback' }) : el('span', { class: 'chip chip--teal', text: 'live' }),
+      live ? el('span', { class: 'chip chip--teal', text: 'live' }) : el('span', { class: 'badge-stub', text: 'stub · price fallback' }),
     ]),
     banner,
-    leaderboardTable(lb.movers, { deltaLabel: 'Price gap' }),
-    el('p', { class: 'caption', html: `Basis: <code>${lb.movers_basis || 'price_signal_fallback'}</code> — a stand-in until supply-saturation data exists. No eBay / sold-comp feed is implied.` }),
+    live ? moversTableLive(lb.movers) : leaderboardTable(lb.movers, { deltaLabel: 'Price gap' }),
+    el('p', { class: 'caption', html: live
+      ? 'Basis: <code>saturation_shift</code> — mean active listings (7d) ÷ mean active listings (30d), inferred from daily eBay active-listing snapshots. Sold/unsold are estimated by day-over-day diffing, not confirmed sold comps.'
+      : `Basis: <code>${lb.movers_basis || 'price_signal_fallback'}</code> — a stand-in until supply-saturation data exists. No eBay / sold-comp feed is implied.` }),
   ]);
 
   setView(section);
@@ -550,12 +607,12 @@ function buildModalContent(card) {
     deltaBig,
   ]);
 
-  /* gauges: demand pressure + supply saturation from card.dynamics (stubbed) */
+  /* gauges: demand pressure + supply saturation from card.dynamics */
   const dyn = card.dynamics || {};
-  const stub = dyn.status === 'awaiting_data' || dyn.demand_pressure == null;
+  const dynLive = dyn.status === 'ok' && dyn.demand_pressure != null;
   const gauges = el('div', { class: 'gauges' }, [
-    gauge('Demand pressure', dyn.demand_pressure, 0.20, stub, '%'),
-    gauge('Supply saturation', dyn.supply_saturation != null ? dyn.supply_saturation - 1 : null, 0.5, stub, '×', dyn.supply_saturation),
+    demandGauge(dyn, !dynLive),
+    saturationGauge(dyn, dyn.status === 'awaiting_data'),
   ]);
 
   /* ----- live signals panel ----- */
@@ -666,28 +723,65 @@ function buildModalContent(card) {
           el('span', { class: 'caption', text: 'composite of scarcity, character premium & in-set rank' }),
         ]),
         gauges,
-        el('p', { class: 'caption', html: 'Demand pressure & supply saturation need an eBay feed — shown as <strong>awaiting data</strong>.' }),
+        el('p', { class: 'caption', html: dynLive
+          ? `Demand pressure = est. sold (7d) ÷ total supply; supply saturation = active listings 7-day vs 30-day average. Inferred from daily eBay active-listing snapshots${dyn.active_listings != null ? ` (${dyn.active_listings.toLocaleString()} active, ${(dyn.sold_7d ?? 0).toLocaleString()} est. sold this week)` : ''}.`
+          : 'Demand pressure & supply saturation need an eBay feed — shown as <strong>awaiting data</strong>.' }),
         signalsPanel,
       ]),
     ]),
   ]);
 }
 
-function gauge(label, value, max, isStub, unit, rawDisplay) {
-  const pct = (!isStub && value != null) ? Math.max(0, Math.min(1, (value + (unit === '×' ? max : 0)) / (unit === '×' ? max * 2 : max))) : 0.5;
-  const fill = el('div', { class: `gauge-fill${isStub ? ' is-stub' : ''}`, style: `width:${(isStub ? 100 : pct * 100).toFixed(0)}%` });
-  let readout;
-  if (isStub) readout = 'awaiting data';
-  else if (unit === '×') readout = `${(rawDisplay ?? 1).toFixed(2)}× (>1 loosening, <1 tightening)`;
-  else readout = PCT(value);
+/* shared gauge shell */
+function gaugeShell(label, badge, barChildren, readout) {
   return el('div', { class: 'gauge' }, [
     el('div', { class: 'gauge-head' }, [
       el('span', { class: 'gauge-label', text: label }),
-      isStub ? el('span', { class: 'badge-stub', text: 'stub' }) : el('span', { class: 'chip chip--teal', text: 'est' }),
+      badge,
     ]),
-    el('div', { class: 'gauge-bar' }, fill),
+    el('div', { class: 'gauge-bar' }, barChildren),
     el('div', { class: 'gauge-value', text: readout }),
   ]);
+}
+
+/* Demand pressure: est_sold(7d)/total_supply as a %. Coral→yellow→red fill by magnitude.
+   The gradient bar is full-width and a mask reveals it up to the value, so low % reads
+   coral and high % climbs into red. Scaled so ~40%+ pressure pegs the gauge. */
+function demandGauge(dyn, isStub) {
+  const DP_FULL = 0.40; /* demand_pressure that fills the gauge */
+  if (isStub) {
+    const fill = el('div', { class: 'gauge-fill is-stub', style: 'width:100%' });
+    return gaugeShell('Demand pressure',
+      el('span', { class: 'badge-stub', text: 'stub' }), fill, 'awaiting data');
+  }
+  const dp = dyn.demand_pressure;
+  const frac = Math.max(0, Math.min(1, dp / DP_FULL));
+  const fill = el('div', { class: 'gauge-fill', style: `width:${(frac * 100).toFixed(0)}%` });
+  return gaugeShell('Demand pressure',
+    el('span', { class: 'chip chip--teal', text: 'est' }), fill,
+    `${PCT(dp)} of supply sold in 7d (est.)`);
+}
+
+/* Supply saturation: a needle centered on 1.0 (steady). Left of center = tightening
+   (green), right = loosening (red). Maps saturation in [0.5, 1.5] to needle [0,100%]. */
+function saturationGauge(dyn, isStub) {
+  if (isStub) {
+    const fill = el('div', { class: 'gauge-fill is-stub', style: 'width:100%' });
+    return gaugeShell('Supply saturation',
+      el('span', { class: 'badge-stub', text: 'stub' }), fill, 'awaiting data');
+  }
+  const sat = dyn.supply_saturation != null ? dyn.supply_saturation : 1;
+  const SPAN = 0.5; /* saturation range shown each side of 1.0 */
+  const pos = Math.max(0, Math.min(1, (sat - (1 - SPAN)) / (2 * SPAN))) * 100;
+  const tone = sat < 0.97 ? 'tightening' : sat > 1.03 ? 'loosening' : 'steady';
+  const needle = el('div', { class: `gauge-needle gauge-needle--${tone}`, style: `left:${pos.toFixed(1)}%` });
+  const track = el('div', { class: 'gauge-track gauge-track--saturation' }, [
+    el('div', { class: 'gauge-center-mark' }), needle,
+  ]);
+  const word = sat < 0.97 ? 'tightening' : sat > 1.03 ? 'loosening' : 'steady';
+  return gaugeShell('Supply saturation',
+    el('span', { class: 'chip chip--teal', text: 'est' }), track,
+    `${sat.toFixed(2)}× · ${word} (>1 loosening, <1 tightening)`);
 }
 
 function fmtFeat(f, v) {

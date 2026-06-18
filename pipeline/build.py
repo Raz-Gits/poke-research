@@ -115,24 +115,16 @@ def _load_sets() -> List[dict]:
 def _load_ebay_history(out_dir: Path) -> Dict[str, List[dict]]:
     """Load every ``ebay-<date>.json`` snapshot into per-card history.
 
-    Returns ``{card_id: [snapshot_row + {'date': <file date>}, ...]}`` sorted by
-    date, ready for :func:`market_dynamics.compute`. With the collector stubbed
-    every row is neutral/empty, so compute() returns the awaiting-data fallback —
-    which is exactly what we want to surface honestly in the UI.
+    Delegates to :func:`market_dynamics.load_history`, which reads each
+    ``ebay-<YYYY-MM-DD>.json`` in date order, stamps every per-card row with its
+    file date, and backfills the day-over-day flow fields
+    (``new_listings``/``ended_listings``/``est_sold``/``est_unsold``) via
+    ``collectors.ebay.diff_row`` so demand pressure works even from counts-only
+    snapshots. Returns ``{card_id: [rows sorted by date]}``. With the collector
+    stubbed (no key, no history) every row is neutral, so compute() returns the
+    awaiting-data fallback — which is exactly what we surface honestly in the UI.
     """
-    history: Dict[str, List[dict]] = {}
-    for f in sorted(Path(out_dir).glob("ebay-*.json")):
-        # Filename is ebay-YYYY-MM-DD.json -> the snapshot date.
-        snap_date = f.stem.replace("ebay-", "")
-        try:
-            rows = _load_json(f)
-        except (json.JSONDecodeError, OSError):
-            continue
-        for card_id, row in rows.items():
-            stamped = dict(row)
-            stamped["date"] = snap_date
-            history.setdefault(card_id, []).append(stamped)
-    return history
+    return market_dynamics.load_history(out_dir)
 
 
 # ---------------------------------------------------------------------------
