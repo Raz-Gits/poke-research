@@ -370,9 +370,9 @@ function viewPriceLab() {
         el('p', { class: 'micro section-eyebrow', text: 'Price Lab' }),
         el('h2', { class: 'h2', text: 'Undervalued & overvalued cards' }),
         el('p', { class: 'section-sub', text:
-          'The model predicts a fair price for each card from scarcity, character premium and in-set rank. The delta is how far the live market sits from that estimate. Open any card to tune the signals yourself.' }),
+          'The model predicts a fair price for each card from scarcity, rarity and character premium. The delta is how far the live market sits from that estimate. For how accurate these calls actually are, see the Track Record. Open any card to tune the signals yourself.' }),
       ]),
-      el('span', { class: 'chip chip--lavender', html: `R²&nbsp;${(STATE.meta.model_r2_log ?? 0).toFixed(2)} · ${STATE.meta.clusters} clusters` }),
+      el('span', { class: 'chip chip--lavender', html: `In-sample fit&nbsp;${(STATE.meta.model_r2_log ?? 0).toFixed(2)} · ${STATE.meta.clusters} clusters` }),
     ]),
     el('div', { class: 'lab-grid' }, [under, over]),
     el('p', { class: 'caption', html: 'Expected price is a statistical <strong>estimate</strong>, not an appraisal. Green = trading below the model (potential value); red = trading above (potential premium).' }),

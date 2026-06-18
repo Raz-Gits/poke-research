@@ -54,12 +54,19 @@ Deploy = commit + push to `main`; **Netlify** rebuilds and swaps in ~1 min
   (only Shrouded's Hyper is still a small-sample estimate). pull_cost =
   pack_price ÷ (tier_prob ÷ #cards-of-that-rarity-in-set).
 - **signals.py** — `char_premium_table` (uses popularity.py + structural
-  fallback), `scarcity` = 10·(0.7·rarity_rank + 0.3·age_factor), `set_rank`,
+  fallback; + a systematic **Kanto/Gen-1 tilt**: every char with dex# 1-151
+  gets +0.75, capped 9.5, never lowering — preserves intra-region ranking,
+  validated to not hurt forward IC), `scarcity` = 10·(0.7·rarity_rank +
+  0.3·age_factor), `set_rank` = within-set **rarity-tier** percentile
+  (price-FREE, non-circular — was a within-set *price* percentile that leaked
+  the label, corr 0.86 w/ price; swapped after the formula-eval backtest),
   stub features (demand_pressure/grading/universal_appeal).
 - **popularity.py** — character premium backbone (see below).
 - **review_premium.py** — flags price-vs-premium discrepancies for manual review.
 - **model.py** — clustered ridge regression on log(price), one model per
-  (supertype · rarity) cluster + global fallback. R²(log) ≈ 0.96.
+  (supertype · rarity) cluster + global fallback. R²(log) ≈ 0.92 (was 0.96
+  before removing the circular set_rank — R² is IN-SAMPLE fit, NOT accuracy;
+  judge the model on forward IC, not R²; the frontend chip says "in-sample fit").
 - **market_dynamics.py** + **collectors/ebay.py** — eBay demand pressure / supply
   saturation. Needs `EBAY_APP_ID`/`EBAY_CERT_ID` in `.env` (gitignored). Until
   then dynamics stays `awaiting_data` — the live site must NEVER present
@@ -78,12 +85,20 @@ Deploy = commit + push to `main`; **Netlify** rebuilds and swaps in ~1 min
 
 ## Backtest / Track Record — what it found (honest)
 
-The model's edge is **real but specific** (28-day horizon, HAC t):
-- **Strong on fresh releases** (post-release ≤35d): IC ≈ +0.22, HAC t ≈ 8,
-  positive 57/64 weeks — fresh chase cards are overpriced and fall ~10%/month,
+The model's edge is **real but specific** (28-day horizon, HAC t). Current
+formula (rarity-ordinal set_rank + Kanto tilt):
+- **Strong on fresh releases** (post-release ≤35d): IC ≈ +0.27, HAC t ≈ 10.9,
+  positive 63/64 weeks — fresh chase cards are overpriced and fall ~10%/month,
   and the model ranks which fall hardest.
-- **≈ zero on mature, liquid cards** (>90d & >$10): IC ≈ −0.02. Not a crystal
-  ball for blue-chips. Edge also collapses above a ~$10 floor (cheap-card noise).
+- **≈ zero on mature, liquid cards** (>90d & >$10): IC ≈ −0.03 (HAC t −1.05,
+  insignificant). Not a crystal ball for blue-chips. Edge also collapses above
+  a ~$10 floor (cheap-card noise). all-cards IC ≈ +0.094 (t 6.5).
+- **formula-eval (multi-agent, 6 variants)**: proved `set_rank` was circular
+  (corr 0.86 w/ price), inflating R² 0.91→0.95 without aiding forward IC.
+  Swapping to a non-circular rarity ordinal lifted fresh IC 0.23→0.27 and made
+  R² honest. Supply-only (drop char_premium) is NOT better — it flips mature IC
+  to significantly wrong-signed (t −2.27). Don't strip features; don't chase R².
+  One modest cost: decile spread on 'all' dipped 0.096→0.081.
 4 adversarial agents verified: no look-ahead leakage, id-map correct. They caught
 the inflated naive t (10→~6 after HAC), the presale-window effect (TCGCSV carries
 presale prices; headline fresh-cut excludes negative ages), and the ME variant

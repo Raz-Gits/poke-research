@@ -118,6 +118,9 @@ def normalize_card(c: dict) -> dict:
         "market_price": market,
         "price_variant": variant,
         "price_updated": (c.get("tcgplayer") or {}).get("updatedAt"),
+        # National Pokédex number (first listed) — lets us derive region/gen.
+        # 1-151 = Kanto (Gen 1). None for Trainers/Energy.
+        "dex": (c.get("nationalPokedexNumbers") or [None])[0],
     }
 
 

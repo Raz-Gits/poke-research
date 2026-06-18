@@ -8,3 +8,9 @@ data/raw/
 data/tcgcsv_archive/
 # secrets — never commit your eBay keys
 .env
+# Google Trends scratch (collector built + tested, NOT wired into the model)
+data/trends.json
+data/_trends_fetch.log
+# formula-eval scratch runners (keep the reusable harness experiments/eval_formula.py)
+experiments/_run_*.py
+experiments/_paired_diff_check.py

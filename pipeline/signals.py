@@ -41,7 +41,8 @@ Design notes
   import pull rates — it uses the rarity-tier ordering directly so the module
   stays decoupled from pullrates; pull_cost is the precise pull-economics
   signal and is injected separately.
-* `set_rank` is a 0-1 price percentile *within the card's set*.
+* `set_rank` is a 0-1 *rarity-tier* percentile within the card's set
+  (price-free, non-circular — was a price percentile; see set_rank_table).
 
 Everything is plain stdlib + numpy.
 """
@@ -105,6 +106,18 @@ _CHARPREM_W_PRICE = 0.30   # reduced-weight price percentile
 _CHARPREM_W_PRINTINGS = 0.35  # total printings (reprints = demand)
 _CHARPREM_W_SETS = 0.30       # distinct-set breadth
 _CHARPREM_W_CHASE = 0.35      # rarity-weighted chase intensity
+
+# Kanto (Gen 1) nostalgia tilt: Gen-1 mons carry a durable, broad desirability
+# premium in the TCG market. We lift every Kanto character by a small ADDITIVE
+# bonus (preserves intra-region ranking — Charizard still tops Magikarp),
+# capped below the 10.0 reserved for hand-pinned icons, and never LOWERING a
+# character (so Charizard=10 / Pikachu=10 overrides are untouched). Region is
+# derived systematically from the National Pokédex number (1-151), not hand-
+# typed. Bonus size is validated against the walk-forward backtest.
+_KANTO_DEX_LO = 1
+_KANTO_DEX_HI = 151
+_KANTO_PREMIUM_BONUS = 0.75   # additive lift applied to Kanto characters
+_KANTO_PREMIUM_CAP = 9.5      # cap (10.0 stays reserved for USER_OVERRIDES)
 
 # Rarity-weighted "chase weight": rarer chase => stronger desirability signal.
 # Common/Uncommon/Rare/Double Rare/ACE SPEC are NOT chase tiers and contribute 0
@@ -225,6 +238,7 @@ def char_premium_table(cards: List[dict]) -> Dict[str, float]:
     sets_of: Dict[str, set] = defaultdict(set)
     chase_raw: Dict[str, float] = defaultdict(float)   # rarity-weighted intensity
     prices_of: Dict[str, list] = defaultdict(list)     # priced printings per char
+    is_kanto: Dict[str, bool] = defaultdict(bool)      # any printing with a Kanto dex#
 
     for c in cards:
         name = c.get("base_name")
@@ -238,6 +252,9 @@ def char_premium_table(cards: List[dict]) -> Dict[str, float]:
         price = c.get("market_price")
         if price is not None:
             prices_of[name].append(float(price))
+        dex = c.get("dex")
+        if isinstance(dex, int) and _KANTO_DEX_LO <= dex <= _KANTO_DEX_HI:
+            is_kanto[name] = True
 
     all_names = list(n_printings.keys())
     if not all_names:
@@ -284,9 +301,14 @@ def char_premium_table(cards: List[dict]) -> Dict[str, float]:
     for nm in all_names:
         prior, _src = popularity.popularity_prior(nm)
         if prior is not None:
-            premium[nm] = round(prior, 4)
+            base = prior
         else:
-            premium[nm] = round(structural[nm] / 10.0 * popularity.POLL_FLOOR, 4)
+            base = structural[nm] / 10.0 * popularity.POLL_FLOOR
+        # Kanto nostalgia tilt: additive, ranking-preserving, never lowers a
+        # character, capped below the reserved-10.0 icon tier.
+        if is_kanto.get(nm) and base < _KANTO_PREMIUM_CAP:
+            base = min(_KANTO_PREMIUM_CAP, base + _KANTO_PREMIUM_BONUS)
+        premium[nm] = round(base, 4)
     return premium
 
 
@@ -303,24 +325,39 @@ def scarcity(rarity: str, months_old: float) -> float:
 
 
 def set_rank_table(cards: List[dict]) -> Dict[str, float]:
-    """Per-card 0-1 market-price percentile *within its own set*.
+    """Per-card 0-1 WITHIN-SET RARITY-TIER percentile (non-circular).
 
-    Cards with no price get a neutral 0.5.
+    Where does this card sit, by RARITY, among the cards in its own set:
+    the fraction of cards in the set whose rarity ordinal is <= this card's.
+    Deliberately price-FREE — it uses the rarity-tier ordering only.
+
+    History/why: this used to be a within-set *price* percentile, which
+    correlated ~0.86-0.89 with the very price the model predicts (circular
+    target leakage). That inflated R**2 (0.91 -> 0.95) while *hurting* the
+    honest forward-IC metric, and it could mark an already-expensive card
+    "fairly priced" because it was expensive. The walk-forward backtest
+    confirmed swapping to this rarity ordinal removes the leakage while
+    keeping fresh-release IC strong (~0.26, t~9.7). See CLAUDE.md.
+
+    Cards with an unknown rarity fall back to the neutral rarity ordinal.
     """
-    by_set: Dict[str, List[float]] = defaultdict(list)
+    by_set_ords: Dict[str, List[float]] = defaultdict(list)
+    card_ord: Dict[str, float] = {}
     for c in cards:
-        price = c.get("market_price")
-        if price is not None:
-            by_set[c["set_id"]].append(float(price))
-    set_sorted = {sid: np.sort(np.array(p, dtype=float)) for sid, p in by_set.items()}
+        o = _RARITY_RANK.get(c.get("rarity"), _NEUTRAL_RARITY_RANK)
+        card_ord[c["id"]] = o
+        by_set_ords[c["set_id"]].append(o)
+    set_sorted = {sid: np.sort(np.array(v, dtype=float)) for sid, v in by_set_ords.items()}
 
     ranks: Dict[str, float] = {}
     for c in cards:
-        price = c.get("market_price")
-        if price is None:
+        arr = set_sorted[c["set_id"]]
+        n = arr.size
+        if n == 0:
             ranks[c["id"]] = 0.5
             continue
-        ranks[c["id"]] = round(_percentile_rank(float(price), set_sorted[c["set_id"]]), 4)
+        count_le = int(np.searchsorted(arr, card_ord[c["id"]], side="right"))
+        ranks[c["id"]] = round(count_le / n, 4)
     return ranks
 
 

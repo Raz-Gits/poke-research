@@ -63,6 +63,10 @@ USER_OVERRIDES: Dict[str, float] = {
     "Snorlax": 9.3,
     "Eevee": 9.5,
     "Rayquaza": 9.0,
+    # NOTE: the Kanto starters are no longer hand-pinned here — the systematic
+    # Kanto (Gen-1) nostalgia tilt in signals.char_premium_table lifts the whole
+    # region by +0.75 (capped 9.5), preserving the data-driven intra-region
+    # ranking. Charizard/Pikachu stay pinned at 10.0 as marquee top icons.
 }
 
 # ---------------------------------------------------------------------------
