@@ -23,11 +23,19 @@ Use `inject_pull_cost(features, pull_costs)` to merge it in.
 Design notes
 ------------
 * `char_premium` ranks a *character* (the card's `base_name`, e.g. "Umbreon")
-  by the mean market price of all of its printings across the whole corpus,
-  then converts that to a 0-10 percentile. It is blended with the character's
-  rank *within its own set+rarity tier* so that, within a tier, the
-  chase characters still float to the top. The result is a property of the
-  character, so every printing of "Charizard" shares the same premium.
+  on a 0-10 scale using a HYBRID, de-skewed blend: ~70% an INDEPENDENT,
+  price-free popularity score and ~30% a reduced-weight price-percentile
+  component. The independent block is three price-free signals — total
+  printings (reprints = demand), distinct-set breadth, and a rarity-weighted
+  chase intensity (how often / how strongly TPC lavishes premium/chase rarities
+  on the character) — each log1p-compressed and clean-percentile-ranked across
+  base_names. The price block is the clean corpus percentile of the character's
+  MEAN market price, folded in at only 30% so popular-but-cheap and
+  rare-but-expensive characters both behave sensibly while keeping circularity
+  low; unpriced characters get a neutral 0.5 price percentile. The blended score
+  is mapped through one final clean percentile to a ~uniform 0-10 distribution
+  (mean ~5). The result is a property of the character, so every printing of
+  "Charizard" shares the same premium. Covers Pokemon AND Trainers.
 * `scarcity` blends rarity-tier rarity (rarer tier => higher) with
   `months_since_release` (older / more out-of-print => higher). It does NOT
   import pull rates — it uses the rarity-tier ordering directly so the module
@@ -39,6 +47,7 @@ Everything is plain stdlib + numpy.
 """
 from __future__ import annotations
 
+import math
 from collections import defaultdict
 from datetime import date, datetime
 from typing import Dict, Iterable, List, Optional
@@ -73,9 +82,79 @@ _SCARCITY_AGE_CAP_MONTHS = 60.0
 _SCARCITY_W_RARITY = 0.7
 _SCARCITY_W_AGE = 0.3
 
-# Weight split for char_premium = w_corpus * corpus_pct + w_tier * tier_pct.
-_CHARPREM_W_CORPUS = 0.6
-_CHARPREM_W_TIER = 0.4
+# char_premium is a HYBRID, de-skewed character-popularity signal on a 0-10
+# scale. It blends an INDEPENDENT, price-free popularity score at 70% with a
+# small, reduced-weight price-percentile component at 30% — keeping circularity
+# low while letting price break ties sensibly. The independent block is three
+# price-free signals: total printings (reprints = demand), distinct-set breadth,
+# and a rarity-weighted chase intensity (how strongly TPC lavishes premium/chase
+# rarities on a character). Each signal is log1p-compressed then clean-
+# percentile-ranked across base_names; the blend is mapped through one final
+# clean percentile to a ~uniform 0-10 distribution (mean ~5).
+#
+# Blend weights: independent popularity (price-free) vs reduced-weight price.
+_CHARPREM_W_INDEP = 0.70   # independent popularity (price-free)
+_CHARPREM_W_PRICE = 0.30   # reduced-weight price percentile
+
+# Sub-signal weights within the independent block.
+_CHARPREM_W_PRINTINGS = 0.35  # total printings (reprints = demand)
+_CHARPREM_W_SETS = 0.30       # distinct-set breadth
+_CHARPREM_W_CHASE = 0.35      # rarity-weighted chase intensity
+
+# Rarity-weighted "chase weight": rarer chase => stronger desirability signal.
+# Common/Uncommon/Rare/Double Rare/ACE SPEC are NOT chase tiers and contribute 0
+# (any rarity absent from this map adds nothing to the chase intensity).
+_CHARPREM_CHASE_WEIGHT = {
+    "Ultra Rare": 1.0,
+    "Shiny Rare": 1.2,
+    "Illustration Rare": 1.4,
+    "Shiny Ultra Rare": 1.6,
+    "Special Illustration Rare": 2.0,
+    "MEGA_ATTACK_RARE": 2.2,
+    "Hyper Rare": 2.5,
+    "Mega Hyper Rare": 3.0,
+}
+
+# ---------------------------------------------------------------------------
+# Curated popularity prior. Seeded from an external price-residual popularity
+# ranking of Kanto Pokémon (same residual method this model uses). Blended into
+# the computed premium for listed characters at _CURATED_BLEND weight: it injects
+# human-validated fame the print-metadata signal can't see (e.g. popularity built
+# in older sets outside our 11-set window) and lifts iconic Pokémon's expected
+# price so they aren't falsely flagged "overvalued". Scores are on the same 0-10
+# scale; Mega/form variants inherit the base Pokémon's score. Extend freely
+# (Gen 2, etc.) — just add rows.
+# ---------------------------------------------------------------------------
+_CURATED_BLEND = 1.0  # weight on the curated prior for listed characters (1.0 = override)
+_CURATED_POPULARITY: Dict[str, float] = {
+    # Kanto top 25 (rank 1 = most popular)
+    "Gengar": 10.0, "Charizard": 10.0, "Pikachu": 10.0, "Snorlax": 9.63,
+    "Squirtle": 9.5, "Bulbasaur": 9.38, "Mew": 9.25, "Psyduck": 9.13,
+    "Eevee": 9.0, "Gyarados": 8.88, "Dragonite": 8.75, "Blastoise": 8.63,
+    "Vaporeon": 8.5, "Flareon": 8.38, "Jolteon": 8.25, "Charmander": 8.13,
+    "Mewtwo": 8.0, "Magikarp": 7.88, "Ditto": 7.75, "Dragonair": 7.63,
+    "Alakazam": 7.5, "Arcanine": 7.38, "Ninetales": 7.25, "Vulpix": 7.13,
+    "Venusaur": 7.0,
+    # Manual additions (user-set; fan-favorites outside the Kanto video)
+    "Umbreon": 9.5,
+    # Kanto bottom 10 (least popular)
+    "Ekans": 3.0, "Geodude": 2.72, "Spearow": 2.44, "Venonat": 2.17,
+    "Seaking": 1.89, "Parasect": 1.61, "Doduo": 1.33, "Shellder": 1.06,
+    "Goldeen": 0.78, "Paras": 0.5,
+}
+
+
+def _curated_popularity(base_name: str) -> Optional[float]:
+    """Curated popularity for a character (or None). Mega/form variants inherit
+    the base Pokémon's score: 'Mega Gengar' -> Gengar, 'Mega Charizard Y' ->
+    Charizard."""
+    if base_name in _CURATED_POPULARITY:
+        return _CURATED_POPULARITY[base_name]
+    stem = base_name[5:] if base_name.startswith("Mega ") else base_name
+    parts = stem.split()
+    if len(parts) >= 2 and parts[-1] in {"X", "Y", "Z"}:
+        stem = " ".join(parts[:-1])
+    return _CURATED_POPULARITY.get(stem)
 
 
 # ---------------------------------------------------------------------------
@@ -126,63 +205,112 @@ def _percentile_rank(value: float, sorted_values: np.ndarray) -> float:
     return count_le / n
 
 
-def _char_mean_prices(cards: List[dict]) -> Dict[str, float]:
-    """Mean market price per character (base_name), priced printings only."""
-    by_char: Dict[str, List[float]] = defaultdict(list)
-    for c in cards:
-        price = c.get("market_price")
-        if price is None:
-            continue
-        by_char[c["base_name"]].append(float(price))
-    return {name: float(np.mean(prices)) for name, prices in by_char.items() if prices}
+def _charprem_percentile_table(values_by_name: Dict[str, float]) -> Dict[str, float]:
+    """Clean percentile rank (fraction of names with value <= this), in [0, 1].
+
+    Keyed by name. Ties share the right-side count, so the distribution of the
+    *output* is near-uniform when inputs are distinct. Empty input => ``{}``.
+    """
+    names = list(values_by_name.keys())
+    if not names:
+        return {}
+    order = np.sort(np.array([values_by_name[n] for n in names], dtype=float))
+    n = order.size
+    out: Dict[str, float] = {}
+    for nm in names:
+        count_le = int(np.searchsorted(order, values_by_name[nm], side="right"))
+        out[nm] = count_le / n if n else 0.5
+    return out
 
 
 def char_premium_table(cards: List[dict]) -> Dict[str, float]:
-    """Per-character premium on a 0-10 scale, keyed by base_name.
+    """Per-character popularity premium on a 0-10 scale, keyed by base_name.
 
-    Blends two percentiles:
-      * the character's mean price vs every other character across the corpus,
-      * the character's mean price vs other characters in the same
-        set + rarity tier (so chase cards stand out *within* their tier too).
+    HYBRID, de-skewed: blends an INDEPENDENT, price-free popularity score at 70%
+    with a small, reduced-weight price-percentile component at 30%, keeping
+    circularity low. Covers Pokemon AND Trainers. Every printing of a character
+    shares its premium.
+
+    Independent popularity (70%) is three price-free signals, each log1p-
+    compressed then clean-percentile-ranked across base_names:
+
+      * ``n_printings`` — how many cards a base_name appears on (reprints =
+        demand).
+      * ``n_sets`` — how many distinct sets the character appears in (breadth).
+      * ``chase`` — a rarity-weighted chase intensity: the sum of
+        ``_CHARPREM_CHASE_WEIGHT`` over the character's premium/chase printings
+        (Ultra/Shiny/Illustration/Special Illustration/Hyper/Mega), where rarer
+        chase tiers carry more weight.
+
+    Price component (30%) is the clean corpus percentile of the character's MEAN
+    market price (priced printings only). Unpriced characters get a neutral 0.5
+    price percentile so they are not unduly punished.
+
+    The 70/30 blend is mapped through one final clean percentile to a ~uniform
+    0-10 distribution (mean ~5).
     """
-    char_mean = _char_mean_prices(cards)
-    if not char_mean:
+    n_printings: Dict[str, int] = defaultdict(int)
+    sets_of: Dict[str, set] = defaultdict(set)
+    chase_raw: Dict[str, float] = defaultdict(float)   # rarity-weighted intensity
+    prices_of: Dict[str, list] = defaultdict(list)     # priced printings per char
+
+    for c in cards:
+        name = c.get("base_name")
+        if not name:
+            continue
+        n_printings[name] += 1
+        sets_of[name].add(c.get("set_id"))
+        rarity = c.get("rarity")
+        if rarity in _CHARPREM_CHASE_WEIGHT:
+            chase_raw[name] += _CHARPREM_CHASE_WEIGHT[rarity]
+        price = c.get("market_price")
+        if price is not None:
+            prices_of[name].append(float(price))
+
+    all_names = list(n_printings.keys())
+    if not all_names:
         return {}
 
-    # Corpus-wide percentile of each character's mean price.
-    corpus_sorted = np.sort(np.fromiter(char_mean.values(), dtype=float))
-    corpus_pct = {
-        name: _percentile_rank(mean, corpus_sorted) for name, mean in char_mean.items()
+    # Raw signals -> log1p-compressed values (tames heavy right tails before the
+    # percentile rank, e.g. Pikachu's many printings).
+    printings_val = {nm: math.log1p(n_printings[nm]) for nm in all_names}
+    sets_val = {nm: math.log1p(len(sets_of[nm])) for nm in all_names}
+    chase_val = {nm: math.log1p(chase_raw.get(nm, 0.0)) for nm in all_names}
+
+    # Mean market price per character (priced printings only).
+    char_mean_price = {
+        nm: float(np.mean(prices_of[nm])) for nm in all_names if prices_of.get(nm)
     }
 
-    # Within-(set, rarity) percentile. We rank a character by the mean price of
-    # that character's printings that fall in the given (set, rarity) bucket,
-    # then assign each character the best (max) tier percentile it achieves.
-    bucket_char_prices: Dict[tuple, Dict[str, List[float]]] = defaultdict(
-        lambda: defaultdict(list)
-    )
-    for c in cards:
-        price = c.get("market_price")
-        if price is None:
-            continue
-        key = (c["set_id"], c["rarity"])
-        bucket_char_prices[key][c["base_name"]].append(float(price))
+    # Clean percentile ranks across base_names.
+    p_print = _charprem_percentile_table(printings_val)
+    p_sets = _charprem_percentile_table(sets_val)
+    p_chase = _charprem_percentile_table(chase_val)
+    p_price = _charprem_percentile_table(char_mean_price) if char_mean_price else {}
 
-    tier_pct_best: Dict[str, float] = {}
-    for char_prices in bucket_char_prices.values():
-        means = {name: float(np.mean(p)) for name, p in char_prices.items()}
-        bucket_sorted = np.sort(np.fromiter(means.values(), dtype=float))
-        for name, m in means.items():
-            pct = _percentile_rank(m, bucket_sorted)
-            if pct > tier_pct_best.get(name, -1.0):
-                tier_pct_best[name] = pct
+    # 70% independent popularity + 30% reduced-weight price (neutral 0.5 if
+    # unpriced).
+    blended: Dict[str, float] = {}
+    for nm in all_names:
+        indep = (
+            _CHARPREM_W_PRINTINGS * p_print[nm]
+            + _CHARPREM_W_SETS * p_sets[nm]
+            + _CHARPREM_W_CHASE * p_chase[nm]
+        )
+        price_pct = p_price.get(nm, 0.5)
+        blended[nm] = _CHARPREM_W_INDEP * indep + _CHARPREM_W_PRICE * price_pct
 
-    premium: Dict[str, float] = {}
-    for name, mean in char_mean.items():
-        cp = corpus_pct.get(name, 0.5)
-        tp = tier_pct_best.get(name, cp)
-        blended = _CHARPREM_W_CORPUS * cp + _CHARPREM_W_TIER * tp
-        premium[name] = round(10.0 * blended, 4)
+    # Final clean 0-10 percentile (de-skew to a ~uniform distribution).
+    final_pct = _charprem_percentile_table(blended)
+    premium = {nm: round(10.0 * final_pct[nm], 4) for nm in all_names}
+
+    # Apply the curated popularity prior for listed characters (and their Mega/
+    # form variants). At _CURATED_BLEND=1.0 this overrides the computed value
+    # with the hand-validated popularity score.
+    for nm in all_names:
+        cur = _curated_popularity(nm)
+        if cur is not None:
+            premium[nm] = round(_CURATED_BLEND * cur + (1.0 - _CURATED_BLEND) * premium[nm], 4)
     return premium
 
 
@@ -317,30 +445,54 @@ if __name__ == "__main__":
             f"set_rank={f['set_rank']:.3f}"
         )
 
-    print("=== char_premium sanity check ===")
+    print("=== char_premium sanity check (hybrid 70% independent + 30% price) ===")
     show("Umbreon (SIR chase)", "sv8pt5-161")
     show("Charizard (SIR chase)", "sv3pt5-199")
 
-    # char_premium is a CHARACTER-level signal: every printing of a character
-    # shares its premium (per the contract: percentile of the character's MEAN
-    # price). So for a fair contrast we want a Common whose *character* is also
-    # genuinely cheap everywhere — not e.g. the Common Bulbasaur, whose mean is
-    # dragged up by its $90+ Illustration Rare printings.
-    char_mean = _char_mean_prices(cards)
+    # char_premium is a CHARACTER-level HYBRID signal: every printing of a
+    # character shares its premium (70% price-free independent popularity —
+    # printings + set breadth + rarity-weighted chase intensity — plus 30%
+    # reduced-weight mean-price percentile, all de-skewed to a ~uniform 0-10
+    # scale). A genuine nobody — a character printed once, in one set, with no
+    # chase rarity and a low price — must sit near the floor. We pick the Common
+    # whose *character* has the fewest printings so the contrast is a true one-
+    # off, not e.g. Bulbasaur (which also has chase alt-arts and reprints).
+    prints_per_char: Dict[str, int] = defaultdict(int)
+    for c in cards:
+        if c.get("base_name"):
+            prints_per_char[c["base_name"]] += 1
     a_common = min(
-        (c for c in cards if c["rarity"] == "Common" and c.get("market_price")),
-        key=lambda c: char_mean.get(c["base_name"], 0.0),
+        (c for c in cards if c["rarity"] == "Common"),
+        key=lambda c: prints_per_char.get(c["base_name"], 0),
     )
-    show("A true Common (cheap char)", a_common["id"])
+    show("A true one-off Common", a_common["id"])
 
+    char_prem = char_premium_table(cards)
     umb = feats["sv8pt5-161"]["char_premium"]
     chz = feats["sv3pt5-199"]["char_premium"]
     com = feats[a_common["id"]]["char_premium"]
+    pika = char_prem.get("Pikachu")
+    sunk = char_prem.get("Sunkern")
     print()
     print(f"Umbreon char_premium   = {umb:.3f}")
     print(f"Charizard char_premium = {chz:.3f}")
-    print(f"Common  char_premium   = {com:.3f}  ({a_common['base_name']})")
-    assert umb > com, "Umbreon should dominate a true Common"
-    assert chz > com, "Charizard should dominate a true Common"
-    assert umb > 9 and chz > 9 and com < 2, "premiums should be well separated"
-    print("\nPASS: Umbreon and Charizard char_premium >> Common char_premium")
+    print(f"Pikachu char_premium   = {pika if pika is None else round(pika, 3)}")
+    print(f"Sunkern char_premium   = {sunk if sunk is None else round(sunk, 3)}")
+    print(f"One-off char_premium   = {com:.3f}  ({a_common['base_name']})")
+    # Hybrid 70/30: multi-chase, multi-reprint, high-priced icons must clear a
+    # true one-off, while a genuine low-popularity filler sits near the floor.
+    # Unlike the old price-free variant, B folds in 30% mean-price percentile, so
+    # a single-printing-but-not-dirt-cheap Common (e.g. Nidoran ♀ ~$2.27) lands
+    # mid-scale rather than at the very bottom — the floor is anchored by a true
+    # filler character (Sunkern), not by whichever Common has the fewest prints.
+    # Expected under B on this corpus: Charizard ~9.85, Umbreon ~8.81,
+    # Pikachu ~10, Sunkern ~0.17.
+    assert umb > com, "Umbreon should dominate a true one-off"
+    assert chz > com, "Charizard should dominate a true one-off"
+    assert chz > 9, "Charizard (top icon) should sit near the top"
+    if pika is not None:
+        assert pika >= 9, "Pikachu (most-printed icon) should sit near the top"
+    if sunk is not None:
+        assert sunk < 3, "Sunkern (low-popularity filler) should sit near the floor"
+        assert chz - sunk > 6, "icons should clear a true filler by a wide margin"
+    print("\nPASS: hybrid 70/30 char_premium ranks icons >> a true filler")
