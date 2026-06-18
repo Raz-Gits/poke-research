@@ -88,6 +88,7 @@ SET_TIER_PROB: Dict[str, Dict[str, float]] = {
     # Ascended Heroes (me2pt5) — loosest top end of the four.
     "me2pt5": {
         "Illustration Rare": 0.1111,          # 1 in 9
+        "MEGA_ATTACK_RARE": 0.034483,         # 1 in 29 (replaced UR in the hit slot)
         "Special Illustration Rare": 0.014286,  # 1 in 70
         "Mega Hyper Rare": 0.001852,          # 1 in 540
     },
@@ -110,7 +111,8 @@ SET_TIER_PROB: Dict[str, Dict[str, float]] = {
     "sv6pt5": {
         "Illustration Rare": 0.083333,        # 1 in 12 (mini set, tougher IR)
         "Special Illustration Rare": 0.014925,  # 1 in 67
-        "Hyper Rare": 0.004167,               # ~1 in 240 (ESTIMATE)
+        "Hyper Rare": 0.006944,               # 1 in 144 (DripShop 1,000+ packs)
+        "ACE SPEC Rare": 0.05,                # 1 in 20
     },
 }
 

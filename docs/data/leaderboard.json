@@ -460,60 +460,6 @@
       }
     },
     {
-      "id": "sv6pt5-96",
-      "name": "Earthen Vessel",
-      "set_name": "Shrouded Fable",
-      "set_id": "sv6pt5",
-      "rarity": "Hyper Rare",
-      "number": "96",
-      "image_small": "https://images.pokemontcg.io/sv6pt5/96.png",
-      "image_large": "https://images.pokemontcg.io/sv6pt5/96_hires.png",
-      "market_price": 20.63,
-      "expected_price": 44.0778,
-      "raw_diff": 23.45,
-      "residual_pct": -0.531964,
-      "iq_score": 70.76,
-      "cluster": "Trainer \u00b7 Hyper Rare",
-      "dynamics": {
-        "demand_pressure": null,
-        "supply_saturation": 1.0,
-        "status": "awaiting_data",
-        "active_listings": null,
-        "sold_7d": null,
-        "new_7d": null,
-        "basis": {
-          "days": 1
-        }
-      }
-    },
-    {
-      "id": "sv6pt5-97",
-      "name": "Powerglass",
-      "set_name": "Shrouded Fable",
-      "set_id": "sv6pt5",
-      "rarity": "Hyper Rare",
-      "number": "97",
-      "image_small": "https://images.pokemontcg.io/sv6pt5/97.png",
-      "image_large": "https://images.pokemontcg.io/sv6pt5/97_hires.png",
-      "market_price": 21.43,
-      "expected_price": 44.3584,
-      "raw_diff": 22.93,
-      "residual_pct": -0.51689,
-      "iq_score": 69.27,
-      "cluster": "Trainer \u00b7 Hyper Rare",
-      "dynamics": {
-        "demand_pressure": null,
-        "supply_saturation": 1.0,
-        "status": "awaiting_data",
-        "active_listings": null,
-        "sold_7d": null,
-        "new_7d": null,
-        "basis": {
-          "days": 1
-        }
-      }
-    },
-    {
       "id": "sv6-216",
       "name": "Bloodmoon Ursaluna ex",
       "set_name": "Twilight Masquerade",
@@ -663,33 +609,6 @@
       "residual_pct": -0.403118,
       "iq_score": 74.44,
       "cluster": "Pok\u00e9mon \u00b7 Special Illustration Rare",
-      "dynamics": {
-        "demand_pressure": null,
-        "supply_saturation": 1.0,
-        "status": "awaiting_data",
-        "active_listings": null,
-        "sold_7d": null,
-        "new_7d": null,
-        "basis": {
-          "days": 1
-        }
-      }
-    },
-    {
-      "id": "sv6pt5-99",
-      "name": "Basic Metal Energy",
-      "set_name": "Shrouded Fable",
-      "set_id": "sv6pt5",
-      "rarity": "Hyper Rare",
-      "number": "99",
-      "image_small": "https://images.pokemontcg.io/sv6pt5/99.png",
-      "image_large": "https://images.pokemontcg.io/sv6pt5/99_hires.png",
-      "market_price": 37.02,
-      "expected_price": 56.3926,
-      "raw_diff": 19.37,
-      "residual_pct": -0.343531,
-      "iq_score": 70.1,
-      "cluster": "Energy \u00b7 Hyper Rare",
       "dynamics": {
         "demand_pressure": null,
         "supply_saturation": 1.0,
@@ -919,33 +838,6 @@
       }
     },
     {
-      "id": "sv3pt5-205",
-      "name": "Mew ex",
-      "set_name": "151",
-      "set_id": "sv3pt5",
-      "rarity": "Hyper Rare",
-      "number": "205",
-      "image_small": "https://images.pokemontcg.io/sv3pt5/205.png",
-      "image_large": "https://images.pokemontcg.io/sv3pt5/205_hires.png",
-      "market_price": 34.81,
-      "expected_price": 50.555,
-      "raw_diff": 15.74,
-      "residual_pct": -0.311442,
-      "iq_score": 90.77,
-      "cluster": "Pok\u00e9mon \u00b7 Hyper Rare",
-      "dynamics": {
-        "demand_pressure": null,
-        "supply_saturation": 1.0,
-        "status": "awaiting_data",
-        "active_listings": null,
-        "sold_7d": null,
-        "new_7d": null,
-        "basis": {
-          "days": 1
-        }
-      }
-    },
-    {
       "id": "sv7-171",
       "name": "Briar",
       "set_name": "Stellar Crown",
@@ -1090,9 +982,9 @@
       "image_small": "https://images.pokemontcg.io/sv8/249.png",
       "image_large": "https://images.pokemontcg.io/sv8/249_hires.png",
       "market_price": 3.86,
-      "expected_price": 17.2156,
-      "raw_diff": 13.36,
-      "residual_pct": -0.775785,
+      "expected_price": 17.2521,
+      "raw_diff": 13.39,
+      "residual_pct": -0.776259,
       "iq_score": 69.79,
       "cluster": "Trainer \u00b7 Hyper Rare",
       "dynamics": {
@@ -1117,9 +1009,9 @@
       "image_small": "https://images.pokemontcg.io/sv8/251.png",
       "image_large": "https://images.pokemontcg.io/sv8/251_hires.png",
       "market_price": 10.21,
-      "expected_price": 23.4309,
-      "raw_diff": 13.22,
-      "residual_pct": -0.56425,
+      "expected_price": 23.4632,
+      "raw_diff": 13.25,
+      "residual_pct": -0.56485,
       "iq_score": 73.99,
       "cluster": "Trainer \u00b7 Hyper Rare",
       "dynamics": {
@@ -1144,11 +1036,38 @@
       "image_small": "https://images.pokemontcg.io/sv6/224.png",
       "image_large": "https://images.pokemontcg.io/sv6/224_hires.png",
       "market_price": 6.45,
-      "expected_price": 19.5505,
-      "raw_diff": 13.1,
-      "residual_pct": -0.670085,
+      "expected_price": 19.5965,
+      "raw_diff": 13.15,
+      "residual_pct": -0.67086,
       "iq_score": 69.38,
       "cluster": "Trainer \u00b7 Hyper Rare",
+      "dynamics": {
+        "demand_pressure": null,
+        "supply_saturation": 1.0,
+        "status": "awaiting_data",
+        "active_listings": null,
+        "sold_7d": null,
+        "new_7d": null,
+        "basis": {
+          "days": 1
+        }
+      }
+    },
+    {
+      "id": "sv3pt5-205",
+      "name": "Mew ex",
+      "set_name": "151",
+      "set_id": "sv3pt5",
+      "rarity": "Hyper Rare",
+      "number": "205",
+      "image_small": "https://images.pokemontcg.io/sv3pt5/205.png",
+      "image_large": "https://images.pokemontcg.io/sv3pt5/205_hires.png",
+      "market_price": 34.81,
+      "expected_price": 47.8523,
+      "raw_diff": 13.04,
+      "residual_pct": -0.272553,
+      "iq_score": 90.77,
+      "cluster": "Pok\u00e9mon \u00b7 Hyper Rare",
       "dynamics": {
         "demand_pressure": null,
         "supply_saturation": 1.0,
@@ -1216,6 +1135,33 @@
       }
     },
     {
+      "id": "sv8-252",
+      "name": "Jet Energy",
+      "set_name": "Surging Sparks",
+      "set_id": "sv8",
+      "rarity": "Hyper Rare",
+      "number": "252",
+      "image_small": "https://images.pokemontcg.io/sv8/252.png",
+      "image_large": "https://images.pokemontcg.io/sv8/252_hires.png",
+      "market_price": 5.28,
+      "expected_price": 18.0756,
+      "raw_diff": 12.8,
+      "residual_pct": -0.707893,
+      "iq_score": 66.88,
+      "cluster": "Energy \u00b7 Hyper Rare",
+      "dynamics": {
+        "demand_pressure": null,
+        "supply_saturation": 1.0,
+        "status": "awaiting_data",
+        "active_listings": null,
+        "sold_7d": null,
+        "new_7d": null,
+        "basis": {
+          "days": 1
+        }
+      }
+    },
+    {
       "id": "sv7-167",
       "name": "Hydrapple ex",
       "set_name": "Stellar Crown",
@@ -1243,33 +1189,6 @@
       }
     },
     {
-      "id": "sv8-252",
-      "name": "Jet Energy",
-      "set_name": "Surging Sparks",
-      "set_id": "sv8",
-      "rarity": "Hyper Rare",
-      "number": "252",
-      "image_small": "https://images.pokemontcg.io/sv8/252.png",
-      "image_large": "https://images.pokemontcg.io/sv8/252_hires.png",
-      "market_price": 5.28,
-      "expected_price": 18.0321,
-      "raw_diff": 12.75,
-      "residual_pct": -0.707189,
-      "iq_score": 66.88,
-      "cluster": "Energy \u00b7 Hyper Rare",
-      "dynamics": {
-        "demand_pressure": null,
-        "supply_saturation": 1.0,
-        "status": "awaiting_data",
-        "active_listings": null,
-        "sold_7d": null,
-        "new_7d": null,
-        "basis": {
-          "days": 1
-        }
-      }
-    },
-    {
       "id": "sv3pt5-206",
       "name": "Switch",
       "set_name": "151",
@@ -1279,9 +1198,9 @@
       "image_small": "https://images.pokemontcg.io/sv3pt5/206.png",
       "image_large": "https://images.pokemontcg.io/sv3pt5/206_hires.png",
       "market_price": 2.67,
-      "expected_price": 15.187,
-      "raw_diff": 12.52,
-      "residual_pct": -0.824192,
+      "expected_price": 15.2374,
+      "raw_diff": 12.57,
+      "residual_pct": -0.824773,
       "iq_score": 66.45,
       "cluster": "Trainer \u00b7 Hyper Rare",
       "dynamics": {
@@ -1306,9 +1225,9 @@
       "image_small": "https://images.pokemontcg.io/sv8/250.png",
       "image_large": "https://images.pokemontcg.io/sv8/250_hires.png",
       "market_price": 10.34,
-      "expected_price": 22.8107,
-      "raw_diff": 12.47,
-      "residual_pct": -0.546703,
+      "expected_price": 22.8512,
+      "raw_diff": 12.51,
+      "residual_pct": -0.547508,
       "iq_score": 70.66,
       "cluster": "Trainer \u00b7 Hyper Rare",
       "dynamics": {
@@ -1338,6 +1257,87 @@
       "residual_pct": -0.57711,
       "iq_score": 68.31,
       "cluster": "Trainer \u00b7 Special Illustration Rare",
+      "dynamics": {
+        "demand_pressure": null,
+        "supply_saturation": 1.0,
+        "status": "awaiting_data",
+        "active_listings": null,
+        "sold_7d": null,
+        "new_7d": null,
+        "basis": {
+          "days": 1
+        }
+      }
+    },
+    {
+      "id": "sv7-175",
+      "name": "Bravery Charm",
+      "set_name": "Stellar Crown",
+      "set_id": "sv7",
+      "rarity": "Hyper Rare",
+      "number": "175",
+      "image_small": "https://images.pokemontcg.io/sv7/175.png",
+      "image_large": "https://images.pokemontcg.io/sv7/175_hires.png",
+      "market_price": 5.06,
+      "expected_price": 17.1906,
+      "raw_diff": 12.13,
+      "residual_pct": -0.705653,
+      "iq_score": 67.74,
+      "cluster": "Trainer \u00b7 Hyper Rare",
+      "dynamics": {
+        "demand_pressure": null,
+        "supply_saturation": 1.0,
+        "status": "awaiting_data",
+        "active_listings": null,
+        "sold_7d": null,
+        "new_7d": null,
+        "basis": {
+          "days": 1
+        }
+      }
+    },
+    {
+      "id": "sv3pt5-207",
+      "name": "Basic Psychic Energy",
+      "set_name": "151",
+      "set_id": "sv3pt5",
+      "rarity": "Hyper Rare",
+      "number": "207",
+      "image_small": "https://images.pokemontcg.io/sv3pt5/207.png",
+      "image_large": "https://images.pokemontcg.io/sv3pt5/207_hires.png",
+      "market_price": 5.85,
+      "expected_price": 17.9751,
+      "raw_diff": 12.13,
+      "residual_pct": -0.67455,
+      "iq_score": 68.44,
+      "cluster": "Energy \u00b7 Hyper Rare",
+      "dynamics": {
+        "demand_pressure": null,
+        "supply_saturation": 1.0,
+        "status": "awaiting_data",
+        "active_listings": null,
+        "sold_7d": null,
+        "new_7d": null,
+        "basis": {
+          "days": 1
+        }
+      }
+    },
+    {
+      "id": "sv6-225",
+      "name": "Rescue Board",
+      "set_name": "Twilight Masquerade",
+      "set_id": "sv6",
+      "rarity": "Hyper Rare",
+      "number": "225",
+      "image_small": "https://images.pokemontcg.io/sv6/225.png",
+      "image_large": "https://images.pokemontcg.io/sv6/225_hires.png",
+      "market_price": 2.69,
+      "expected_price": 14.593,
+      "raw_diff": 11.9,
+      "residual_pct": -0.815665,
+      "iq_score": 68.8,
+      "cluster": "Trainer \u00b7 Hyper Rare",
       "dynamics": {
         "demand_pressure": null,
         "supply_saturation": 1.0,
