@@ -53,6 +53,21 @@ function refreshInfo(builtAt) {
   return { label, sub, days };
 }
 
+/* Per-set "sealed heat" line from the manual TCGplayer feed (pack momentum +
+   today's velocity vs supply). Price up = green (bullish), down = red. */
+function sealedLine(sealed) {
+  const p = sealed && sealed.pack;
+  if (!p) return null;
+  const ch = p.change_24h ?? 0;
+  const up = ch >= 0;
+  const col = up ? 'var(--success-accent)' : 'var(--brand-red-dark)';
+  const listed = p.listings == null ? '—'
+    : p.listings >= 1000 ? (p.listings / 1000).toFixed(1) + 'k' : String(p.listings);
+  return el('div', { class: 'lb-sub', html:
+    `📦 ${USD(p.price)} <span style="color:${col};font-weight:600">${up ? '▲' : '▼'} ${Math.abs(ch).toFixed(1)}%</span>` +
+    ` · ${(p.sold_today ?? 0).toLocaleString()} sold · ${listed} listed <span style="opacity:.55">24h</span>` });
+}
+
 /* residual_pct convention (from real data):
      residual_pct < 0  -> market below expected -> UNDERVALUED (green / down pill)
      residual_pct > 0  -> market above expected -> OVERVALUED  (red / up pill)        */
@@ -283,6 +298,7 @@ function viewSets() {
         el('div', {}, [
           el('div', { class: 'lb-name', text: s.name }),
           el('div', { class: 'lb-sub', text: `${s.series} · ${s.packs_per_etb} packs/ETB` }),
+          sealedLine(s.sealed),
         ]),
       ])),
       el('td', { class: 'num lb-price', text: USD(s.pack_price) }),

@@ -1,0 +1,49 @@
+{
+  "as_of": "2026-06-18",
+  "source": "TCGplayer (manually pasted — interim sealed feed until eBay)",
+  "note": "Keyed by set name. The build maps names -> set_ids (pipeline/sealed_market.py), uses 'Booster Pack' -> pack_price and 'Elite Trainer Box' -> etb_price, and surfaces sold_today / listings / change_24h as per-set sealed demand. Paste a fresh dump here and rebuild.",
+  "sets": {
+    "Ascended Heroes": [
+      { "product": "Booster Pack", "price": 13.58, "change_24h": -21.46, "sold_today": 23, "listings": 15725 },
+      { "product": "Booster Bundle", "price": 93.97, "change_24h": -9.07, "sold_today": 20, "listings": 1855 },
+      { "product": "Pokemon Center Elite Trainer Box (Exclusive)", "price": 457.15, "change_24h": -1.75, "sold_today": 2, "listings": 138 },
+      { "product": "Elite Trainer Box", "price": 181.75, "change_24h": 0.40, "sold_today": 14, "listings": 909 },
+      { "product": "Mega Feraligatr ex Box", "price": 51.72, "change_24h": -1.75, "sold_today": 5, "listings": 101 },
+      { "product": "Mega Emboar ex Box", "price": 52.43, "change_24h": -0.83, "sold_today": 7, "listings": 155 },
+      { "product": "Mega Meganium ex Box", "price": 53.07, "change_24h": -0.43, "sold_today": 11, "listings": 169 },
+      { "product": "Collection - Larry", "price": 31.59, "change_24h": 1.51, "sold_today": 1, "listings": 207 },
+      { "product": "First Partners Deluxe Pin Collection", "price": 64.68, "change_24h": -1.49, "sold_today": 17, "listings": 385 },
+      { "product": "Tech Sticker Collection - Gastly", "price": 44.20, "change_24h": 0.55, "sold_today": 0, "listings": 263 },
+      { "product": "Tech Sticker Collection - Charmander", "price": 45.07, "change_24h": 0.49, "sold_today": 0, "listings": 160 }
+    ],
+    "Black Bolt": [
+      { "product": "Booster Pack", "price": 13.58, "change_24h": -0.51, "sold_today": 4, "listings": 791 },
+      { "product": "Elite Trainer Box", "price": 172.27, "change_24h": 1.39, "sold_today": 2, "listings": 118 },
+      { "product": "Pokemon Center Elite Trainer Box", "price": 294.81, "change_24h": 0.27, "sold_today": 0, "listings": 49 },
+      { "product": "Binder Collection", "price": 72.45, "change_24h": 0.50, "sold_today": 0, "listings": 114 },
+      { "product": "Unova Victini Illustration Collection", "price": 67.94, "change_24h": -1.22, "sold_today": 0, "listings": 92 },
+      { "product": "Unova Poster Collection", "price": 44.50, "change_24h": -0.09, "sold_today": 2, "listings": 100 }
+    ],
+    "Destined Rivals": [
+      { "product": "Booster Pack", "price": 10.62, "change_24h": 0.95, "sold_today": 52, "listings": 1764 },
+      { "product": "Booster Bundle", "price": 83.11, "change_24h": 1.24, "sold_today": 16, "listings": 1177 },
+      { "product": "Elite Trainer Box", "price": 208.13, "change_24h": 0.15, "sold_today": 3, "listings": 165 },
+      { "product": "Pokemon Center Elite Trainer Box", "price": 558.12, "change_24h": 0.00, "sold_today": 0, "listings": 71 },
+      { "product": "Single Pack Blister", "price": 14.85, "change_24h": 0.41, "sold_today": 4, "listings": 106 },
+      { "product": "3 Pack Blister", "price": 41.24, "change_24h": 0.56, "sold_today": 0, "listings": 8 },
+      { "product": "Battle Deck [Steven]", "price": 37.67, "change_24h": 0.78, "sold_today": 0, "listings": 30 }
+    ],
+    "Journey Together": [
+      { "product": "Booster Pack", "price": 6.81, "change_24h": -2.71, "sold_today": 10, "listings": 1820 },
+      { "product": "Booster Bundle", "price": 47.75, "change_24h": -0.44, "sold_today": 2, "listings": 1034 },
+      { "product": "Elite Trainer Box", "price": 131.08, "change_24h": 0.28, "sold_today": 3, "listings": 128 },
+      { "product": "Pokemon Center Elite Trainer Box", "price": 208.90, "change_24h": 0.00, "sold_today": 0, "listings": 53 }
+    ],
+    "Mega Evolution": [
+      { "product": "Booster Pack", "price": 7.50, "change_24h": -1.96, "sold_today": 0, "listings": 6997 },
+      { "product": "Sleeved Booster Pack", "price": 8.82, "change_24h": -0.23, "sold_today": 0, "listings": 2155 },
+      { "product": "Booster Bundle", "price": 59.66, "change_24h": -1.39, "sold_today": 4, "listings": 700 },
+      { "product": "Elite Trainer Box [Mega Lucario]", "price": 120.19, "change_24h": 1.11, "sold_today": 7, "listings": 82 }
+    ]
+  }
+}

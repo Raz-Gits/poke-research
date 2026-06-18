@@ -30,7 +30,7 @@ from datetime import date, datetime
 from pathlib import Path
 from typing import Dict, List, Optional
 
-from . import config, ev, market_dynamics, model, pullrates, signals
+from . import config, ev, market_dynamics, model, pullrates, sealed_market, signals
 from collectors import ebay
 
 
@@ -316,6 +316,18 @@ def build(today: Optional[date] = None) -> dict:
     # --- 1. load cached, normalized inputs --------------------------------
     cards = _load_cards()
     sets = _load_sets()
+    # Overlay the manual TCGplayer sealed feed (real pack/ETB prices + per-set
+    # sealed demand) onto the config estimates, until the eBay feed lands.
+    sealed_overlay = sealed_market.load()
+    for s in sets:
+        ov = sealed_overlay.get(s["set_id"])
+        if not ov:
+            continue
+        if "pack_price" in ov:
+            s["pack_price"] = ov["pack_price"]
+        if "etb_price" in ov:
+            s["etb_price"] = ov["etb_price"]
+        s["sealed"] = ov["sealed"]
     set_by_id = {s["set_id"]: s for s in sets}
     priced = [c for c in cards if c.get("market_price") is not None]
 

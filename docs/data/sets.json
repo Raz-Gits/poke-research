@@ -96,6 +96,21 @@
     "packs_per_etb": 9,
     "etb_price": 181.75,
     "retail_pack_price": 4.99,
+    "sealed": {
+      "as_of": "2026-06-18",
+      "pack": {
+        "price": 13.58,
+        "change_24h": -21.46,
+        "sold_today": 23,
+        "listings": 15725
+      },
+      "etb": {
+        "price": 181.75,
+        "change_24h": 0.4,
+        "sold_today": 14,
+        "listings": 909
+      }
+    },
     "ev_per_pack": 7.981933945438184,
     "pack_signal_pct": -0.4122287227217832,
     "ev_per_etb": 71.83740550894366,
