@@ -85,18 +85,30 @@ def fetch_set_cards(set_id: str) -> list[dict]:
     return cards
 
 
+# pokemontcg.io occasionally mislabels a secret/chase card with a base rarity,
+# which wrecks the sealed-EV math (a base "Rare" is treated as a guaranteed pull
+# slot). We correct the rare, confirmed cases to the rarity TCGplayer and the
+# card's own print run agree on. Keyed by card id -> corrected rarity.
+#   zsv10pt5-171 Victini: source says "Rare" (a $577 card in the guaranteed slot!);
+#   TCGplayer + its paired secret Zekrom ex #172 confirm "Black White Rare".
+RARITY_CORRECTIONS: dict[str, str] = {
+    "zsv10pt5-171": "Black White Rare",
+}
+
+
 def normalize_card(c: dict) -> dict:
     market, variant = _pick_price(c.get("tcgplayer"))
     s = c.get("set", {})
     rel = (s.get("releaseDate") or "").replace("/", "-") or None
     supertype = c.get("supertype") or "Pokémon"
+    rarity = RARITY_CORRECTIONS.get(c["id"], c.get("rarity") or "Unknown")
     return {
         "id": c["id"],
         "name": c["name"],
         "base_name": base_name(c["name"], supertype),
         "supertype": supertype,
         "number": c.get("number"),
-        "rarity": c.get("rarity") or "Unknown",
+        "rarity": rarity,
         "set_id": s.get("id"),
         "set_name": s.get("name"),
         "series": s.get("series"),

@@ -275,6 +275,49 @@ def build_leaderboard(card_records: List[dict]) -> dict:
     }
 
 
+# ---------------------------------------------------------------------------
+# Forward prediction log (self-grading panel for the backtest)
+# ---------------------------------------------------------------------------
+# Every build records what the model PREDICTED today, next to the market price,
+# so we can later check whether the over/under call was right. The daily price
+# panel already exists (fetch.py -> snapshot-<date>.json = {id: market}); this
+# adds the missing half (expected price + verdict). Joined by date downstream by
+# pipeline/backtest.py. Verdict band is intentionally wider than the UI's sign
+# split so "fair" is a real bucket and we only grade confident calls.
+PRED_BAND = 0.15  # |residual_pct| below this = "fair" (not a directional call)
+
+
+def _write_prediction_log(card_records: List[dict], built_for: str) -> int:
+    """Write ``data/snapshots/pred-<date>.json`` = the model's calls for today.
+
+    One compact row per priced card::
+
+        {card_id: {"m": market, "e": expected, "r": residual_pct, "v": verdict}}
+
+    ``verdict``: ``under`` (market below fair value, r < -BAND), ``over``
+    (r > +BAND), else ``fair``. Idempotent per day (overwrite). Returns the row
+    count. This is the forward half of the backtest panel — from the day it
+    ships, every refresh self-grades going forward.
+    """
+    log: Dict[str, dict] = {}
+    for r in card_records:
+        m = r.get("market_price")
+        e = r.get("expected_price")
+        rp = r.get("residual_pct")
+        if m is None or e is None or rp is None:
+            continue
+        verdict = "under" if rp < -PRED_BAND else "over" if rp > PRED_BAND else "fair"
+        log[r["id"]] = {
+            "m": round(m, 4),
+            "e": round(e, 4),
+            "r": round(rp, 6),
+            "v": verdict,
+        }
+    path = config.SNAPSHOTS / f"pred-{built_for}.json"
+    path.write_text(json.dumps(log, separators=(",", ":")))
+    return len(log)
+
+
 def _leader_row(r: dict) -> dict:
     """Slim card record for a leaderboard entry (enough for a card row + modal)."""
     return {
@@ -312,6 +355,7 @@ def build(today: Optional[date] = None) -> dict:
     """
     out_dir = config.SITE_DATA
     out_dir.mkdir(parents=True, exist_ok=True)
+    built_at = (today or date.today()).isoformat()  # the date this build is "for"
 
     # --- 1. load cached, normalized inputs --------------------------------
     cards = _load_cards()
@@ -369,11 +413,13 @@ def build(today: Optional[date] = None) -> dict:
     # --- 8. assemble enriched cards + IQ scores --------------------------
     card_records = build_cards(cards, features, result, dynamics)
 
+    # --- 8b. forward prediction log (self-grading backtest panel) --------
+    n_pred = _write_prediction_log(card_records, built_for=built_at)
+
     # --- 9. leaderboards -------------------------------------------------
     leaderboard = build_leaderboard(card_records)
 
     # --- 10. meta --------------------------------------------------------
-    built_at = (today or date.today()).isoformat()
     signal_status = {
         name: meta.get("status", "live") for name, meta in config.FEATURES.items()
     }
@@ -385,6 +431,7 @@ def build(today: Optional[date] = None) -> dict:
         "priced": len(priced),
         "clusters": len(model_payload["clusters"]),
         "model_r2_log": round(result.r2_log(), 6),
+        "predictions_logged": n_pred,
         "sources": {
             "cards": "pokemontcg.io (cached, normalized)",
             "prices": "pokemontcg.io TCGplayer market prices (cached)",

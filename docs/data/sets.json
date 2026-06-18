@@ -1,41 +1,5 @@
 [
   {
-    "set_id": "zsv10pt5",
-    "name": "Black Bolt",
-    "series": "Scarlet & Violet",
-    "release_date": "2025-07-18",
-    "printed_total": 86,
-    "total": 172,
-    "logo": "https://images.pokemontcg.io/zsv10pt5/logo.png",
-    "symbol": "https://images.pokemontcg.io/zsv10pt5/symbol.png",
-    "pack_price": 13.58,
-    "retail_pack_price": 4.49,
-    "packs_per_etb": 9,
-    "etb_price": 172.27,
-    "sealed": {
-      "as_of": "2026-06-18",
-      "pack": {
-        "price": 13.58,
-        "change_24h": -0.51,
-        "sold_today": 4,
-        "listings": 791
-      },
-      "etb": {
-        "price": 172.27,
-        "change_24h": 1.39,
-        "sold_today": 2,
-        "listings": 118
-      }
-    },
-    "ev_per_pack": 83.50248177096199,
-    "pack_signal_pct": 5.148930910969219,
-    "ev_per_etb": 751.522335938658,
-    "etb_signal_pct": 3.3624678466283044,
-    "signal_pct": 3.3624678466283044,
-    "avg_loss_per_pack": -69.922481770962,
-    "raw_value_per_pack": 83.50248177096199
-  },
-  {
     "set_id": "sv3pt5",
     "name": "151",
     "series": "Scarlet & Violet",
@@ -76,6 +40,42 @@
     "signal_pct": -0.376716365909091,
     "avg_loss_per_pack": 2.3820889166666674,
     "raw_value_per_pack": 7.6179110833333326
+  },
+  {
+    "set_id": "zsv10pt5",
+    "name": "Black Bolt",
+    "series": "Scarlet & Violet",
+    "release_date": "2025-07-18",
+    "printed_total": 86,
+    "total": 172,
+    "logo": "https://images.pokemontcg.io/zsv10pt5/logo.png",
+    "symbol": "https://images.pokemontcg.io/zsv10pt5/symbol.png",
+    "pack_price": 13.58,
+    "retail_pack_price": 4.49,
+    "packs_per_etb": 9,
+    "etb_price": 172.27,
+    "sealed": {
+      "as_of": "2026-06-18",
+      "pack": {
+        "price": 13.58,
+        "change_24h": -0.51,
+        "sold_today": 4,
+        "listings": 791
+      },
+      "etb": {
+        "price": 172.27,
+        "change_24h": 1.39,
+        "sold_today": 2,
+        "listings": 118
+      }
+    },
+    "ev_per_pack": 9.960771355189335,
+    "pack_signal_pct": -0.2665116822393715,
+    "ev_per_etb": 89.64694219670402,
+    "etb_signal_pct": -0.4796137331125326,
+    "signal_pct": -0.4796137331125326,
+    "avg_loss_per_pack": 3.619228644810665,
+    "raw_value_per_pack": 9.960771355189335
   },
   {
     "set_id": "sv6",

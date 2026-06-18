@@ -47,6 +47,7 @@ BASE_TIER_PROB: Dict[str, float] = {
     "Hyper Rare": 0.0185,                 # ~1.85% (1 in 54)
     "Shiny Rare": 0.0,                    # shiny sets only (override)
     "Shiny Ultra Rare": 0.0,              # shiny sets only (override)
+    "Black White Rare": 0.0,              # Black Bolt/White Flare secret tier (override)
     "MEGA_ATTACK_RARE": 0.06,             # PROVISIONAL (new Mega Evolution tier)
     "Mega Hyper Rare": 0.005,             # PROVISIONAL — single gold Mega chase, ~1 in 200
                                           # (was 0.0185/1-in-54, far too easy for a top gold)
@@ -109,8 +110,20 @@ SET_TIER_PROB: Dict[str, Dict[str, float]] = {
         "Special Illustration Rare": 0.011628,  # 1 in 86
         "Hyper Rare": 0.006667,               # ~1 in 150 (PLACEHOLDER — get exact)
     },
-    # Black Bolt (zsv10pt5) + Mega Evolution (me1): PROVISIONAL — use base tiers
-    # until real per-rarity odds land (special / Mega-era; rates differ).
+    # Black Bolt (zsv10pt5) — special high-end set (Black Bolt / White Flare pair).
+    # ESTIMATES pending a large-sample box-break (the base table is flat-out wrong
+    # here: it left the "Black White Rare" secret on the 1-in-20 Unknown default and
+    # treated a mis-labeled $577 Victini as a guaranteed Rare slot — sealed EV blew
+    # up to +515%). These rarities/rates reflect the IR-rich special-set structure;
+    # "Black White Rare" is the textured top secret (2 in the full set).
+    "zsv10pt5": {
+        "Illustration Rare": 0.18,            # IR-rich set, multiple IR per box
+        "Ultra Rare": 0.065,
+        "Double Rare": 0.13,
+        "Special Illustration Rare": 0.014,   # ~1 in 71
+        "Black White Rare": 0.006,            # ~1 in 167 for the tier (top secret)
+    },
+    # Mega Evolution (me1): PROVISIONAL — use base tiers until real odds land.
     # ----- Mega-era sets: "any card of that rarity" per-pack odds from large-
     # sample community/TCGplayer-style data (IR ~1/9 across the Mega era; SIR and
     # Hyper drift set-to-set). Hyper/MHR biased to the conservative source so EV
