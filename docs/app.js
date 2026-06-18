@@ -43,6 +43,16 @@ const PLACEHOLDER = 'data:image/svg+xml;utf8,' + encodeURIComponent(
 );
 function imgFallback(node) { node.onerror = null; node.src = PLACEHOLDER; }
 
+/* "Prices refreshed" freshness from meta.built_at (last fetch+build). */
+function refreshInfo(builtAt) {
+  if (!builtAt) return { label: '—', sub: 'unknown', days: null };
+  const days = Math.floor((Date.now() - new Date(builtAt).getTime()) / 86400000);
+  const date = builtAt.slice(0, 10);
+  const label = days <= 0 ? 'Today' : days === 1 ? 'Yesterday' : `${days} days ago`;
+  const sub = days >= 3 ? `as of ${date} · refresh recommended` : `as of ${date}`;
+  return { label, sub, days };
+}
+
 /* residual_pct convention (from real data):
      residual_pct < 0  -> market below expected -> UNDERVALUED (green / down pill)
      residual_pct > 0  -> market above expected -> OVERVALUED  (red / up pill)        */
@@ -190,11 +200,11 @@ function viewHome() {
     ]));
 
   /* pastel stat cards from meta.json */
-  const updated = (meta.built_for_date || meta.built_at || '').slice(0, 10);
+  const fresh = refreshInfo(meta.built_at);
   const statRow = el('div', { class: 'stat-row container' }, [
     statCard('bg-yellow', 'Tracked', meta.cards.toLocaleString(), 'cards in the corpus'),
     statCard('bg-teal', 'Coverage', String(meta.sets), 'Scarlet & Violet sets'),
-    statCard('bg-coral', 'Cadence', 'Daily', `prices updated ${updated || 'daily'}`),
+    statCard('bg-coral', 'Prices refreshed', fresh.label, fresh.sub),
   ]);
 
   /* how it works */
@@ -719,6 +729,10 @@ function buildModalContent(card) {
         el('h3', { class: 'h2 modal-title', text: card.name }),
         el('div', { class: 'modal-setline', text: `${card.set_name} · ${card.series} · ${card.release_date}` }),
         priceBlock,
+        (card.features && card.features.pull_cost)
+          ? el('p', { class: 'caption', html:
+              `<strong>Cost to pull one at retail ≈ ${USD0(card.features.pull_cost)}</strong> — expected spend on booster packs (at MSRP) to hit this exact card once. Buying the single at ${USD(card.market_price)} is ${card.features.pull_cost > (card.market_price || 0) ? 'far cheaper' : 'pricier'} than chasing it.` })
+          : null,
         el('div', { class: 'iq-row' }, [
           el('span', { class: 'iq-badge' }, [
             el('span', { class: 'iq-num', text: card.iq_score != null ? card.iq_score.toFixed(0) : '—' }),
@@ -871,12 +885,12 @@ function wireChrome() {
     if (e.key === 'Escape' && !$('#modalBackdrop').hidden) closeModal();
   });
 
-  /* footer build date */
+  /* footer: last refresh + freshness */
   const meta = STATE.meta;
   if (meta) {
-    const built = (meta.built_at || '').slice(0, 10);
+    const fresh = refreshInfo(meta.built_at);
     const fb = $('#footerBuilt');
-    if (fb) fb.textContent = `Built ${built || '—'}`;
+    if (fb) fb.textContent = `Prices last refreshed ${(meta.built_at || '').slice(0, 10)} · ${fresh.label}`;
   }
 }
 

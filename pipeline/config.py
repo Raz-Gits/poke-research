@@ -49,20 +49,23 @@ VARIANT_PRIORITY = [
 # they can't be live-scraped — paste exact numbers here to lock them in). Two
 # ETB prices flagged lower-confidence below.
 # ---------------------------------------------------------------------------
+# retail_pack_price = MSRP / sticker price of one pack — drives the per-card
+# "cost to pull at retail". pack_price = current SECONDARY loose-pack price —
+# drives single-pack rip EV (what a pack is worth vs what it costs on the market).
 _ETB = 9  # packs in a standard Elite Trainer Box (SV era)
 SETS = {
-    "sv3pt5": {"name": "151",                  "pack_price": 12.0, "packs_per_etb": _ETB, "etb_price": 135.0},
-    "sv8pt5": {"name": "Prismatic Evolutions", "pack_price": 18.0, "packs_per_etb": _ETB, "etb_price": 155.0},
-    "sv8":    {"name": "Surging Sparks",       "pack_price": 7.0,  "packs_per_etb": _ETB, "etb_price": 120.0},
-    "sv4pt5": {"name": "Paldean Fates",        "pack_price": 10.0, "packs_per_etb": _ETB, "etb_price": 110.0},  # etb low-confidence
-    "sv6pt5": {"name": "Shrouded Fable",       "pack_price": 10.0, "packs_per_etb": _ETB, "etb_price": 110.0},  # etb low-confidence
-    "sv7":    {"name": "Stellar Crown",        "pack_price": 6.0,  "packs_per_etb": _ETB, "etb_price": 130.0},
-    "sv6":    {"name": "Twilight Masquerade",  "pack_price": 5.0,  "packs_per_etb": _ETB, "etb_price": 70.0},
-    "sv5":    {"name": "Temporal Forces",      "pack_price": 6.0,  "packs_per_etb": _ETB, "etb_price": 130.0},
+    "sv3pt5": {"name": "151",                  "pack_price": 12.0, "retail_pack_price": 4.49, "packs_per_etb": _ETB, "etb_price": 135.0},
+    "sv8pt5": {"name": "Prismatic Evolutions", "pack_price": 18.0, "retail_pack_price": 4.99, "packs_per_etb": _ETB, "etb_price": 155.0},
+    "sv8":    {"name": "Surging Sparks",       "pack_price": 7.0,  "retail_pack_price": 4.49, "packs_per_etb": _ETB, "etb_price": 120.0},
+    "sv4pt5": {"name": "Paldean Fates",        "pack_price": 10.0, "retail_pack_price": 4.49, "packs_per_etb": _ETB, "etb_price": 110.0},  # etb low-confidence
+    "sv6pt5": {"name": "Shrouded Fable",       "pack_price": 10.0, "retail_pack_price": 4.49, "packs_per_etb": _ETB, "etb_price": 110.0},  # etb low-confidence
+    "sv7":    {"name": "Stellar Crown",        "pack_price": 6.0,  "retail_pack_price": 4.49, "packs_per_etb": _ETB, "etb_price": 130.0},
+    "sv6":    {"name": "Twilight Masquerade",  "pack_price": 5.0,  "retail_pack_price": 4.49, "packs_per_etb": _ETB, "etb_price": 70.0},
+    "sv5":    {"name": "Temporal Forces",      "pack_price": 6.0,  "retail_pack_price": 4.49, "packs_per_etb": _ETB, "etb_price": 130.0},
     # Mega Evolution series (2026)
-    "me2pt5": {"name": "Ascended Heroes",      "pack_price": 9.0,  "packs_per_etb": _ETB, "etb_price": 180.0},
-    "me3":    {"name": "Perfect Order",        "pack_price": 6.0,  "packs_per_etb": _ETB, "etb_price": 90.0},
-    "me4":    {"name": "Chaos Rising",         "pack_price": 6.0,  "packs_per_etb": _ETB, "etb_price": 92.0},
+    "me2pt5": {"name": "Ascended Heroes",      "pack_price": 9.0,  "retail_pack_price": 4.99, "packs_per_etb": _ETB, "etb_price": 180.0},
+    "me3":    {"name": "Perfect Order",        "pack_price": 6.0,  "retail_pack_price": 4.99, "packs_per_etb": _ETB, "etb_price": 90.0},
+    "me4":    {"name": "Chaos Rising",         "pack_price": 6.0,  "retail_pack_price": 4.99, "packs_per_etb": _ETB, "etb_price": 92.0},
 }
 
 # ---------------------------------------------------------------------------
@@ -80,7 +83,7 @@ RIDGE_ALPHA = 1.0              # L2 regularization for the per-cluster ridge
 FEATURES = {
     "char_premium":          {"label": "Character Premium",   "status": "live",  "min": 0, "max": 10},
     "scarcity":              {"label": "Scarcity Score",      "status": "live",  "min": 0, "max": 10},
-    "pull_cost":             {"label": "Pull Cost ($)",       "status": "live",  "min": 0, "max": 20000},
+    "pull_cost":             {"label": "Cost to pull · retail ($)", "status": "live", "min": 0, "max": 20000},
     "months_since_release":  {"label": "Months Since Release","status": "live",  "min": 0, "max": 60},
     "set_rank":              {"label": "In-Set Rank",         "status": "live",  "min": 0, "max": 1},
     "demand_pressure":       {"label": "Demand Pressure (%)", "status": "stub",  "min": 0, "max": 20},

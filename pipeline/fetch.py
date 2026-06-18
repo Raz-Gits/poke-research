@@ -130,6 +130,7 @@ def main() -> None:
             "logo": (s.get("images") or {}).get("logo"),
             "symbol": (s.get("images") or {}).get("symbol"),
             "pack_price": cfg["pack_price"],
+            "retail_pack_price": cfg.get("retail_pack_price", cfg["pack_price"]),
             "packs_per_etb": cfg.get("packs_per_etb", 9),
             "etb_price": cfg.get("etb_price"),
         })

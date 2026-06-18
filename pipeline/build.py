@@ -328,14 +328,16 @@ def build(today: Optional[date] = None) -> dict:
     # --- 4. live + stub features -----------------------------------------
     features = signals.compute_features(cards, today=today)
 
-    # --- 5. inject the REAL pull_cost (pack_price / pull_rate) ------------
-    # signals.py deliberately omits pull_cost so it never imports pullrates;
-    # we compute it here per card using its set's pack price and merge it in.
+    # --- 5. inject the REAL pull_cost (retail pack MSRP / pull_rate) ------
+    # signals.py deliberately omits pull_cost so it never imports pullrates; we
+    # compute it here per card. Uses the RETAIL (MSRP) pack price -> "cost to
+    # pull one at retail" (sticker, stable). The secondary loose-pack price is
+    # used only for single-pack rip EV.
     pull_costs: Dict[str, float] = {}
     for c in cards:
         sid = c["set_id"]
         set_rec = set_by_id.get(sid)
-        pack_price = set_rec["pack_price"] if set_rec else 0.0
+        pack_price = (set_rec.get("retail_pack_price") or set_rec.get("pack_price")) if set_rec else 0.0
         pc = pullrates.pull_cost(c["rarity"], sid, counts, pack_price)
         # Guard the model against a non-finite feature (unknown set/rarity).
         pull_costs[c["id"]] = pc if pc != float("inf") else 0.0

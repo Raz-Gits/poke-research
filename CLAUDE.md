@@ -24,6 +24,7 @@ fetch.py ──→ data/normalized/cards.json ──→ build.py ──→ docs/
 ## Run it
 
 ```bash
+./refresh.sh                                  # SHORTCUT: fetch + build (DEPLOY=1 to push live)
 ./.venv/bin/python -m pipeline.fetch          # refresh prices (pokemontcg.io + TCGdex)
 ./.venv/bin/python -m pipeline.build          # recompute everything -> docs/data
 ./.venv/bin/python -m pipeline.review_premium # premium vs price discrepancy report
