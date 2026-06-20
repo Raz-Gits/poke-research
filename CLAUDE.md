@@ -143,6 +143,22 @@ rating" flags are art-driven Illustration Rares (card art ≠ character fame).
 
 ## Open threads
 
+- **Watchlists tab** (`#/watchlists`, `docs/app.js` `viewWatchlists`): a sealed-
+  ETB **deal monitor**, separate from the price model. Fed by
+  `docs/data/watchlist.json`, written by **`../ebay_deals.py`** (lives in the
+  parent `~/Pokemon Bot`, NOT this repo — same place as the restock `monitor.py`).
+  That watcher polls eBay Browse for a small watchlist (`../deals_watchlist.json`:
+  6 ETBs incl. Pokémon Center variants) and pushes a phone alert (ntfy, reusing
+  the restock monitor's `config.NTFY_TOPIC`) when a Buy-It-Now or auction lands
+  at/under the per-product `max_price` cap. Notify-only, manual buy — same clean-
+  monitor boundary as the restock alerter (no scraping/auto-checkout; Browse
+  API's intended use). Junk control = the SAME ">50% under market → ignore" rule
+  as the card collector, anchored to each watch's `market_price` (clean live
+  median), plus `exclude_all` keywords (graded singles, opened/empty boxes,
+  proxies, lots). First run primes silently (no alert storm). The site JSON is a
+  lean snapshot (aggregates + 2 best links); the page shows "updated <time>" —
+  freshness depends on the watcher running + committing. TODO: decide run model
+  (launchd/always-on) + optional periodic auto-commit of `watchlist.json`.
 - eBay demand feed is LIVE (Production keys in `.env` + GitHub secrets). Daily
   snapshots accrue via the `daily-refresh` GitHub Action (`.github/workflows/`,
   14:00 UTC: fetch → build [collects eBay, valuable-first, idempotent] → push →
