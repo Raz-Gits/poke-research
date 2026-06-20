@@ -10,7 +10,11 @@ outlier cleaning. Three code paths live here:
    * **LIVE** when ``EBAY_APP_ID`` (+ ``EBAY_CERT_ID``) env vars are set: gets an
      OAuth client-credentials *application* token and queries the Browse API
      (``GET /buy/browse/v1/item_summary/search``) per card, parsing active item
-     summaries into ``active_listings`` + outlier-cleaned ``avg_price``.
+     summaries into ``active_listings`` + ``avg_price``. Prices are first passed
+     through a **market-anchored band** (drop listings <50% / >4x the card's
+     TCGplayer ``market_price``) so same-name mismatches — a chase Illustration
+     Rare query also returning the $2 base print — can't collapse the average,
+     then IQR-cleaned.
    * **NO-OP** (graceful) when no key is set: it writes a fully-formed snapshot
      of neutral rows and logs clearly, so the build never breaks.
    The live collector records ONLY ``active_listings`` + ``avg_price`` per card;
@@ -99,6 +103,20 @@ SWEEP_TIME_BUDGET_S = 420 # hard wall-clock cap (7 min): if rate-limiting drags 
 MAX_CONSECUTIVE_FAILS = 30  # if this many cards in a row come back empty (likely
                           # quota/rate exhaustion), abort early — don't grind.
 
+# Price-sanity band, anchored to the card's TCGplayer market_price.
+# eBay free-text search matches same-name printings: a chase Illustration Rare
+# query ($198 market) also returns the $2 base version, and since the cheap
+# copies dominate the distribution, IQR cleaning can't save it — avg_price
+# collapses to ~$5. So we drop listings implausibly far from THIS card's market
+# price BEFORE cleaning. This also tightens active_listings to the count of
+# plausible real listings (a better demand signal) instead of every same-name hit.
+PRICE_BAND_LOW = 0.5      # ignore listings priced below 50% of market (the main
+                         # failure mode: chase card matched to cheap base versions)
+PRICE_BAND_HIGH = 4.0    # ignore listings above 4x market (lots/bundles/slabs that
+                         # slipped the graded filter); loose — IQR handles the rest
+PRICE_BAND_MIN_ANCHOR = 2.0  # only band when market_price is a meaningful anchor;
+                         # below this, fall back to IQR-only (cheap-card shipping noise)
+
 
 # ---------------------------------------------------------------------------
 # Snapshot row schema
@@ -148,6 +166,25 @@ def _clean_prices(prices: List[float]) -> List[float]:
 
 def _mean(vals: List[float]) -> Optional[float]:
     return round(sum(vals) / len(vals), 2) if vals else None
+
+
+def _apply_price_band(
+    prices: List[float], market_price: Optional[float]
+) -> Tuple[List[float], int]:
+    """Drop listings implausibly far from the card's TCGplayer market price.
+
+    Returns ``(kept, n_dropped)``. No-op (keeps everything) when there's no
+    usable anchor — ``market_price`` missing or below ``PRICE_BAND_MIN_ANCHOR`` —
+    so cheap/unpriced cards fall back to IQR-only cleaning. The low fence is the
+    important one (kills cheap same-name mismatches); the high fence is a loose
+    backstop for lots/slabs the keyword filter missed.
+    """
+    if not market_price or market_price < PRICE_BAND_MIN_ANCHOR:
+        return prices, 0
+    lo = market_price * PRICE_BAND_LOW
+    hi = market_price * PRICE_BAND_HIGH
+    kept = [p for p in prices if lo <= p <= hi]
+    return kept, len(prices) - len(kept)
 
 
 # ---------------------------------------------------------------------------
@@ -277,10 +314,22 @@ def _fetch_card_market(card: dict, token: str) -> Dict[str, Optional[float]]:
         if len(summaries) < PAGE_LIMIT:
             break
 
-    cleaned = _clean_prices(prices)
+    # Anchor to TCGplayer market first (kills cheap same-name mismatches), then
+    # IQR-clean the survivors. Band BEFORE clean so the cheap copies can't skew
+    # the IQR fence itself.
+    banded, n_dropped = _apply_price_band(prices, card.get("market_price"))
+    cleaned = _clean_prices(banded)
     row = _empty_row()
     row["active_listings"] = len(cleaned)
     row["avg_price"] = _mean(cleaned)
+    # Visibility: log cards where the band removed a big share — these are the
+    # match-noise cases we're fixing (and a watchlist if the band is too tight).
+    if prices and n_dropped / len(prices) >= 0.5:
+        log.info(
+            "band: %s kept %s/%s listings near $%.2f market (q=%r)",
+            card.get("id"), len(banded), len(prices),
+            card.get("market_price") or 0.0, q,
+        )
     return row
 
 
