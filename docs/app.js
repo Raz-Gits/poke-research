@@ -71,11 +71,20 @@ function sealedLine(sealed) {
 /* residual_pct convention (from real data):
      residual_pct < 0  -> market below expected -> UNDERVALUED (green / down pill)
      residual_pct > 0  -> market above expected -> OVERVALUED  (red / up pill)        */
+/* Model verdict band (matches PRED_BAND in pipeline/build.py): a card within
+   ±15% of its expected price is "fair", NOT a deal — so we don't flag a 2% gap
+   as undervalued/overvalued. Honest verdict for the pill, modal, and slider. */
+const CARD_BAND = 0.15;
+function residualVerdict(residual) {
+  if (residual == null) return { dir: 'flat', label: 'fair', cls: 'delta--flat', pd: 'pd-flat' };
+  if (residual < -CARD_BAND) return { dir: 'under', label: 'undervalued', cls: 'delta--down', pd: 'pd-down' };
+  if (residual >  CARD_BAND) return { dir: 'over',  label: 'overvalued',  cls: 'delta--up',   pd: 'pd-up' };
+  return { dir: 'flat', label: 'fair', cls: 'delta--flat', pd: 'pd-flat' };
+}
 function deltaPill(residual) {
   if (residual == null) return el('span', { class: 'delta delta--flat', text: '—' });
-  const under = residual < 0;
-  const cls = under ? 'delta delta--down' : 'delta delta--up';
-  return el('span', { class: cls, text: signedPct(residual) });
+  const v = residualVerdict(residual);
+  return el('span', { class: `delta ${v.cls}`, text: signedPct(residual) });
 }
 function iqChip(iq) {
   return el('span', { class: 'chip chip--iq', html: `IQ&nbsp;${iq != null ? iq.toFixed(0) : '—'}` });
@@ -623,11 +632,11 @@ function buildModalContent(card) {
   const bigImg = el('img', { src: card.image_large || card.image_small || PLACEHOLDER, alt: card.name, loading: 'lazy' });
   bigImg.addEventListener('error', () => imgFallback(bigImg));
 
-  /* big delta */
-  const under = (card.residual_pct ?? 0) < 0;
+  /* big delta — respects the ±15% verdict band ("fair" inside it) */
+  const verdict = residualVerdict(card.residual_pct);
   const deltaBig = el('div', { class: 'price-delta-big' }, [
-    el('div', { class: `pd-num ${under ? 'pd-down' : 'pd-up'}`, text: signedPct(card.residual_pct) }),
-    el('div', { class: `pd-label ${under ? 'pd-down' : 'pd-up'}`, text: under ? 'undervalued' : 'overvalued' }),
+    el('div', { class: `pd-num ${verdict.pd}`, text: signedPct(card.residual_pct) }),
+    el('div', { class: `pd-label ${verdict.pd}`, text: verdict.label }),
   ]);
 
   const priceBlock = el('div', { class: 'price-block' }, [
@@ -659,9 +668,10 @@ function buildModalContent(card) {
     livePriceVal.textContent = USD(expected);
     if (card.market_price != null && expected > 0) {
       const resid = (card.market_price - expected) / expected;
-      const u = resid < 0;
-      livePriceDelta.textContent = signedPct(resid) + (u ? ' undervalued' : ' overvalued');
-      livePriceDelta.style.color = u ? 'var(--success-accent)' : 'var(--brand-red-dark)';
+      const v = residualVerdict(resid);
+      livePriceDelta.textContent = signedPct(resid) + ' ' + v.label;
+      livePriceDelta.style.color = v.dir === 'under' ? 'var(--success-accent)'
+        : v.dir === 'over' ? 'var(--brand-red-dark)' : 'var(--steel)';
     } else {
       livePriceDelta.textContent = 'no market price';
       livePriceDelta.style.color = 'var(--steel)';

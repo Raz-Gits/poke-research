@@ -88,9 +88,16 @@ EBAY_MARKETPLACE = "EBAY_US"
 # Trading Card Singles category (eBay US). Narrows the search to real singles.
 TRADING_CARD_CATEGORY = "183454"
 PAGE_LIMIT = 200          # max itemSummaries per Browse page
-MAX_PAGES_PER_CARD = 2    # politeness: cap pages; 400 listings is plenty
+MAX_PAGES_PER_CARD = 1    # 1 page (200 listings) is plenty for a demand signal;
+                          # 2 pages at 50ms pacing tripped eBay's per-second rate
+                          # limit -> 429 storm -> 65-min backoff crawl. Keep it 1.
 DAILY_CALL_BUDGET = 4800  # stay under the ~5k/day free Browse quota
-REQUEST_PAUSE_S = 0.05    # gentle pacing between calls
+REQUEST_PAUSE_S = 0.25    # ~4 req/s — under eBay's burst limit (was 0.05 = 20/s)
+SWEEP_TIME_BUDGET_S = 420 # hard wall-clock cap (7 min): if rate-limiting drags the
+                          # sweep past this, stop and write what we have. A sweep
+                          # must NEVER hang for an hour again.
+MAX_CONSECUTIVE_FAILS = 30  # if this many cards in a row come back empty (likely
+                          # quota/rate exhaustion), abort early — don't grind.
 
 
 # ---------------------------------------------------------------------------
@@ -412,15 +419,35 @@ def collect_snapshot(
         return out_path
 
     # LIVE sweep. Each card costs <= MAX_PAGES_PER_CARD calls; stay in budget.
+    # Two circuit-breakers guarantee it can NEVER hang for an hour again:
+    #   * wall-clock: stop after SWEEP_TIME_BUDGET_S regardless of progress.
+    #   * consecutive-fail: if MAX_CONSECUTIVE_FAILS cards in a row come back
+    #     empty (quota/rate exhaustion), abort — grinding won't help today.
+    # Cards not reached are left as neutral rows so the history loader is happy.
     snapshot: Dict[str, dict] = {}
     calls = 0
+    consec_fail = 0
+    start = time.monotonic()
+    aborted = False
     for card in cards:
-        if calls + MAX_PAGES_PER_CARD > DAILY_CALL_BUDGET:
-            log.warning("Daily call budget reached at %s cards; remainder neutral.", len(snapshot))
+        if (
+            calls + MAX_PAGES_PER_CARD > DAILY_CALL_BUDGET
+            or time.monotonic() - start > SWEEP_TIME_BUDGET_S
+            or consec_fail >= MAX_CONSECUTIVE_FAILS
+        ):
+            if not aborted:
+                log.warning(
+                    "Sweep stopping early at %s cards (calls=%s, elapsed=%.0fs, "
+                    "consec_fail=%s); remainder neutral.",
+                    len(snapshot), calls, time.monotonic() - start, consec_fail,
+                )
+                aborted = True
             snapshot[card["id"]] = _empty_row()
             continue
-        snapshot[card["id"]] = _fetch_card_market(card, token)
+        row = _fetch_card_market(card, token)
+        snapshot[card["id"]] = row
         calls += MAX_PAGES_PER_CARD
+        consec_fail = 0 if row.get("active_listings") else consec_fail + 1
 
     # Fill flow fields by diffing yesterday's snapshot, if we have one.
     prev_path = out_dir / f"ebay-{(snapshot_date - timedelta(days=1)).isoformat()}.json"

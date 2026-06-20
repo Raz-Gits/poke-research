@@ -99,8 +99,13 @@ _SCARCITY_W_AGE = 0.3
 # clean percentile to a ~uniform 0-10 distribution (mean ~5).
 #
 # Blend weights: independent popularity (price-free) vs reduced-weight price.
-_CHARPREM_W_INDEP = 0.70   # independent popularity (price-free)
-_CHARPREM_W_PRICE = 0.30   # reduced-weight price percentile
+_CHARPREM_W_INDEP = 1.00   # independent popularity (price-free) — FULL weight
+_CHARPREM_W_PRICE = 0.00   # price component REMOVED (was 0.30). It reintroduced
+                           # mild circularity (current price predicting price) for
+                           # no-prior characters / Trainers, contradicting the
+                           # "price-INDEPENDENT popularity" design. Backtest:
+                           # dropping it holds forward IC (fresh 0.269->0.270) and
+                           # improves decile spread (0.081->0.090). (Codex audit.)
 
 # Sub-signal weights within the independent block.
 _CHARPREM_W_PRINTINGS = 0.35  # total printings (reprints = demand)
@@ -211,9 +216,11 @@ def _charprem_percentile_table(values_by_name: Dict[str, float]) -> Dict[str, fl
 def char_premium_table(cards: List[dict]) -> Dict[str, float]:
     """Per-character popularity premium on a 0-10 scale, keyed by base_name.
 
-    HYBRID, de-skewed: blends an INDEPENDENT, price-free popularity score at 70%
-    with a small, reduced-weight price-percentile component at 30%, keeping
-    circularity low. Covers Pokemon AND Trainers. Every printing of a character
+    De-skewed and now FULLY PRICE-INDEPENDENT: the score is the INDEPENDENT,
+    price-free popularity block at 100% weight. (A 30% current-price-percentile
+    component was removed — it reintroduced mild circularity for no-prior
+    characters; the backtest showed dropping it holds forward IC and improves
+    decile spread.) Covers Pokemon AND Trainers. Every printing of a character
     shares its premium.
 
     Independent popularity (70%) is three price-free signals, each log1p-

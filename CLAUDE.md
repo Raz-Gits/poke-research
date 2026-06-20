@@ -54,9 +54,12 @@ Deploy = commit + push to `main`; **Netlify** rebuilds and swaps in ~1 min
   (only Shrouded's Hyper is still a small-sample estimate). pull_cost =
   pack_price ÷ (tier_prob ÷ #cards-of-that-rarity-in-set).
 - **signals.py** — `char_premium_table` (uses popularity.py + structural
-  fallback; + a systematic **Kanto/Gen-1 tilt**: every char with dex# 1-151
-  gets +0.75, capped 9.5, never lowering — preserves intra-region ranking,
-  validated to not hurt forward IC), `scarcity` = 10·(0.7·rarity_rank +
+  fallback; now FULLY price-INDEPENDENT — the old 30% current-price component was
+  dropped per the Codex audit, `_CHARPREM_W_PRICE=0`: it was mild residual
+  circularity for no-prior chars; backtest showed dropping it holds forward IC +
+  improves decile spread; + a systematic **Kanto/Gen-1 tilt**: every char with
+  dex# 1-151 gets +0.75, capped 9.5, never lowering — preserves intra-region
+  ranking, validated to not hurt forward IC), `scarcity` = 10·(0.7·rarity_rank +
   0.3·age_factor), `set_rank` = within-set **rarity-tier** percentile
   (price-FREE, non-circular — was a within-set *price* percentile that leaked
   the label, corr 0.86 w/ price; swapped after the formula-eval backtest),
@@ -68,9 +71,18 @@ Deploy = commit + push to `main`; **Netlify** rebuilds and swaps in ~1 min
   before removing the circular set_rank — R² is IN-SAMPLE fit, NOT accuracy;
   judge the model on forward IC, not R²; the frontend chip says "in-sample fit").
 - **market_dynamics.py** + **collectors/ebay.py** — eBay demand pressure / supply
-  saturation. Needs `EBAY_APP_ID`/`EBAY_CERT_ID` in `.env` (gitignored). Until
-  then dynamics stays `awaiting_data` — the live site must NEVER present
-  simulated data as real.
+  saturation. `EBAY_APP_ID`/`EBAY_CERT_ID` are LIVE (in `.env`, gitignored; also
+  GitHub repo secrets for the Action). Browse API = ACTIVE listings only (no
+  public sold endpoint), so demand is INFERRED from day-over-day listing/price
+  diffs → needs a few daily snapshots to accrue. Collector hardened after a
+  rate-limit incident: `MAX_PAGES_PER_CARD=1`, `REQUEST_PAUSE_S=0.25` (~4 req/s;
+  20/s tripped eBay's burst limit → 65-min 429 backoff crawl), plus wall-clock
+  (7-min) + consecutive-fail circuit-breakers so a sweep can NEVER hang. The
+  daily sweep is scoped to cards ≥ `$LEADERBOARD_MIN_PRICE` (~850, valuable-
+  first) — the only cards the signal serves. Still NOT a model feature yet
+  (dynamics is display-only / `awaiting_data`); the live site must NEVER present
+  simulated data as real. When wiring into the model/backtest, `compute()` MUST
+  become as-of-date aware (it currently reads latest history) or it leaks.
 - **collectors/wikipopularity.py** — caches Wikipedia article views.
 - **collectors/tcgcsv.py** — real TCGplayer price *history* from tcgcsv.com (free
   mirror of TCGplayer's price API; NOT a scrape). Builds the card→productId
@@ -125,11 +137,18 @@ rating" flags are art-driven Illustration Rares (card art ≠ character fame).
 
 ## Open threads
 
-- eBay demand feed: waiting on the owner's Production key → `.env` (see
-  `EBAY_SETUP.md`). After it's live: fix the demand-gauge scale + relabel the
-  movers chip stub→live in `docs/app.js`. The backtest's Hyper-Rare/blue-chip
-  blind spot is exactly what this demand signal should fill — re-run the backtest
-  after to measure the lift.
+- eBay demand feed is LIVE (Production keys in `.env` + GitHub secrets). Daily
+  snapshots accrue via the `daily-refresh` GitHub Action (`.github/workflows/`,
+  14:00 UTC: fetch → build [collects eBay, valuable-first, idempotent] → push →
+  Netlify). Demand is still DISPLAY-ONLY, not a model feature yet. **Next big
+  step — wire demand into the model** (after ~3-5 days of snapshots): (a) Codex
+  #5 — make `market_dynamics.compute()` as-of-date aware FIRST (else look-ahead);
+  (b) add demand features + backtest the lift on the dead mature segment; (c)
+  Codex #4 — cross-fit/leave-one-out the displayed residuals (own-card leakage).
+  Then fix the demand-gauge scale + movers chip stub→live in `docs/app.js`.
+- Codex pricing audit (done): UI now respects a ±15% verdict band ("fair" inside
+  it; `CARD_BAND` in app.js); char_premium price component dropped; RIDGE_ALPHA
+  swept and kept at 1.0 (all within noise). #4/#5 above are the remaining items.
 - Black Bolt (zsv10pt5) + Mega Evolution (me1) pull odds are special-set
   ESTIMATES (`pullrates.py`), pending the owner's large-sample numbers. Shrouded
   Fable's Hyper is also a small-sample estimate (~1/240).

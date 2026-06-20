@@ -346,6 +346,22 @@ def _leader_row(r: dict) -> dict:
 # ---------------------------------------------------------------------------
 # Orchestration
 # ---------------------------------------------------------------------------
+def _snapshot_is_live(path: Path) -> bool:
+    """True if an eBay snapshot file exists AND carries real listing data (any
+    card with active_listings > 0) — i.e. not a neutral/awaiting-data stub.
+
+    Lets the build SKIP re-sweeping (and re-spending the daily eBay quota) when
+    today's snapshot was already collected (e.g. a manual sweep, or a re-run).
+    """
+    if not path.exists():
+        return False
+    try:
+        data = json.loads(path.read_text())
+    except (json.JSONDecodeError, OSError):
+        return False
+    return any((row or {}).get("active_listings") for row in data.values())
+
+
 def build(today: Optional[date] = None) -> dict:
     """Run the whole pipeline on the cached data and write ``site/data/*.json``.
 
@@ -400,10 +416,26 @@ def build(today: Optional[date] = None) -> dict:
         pull_costs[c["id"]] = pc if pc != float("inf") else 0.0
     signals.inject_pull_cost(features, pull_costs)
 
-    # --- 6. market dynamics (eBay snapshot history; stubbed -> neutral) ---
-    # Refresh today's stub snapshot so the history loader always has a file,
-    # then load the full snapshot series for compute().
-    ebay.collect_snapshot(cards, out_dir=config.SNAPSHOTS, snapshot_date=today)
+    # --- 6. market dynamics (eBay snapshot history) ---
+    # Collect today's eBay snapshot ONCE, VALUABLE CARDS FIRST so the daily
+    # call-budget cap only ever drops penny commons (never whole recent sets).
+    # Idempotent: if today's snapshot already has live data (a manual sweep ran
+    # earlier, or this is a re-run), keep it instead of re-spending the quota.
+    snap_date = today or date.today()
+    snap_path = config.SNAPSHOTS / f"ebay-{snap_date.isoformat()}.json"
+    if _snapshot_is_live(snap_path):
+        print(f"  eBay snapshot {snap_path.name} already live — keeping it (no re-sweep).")
+    else:
+        # Only sweep the cards the demand signal is actually used for: those at or
+        # above the leaderboard floor (~850 cards), most valuable first. Sweeping
+        # all ~2900 (incl. penny commons) just invites eBay rate-limiting for no
+        # benefit. The collector's own circuit-breakers cap time on top of this.
+        to_sweep = sorted(
+            (c for c in cards if (c.get("market_price") or 0) >= config.LEADERBOARD_MIN_PRICE),
+            key=lambda c: -(c.get("market_price") or 0),
+        )
+        print(f"  eBay sweep: {len(to_sweep)} cards >= ${config.LEADERBOARD_MIN_PRICE:g} (valuable-first)")
+        ebay.collect_snapshot(to_sweep, out_dir=config.SNAPSHOTS, snapshot_date=snap_date)
     ebay_history = _load_ebay_history(config.SNAPSHOTS)
     dynamics = build_dynamics(cards, ebay_history)
 

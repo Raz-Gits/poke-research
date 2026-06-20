@@ -60,13 +60,15 @@ def residuals_at(
     cards: List[dict],
     pull_costs: Dict[str, float],
     feature_names: Sequence[str],
+    alpha: float = config.RIDGE_ALPHA,
 ) -> Dict[str, float]:
     """Replica of ``backtest.residuals_at`` that PASSES ``feature_names``.
 
     Identical to the committed routine line-for-line except for the single
     ``model.fit(..., feature_names=feature_names)`` argument, so the residuals
     this produces for the default 5-feature list match the committed backtest's.
-    Returns ``{card_id: residual_pct}``. No future information enters.
+    ``alpha`` lets a caller sweep the ridge L2 strength. Returns
+    ``{card_id: residual_pct}``. No future information enters.
     """
     cards_T: List[dict] = []
     for c in cards:
@@ -80,7 +82,7 @@ def residuals_at(
     signals.inject_pull_cost(
         feats, {c["id"]: pull_costs.get(c["id"], 0.0) for c in cards_T}
     )
-    result = model.fit(cards_T, feats, feature_names=list(feature_names))
+    result = model.fit(cards_T, feats, feature_names=list(feature_names), alpha=alpha)
     out: Dict[str, float] = {}
     for c in cards_T:
         pred = result.get(c["id"])
@@ -95,6 +97,7 @@ def _fit_result_at(
     cards: List[dict],
     pull_costs: Dict[str, float],
     feature_names: Sequence[str],
+    alpha: float = config.RIDGE_ALPHA,
 ) -> Optional[model.ModelResult]:
     """Same as ``residuals_at`` but returns the full fitted ``ModelResult``.
 
@@ -112,7 +115,7 @@ def _fit_result_at(
     signals.inject_pull_cost(
         feats, {c["id"]: pull_costs.get(c["id"], 0.0) for c in cards_T}
     )
-    return model.fit(cards_T, feats, feature_names=list(feature_names))
+    return model.fit(cards_T, feats, feature_names=list(feature_names), alpha=alpha)
 
 
 # ---------------------------------------------------------------------------
@@ -122,6 +125,7 @@ def evaluate(
     feature_names: List[str],
     horizon: int = DEFAULT_HORIZON,
     step_days: int = DEFAULT_STEP,
+    alpha: float = config.RIDGE_ALPHA,
 ) -> dict:
     """Walk-forward forward-IC evaluation of a custom ``feature_names`` list.
 
@@ -167,7 +171,7 @@ def evaluate(
     # 1) Residuals at every eval date (the expensive step, done once).
     resid: Dict[date, Dict[str, float]] = {}
     for T in dates:
-        resid[T] = residuals_at(T, panel[T], cards, pull_costs, feature_names)
+        resid[T] = residuals_at(T, panel[T], cards, pull_costs, feature_names, alpha=alpha)
 
     # 2) Build per-date observation rows, IDENTICAL shape to backtest.build_obs:
     #    row = (mispricing, fwd_return, age_days, price_at_T, rarity_group).
@@ -237,7 +241,7 @@ def evaluate(
     # 5) In-sample log R^2 of the final fit on the most recent date.
     r2_log = None
     last = dates[-1]
-    final_fit = _fit_result_at(last, panel[last], cards, pull_costs, feature_names)
+    final_fit = _fit_result_at(last, panel[last], cards, pull_costs, feature_names, alpha=alpha)
     if final_fit is not None:
         r2 = final_fit.r2_log()
         r2_log = float(r2) if r2 == r2 else None  # guard NaN
