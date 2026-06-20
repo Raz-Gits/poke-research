@@ -149,6 +149,17 @@ rating" flags are art-driven Illustration Rares (card art ≠ character fame).
 - Codex pricing audit (done): UI now respects a ±15% verdict band ("fair" inside
   it; `CARD_BAND` in app.js); char_premium price component dropped; RIDGE_ALPHA
   swept and kept at 1.0 (all within noise). #4/#5 above are the remaining items.
+- PSA grading intensity (`collectors/psa.py`, token LIVE): real per-card DEMAND
+  signal (graded pop + PSA-10 count) via PSA's free Public API. Gotchas: (1) auth
+  is `authorization: bearer <PSA_API_TOKEN>` + a real User-Agent (Cloudflare 403s
+  the default urllib UA, error 1010); (2) the API has NO card→spec search — pop
+  is only by `specID`, so we keep a curated `data/psa_specs.json` (card_id→specID,
+  looked up via web search → the number in a psacard.com `/spec/psa/<id>` URL),
+  cache 14 days, ~100 calls/day free tier. Quick check on the leaderboard CONFIRMS
+  it differentiates: overvalued chase cards (Umbreon 19k / Mew 48k graded) dwarf
+  an undervalued peer (Eevee 8.7k). NOT yet a model feature — pop is a snapshot
+  (no history), so it can't be backtested against the past; grow the spec map +
+  accrue, then validate going forward. Output: `data/psa_pop.json`.
 - Black Bolt (zsv10pt5) + Mega Evolution (me1) pull odds are special-set
   ESTIMATES (`pullrates.py`), pending the owner's large-sample numbers. Shrouded
   Fable's Hyper is also a small-sample estimate (~1/240).

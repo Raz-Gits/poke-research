@@ -1,0 +1,8 @@
+{
+  "_note": "Curated card_id -> PSA specID map. The PSA Public API has no card->spec search, so specs are looked up on psacard.com (the number in a /spec/psa/<id> URL) and pinned here. Pop changes slowly; collectors/psa.py caches for 14 days. Grow this with the top-value cards over time.",
+  "cards": {
+    "sv8pt5-161": 12632263,
+    "sv8pt5-167": 12632269,
+    "sv4pt5-232": 10315260
+  }
+}
