@@ -93,7 +93,7 @@ function iqChip(iq) {
 /* ---------- global state ---------- */
 const STATE = {
   cards: null, sets: null, leaderboard: null, model: null, meta: null,
-  backtest: null, byId: new Map(), loaded: false, error: null,
+  backtest: null, watchlist: null, byId: new Map(), loaded: false, error: null,
 };
 
 async function loadData() {
@@ -110,6 +110,11 @@ async function loadData() {
     const r = await fetch('./data/backtest.json', { cache: 'no-cache' });
     if (r.ok) STATE.backtest = await r.json();
   } catch (_) { /* no track record yet */ }
+  /* watchlist.json is optional too — written by the eBay deal-watcher */
+  try {
+    const r = await fetch('./data/watchlist.json', { cache: 'no-cache' });
+    if (r.ok) STATE.watchlist = await r.json();
+  } catch (_) { /* no watchlist yet */ }
   STATE.loaded = true;
 }
 
@@ -478,6 +483,85 @@ function viewMovers() {
 
   setView(section);
   highlightNav('movers');
+}
+
+/* ============================================================
+   4b. WATCHLISTS — eBay sealed-product deal monitor
+   ============================================================ */
+function ebaySearchUrl(query) {
+  /* live eBay search: fixed-price + auction, sorted lowest price + shipping */
+  return `https://www.ebay.com/sch/i.html?_nkw=${encodeURIComponent(query)}&_sop=15`;
+}
+
+function wlBestCell(icon, label, best) {
+  if (!best || best.price == null) {
+    return el('div', { class: 'wl-bestcell' }, [
+      el('span', { class: 'wl-bestlabel', text: `${icon} ${label}` }),
+      el('span', { class: 'wl-bestprice wl-bestprice--none', text: '—' }),
+    ]);
+  }
+  const ends = best.end ? ` · ends ${String(best.end).slice(0, 10)}` : '';
+  return el('a', { class: 'wl-bestcell wl-bestcell--link', href: best.url || '#',
+    target: '_blank', rel: 'noopener', title: best.title || '' }, [
+    el('span', { class: 'wl-bestlabel', text: `${icon} ${label}` }),
+    el('span', { class: 'wl-bestprice', text: USD0(best.price) }),
+    el('span', { class: 'wl-bestmeta', text: `view${ends}` }),
+  ]);
+}
+
+function watchCard(w) {
+  const under = w.under_cap || 0;
+  const head = el('div', { class: 'wl-head' }, [
+    el('h3', { class: 'wl-title', text: w.label }),
+    el('span', { class: under > 0 ? 'chip chip--teal' : 'badge-stub',
+      text: under > 0 ? `${under} under ${USD0(w.max_price)}` : `none under ${USD0(w.max_price)}` }),
+  ]);
+  const meta = el('p', { class: 'wl-meta', html:
+    `market ~<strong>${USD0(w.market_price)}</strong> &middot; your cap <strong>${USD0(w.max_price)}</strong> &middot; ignore &lt; ${USD0(w.floor)}` });
+  const best = el('div', { class: 'wl-best' }, [
+    wlBestCell('🟢', 'Buy It Now', w.best_bin),
+    wlBestCell('🔨', 'Auction', w.best_auction),
+  ]);
+  const cta = el('a', { class: 'wl-cta', href: ebaySearchUrl(w.query),
+    target: '_blank', rel: 'noopener',
+    text: under > 0 ? `View ${under} on eBay →` : 'Browse on eBay →' });
+  return el('div', { class: 'table-card wl-card' }, [head, meta, best, cta]);
+}
+
+function viewWatchlists() {
+  const wl = STATE.watchlist;
+  const head = el('div', { class: 'section-head' }, [
+    el('div', {}, [
+      el('p', { class: 'micro section-eyebrow', text: 'Watchlists' }),
+      el('h2', { class: 'h2', text: 'Sealed deal watchlist' }),
+      el('p', { class: 'section-sub', text: 'Sealed Elite Trainer Boxes we watch on eBay. When a listing lands at or under your price cap, your phone gets a push (ntfy) with a tap-to-buy link — this page is the dashboard.' }),
+    ]),
+    el('span', { class: 'chip chip--teal', text: 'live · eBay' }),
+  ]);
+
+  if (!wl || !wl.watches || !wl.watches.length) {
+    setView(el('section', { class: 'section container' }, [head,
+      el('div', { class: 'table-card', style: 'padding:28px;text-align:center' }, [
+        el('p', { class: 'body-sm', style: 'color:var(--slate)', html:
+          'No watchlist snapshot yet. Run <code>python ebay_deals.py --once</code> to populate it.' }),
+      ]),
+    ]));
+    highlightNav('watchlists');
+    return;
+  }
+
+  const updated = wl.updated ? new Date(wl.updated) : null;
+  const banner = el('div', { class: 'table-card', style: 'padding:16px 22px;margin-bottom:24px;box-shadow:none;background:var(--surface-soft);display:flex;gap:14px;align-items:center;flex-wrap:wrap' }, [
+    el('span', { class: 'chip chip--lavender', text: '📲 phone alerts' }),
+    el('p', { class: 'body-sm', style: 'margin:0;color:var(--slate);max-width:72ch', html:
+      `Real-time alerts hit your phone the moment a deal appears — this snapshot is from <strong>${updated ? updated.toLocaleString() : 'the last run'}</strong>. Tap any price to open the live listing on eBay. The “>50% under market → ignore” rule strips out code cards, empty boxes and proxies.` }),
+  ]);
+
+  setView(el('section', { class: 'section container' }, [head, banner,
+    el('div', { class: 'wl-grid' }, wl.watches.map(watchCard)),
+    el('p', { class: 'caption', html: 'Prices are eBay <em>asking</em> prices (Buy-It-Now) or current auction bids — not sold comps. You buy manually on eBay; this is a notify-only monitor.' }),
+  ]));
+  highlightNav('watchlists');
 }
 
 /* ============================================================
@@ -971,6 +1055,7 @@ const ROUTES = {
   '/sets': viewSets,
   '/pricelab': viewPriceLab,
   '/movers': viewMovers,
+  '/watchlists': viewWatchlists,
   '/trackrecord': viewTrackRecord,
   '/search': viewSearch,
 };

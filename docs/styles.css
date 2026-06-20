@@ -474,3 +474,22 @@ input[type=range].sig-slider.is-stub::-moz-range-thumb { background:var(--steel)
   .modal-backdrop { padding:0; }
   .modal { border-radius:0; min-height:100vh; }
 }
+
+/* ---- Watchlists (eBay sealed-deal monitor) ---- */
+.wl-grid { display:grid; grid-template-columns:repeat(2, 1fr); gap:18px; }
+.wl-card { padding:20px 22px; display:flex; flex-direction:column; gap:14px; }
+.wl-head { display:flex; align-items:center; justify-content:space-between; gap:12px; }
+.wl-title { font-size:17px; font-weight:600; color:var(--ink); margin:0; line-height:1.3; }
+.wl-meta { font-size:13px; color:var(--steel); margin:0; }
+.wl-meta strong { color:var(--slate); font-weight:600; }
+.wl-best { display:grid; grid-template-columns:1fr 1fr; gap:10px; }
+.wl-bestcell { display:flex; flex-direction:column; gap:2px; padding:12px 14px; border-radius:var(--r-input); background:var(--surface-soft); border:1px solid var(--hairline-soft); }
+.wl-bestcell--link { text-decoration:none; transition:background .15s, border-color .15s; }
+.wl-bestcell--link:hover { background:var(--teal-light); border-color:var(--brand-teal); }
+.wl-bestlabel { font-size:12px; color:var(--steel); font-weight:500; }
+.wl-bestprice { font-size:20px; font-weight:700; color:var(--ink); letter-spacing:-.3px; }
+.wl-bestprice--none { color:var(--muted); font-weight:600; }
+.wl-bestmeta { font-size:11px; color:var(--brand-teal); font-weight:600; }
+.wl-cta { align-self:flex-start; font-size:13px; font-weight:600; color:var(--ink); text-decoration:none; padding:6px 0; }
+.wl-cta:hover { color:var(--brand-teal); }
+@media (max-width:720px) { .wl-grid { grid-template-columns:1fr; } }
