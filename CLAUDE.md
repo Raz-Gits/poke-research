@@ -79,7 +79,13 @@ Deploy = commit + push to `main`; **Netlify** rebuilds and swaps in ~1 min
   20/s tripped eBay's burst limit → 65-min 429 backoff crawl), plus wall-clock
   (7-min) + consecutive-fail circuit-breakers so a sweep can NEVER hang. The
   daily sweep is scoped to cards ≥ `$LEADERBOARD_MIN_PRICE` (~850, valuable-
-  first) — the only cards the signal serves. Still NOT a model feature yet
+  first) — the only cards the signal serves. **Market-anchored price band**
+  (`_apply_price_band`, `PRICE_BAND_LOW=0.5`/`HIGH=4.0`, anchor ≥$2): drops eBay
+  listings <50% / >4× the card's TCGplayer `market_price` BEFORE IQR cleaning —
+  the free-text search matches same-name printings (a chase IR query also pulls
+  the $2 base print), which collapsed avg_price (audit: Ethan's Ho-Oh ex read
+  $5.71 vs $198). Verified live to fix the mismatches without hurting good
+  matches (`experiments/verify_price_band.py`). Still NOT a model feature yet
   (dynamics is display-only / `awaiting_data`); the live site must NEVER present
   simulated data as real. When wiring into the model/backtest, `compute()` MUST
   become as-of-date aware (it currently reads latest history) or it leaks.
