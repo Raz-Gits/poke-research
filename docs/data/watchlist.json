@@ -1,5 +1,5 @@
 {
-  "updated": "2026-06-21T04:52:04.746112+00:00",
+  "updated": "2026-06-21T05:05:22.140922+00:00",
   "watches": [
     {
       "label": "Ascended Heroes ETB",
@@ -10,11 +10,11 @@
       "market_price": 181,
       "floor": 90,
       "cap_after_shipping": true,
-      "under_cap": 29,
+      "under_cap": 28,
       "best_bin": {
-        "price": 119.95,
-        "url": "https://www.ebay.com/itm/366304068168?_skw=pokemon+ascended+heroes+elite+trainer+box&hash=item55496c8248:g:qjwAAeSwiPdpxGvP",
-        "title": "Pok\u00e9mon Zekrom Ascended Heroes Elite Trainer Box Booster Pack English 2026",
+        "price": 125.71,
+        "url": "https://www.ebay.com/itm/358688871546?_skw=pokemon+ascended+heroes+elite+trainer+box&hash=item538385d47a:g:kS8AAeSwBrJqMfG7",
+        "title": "ACE 10 N's Zekrom 031 Black Star Promo Pokemon Ascended Heroes Elite Trainer Box",
         "end": null
       },
       "best_auction": {
@@ -334,13 +334,8 @@
       "market_price": 148,
       "floor": 74,
       "cap_after_shipping": false,
-      "under_cap": 6,
-      "best_bin": {
-        "price": 114.71,
-        "url": "https://www.ebay.com/itm/366340662918?_skw=pokemon+white+flare+elite+trainer+box&hash=item554b9ae686:g:1xsAAeSwWz1p2kAS",
-        "title": "Pokemon TCG White Flare Llama Blanca Elite Trainer Box ETB Spanish SEALED NEW",
-        "end": null
-      },
+      "under_cap": 5,
+      "best_bin": null,
       "best_auction": {
         "price": 76.0,
         "url": "https://www.ebay.com/itm/318470309849?_skw=pokemon+white+flare+elite+trainer+box&hash=item4a264f47d9:g:4HEAAeSwZKtqMzEn",
@@ -392,15 +387,6 @@
           "end": "2026-06-23T01:30:07.000Z",
           "ship": null,
           "item_price": 110.0
-        },
-        {
-          "price": 114.71,
-          "kind": "Buy It Now",
-          "url": "https://www.ebay.com/itm/366340662918?_skw=pokemon+white+flare+elite+trainer+box&hash=item554b9ae686:g:1xsAAeSwWz1p2kAS",
-          "title": "Pokemon TCG White Flare Llama Blanca Elite Trainer Box ETB Spanish SEA",
-          "end": null,
-          "ship": 45.88,
-          "item_price": 114.71
         }
       ]
     },
