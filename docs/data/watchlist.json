@@ -1,5 +1,5 @@
 {
-  "updated": "2026-06-21T05:08:26.349978+00:00",
+  "updated": "2026-06-21T05:10:40.285630+00:00",
   "watches": [
     {
       "label": "Ascended Heroes ETB",
@@ -10,13 +10,8 @@
       "market_price": 181,
       "floor": 90,
       "cap_after_shipping": true,
-      "under_cap": 28,
-      "best_bin": {
-        "price": 125.71,
-        "url": "https://www.ebay.com/itm/358688871546?_skw=pokemon+ascended+heroes+elite+trainer+box&hash=item538385d47a:g:kS8AAeSwBrJqMfG7",
-        "title": "ACE 10 N's Zekrom 031 Black Star Promo Pokemon Ascended Heroes Elite Trainer Box",
-        "end": null
-      },
+      "under_cap": 27,
+      "best_bin": null,
       "best_auction": {
         "price": 102.0,
         "url": "https://www.ebay.com/itm/236878556626?_skw=pokemon+ascended+heroes+elite+trainer+box&hash=item37270fedd2:g:zGoAAeSw77hqL~Na",
@@ -353,15 +348,6 @@
           "item_price": 76.0
         },
         {
-          "price": 81.0,
-          "kind": "Auction",
-          "url": "https://www.ebay.com/itm/188475847525?_skw=pokemon+white+flare+elite+trainer+box&hash=item2be2093365:g:ntcAAeSwHGxqJJSY",
-          "title": "Pok\u00e9mon TCG: White Flare Sealed Elite Trainer Box ETB 189229",
-          "end": "2026-06-28T00:25:01.000Z",
-          "ship": 12.95,
-          "item_price": 81.0
-        },
-        {
           "price": 89.0,
           "kind": "Auction",
           "url": "https://www.ebay.com/itm/127931544703?_skw=pokemon+white+flare+elite+trainer+box&hash=item1dc950747f:g:p5gAAeSwsa1qNZ0L",
@@ -369,6 +355,15 @@
           "end": "2026-06-27T00:00:01.000Z",
           "ship": 12.15,
           "item_price": 89.0
+        },
+        {
+          "price": 100.0,
+          "kind": "Auction",
+          "url": "https://www.ebay.com/itm/188475847525?_skw=pokemon+white+flare+elite+trainer+box&hash=item2be2093365:g:ntcAAeSwHGxqJJSY",
+          "title": "Pok\u00e9mon TCG: White Flare Sealed Elite Trainer Box ETB 189229",
+          "end": "2026-06-28T00:25:01.000Z",
+          "ship": 12.95,
+          "item_price": 100.0
         },
         {
           "price": 102.5,
