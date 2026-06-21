@@ -1,9 +1,10 @@
 {
-  "updated": "2026-06-21T04:14:29.515088+00:00",
+  "updated": "2026-06-21T04:33:38.151201+00:00",
   "watches": [
     {
       "label": "Ascended Heroes ETB",
       "query": "pokemon ascended heroes elite trainer box",
+      "tcg_product": 668496,
       "max_price": 100,
       "min_price": 25,
       "market_price": 181,
@@ -15,6 +16,7 @@
     {
       "label": "Pok\u00e9mon Center Ascended Heroes ETB",
       "query": "pokemon center ascended heroes elite trainer box",
+      "tcg_product": 668497,
       "max_price": 410,
       "min_price": 80,
       "market_price": 456,
@@ -31,6 +33,7 @@
     {
       "label": "Prismatic Evolutions ETB",
       "query": "pokemon prismatic evolutions elite trainer box",
+      "tcg_product": 593355,
       "max_price": 110,
       "min_price": 25,
       "market_price": 180,
@@ -47,6 +50,7 @@
     {
       "label": "Pok\u00e9mon Center Prismatic Evolutions ETB",
       "query": "pokemon center prismatic evolutions elite trainer box",
+      "tcg_product": 593324,
       "max_price": 430,
       "min_price": 100,
       "market_price": 514,
@@ -68,6 +72,7 @@
     {
       "label": "White Flare ETB",
       "query": "pokemon white flare elite trainer box",
+      "tcg_product": 630689,
       "max_price": 100,
       "min_price": 25,
       "market_price": 148,
@@ -84,6 +89,7 @@
     {
       "label": "Pok\u00e9mon Center White Flare ETB",
       "query": "pokemon center white flare elite trainer box",
+      "tcg_product": 630688,
       "max_price": 210,
       "min_price": 80,
       "market_price": 252,

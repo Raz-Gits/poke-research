@@ -492,4 +492,10 @@ input[type=range].sig-slider.is-stub::-moz-range-thumb { background:var(--steel)
 .wl-bestmeta { font-size:11px; color:var(--brand-teal); font-weight:600; }
 .wl-cta { align-self:flex-start; font-size:13px; font-weight:600; color:var(--ink); text-decoration:none; padding:6px 0; }
 .wl-cta:hover { color:var(--brand-teal); }
+.wl-trend { display:flex; align-items:center; gap:8px; flex-wrap:wrap; margin-top:-4px; }
+.wl-trendlabel { font-size:11px; font-weight:600; letter-spacing:.02em; text-transform:uppercase; color:var(--stone); }
+.wl-trendpart { font-size:12px; font-weight:700; padding:2px 8px; border-radius:var(--r-pill); white-space:nowrap; }
+.wl-trend--up { background:var(--surface-yellow); color:var(--brand-red-dark); }
+.wl-trend--down { background:var(--teal-light); color:var(--moss-dark); }
+.wl-trend--flat { background:var(--surface); color:var(--steel); }
 @media (max-width:720px) { .wl-grid { grid-template-columns:1fr; } }

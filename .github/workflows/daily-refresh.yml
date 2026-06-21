@@ -41,6 +41,9 @@ jobs:
           EBAY_CERT_ID: ${{ secrets.EBAY_CERT_ID }}
         run: python -m pipeline.build
 
+      - name: Append today's TCGplayer sealed-price point (Watchlists trend)
+        run: python -m collectors.sealed_history
+
       - name: Commit & push refreshed data (triggers Netlify)
         run: |
           git config user.name  "github-actions[bot]"

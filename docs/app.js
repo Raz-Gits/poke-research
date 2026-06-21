@@ -93,7 +93,7 @@ function iqChip(iq) {
 /* ---------- global state ---------- */
 const STATE = {
   cards: null, sets: null, leaderboard: null, model: null, meta: null,
-  backtest: null, watchlist: null, byId: new Map(), loaded: false, error: null,
+  backtest: null, watchlist: null, sealedTrend: null, byId: new Map(), loaded: false, error: null,
 };
 
 async function loadData() {
@@ -115,6 +115,11 @@ async function loadData() {
     const r = await fetch('./data/watchlist.json', { cache: 'no-cache' });
     if (r.ok) STATE.watchlist = await r.json();
   } catch (_) { /* no watchlist yet */ }
+  /* sealed_trend.json is optional too — TCGplayer price-history trend */
+  try {
+    const r = await fetch('./data/sealed_trend.json', { cache: 'no-cache' });
+    if (r.ok) STATE.sealedTrend = await r.json();
+  } catch (_) { /* no trend yet */ }
   STATE.loaded = true;
 }
 
@@ -511,8 +516,30 @@ function wlBestCell(icon, label, best, market) {
   ]);
 }
 
+/* TCGplayer realized-price trend: one ▲/▼ chip per window. Up = heating (red),
+   down = cooling (teal) — a buyer reads a downtrend as 'prices sliding'. */
+function wlTrendPart(window, frac) {
+  if (frac == null) return null;
+  const up = frac > 0.005, down = frac < -0.005;
+  const arrow = up ? '▲' : (down ? '▼' : '→');
+  const cls = up ? 'wl-trend--up' : (down ? 'wl-trend--down' : 'wl-trend--flat');
+  return el('span', { class: `wl-trendpart ${cls}`, title: `${window} TCGplayer market change` },
+    `${window} ${arrow} ${signedPct(frac, 0)}`);
+}
+function wlTrend(t) {
+  if (!t) return null;
+  const parts = [wlTrendPart('30d', t.trend_30d), wlTrendPart('90d', t.trend_90d)].filter(Boolean);
+  if (!parts.length) return null;
+  return el('div', { class: 'wl-trend' }, [
+    el('span', { class: 'wl-trendlabel', text: 'TCGplayer trend' }),
+    ...parts,
+  ]);
+}
+
 function watchCard(w) {
   const under = w.under_cap || 0;
+  const trend = STATE.sealedTrend && STATE.sealedTrend.products
+    ? STATE.sealedTrend.products[String(w.tcg_product)] : null;
   const head = el('div', { class: 'wl-head' }, [
     el('h3', { class: 'wl-title', text: w.label }),
     el('span', { class: under > 0 ? 'chip chip--teal' : 'badge-stub',
@@ -527,7 +554,7 @@ function watchCard(w) {
   const cta = el('a', { class: 'wl-cta', href: ebaySearchUrl(w.query),
     target: '_blank', rel: 'noopener',
     text: under > 0 ? `View ${under} on eBay →` : 'Browse on eBay →' });
-  return el('div', { class: 'table-card wl-card' }, [head, meta, best, cta]);
+  return el('div', { class: 'table-card wl-card' }, [head, meta, wlTrend(trend), best, cta]);
 }
 
 function viewWatchlists() {
