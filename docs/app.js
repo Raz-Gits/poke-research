@@ -523,8 +523,9 @@ function wlTrendPart(window, frac) {
   const up = frac > 0.005, down = frac < -0.005;
   const arrow = up ? '▲' : (down ? '▼' : '→');
   const cls = up ? 'wl-trend--up' : (down ? 'wl-trend--down' : 'wl-trend--flat');
+  const pctText = (up || down) ? signedPct(frac, 0) : '0%';   // avoid a misleading -0%/+0%
   return el('span', { class: `wl-trendpart ${cls}`, title: `${window} TCGplayer market change` },
-    `${window} ${arrow} ${signedPct(frac, 0)}`);
+    `${window} ${arrow} ${pctText}`);
 }
 function wlTrend(t) {
   if (!t) return null;
@@ -536,6 +537,45 @@ function wlTrend(t) {
   ]);
 }
 
+/* Tiny inline SVG of the TCGplayer market series — the visual trend line. */
+function wlSparkline(series) {
+  const vals = (series || []).map((p) => p.market).filter((v) => v != null);
+  if (vals.length < 3) return null;
+  const w = 150, h = 34, pad = 3, n = vals.length;
+  const min = Math.min(...vals), max = Math.max(...vals), range = (max - min) || 1;
+  const xy = vals.map((v, i) => [
+    pad + (i / (n - 1)) * (w - 2 * pad),
+    pad + (1 - (v - min) / range) * (h - 2 * pad),
+  ]);
+  const pts = xy.map((p) => `${p[0].toFixed(1)},${p[1].toFixed(1)}`).join(' ');
+  const [lx, ly] = xy[n - 1];
+  const stroke = vals[n - 1] >= vals[0] ? 'var(--brand-red-dark)' : 'var(--moss-dark)';
+  const svg = `<svg viewBox="0 0 ${w} ${h}" width="${w}" height="${h}" class="wl-spark" preserveAspectRatio="none" aria-hidden="true">`
+    + `<polyline points="${pts}" fill="none" stroke="${stroke}" stroke-width="1.5" stroke-linejoin="round" stroke-linecap="round"/>`
+    + `<circle cx="${lx.toFixed(1)}" cy="${ly.toFixed(1)}" r="2.2" fill="${stroke}"/></svg>`;
+  return el('div', { class: 'wl-sparkwrap', title: `${n} TCGplayer market points`, html: svg });
+}
+
+/* The current under-cap deals, listed inline so you can preview them on the page
+   before clicking through to the live listing on eBay. */
+function wlListings(listings) {
+  if (!listings || !listings.length) return null;
+  const rows = listings.map((it) => {
+    const tag = it.kind === 'Buy It Now' ? '🟢' : '🔨';
+    const ends = it.end ? ` · ends ${String(it.end).slice(0, 10)}` : '';
+    const ship = (it.ship != null && it.item_price != null && it.price > it.item_price + 0.001)
+      ? ` (${USD0(it.item_price)} + ${USD0(it.ship)} ship)` : '';
+    const meta = `${ship}${ends}`;
+    return el('a', { class: 'wl-listing', href: it.url || '#', target: '_blank', rel: 'noopener',
+      title: it.title || '' }, [
+      el('span', { class: 'wl-listing-price', text: USD0(it.price) }),
+      el('span', { class: 'wl-listing-title', text: `${tag} ${it.title || ''}` }),
+      meta ? el('span', { class: 'wl-listing-meta', text: meta }) : null,
+    ].filter(Boolean));
+  });
+  return el('div', { class: 'wl-listings' }, rows);
+}
+
 function watchCard(w) {
   const under = w.under_cap || 0;
   const trend = STATE.sealedTrend && STATE.sealedTrend.products
@@ -545,15 +585,16 @@ function watchCard(w) {
     el('span', { class: under > 0 ? 'chip chip--teal' : 'badge-stub',
       text: under > 0 ? `${under} under ${USD0(w.max_price)}` : `none under ${USD0(w.max_price)}` }),
   ]);
+  const capNote = w.cap_after_shipping ? ' <span class="wl-capnote">incl. ship</span>' : '';
   const meta = el('p', { class: 'wl-meta', html:
-    `TCGplayer market <strong>${USD0(w.market_price)}</strong> &middot; your cap <strong>${USD0(w.max_price)}</strong> &middot; ignore &lt; ${USD0(w.floor)}` });
+    `TCGplayer market <strong>${USD0(w.market_price)}</strong> &middot; your cap <strong>${USD0(w.max_price)}</strong>${capNote} &middot; ignore &lt; ${USD0(w.floor)}` });
   const best = el('div', { class: 'wl-best' }, [
     wlBestCell('🟢', 'Buy It Now', w.best_bin, w.market_price),
     wlBestCell('🔨', 'Auction', w.best_auction, w.market_price),
   ]);
   const cta = el('a', { class: 'wl-cta', href: ebaySearchUrl(w.query),
     target: '_blank', rel: 'noopener',
-    text: under > 0 ? `View ${under} on eBay →` : 'Browse on eBay →' });
+    text: under > 0 ? `View all ${under} on eBay →` : 'Browse on eBay →' });
   // Official TCGplayer product image (same clean source as the price); broken
   // URLs fall back to the shared placeholder.
   const thumb = w.tcg_product ? el('img', {
@@ -563,7 +604,10 @@ function watchCard(w) {
   }) : null;
   return el('div', { class: 'table-card wl-card' }, [
     thumb,
-    el('div', { class: 'wl-body' }, [head, meta, wlTrend(trend), best, cta]),
+    el('div', { class: 'wl-body' }, [
+      head, meta, wlTrend(trend), wlSparkline(trend && trend.series),
+      best, wlListings(w.listings), cta,
+    ]),
   ].filter(Boolean));
 }
 

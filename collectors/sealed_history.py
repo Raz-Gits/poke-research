@@ -113,14 +113,19 @@ def _from_live(groups, pids) -> Dict[str, float]:
 def _load_existing() -> Dict[str, Dict[str, float]]:
     """Existing series as {productId: {date: market}} so runs merge, not clobber."""
     series: Dict[str, Dict[str, float]] = {}
-    if OUT_PATH.exists():
-        try:
-            prev = json.loads(OUT_PATH.read_text()).get("products", {})
-            for pid, p in prev.items():
-                series[pid] = {pt["date"]: pt["market"] for pt in p.get("series", [])
-                               if pt.get("market") is not None}
-        except (json.JSONDecodeError, OSError, KeyError):  # pragma: no cover
-            pass
+    if not OUT_PATH.exists():
+        return series
+    try:
+        prev = json.loads(OUT_PATH.read_text()).get("products", {})
+    except (json.JSONDecodeError, OSError):  # pragma: no cover
+        return series
+    for pid, p in prev.items():
+        pts: Dict[str, float] = {}
+        for pt in p.get("series", []):       # parse each point defensively —
+            d, m = pt.get("date"), pt.get("market")  # one bad point must not
+            if d and m is not None:           # drop every product after it
+                pts[d] = m
+        series[pid] = pts
     return series
 
 
@@ -132,6 +137,9 @@ def _trend(series: List[dict], days: int):
     if len(series) < 2:
         return None
     latest = series[-1]
+    latest_market = latest.get("market")
+    if latest_market is None:
+        return None
     cutoff = datetime.strptime(latest["date"], "%Y-%m-%d").date() - timedelta(days=days)
     past = None
     for pt in series:  # ascending; keep the newest point at/before the cutoff
@@ -141,7 +149,12 @@ def _trend(series: List[dict], days: int):
             break
     if not past or not past.get("market"):
         return None
-    return round((latest["market"] - past["market"]) / past["market"], 4)
+    # Guard sparse history: the anchor must sit near the window edge, else a gap
+    # (skipped run, holes in backfill) would let a "30d" trend secretly span
+    # months under a confident label. Weekly cadence -> 14d tolerance is ample.
+    if (cutoff - datetime.strptime(past["date"], "%Y-%m-%d").date()).days > 14:
+        return None
+    return round((latest_market - past["market"]) / past["market"], 4)
 
 
 def _write(products: Dict[str, dict], series: Dict[str, Dict[str, float]]) -> None:
@@ -169,6 +182,10 @@ def backfill() -> None:
     series = _load_existing()
     series.update({pid: series.get(pid, {}) for pid in products})
     dates = _archive_dates()
+    if not dates:
+        print(f"no local archives in {ARCHIVE_DIR} — nothing to backfill (series unchanged).")
+        _write(products, series)
+        return
     print(f"backfilling from {len(dates)} local archives "
           f"({dates[0]} .. {dates[-1]}) for {len(pids)} products...")
     for d in dates:
