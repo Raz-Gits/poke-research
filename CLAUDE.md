@@ -171,9 +171,26 @@ rating" flags are art-driven Illustration Rares (card art ≠ character fame).
     `com.razsela.ebay-deals`, KeepAlive, `PYTHONUNBUFFERED=1`, log →
     `~/Pokemon Bot/ebay_deals.log`), mirroring the restock `com.razsela.pokemon-
     monitor`. Runs the loop (180s sweeps). `launchctl unload …plist` to pause.
-  - **TODO:** optional periodic auto-commit of `watchlist.json` so the live site
-    tab stays fresh between manual pushes (service updates the LOCAL JSON each
-    sweep; the deployed tab only changes on commit+push).
+  - **Commits are MANUAL by owner's choice** — do NOT add periodic auto-commit of
+    `watchlist.json` (every-sweep pushes would burn Netlify build minutes for no
+    real gain; the phone is the real-time trigger, the site is just a browsing
+    convenience). The service updates the LOCAL JSON each sweep; the deployed tab
+    only refreshes when the owner explicitly asks for a commit/push.
+  - **7th watch = Pokémon Center Pitch Black ETB** (ME05, group 24688, product
+    692949), added 2026-06-21. PRESALE (set releases 7/17): `market_lock: true`
+    pins the anchor to eBay reality (~$190) instead of TCGplayer's thin-volume
+    $562, with `market_lock_until: 2026-07-24` to auto-re-engage live pricing a
+    week after release. Cap $175 all-in / $160 item.
+  - **Reliability hardening (2026-06-21, from a multi-agent audit):** OAuth token
+    now CACHED with expiry + auto-refreshed each sweep (+ 401 re-auth in browse) —
+    was fetched once and the loop went blind after ~2h. `seen` is set ONLY after
+    a push delivers (failed ntfy → retry next sweep, not silently buried). Adding
+    a watch mid-run now auto-primes via `primed_watches` state (no alert storm).
+    `_collect` drops used/opened boxes (`USED_CONDITIONS`). State + site writes are
+    atomic (`_atomic_write`, temp+os.replace). The 3 PC watches got shipping-aware
+    caps (`cap_after_shipping`/`cap_no_shipping`). Skipped: the "auction re-alert"
+    finding (a non-issue — `seen` is item-id-keyed, so a fired auction never
+    re-pings) and a still-open offer to add the STANDARD (non-PC) Pitch Black watch.
 - eBay demand feed is LIVE (Production keys in `.env` + GitHub secrets). Daily
   snapshots accrue via the `daily-refresh` GitHub Action (`.github/workflows/`,
   14:00 UTC: fetch → build [collects eBay, valuable-first, idempotent] → push →
