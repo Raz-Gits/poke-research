@@ -477,7 +477,9 @@ input[type=range].sig-slider.is-stub::-moz-range-thumb { background:var(--steel)
 
 /* ---- Watchlists (eBay sealed-deal monitor) ---- */
 .wl-grid { display:grid; grid-template-columns:repeat(2, 1fr); gap:18px; }
-.wl-card { padding:20px 22px; display:flex; flex-direction:column; gap:14px; }
+.wl-card { padding:18px 20px; display:flex; gap:16px; align-items:flex-start; }
+.wl-thumb { width:76px; height:76px; flex:none; object-fit:contain; padding:4px; border-radius:var(--r-input); background:var(--surface-soft); border:1px solid var(--hairline-soft); }
+.wl-body { flex:1; min-width:0; display:flex; flex-direction:column; gap:14px; }
 .wl-head { display:flex; align-items:center; justify-content:space-between; gap:12px; }
 .wl-title { font-size:17px; font-weight:600; color:var(--ink); margin:0; line-height:1.3; }
 .wl-meta { font-size:13px; color:var(--steel); margin:0; }

@@ -554,7 +554,17 @@ function watchCard(w) {
   const cta = el('a', { class: 'wl-cta', href: ebaySearchUrl(w.query),
     target: '_blank', rel: 'noopener',
     text: under > 0 ? `View ${under} on eBay →` : 'Browse on eBay →' });
-  return el('div', { class: 'table-card wl-card' }, [head, meta, wlTrend(trend), best, cta]);
+  // Official TCGplayer product image (same clean source as the price); broken
+  // URLs fall back to the shared placeholder.
+  const thumb = w.tcg_product ? el('img', {
+    class: 'wl-thumb', loading: 'lazy', alt: w.label,
+    src: `https://tcgplayer-cdn.tcgplayer.com/product/${w.tcg_product}_200w.jpg`,
+    onerror: (e) => imgFallback(e.target),
+  }) : null;
+  return el('div', { class: 'table-card wl-card' }, [
+    thumb,
+    el('div', { class: 'wl-body' }, [head, meta, wlTrend(trend), best, cta]),
+  ].filter(Boolean));
 }
 
 function viewWatchlists() {
