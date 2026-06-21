@@ -493,7 +493,7 @@ function ebaySearchUrl(query) {
   return `https://www.ebay.com/sch/i.html?_nkw=${encodeURIComponent(query)}&_sop=15`;
 }
 
-function wlBestCell(icon, label, best) {
+function wlBestCell(icon, label, best, market) {
   if (!best || best.price == null) {
     return el('div', { class: 'wl-bestcell' }, [
       el('span', { class: 'wl-bestlabel', text: `${icon} ${label}` }),
@@ -501,11 +501,13 @@ function wlBestCell(icon, label, best) {
     ]);
   }
   const ends = best.end ? ` · ends ${String(best.end).slice(0, 10)}` : '';
+  const pct = (market && best.price) ? Math.round((1 - best.price / market) * 100) : null;
+  const under = (pct && pct > 0) ? ` · ${pct}% under` : '';
   return el('a', { class: 'wl-bestcell wl-bestcell--link', href: best.url || '#',
     target: '_blank', rel: 'noopener', title: best.title || '' }, [
     el('span', { class: 'wl-bestlabel', text: `${icon} ${label}` }),
     el('span', { class: 'wl-bestprice', text: USD0(best.price) }),
-    el('span', { class: 'wl-bestmeta', text: `view${ends}` }),
+    el('span', { class: 'wl-bestmeta', text: `view${ends}${under}` }),
   ]);
 }
 
@@ -517,10 +519,10 @@ function watchCard(w) {
       text: under > 0 ? `${under} under ${USD0(w.max_price)}` : `none under ${USD0(w.max_price)}` }),
   ]);
   const meta = el('p', { class: 'wl-meta', html:
-    `market ~<strong>${USD0(w.market_price)}</strong> &middot; your cap <strong>${USD0(w.max_price)}</strong> &middot; ignore &lt; ${USD0(w.floor)}` });
+    `TCGplayer market <strong>${USD0(w.market_price)}</strong> &middot; your cap <strong>${USD0(w.max_price)}</strong> &middot; ignore &lt; ${USD0(w.floor)}` });
   const best = el('div', { class: 'wl-best' }, [
-    wlBestCell('🟢', 'Buy It Now', w.best_bin),
-    wlBestCell('🔨', 'Auction', w.best_auction),
+    wlBestCell('🟢', 'Buy It Now', w.best_bin, w.market_price),
+    wlBestCell('🔨', 'Auction', w.best_auction, w.market_price),
   ]);
   const cta = el('a', { class: 'wl-cta', href: ebaySearchUrl(w.query),
     target: '_blank', rel: 'noopener',

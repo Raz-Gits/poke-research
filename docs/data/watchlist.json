@@ -1,25 +1,25 @@
 {
-  "updated": "2026-06-21T04:00:14.346687+00:00",
+  "updated": "2026-06-21T04:11:48.039389+00:00",
   "watches": [
     {
       "label": "Ascended Heroes ETB",
       "query": "pokemon ascended heroes elite trainer box",
-      "max_price": 80,
+      "max_price": 150,
       "min_price": 25,
-      "market_price": 102,
-      "floor": 51,
-      "under_cap": 16,
+      "market_price": 181,
+      "floor": 90,
+      "under_cap": 41,
       "best_bin": {
-        "price": 75.0,
-        "url": "https://www.ebay.com/itm/336624329232?_skw=pokemon+ascended+heroes+elite+trainer+box&hash=item4e605fa210:g:bOsAAeSwv8dqJGU0",
-        "title": "Pokemon Ascended Hero\u2019s Elite Trainer Box And Two Booster Packs.",
+        "price": 105.86,
+        "url": "https://www.ebay.com/itm/358688871546?_skw=pokemon+ascended+heroes+elite+trainer+box&hash=item538385d47a:g:kS8AAeSwBrJqMfG7",
+        "title": "ACE 10 N's Zekrom 031 Black Star Promo Pokemon Ascended Heroes Elite Trainer Box",
         "end": null
       },
       "best_auction": {
-        "price": 51.0,
-        "url": "https://www.ebay.com/itm/198379906669?_skw=pokemon+ascended+heroes+elite+trainer+box&hash=item2e305d266d:g:GkEAAeSweQNqFKAt",
-        "title": "Pokemon Mega Evolution Ascended Heroes Elite Trainer Box #KV",
-        "end": "2026-06-24T01:06:00.000Z"
+        "price": 102.0,
+        "url": "https://www.ebay.com/itm/236878556626?_skw=pokemon+ascended+heroes+elite+trainer+box&hash=item37270fedd2:g:zGoAAeSw77hqL~Na",
+        "title": "POKEMON Mega Evolution Ascended Heroes - Elite Trainer Box, Sealed Box is Worn",
+        "end": "2026-06-22T12:38:03.000Z"
       }
     },
     {
@@ -27,42 +27,52 @@
       "query": "pokemon center ascended heroes elite trainer box",
       "max_price": 410,
       "min_price": 80,
-      "market_price": 500,
-      "floor": 250,
-      "under_cap": 11,
+      "market_price": 456,
+      "floor": 228,
+      "under_cap": 8,
       "best_bin": null,
       "best_auction": {
-        "price": 301.0,
-        "url": "https://www.ebay.com/itm/800204585934?_skw=pokemon+center+ascended+heroes+elite+trainer+box&hash=itemba4fe8fbce:g:TCQAAeSwMTBqHXE2",
-        "title": "Pokemon Center Ascended Heroes PC Elite Trainer Box SEALED PC ETB",
-        "end": "2026-06-26T03:00:01.000Z"
+        "price": 315.0,
+        "url": "https://www.ebay.com/itm/287404627098?_skw=pokemon+center+ascended+heroes+elite+trainer+box&hash=item42eaa6949a:g:LMUAAeSwGN5qNLTv",
+        "title": "Pokemon TCG Ascended Heroes Pokemon Center Elite Trainer Box Sealed  (Mint)\u2b50\ufe0f ",
+        "end": "2026-06-26T03:19:18.000Z"
       }
     },
     {
       "label": "Prismatic Evolutions ETB",
       "query": "pokemon prismatic evolutions elite trainer box",
-      "max_price": 115,
+      "max_price": 150,
       "min_price": 25,
-      "market_price": 156,
-      "floor": 78,
-      "under_cap": 8,
-      "best_bin": null,
+      "market_price": 180,
+      "floor": 90,
+      "under_cap": 39,
+      "best_bin": {
+        "price": 140.0,
+        "url": "https://www.ebay.com/itm/198411716949?_skw=pokemon+prismatic+evolutions+elite+trainer+box&hash=item2e32428955:g:4DMAAeSw-6FqJxrH",
+        "title": "Pok\u00e9mon Prismatic Evolutions Elite Trainer Box",
+        "end": null
+      },
       "best_auction": {
-        "price": 79.0,
-        "url": "https://www.ebay.com/itm/158005651976?_skw=pokemon+prismatic+evolutions+elite+trainer+box&hash=item24c9deea08:g:gEkAAeSwfEFqMdsz",
-        "title": "Pok\u00e9mon TCG Prismatic Evolutions Elite Trainer Box  1 Box English",
-        "end": "2026-06-23T23:25:33.000Z"
+        "price": 99.99,
+        "url": "https://www.ebay.com/itm/147388584626?_skw=pokemon+prismatic+evolutions+elite+trainer+box&hash=item22510b52b2:g:-4EAAeSwVW1qN0DI",
+        "title": "Pokemon Elite Trainer Box ETB Prismatic Evolution, Perfect Order, & Chaos Rising",
+        "end": "2026-06-26T01:42:14.000Z"
       }
     },
     {
       "label": "Pok\u00e9mon Center Prismatic Evolutions ETB",
       "query": "pokemon center prismatic evolutions elite trainer box",
-      "max_price": 400,
+      "max_price": 430,
       "min_price": 100,
-      "market_price": 530,
-      "floor": 265,
-      "under_cap": 3,
-      "best_bin": null,
+      "market_price": 514,
+      "floor": 257,
+      "under_cap": 6,
+      "best_bin": {
+        "price": 406.27,
+        "url": "https://www.ebay.com/itm/227387209132?_skw=pokemon+center+prismatic+evolutions+elite+trainer+box&hash=item34f15575ac:g:SwYAAeSwnudqLfwA",
+        "title": "POKEMON TCG PRISMATIC EVOLUTIONS POKEMON CENTER ELITE TRAINER BOX ETB SEALED",
+        "end": null
+      },
       "best_auction": {
         "price": 365.0,
         "url": "https://www.ebay.com/itm/178216109285?_skw=pokemon+center+prismatic+evolutions+elite+trainer+box&hash=item297e8204e5:g:w-EAAeSw4sRqLEGa",
@@ -73,12 +83,17 @@
     {
       "label": "White Flare ETB",
       "query": "pokemon white flare elite trainer box",
-      "max_price": 115,
+      "max_price": 125,
       "min_price": 25,
       "market_price": 148,
       "floor": 74,
-      "under_cap": 5,
-      "best_bin": null,
+      "under_cap": 8,
+      "best_bin": {
+        "price": 114.71,
+        "url": "https://www.ebay.com/itm/366340662918?_skw=pokemon+white+flare+elite+trainer+box&hash=item554b9ae686:g:1xsAAeSwWz1p2kAS",
+        "title": "Pokemon TCG White Flare Llama Blanca Elite Trainer Box ETB Spanish SEALED NEW",
+        "end": null
+      },
       "best_auction": {
         "price": 76.0,
         "url": "https://www.ebay.com/itm/318470309849?_skw=pokemon+white+flare+elite+trainer+box&hash=item4a264f47d9:g:4HEAAeSwZKtqMzEn",
@@ -91,8 +106,8 @@
       "query": "pokemon center white flare elite trainer box",
       "max_price": 210,
       "min_price": 80,
-      "market_price": 250,
-      "floor": 125,
+      "market_price": 252,
+      "floor": 126,
       "under_cap": 1,
       "best_bin": {
         "price": 204.71,
