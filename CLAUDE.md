@@ -149,16 +149,31 @@ rating" flags are art-driven Illustration Rares (card art ≠ character fame).
   parent `~/Pokemon Bot`, NOT this repo — same place as the restock `monitor.py`).
   That watcher polls eBay Browse for a small watchlist (`../deals_watchlist.json`:
   6 ETBs incl. Pokémon Center variants) and pushes a phone alert (ntfy, reusing
-  the restock monitor's `config.NTFY_TOPIC`) when a Buy-It-Now or auction lands
-  at/under the per-product `max_price` cap. Notify-only, manual buy — same clean-
-  monitor boundary as the restock alerter (no scraping/auto-checkout; Browse
-  API's intended use). Junk control = the SAME ">50% under market → ignore" rule
-  as the card collector, anchored to each watch's `market_price` (clean live
-  median), plus `exclude_all` keywords (graded singles, opened/empty boxes,
-  proxies, lots). First run primes silently (no alert storm). The site JSON is a
-  lean snapshot (aggregates + 2 best links); the page shows "updated <time>" —
-  freshness depends on the watcher running + committing. TODO: decide run model
-  (launchd/always-on) + optional periodic auto-commit of `watchlist.json`.
+  the restock monitor's `config.NTFY_TOPIC`) when a deal lands at/under the per-
+  product `max_price` cap. Notify-only, manual buy — same clean-monitor boundary
+  as the restock alerter (no scraping/auto-checkout; Browse API's intended use).
+  Junk control = the SAME ">50% under market → ignore" rule as the card
+  collector, anchored to each watch's `market_price` (clean live median), plus
+  `exclude_all` keywords (graded singles incl. ACE/Black-Star-Promo slabs,
+  opened/empty boxes, foreign-language prints, single-pack mislistings, proxies,
+  lots). Already-ended/sold listings are dropped (`_hours_left < 0`) so neither
+  the site nor the phone shows stale results. First run primes silently (no alert
+  storm). **Phone-alert gate (`_push_worthy`):** only Buy-It-Nows + auctions
+  ending within `PUSH_AUCTION_WINDOW_H` (24h) ping the phone; auctions with more
+  time left ride the site until they enter the closing window, THEN ping (priming
+  silences only currently-worthy ones, so a far-off auction still fires when it
+  closes in). The **site keeps ALL** active under-cap deals (both kinds, any
+  time-left) — the 24h/BIN gate is phone-only. The site JSON is a lean snapshot
+  (aggregates + 2 best links + up to 8 under-cap listings); page shows "updated
+  <time>".
+  - **RUN MODEL (live):** always-on **launchd** service
+    `~/Library/LaunchAgents/com.razsela.ebay-deals.plist` (label
+    `com.razsela.ebay-deals`, KeepAlive, `PYTHONUNBUFFERED=1`, log →
+    `~/Pokemon Bot/ebay_deals.log`), mirroring the restock `com.razsela.pokemon-
+    monitor`. Runs the loop (180s sweeps). `launchctl unload …plist` to pause.
+  - **TODO:** optional periodic auto-commit of `watchlist.json` so the live site
+    tab stays fresh between manual pushes (service updates the LOCAL JSON each
+    sweep; the deployed tab only changes on commit+push).
 - eBay demand feed is LIVE (Production keys in `.env` + GitHub secrets). Daily
   snapshots accrue via the `daily-refresh` GitHub Action (`.github/workflows/`,
   14:00 UTC: fetch → build [collects eBay, valuable-first, idempotent] → push →

@@ -1,5 +1,5 @@
 {
-  "updated": "2026-06-21T19:44:32.028773+00:00",
+  "updated": "2026-06-21T20:10:08.942401+00:00",
   "watches": [
     {
       "label": "Ascended Heroes ETB",
@@ -139,15 +139,6 @@
           "item_price": 337.0
         },
         {
-          "price": 380.0,
-          "kind": "Auction",
-          "url": "https://www.ebay.com/itm/227394881937?_skw=pokemon+center+ascended+heroes+elite+trainer+box&hash=item34f1ca8991:g:8HMAAeSwVW1qNGNa",
-          "title": "Pokemon TCG Ascended Heroes Pokemon Center Exclusive Elite Trainer Box",
-          "end": "2026-06-21T21:30:28.000Z",
-          "ship": 0.0,
-          "item_price": 380.0
-        },
-        {
           "price": 390.0,
           "kind": "Auction",
           "url": "https://www.ebay.com/itm/178233809060?_skw=pokemon+center+ascended+heroes+elite+trainer+box&hash=item297f9018a4:g:AOgAAeSwXXhqNALB",
@@ -155,6 +146,15 @@
           "end": "2026-06-23T15:00:32.000Z",
           "ship": 7.15,
           "item_price": 390.0
+        },
+        {
+          "price": 395.0,
+          "kind": "Auction",
+          "url": "https://www.ebay.com/itm/227394881937?_skw=pokemon+center+ascended+heroes+elite+trainer+box&hash=item34f1ca8991:g:8HMAAeSwVW1qNGNa",
+          "title": "Pokemon TCG Ascended Heroes Pokemon Center Exclusive Elite Trainer Box",
+          "end": "2026-06-21T21:30:28.000Z",
+          "ship": 0.0,
+          "item_price": 395.0
         },
         {
           "price": 405.0,
@@ -222,15 +222,6 @@
           "item_price": 99.99
         },
         {
-          "price": 100.0,
-          "kind": "Auction",
-          "url": "https://www.ebay.com/itm/358706590083?_skw=pokemon+prismatic+evolutions+elite+trainer+box&hash=item5384943183:g:zaMAAeSwfEFqOB6Y",
-          "title": "Pok\u00e9mon TCG Sword & Shield\u2014Prismatic Evolutions Elite Trainer Box Eeve",
-          "end": "2026-06-28T17:27:00.000Z",
-          "ship": null,
-          "item_price": 100.0
-        },
-        {
           "price": 104.5,
           "kind": "Auction",
           "url": "https://www.ebay.com/itm/147388584626?_skw=pokemon+prismatic+evolutions+elite+trainer+box&hash=item22510b52b2:g:-4EAAeSwVW1qN0DI",
@@ -238,6 +229,15 @@
           "end": "2026-06-26T01:42:14.000Z",
           "ship": 20.0,
           "item_price": 104.5
+        },
+        {
+          "price": 107.5,
+          "kind": "Auction",
+          "url": "https://www.ebay.com/itm/358706590083?_skw=pokemon+prismatic+evolutions+elite+trainer+box&hash=item5384943183:g:zaMAAeSwfEFqOB6Y",
+          "title": "Pok\u00e9mon TCG Sword & Shield\u2014Prismatic Evolutions Elite Trainer Box Eeve",
+          "end": "2026-06-28T17:27:00.000Z",
+          "ship": null,
+          "item_price": 107.5
         }
       ]
     },
@@ -269,13 +269,13 @@
           "item_price": 390.0
         },
         {
-          "price": 390.0,
+          "price": 400.0,
           "kind": "Auction",
           "url": "https://www.ebay.com/itm/178222414450?_skw=pokemon+center+prismatic+evolutions+elite+trainer+box&hash=item297ee23a72:g:M6kAAeSwUCdqLxDI",
           "title": "Prismatic Evolutions Pokemon Center Elite Trainer Box ETB - New Factor",
           "end": "2026-06-22T00:45:01.000Z",
           "ship": null,
-          "item_price": 390.0
+          "item_price": 400.0
         },
         {
           "price": 405.0,
@@ -315,13 +315,8 @@
       "market_price": 148,
       "floor": 74,
       "cap_after_shipping": false,
-      "under_cap": 7,
-      "best_bin": {
-        "price": 114.99,
-        "url": "https://www.ebay.com/itm/377285279509?_skw=pokemon+white+flare+elite+trainer+box&hash=item57d7f47f15:g:ixQAAeSwMWtqOCwM",
-        "title": "Pok\u00e9mon TCG Factory Sealed White Flare Elite Trainer Box ETB Fast Shipping!",
-        "end": null
-      },
+      "under_cap": 6,
+      "best_bin": null,
       "best_auction": {
         "price": 76.0,
         "url": "https://www.ebay.com/itm/318470309849?_skw=pokemon+white+flare+elite+trainer+box&hash=item4a264f47d9:g:4HEAAeSwZKtqMzEn",
@@ -382,15 +377,6 @@
           "end": "2026-06-23T01:30:07.000Z",
           "ship": null,
           "item_price": 110.0
-        },
-        {
-          "price": 114.99,
-          "kind": "Buy It Now",
-          "url": "https://www.ebay.com/itm/377285279509?_skw=pokemon+white+flare+elite+trainer+box&hash=item57d7f47f15:g:ixQAAeSwMWtqOCwM",
-          "title": "Pok\u00e9mon TCG Factory Sealed White Flare Elite Trainer Box ETB Fast Ship",
-          "end": null,
-          "ship": 12.99,
-          "item_price": 114.99
         }
       ]
     },
