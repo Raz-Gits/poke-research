@@ -604,6 +604,26 @@ function ebaySearchUrl(query) {
   return `https://www.ebay.com/sch/i.html?_nkw=${encodeURIComponent(query)}&_sop=15`;
 }
 
+/* SITE display rule (user pref): show all Buy-It-Nows, but auctions only when they
+   end within 24h — a far-off auction isn't actionable and its price will still climb. */
+const SITE_AUCTION_WINDOW_H = 24;
+function hoursUntil(endStr) {
+  if (!endStr) return null;
+  const t = Date.parse(endStr);
+  return Number.isNaN(t) ? null : (t - Date.now()) / 3600000;
+}
+function listingShown(it) {
+  if (!it) return false;
+  if (it.kind !== 'Auction') return true;                  // Buy It Now: always shown
+  const h = hoursUntil(it.end);
+  return h != null && h >= 0 && h <= SITE_AUCTION_WINDOW_H;
+}
+function bestAuctionShown(best) {
+  if (!best) return null;
+  const h = hoursUntil(best.end);
+  return (h != null && h >= 0 && h <= SITE_AUCTION_WINDOW_H) ? best : null;
+}
+
 function wlBestCell(icon, label, best, market) {
   if (!best || best.price == null) {
     return el('div', { class: 'wl-bestcell' }, [
@@ -700,7 +720,9 @@ function wlListingRow(it) {
 /* The current under-cap deals, with a Buy-It-Now / Auction switch so you can look
    at each kind on its own before clicking through to the live listing on eBay. */
 function wlListingsPanel(listings) {
-  if (!listings || !listings.length) return null;
+  // Site rule: drop auctions ending >24h out (keep all Buy-It-Nows).
+  listings = (listings || []).filter(listingShown);
+  if (!listings.length) return null;
   const bins = listings.filter((it) => it.kind === 'Buy It Now');
   const aucs = listings.filter((it) => it.kind === 'Auction');
   const views = [
@@ -752,7 +774,7 @@ function watchCard(w) {
     `TCGplayer market <strong>${USD0(w.market_price)}</strong> &middot; your cap <strong>${USD0(w.max_price)}</strong>${capNote} &middot; ignore &lt; ${USD0(w.floor)}` });
   const best = el('div', { class: 'wl-best' }, [
     wlBestCell('🟢', 'Buy It Now', w.best_bin, w.market_price),
-    wlBestCell('🔨', 'Auction', w.best_auction, w.market_price),
+    wlBestCell('🔨', 'Auction', bestAuctionShown(w.best_auction), w.market_price),
   ]);
   const cta = el('a', { class: 'wl-cta', href: ebaySearchUrl(w.query),
     target: '_blank', rel: 'noopener',
