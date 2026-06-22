@@ -295,7 +295,14 @@ table.lb tbody td { padding:12px 16px; font-size:14px; vertical-align:middle; }
 /* ============================================================
    Price Lab two-up
    ============================================================ */
-.lab-grid { display:grid; grid-template-columns:1fr 1fr; gap:24px; align-items:start; }
+/* Single column by default so each leaderboard table (min-width 720px) gets full
+   width and never overflows the page — side-by-side ONLY on screens wide enough to
+   actually fit two tables. minmax(0,1fr) lets the tracks shrink (the grid-blowout
+   fix) so the right column can never get pushed off-screen. */
+.lab-grid { display:grid; grid-template-columns:1fr; gap:24px; align-items:start; }
+@media (min-width:1500px) {
+  .lab-grid { grid-template-columns:minmax(0,1fr) minmax(0,1fr); }
+}
 .lab-col-head { display:flex; align-items:center; gap:10px; margin-bottom:16px; }
 .lab-col-head .h3 { margin:0; }
 
@@ -478,7 +485,6 @@ input[type=range].sig-slider.is-stub::-moz-range-thumb { background:var(--steel)
 @media (max-width:860px) {
   .hero-grid { grid-template-columns:1fr; gap:32px; }
   .hero-card { order:-1; }
-  .lab-grid { grid-template-columns:1fr; }
   .stat-row { grid-template-columns:repeat(2,1fr); }
   .explainer-row { grid-template-columns:1fr; }
   .modal-grid { grid-template-columns:1fr; }
