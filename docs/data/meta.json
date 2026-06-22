@@ -1,5 +1,5 @@
 {
-  "built_at": "2026-06-21T23:47:48",
+  "built_at": "2026-06-22T00:03:20",
   "built_for_date": "2026-06-21",
   "sets": 15,
   "cards": 2937,
@@ -11,7 +11,7 @@
     "cards": "pokemontcg.io (cached, normalized)",
     "prices": "pokemontcg.io TCGplayer market prices (cached)",
     "ebay": "stub (awaiting Browse API key)",
-    "psa": "stub (awaiting PSA pop feed)",
+    "psa": "PSA Public API pop (3 cards mapped)",
     "trends": "stub (awaiting Google Trends feed)"
   },
   "signal_status": {

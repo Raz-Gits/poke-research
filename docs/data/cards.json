@@ -25371,6 +25371,14 @@
       "char_premium": 0.744671,
       "scarcity": -0.000284,
       "months_since_release": -0.045214
+    },
+    "psa_pop": {
+      "total": 19307,
+      "psa10": 5761,
+      "psa9": 9638,
+      "psa10_rate": 0.2984,
+      "spec": 12632263,
+      "fetched": "2026-06-19"
     }
   },
   {
@@ -25731,6 +25739,14 @@
       "char_premium": 1.21125,
       "scarcity": -0.000284,
       "months_since_release": -0.045214
+    },
+    "psa_pop": {
+      "total": 8691,
+      "psa10": 2571,
+      "psa9": 4724,
+      "psa10_rate": 0.2958,
+      "spec": 12632269,
+      "fetched": "2026-06-19"
     }
   },
   {
@@ -58432,6 +58448,14 @@
       "char_premium": 1.21125,
       "scarcity": -0.002961,
       "months_since_release": -0.274288
+    },
+    "psa_pop": {
+      "total": 47803,
+      "psa10": 16179,
+      "psa9": 24767,
+      "psa10_rate": 0.3385,
+      "spec": 10315260,
+      "fetched": "2026-06-19"
     }
   },
   {

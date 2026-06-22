@@ -145,6 +145,25 @@ function flowStats(dyn) {
     ]),
   ]);
 }
+/* PSA grading intensity (population) — real collector-appeal evidence, shown only
+   for cards with a curated specID. DISPLAY only; not a price-model input. */
+function psaPanel(card) {
+  const p = card && card.psa_pop;
+  if (!p || !p.total) return null;
+  const gem = p.psa10_rate != null ? (p.psa10_rate * 100).toFixed(1) + '%' : '—';
+  const cell = (label, val) => el('div', { class: 'flow-cell' }, [
+    el('div', { class: 'flow-num', text: val }),
+    el('div', { class: 'flow-label', text: label }),
+  ]);
+  return el('div', { class: 'flow-stats' }, [
+    el('div', { class: 'flow-title', text: 'PSA population · collector appeal' }),
+    el('div', { class: 'flow-row' }, [
+      cell('graded total', p.total.toLocaleString()),
+      cell('PSA 10', (p.psa10 || 0).toLocaleString()),
+      cell('gem rate', gem),
+    ]),
+  ]);
+}
 
 /* ---------- global state ---------- */
 const STATE = {
@@ -1057,6 +1076,7 @@ function buildModalContent(card) {
         ]),
         gauges,
         flowStats(dyn),
+        psaPanel(card),
         el('p', { class: 'caption', html: dynLive
           ? `Demand pressure = est. sold (7d) ÷ total supply; supply saturation = active listings 7-day vs 30-day average. Inferred from daily eBay active-listing snapshots${dyn.active_listings != null ? ` (${dyn.active_listings.toLocaleString()} active, ${(dyn.sold_7d ?? 0).toLocaleString()} est. sold this week)` : ''}.`
           : 'Demand pressure & supply saturation need an eBay feed — shown as <strong>awaiting data</strong>.' }),

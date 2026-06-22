@@ -383,6 +383,21 @@ def _snapshot_is_live(path: Path) -> bool:
     return any((row or {}).get("active_listings") for row in data.values())
 
 
+def _load_psa_pop() -> Dict[str, dict]:
+    """card_id -> PSA population row from ``data/psa_pop.json`` (empty if absent).
+
+    Written by ``collectors/psa.py`` (PSA free Public API, aggregate pop only).
+    Returns the ``cards`` map: ``{card_id: {total, psa10, psa9, psa10_rate, ...}}``.
+    """
+    p = config.DATA / "psa_pop.json"
+    if not p.exists():
+        return {}
+    try:
+        return json.loads(p.read_text()).get("cards", {}) or {}
+    except (json.JSONDecodeError, OSError):
+        return {}
+
+
 def build(today: Optional[date] = None) -> dict:
     """Run the whole pipeline on the cached data and write ``site/data/*.json``.
 
@@ -485,6 +500,18 @@ def build(today: Optional[date] = None) -> dict:
     # --- 8. assemble enriched cards + IQ scores --------------------------
     card_records = build_cards(cards, features, result, dynamics, signals_by_id)
 
+    # --- 8a. attach PSA grading-intensity (population) for mapped cards ---
+    # DISPLAY only (collector-appeal evidence: total graded / PSA10 / gem rate),
+    # NOT a model input — same discipline as demand. Dark until collectors/psa.py
+    # has a token + spec map; lights up per card as specIDs are added.
+    psa_pop = _load_psa_pop()
+    n_psa = 0
+    for rec in card_records:
+        pop = psa_pop.get(rec["id"])
+        if pop:
+            rec["psa_pop"] = pop
+            n_psa += 1
+
     # --- 8b. forward prediction log (self-grading backtest panel) --------
     n_pred = _write_prediction_log(card_records, built_for=built_at)
 
@@ -508,7 +535,8 @@ def build(today: Optional[date] = None) -> dict:
             "cards": "pokemontcg.io (cached, normalized)",
             "prices": "pokemontcg.io TCGplayer market prices (cached)",
             "ebay": "stub (awaiting Browse API key)",
-            "psa": "stub (awaiting PSA pop feed)",
+            "psa": (f"PSA Public API pop ({n_psa} cards mapped)" if n_psa
+                    else "stub (awaiting PSA spec map)"),
             "trends": "stub (awaiting Google Trends feed)",
         },
         "signal_status": signal_status,
