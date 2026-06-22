@@ -97,9 +97,10 @@ MAX_PAGES_PER_CARD = 1    # 1 page (200 listings) is plenty for a demand signal;
                           # limit -> 429 storm -> 65-min backoff crawl. Keep it 1.
 DAILY_CALL_BUDGET = 4800  # stay under the ~5k/day free Browse quota
 REQUEST_PAUSE_S = 0.25    # ~4 req/s — under eBay's burst limit (was 0.05 = 20/s)
-SWEEP_TIME_BUDGET_S = 420 # hard wall-clock cap (7 min): if rate-limiting drags the
+SWEEP_TIME_BUDGET_S = 1800 # hard wall-clock cap (30 min): if rate-limiting drags the
                           # sweep past this, stop and write what we have. A sweep
-                          # must NEVER hang for an hour again.
+                          # must NEVER hang for an hour again. Raised to 30 min when
+                          # DEMAND_UNIVERSE_SIZE went to 850 (~2s/card → ~28-min run).
 MAX_CONSECUTIVE_FAILS = 30  # if this many cards in a row come back empty (likely
                           # quota/rate exhaustion), abort early — don't grind.
 
@@ -139,16 +140,11 @@ def _empty_row() -> Dict[str, Optional[float]]:
 # ---------------------------------------------------------------------------
 # Price cleaning (shared by live parse, diff, and simulation)
 # ---------------------------------------------------------------------------
-def _clean_prices(prices: List[float]) -> List[float]:
-    """Drop statistical outliers via a 1.5*IQR fence. Pure stdlib.
-
-    eBay active listings are noisy: graded slabs, lots, and aspirational
-    BIN prices all inflate the tail. With few points we keep everything; with
-    enough we trim values outside [Q1 - 1.5*IQR, Q3 + 1.5*IQR].
-    """
+def _iqr_bounds(prices: List[float]) -> Optional[Tuple[float, float]]:
+    """[Q1 - 1.5*IQR, Q3 + 1.5*IQR] fence, or None with <4 usable points."""
     vals = sorted(p for p in prices if p is not None and p > 0)
     if len(vals) < 4:
-        return vals
+        return None
 
     def _quantile(s: List[float], q: float) -> float:
         idx = q * (len(s) - 1)
@@ -159,9 +155,39 @@ def _clean_prices(prices: List[float]) -> List[float]:
 
     q1, q3 = _quantile(vals, 0.25), _quantile(vals, 0.75)
     iqr = q3 - q1
-    lo, hi = q1 - 1.5 * iqr, q3 + 1.5 * iqr
+    return q1 - 1.5 * iqr, q3 + 1.5 * iqr
+
+
+def _clean_prices(prices: List[float]) -> List[float]:
+    """Drop statistical outliers via a 1.5*IQR fence. Pure stdlib.
+
+    eBay active listings are noisy: graded slabs, lots, and aspirational
+    BIN prices all inflate the tail. With few points we keep everything; with
+    enough we trim values outside [Q1 - 1.5*IQR, Q3 + 1.5*IQR].
+    """
+    vals = sorted(p for p in prices if p is not None and p > 0)
+    bounds = _iqr_bounds(vals)
+    if bounds is None:
+        return vals
+    lo, hi = bounds
     cleaned = [v for v in vals if lo <= v <= hi]
     return cleaned or vals
+
+
+def _clean_pairs(pairs: List[Tuple[str, float]]) -> List[Tuple[str, float]]:
+    """IQR-clean ``(item_id, price)`` pairs, preserving the surviving item_ids.
+
+    Same fence as :func:`_clean_prices` but keeps the id alongside each price so
+    the live collector can record WHICH listings survived (for gross day-over-day
+    flow via item-id set diffs), not just how many.
+    """
+    valid = [(i, p) for i, p in pairs if p is not None and p > 0]
+    bounds = _iqr_bounds([p for _, p in valid])
+    if bounds is None:
+        return valid
+    lo, hi = bounds
+    kept = [(i, p) for i, p in valid if lo <= p <= hi]
+    return kept or valid
 
 
 def _mean(vals: List[float]) -> Optional[float]:
@@ -291,7 +317,7 @@ def _fetch_card_market(card: dict, token: str) -> Dict[str, Optional[float]]:
     are filled later by :func:`diff_snapshots` against yesterday's file.
     """
     q = _build_query(card)
-    prices: List[float] = []
+    items: List[Tuple[str, float]] = []  # (item_id, price) for plausible listings
     for page in range(MAX_PAGES_PER_CARD):
         data = _browse_request(token, q, offset=page * PAGE_LIMIT)
         time.sleep(REQUEST_PAUSE_S)
@@ -309,19 +335,35 @@ def _fetch_card_market(card: dict, token: str) -> Dict[str, Optional[float]]:
                 val = float(price.get("value"))
             except (TypeError, ValueError):
                 continue
-            prices.append(val)
+            iid = it.get("itemId")
+            if iid is None:
+                continue
+            items.append((str(iid), val))
         # Stop early if we've consumed all results.
         if len(summaries) < PAGE_LIMIT:
             break
 
     # Anchor to TCGplayer market first (kills cheap same-name mismatches), then
     # IQR-clean the survivors. Band BEFORE clean so the cheap copies can't skew
-    # the IQR fence itself.
-    banded, n_dropped = _apply_price_band(prices, card.get("market_price"))
-    cleaned = _clean_prices(banded)
+    # the IQR fence itself. We band/clean the (id, price) PAIRS so we can record
+    # which listings survived -> tomorrow's diff measures GROSS flow, not net.
+    prices = [p for _, p in items]
+    band_lo_hi = _apply_price_band(prices, card.get("market_price"))
+    n_dropped = band_lo_hi[1]
+    if card.get("market_price") and card["market_price"] >= PRICE_BAND_MIN_ANCHOR:
+        lo = card["market_price"] * PRICE_BAND_LOW
+        hi = card["market_price"] * PRICE_BAND_HIGH
+        banded_pairs = [(i, p) for i, p in items if lo <= p <= hi]
+    else:
+        banded_pairs = list(items)
+    cleaned_pairs = _clean_pairs(banded_pairs)
+    banded = [p for _, p in banded_pairs]  # for the logging line below
     row = _empty_row()
-    row["active_listings"] = len(cleaned)
-    row["avg_price"] = _mean(cleaned)
+    row["active_listings"] = len(cleaned_pairs)
+    row["avg_price"] = _mean([p for _, p in cleaned_pairs])
+    # De-duplicated, sorted listing ids of the survivors — lets diff_row infer
+    # gross ended/new from set differences (churn the net count would hide).
+    row["item_ids"] = sorted({i for i, _ in cleaned_pairs})
     # Visibility: log cards where the band removed a big share — these are the
     # match-noise cases we're fixing (and a watchlist if the band is too tight).
     if prices and n_dropped / len(prices) >= 0.5:
@@ -356,13 +398,31 @@ def diff_row(prev_row: Optional[dict], curr_row: dict) -> dict:
 
     prev_row = prev_row or {}
     prev_active = prev_row.get("active_listings")
-    if cur_active is None or prev_active is None:
-        return row  # no usable diff yet -> neutral flow
 
-    delta = int(cur_active) - int(prev_active)
-    row["new_listings"] = max(delta, 0)
-    ended = max(-delta, 0)
-    row["ended_listings"] = ended
+    # Carry today's listing ids forward so tomorrow's diff can use them too.
+    cur_ids = curr_row.get("item_ids")
+    if cur_ids is not None:
+        row["item_ids"] = cur_ids
+    prev_ids = prev_row.get("item_ids")
+
+    # GROSS flow when BOTH days carry item ids: a listing that's in yesterday's
+    # set but not today's actually ENDED (sold or pulled), even if an equal number
+    # of new listings appeared and the net count is unchanged. Net-delta hides that
+    # churn; the id-set diff is the real demand window.
+    if cur_ids is not None and prev_ids is not None:
+        cur_set, prev_set = set(cur_ids), set(prev_ids)
+        new = len(cur_set - prev_set)
+        ended = len(prev_set - cur_set)
+        row["new_listings"] = new
+        row["ended_listings"] = ended
+    elif cur_active is None or prev_active is None:
+        return row  # no usable diff yet -> neutral flow
+    else:
+        # NET fallback (older snapshots / simulation without ids).
+        delta = int(cur_active) - int(prev_active)
+        row["new_listings"] = max(delta, 0)
+        ended = max(-delta, 0)
+        row["ended_listings"] = ended
 
     if ended == 0:
         row["est_sold"] = 0

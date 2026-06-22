@@ -105,6 +105,47 @@ function iqChip(iq) {
   return el('span', { class: 'chip chip--iq', html: `IQ&nbsp;${iq != null ? iq.toFixed(0) : '—'}` });
 }
 
+/* ---------- plain-language market-signal labels (baked in build.py/signal_labels.py) ----------
+   DESCRIPTIVE only — they summarize recent price + eBay demand/supply flow. They are
+   NOT predictions and never feed the expected price. */
+const SIGNAL_TONES = {
+  hot: 'sig--hot', opportunity: 'sig--opp', warm: 'sig--warm', neutral: 'sig--neutral',
+  cool: 'sig--cool', cold: 'sig--cold', caution: 'sig--caution',
+};
+/* compact pill for grids/rows — hidden when there's nothing to say (awaiting data) */
+function signalPill(card) {
+  const s = card && card.signal;
+  if (!s || !s.label || s.confidence === 'none') return null;
+  const pill = el('span', { class: `sig-pill ${SIGNAL_TONES[s.tone] || 'sig--neutral'}`, text: s.label });
+  if (s.detail) pill.title = s.detail;
+  return pill;
+}
+/* full banner for the modal (label + supporting numbers), like the reference card view */
+function signalBanner(card) {
+  const s = card && card.signal;
+  if (!s || !s.label) return null;
+  const kids = [el('span', { class: 'sig-banner-label', text: s.label })];
+  if (s.detail) kids.push(el('span', { class: 'sig-banner-detail', text: s.detail }));
+  if (s.confidence === 'price_only') kids.push(el('span', { class: 'sig-banner-flag', text: 'price only · eBay flow pending' }));
+  return el('div', { class: `sig-banner ${SIGNAL_TONES[s.tone] || 'sig--neutral'}` }, kids);
+}
+/* per-card eBay flow stats (active / new / sold est), shown only with a live read */
+function flowStats(dyn) {
+  if (!dyn || dyn.status !== 'ok') return null;
+  const cell = (label, val) => el('div', { class: 'flow-cell' }, [
+    el('div', { class: 'flow-num', text: val == null ? '—' : val.toLocaleString() }),
+    el('div', { class: 'flow-label', text: label }),
+  ]);
+  return el('div', { class: 'flow-stats' }, [
+    el('div', { class: 'flow-title', text: 'eBay market dynamics · 7-day' }),
+    el('div', { class: 'flow-row' }, [
+      cell('active listings', dyn.active_listings),
+      cell('new (7d)', dyn.new_7d),
+      cell('sold est (7d)', dyn.sold_7d),
+    ]),
+  ]);
+}
+
 /* ---------- global state ---------- */
 const STATE = {
   cards: null, sets: null, leaderboard: null, model: null, meta: null,
@@ -190,6 +231,7 @@ function leaderboardTable(rows, opts = {}) {
         el('div', {}, [
           el('div', { class: 'lb-name', text: r.name }),
           el('div', { class: 'lb-sub', text: `${r.set_name} · #${r.number} · ${r.rarity}` }),
+          signalPill(r),
         ]),
       ])),
       el('td', { class: 'num lb-price', text: USD(r.market_price) }),
@@ -453,6 +495,7 @@ function moversTableLive(rows) {
         el('div', {}, [
           el('div', { class: 'lb-name', text: r.name }),
           el('div', { class: 'lb-sub', text: `${r.set_name} · #${r.number} · ${r.rarity}` }),
+          signalPill(r),
         ]),
       ])),
       el('td', { class: 'num lb-price', text: awaiting ? '—' : `${Number(sat).toFixed(2)}×` }),
@@ -814,6 +857,7 @@ function miniCard(c) {
     el('div', {}, [
       el('div', { class: 'mini-card-name', text: c.name }),
       el('div', { class: 'mini-card-sub', text: `${c.set_name} · #${c.number}` }),
+      signalPill(c),
     ]),
     el('div', { class: 'mini-card-foot' }, [
       el('span', { class: 'lb-price', text: USD(c.market_price) }),
@@ -999,6 +1043,7 @@ function buildModalContent(card) {
         el('h3', { class: 'h2 modal-title', text: card.name }),
         el('div', { class: 'modal-setline', text: `${card.set_name} · ${card.series} · ${card.release_date}` }),
         priceBlock,
+        signalBanner(card),
         (card.features && card.features.pull_cost)
           ? el('p', { class: 'caption', html:
               `<strong>Cost to pull one ≈ ${USD0(card.features.pull_cost)}</strong> — expected spend on booster packs (at today's market pack price) to hit this exact card once. Buying the single at ${USD(card.market_price)} is ${card.features.pull_cost > (card.market_price || 0) ? 'far cheaper' : 'pricier'} than chasing it.` })
@@ -1011,6 +1056,7 @@ function buildModalContent(card) {
           el('span', { class: 'caption', text: 'composite of scarcity, character premium & in-set rank' }),
         ]),
         gauges,
+        flowStats(dyn),
         el('p', { class: 'caption', html: dynLive
           ? `Demand pressure = est. sold (7d) ÷ total supply; supply saturation = active listings 7-day vs 30-day average. Inferred from daily eBay active-listing snapshots${dyn.active_listings != null ? ` (${dyn.active_listings.toLocaleString()} active, ${(dyn.sold_7d ?? 0).toLocaleString()} est. sold this week)` : ''}.`
           : 'Demand pressure & supply saturation need an eBay feed — shown as <strong>awaiting data</strong>.' }),

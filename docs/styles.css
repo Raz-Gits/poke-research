@@ -191,6 +191,34 @@ button { font-family:inherit; cursor:pointer; }
 .delta--up { background:var(--brand-red); color:var(--brand-red-dark); }
 .delta--flat { background:var(--surface); color:var(--steel); }
 
+/* ---- plain-language market-signal labels (signalPill / signalBanner) ---- */
+.sig-pill {
+  display:inline-block; margin-top:6px; padding:3px 8px; border-radius:var(--r-pill);
+  font-size:11px; font-weight:600; line-height:1.3; max-width:100%;
+}
+.sig--opp     { background:rgba(43,166,106,.16); color:var(--success-accent); }
+.sig--hot     { background:rgba(240,138,30,.18);  color:#B25E00; }
+.sig--warm    { background:rgba(240,138,30,.10);  color:#B25E00; }
+.sig--caution { background:rgba(240,138,30,.18);  color:#B25E00; }
+.sig--cold    { background:var(--brand-red);      color:var(--brand-red-dark); }
+.sig--cool    { background:var(--surface);        color:var(--slate); }
+.sig--neutral { background:var(--surface);        color:var(--steel); }
+
+.sig-banner {
+  display:flex; flex-wrap:wrap; align-items:baseline; gap:4px 12px;
+  padding:10px 14px; border-radius:12px; margin:0 0 18px;
+}
+.sig-banner-label { font-weight:700; font-size:14px; }
+.sig-banner-detail { font-size:13px; color:var(--steel); }
+.sig-banner-flag { font-size:11px; color:var(--stone); font-style:italic; }
+
+/* ---- per-card eBay flow stats (active / new / sold est) ---- */
+.flow-stats { margin:14px 0 0; padding:12px 14px; background:var(--surface-soft); border-radius:12px; }
+.flow-title { font-size:11px; font-weight:600; text-transform:uppercase; letter-spacing:.5px; color:var(--steel); margin-bottom:8px; }
+.flow-row { display:flex; gap:24px; }
+.flow-num { font-size:18px; font-weight:700; color:var(--ink); }
+.flow-label { font-size:11px; color:var(--steel); }
+
 /* ============================================================
    Hero
    ============================================================ */

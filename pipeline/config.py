@@ -121,10 +121,30 @@ GATE_FRESH_AGE_DAYS = 35
 GATE_DEAD_LO = 20.0     # \  cards in [GATE_DEAD_LO, GATE_DEAD_HI) that are NOT fresh
 GATE_DEAD_HI = 100.0    # /  are the measured dead zone — suppressed from surfacing
 
+# Plain-language market-signal labels (pipeline/signal_labels.py). A RULES layer
+# that fuses recent price move + demand/supply into one English verdict per card
+# (e.g. "Heating up", "Opportunity — dipping with firm demand", "Cooling"). These
+# are DESCRIPTIVE only — they never feed expected_price (demand stays out of the
+# model until forward-validated). Thresholds calibrated 2026-06-21 against the live
+# eBay feed: demand_pressure median ~1%, p90 ~18% -> HOT=15 catches the real tail;
+# supply_saturation is flat 1.0 until >7d of span, so "cooling/loosening" clauses
+# stay dark until the span grows, then light up on their own.
+SIGNAL_PRICE_WINDOW_DAYS = 7   # look-back for the recent price move
+SIGNAL_PRICE_UP_PCT = 3.0      # >= this over the window = "rising"
+SIGNAL_PRICE_DOWN_PCT = -3.0   # <= this = "falling"
+SIGNAL_DEMAND_HOT = 15.0       # demand_pressure (sell-through %) >= this = firm demand
+SIGNAL_SAT_TIGHTEN = 0.97      # supply_saturation < this = supply contracting
+SIGNAL_SAT_LOOSEN = 1.03       # supply_saturation > this = supply building
+
 # Demand collector: sweep a FIXED, valuable-first universe of this size EVERY day
 # (not the old budget-truncated variable slice). The SAME cards then get an active-
-# listing count daily, so day-over-day demand diffs actually accrue. Small enough
-# to finish inside the collector's ~7-min time budget (live sweep is ~2s/card, so
-# ~150 completes with margin; price-ordered, so the SAME top cards are covered
-# first every day and day-over-day demand diffs accrue reliably).
-DEMAND_UNIVERSE_SIZE = 150
+# listing count daily, so day-over-day demand diffs actually accrue. Price-ordered,
+# so the SAME top cards are covered first every day and diffs accrue reliably.
+# Widened 150 → 850 (2026-06-21) to cover the ENTIRE priced universe above the
+# $2 leaderboard floor (~847 cards) every day — so every surfaced card gets a live
+# demand/supply read, matching the reference site's coverage. 850 calls/day is far
+# under the ~5k/day quota; the binding constraint was never the daily quota but
+# eBay's PER-SECOND burst limit, which our 4 req/s pacing (REQUEST_PAUSE_S) already
+# respects. At ~2s/card that's a ~28-min single run (SWEEP_TIME_BUDGET_S=1800s).
+# Price-ordered, so if a run is throttled it drops only the CHEAPEST tail.
+DEMAND_UNIVERSE_SIZE = 850

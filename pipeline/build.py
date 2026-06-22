@@ -30,7 +30,7 @@ from datetime import date, datetime
 from pathlib import Path
 from typing import Dict, List, Optional
 
-from . import config, ev, market_dynamics, model, pullrates, sealed_market, signals
+from . import config, ev, market_dynamics, model, pullrates, sealed_market, signal_labels, signals
 from collectors import ebay
 
 
@@ -176,13 +176,15 @@ def build_cards(
     features: Dict[str, Dict[str, float]],
     result: "model.ModelResult",
     dynamics: Dict[str, dict],
+    signals_by_id: Optional[Dict[str, dict]] = None,
 ) -> List[dict]:
     """Assemble the enriched per-card records for cards.json.
 
     Each record is the NormalizedCard plus: ``features``, ``cluster``,
     ``expected_price``, ``residual_pct``, ``iq_score``, ``contributions``,
-    ``dynamics`` and ``image_small`` (already present, kept explicit).
+    ``dynamics``, ``price_move``, ``signal`` and ``image_small`` (already present).
     """
+    signals_by_id = signals_by_id or {}
     out: List[dict] = []
     for c in cards:
         cid = c["id"]
@@ -193,6 +195,10 @@ def build_cards(
         record["features"] = feats
         record["iq_score"] = iq_score(feats)
         record["dynamics"] = dynamics.get(cid, dict(market_dynamics.NEUTRAL))
+        sig = signals_by_id.get(cid)
+        if sig is not None:
+            record["price_move"] = sig.get("price_move")
+            record["signal"] = sig.get("signal")
 
         if pred is not None:
             record["cluster"] = pred.cluster
@@ -353,6 +359,8 @@ def _leader_row(r: dict) -> dict:
         "iq_score": r.get("iq_score"),
         "cluster": r.get("cluster"),
         "dynamics": r.get("dynamics"),
+        "price_move": r.get("price_move"),
+        "signal": r.get("signal"),
     }
 
 
@@ -456,12 +464,26 @@ def build(today: Optional[date] = None) -> dict:
     ebay_history = _load_ebay_history(config.SNAPSHOTS)
     dynamics = build_dynamics(cards, ebay_history)
 
+    # --- 6b. plain-language market-signal labels (rules layer, NOT a model input) ---
+    # Fuse recent price move (daily snapshot-<date>.json history) + demand/supply
+    # (dynamics) into one English verdict per card. Descriptive only — demand never
+    # touches expected_price (see config.FEATURES / the 2026-06-21 audit).
+    price_hist = signal_labels.load_price_history(config.SNAPSHOTS, as_of=snap_date)
+    signals_by_id: Dict[str, dict] = {}
+    for c in cards:
+        cid = c["id"]
+        pm = signal_labels.price_move(price_hist.get(cid), as_of=snap_date)
+        signals_by_id[cid] = {
+            "price_move": pm,
+            "signal": signal_labels.compute_signal(pm, dynamics.get(cid)),
+        }
+
     # --- 7. fit the clustered ridge model + export model.json ------------
     result = model.fit(cards, features)
     model_payload = result.export(out_dir / "model.json")
 
     # --- 8. assemble enriched cards + IQ scores --------------------------
-    card_records = build_cards(cards, features, result, dynamics)
+    card_records = build_cards(cards, features, result, dynamics, signals_by_id)
 
     # --- 8b. forward prediction log (self-grading backtest panel) --------
     n_pred = _write_prediction_log(card_records, built_for=built_at)

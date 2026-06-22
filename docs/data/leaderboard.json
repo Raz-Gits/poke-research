@@ -29,6 +29,26 @@
           "short_active_avg": 101.0,
           "long_active_avg": 101.0
         }
+      },
+      "price_move": {
+        "pct": 3.15,
+        "days": 2,
+        "from_price": 177.08,
+        "to_price": 182.65,
+        "n": 2
+      },
+      "signal": {
+        "label": "Rising \u2014 no clear market driver",
+        "tone": "warm",
+        "detail": "price +3.1% (2d) \u00b7 sell-through 0%",
+        "confidence": "full",
+        "basis": {
+          "price_state": "up",
+          "market_state": "steady",
+          "price_pct": 3.15,
+          "demand_pressure": 0.0,
+          "supply_saturation": 1.0
+        }
       }
     },
     {
@@ -59,6 +79,26 @@
           "long_window": 30,
           "short_active_avg": 78.0,
           "long_active_avg": 78.0
+        }
+      },
+      "price_move": {
+        "pct": 0.68,
+        "days": 3,
+        "from_price": 188.73,
+        "to_price": 190.02,
+        "n": 3
+      },
+      "signal": {
+        "label": "Demand building",
+        "tone": "warm",
+        "detail": "price +0.7% (3d) \u00b7 sell-through 23%",
+        "confidence": "full",
+        "basis": {
+          "price_state": "flat",
+          "market_state": "tightening",
+          "price_pct": 0.68,
+          "demand_pressure": 22.5352,
+          "supply_saturation": 1.0
         }
       }
     },
@@ -91,6 +131,26 @@
           "short_active_avg": 155.5,
           "long_active_avg": 155.5
         }
+      },
+      "price_move": {
+        "pct": -0.1,
+        "days": 2,
+        "from_price": 266.43,
+        "to_price": 266.17,
+        "n": 2
+      },
+      "signal": {
+        "label": "Quiet \u2014 no recent divergence",
+        "tone": "neutral",
+        "detail": "price -0.1% (2d) \u00b7 sell-through 0%",
+        "confidence": "full",
+        "basis": {
+          "price_state": "flat",
+          "market_state": "steady",
+          "price_pct": -0.1,
+          "demand_pressure": 0.0,
+          "supply_saturation": 1.0
+        }
       }
     },
     {
@@ -121,6 +181,26 @@
           "long_window": 30,
           "short_active_avg": 73.0,
           "long_active_avg": 73.0
+        }
+      },
+      "price_move": {
+        "pct": 0.32,
+        "days": 2,
+        "from_price": 106.43,
+        "to_price": 106.77,
+        "n": 2
+      },
+      "signal": {
+        "label": "Quiet \u2014 no recent divergence",
+        "tone": "neutral",
+        "detail": "price +0.3% (2d) \u00b7 sell-through 0%",
+        "confidence": "full",
+        "basis": {
+          "price_state": "flat",
+          "market_state": "steady",
+          "price_pct": 0.32,
+          "demand_pressure": 0.0,
+          "supply_saturation": 1.0
         }
       }
     },
@@ -153,6 +233,26 @@
           "short_active_avg": 161.5,
           "long_active_avg": 161.5
         }
+      },
+      "price_move": {
+        "pct": -6.24,
+        "days": 2,
+        "from_price": 338.78,
+        "to_price": 317.64,
+        "n": 2
+      },
+      "signal": {
+        "label": "Easing",
+        "tone": "cool",
+        "detail": "price -6.2% (2d) \u00b7 sell-through 0%",
+        "confidence": "full",
+        "basis": {
+          "price_state": "down",
+          "market_state": "steady",
+          "price_pct": -6.24,
+          "demand_pressure": 0.0,
+          "supply_saturation": 1.0
+        }
       }
     },
     {
@@ -183,6 +283,26 @@
           "long_window": 30,
           "short_active_avg": 99.0,
           "long_active_avg": 99.0
+        }
+      },
+      "price_move": {
+        "pct": -0.58,
+        "days": 2,
+        "from_price": 205.81,
+        "to_price": 204.61,
+        "n": 2
+      },
+      "signal": {
+        "label": "Quiet \u2014 no recent divergence",
+        "tone": "neutral",
+        "detail": "price -0.6% (2d) \u00b7 sell-through 3%",
+        "confidence": "full",
+        "basis": {
+          "price_state": "flat",
+          "market_state": "steady",
+          "price_pct": -0.58,
+          "demand_pressure": 3.0,
+          "supply_saturation": 1.0
         }
       }
     },
@@ -215,6 +335,26 @@
           "short_active_avg": 82.0,
           "long_active_avg": 82.0
         }
+      },
+      "price_move": {
+        "pct": 0.82,
+        "days": 2,
+        "from_price": 242.71,
+        "to_price": 244.7,
+        "n": 2
+      },
+      "signal": {
+        "label": "Quiet \u2014 no recent divergence",
+        "tone": "neutral",
+        "detail": "price +0.8% (2d) \u00b7 sell-through 6%",
+        "confidence": "full",
+        "basis": {
+          "price_state": "flat",
+          "market_state": "steady",
+          "price_pct": 0.82,
+          "demand_pressure": 6.0241,
+          "supply_saturation": 1.0
+        }
       }
     },
     {
@@ -245,6 +385,26 @@
           "long_window": 30,
           "short_active_avg": 175.0,
           "long_active_avg": 175.0
+        }
+      },
+      "price_move": {
+        "pct": -2.8,
+        "days": 2,
+        "from_price": 57.12,
+        "to_price": 55.52,
+        "n": 2
+      },
+      "signal": {
+        "label": "Quiet \u2014 no recent divergence",
+        "tone": "neutral",
+        "detail": "price -2.8% (2d) \u00b7 sell-through 0%",
+        "confidence": "full",
+        "basis": {
+          "price_state": "flat",
+          "market_state": "steady",
+          "price_pct": -2.8,
+          "demand_pressure": 0.0,
+          "supply_saturation": 1.0
         }
       }
     },
@@ -277,6 +437,26 @@
           "short_active_avg": 112.5,
           "long_active_avg": 112.5
         }
+      },
+      "price_move": {
+        "pct": -1.12,
+        "days": 2,
+        "from_price": 330.01,
+        "to_price": 326.3,
+        "n": 2
+      },
+      "signal": {
+        "label": "Quiet \u2014 no recent divergence",
+        "tone": "neutral",
+        "detail": "price -1.1% (2d) \u00b7 sell-through 3%",
+        "confidence": "full",
+        "basis": {
+          "price_state": "flat",
+          "market_state": "steady",
+          "price_pct": -1.12,
+          "demand_pressure": 2.6549,
+          "supply_saturation": 1.0
+        }
       }
     },
     {
@@ -308,6 +488,26 @@
           "short_active_avg": 77.5,
           "long_active_avg": 77.5
         }
+      },
+      "price_move": {
+        "pct": -1.6,
+        "days": 3,
+        "from_price": 139.81,
+        "to_price": 137.58,
+        "n": 3
+      },
+      "signal": {
+        "label": "Quiet \u2014 no recent divergence",
+        "tone": "neutral",
+        "detail": "price -1.6% (3d) \u00b7 sell-through 0%",
+        "confidence": "full",
+        "basis": {
+          "price_state": "flat",
+          "market_state": "steady",
+          "price_pct": -1.6,
+          "demand_pressure": 0.0,
+          "supply_saturation": 1.0
+        }
       }
     },
     {
@@ -336,6 +536,26 @@
           "days": 2,
           "short_window": 7,
           "long_window": 30
+        }
+      },
+      "price_move": {
+        "pct": 1.16,
+        "days": 3,
+        "from_price": 13.8,
+        "to_price": 13.96,
+        "n": 3
+      },
+      "signal": {
+        "label": "Quiet",
+        "tone": "neutral",
+        "detail": "price +1.2% (3d)",
+        "confidence": "price_only",
+        "basis": {
+          "price_state": "flat",
+          "market_state": "unknown",
+          "price_pct": 1.16,
+          "demand_pressure": null,
+          "supply_saturation": 1.0
         }
       }
     },
@@ -366,6 +586,26 @@
           "short_window": 7,
           "long_window": 30
         }
+      },
+      "price_move": {
+        "pct": 1.24,
+        "days": 3,
+        "from_price": 16.93,
+        "to_price": 17.14,
+        "n": 3
+      },
+      "signal": {
+        "label": "Quiet",
+        "tone": "neutral",
+        "detail": "price +1.2% (3d)",
+        "confidence": "price_only",
+        "basis": {
+          "price_state": "flat",
+          "market_state": "unknown",
+          "price_pct": 1.24,
+          "demand_pressure": null,
+          "supply_saturation": 1.0
+        }
       }
     },
     {
@@ -394,6 +634,26 @@
           "days": 2,
           "short_window": 7,
           "long_window": 30
+        }
+      },
+      "price_move": {
+        "pct": -8.55,
+        "days": 3,
+        "from_price": 5.85,
+        "to_price": 5.35,
+        "n": 3
+      },
+      "signal": {
+        "label": "Falling",
+        "tone": "cool",
+        "detail": "price -8.6% (3d)",
+        "confidence": "price_only",
+        "basis": {
+          "price_state": "down",
+          "market_state": "unknown",
+          "price_pct": -8.55,
+          "demand_pressure": null,
+          "supply_saturation": 1.0
         }
       }
     },
@@ -424,6 +684,26 @@
           "short_window": 7,
           "long_window": 30
         }
+      },
+      "price_move": {
+        "pct": 2.44,
+        "days": 3,
+        "from_price": 18.05,
+        "to_price": 18.49,
+        "n": 3
+      },
+      "signal": {
+        "label": "Quiet",
+        "tone": "neutral",
+        "detail": "price +2.4% (3d)",
+        "confidence": "price_only",
+        "basis": {
+          "price_state": "flat",
+          "market_state": "unknown",
+          "price_pct": 2.44,
+          "demand_pressure": null,
+          "supply_saturation": 1.0
+        }
       }
     },
     {
@@ -450,6 +730,26 @@
         "new_7d": null,
         "basis": {
           "days": 1
+        }
+      },
+      "price_move": {
+        "pct": 20.34,
+        "days": 2,
+        "from_price": 5.36,
+        "to_price": 6.45,
+        "n": 2
+      },
+      "signal": {
+        "label": "Rising",
+        "tone": "warm",
+        "detail": "price +20.3% (2d)",
+        "confidence": "price_only",
+        "basis": {
+          "price_state": "up",
+          "market_state": "unknown",
+          "price_pct": 20.34,
+          "demand_pressure": null,
+          "supply_saturation": 1.0
         }
       }
     },
@@ -480,6 +780,26 @@
           "short_window": 7,
           "long_window": 30
         }
+      },
+      "price_move": {
+        "pct": 4.46,
+        "days": 3,
+        "from_price": 5.38,
+        "to_price": 5.62,
+        "n": 3
+      },
+      "signal": {
+        "label": "Rising",
+        "tone": "warm",
+        "detail": "price +4.5% (3d)",
+        "confidence": "price_only",
+        "basis": {
+          "price_state": "up",
+          "market_state": "unknown",
+          "price_pct": 4.46,
+          "demand_pressure": null,
+          "supply_saturation": 1.0
+        }
       }
     },
     {
@@ -508,6 +828,26 @@
           "days": 2,
           "short_window": 7,
           "long_window": 30
+        }
+      },
+      "price_move": {
+        "pct": -14.2,
+        "days": 3,
+        "from_price": 5.28,
+        "to_price": 4.53,
+        "n": 3
+      },
+      "signal": {
+        "label": "Falling",
+        "tone": "cool",
+        "detail": "price -14.2% (3d)",
+        "confidence": "price_only",
+        "basis": {
+          "price_state": "down",
+          "market_state": "unknown",
+          "price_pct": -14.2,
+          "demand_pressure": null,
+          "supply_saturation": 1.0
         }
       }
     },
@@ -538,6 +878,26 @@
           "short_window": 7,
           "long_window": 30
         }
+      },
+      "price_move": {
+        "pct": 3.72,
+        "days": 3,
+        "from_price": 12.37,
+        "to_price": 12.83,
+        "n": 3
+      },
+      "signal": {
+        "label": "Rising",
+        "tone": "warm",
+        "detail": "price +3.7% (3d)",
+        "confidence": "price_only",
+        "basis": {
+          "price_state": "up",
+          "market_state": "unknown",
+          "price_pct": 3.72,
+          "demand_pressure": null,
+          "supply_saturation": 1.0
+        }
       }
     },
     {
@@ -566,6 +926,26 @@
           "days": 3,
           "short_window": 7,
           "long_window": 30
+        }
+      },
+      "price_move": {
+        "pct": 2.29,
+        "days": 3,
+        "from_price": 19.25,
+        "to_price": 19.69,
+        "n": 3
+      },
+      "signal": {
+        "label": "Quiet",
+        "tone": "neutral",
+        "detail": "price +2.3% (3d)",
+        "confidence": "price_only",
+        "basis": {
+          "price_state": "flat",
+          "market_state": "unknown",
+          "price_pct": 2.29,
+          "demand_pressure": null,
+          "supply_saturation": 1.0
         }
       }
     },
@@ -596,6 +976,26 @@
           "short_window": 7,
           "long_window": 30
         }
+      },
+      "price_move": {
+        "pct": 0.31,
+        "days": 3,
+        "from_price": 16.05,
+        "to_price": 16.1,
+        "n": 3
+      },
+      "signal": {
+        "label": "Quiet",
+        "tone": "neutral",
+        "detail": "price +0.3% (3d)",
+        "confidence": "price_only",
+        "basis": {
+          "price_state": "flat",
+          "market_state": "unknown",
+          "price_pct": 0.31,
+          "demand_pressure": null,
+          "supply_saturation": 1.0
+        }
       }
     },
     {
@@ -624,6 +1024,26 @@
           "days": 2,
           "short_window": 7,
           "long_window": 30
+        }
+      },
+      "price_move": {
+        "pct": 0.11,
+        "days": 3,
+        "from_price": 17.54,
+        "to_price": 17.56,
+        "n": 3
+      },
+      "signal": {
+        "label": "Quiet",
+        "tone": "neutral",
+        "detail": "price +0.1% (3d)",
+        "confidence": "price_only",
+        "basis": {
+          "price_state": "flat",
+          "market_state": "unknown",
+          "price_pct": 0.11,
+          "demand_pressure": null,
+          "supply_saturation": 1.0
         }
       }
     },
@@ -656,6 +1076,26 @@
           "short_active_avg": 94.5,
           "long_active_avg": 94.5
         }
+      },
+      "price_move": {
+        "pct": -0.49,
+        "days": 2,
+        "from_price": 466.92,
+        "to_price": 464.63,
+        "n": 2
+      },
+      "signal": {
+        "label": "Quiet \u2014 no recent divergence",
+        "tone": "neutral",
+        "detail": "price -0.5% (2d) \u00b7 sell-through 0%",
+        "confidence": "full",
+        "basis": {
+          "price_state": "flat",
+          "market_state": "steady",
+          "price_pct": -0.49,
+          "demand_pressure": 0.0,
+          "supply_saturation": 1.0
+        }
       }
     },
     {
@@ -686,6 +1126,26 @@
           "long_window": 30,
           "short_active_avg": 64.0,
           "long_active_avg": 64.0
+        }
+      },
+      "price_move": {
+        "pct": 1.26,
+        "days": 2,
+        "from_price": 194.21,
+        "to_price": 196.65,
+        "n": 2
+      },
+      "signal": {
+        "label": "Quiet \u2014 no recent divergence",
+        "tone": "neutral",
+        "detail": "price +1.3% (2d) \u00b7 sell-through 11%",
+        "confidence": "full",
+        "basis": {
+          "price_state": "flat",
+          "market_state": "steady",
+          "price_pct": 1.26,
+          "demand_pressure": 10.7692,
+          "supply_saturation": 1.0
         }
       }
     },
@@ -718,6 +1178,26 @@
           "short_active_avg": 85.5,
           "long_active_avg": 85.5
         }
+      },
+      "price_move": {
+        "pct": 0.0,
+        "days": 2,
+        "from_price": 227.03,
+        "to_price": 227.03,
+        "n": 2
+      },
+      "signal": {
+        "label": "Quiet \u2014 no recent divergence",
+        "tone": "neutral",
+        "detail": "price +0.0% (2d) \u00b7 sell-through 0%",
+        "confidence": "full",
+        "basis": {
+          "price_state": "flat",
+          "market_state": "steady",
+          "price_pct": 0.0,
+          "demand_pressure": 0.0,
+          "supply_saturation": 1.0
+        }
       }
     },
     {
@@ -746,6 +1226,26 @@
           "days": 3,
           "short_window": 7,
           "long_window": 30
+        }
+      },
+      "price_move": {
+        "pct": 5.21,
+        "days": 3,
+        "from_price": 17.47,
+        "to_price": 18.38,
+        "n": 3
+      },
+      "signal": {
+        "label": "Rising",
+        "tone": "warm",
+        "detail": "price +5.2% (3d)",
+        "confidence": "price_only",
+        "basis": {
+          "price_state": "up",
+          "market_state": "unknown",
+          "price_pct": 5.21,
+          "demand_pressure": null,
+          "supply_saturation": 1.0
         }
       }
     },
@@ -776,6 +1276,26 @@
           "short_window": 7,
           "long_window": 30
         }
+      },
+      "price_move": {
+        "pct": -0.32,
+        "days": 3,
+        "from_price": 6.32,
+        "to_price": 6.3,
+        "n": 3
+      },
+      "signal": {
+        "label": "Quiet",
+        "tone": "neutral",
+        "detail": "price -0.3% (3d)",
+        "confidence": "price_only",
+        "basis": {
+          "price_state": "flat",
+          "market_state": "unknown",
+          "price_pct": -0.32,
+          "demand_pressure": null,
+          "supply_saturation": 1.0
+        }
       }
     },
     {
@@ -804,6 +1324,26 @@
           "days": 2,
           "short_window": 7,
           "long_window": 30
+        }
+      },
+      "price_move": {
+        "pct": -3.42,
+        "days": 3,
+        "from_price": 2.34,
+        "to_price": 2.26,
+        "n": 3
+      },
+      "signal": {
+        "label": "Falling",
+        "tone": "cool",
+        "detail": "price -3.4% (3d)",
+        "confidence": "price_only",
+        "basis": {
+          "price_state": "down",
+          "market_state": "unknown",
+          "price_pct": -3.42,
+          "demand_pressure": null,
+          "supply_saturation": 1.0
         }
       }
     },
@@ -834,6 +1374,26 @@
           "short_window": 7,
           "long_window": 30
         }
+      },
+      "price_move": {
+        "pct": -5.74,
+        "days": 3,
+        "from_price": 8.89,
+        "to_price": 8.38,
+        "n": 3
+      },
+      "signal": {
+        "label": "Falling",
+        "tone": "cool",
+        "detail": "price -5.7% (3d)",
+        "confidence": "price_only",
+        "basis": {
+          "price_state": "down",
+          "market_state": "unknown",
+          "price_pct": -5.74,
+          "demand_pressure": null,
+          "supply_saturation": 1.0
+        }
       }
     },
     {
@@ -862,6 +1422,26 @@
           "days": 2,
           "short_window": 7,
           "long_window": 30
+        }
+      },
+      "price_move": {
+        "pct": 1.1,
+        "days": 3,
+        "from_price": 9.1,
+        "to_price": 9.2,
+        "n": 3
+      },
+      "signal": {
+        "label": "Quiet",
+        "tone": "neutral",
+        "detail": "price +1.1% (3d)",
+        "confidence": "price_only",
+        "basis": {
+          "price_state": "flat",
+          "market_state": "unknown",
+          "price_pct": 1.1,
+          "demand_pressure": null,
+          "supply_saturation": 1.0
         }
       }
     },
@@ -892,6 +1472,26 @@
           "short_window": 7,
           "long_window": 30
         }
+      },
+      "price_move": {
+        "pct": -7.41,
+        "days": 3,
+        "from_price": 2.97,
+        "to_price": 2.75,
+        "n": 3
+      },
+      "signal": {
+        "label": "Falling",
+        "tone": "cool",
+        "detail": "price -7.4% (3d)",
+        "confidence": "price_only",
+        "basis": {
+          "price_state": "down",
+          "market_state": "unknown",
+          "price_pct": -7.41,
+          "demand_pressure": null,
+          "supply_saturation": 1.0
+        }
       }
     },
     {
@@ -920,6 +1520,26 @@
           "days": 2,
           "short_window": 7,
           "long_window": 30
+        }
+      },
+      "price_move": {
+        "pct": 1.58,
+        "days": 3,
+        "from_price": 7.61,
+        "to_price": 7.73,
+        "n": 3
+      },
+      "signal": {
+        "label": "Quiet",
+        "tone": "neutral",
+        "detail": "price +1.6% (3d)",
+        "confidence": "price_only",
+        "basis": {
+          "price_state": "flat",
+          "market_state": "unknown",
+          "price_pct": 1.58,
+          "demand_pressure": null,
+          "supply_saturation": 1.0
         }
       }
     },
@@ -952,6 +1572,26 @@
           "short_active_avg": 167.0,
           "long_active_avg": 167.0
         }
+      },
+      "price_move": {
+        "pct": 0.59,
+        "days": 2,
+        "from_price": 85.35,
+        "to_price": 85.85,
+        "n": 2
+      },
+      "signal": {
+        "label": "Quiet \u2014 no recent divergence",
+        "tone": "neutral",
+        "detail": "price +0.6% (2d) \u00b7 sell-through 1%",
+        "confidence": "full",
+        "basis": {
+          "price_state": "flat",
+          "market_state": "steady",
+          "price_pct": 0.59,
+          "demand_pressure": 0.5988,
+          "supply_saturation": 1.0
+        }
       }
     },
     {
@@ -980,6 +1620,26 @@
           "days": 2,
           "short_window": 7,
           "long_window": 30
+        }
+      },
+      "price_move": {
+        "pct": -0.21,
+        "days": 2,
+        "from_price": 19.14,
+        "to_price": 19.1,
+        "n": 2
+      },
+      "signal": {
+        "label": "Quiet",
+        "tone": "neutral",
+        "detail": "price -0.2% (2d)",
+        "confidence": "price_only",
+        "basis": {
+          "price_state": "flat",
+          "market_state": "unknown",
+          "price_pct": -0.21,
+          "demand_pressure": null,
+          "supply_saturation": 1.0
         }
       }
     },
@@ -1012,6 +1672,26 @@
           "short_active_avg": 91.0,
           "long_active_avg": 91.0
         }
+      },
+      "price_move": {
+        "pct": 1.43,
+        "days": 3,
+        "from_price": 162.49,
+        "to_price": 164.81,
+        "n": 3
+      },
+      "signal": {
+        "label": "Quiet \u2014 no recent divergence",
+        "tone": "neutral",
+        "detail": "price +1.4% (3d) \u00b7 sell-through 0%",
+        "confidence": "full",
+        "basis": {
+          "price_state": "flat",
+          "market_state": "steady",
+          "price_pct": 1.43,
+          "demand_pressure": 0.0,
+          "supply_saturation": 1.0
+        }
       }
     },
     {
@@ -1040,6 +1720,26 @@
           "days": 2,
           "short_window": 7,
           "long_window": 30
+        }
+      },
+      "price_move": {
+        "pct": 3.22,
+        "days": 3,
+        "from_price": 4.97,
+        "to_price": 5.13,
+        "n": 3
+      },
+      "signal": {
+        "label": "Rising",
+        "tone": "warm",
+        "detail": "price +3.2% (3d)",
+        "confidence": "price_only",
+        "basis": {
+          "price_state": "up",
+          "market_state": "unknown",
+          "price_pct": 3.22,
+          "demand_pressure": null,
+          "supply_saturation": 1.0
         }
       }
     },
@@ -1070,6 +1770,26 @@
           "short_window": 7,
           "long_window": 30
         }
+      },
+      "price_move": {
+        "pct": 12.24,
+        "days": 3,
+        "from_price": 3.35,
+        "to_price": 3.76,
+        "n": 3
+      },
+      "signal": {
+        "label": "Rising",
+        "tone": "warm",
+        "detail": "price +12.2% (3d)",
+        "confidence": "price_only",
+        "basis": {
+          "price_state": "up",
+          "market_state": "unknown",
+          "price_pct": 12.24,
+          "demand_pressure": null,
+          "supply_saturation": 1.0
+        }
       }
     },
     {
@@ -1096,6 +1816,26 @@
         "new_7d": null,
         "basis": {
           "days": 1
+        }
+      },
+      "price_move": {
+        "pct": 1.19,
+        "days": 2,
+        "from_price": 3.37,
+        "to_price": 3.41,
+        "n": 2
+      },
+      "signal": {
+        "label": "Quiet",
+        "tone": "neutral",
+        "detail": "price +1.2% (2d)",
+        "confidence": "price_only",
+        "basis": {
+          "price_state": "flat",
+          "market_state": "unknown",
+          "price_pct": 1.19,
+          "demand_pressure": null,
+          "supply_saturation": 1.0
         }
       }
     },
@@ -1126,6 +1866,26 @@
           "short_window": 7,
           "long_window": 30
         }
+      },
+      "price_move": {
+        "pct": -1.02,
+        "days": 3,
+        "from_price": 4.89,
+        "to_price": 4.84,
+        "n": 3
+      },
+      "signal": {
+        "label": "Quiet",
+        "tone": "neutral",
+        "detail": "price -1.0% (3d)",
+        "confidence": "price_only",
+        "basis": {
+          "price_state": "flat",
+          "market_state": "unknown",
+          "price_pct": -1.02,
+          "demand_pressure": null,
+          "supply_saturation": 1.0
+        }
       }
     },
     {
@@ -1154,6 +1914,26 @@
           "days": 2,
           "short_window": 7,
           "long_window": 30
+        }
+      },
+      "price_move": {
+        "pct": -3.47,
+        "days": 3,
+        "from_price": 4.9,
+        "to_price": 4.73,
+        "n": 3
+      },
+      "signal": {
+        "label": "Falling",
+        "tone": "cool",
+        "detail": "price -3.5% (3d)",
+        "confidence": "price_only",
+        "basis": {
+          "price_state": "down",
+          "market_state": "unknown",
+          "price_pct": -3.47,
+          "demand_pressure": null,
+          "supply_saturation": 1.0
         }
       }
     },
@@ -1184,6 +1964,26 @@
           "short_window": 7,
           "long_window": 30
         }
+      },
+      "price_move": {
+        "pct": 0.31,
+        "days": 3,
+        "from_price": 13.09,
+        "to_price": 13.13,
+        "n": 3
+      },
+      "signal": {
+        "label": "Quiet",
+        "tone": "neutral",
+        "detail": "price +0.3% (3d)",
+        "confidence": "price_only",
+        "basis": {
+          "price_state": "flat",
+          "market_state": "unknown",
+          "price_pct": 0.31,
+          "demand_pressure": null,
+          "supply_saturation": 1.0
+        }
       }
     },
     {
@@ -1212,6 +2012,26 @@
           "days": 2,
           "short_window": 7,
           "long_window": 30
+        }
+      },
+      "price_move": {
+        "pct": -1.07,
+        "days": 2,
+        "from_price": 17.8,
+        "to_price": 17.61,
+        "n": 2
+      },
+      "signal": {
+        "label": "Quiet",
+        "tone": "neutral",
+        "detail": "price -1.1% (2d)",
+        "confidence": "price_only",
+        "basis": {
+          "price_state": "flat",
+          "market_state": "unknown",
+          "price_pct": -1.07,
+          "demand_pressure": null,
+          "supply_saturation": 1.0
         }
       }
     },
@@ -1242,6 +2062,26 @@
           "short_window": 7,
           "long_window": 30
         }
+      },
+      "price_move": {
+        "pct": -16.04,
+        "days": 3,
+        "from_price": 5.61,
+        "to_price": 4.71,
+        "n": 3
+      },
+      "signal": {
+        "label": "Falling",
+        "tone": "cool",
+        "detail": "price -16.0% (3d)",
+        "confidence": "price_only",
+        "basis": {
+          "price_state": "down",
+          "market_state": "unknown",
+          "price_pct": -16.04,
+          "demand_pressure": null,
+          "supply_saturation": 1.0
+        }
       }
     },
     {
@@ -1271,6 +2111,26 @@
           "short_window": 7,
           "long_window": 30
         }
+      },
+      "price_move": {
+        "pct": -0.12,
+        "days": 3,
+        "from_price": 16.09,
+        "to_price": 16.07,
+        "n": 3
+      },
+      "signal": {
+        "label": "Quiet",
+        "tone": "neutral",
+        "detail": "price -0.1% (3d)",
+        "confidence": "price_only",
+        "basis": {
+          "price_state": "flat",
+          "market_state": "unknown",
+          "price_pct": -0.12,
+          "demand_pressure": null,
+          "supply_saturation": 1.0
+        }
       }
     },
     {
@@ -1297,6 +2157,26 @@
         "new_7d": null,
         "basis": {
           "days": 1
+        }
+      },
+      "price_move": {
+        "pct": -0.95,
+        "days": 2,
+        "from_price": 5.24,
+        "to_price": 5.19,
+        "n": 2
+      },
+      "signal": {
+        "label": "Quiet",
+        "tone": "neutral",
+        "detail": "price -0.9% (2d)",
+        "confidence": "price_only",
+        "basis": {
+          "price_state": "flat",
+          "market_state": "unknown",
+          "price_pct": -0.95,
+          "demand_pressure": null,
+          "supply_saturation": 1.0
         }
       }
     },
@@ -1327,6 +2207,26 @@
           "short_window": 7,
           "long_window": 30
         }
+      },
+      "price_move": {
+        "pct": -0.59,
+        "days": 3,
+        "from_price": 10.09,
+        "to_price": 10.03,
+        "n": 3
+      },
+      "signal": {
+        "label": "Quiet",
+        "tone": "neutral",
+        "detail": "price -0.6% (3d)",
+        "confidence": "price_only",
+        "basis": {
+          "price_state": "flat",
+          "market_state": "unknown",
+          "price_pct": -0.59,
+          "demand_pressure": null,
+          "supply_saturation": 1.0
+        }
       }
     },
     {
@@ -1355,6 +2255,26 @@
           "days": 2,
           "short_window": 7,
           "long_window": 30
+        }
+      },
+      "price_move": {
+        "pct": 1.22,
+        "days": 3,
+        "from_price": 9.0,
+        "to_price": 9.11,
+        "n": 3
+      },
+      "signal": {
+        "label": "Quiet",
+        "tone": "neutral",
+        "detail": "price +1.2% (3d)",
+        "confidence": "price_only",
+        "basis": {
+          "price_state": "flat",
+          "market_state": "unknown",
+          "price_pct": 1.22,
+          "demand_pressure": null,
+          "supply_saturation": 1.0
         }
       }
     },
@@ -1385,6 +2305,26 @@
           "short_window": 7,
           "long_window": 30
         }
+      },
+      "price_move": {
+        "pct": -6.16,
+        "days": 3,
+        "from_price": 4.06,
+        "to_price": 3.81,
+        "n": 3
+      },
+      "signal": {
+        "label": "Falling",
+        "tone": "cool",
+        "detail": "price -6.2% (3d)",
+        "confidence": "price_only",
+        "basis": {
+          "price_state": "down",
+          "market_state": "unknown",
+          "price_pct": -6.16,
+          "demand_pressure": null,
+          "supply_saturation": 1.0
+        }
       }
     },
     {
@@ -1413,6 +2353,26 @@
           "days": 2,
           "short_window": 7,
           "long_window": 30
+        }
+      },
+      "price_move": {
+        "pct": -3.11,
+        "days": 3,
+        "from_price": 9.0,
+        "to_price": 8.72,
+        "n": 3
+      },
+      "signal": {
+        "label": "Falling",
+        "tone": "cool",
+        "detail": "price -3.1% (3d)",
+        "confidence": "price_only",
+        "basis": {
+          "price_state": "down",
+          "market_state": "unknown",
+          "price_pct": -3.11,
+          "demand_pressure": null,
+          "supply_saturation": 1.0
         }
       }
     },
@@ -1443,6 +2403,26 @@
           "short_window": 7,
           "long_window": 30
         }
+      },
+      "price_move": {
+        "pct": 0.23,
+        "days": 3,
+        "from_price": 17.55,
+        "to_price": 17.59,
+        "n": 3
+      },
+      "signal": {
+        "label": "Quiet",
+        "tone": "neutral",
+        "detail": "price +0.2% (3d)",
+        "confidence": "price_only",
+        "basis": {
+          "price_state": "flat",
+          "market_state": "unknown",
+          "price_pct": 0.23,
+          "demand_pressure": null,
+          "supply_saturation": 1.0
+        }
       }
     },
     {
@@ -1471,6 +2451,26 @@
           "days": 2,
           "short_window": 7,
           "long_window": 30
+        }
+      },
+      "price_move": {
+        "pct": 0.87,
+        "days": 3,
+        "from_price": 17.24,
+        "to_price": 17.39,
+        "n": 3
+      },
+      "signal": {
+        "label": "Quiet",
+        "tone": "neutral",
+        "detail": "price +0.9% (3d)",
+        "confidence": "price_only",
+        "basis": {
+          "price_state": "flat",
+          "market_state": "unknown",
+          "price_pct": 0.87,
+          "demand_pressure": null,
+          "supply_saturation": 1.0
         }
       }
     }
@@ -1505,6 +2505,26 @@
           "short_active_avg": 41.0,
           "long_active_avg": 41.0
         }
+      },
+      "price_move": {
+        "pct": -1.45,
+        "days": 3,
+        "from_price": 1579.6,
+        "to_price": 1556.65,
+        "n": 3
+      },
+      "signal": {
+        "label": "Demand building",
+        "tone": "warm",
+        "detail": "price -1.4% (3d) \u00b7 sell-through 18%",
+        "confidence": "full",
+        "basis": {
+          "price_state": "flat",
+          "market_state": "tightening",
+          "price_pct": -1.45,
+          "demand_pressure": 18.4211,
+          "supply_saturation": 1.0
+        }
       }
     },
     {
@@ -1535,6 +2555,26 @@
           "long_window": 30,
           "short_active_avg": 51.5,
           "long_active_avg": 51.5
+        }
+      },
+      "price_move": {
+        "pct": -5.8,
+        "days": 2,
+        "from_price": 1454.18,
+        "to_price": 1369.79,
+        "n": 2
+      },
+      "signal": {
+        "label": "Easing",
+        "tone": "cool",
+        "detail": "price -5.8% (2d) \u00b7 sell-through 0%",
+        "confidence": "full",
+        "basis": {
+          "price_state": "down",
+          "market_state": "steady",
+          "price_pct": -5.8,
+          "demand_pressure": 0.0,
+          "supply_saturation": 1.0
         }
       }
     },
@@ -1567,6 +2607,26 @@
           "short_active_avg": 66.0,
           "long_active_avg": 66.0
         }
+      },
+      "price_move": {
+        "pct": 0.96,
+        "days": 2,
+        "from_price": 1355.05,
+        "to_price": 1368.11,
+        "n": 2
+      },
+      "signal": {
+        "label": "Quiet \u2014 no recent divergence",
+        "tone": "neutral",
+        "detail": "price +1.0% (2d) \u00b7 sell-through 0%",
+        "confidence": "full",
+        "basis": {
+          "price_state": "flat",
+          "market_state": "steady",
+          "price_pct": 0.96,
+          "demand_pressure": 0.0,
+          "supply_saturation": 1.0
+        }
       }
     },
     {
@@ -1597,6 +2657,26 @@
           "long_window": 30,
           "short_active_avg": 60.5,
           "long_active_avg": 60.5
+        }
+      },
+      "price_move": {
+        "pct": 1.06,
+        "days": 3,
+        "from_price": 1020.11,
+        "to_price": 1030.92,
+        "n": 3
+      },
+      "signal": {
+        "label": "Demand building",
+        "tone": "warm",
+        "detail": "price +1.1% (3d) \u00b7 sell-through 18%",
+        "confidence": "full",
+        "basis": {
+          "price_state": "flat",
+          "market_state": "tightening",
+          "price_pct": 1.06,
+          "demand_pressure": 17.8571,
+          "supply_saturation": 1.0
         }
       }
     },
@@ -1629,6 +2709,26 @@
           "short_active_avg": 83.0,
           "long_active_avg": 83.0
         }
+      },
+      "price_move": {
+        "pct": -0.1,
+        "days": 2,
+        "from_price": 880.43,
+        "to_price": 879.57,
+        "n": 2
+      },
+      "signal": {
+        "label": "Quiet \u2014 no recent divergence",
+        "tone": "neutral",
+        "detail": "price -0.1% (2d) \u00b7 sell-through 1%",
+        "confidence": "full",
+        "basis": {
+          "price_state": "flat",
+          "market_state": "steady",
+          "price_pct": -0.1,
+          "demand_pressure": 1.2048,
+          "supply_saturation": 1.0
+        }
       }
     },
     {
@@ -1659,6 +2759,26 @@
           "long_window": 30,
           "short_active_avg": 24.0,
           "long_active_avg": 24.0
+        }
+      },
+      "price_move": {
+        "pct": 0.0,
+        "days": 2,
+        "from_price": 576.63,
+        "to_price": 576.63,
+        "n": 2
+      },
+      "signal": {
+        "label": "Quiet \u2014 no recent divergence",
+        "tone": "neutral",
+        "detail": "price +0.0% (2d) \u00b7 sell-through 4%",
+        "confidence": "full",
+        "basis": {
+          "price_state": "flat",
+          "market_state": "steady",
+          "price_pct": 0.0,
+          "demand_pressure": 4.1667,
+          "supply_saturation": 1.0
         }
       }
     },
@@ -1691,6 +2811,26 @@
           "short_active_avg": 41.0,
           "long_active_avg": 41.0
         }
+      },
+      "price_move": {
+        "pct": 0.0,
+        "days": 2,
+        "from_price": 546.52,
+        "to_price": 546.52,
+        "n": 2
+      },
+      "signal": {
+        "label": "Demand building",
+        "tone": "warm",
+        "detail": "price +0.0% (2d) \u00b7 sell-through 21%",
+        "confidence": "full",
+        "basis": {
+          "price_state": "flat",
+          "market_state": "tightening",
+          "price_pct": 0.0,
+          "demand_pressure": 20.5128,
+          "supply_saturation": 1.0
+        }
       }
     },
     {
@@ -1721,6 +2861,26 @@
           "long_window": 30,
           "short_active_avg": 52.0,
           "long_active_avg": 52.0
+        }
+      },
+      "price_move": {
+        "pct": 3.9,
+        "days": 3,
+        "from_price": 514.76,
+        "to_price": 534.81,
+        "n": 3
+      },
+      "signal": {
+        "label": "Rising \u2014 no clear market driver",
+        "tone": "warm",
+        "detail": "price +3.9% (3d) \u00b7 sell-through 2%",
+        "confidence": "full",
+        "basis": {
+          "price_state": "up",
+          "market_state": "steady",
+          "price_pct": 3.9,
+          "demand_pressure": 1.9231,
+          "supply_saturation": 1.0
         }
       }
     },
@@ -1753,6 +2913,26 @@
           "short_active_avg": 71.0,
           "long_active_avg": 71.0
         }
+      },
+      "price_move": {
+        "pct": -0.05,
+        "days": 2,
+        "from_price": 568.7,
+        "to_price": 568.39,
+        "n": 2
+      },
+      "signal": {
+        "label": "Quiet \u2014 no recent divergence",
+        "tone": "neutral",
+        "detail": "price -0.1% (2d) \u00b7 sell-through 0%",
+        "confidence": "full",
+        "basis": {
+          "price_state": "flat",
+          "market_state": "steady",
+          "price_pct": -0.05,
+          "demand_pressure": 0.0,
+          "supply_saturation": 1.0
+        }
       }
     },
     {
@@ -1783,6 +2963,26 @@
           "long_window": 30,
           "short_active_avg": 31.0,
           "long_active_avg": 31.0
+        }
+      },
+      "price_move": {
+        "pct": 0.84,
+        "days": 2,
+        "from_price": 235.7,
+        "to_price": 237.69,
+        "n": 2
+      },
+      "signal": {
+        "label": "Quiet \u2014 no recent divergence",
+        "tone": "neutral",
+        "detail": "price +0.8% (2d) \u00b7 sell-through 0%",
+        "confidence": "full",
+        "basis": {
+          "price_state": "flat",
+          "market_state": "steady",
+          "price_pct": 0.84,
+          "demand_pressure": 0.0,
+          "supply_saturation": 1.0
         }
       }
     },
@@ -1815,6 +3015,26 @@
           "short_active_avg": 69.0,
           "long_active_avg": 69.0
         }
+      },
+      "price_move": {
+        "pct": -1.9,
+        "days": 3,
+        "from_price": 331.22,
+        "to_price": 324.93,
+        "n": 3
+      },
+      "signal": {
+        "label": "Quiet \u2014 no recent divergence",
+        "tone": "neutral",
+        "detail": "price -1.9% (3d) \u00b7 sell-through 1%",
+        "confidence": "full",
+        "basis": {
+          "price_state": "flat",
+          "market_state": "steady",
+          "price_pct": -1.9,
+          "demand_pressure": 1.4493,
+          "supply_saturation": 1.0
+        }
       }
     },
     {
@@ -1845,6 +3065,26 @@
           "long_window": 30,
           "short_active_avg": 66.5,
           "long_active_avg": 66.5
+        }
+      },
+      "price_move": {
+        "pct": 0.5,
+        "days": 3,
+        "from_price": 321.16,
+        "to_price": 322.77,
+        "n": 3
+      },
+      "signal": {
+        "label": "Quiet \u2014 no recent divergence",
+        "tone": "neutral",
+        "detail": "price +0.5% (3d) \u00b7 sell-through 3%",
+        "confidence": "full",
+        "basis": {
+          "price_state": "flat",
+          "market_state": "steady",
+          "price_pct": 0.5,
+          "demand_pressure": 2.9851,
+          "supply_saturation": 1.0
         }
       }
     },
@@ -1877,6 +3117,26 @@
           "short_active_avg": 92.5,
           "long_active_avg": 92.5
         }
+      },
+      "price_move": {
+        "pct": -3.07,
+        "days": 3,
+        "from_price": 479.59,
+        "to_price": 464.86,
+        "n": 3
+      },
+      "signal": {
+        "label": "Easing",
+        "tone": "cool",
+        "detail": "price -3.1% (3d) \u00b7 sell-through 0%",
+        "confidence": "full",
+        "basis": {
+          "price_state": "down",
+          "market_state": "steady",
+          "price_pct": -3.07,
+          "demand_pressure": 0.0,
+          "supply_saturation": 1.0
+        }
       }
     },
     {
@@ -1907,6 +3167,26 @@
           "long_window": 30,
           "short_active_avg": 77.0,
           "long_active_avg": 77.0
+        }
+      },
+      "price_move": {
+        "pct": -0.44,
+        "days": 3,
+        "from_price": 300.2,
+        "to_price": 298.88,
+        "n": 3
+      },
+      "signal": {
+        "label": "Quiet \u2014 no recent divergence",
+        "tone": "neutral",
+        "detail": "price -0.4% (3d) \u00b7 sell-through 0%",
+        "confidence": "full",
+        "basis": {
+          "price_state": "flat",
+          "market_state": "steady",
+          "price_pct": -0.44,
+          "demand_pressure": 0.0,
+          "supply_saturation": 1.0
         }
       }
     },
@@ -1939,6 +3219,26 @@
           "short_active_avg": 50.5,
           "long_active_avg": 50.5
         }
+      },
+      "price_move": {
+        "pct": 1.32,
+        "days": 3,
+        "from_price": 300.86,
+        "to_price": 304.82,
+        "n": 3
+      },
+      "signal": {
+        "label": "Quiet \u2014 no recent divergence",
+        "tone": "neutral",
+        "detail": "price +1.3% (3d) \u00b7 sell-through 0%",
+        "confidence": "full",
+        "basis": {
+          "price_state": "flat",
+          "market_state": "steady",
+          "price_pct": 1.32,
+          "demand_pressure": 0.0,
+          "supply_saturation": 1.0
+        }
       }
     },
     {
@@ -1969,6 +3269,26 @@
           "long_window": 30,
           "short_active_avg": 54.5,
           "long_active_avg": 54.5
+        }
+      },
+      "price_move": {
+        "pct": 0.29,
+        "days": 3,
+        "from_price": 400.47,
+        "to_price": 401.62,
+        "n": 3
+      },
+      "signal": {
+        "label": "Quiet \u2014 no recent divergence",
+        "tone": "neutral",
+        "detail": "price +0.3% (3d) \u00b7 sell-through 2%",
+        "confidence": "full",
+        "basis": {
+          "price_state": "flat",
+          "market_state": "steady",
+          "price_pct": 0.29,
+          "demand_pressure": 1.8182,
+          "supply_saturation": 1.0
         }
       }
     },
@@ -2001,6 +3321,26 @@
           "short_active_avg": 41.5,
           "long_active_avg": 41.5
         }
+      },
+      "price_move": {
+        "pct": 0.05,
+        "days": 3,
+        "from_price": 185.48,
+        "to_price": 185.58,
+        "n": 3
+      },
+      "signal": {
+        "label": "Quiet \u2014 no recent divergence",
+        "tone": "neutral",
+        "detail": "price +0.1% (3d) \u00b7 sell-through 2%",
+        "confidence": "full",
+        "basis": {
+          "price_state": "flat",
+          "market_state": "steady",
+          "price_pct": 0.05,
+          "demand_pressure": 2.381,
+          "supply_saturation": 1.0
+        }
       }
     },
     {
@@ -2031,6 +3371,26 @@
           "long_window": 30,
           "short_active_avg": 76.0,
           "long_active_avg": 76.0
+        }
+      },
+      "price_move": {
+        "pct": 0.85,
+        "days": 3,
+        "from_price": 209.93,
+        "to_price": 211.72,
+        "n": 3
+      },
+      "signal": {
+        "label": "Quiet \u2014 no recent divergence",
+        "tone": "neutral",
+        "detail": "price +0.8% (3d) \u00b7 sell-through 5%",
+        "confidence": "full",
+        "basis": {
+          "price_state": "flat",
+          "market_state": "steady",
+          "price_pct": 0.85,
+          "demand_pressure": 5.2632,
+          "supply_saturation": 1.0
         }
       }
     },
@@ -2063,6 +3423,26 @@
           "short_active_avg": 49.0,
           "long_active_avg": 49.0
         }
+      },
+      "price_move": {
+        "pct": 0.0,
+        "days": 2,
+        "from_price": 271.53,
+        "to_price": 271.53,
+        "n": 2
+      },
+      "signal": {
+        "label": "Demand building",
+        "tone": "warm",
+        "detail": "price +0.0% (2d) \u00b7 sell-through 18%",
+        "confidence": "full",
+        "basis": {
+          "price_state": "flat",
+          "market_state": "tightening",
+          "price_pct": 0.0,
+          "demand_pressure": 17.7778,
+          "supply_saturation": 1.0
+        }
       }
     },
     {
@@ -2093,6 +3473,26 @@
           "long_window": 30,
           "short_active_avg": 65.0,
           "long_active_avg": 65.0
+        }
+      },
+      "price_move": {
+        "pct": -0.11,
+        "days": 3,
+        "from_price": 177.72,
+        "to_price": 177.52,
+        "n": 3
+      },
+      "signal": {
+        "label": "Quiet \u2014 no recent divergence",
+        "tone": "neutral",
+        "detail": "price -0.1% (3d) \u00b7 sell-through 2%",
+        "confidence": "full",
+        "basis": {
+          "price_state": "flat",
+          "market_state": "steady",
+          "price_pct": -0.11,
+          "demand_pressure": 1.5385,
+          "supply_saturation": 1.0
         }
       }
     },
@@ -2125,6 +3525,26 @@
           "short_active_avg": 78.5,
           "long_active_avg": 78.5
         }
+      },
+      "price_move": {
+        "pct": -0.41,
+        "days": 2,
+        "from_price": 628.99,
+        "to_price": 626.39,
+        "n": 2
+      },
+      "signal": {
+        "label": "Quiet \u2014 no recent divergence",
+        "tone": "neutral",
+        "detail": "price -0.4% (2d) \u00b7 sell-through 1%",
+        "confidence": "full",
+        "basis": {
+          "price_state": "flat",
+          "market_state": "steady",
+          "price_pct": -0.41,
+          "demand_pressure": 1.2658,
+          "supply_saturation": 1.0
+        }
       }
     },
     {
@@ -2155,6 +3575,26 @@
           "long_window": 30,
           "short_active_avg": 69.0,
           "long_active_avg": 69.0
+        }
+      },
+      "price_move": {
+        "pct": -2.4,
+        "days": 3,
+        "from_price": 138.94,
+        "to_price": 135.61,
+        "n": 3
+      },
+      "signal": {
+        "label": "Quiet \u2014 no recent divergence",
+        "tone": "neutral",
+        "detail": "price -2.4% (3d) \u00b7 sell-through 0%",
+        "confidence": "full",
+        "basis": {
+          "price_state": "flat",
+          "market_state": "steady",
+          "price_pct": -2.4,
+          "demand_pressure": 0.0,
+          "supply_saturation": 1.0
         }
       }
     },
@@ -2187,6 +3627,26 @@
           "short_active_avg": 83.5,
           "long_active_avg": 83.5
         }
+      },
+      "price_move": {
+        "pct": 0.05,
+        "days": 2,
+        "from_price": 208.62,
+        "to_price": 208.72,
+        "n": 2
+      },
+      "signal": {
+        "label": "Quiet \u2014 no recent divergence",
+        "tone": "neutral",
+        "detail": "price +0.1% (2d) \u00b7 sell-through 0%",
+        "confidence": "full",
+        "basis": {
+          "price_state": "flat",
+          "market_state": "steady",
+          "price_pct": 0.05,
+          "demand_pressure": 0.0,
+          "supply_saturation": 1.0
+        }
       }
     },
     {
@@ -2217,6 +3677,26 @@
           "long_window": 30,
           "short_active_avg": 69.5,
           "long_active_avg": 69.5
+        }
+      },
+      "price_move": {
+        "pct": 0.47,
+        "days": 3,
+        "from_price": 129.65,
+        "to_price": 130.26,
+        "n": 3
+      },
+      "signal": {
+        "label": "Quiet \u2014 no recent divergence",
+        "tone": "neutral",
+        "detail": "price +0.5% (3d) \u00b7 sell-through 0%",
+        "confidence": "full",
+        "basis": {
+          "price_state": "flat",
+          "market_state": "steady",
+          "price_pct": 0.47,
+          "demand_pressure": 0.0,
+          "supply_saturation": 1.0
         }
       }
     },
@@ -2249,6 +3729,26 @@
           "short_active_avg": 90.0,
           "long_active_avg": 90.0
         }
+      },
+      "price_move": {
+        "pct": -0.39,
+        "days": 3,
+        "from_price": 194.45,
+        "to_price": 193.7,
+        "n": 3
+      },
+      "signal": {
+        "label": "Quiet \u2014 no recent divergence",
+        "tone": "neutral",
+        "detail": "price -0.4% (3d) \u00b7 sell-through 0%",
+        "confidence": "full",
+        "basis": {
+          "price_state": "flat",
+          "market_state": "steady",
+          "price_pct": -0.39,
+          "demand_pressure": 0.0,
+          "supply_saturation": 1.0
+        }
       }
     },
     {
@@ -2279,6 +3779,26 @@
           "long_window": 30,
           "short_active_avg": 82.0,
           "long_active_avg": 82.0
+        }
+      },
+      "price_move": {
+        "pct": 0.18,
+        "days": 3,
+        "from_price": 205.16,
+        "to_price": 205.52,
+        "n": 3
+      },
+      "signal": {
+        "label": "Quiet \u2014 no recent divergence",
+        "tone": "neutral",
+        "detail": "price +0.2% (3d) \u00b7 sell-through 0%",
+        "confidence": "full",
+        "basis": {
+          "price_state": "flat",
+          "market_state": "steady",
+          "price_pct": 0.18,
+          "demand_pressure": 0.0,
+          "supply_saturation": 1.0
         }
       }
     },
@@ -2311,6 +3831,26 @@
           "short_active_avg": 68.0,
           "long_active_avg": 68.0
         }
+      },
+      "price_move": {
+        "pct": 1.47,
+        "days": 2,
+        "from_price": 197.53,
+        "to_price": 200.44,
+        "n": 2
+      },
+      "signal": {
+        "label": "Demand building",
+        "tone": "warm",
+        "detail": "price +1.5% (2d) \u00b7 sell-through 57%",
+        "confidence": "full",
+        "basis": {
+          "price_state": "flat",
+          "market_state": "tightening",
+          "price_pct": 1.47,
+          "demand_pressure": 57.4074,
+          "supply_saturation": 1.0
+        }
       }
     },
     {
@@ -2341,6 +3881,26 @@
           "long_window": 30,
           "short_active_avg": 80.5,
           "long_active_avg": 80.5
+        }
+      },
+      "price_move": {
+        "pct": 0.68,
+        "days": 2,
+        "from_price": 104.1,
+        "to_price": 104.81,
+        "n": 2
+      },
+      "signal": {
+        "label": "Quiet \u2014 no recent divergence",
+        "tone": "neutral",
+        "detail": "price +0.7% (2d) \u00b7 sell-through 0%",
+        "confidence": "full",
+        "basis": {
+          "price_state": "flat",
+          "market_state": "steady",
+          "price_pct": 0.68,
+          "demand_pressure": 0.0,
+          "supply_saturation": 1.0
         }
       }
     },
@@ -2373,6 +3933,26 @@
           "short_active_avg": 88.0,
           "long_active_avg": 88.0
         }
+      },
+      "price_move": {
+        "pct": -1.01,
+        "days": 3,
+        "from_price": 112.48,
+        "to_price": 111.34,
+        "n": 3
+      },
+      "signal": {
+        "label": "Quiet \u2014 no recent divergence",
+        "tone": "neutral",
+        "detail": "price -1.0% (3d) \u00b7 sell-through 0%",
+        "confidence": "full",
+        "basis": {
+          "price_state": "flat",
+          "market_state": "steady",
+          "price_pct": -1.01,
+          "demand_pressure": 0.0,
+          "supply_saturation": 1.0
+        }
       }
     },
     {
@@ -2403,6 +3983,26 @@
           "long_window": 30,
           "short_active_avg": 102.5,
           "long_active_avg": 102.5
+        }
+      },
+      "price_move": {
+        "pct": 0.96,
+        "days": 3,
+        "from_price": 125.89,
+        "to_price": 127.1,
+        "n": 3
+      },
+      "signal": {
+        "label": "Demand building",
+        "tone": "warm",
+        "detail": "price +1.0% (3d) \u00b7 sell-through 19%",
+        "confidence": "full",
+        "basis": {
+          "price_state": "flat",
+          "market_state": "tightening",
+          "price_pct": 0.96,
+          "demand_pressure": 18.9474,
+          "supply_saturation": 1.0
         }
       }
     },
@@ -2435,6 +4035,26 @@
           "short_active_avg": 80.5,
           "long_active_avg": 80.5
         }
+      },
+      "price_move": {
+        "pct": -3.65,
+        "days": 2,
+        "from_price": 106.46,
+        "to_price": 102.57,
+        "n": 2
+      },
+      "signal": {
+        "label": "Easing",
+        "tone": "cool",
+        "detail": "price -3.6% (2d) \u00b7 sell-through 0%",
+        "confidence": "full",
+        "basis": {
+          "price_state": "down",
+          "market_state": "steady",
+          "price_pct": -3.65,
+          "demand_pressure": 0.0,
+          "supply_saturation": 1.0
+        }
       }
     },
     {
@@ -2465,6 +4085,26 @@
           "long_window": 30,
           "short_active_avg": 110.0,
           "long_active_avg": 110.0
+        }
+      },
+      "price_move": {
+        "pct": -2.55,
+        "days": 3,
+        "from_price": 118.48,
+        "to_price": 115.46,
+        "n": 3
+      },
+      "signal": {
+        "label": "Quiet \u2014 no recent divergence",
+        "tone": "neutral",
+        "detail": "price -2.5% (3d) \u00b7 sell-through 10%",
+        "confidence": "full",
+        "basis": {
+          "price_state": "flat",
+          "market_state": "steady",
+          "price_pct": -2.55,
+          "demand_pressure": 10.4762,
+          "supply_saturation": 1.0
         }
       }
     },
@@ -2497,6 +4137,26 @@
           "short_active_avg": 90.5,
           "long_active_avg": 90.5
         }
+      },
+      "price_move": {
+        "pct": -0.35,
+        "days": 2,
+        "from_price": 289.98,
+        "to_price": 288.96,
+        "n": 2
+      },
+      "signal": {
+        "label": "Quiet \u2014 no recent divergence",
+        "tone": "neutral",
+        "detail": "price -0.3% (2d) \u00b7 sell-through 0%",
+        "confidence": "full",
+        "basis": {
+          "price_state": "flat",
+          "market_state": "steady",
+          "price_pct": -0.35,
+          "demand_pressure": 0.0,
+          "supply_saturation": 1.0
+        }
       }
     },
     {
@@ -2527,6 +4187,26 @@
           "long_window": 30,
           "short_active_avg": 92.0,
           "long_active_avg": 92.0
+        }
+      },
+      "price_move": {
+        "pct": 2.78,
+        "days": 2,
+        "from_price": 187.72,
+        "to_price": 192.94,
+        "n": 2
+      },
+      "signal": {
+        "label": "Quiet \u2014 no recent divergence",
+        "tone": "neutral",
+        "detail": "price +2.8% (2d) \u00b7 sell-through 4%",
+        "confidence": "full",
+        "basis": {
+          "price_state": "flat",
+          "market_state": "steady",
+          "price_pct": 2.78,
+          "demand_pressure": 4.3011,
+          "supply_saturation": 1.0
         }
       }
     },
@@ -2559,6 +4239,26 @@
           "short_active_avg": 137.5,
           "long_active_avg": 137.5
         }
+      },
+      "price_move": {
+        "pct": -0.26,
+        "days": 2,
+        "from_price": 167.98,
+        "to_price": 167.54,
+        "n": 2
+      },
+      "signal": {
+        "label": "Quiet \u2014 no recent divergence",
+        "tone": "neutral",
+        "detail": "price -0.3% (2d) \u00b7 sell-through 3%",
+        "confidence": "full",
+        "basis": {
+          "price_state": "flat",
+          "market_state": "steady",
+          "price_pct": -0.26,
+          "demand_pressure": 2.8986,
+          "supply_saturation": 1.0
+        }
       }
     },
     {
@@ -2589,6 +4289,26 @@
           "long_window": 30,
           "short_active_avg": 77.0,
           "long_active_avg": 77.0
+        }
+      },
+      "price_move": {
+        "pct": -1.06,
+        "days": 2,
+        "from_price": 188.03,
+        "to_price": 186.04,
+        "n": 2
+      },
+      "signal": {
+        "label": "Quiet \u2014 no recent divergence",
+        "tone": "neutral",
+        "detail": "price -1.1% (2d) \u00b7 sell-through 1%",
+        "confidence": "full",
+        "basis": {
+          "price_state": "flat",
+          "market_state": "steady",
+          "price_pct": -1.06,
+          "demand_pressure": 1.2987,
+          "supply_saturation": 1.0
         }
       }
     },
@@ -2621,6 +4341,26 @@
           "short_active_avg": 117.0,
           "long_active_avg": 117.0
         }
+      },
+      "price_move": {
+        "pct": -2.41,
+        "days": 3,
+        "from_price": 114.47,
+        "to_price": 111.71,
+        "n": 3
+      },
+      "signal": {
+        "label": "Quiet \u2014 no recent divergence",
+        "tone": "neutral",
+        "detail": "price -2.4% (3d) \u00b7 sell-through 3%",
+        "confidence": "full",
+        "basis": {
+          "price_state": "flat",
+          "market_state": "steady",
+          "price_pct": -2.41,
+          "demand_pressure": 3.3898,
+          "supply_saturation": 1.0
+        }
       }
     },
     {
@@ -2651,6 +4391,26 @@
           "long_window": 30,
           "short_active_avg": 86.0,
           "long_active_avg": 86.0
+        }
+      },
+      "price_move": {
+        "pct": 0.57,
+        "days": 2,
+        "from_price": 123.73,
+        "to_price": 124.43,
+        "n": 2
+      },
+      "signal": {
+        "label": "Quiet \u2014 no recent divergence",
+        "tone": "neutral",
+        "detail": "price +0.6% (2d) \u00b7 sell-through 2%",
+        "confidence": "full",
+        "basis": {
+          "price_state": "flat",
+          "market_state": "steady",
+          "price_pct": 0.57,
+          "demand_pressure": 2.3256,
+          "supply_saturation": 1.0
         }
       }
     },
@@ -2683,6 +4443,26 @@
           "short_active_avg": 115.5,
           "long_active_avg": 115.5
         }
+      },
+      "price_move": {
+        "pct": -0.76,
+        "days": 3,
+        "from_price": 134.92,
+        "to_price": 133.9,
+        "n": 3
+      },
+      "signal": {
+        "label": "Quiet \u2014 no recent divergence",
+        "tone": "neutral",
+        "detail": "price -0.8% (3d) \u00b7 sell-through 0%",
+        "confidence": "full",
+        "basis": {
+          "price_state": "flat",
+          "market_state": "steady",
+          "price_pct": -0.76,
+          "demand_pressure": 0.0,
+          "supply_saturation": 1.0
+        }
       }
     },
     {
@@ -2713,6 +4493,26 @@
           "long_window": 30,
           "short_active_avg": 113.0,
           "long_active_avg": 113.0
+        }
+      },
+      "price_move": {
+        "pct": 0.16,
+        "days": 3,
+        "from_price": 104.93,
+        "to_price": 105.1,
+        "n": 3
+      },
+      "signal": {
+        "label": "Demand building",
+        "tone": "warm",
+        "detail": "price +0.2% (3d) \u00b7 sell-through 16%",
+        "confidence": "full",
+        "basis": {
+          "price_state": "flat",
+          "market_state": "tightening",
+          "price_pct": 0.16,
+          "demand_pressure": 16.0377,
+          "supply_saturation": 1.0
         }
       }
     },
@@ -2745,6 +4545,26 @@
           "short_active_avg": 106.5,
           "long_active_avg": 106.5
         }
+      },
+      "price_move": {
+        "pct": -0.18,
+        "days": 2,
+        "from_price": 445.65,
+        "to_price": 444.84,
+        "n": 2
+      },
+      "signal": {
+        "label": "Quiet \u2014 no recent divergence",
+        "tone": "neutral",
+        "detail": "price -0.2% (2d) \u00b7 sell-through 0%",
+        "confidence": "full",
+        "basis": {
+          "price_state": "flat",
+          "market_state": "steady",
+          "price_pct": -0.18,
+          "demand_pressure": 0.0,
+          "supply_saturation": 1.0
+        }
       }
     },
     {
@@ -2775,6 +4595,26 @@
           "long_window": 30,
           "short_active_avg": 96.0,
           "long_active_avg": 96.0
+        }
+      },
+      "price_move": {
+        "pct": 0.0,
+        "days": 2,
+        "from_price": 127.32,
+        "to_price": 127.32,
+        "n": 2
+      },
+      "signal": {
+        "label": "Quiet \u2014 no recent divergence",
+        "tone": "neutral",
+        "detail": "price +0.0% (2d) \u00b7 sell-through 0%",
+        "confidence": "full",
+        "basis": {
+          "price_state": "flat",
+          "market_state": "steady",
+          "price_pct": 0.0,
+          "demand_pressure": 0.0,
+          "supply_saturation": 1.0
         }
       }
     },
@@ -2807,6 +4647,26 @@
           "short_active_avg": 57.0,
           "long_active_avg": 57.0
         }
+      },
+      "price_move": {
+        "pct": 8.77,
+        "days": 3,
+        "from_price": 188.21,
+        "to_price": 204.72,
+        "n": 3
+      },
+      "signal": {
+        "label": "Rising \u2014 no clear market driver",
+        "tone": "warm",
+        "detail": "price +8.8% (3d) \u00b7 sell-through 0%",
+        "confidence": "full",
+        "basis": {
+          "price_state": "up",
+          "market_state": "steady",
+          "price_pct": 8.77,
+          "demand_pressure": 0.0,
+          "supply_saturation": 1.0
+        }
       }
     },
     {
@@ -2837,6 +4697,26 @@
           "long_window": 30,
           "short_active_avg": 78.5,
           "long_active_avg": 78.5
+        }
+      },
+      "price_move": {
+        "pct": 0.58,
+        "days": 3,
+        "from_price": 335.83,
+        "to_price": 337.78,
+        "n": 3
+      },
+      "signal": {
+        "label": "Quiet \u2014 no recent divergence",
+        "tone": "neutral",
+        "detail": "price +0.6% (3d) \u00b7 sell-through 0%",
+        "confidence": "full",
+        "basis": {
+          "price_state": "flat",
+          "market_state": "steady",
+          "price_pct": 0.58,
+          "demand_pressure": 0.0,
+          "supply_saturation": 1.0
         }
       }
     },
@@ -2869,6 +4749,26 @@
           "short_active_avg": 79.0,
           "long_active_avg": 79.0
         }
+      },
+      "price_move": {
+        "pct": -0.01,
+        "days": 3,
+        "from_price": 142.91,
+        "to_price": 142.9,
+        "n": 3
+      },
+      "signal": {
+        "label": "Quiet \u2014 no recent divergence",
+        "tone": "neutral",
+        "detail": "price -0.0% (3d) \u00b7 sell-through 1%",
+        "confidence": "full",
+        "basis": {
+          "price_state": "flat",
+          "market_state": "steady",
+          "price_pct": -0.01,
+          "demand_pressure": 1.2658,
+          "supply_saturation": 1.0
+        }
       }
     },
     {
@@ -2900,6 +4800,26 @@
           "short_active_avg": 173.5,
           "long_active_avg": 173.5
         }
+      },
+      "price_move": {
+        "pct": 3.87,
+        "days": 2,
+        "from_price": 48.58,
+        "to_price": 50.46,
+        "n": 2
+      },
+      "signal": {
+        "label": "Rising \u2014 no clear market driver",
+        "tone": "warm",
+        "detail": "price +3.9% (2d) \u00b7 sell-through 0%",
+        "confidence": "full",
+        "basis": {
+          "price_state": "up",
+          "market_state": "steady",
+          "price_pct": 3.87,
+          "demand_pressure": 0.0,
+          "supply_saturation": 1.0
+        }
       }
     },
     {
@@ -2928,6 +4848,26 @@
           "days": 2,
           "short_window": 7,
           "long_window": 30
+        }
+      },
+      "price_move": {
+        "pct": 4.68,
+        "days": 3,
+        "from_price": 16.01,
+        "to_price": 16.76,
+        "n": 3
+      },
+      "signal": {
+        "label": "Rising",
+        "tone": "warm",
+        "detail": "price +4.7% (3d)",
+        "confidence": "price_only",
+        "basis": {
+          "price_state": "up",
+          "market_state": "unknown",
+          "price_pct": 4.68,
+          "demand_pressure": null,
+          "supply_saturation": 1.0
         }
       }
     },
@@ -2960,6 +4900,26 @@
           "short_active_avg": 67.5,
           "long_active_avg": 67.5
         }
+      },
+      "price_move": {
+        "pct": 7.29,
+        "days": 3,
+        "from_price": 358.36,
+        "to_price": 384.5,
+        "n": 3
+      },
+      "signal": {
+        "label": "Rising \u2014 no clear market driver",
+        "tone": "warm",
+        "detail": "price +7.3% (3d) \u00b7 sell-through 1%",
+        "confidence": "full",
+        "basis": {
+          "price_state": "up",
+          "market_state": "steady",
+          "price_pct": 7.29,
+          "demand_pressure": 1.4706,
+          "supply_saturation": 1.0
+        }
       }
     },
     {
@@ -2989,6 +4949,26 @@
           "short_window": 7,
           "long_window": 30
         }
+      },
+      "price_move": {
+        "pct": 11.28,
+        "days": 3,
+        "from_price": 17.37,
+        "to_price": 19.33,
+        "n": 3
+      },
+      "signal": {
+        "label": "Rising",
+        "tone": "warm",
+        "detail": "price +11.3% (3d)",
+        "confidence": "price_only",
+        "basis": {
+          "price_state": "up",
+          "market_state": "unknown",
+          "price_pct": 11.28,
+          "demand_pressure": null,
+          "supply_saturation": 1.0
+        }
       }
     },
     {
@@ -3017,6 +4997,26 @@
           "days": 3,
           "short_window": 7,
           "long_window": 30
+        }
+      },
+      "price_move": {
+        "pct": 1.25,
+        "days": 2,
+        "from_price": 20.88,
+        "to_price": 21.14,
+        "n": 2
+      },
+      "signal": {
+        "label": "Quiet",
+        "tone": "neutral",
+        "detail": "price +1.2% (2d)",
+        "confidence": "price_only",
+        "basis": {
+          "price_state": "flat",
+          "market_state": "unknown",
+          "price_pct": 1.25,
+          "demand_pressure": null,
+          "supply_saturation": 1.0
         }
       }
     }
@@ -3052,6 +5052,26 @@
           "long_active_avg": 41.0
         }
       },
+      "price_move": {
+        "pct": -1.45,
+        "days": 3,
+        "from_price": 1579.6,
+        "to_price": 1556.65,
+        "n": 3
+      },
+      "signal": {
+        "label": "Demand building",
+        "tone": "warm",
+        "detail": "price -1.4% (3d) \u00b7 sell-through 18%",
+        "confidence": "full",
+        "basis": {
+          "price_state": "flat",
+          "market_state": "tightening",
+          "price_pct": -1.45,
+          "demand_pressure": 18.4211,
+          "supply_saturation": 1.0
+        }
+      },
       "mover_basis": "price_signal_fallback",
       "awaiting_data": true
     },
@@ -3083,6 +5103,26 @@
           "long_window": 30,
           "short_active_avg": 51.5,
           "long_active_avg": 51.5
+        }
+      },
+      "price_move": {
+        "pct": -5.8,
+        "days": 2,
+        "from_price": 1454.18,
+        "to_price": 1369.79,
+        "n": 2
+      },
+      "signal": {
+        "label": "Easing",
+        "tone": "cool",
+        "detail": "price -5.8% (2d) \u00b7 sell-through 0%",
+        "confidence": "full",
+        "basis": {
+          "price_state": "down",
+          "market_state": "steady",
+          "price_pct": -5.8,
+          "demand_pressure": 0.0,
+          "supply_saturation": 1.0
         }
       },
       "mover_basis": "price_signal_fallback",
@@ -3118,6 +5158,26 @@
           "long_active_avg": 66.0
         }
       },
+      "price_move": {
+        "pct": 0.96,
+        "days": 2,
+        "from_price": 1355.05,
+        "to_price": 1368.11,
+        "n": 2
+      },
+      "signal": {
+        "label": "Quiet \u2014 no recent divergence",
+        "tone": "neutral",
+        "detail": "price +1.0% (2d) \u00b7 sell-through 0%",
+        "confidence": "full",
+        "basis": {
+          "price_state": "flat",
+          "market_state": "steady",
+          "price_pct": 0.96,
+          "demand_pressure": 0.0,
+          "supply_saturation": 1.0
+        }
+      },
       "mover_basis": "price_signal_fallback",
       "awaiting_data": true
     },
@@ -3149,6 +5209,26 @@
           "long_window": 30,
           "short_active_avg": 60.5,
           "long_active_avg": 60.5
+        }
+      },
+      "price_move": {
+        "pct": 1.06,
+        "days": 3,
+        "from_price": 1020.11,
+        "to_price": 1030.92,
+        "n": 3
+      },
+      "signal": {
+        "label": "Demand building",
+        "tone": "warm",
+        "detail": "price +1.1% (3d) \u00b7 sell-through 18%",
+        "confidence": "full",
+        "basis": {
+          "price_state": "flat",
+          "market_state": "tightening",
+          "price_pct": 1.06,
+          "demand_pressure": 17.8571,
+          "supply_saturation": 1.0
         }
       },
       "mover_basis": "price_signal_fallback",
@@ -3184,6 +5264,26 @@
           "long_active_avg": 83.0
         }
       },
+      "price_move": {
+        "pct": -0.1,
+        "days": 2,
+        "from_price": 880.43,
+        "to_price": 879.57,
+        "n": 2
+      },
+      "signal": {
+        "label": "Quiet \u2014 no recent divergence",
+        "tone": "neutral",
+        "detail": "price -0.1% (2d) \u00b7 sell-through 1%",
+        "confidence": "full",
+        "basis": {
+          "price_state": "flat",
+          "market_state": "steady",
+          "price_pct": -0.1,
+          "demand_pressure": 1.2048,
+          "supply_saturation": 1.0
+        }
+      },
       "mover_basis": "price_signal_fallback",
       "awaiting_data": true
     },
@@ -3215,6 +5315,26 @@
           "long_window": 30,
           "short_active_avg": 24.0,
           "long_active_avg": 24.0
+        }
+      },
+      "price_move": {
+        "pct": 0.0,
+        "days": 2,
+        "from_price": 576.63,
+        "to_price": 576.63,
+        "n": 2
+      },
+      "signal": {
+        "label": "Quiet \u2014 no recent divergence",
+        "tone": "neutral",
+        "detail": "price +0.0% (2d) \u00b7 sell-through 4%",
+        "confidence": "full",
+        "basis": {
+          "price_state": "flat",
+          "market_state": "steady",
+          "price_pct": 0.0,
+          "demand_pressure": 4.1667,
+          "supply_saturation": 1.0
         }
       },
       "mover_basis": "price_signal_fallback",
@@ -3250,6 +5370,26 @@
           "long_active_avg": 41.0
         }
       },
+      "price_move": {
+        "pct": 0.0,
+        "days": 2,
+        "from_price": 546.52,
+        "to_price": 546.52,
+        "n": 2
+      },
+      "signal": {
+        "label": "Demand building",
+        "tone": "warm",
+        "detail": "price +0.0% (2d) \u00b7 sell-through 21%",
+        "confidence": "full",
+        "basis": {
+          "price_state": "flat",
+          "market_state": "tightening",
+          "price_pct": 0.0,
+          "demand_pressure": 20.5128,
+          "supply_saturation": 1.0
+        }
+      },
       "mover_basis": "price_signal_fallback",
       "awaiting_data": true
     },
@@ -3281,6 +5421,26 @@
           "long_window": 30,
           "short_active_avg": 52.0,
           "long_active_avg": 52.0
+        }
+      },
+      "price_move": {
+        "pct": 3.9,
+        "days": 3,
+        "from_price": 514.76,
+        "to_price": 534.81,
+        "n": 3
+      },
+      "signal": {
+        "label": "Rising \u2014 no clear market driver",
+        "tone": "warm",
+        "detail": "price +3.9% (3d) \u00b7 sell-through 2%",
+        "confidence": "full",
+        "basis": {
+          "price_state": "up",
+          "market_state": "steady",
+          "price_pct": 3.9,
+          "demand_pressure": 1.9231,
+          "supply_saturation": 1.0
         }
       },
       "mover_basis": "price_signal_fallback",
@@ -3316,6 +5476,26 @@
           "long_active_avg": 71.0
         }
       },
+      "price_move": {
+        "pct": -0.05,
+        "days": 2,
+        "from_price": 568.7,
+        "to_price": 568.39,
+        "n": 2
+      },
+      "signal": {
+        "label": "Quiet \u2014 no recent divergence",
+        "tone": "neutral",
+        "detail": "price -0.1% (2d) \u00b7 sell-through 0%",
+        "confidence": "full",
+        "basis": {
+          "price_state": "flat",
+          "market_state": "steady",
+          "price_pct": -0.05,
+          "demand_pressure": 0.0,
+          "supply_saturation": 1.0
+        }
+      },
       "mover_basis": "price_signal_fallback",
       "awaiting_data": true
     },
@@ -3347,6 +5527,26 @@
           "long_window": 30,
           "short_active_avg": 31.0,
           "long_active_avg": 31.0
+        }
+      },
+      "price_move": {
+        "pct": 0.84,
+        "days": 2,
+        "from_price": 235.7,
+        "to_price": 237.69,
+        "n": 2
+      },
+      "signal": {
+        "label": "Quiet \u2014 no recent divergence",
+        "tone": "neutral",
+        "detail": "price +0.8% (2d) \u00b7 sell-through 0%",
+        "confidence": "full",
+        "basis": {
+          "price_state": "flat",
+          "market_state": "steady",
+          "price_pct": 0.84,
+          "demand_pressure": 0.0,
+          "supply_saturation": 1.0
         }
       },
       "mover_basis": "price_signal_fallback",
@@ -3382,6 +5582,26 @@
           "long_active_avg": 69.0
         }
       },
+      "price_move": {
+        "pct": -1.9,
+        "days": 3,
+        "from_price": 331.22,
+        "to_price": 324.93,
+        "n": 3
+      },
+      "signal": {
+        "label": "Quiet \u2014 no recent divergence",
+        "tone": "neutral",
+        "detail": "price -1.9% (3d) \u00b7 sell-through 1%",
+        "confidence": "full",
+        "basis": {
+          "price_state": "flat",
+          "market_state": "steady",
+          "price_pct": -1.9,
+          "demand_pressure": 1.4493,
+          "supply_saturation": 1.0
+        }
+      },
       "mover_basis": "price_signal_fallback",
       "awaiting_data": true
     },
@@ -3413,6 +5633,26 @@
           "long_window": 30,
           "short_active_avg": 66.5,
           "long_active_avg": 66.5
+        }
+      },
+      "price_move": {
+        "pct": 0.5,
+        "days": 3,
+        "from_price": 321.16,
+        "to_price": 322.77,
+        "n": 3
+      },
+      "signal": {
+        "label": "Quiet \u2014 no recent divergence",
+        "tone": "neutral",
+        "detail": "price +0.5% (3d) \u00b7 sell-through 3%",
+        "confidence": "full",
+        "basis": {
+          "price_state": "flat",
+          "market_state": "steady",
+          "price_pct": 0.5,
+          "demand_pressure": 2.9851,
+          "supply_saturation": 1.0
         }
       },
       "mover_basis": "price_signal_fallback",
@@ -3448,6 +5688,26 @@
           "long_active_avg": 92.5
         }
       },
+      "price_move": {
+        "pct": -3.07,
+        "days": 3,
+        "from_price": 479.59,
+        "to_price": 464.86,
+        "n": 3
+      },
+      "signal": {
+        "label": "Easing",
+        "tone": "cool",
+        "detail": "price -3.1% (3d) \u00b7 sell-through 0%",
+        "confidence": "full",
+        "basis": {
+          "price_state": "down",
+          "market_state": "steady",
+          "price_pct": -3.07,
+          "demand_pressure": 0.0,
+          "supply_saturation": 1.0
+        }
+      },
       "mover_basis": "price_signal_fallback",
       "awaiting_data": true
     },
@@ -3479,6 +5739,26 @@
           "long_window": 30,
           "short_active_avg": 77.0,
           "long_active_avg": 77.0
+        }
+      },
+      "price_move": {
+        "pct": -0.44,
+        "days": 3,
+        "from_price": 300.2,
+        "to_price": 298.88,
+        "n": 3
+      },
+      "signal": {
+        "label": "Quiet \u2014 no recent divergence",
+        "tone": "neutral",
+        "detail": "price -0.4% (3d) \u00b7 sell-through 0%",
+        "confidence": "full",
+        "basis": {
+          "price_state": "flat",
+          "market_state": "steady",
+          "price_pct": -0.44,
+          "demand_pressure": 0.0,
+          "supply_saturation": 1.0
         }
       },
       "mover_basis": "price_signal_fallback",
@@ -3514,6 +5794,26 @@
           "long_active_avg": 50.5
         }
       },
+      "price_move": {
+        "pct": 1.32,
+        "days": 3,
+        "from_price": 300.86,
+        "to_price": 304.82,
+        "n": 3
+      },
+      "signal": {
+        "label": "Quiet \u2014 no recent divergence",
+        "tone": "neutral",
+        "detail": "price +1.3% (3d) \u00b7 sell-through 0%",
+        "confidence": "full",
+        "basis": {
+          "price_state": "flat",
+          "market_state": "steady",
+          "price_pct": 1.32,
+          "demand_pressure": 0.0,
+          "supply_saturation": 1.0
+        }
+      },
       "mover_basis": "price_signal_fallback",
       "awaiting_data": true
     },
@@ -3545,6 +5845,26 @@
           "long_window": 30,
           "short_active_avg": 54.5,
           "long_active_avg": 54.5
+        }
+      },
+      "price_move": {
+        "pct": 0.29,
+        "days": 3,
+        "from_price": 400.47,
+        "to_price": 401.62,
+        "n": 3
+      },
+      "signal": {
+        "label": "Quiet \u2014 no recent divergence",
+        "tone": "neutral",
+        "detail": "price +0.3% (3d) \u00b7 sell-through 2%",
+        "confidence": "full",
+        "basis": {
+          "price_state": "flat",
+          "market_state": "steady",
+          "price_pct": 0.29,
+          "demand_pressure": 1.8182,
+          "supply_saturation": 1.0
         }
       },
       "mover_basis": "price_signal_fallback",
@@ -3580,6 +5900,26 @@
           "long_active_avg": 41.5
         }
       },
+      "price_move": {
+        "pct": 0.05,
+        "days": 3,
+        "from_price": 185.48,
+        "to_price": 185.58,
+        "n": 3
+      },
+      "signal": {
+        "label": "Quiet \u2014 no recent divergence",
+        "tone": "neutral",
+        "detail": "price +0.1% (3d) \u00b7 sell-through 2%",
+        "confidence": "full",
+        "basis": {
+          "price_state": "flat",
+          "market_state": "steady",
+          "price_pct": 0.05,
+          "demand_pressure": 2.381,
+          "supply_saturation": 1.0
+        }
+      },
       "mover_basis": "price_signal_fallback",
       "awaiting_data": true
     },
@@ -3611,6 +5951,26 @@
           "long_window": 30,
           "short_active_avg": 76.0,
           "long_active_avg": 76.0
+        }
+      },
+      "price_move": {
+        "pct": 0.85,
+        "days": 3,
+        "from_price": 209.93,
+        "to_price": 211.72,
+        "n": 3
+      },
+      "signal": {
+        "label": "Quiet \u2014 no recent divergence",
+        "tone": "neutral",
+        "detail": "price +0.8% (3d) \u00b7 sell-through 5%",
+        "confidence": "full",
+        "basis": {
+          "price_state": "flat",
+          "market_state": "steady",
+          "price_pct": 0.85,
+          "demand_pressure": 5.2632,
+          "supply_saturation": 1.0
         }
       },
       "mover_basis": "price_signal_fallback",
@@ -3646,6 +6006,26 @@
           "long_active_avg": 49.0
         }
       },
+      "price_move": {
+        "pct": 0.0,
+        "days": 2,
+        "from_price": 271.53,
+        "to_price": 271.53,
+        "n": 2
+      },
+      "signal": {
+        "label": "Demand building",
+        "tone": "warm",
+        "detail": "price +0.0% (2d) \u00b7 sell-through 18%",
+        "confidence": "full",
+        "basis": {
+          "price_state": "flat",
+          "market_state": "tightening",
+          "price_pct": 0.0,
+          "demand_pressure": 17.7778,
+          "supply_saturation": 1.0
+        }
+      },
       "mover_basis": "price_signal_fallback",
       "awaiting_data": true
     },
@@ -3677,6 +6057,26 @@
           "long_window": 30,
           "short_active_avg": 101.0,
           "long_active_avg": 101.0
+        }
+      },
+      "price_move": {
+        "pct": 3.15,
+        "days": 2,
+        "from_price": 177.08,
+        "to_price": 182.65,
+        "n": 2
+      },
+      "signal": {
+        "label": "Rising \u2014 no clear market driver",
+        "tone": "warm",
+        "detail": "price +3.1% (2d) \u00b7 sell-through 0%",
+        "confidence": "full",
+        "basis": {
+          "price_state": "up",
+          "market_state": "steady",
+          "price_pct": 3.15,
+          "demand_pressure": 0.0,
+          "supply_saturation": 1.0
         }
       },
       "mover_basis": "price_signal_fallback",
@@ -3712,6 +6112,26 @@
           "long_active_avg": 65.0
         }
       },
+      "price_move": {
+        "pct": -0.11,
+        "days": 3,
+        "from_price": 177.72,
+        "to_price": 177.52,
+        "n": 3
+      },
+      "signal": {
+        "label": "Quiet \u2014 no recent divergence",
+        "tone": "neutral",
+        "detail": "price -0.1% (3d) \u00b7 sell-through 2%",
+        "confidence": "full",
+        "basis": {
+          "price_state": "flat",
+          "market_state": "steady",
+          "price_pct": -0.11,
+          "demand_pressure": 1.5385,
+          "supply_saturation": 1.0
+        }
+      },
       "mover_basis": "price_signal_fallback",
       "awaiting_data": true
     },
@@ -3743,6 +6163,26 @@
           "long_window": 30,
           "short_active_avg": 78.5,
           "long_active_avg": 78.5
+        }
+      },
+      "price_move": {
+        "pct": -0.41,
+        "days": 2,
+        "from_price": 628.99,
+        "to_price": 626.39,
+        "n": 2
+      },
+      "signal": {
+        "label": "Quiet \u2014 no recent divergence",
+        "tone": "neutral",
+        "detail": "price -0.4% (2d) \u00b7 sell-through 1%",
+        "confidence": "full",
+        "basis": {
+          "price_state": "flat",
+          "market_state": "steady",
+          "price_pct": -0.41,
+          "demand_pressure": 1.2658,
+          "supply_saturation": 1.0
         }
       },
       "mover_basis": "price_signal_fallback",
@@ -3778,6 +6218,26 @@
           "long_active_avg": 78.0
         }
       },
+      "price_move": {
+        "pct": 0.68,
+        "days": 3,
+        "from_price": 188.73,
+        "to_price": 190.02,
+        "n": 3
+      },
+      "signal": {
+        "label": "Demand building",
+        "tone": "warm",
+        "detail": "price +0.7% (3d) \u00b7 sell-through 23%",
+        "confidence": "full",
+        "basis": {
+          "price_state": "flat",
+          "market_state": "tightening",
+          "price_pct": 0.68,
+          "demand_pressure": 22.5352,
+          "supply_saturation": 1.0
+        }
+      },
       "mover_basis": "price_signal_fallback",
       "awaiting_data": true
     },
@@ -3809,6 +6269,26 @@
           "long_window": 30,
           "short_active_avg": 155.5,
           "long_active_avg": 155.5
+        }
+      },
+      "price_move": {
+        "pct": -0.1,
+        "days": 2,
+        "from_price": 266.43,
+        "to_price": 266.17,
+        "n": 2
+      },
+      "signal": {
+        "label": "Quiet \u2014 no recent divergence",
+        "tone": "neutral",
+        "detail": "price -0.1% (2d) \u00b7 sell-through 0%",
+        "confidence": "full",
+        "basis": {
+          "price_state": "flat",
+          "market_state": "steady",
+          "price_pct": -0.1,
+          "demand_pressure": 0.0,
+          "supply_saturation": 1.0
         }
       },
       "mover_basis": "price_signal_fallback",
@@ -3844,6 +6324,26 @@
           "long_active_avg": 69.0
         }
       },
+      "price_move": {
+        "pct": -2.4,
+        "days": 3,
+        "from_price": 138.94,
+        "to_price": 135.61,
+        "n": 3
+      },
+      "signal": {
+        "label": "Quiet \u2014 no recent divergence",
+        "tone": "neutral",
+        "detail": "price -2.4% (3d) \u00b7 sell-through 0%",
+        "confidence": "full",
+        "basis": {
+          "price_state": "flat",
+          "market_state": "steady",
+          "price_pct": -2.4,
+          "demand_pressure": 0.0,
+          "supply_saturation": 1.0
+        }
+      },
       "mover_basis": "price_signal_fallback",
       "awaiting_data": true
     },
@@ -3875,6 +6375,26 @@
           "long_window": 30,
           "short_active_avg": 83.5,
           "long_active_avg": 83.5
+        }
+      },
+      "price_move": {
+        "pct": 0.05,
+        "days": 2,
+        "from_price": 208.62,
+        "to_price": 208.72,
+        "n": 2
+      },
+      "signal": {
+        "label": "Quiet \u2014 no recent divergence",
+        "tone": "neutral",
+        "detail": "price +0.1% (2d) \u00b7 sell-through 0%",
+        "confidence": "full",
+        "basis": {
+          "price_state": "flat",
+          "market_state": "steady",
+          "price_pct": 0.05,
+          "demand_pressure": 0.0,
+          "supply_saturation": 1.0
         }
       },
       "mover_basis": "price_signal_fallback",
@@ -3910,6 +6430,26 @@
           "long_active_avg": 69.5
         }
       },
+      "price_move": {
+        "pct": 0.47,
+        "days": 3,
+        "from_price": 129.65,
+        "to_price": 130.26,
+        "n": 3
+      },
+      "signal": {
+        "label": "Quiet \u2014 no recent divergence",
+        "tone": "neutral",
+        "detail": "price +0.5% (3d) \u00b7 sell-through 0%",
+        "confidence": "full",
+        "basis": {
+          "price_state": "flat",
+          "market_state": "steady",
+          "price_pct": 0.47,
+          "demand_pressure": 0.0,
+          "supply_saturation": 1.0
+        }
+      },
       "mover_basis": "price_signal_fallback",
       "awaiting_data": true
     },
@@ -3941,6 +6481,26 @@
           "long_window": 30,
           "short_active_avg": 90.0,
           "long_active_avg": 90.0
+        }
+      },
+      "price_move": {
+        "pct": -0.39,
+        "days": 3,
+        "from_price": 194.45,
+        "to_price": 193.7,
+        "n": 3
+      },
+      "signal": {
+        "label": "Quiet \u2014 no recent divergence",
+        "tone": "neutral",
+        "detail": "price -0.4% (3d) \u00b7 sell-through 0%",
+        "confidence": "full",
+        "basis": {
+          "price_state": "flat",
+          "market_state": "steady",
+          "price_pct": -0.39,
+          "demand_pressure": 0.0,
+          "supply_saturation": 1.0
         }
       },
       "mover_basis": "price_signal_fallback",
@@ -3976,6 +6536,26 @@
           "long_active_avg": 82.0
         }
       },
+      "price_move": {
+        "pct": 0.18,
+        "days": 3,
+        "from_price": 205.16,
+        "to_price": 205.52,
+        "n": 3
+      },
+      "signal": {
+        "label": "Quiet \u2014 no recent divergence",
+        "tone": "neutral",
+        "detail": "price +0.2% (3d) \u00b7 sell-through 0%",
+        "confidence": "full",
+        "basis": {
+          "price_state": "flat",
+          "market_state": "steady",
+          "price_pct": 0.18,
+          "demand_pressure": 0.0,
+          "supply_saturation": 1.0
+        }
+      },
       "mover_basis": "price_signal_fallback",
       "awaiting_data": true
     },
@@ -4007,6 +6587,26 @@
           "long_window": 30,
           "short_active_avg": 68.0,
           "long_active_avg": 68.0
+        }
+      },
+      "price_move": {
+        "pct": 1.47,
+        "days": 2,
+        "from_price": 197.53,
+        "to_price": 200.44,
+        "n": 2
+      },
+      "signal": {
+        "label": "Demand building",
+        "tone": "warm",
+        "detail": "price +1.5% (2d) \u00b7 sell-through 57%",
+        "confidence": "full",
+        "basis": {
+          "price_state": "flat",
+          "market_state": "tightening",
+          "price_pct": 1.47,
+          "demand_pressure": 57.4074,
+          "supply_saturation": 1.0
         }
       },
       "mover_basis": "price_signal_fallback",
@@ -4042,6 +6642,26 @@
           "long_active_avg": 80.5
         }
       },
+      "price_move": {
+        "pct": 0.68,
+        "days": 2,
+        "from_price": 104.1,
+        "to_price": 104.81,
+        "n": 2
+      },
+      "signal": {
+        "label": "Quiet \u2014 no recent divergence",
+        "tone": "neutral",
+        "detail": "price +0.7% (2d) \u00b7 sell-through 0%",
+        "confidence": "full",
+        "basis": {
+          "price_state": "flat",
+          "market_state": "steady",
+          "price_pct": 0.68,
+          "demand_pressure": 0.0,
+          "supply_saturation": 1.0
+        }
+      },
       "mover_basis": "price_signal_fallback",
       "awaiting_data": true
     },
@@ -4073,6 +6693,26 @@
           "long_window": 30,
           "short_active_avg": 88.0,
           "long_active_avg": 88.0
+        }
+      },
+      "price_move": {
+        "pct": -1.01,
+        "days": 3,
+        "from_price": 112.48,
+        "to_price": 111.34,
+        "n": 3
+      },
+      "signal": {
+        "label": "Quiet \u2014 no recent divergence",
+        "tone": "neutral",
+        "detail": "price -1.0% (3d) \u00b7 sell-through 0%",
+        "confidence": "full",
+        "basis": {
+          "price_state": "flat",
+          "market_state": "steady",
+          "price_pct": -1.01,
+          "demand_pressure": 0.0,
+          "supply_saturation": 1.0
         }
       },
       "mover_basis": "price_signal_fallback",
@@ -4108,6 +6748,26 @@
           "long_active_avg": 102.5
         }
       },
+      "price_move": {
+        "pct": 0.96,
+        "days": 3,
+        "from_price": 125.89,
+        "to_price": 127.1,
+        "n": 3
+      },
+      "signal": {
+        "label": "Demand building",
+        "tone": "warm",
+        "detail": "price +1.0% (3d) \u00b7 sell-through 19%",
+        "confidence": "full",
+        "basis": {
+          "price_state": "flat",
+          "market_state": "tightening",
+          "price_pct": 0.96,
+          "demand_pressure": 18.9474,
+          "supply_saturation": 1.0
+        }
+      },
       "mover_basis": "price_signal_fallback",
       "awaiting_data": true
     },
@@ -4139,6 +6799,26 @@
           "long_window": 30,
           "short_active_avg": 80.5,
           "long_active_avg": 80.5
+        }
+      },
+      "price_move": {
+        "pct": -3.65,
+        "days": 2,
+        "from_price": 106.46,
+        "to_price": 102.57,
+        "n": 2
+      },
+      "signal": {
+        "label": "Easing",
+        "tone": "cool",
+        "detail": "price -3.6% (2d) \u00b7 sell-through 0%",
+        "confidence": "full",
+        "basis": {
+          "price_state": "down",
+          "market_state": "steady",
+          "price_pct": -3.65,
+          "demand_pressure": 0.0,
+          "supply_saturation": 1.0
         }
       },
       "mover_basis": "price_signal_fallback",
@@ -4174,6 +6854,26 @@
           "long_active_avg": 73.0
         }
       },
+      "price_move": {
+        "pct": 0.32,
+        "days": 2,
+        "from_price": 106.43,
+        "to_price": 106.77,
+        "n": 2
+      },
+      "signal": {
+        "label": "Quiet \u2014 no recent divergence",
+        "tone": "neutral",
+        "detail": "price +0.3% (2d) \u00b7 sell-through 0%",
+        "confidence": "full",
+        "basis": {
+          "price_state": "flat",
+          "market_state": "steady",
+          "price_pct": 0.32,
+          "demand_pressure": 0.0,
+          "supply_saturation": 1.0
+        }
+      },
       "mover_basis": "price_signal_fallback",
       "awaiting_data": true
     },
@@ -4205,6 +6905,26 @@
           "long_window": 30,
           "short_active_avg": 110.0,
           "long_active_avg": 110.0
+        }
+      },
+      "price_move": {
+        "pct": -2.55,
+        "days": 3,
+        "from_price": 118.48,
+        "to_price": 115.46,
+        "n": 3
+      },
+      "signal": {
+        "label": "Quiet \u2014 no recent divergence",
+        "tone": "neutral",
+        "detail": "price -2.5% (3d) \u00b7 sell-through 10%",
+        "confidence": "full",
+        "basis": {
+          "price_state": "flat",
+          "market_state": "steady",
+          "price_pct": -2.55,
+          "demand_pressure": 10.4762,
+          "supply_saturation": 1.0
         }
       },
       "mover_basis": "price_signal_fallback",
@@ -4240,6 +6960,26 @@
           "long_active_avg": 90.5
         }
       },
+      "price_move": {
+        "pct": -0.35,
+        "days": 2,
+        "from_price": 289.98,
+        "to_price": 288.96,
+        "n": 2
+      },
+      "signal": {
+        "label": "Quiet \u2014 no recent divergence",
+        "tone": "neutral",
+        "detail": "price -0.3% (2d) \u00b7 sell-through 0%",
+        "confidence": "full",
+        "basis": {
+          "price_state": "flat",
+          "market_state": "steady",
+          "price_pct": -0.35,
+          "demand_pressure": 0.0,
+          "supply_saturation": 1.0
+        }
+      },
       "mover_basis": "price_signal_fallback",
       "awaiting_data": true
     },
@@ -4271,6 +7011,26 @@
           "long_window": 30,
           "short_active_avg": 92.0,
           "long_active_avg": 92.0
+        }
+      },
+      "price_move": {
+        "pct": 2.78,
+        "days": 2,
+        "from_price": 187.72,
+        "to_price": 192.94,
+        "n": 2
+      },
+      "signal": {
+        "label": "Quiet \u2014 no recent divergence",
+        "tone": "neutral",
+        "detail": "price +2.8% (2d) \u00b7 sell-through 4%",
+        "confidence": "full",
+        "basis": {
+          "price_state": "flat",
+          "market_state": "steady",
+          "price_pct": 2.78,
+          "demand_pressure": 4.3011,
+          "supply_saturation": 1.0
         }
       },
       "mover_basis": "price_signal_fallback",
@@ -4306,6 +7066,26 @@
           "long_active_avg": 161.5
         }
       },
+      "price_move": {
+        "pct": -6.24,
+        "days": 2,
+        "from_price": 338.78,
+        "to_price": 317.64,
+        "n": 2
+      },
+      "signal": {
+        "label": "Easing",
+        "tone": "cool",
+        "detail": "price -6.2% (2d) \u00b7 sell-through 0%",
+        "confidence": "full",
+        "basis": {
+          "price_state": "down",
+          "market_state": "steady",
+          "price_pct": -6.24,
+          "demand_pressure": 0.0,
+          "supply_saturation": 1.0
+        }
+      },
       "mover_basis": "price_signal_fallback",
       "awaiting_data": true
     },
@@ -4337,6 +7117,26 @@
           "long_window": 30,
           "short_active_avg": 137.5,
           "long_active_avg": 137.5
+        }
+      },
+      "price_move": {
+        "pct": -0.26,
+        "days": 2,
+        "from_price": 167.98,
+        "to_price": 167.54,
+        "n": 2
+      },
+      "signal": {
+        "label": "Quiet \u2014 no recent divergence",
+        "tone": "neutral",
+        "detail": "price -0.3% (2d) \u00b7 sell-through 3%",
+        "confidence": "full",
+        "basis": {
+          "price_state": "flat",
+          "market_state": "steady",
+          "price_pct": -0.26,
+          "demand_pressure": 2.8986,
+          "supply_saturation": 1.0
         }
       },
       "mover_basis": "price_signal_fallback",
@@ -4372,6 +7172,26 @@
           "long_active_avg": 77.0
         }
       },
+      "price_move": {
+        "pct": -1.06,
+        "days": 2,
+        "from_price": 188.03,
+        "to_price": 186.04,
+        "n": 2
+      },
+      "signal": {
+        "label": "Quiet \u2014 no recent divergence",
+        "tone": "neutral",
+        "detail": "price -1.1% (2d) \u00b7 sell-through 1%",
+        "confidence": "full",
+        "basis": {
+          "price_state": "flat",
+          "market_state": "steady",
+          "price_pct": -1.06,
+          "demand_pressure": 1.2987,
+          "supply_saturation": 1.0
+        }
+      },
       "mover_basis": "price_signal_fallback",
       "awaiting_data": true
     },
@@ -4403,6 +7223,26 @@
           "long_window": 30,
           "short_active_avg": 117.0,
           "long_active_avg": 117.0
+        }
+      },
+      "price_move": {
+        "pct": -2.41,
+        "days": 3,
+        "from_price": 114.47,
+        "to_price": 111.71,
+        "n": 3
+      },
+      "signal": {
+        "label": "Quiet \u2014 no recent divergence",
+        "tone": "neutral",
+        "detail": "price -2.4% (3d) \u00b7 sell-through 3%",
+        "confidence": "full",
+        "basis": {
+          "price_state": "flat",
+          "market_state": "steady",
+          "price_pct": -2.41,
+          "demand_pressure": 3.3898,
+          "supply_saturation": 1.0
         }
       },
       "mover_basis": "price_signal_fallback",
@@ -4438,6 +7278,26 @@
           "long_active_avg": 86.0
         }
       },
+      "price_move": {
+        "pct": 0.57,
+        "days": 2,
+        "from_price": 123.73,
+        "to_price": 124.43,
+        "n": 2
+      },
+      "signal": {
+        "label": "Quiet \u2014 no recent divergence",
+        "tone": "neutral",
+        "detail": "price +0.6% (2d) \u00b7 sell-through 2%",
+        "confidence": "full",
+        "basis": {
+          "price_state": "flat",
+          "market_state": "steady",
+          "price_pct": 0.57,
+          "demand_pressure": 2.3256,
+          "supply_saturation": 1.0
+        }
+      },
       "mover_basis": "price_signal_fallback",
       "awaiting_data": true
     },
@@ -4469,6 +7329,26 @@
           "long_window": 30,
           "short_active_avg": 115.5,
           "long_active_avg": 115.5
+        }
+      },
+      "price_move": {
+        "pct": -0.76,
+        "days": 3,
+        "from_price": 134.92,
+        "to_price": 133.9,
+        "n": 3
+      },
+      "signal": {
+        "label": "Quiet \u2014 no recent divergence",
+        "tone": "neutral",
+        "detail": "price -0.8% (3d) \u00b7 sell-through 0%",
+        "confidence": "full",
+        "basis": {
+          "price_state": "flat",
+          "market_state": "steady",
+          "price_pct": -0.76,
+          "demand_pressure": 0.0,
+          "supply_saturation": 1.0
         }
       },
       "mover_basis": "price_signal_fallback",
@@ -4504,6 +7384,26 @@
           "long_active_avg": 113.0
         }
       },
+      "price_move": {
+        "pct": 0.16,
+        "days": 3,
+        "from_price": 104.93,
+        "to_price": 105.1,
+        "n": 3
+      },
+      "signal": {
+        "label": "Demand building",
+        "tone": "warm",
+        "detail": "price +0.2% (3d) \u00b7 sell-through 16%",
+        "confidence": "full",
+        "basis": {
+          "price_state": "flat",
+          "market_state": "tightening",
+          "price_pct": 0.16,
+          "demand_pressure": 16.0377,
+          "supply_saturation": 1.0
+        }
+      },
       "mover_basis": "price_signal_fallback",
       "awaiting_data": true
     },
@@ -4535,6 +7435,26 @@
           "long_window": 30,
           "short_active_avg": 106.5,
           "long_active_avg": 106.5
+        }
+      },
+      "price_move": {
+        "pct": -0.18,
+        "days": 2,
+        "from_price": 445.65,
+        "to_price": 444.84,
+        "n": 2
+      },
+      "signal": {
+        "label": "Quiet \u2014 no recent divergence",
+        "tone": "neutral",
+        "detail": "price -0.2% (2d) \u00b7 sell-through 0%",
+        "confidence": "full",
+        "basis": {
+          "price_state": "flat",
+          "market_state": "steady",
+          "price_pct": -0.18,
+          "demand_pressure": 0.0,
+          "supply_saturation": 1.0
         }
       },
       "mover_basis": "price_signal_fallback",
@@ -4570,6 +7490,26 @@
           "long_active_avg": 99.0
         }
       },
+      "price_move": {
+        "pct": -0.58,
+        "days": 2,
+        "from_price": 205.81,
+        "to_price": 204.61,
+        "n": 2
+      },
+      "signal": {
+        "label": "Quiet \u2014 no recent divergence",
+        "tone": "neutral",
+        "detail": "price -0.6% (2d) \u00b7 sell-through 3%",
+        "confidence": "full",
+        "basis": {
+          "price_state": "flat",
+          "market_state": "steady",
+          "price_pct": -0.58,
+          "demand_pressure": 3.0,
+          "supply_saturation": 1.0
+        }
+      },
       "mover_basis": "price_signal_fallback",
       "awaiting_data": true
     },
@@ -4601,6 +7541,26 @@
           "long_window": 30,
           "short_active_avg": 82.0,
           "long_active_avg": 82.0
+        }
+      },
+      "price_move": {
+        "pct": 0.82,
+        "days": 2,
+        "from_price": 242.71,
+        "to_price": 244.7,
+        "n": 2
+      },
+      "signal": {
+        "label": "Quiet \u2014 no recent divergence",
+        "tone": "neutral",
+        "detail": "price +0.8% (2d) \u00b7 sell-through 6%",
+        "confidence": "full",
+        "basis": {
+          "price_state": "flat",
+          "market_state": "steady",
+          "price_pct": 0.82,
+          "demand_pressure": 6.0241,
+          "supply_saturation": 1.0
         }
       },
       "mover_basis": "price_signal_fallback",
@@ -4636,6 +7596,26 @@
           "long_active_avg": 175.0
         }
       },
+      "price_move": {
+        "pct": -2.8,
+        "days": 2,
+        "from_price": 57.12,
+        "to_price": 55.52,
+        "n": 2
+      },
+      "signal": {
+        "label": "Quiet \u2014 no recent divergence",
+        "tone": "neutral",
+        "detail": "price -2.8% (2d) \u00b7 sell-through 0%",
+        "confidence": "full",
+        "basis": {
+          "price_state": "flat",
+          "market_state": "steady",
+          "price_pct": -2.8,
+          "demand_pressure": 0.0,
+          "supply_saturation": 1.0
+        }
+      },
       "mover_basis": "price_signal_fallback",
       "awaiting_data": true
     },
@@ -4667,6 +7647,26 @@
           "long_window": 30,
           "short_active_avg": 112.5,
           "long_active_avg": 112.5
+        }
+      },
+      "price_move": {
+        "pct": -1.12,
+        "days": 2,
+        "from_price": 330.01,
+        "to_price": 326.3,
+        "n": 2
+      },
+      "signal": {
+        "label": "Quiet \u2014 no recent divergence",
+        "tone": "neutral",
+        "detail": "price -1.1% (2d) \u00b7 sell-through 3%",
+        "confidence": "full",
+        "basis": {
+          "price_state": "flat",
+          "market_state": "steady",
+          "price_pct": -1.12,
+          "demand_pressure": 2.6549,
+          "supply_saturation": 1.0
         }
       },
       "mover_basis": "price_signal_fallback",

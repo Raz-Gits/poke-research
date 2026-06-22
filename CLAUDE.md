@@ -152,6 +152,43 @@ walk-forward, leak-free):
   as real accuracy. DEFERRED: leave-one-out displayed residuals (0 verdict
   changes, ~1% magnitude, slider-coherence subtlety — not worth the risk yet).
 
+### 2026-06-21 plain-language market-signal labels + gross-flow collector — SHIPPED
+Built after reviewing the Collectrics creator's "market divergence / watchlist" video
++ screenshots. His one model move (feeding demand_pressure into expected price as a
+Price-Lab slider, then projecting "hot market +32%") is the contemporaneous-fit LEAK
+we reject — confirmed on camera ("too aggressive… more testing needed"). We took only
+the honest, cheap win: a RULES layer, never a model input.
+- **`pipeline/signal_labels.py`** — fuses recent price move (daily `snapshot-<date>.json`
+  history; `load_price_history`/`price_move`, as-of-gated) + `dynamics.demand_pressure`/
+  `supply_saturation` into ONE English verdict per card (`compute_signal` →
+  `{label, tone, detail, confidence, basis}`). DESCRIPTIVE only; demand never touches
+  `expected_price`. Thresholds in `config.SIGNAL_*` (calibrated to the live feed:
+  demand p90≈18% → HOT=15). Graceful degradation: supply_saturation is flat 1.0 until
+  >7d span, so "cooling/loosening" clauses stay dark (we NEVER cry cooling on a low
+  demand level — that's the noisy default) and auto-light as span grows. `confidence`:
+  full (price+live flow) / price_only (no eBay sweep) / none (awaiting). Baked into
+  `cards.json` + leaderboard rows in `build.py` (`build_cards` `signals_by_id`).
+  Honesty test `tests/test_signal_labels.py`. Frontend: `signalPill` (grids/rows),
+  `signalBanner` (modal), `flowStats` (per-card active/new/sold-est, like his card view).
+- **Gross-flow est_sold refinement** (`collectors/ebay.py`) — live sweep now records
+  the surviving listings' `item_ids`; `diff_row` infers ended/new from day-over-day
+  id-SET differences (gross) when both days carry ids, falling back to the old NET
+  count-delta otherwise. Catches churn the net delta hid (5 end + 5 appear → net 0 but
+  3 sold). Backward-compatible; sim/old snapshots use the net path.
+- **Data-volume reality** (answer to "how do we match him"): he's eBay-based too and
+  his only real edge is TIME × COVERAGE. eBay active-listing history CANNOT be
+  backfilled (no historical endpoint) — it only accrues forward from when you start;
+  he started earlier. Levers: (1) keep running daily (~2wk → supply labels live, ~30d
+  → full 30d window); (2) widen `DEMAND_UNIVERSE_SIZE` / raise quota for more cards/day
+  (bounded by the ~5k/day Browse quota + 7-min sweep wall-clock); (3) PriceCharting API
+  is the ONLY way to backfill real sold history instantly (paid, ToS-clean).
+  In flight (user-selected): `EBAY_INSIGHTS_APPLICATION.md` (apply for Marketplace
+  Insights — official sold endpoint, restricted); PSA/CGC pop reports next (real
+  collector-appeal + graded-tier prices, like his PSA9/PSA10 + Gem Rate).
+- **CAUTION**: never run `python -m collectors.ebay` against the real `data/snapshots/`
+  — its `__main__` runs `simulate_history` and overwrites real snapshots with synthetic
+  ones (recoverable via git since snapshots are tracked, but don't).
+
 ## Character premium — how it works (important, heavily iterated)
 
 Popularity is a **durable, price-INDEPENDENT** signal (so an Eevee reads as
