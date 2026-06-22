@@ -556,24 +556,60 @@ function wlSparkline(series) {
   return el('div', { class: 'wl-sparkwrap', title: `${n} TCGplayer market points`, html: svg });
 }
 
-/* The current under-cap deals, listed inline so you can preview them on the page
-   before clicking through to the live listing on eBay. */
-function wlListings(listings) {
+/* One under-cap listing row, linking out to the live eBay listing. */
+function wlListingRow(it) {
+  const tag = it.kind === 'Buy It Now' ? '🟢' : '🔨';
+  const ends = it.end ? ` · ends ${String(it.end).slice(0, 10)}` : '';
+  const ship = (it.ship != null && it.item_price != null && it.price > it.item_price + 0.001)
+    ? ` (${USD0(it.item_price)} + ${USD0(it.ship)} ship)` : '';
+  const meta = `${ship}${ends}`;
+  return el('a', { class: 'wl-listing', href: it.url || '#', target: '_blank', rel: 'noopener',
+    title: it.title || '' }, [
+    el('span', { class: 'wl-listing-price', text: USD0(it.price) }),
+    el('span', { class: 'wl-listing-title', text: `${tag} ${it.title || ''}` }),
+    meta ? el('span', { class: 'wl-listing-meta', text: meta }) : null,
+  ].filter(Boolean));
+}
+
+/* The current under-cap deals, with a Buy-It-Now / Auction switch so you can look
+   at each kind on its own before clicking through to the live listing on eBay. */
+function wlListingsPanel(listings) {
   if (!listings || !listings.length) return null;
-  const rows = listings.map((it) => {
-    const tag = it.kind === 'Buy It Now' ? '🟢' : '🔨';
-    const ends = it.end ? ` · ends ${String(it.end).slice(0, 10)}` : '';
-    const ship = (it.ship != null && it.item_price != null && it.price > it.item_price + 0.001)
-      ? ` (${USD0(it.item_price)} + ${USD0(it.ship)} ship)` : '';
-    const meta = `${ship}${ends}`;
-    return el('a', { class: 'wl-listing', href: it.url || '#', target: '_blank', rel: 'noopener',
-      title: it.title || '' }, [
-      el('span', { class: 'wl-listing-price', text: USD0(it.price) }),
-      el('span', { class: 'wl-listing-title', text: `${tag} ${it.title || ''}` }),
-      meta ? el('span', { class: 'wl-listing-meta', text: meta }) : null,
-    ].filter(Boolean));
-  });
-  return el('div', { class: 'wl-listings' }, rows);
+  const bins = listings.filter((it) => it.kind === 'Buy It Now');
+  const aucs = listings.filter((it) => it.kind === 'Auction');
+  const views = [
+    { key: 'all', label: `All ${listings.length}`, items: listings },
+    { key: 'bin', label: `🟢 Buy It Now ${bins.length}`, items: bins },
+    { key: 'auc', label: `🔨 Auction ${aucs.length}`, items: aucs },
+  ];
+
+  const listDiv = el('div', { class: 'wl-listings' });
+  const render = (items) => {
+    listDiv.replaceChildren(
+      items.length
+        ? el('div', { class: 'wl-listings-rows' }, items.map(wlListingRow))
+        : el('p', { class: 'wl-listings-empty', text: 'None in this view right now.' }),
+    );
+  };
+  const btns = {};
+  const setActive = (key) => {
+    Object.entries(btns).forEach(([k, b]) => {
+      const on = k === key;
+      b.classList.toggle('is-active', on);
+      b.setAttribute('aria-selected', on ? 'true' : 'false');
+    });
+    render(views.find((v) => v.key === key).items);
+  };
+  const seg = el('div', { class: 'wl-seg', role: 'tablist' }, views.map((v) => {
+    const b = el('button', { class: 'wl-seg-btn', type: 'button', role: 'tab', text: v.label,
+      onclick: () => setActive(v.key) });
+    btns[v.key] = b;
+    return b;
+  }));
+
+  const wrap = el('div', { class: 'wl-listings-wrap' }, [seg, listDiv]);
+  setActive('all');                     // default to the full list
+  return wrap;
 }
 
 function watchCard(w) {
@@ -606,7 +642,7 @@ function watchCard(w) {
     thumb,
     el('div', { class: 'wl-body' }, [
       head, meta, wlTrend(trend), wlSparkline(trend && trend.series),
-      best, wlListings(w.listings), cta,
+      best, wlListingsPanel(w.listings), cta,
     ]),
   ].filter(Boolean));
 }

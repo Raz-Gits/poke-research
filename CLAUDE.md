@@ -165,8 +165,9 @@ rating" flags are art-driven Illustration Rares (card art ≠ character fame).
   window, THEN ping (priming silences only currently-worthy ones, so a far-off
   auction still fires when it closes in). The **site keeps ALL** active under-cap
   deals (both kinds, any time-left) — the gate is phone-only. The site JSON is a lean snapshot
-  (aggregates + 2 best links + up to 8 under-cap listings); page shows "updated
-  <time>".
+  (aggregates + 2 best links + the cheapest 6 BINs and 6 auctions under cap); each
+  Watchlist card has a **Buy It Now / Auction / All switch** (`wlListingsPanel` in
+  app.js) to view each kind on its own. Page shows "updated <time>".
   - **RUN MODEL (live):** always-on **launchd** service
     `~/Library/LaunchAgents/com.razsela.ebay-deals.plist` (label
     `com.razsela.ebay-deals`, KeepAlive, `PYTHONUNBUFFERED=1`, log →
@@ -181,7 +182,7 @@ rating" flags are art-driven Illustration Rares (card art ≠ character fame).
     692949), added 2026-06-21. PRESALE (set releases 7/17): `market_lock: true`
     pins the anchor to eBay reality (~$190) instead of TCGplayer's thin-volume
     $562, with `market_lock_until: 2026-07-24` to auto-re-engage live pricing a
-    week after release. Cap $175 all-in / $160 item.
+    week after release. Cap $150 all-in / $140 item.
   - **Reliability hardening (2026-06-21, from a multi-agent audit):** OAuth token
     now CACHED with expiry + auto-refreshed each sweep (+ 401 re-auth in browse) —
     was fetched once and the loop went blind after ~2h. `seen` is set ONLY after

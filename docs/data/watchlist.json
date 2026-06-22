@@ -1,5 +1,5 @@
 {
-  "updated": "2026-06-22T00:16:36.565114+00:00",
+  "updated": "2026-06-22T00:23:39.604484+00:00",
   "watches": [
     {
       "label": "Ascended Heroes ETB",
@@ -79,22 +79,13 @@
           "item_price": 112.5
         },
         {
-          "price": 113.5,
-          "kind": "Auction",
-          "url": "https://www.ebay.com/itm/298419875268?_skw=pokemon+ascended+heroes+elite+trainer+box&hash=item457b35edc4:g:RIIAAeSwF0pqMIha",
-          "title": "POKEMON TCG MEGA EVOLUTION ASCENDED HEROES ETB ELITE TRAINER BOX FCTRY",
-          "end": "2026-06-24T02:37:59.000Z",
-          "ship": 11.0,
-          "item_price": 102.5
-        },
-        {
-          "price": 113.5,
-          "kind": "Auction",
-          "url": "https://www.ebay.com/itm/398042984557?_skw=pokemon+ascended+heroes+elite+trainer+box&hash=item5cad35f06d:g:QskAAeSwynFqJ187",
-          "title": "POKEMON TCG MEGA EVOLUTION ASCENDED HEROES ETB ELITE TRAINER BOX FCTRY",
-          "end": "2026-06-26T02:07:20.000Z",
-          "ship": 11.0,
-          "item_price": 102.5
+          "price": 123.31,
+          "kind": "Buy It Now",
+          "url": "https://www.ebay.com/itm/278110621639?_skw=pokemon+ascended+heroes+elite+trainer+box&hash=item40c0af4fc7:g:6ysAAeSwq1dqN4yJ",
+          "title": "Pokemon TCG Mega Evolution Ascended Heroes Elite Trainer Box Full Art ",
+          "end": null,
+          "ship": null,
+          "item_price": 123.31
         }
       ]
     },
@@ -364,12 +355,12 @@
       "label": "Pok\u00e9mon Center Pitch Black ETB",
       "query": "pokemon center pitch black elite trainer box",
       "tcg_product": 692949,
-      "max_price": 175,
+      "max_price": 150,
       "min_price": 80,
       "market_price": 190,
       "floor": 95,
       "cap_after_shipping": true,
-      "under_cap": 12,
+      "under_cap": 2,
       "best_bin": {
         "price": 138.94,
         "url": "https://www.ebay.com/itm/398089739268?_skw=pokemon+center+pitch+black+elite+trainer+box&hash=item5cafff5c04:g:qs4AAeSwwQBqKaWK",
@@ -377,10 +368,10 @@
         "end": null
       },
       "best_auction": {
-        "price": 149.99,
-        "url": "https://www.ebay.com/itm/117260144861?_skw=pokemon+center+pitch+black+elite+trainer+box&hash=item1b4d3fd0dd:g:EF4AAeSwl-RqKei4",
-        "title": "*PRESALE* Pitch Black POKEMON CENTER Elite Trainer Box PC ETB - Confirmed Order",
-        "end": "2026-06-25T23:59:16.000Z"
+        "price": 150.0,
+        "url": "https://www.ebay.com/itm/318463861925?_skw=pokemon+center+pitch+black+elite+trainer+box&hash=item4a25ece4a5:g:tuEAAeSwBrJqMVfJ",
+        "title": "Pokemon Center Pitch Black Elite Trainer Box (ETB) Preorder July 17 Mega Evo",
+        "end": "2026-06-26T14:16:16.000Z"
       },
       "listings": [
         {
@@ -393,42 +384,6 @@
           "item_price": 138.94
         },
         {
-          "price": 145.55,
-          "kind": "Buy It Now",
-          "url": "https://www.ebay.com/itm/358663428285?_skw=pokemon+center+pitch+black+elite+trainer+box&hash=item53820198bd:g:ob4AAeSw6IJqKbht",
-          "title": "Presale Pokemon Pitch Black Elite Trainer Box (ETB)  Pokemon Center  S",
-          "end": null,
-          "ship": null,
-          "item_price": 145.55
-        },
-        {
-          "price": 145.55,
-          "kind": "Buy It Now",
-          "url": "https://www.ebay.com/itm/358663431564?_skw=pokemon+center+pitch+black+elite+trainer+box&hash=item538201a58c:g:ob4AAeSw6IJqKbht",
-          "title": "Presale Pokemon Pitch Black Elite Trainer Box ETB Pokemon Center - New",
-          "end": null,
-          "ship": null,
-          "item_price": 145.55
-        },
-        {
-          "price": 146.13,
-          "kind": "Buy It Now",
-          "url": "https://www.ebay.com/itm/236888855675?_skw=pokemon+center+pitch+black+elite+trainer+box&hash=item3727ad147b:g:5pgAAeSwCPVqNw-z",
-          "title": "*PRESALE* Pokemon Pitch Black Elite Trainer Box ETB Pokemon Center Exc",
-          "end": null,
-          "ship": null,
-          "item_price": 146.13
-        },
-        {
-          "price": 149.99,
-          "kind": "Auction",
-          "url": "https://www.ebay.com/itm/117260144861?_skw=pokemon+center+pitch+black+elite+trainer+box&hash=item1b4d3fd0dd:g:EF4AAeSwl-RqKei4",
-          "title": "*PRESALE* Pitch Black POKEMON CENTER Elite Trainer Box PC ETB - Confir",
-          "end": "2026-06-25T23:59:16.000Z",
-          "ship": null,
-          "item_price": 149.99
-        },
-        {
           "price": 150.0,
           "kind": "Auction",
           "url": "https://www.ebay.com/itm/318463861925?_skw=pokemon+center+pitch+black+elite+trainer+box&hash=item4a25ece4a5:g:tuEAAeSwBrJqMVfJ",
@@ -436,24 +391,6 @@
           "end": "2026-06-26T14:16:16.000Z",
           "ship": 0.0,
           "item_price": 150.0
-        },
-        {
-          "price": 151.77,
-          "kind": "Buy It Now",
-          "url": "https://www.ebay.com/itm/188529149244?_skw=pokemon+center+pitch+black+elite+trainer+box&hash=item2be536853c:g:9y4AAeSwTVFqNANj",
-          "title": "Pokemon Center Pitch Black Elite Trainer Box PKC ETB PRESALE 17/7 DISP",
-          "end": null,
-          "ship": null,
-          "item_price": 151.77
-        },
-        {
-          "price": 152.17,
-          "kind": "Buy It Now",
-          "url": "https://www.ebay.com/itm/366471380353?_skw=pokemon+center+pitch+black+elite+trainer+box&hash=item5553657d81:g:B4UAAeSwdtRqKnOS",
-          "title": "PRESALE Pokemon TCG pitch black Pokemon center ETB 17/07/2026\u2705",
-          "end": null,
-          "ship": null,
-          "item_price": 152.17
         }
       ]
     }
