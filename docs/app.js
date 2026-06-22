@@ -944,15 +944,31 @@ function sealedWatchlistPanel() {
     ]);
   }
   const updated = wl.updated ? new Date(wl.updated) : null;
+  const refreshBtn = el('button', { class: 'button button-secondary button-sm wl-refresh', type: 'button',
+    text: '⟳ Refresh', title: 'Re-pull the latest published deal snapshot',
+    onclick: (e) => refreshSealedWatchlist(e.currentTarget) });
   const banner = el('div', { class: 'table-card', style: 'padding:16px 22px;margin-bottom:24px;box-shadow:none;background:var(--surface-soft);display:flex;gap:14px;align-items:center;flex-wrap:wrap' }, [
     el('span', { class: 'chip chip--lavender', text: '📲 phone alerts' }),
-    el('p', { class: 'body-sm', style: 'margin:0;color:var(--slate);max-width:72ch', html:
+    el('p', { class: 'body-sm', style: 'margin:0;color:var(--slate);max-width:72ch;flex:1', html:
       `Real-time alerts hit your phone the moment a deal appears — this snapshot is from <strong>${updated ? updated.toLocaleString() : 'the last run'}</strong>. Tap any price to open the live listing on eBay. The “>50% under market → ignore” rule strips out code cards, empty boxes and proxies.` }),
+    refreshBtn,
   ]);
   return el('div', {}, [banner,
     el('div', { class: 'wl-grid' }, wl.watches.map(watchCard)),
     el('p', { class: 'caption', html: 'Prices are eBay <em>asking</em> prices (Buy-It-Now) or current auction bids — not sold comps. You buy manually on eBay; this is a notify-only monitor.' }),
   ]);
+}
+
+/* Re-pull the latest published watchlist.json (no full page reload) and re-render
+   the Sealed Deals panel. The snapshot is whatever was last deployed. */
+async function refreshSealedWatchlist(btn) {
+  if (btn) { btn.disabled = true; btn.textContent = '⟳ Refreshing…'; }
+  try {
+    const r = await fetch('./data/watchlist.json?t=' + Date.now(), { cache: 'no-store' });
+    if (r.ok) STATE.watchlist = await r.json();
+  } catch (_) { /* keep the data we have */ }
+  WL_ACTIVE = 'sealed';
+  viewWatchlists();
 }
 
 function viewWatchlists() {
