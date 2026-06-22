@@ -121,6 +121,15 @@ GATE_FRESH_AGE_DAYS = 35
 GATE_DEAD_LO = 20.0     # \  cards in [GATE_DEAD_LO, GATE_DEAD_HI) that are NOT fresh
 GATE_DEAD_HI = 100.0    # /  are the measured dead zone — suppressed from surfacing
 
+# Chase-premium gate (2026-06-22). Within a supertype·rarity cluster the ridge
+# reverts to the cluster center, so the priciest "grail" cards (e.g. Moonbreon) get
+# flagged hugely "overvalued" purely because nothing in the 3 features explains their
+# premium — the over-board becomes a price-sorted list of expensive cards. The
+# backtest already shows ~0 edge on mature cards, so for a MATURE card whose market
+# price exceeds this multiple of the model's estimate we DON'T surface an over/under
+# call — we mark it "no edge — chase premium the model can't price."
+CHASE_PREMIUM_MULT = 1.75  # market > 1.75x expected (mature) => unexplained chase premium
+
 # Plain-language market-signal labels (pipeline/signal_labels.py). A RULES layer
 # that fuses recent price move + demand/supply into one English verdict per card
 # (e.g. "Heating up", "Opportunity — dipping with firm demand", "Cooling"). These

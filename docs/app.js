@@ -75,18 +75,23 @@ function sealedLine(sealed) {
    ±15% of its expected price is "fair", NOT a deal — so we don't flag a 2% gap
    as undervalued/overvalued. Honest verdict for the pill, modal, and slider. */
 const CARD_BAND = 0.15;
-/* Gating mirror of pipeline/config.py: the model is wrong-signed on MATURE
-   MID-PRICE cards (price in [$20,$100) and not fresh), so we don't publish an
-   over/under call there — we say 'no edge'. Pass the card to opt a row in. */
+/* 'No edge' = the model can't make a trustworthy over/under call, so we show no
+   verdict. The build (pipeline/_edge) bakes a per-card `edge` flag + `edge_reason`
+   (mature mid-price dead zone, OR a chase-grail premium the 3 features can't price).
+   We read that flag; the old price-based check stays as a fallback for cached data. */
 const GATE_DEAD_LO = 20, GATE_DEAD_HI = 100, GATE_FRESH_MONTHS = 35 / 30.4375;
 function cardHasEdge(card) {
   if (!card) return true;
+  if (typeof card.edge === 'boolean') return card.edge;
   const p = card.market_price || 0;
   if (p >= GATE_DEAD_LO && p < GATE_DEAD_HI) {
     const msr = card.features && card.features.months_since_release;
     if (msr == null || msr > GATE_FRESH_MONTHS) return false;  // mature mid-price dead zone
   }
   return true;
+}
+function noEdgeReason(card) {
+  return (card && card.edge_reason) || 'the model has no measured edge here';
 }
 function residualVerdict(residual, card) {
   if (card && !cardHasEdge(card)) return { dir: 'flat', label: 'no edge', cls: 'delta--flat', pd: 'pd-flat', noEdge: true };
@@ -96,7 +101,7 @@ function residualVerdict(residual, card) {
   return { dir: 'flat', label: 'fair', cls: 'delta--flat', pd: 'pd-flat' };
 }
 function deltaPill(residual, card) {
-  if (card && !cardHasEdge(card)) return el('span', { class: 'delta delta--flat', title: 'Mature mid-price — the model has no measured edge here', text: 'no edge' });
+  if (card && !cardHasEdge(card)) return el('span', { class: 'delta delta--flat', title: noEdgeReason(card), text: 'no edge' });
   if (residual == null) return el('span', { class: 'delta delta--flat', text: '—' });
   const v = residualVerdict(residual);
   return el('span', { class: `delta ${v.cls}`, text: signedPct(residual) });
@@ -168,8 +173,26 @@ function psaPanel(card) {
 /* ---------- global state ---------- */
 const STATE = {
   cards: null, sets: null, leaderboard: null, model: null, meta: null,
-  backtest: null, watchlist: null, sealedTrend: null, byId: new Map(), loaded: false, error: null,
+  backtest: null, watchlist: null, sealedTrend: null, priceHistory: null,
+  myWatch: {}, byId: new Map(), loaded: false, error: null,
 };
+
+/* ---------- My Cards watchlist (client-side, localStorage) ----------
+   A personal card portfolio lives entirely in the browser (no account/backend):
+   { cardId: {added:'YYYY-MM-DD', priceAtAdd:number} }. Performance is charted from
+   the exported price_history.json, which deepens one point/day as snapshots accrue. */
+const WATCH_KEY = 'pr_mywatch_v1';
+function loadWatch() {
+  try { return JSON.parse(localStorage.getItem(WATCH_KEY)) || {}; } catch (_) { return {}; }
+}
+function saveWatch() { try { localStorage.setItem(WATCH_KEY, JSON.stringify(STATE.myWatch)); } catch (_) {} }
+function isWatched(id) { return !!STATE.myWatch[id]; }
+function toggleWatch(card) {
+  const w = STATE.myWatch;
+  if (w[card.id]) delete w[card.id];
+  else w[card.id] = { added: new Date().toISOString().slice(0, 10), priceAtAdd: card.market_price ?? null };
+  saveWatch();
+}
 
 async function loadData() {
   const files = ['cards', 'sets', 'leaderboard', 'model', 'meta'];
@@ -195,6 +218,12 @@ async function loadData() {
     const r = await fetch('./data/sealed_trend.json', { cache: 'no-cache' });
     if (r.ok) STATE.sealedTrend = await r.json();
   } catch (_) { /* no trend yet */ }
+  /* price_history.json is optional — powers the My Cards performance chart */
+  try {
+    const r = await fetch('./data/price_history.json', { cache: 'no-cache' });
+    if (r.ok) STATE.priceHistory = await r.json();
+  } catch (_) { /* no history yet */ }
+  STATE.myWatch = loadWatch();
   STATE.loaded = true;
 }
 
@@ -744,39 +773,198 @@ function watchCard(w) {
   ].filter(Boolean));
 }
 
-function viewWatchlists() {
-  const wl = STATE.watchlist;
-  const head = el('div', { class: 'section-head' }, [
-    el('div', {}, [
-      el('p', { class: 'micro section-eyebrow', text: 'Watchlists' }),
-      el('h2', { class: 'h2', text: 'Sealed deal watchlist' }),
-      el('p', { class: 'section-sub', text: 'Sealed Elite Trainer Boxes we watch on eBay. When a listing lands at or under your price cap, your phone gets a push (ntfy) with a tap-to-buy link — this page is the dashboard.' }),
-    ]),
-    el('span', { class: 'chip chip--teal', text: 'live · eBay' }),
+/* ---------- watch buttons (toggle a card in/out of My Cards) ---------- */
+function watchStar(card) {
+  const btn = el('button', { class: `wl-star${isWatched(card.id) ? ' is-on' : ''}`, type: 'button',
+    title: isWatched(card.id) ? 'Watching — click to remove' : 'Add to My Cards', 'aria-label': 'Toggle watch',
+    text: isWatched(card.id) ? '★' : '☆' });
+  btn.addEventListener('click', (e) => {
+    e.stopPropagation();
+    toggleWatch(card);
+    const on = isWatched(card.id);
+    btn.classList.toggle('is-on', on);
+    btn.textContent = on ? '★' : '☆';
+  });
+  return btn;
+}
+function watchBtnLabeled(card) {
+  const label = () => isWatched(card.id) ? '★ Watching' : '☆ Watch';
+  const btn = el('button', { class: `button button-secondary button-sm wl-watchbtn${isWatched(card.id) ? ' is-on' : ''}`, type: 'button', text: label() });
+  btn.addEventListener('click', () => {
+    toggleWatch(card);
+    btn.textContent = label();
+    btn.classList.toggle('is-on', isWatched(card.id));
+  });
+  return btn;
+}
+
+/* ---------- My Cards portfolio (localStorage) ---------- */
+let WL_ACTIVE = null;  // remembered segment across re-renders
+
+function svgLineChart(dates, vals) {
+  const W = 680, H = 190, padL = 6, padR = 6, padT = 14, padB = 22;
+  const min = Math.min(...vals), max = Math.max(...vals), span = (max - min) || 1, n = vals.length;
+  const X = (i) => padL + i * (W - padL - padR) / (n - 1);
+  const Y = (v) => padT + (1 - (v - min) / span) * (H - padT - padB);
+  const line = vals.map((v, i) => `${X(i).toFixed(1)},${Y(v).toFixed(1)}`).join(' ');
+  const area = `${padL},${(H - padB).toFixed(1)} ${line} ${(W - padR).toFixed(1)},${(H - padB).toFixed(1)}`;
+  const up = vals[n - 1] >= vals[0];
+  const stroke = up ? 'var(--success-accent)' : 'var(--brand-red-dark)';
+  const fill = up ? 'rgba(43,166,106,.10)' : 'rgba(192,57,43,.10)';
+  const wrap = el('div', { class: 'wl-chart' });
+  wrap.innerHTML = `<svg viewBox="0 0 ${W} ${H}" class="wl-chart-svg" preserveAspectRatio="none" role="img" aria-label="Portfolio value over time"><polygon points="${area}" fill="${fill}"/><polyline points="${line}" fill="none" stroke="${stroke}" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/></svg>`;
+  return el('div', {}, [wrap, el('div', { class: 'wl-chart-axis' }, [
+    el('span', { text: dates[0] }), el('span', { text: dates[dates.length - 1] }),
+  ])]);
+}
+
+function portfolioChart(ids) {
+  const ph = STATE.priceHistory;
+  const series = {}; const dateSet = new Set();
+  if (ph) ids.forEach((id) => {
+    const s = (ph[id] || []).slice().sort((a, b) => (a[0] < b[0] ? -1 : 1));
+    if (s.length) { series[id] = s; s.forEach(([d]) => dateSet.add(d)); }
+  });
+  const dates = [...dateSet].sort();
+  if (dates.length < 2) {
+    return el('p', { class: 'caption wl-chart-note', text:
+      'Performance chart appears once there are ≥2 days of price history for your cards — it deepens one point per day as snapshots accrue.' });
+  }
+  // Carry-forward each card's most recent price across the shared date axis.
+  const totals = dates.map((d) => {
+    let t = 0;
+    Object.values(series).forEach((s) => {
+      let price = null;
+      for (const [dd, pp] of s) { if (dd <= d) price = pp; else break; }
+      if (price != null) t += price;
+    });
+    return t;
+  });
+  return svgLineChart(dates, totals);
+}
+
+function myCardsPanel() {
+  const ids = Object.keys(STATE.myWatch);
+  if (!ids.length) {
+    return el('div', { class: 'table-card', style: 'padding:40px 28px;text-align:center' }, [
+      el('p', { class: 'body-sm', style: 'color:var(--slate);max-width:54ch;margin:0 auto', html:
+        'Your card watchlist is empty. Open any card and hit <strong>☆ Watch</strong> to track it here — total value, change since you added it, and a performance chart that deepens every day.' }),
+    ]);
+  }
+  let curTotal = 0, addBase = 0, haveBase = 0;
+  ids.forEach((id) => {
+    const c = STATE.byId.get(id); const m = STATE.myWatch[id];
+    curTotal += c ? (c.market_price || 0) : 0;
+    if (m.priceAtAdd != null) { addBase += m.priceAtAdd; haveBase += 1; }
+  });
+  const since = haveBase ? curTotal - addBase : null;
+  const sincePct = (haveBase && addBase > 0) ? since / addBase : null;
+  const stat = (kicker, big, sub) => el('div', { class: 'wl-stat' }, [
+    el('div', { class: 'wl-stat-kicker', text: kicker }),
+    el('div', { class: 'wl-stat-big', text: big }),
+    sub ? el('div', { class: 'wl-stat-sub', text: sub }) : null,
+  ].filter(Boolean));
+  const statRow = el('div', { class: 'wl-stat-row' }, [
+    stat('Cards watched', String(ids.length), `${ids.length}/100`),
+    stat('Total raw value', USD(curTotal), 'latest market'),
+    stat('Since added', since == null ? '—' : (since >= 0 ? '+' : '') + USD(since),
+      sincePct == null ? `base price on ${haveBase}/${ids.length}` : (sincePct >= 0 ? '+' : '') + (sincePct * 100).toFixed(1) + '%'),
   ]);
 
-  if (!wl || !wl.watches || !wl.watches.length) {
-    setView(el('section', { class: 'section container' }, [head,
-      el('div', { class: 'table-card', style: 'padding:28px;text-align:center' }, [
-        el('p', { class: 'body-sm', style: 'color:var(--slate)', html:
-          'No watchlist snapshot yet. Run <code>python ebay_deals.py --once</code> to populate it.' }),
+  const rows = ids.map((id) => {
+    const c = STATE.byId.get(id); const m = STATE.myWatch[id];
+    if (!c) return null;
+    const cur = c.market_price || 0;
+    const d = (m.priceAtAdd != null && m.priceAtAdd > 0) ? (cur - m.priceAtAdd) / m.priceAtAdd : null;
+    const img = el('img', { class: 'lb-thumb', src: c.image_small || PLACEHOLDER, alt: c.name, loading: 'lazy' });
+    img.addEventListener('error', () => imgFallback(img));
+    const rm = el('button', { class: 'wl-remove', type: 'button', title: 'Remove from watchlist', 'aria-label': 'Remove', text: '✕' });
+    rm.addEventListener('click', (e) => { e.stopPropagation(); delete STATE.myWatch[id]; saveWatch(); viewWatchlists(); });
+    const row = el('div', { class: 'wl-myrow clickable' }, [
+      img,
+      el('div', { class: 'wl-myrow-main' }, [
+        el('div', { class: 'lb-name', text: c.name }),
+        el('div', { class: 'lb-sub', text: `${c.set_name} · added ${m.added}` }),
+        signalPill(c),
       ]),
-    ]));
-    highlightNav('watchlists');
-    return;
-  }
+      el('div', { class: 'wl-myrow-price' }, [
+        el('div', { class: 'lb-price', text: USD(cur) }),
+        /* green for gains (delta--down is the green class), red for losses */
+        d == null ? null : el('span', { class: `delta ${d >= 0 ? 'delta--down' : 'delta--up'}`, text: signedPct(d) }),
+      ].filter(Boolean)),
+      rm,
+    ]);
+    row.addEventListener('click', () => openModal(id));
+    return row;
+  }).filter(Boolean);
 
+  return el('div', {}, [
+    statRow,
+    el('div', { class: 'table-card wl-chart-card' }, [
+      el('div', { class: 'wl-chart-head' }, [
+        el('h3', { class: 'h4', text: 'Price performance' }),
+        el('span', { class: 'caption', text: 'total raw value over time' }),
+      ]),
+      portfolioChart(ids),
+    ]),
+    el('div', { class: 'wl-myrows table-card' }, rows),
+    el('p', { class: 'caption', html: 'Stored only in this browser (no account). “Since added” compares each card’s current TCGplayer market price to its price when you added it.' }),
+  ]);
+}
+
+/* ---------- sealed-ETB deal monitor (the original watchlist) ---------- */
+function sealedWatchlistPanel() {
+  const wl = STATE.watchlist;
+  if (!wl || !wl.watches || !wl.watches.length) {
+    return el('div', { class: 'table-card', style: 'padding:28px;text-align:center' }, [
+      el('p', { class: 'body-sm', style: 'color:var(--slate)', html:
+        'No watchlist snapshot yet. Run <code>python ebay_deals.py --once</code> to populate it.' }),
+    ]);
+  }
   const updated = wl.updated ? new Date(wl.updated) : null;
   const banner = el('div', { class: 'table-card', style: 'padding:16px 22px;margin-bottom:24px;box-shadow:none;background:var(--surface-soft);display:flex;gap:14px;align-items:center;flex-wrap:wrap' }, [
     el('span', { class: 'chip chip--lavender', text: '📲 phone alerts' }),
     el('p', { class: 'body-sm', style: 'margin:0;color:var(--slate);max-width:72ch', html:
       `Real-time alerts hit your phone the moment a deal appears — this snapshot is from <strong>${updated ? updated.toLocaleString() : 'the last run'}</strong>. Tap any price to open the live listing on eBay. The “>50% under market → ignore” rule strips out code cards, empty boxes and proxies.` }),
   ]);
-
-  setView(el('section', { class: 'section container' }, [head, banner,
+  return el('div', {}, [banner,
     el('div', { class: 'wl-grid' }, wl.watches.map(watchCard)),
     el('p', { class: 'caption', html: 'Prices are eBay <em>asking</em> prices (Buy-It-Now) or current auction bids — not sold comps. You buy manually on eBay; this is a notify-only monitor.' }),
-  ]));
+  ]);
+}
+
+function viewWatchlists() {
+  const head = el('div', { class: 'section-head' }, [
+    el('div', {}, [
+      el('p', { class: 'micro section-eyebrow', text: 'Watchlists' }),
+      el('h2', { class: 'h2', text: 'Watchlists' }),
+      el('p', { class: 'section-sub', text: 'Your personal card portfolio, plus our sealed-ETB deal monitor — in one place.' }),
+    ]),
+    el('span', { class: 'chip chip--teal', text: 'live · eBay' }),
+  ]);
+  const body = el('div', {});
+  const nWatch = Object.keys(STATE.myWatch).length;
+  const views = [
+    { key: 'mycards', label: `My Cards${nWatch ? ` (${nWatch})` : ''}`, render: myCardsPanel },
+    { key: 'sealed', label: 'Sealed Deals', render: sealedWatchlistPanel },
+  ];
+  const btns = {};
+  const show = (key) => {
+    Object.entries(btns).forEach(([k, b]) => {
+      const on = k === key;
+      b.classList.toggle('is-active', on);
+      b.setAttribute('aria-selected', on ? 'true' : 'false');
+    });
+    WL_ACTIVE = key;
+    body.replaceChildren(views.find((v) => v.key === key).render());
+  };
+  const seg = el('div', { class: 'wl-seg', role: 'tablist', style: 'margin-bottom:22px' }, views.map((v) => {
+    const b = el('button', { class: 'wl-seg-btn', type: 'button', role: 'tab', text: v.label, onclick: () => show(v.key) });
+    btns[v.key] = b;
+    return b;
+  }));
+  setView(el('section', { class: 'section container' }, [head, seg, body]));
+  show(WL_ACTIVE || (nWatch ? 'mycards' : 'sealed'));
   highlightNav('watchlists');
 }
 
@@ -872,7 +1060,7 @@ function miniCard(c) {
   const img = el('img', { src: c.image_small || PLACEHOLDER, alt: c.name, loading: 'lazy' });
   img.addEventListener('error', () => imgFallback(img));
   const node = el('div', { class: 'mini-card', dataset: { id: c.id } }, [
-    el('div', { class: 'mini-card-img' }, img),
+    el('div', { class: 'mini-card-img' }, [img, watchStar(c)]),
     el('div', {}, [
       el('div', { class: 'mini-card-name', text: c.name }),
       el('div', { class: 'mini-card-sub', text: `${c.set_name} · #${c.number}` }),
@@ -1058,6 +1246,7 @@ function buildModalContent(card) {
           el('span', { class: 'chip', text: card.rarity }),
           el('span', { class: 'chip', text: `#${card.number}` }),
           card.price_variant ? el('span', { class: 'chip chip--yellow', text: card.price_variant }) : null,
+          watchBtnLabeled(card),
         ]),
         el('h3', { class: 'h2 modal-title', text: card.name }),
         el('div', { class: 'modal-setline', text: `${card.set_name} · ${card.series} · ${card.release_date}` }),

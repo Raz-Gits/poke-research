@@ -555,3 +555,40 @@ input[type=range].sig-slider.is-stub::-moz-range-thumb { background:var(--steel)
 .wl-listing-ship--free { color:var(--moss-dark); }
 .wl-bestship-warn { font-size:11px; font-weight:600; color:var(--brand-red-dark); }
 @media (max-width:720px) { .wl-grid { grid-template-columns:1fr; } }
+
+/* ---- My Cards watchlist: star, watch button, portfolio, chart ---- */
+.wl-star {
+  position:absolute; top:6px; right:6px; z-index:2;
+  width:26px; height:26px; border-radius:50%; border:none; cursor:pointer;
+  background:rgba(255,255,255,.86); color:var(--steel); font-size:15px; line-height:1;
+  display:flex; align-items:center; justify-content:center; box-shadow:0 1px 4px rgba(5,0,56,.18);
+  transition:transform .1s, color .12s, background .12s;
+}
+.wl-star:hover { transform:scale(1.12); background:#fff; }
+.wl-star.is-on { color:#E8A100; background:#fff; }
+.wl-watchbtn.is-on { background:var(--moss-dark); color:#fff; border-color:var(--moss-dark); }
+
+.wl-stat-row { display:grid; grid-template-columns:repeat(3,1fr); gap:16px; margin-bottom:22px; }
+.wl-stat { background:var(--canvas); border:1px solid var(--hairline-soft); border-radius:var(--r-card); box-shadow:var(--e-card); padding:18px 20px; }
+.wl-stat-kicker { font-size:11px; font-weight:600; text-transform:uppercase; letter-spacing:.5px; color:var(--steel); margin-bottom:6px; }
+.wl-stat-big { font-size:26px; font-weight:700; color:var(--ink); letter-spacing:-.5px; }
+.wl-stat-sub { font-size:12px; color:var(--steel); margin-top:4px; }
+
+.wl-chart-card { padding:20px 22px; margin-bottom:22px; }
+.wl-chart-head { display:flex; align-items:baseline; justify-content:space-between; gap:10px; margin-bottom:14px; }
+.wl-chart-head .h4 { margin:0; }
+.wl-chart { width:100%; }
+.wl-chart-svg { width:100%; height:190px; display:block; }
+.wl-chart-axis { display:flex; justify-content:space-between; font-size:11px; color:var(--steel); margin-top:4px; }
+.wl-chart-note { color:var(--steel); padding:24px 0; text-align:center; }
+
+.wl-myrows { padding:6px 0; }
+.wl-myrow { display:flex; align-items:center; gap:14px; padding:12px 18px; border-bottom:1px solid var(--hairline-soft); cursor:pointer; transition:background .12s; }
+.wl-myrow:last-child { border-bottom:none; }
+.wl-myrow:hover { background:var(--surface-soft); }
+.wl-myrow-main { flex:1; min-width:0; }
+.wl-myrow-price { display:flex; flex-direction:column; align-items:flex-end; gap:4px; }
+.wl-remove { border:none; background:transparent; color:var(--stone); font-size:14px; cursor:pointer; padding:6px 8px; border-radius:var(--r-input); transition:color .12s, background .12s; }
+.wl-remove:hover { color:var(--brand-red-dark); background:var(--surface-soft); }
+
+@media (max-width:720px) { .wl-stat-row { grid-template-columns:1fr; } }

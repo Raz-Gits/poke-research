@@ -171,6 +171,30 @@ def build_dynamics(
     }
 
 
+def _edge(record: dict) -> tuple:
+    """``(has_edge: bool, reason: str|None)`` for a card.
+
+    'No edge' = the model demonstrably can't make a trustworthy over/under call, so
+    we neither surface it on the leaderboard nor show a verdict. Two cases (both
+    MATURE only — fresh releases always keep their edge):
+      * mid-price dead zone [GATE_DEAD_LO, GATE_DEAD_HI) — measured near-efficient;
+      * chase premium — market price > CHASE_PREMIUM_MULT x the model's estimate, i.e.
+        a grail whose premium the 3 features can't explain (the Moonbreon problem).
+    """
+    price = record.get("market_price")
+    feats = record.get("features") or {}
+    msr = feats.get("months_since_release")
+    fresh = msr is not None and msr <= config.GATE_FRESH_AGE_DAYS / 30.4375
+    if fresh or price is None:
+        return True, None
+    if config.GATE_DEAD_LO <= price < config.GATE_DEAD_HI:
+        return False, "mature mid-price — model near-efficient here"
+    exp = record.get("expected_price")
+    if exp and exp > 0 and price > config.CHASE_PREMIUM_MULT * exp:
+        return False, "chase premium the model can't price"
+    return True, None
+
+
 def build_cards(
     cards: List[dict],
     features: Dict[str, Dict[str, float]],
@@ -215,6 +239,7 @@ def build_cards(
             record["residual_pct"] = None
             record["contributions"] = {}
 
+        record["edge"], record["edge_reason"] = _edge(record)
         out.append(record)
     return out
 
@@ -239,14 +264,10 @@ def build_leaderboard(card_records: List[dict]) -> dict:
     # GATING: only surface cards where the model has measured edge. A mature
     # (non-fresh) card priced in the dead zone [GATE_DEAD_LO, GATE_DEAD_HI) is
     # wrong-signed in the backtest (IC -0.05), so we don't publish a call on it.
-    fresh_months = config.GATE_FRESH_AGE_DAYS / 30.4375
     def _surfaced(r: dict) -> bool:
-        price = r.get("market_price") or 0.0
-        if config.GATE_DEAD_LO <= price < config.GATE_DEAD_HI:
-            msr = (r.get("features") or {}).get("months_since_release")
-            if msr is None or msr > fresh_months:
-                return False
-        return True
+        # Edge is computed once in build_cards (_edge): mature dead-zone AND mature
+        # chase-premium grails are 'no edge' and never surfaced on the board.
+        return r.get("edge", True)
 
     pool = [
         r
@@ -361,6 +382,8 @@ def _leader_row(r: dict) -> dict:
         "dynamics": r.get("dynamics"),
         "price_move": r.get("price_move"),
         "signal": r.get("signal"),
+        "edge": r.get("edge"),
+        "edge_reason": r.get("edge_reason"),
     }
 
 
@@ -548,6 +571,18 @@ def build(today: Optional[date] = None) -> dict:
     _write(out_dir / "leaderboard.json", leaderboard)
     _write(out_dir / "meta.json", meta)
     # model.json already written by result.export above.
+
+    # Compact per-card price history for the watchlist performance chart. Limited to
+    # cards above the leaderboard floor so the file stays small; it grows one point
+    # per card per day as snapshots accrue. {card_id: [[ISO date, price], ...]}.
+    _floor = getattr(config, "LEADERBOARD_MIN_PRICE", 0.0)
+    _eligible = {c["id"] for c in cards if (c.get("market_price") or 0) >= _floor}
+    price_history = {
+        cid: [[d.isoformat(), round(p, 2)] for d, p in series]
+        for cid, series in price_hist.items()
+        if cid in _eligible and series
+    }
+    _write(out_dir / "price_history.json", price_history)
 
     return {
         "cards": len(card_records),
