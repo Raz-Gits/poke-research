@@ -16,6 +16,7 @@ from __future__ import annotations
 import json
 import re
 import time
+import urllib.error
 import urllib.parse
 import urllib.request
 from datetime import date
@@ -46,14 +47,41 @@ def base_name(name: str, supertype: str = "Pokémon") -> str:
     return " ".join(tokens) if tokens else n
 
 
-def _request(path: str, params: dict) -> dict:
+def _request(path: str, params: dict, *, retries: int = 4) -> dict:
+    """GET a pokemontcg.io endpoint with retry + exponential backoff.
+
+    Transient failures (read timeouts, dropped connections, 429/5xx) are the
+    norm against this free API and used to kill the whole daily refresh on a
+    single bad response. We now retry a few times with backoff; only a genuine
+    client error (4xx other than 429) or exhausted retries propagates.
+    """
     url = f"{config.API_BASE}/{path}?" + urllib.parse.urlencode(params)
     headers = {"User-Agent": "price-lab/0.1"}
     if config.API_KEY:
         headers["X-Api-Key"] = config.API_KEY
     req = urllib.request.Request(url, headers=headers)
-    with urllib.request.urlopen(req, timeout=40) as resp:
-        return json.loads(resp.read().decode("utf-8"))
+    for attempt in range(retries):
+        try:
+            with urllib.request.urlopen(req, timeout=40) as resp:
+                return json.loads(resp.read().decode("utf-8"))
+        except urllib.error.HTTPError as e:
+            # Retry rate-limit / server errors; a real client error is fatal.
+            if e.code in (429, 500, 502, 503, 504) and attempt < retries - 1:
+                wait = 2 ** attempt
+                print(f"    {path}: HTTP {e.code}, retrying in {wait}s "
+                      f"({attempt + 1}/{retries})", flush=True)
+                time.sleep(wait)
+                continue
+            raise
+        except (urllib.error.URLError, OSError, json.JSONDecodeError) as e:
+            # OSError covers TimeoutError/ConnectionError/socket timeouts.
+            if attempt < retries - 1:
+                wait = 2 ** attempt
+                print(f"    {path}: {type(e).__name__} ({e}), retrying in {wait}s "
+                      f"({attempt + 1}/{retries})", flush=True)
+                time.sleep(wait)
+                continue
+            raise
 
 
 def _pick_price(tcgplayer: dict | None):
@@ -127,12 +155,20 @@ def normalize_card(c: dict) -> dict:
 def main() -> None:
     all_cards: list[dict] = []
     set_records: list[dict] = []
+    failed_sets: list[str] = []
     for set_id, cfg in config.SETS.items():
         print(f"  fetching {set_id} ({cfg['name']}) ...", flush=True)
-        raw = fetch_set_cards(set_id)
+        try:
+            raw = fetch_set_cards(set_id)
+        except Exception as e:  # _request already retried; this set is out for now
+            print(f"    !! fetch failed for {set_id} after retries: {e} — "
+                  f"carrying cached cards for it", flush=True)
+            failed_sets.append(set_id)
+            continue
         (config.RAW / f"{set_id}.json").write_text(json.dumps(raw))
         if not raw:
-            print(f"    !! no cards returned for {set_id}")
+            print(f"    !! no cards returned for {set_id} — carrying cache")
+            failed_sets.append(set_id)
             continue
         s = raw[0].get("set", {})
         set_records.append({
@@ -163,6 +199,27 @@ def main() -> None:
                     filled += 1
             print(f"    filled {filled}/{len(set_cards)} cards from TCGdex", flush=True)
         all_cards.extend(set_cards)
+
+    # If a set's live fetch failed, carry its cards from the last good cache so a
+    # transient outage never SHRINKS the catalog.
+    if failed_sets:
+        try:
+            cached = json.loads((config.NORMALIZED / "cards.json").read_text())
+            carried = [c for c in cached if c.get("set_id") in failed_sets]
+            all_cards.extend(carried)
+            cached_sets = json.loads((config.NORMALIZED / "sets.json").read_text())
+            set_records.extend([s for s in cached_sets if s.get("set_id") in failed_sets])
+            print(f"  carried {len(carried)} cached cards for {len(failed_sets)} "
+                  f"failed set(s): {failed_sets}", flush=True)
+        except (json.JSONDecodeError, OSError):
+            print(f"  no cache to carry for failed set(s): {failed_sets}", flush=True)
+
+    if not all_cards:
+        # Total fetch failure with no cache: do NOT clobber the cache with nothing.
+        # Return cleanly so the daily-refresh BUILD step still runs on existing data.
+        print("  no cards fetched — leaving existing normalized data untouched so "
+              "the build can run on cached prices.", flush=True)
+        return
 
     (config.NORMALIZED / "cards.json").write_text(json.dumps(all_cards, indent=1))
     (config.NORMALIZED / "sets.json").write_text(json.dumps(set_records, indent=1))

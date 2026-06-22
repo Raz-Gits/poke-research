@@ -33,6 +33,10 @@ jobs:
         run: pip install -r requirements.txt
 
       - name: Fetch prices (pokemontcg.io + TCGdex)
+        # fetch.py already retries transient timeouts and carries cached prices for
+        # any set that still fails; this is the final backstop so a total upstream
+        # outage can never block the eBay sweep + rebuild (they run on cached prices).
+        continue-on-error: true
         run: python -m pipeline.fetch
 
       - name: Build — collect eBay snapshot (valuable-first) + recompute everything
