@@ -158,12 +158,13 @@ rating" flags are art-driven Illustration Rares (card art ≠ character fame).
   opened/empty boxes, foreign-language prints, single-pack mislistings, proxies,
   lots). Already-ended/sold listings are dropped (`_hours_left < 0`) so neither
   the site nor the phone shows stale results. First run primes silently (no alert
-  storm). **Phone-alert gate (`_push_worthy`):** only Buy-It-Nows + auctions
-  ending within `PUSH_AUCTION_WINDOW_H` (24h) ping the phone; auctions with more
-  time left ride the site until they enter the closing window, THEN ping (priming
-  silences only currently-worthy ones, so a far-off auction still fires when it
-  closes in). The **site keeps ALL** active under-cap deals (both kinds, any
-  time-left) — the 24h/BIN gate is phone-only. The site JSON is a lean snapshot
+  storm). **Phone-alert gate (`_push_worthy`):** only Buy-It-Nows + auctions in
+  their FINAL hour (`PUSH_AUCTION_WINDOW_H` = 1h — owner's choice: auction prices
+  climb to the close, so an at/under-cap bid is only meaningful late) ping the
+  phone; auctions with more time left ride the site until they enter that closing
+  window, THEN ping (priming silences only currently-worthy ones, so a far-off
+  auction still fires when it closes in). The **site keeps ALL** active under-cap
+  deals (both kinds, any time-left) — the gate is phone-only. The site JSON is a lean snapshot
   (aggregates + 2 best links + up to 8 under-cap listings); page shows "updated
   <time>".
   - **RUN MODEL (live):** always-on **launchd** service
