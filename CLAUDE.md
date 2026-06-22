@@ -167,7 +167,11 @@ rating" flags are art-driven Illustration Rares (card art ≠ character fame).
   deals (both kinds, any time-left) — the gate is phone-only. The site JSON is a lean snapshot
   (aggregates + 2 best links + the cheapest 6 BINs and 6 auctions under cap); each
   Watchlist card has a **Buy It Now / Auction / All switch** (`wlListingsPanel` in
-  app.js) to view each kind on its own. Page shows "updated <time>".
+  app.js) to view each kind on its own. Page shows "updated <time>". **Shipping is
+  made explicit**: the price is all-in when eBay returns a shipping cost; when it
+  doesn't (common — ~half of BINs), the row/best-cell/alert flag "⚠ shipping not
+  listed — check" so the owner knows the shown price is item-only (the
+  `cap_no_shipping` item-price cap is the hedge for those).
   - **RUN MODEL (live):** always-on **launchd** service
     `~/Library/LaunchAgents/com.razsela.ebay-deals.plist` (label
     `com.razsela.ebay-deals`, KeepAlive, `PYTHONUNBUFFERED=1`, log →

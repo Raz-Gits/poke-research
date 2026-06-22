@@ -1,5 +1,5 @@
 {
-  "updated": "2026-06-22T00:23:39.604484+00:00",
+  "updated": "2026-06-22T00:28:25.787970+00:00",
   "watches": [
     {
       "label": "Ascended Heroes ETB",
@@ -15,13 +15,17 @@
         "price": 123.31,
         "url": "https://www.ebay.com/itm/278110621639?_skw=pokemon+ascended+heroes+elite+trainer+box&hash=item40c0af4fc7:g:6ysAAeSwq1dqN4yJ",
         "title": "Pokemon TCG Mega Evolution Ascended Heroes Elite Trainer Box Full Art 6+ New",
-        "end": null
+        "end": null,
+        "ship": null,
+        "item_price": 123.31
       },
       "best_auction": {
         "price": 102.5,
         "url": "https://www.ebay.com/itm/398067497011?_skw=pokemon+ascended+heroes+elite+trainer+box&hash=item5caeabf833:g:p0wAAeSw8n5qL~G4",
         "title": "Pok\u00e9mon TCG: Mega Evolution Ascended Heroes Elite Trainer Box, Worn Box",
-        "end": "2026-06-22T12:34:02.000Z"
+        "end": "2026-06-22T12:34:02.000Z",
+        "ship": null,
+        "item_price": 102.5
       },
       "listings": [
         {
@@ -104,7 +108,9 @@
         "price": 330.99,
         "url": "https://www.ebay.com/itm/287404627098?_skw=pokemon+center+ascended+heroes+elite+trainer+box&hash=item42eaa6949a:g:LMUAAeSwGN5qNLTv",
         "title": "Pokemon TCG Ascended Heroes Pokemon Center Elite Trainer Box Sealed  (Mint)\u2b50\ufe0f ",
-        "end": "2026-06-26T03:19:18.000Z"
+        "end": "2026-06-26T03:19:18.000Z",
+        "ship": null,
+        "item_price": 330.99
       },
       "listings": [
         {
@@ -160,7 +166,9 @@
         "price": 90.0,
         "url": "https://www.ebay.com/itm/158005651976?_skw=pokemon+prismatic+evolutions+elite+trainer+box&hash=item24c9deea08:g:gEkAAeSwfEFqMdsz",
         "title": "Pok\u00e9mon TCG Prismatic Evolutions Elite Trainer Box  1 Box English",
-        "end": "2026-06-23T23:25:33.000Z"
+        "end": "2026-06-23T23:25:33.000Z",
+        "ship": null,
+        "item_price": 90.0
       },
       "listings": [
         {
@@ -234,7 +242,9 @@
         "price": 399.99,
         "url": "https://www.ebay.com/itm/227396112055?_skw=pokemon+center+prismatic+evolutions+elite+trainer+box&hash=item34f1dd4eb7:g:Ga0AAeSwfyhqNYu3",
         "title": "Prismatic Evolutions Pokemon Center Elite Trainer Box PC ETB Sealed - (DING)",
-        "end": "2026-06-29T23:20:01.000Z"
+        "end": "2026-06-29T23:20:01.000Z",
+        "ship": 9.99,
+        "item_price": 390.0
       },
       "listings": [
         {
@@ -253,7 +263,7 @@
       "query": "pokemon white flare elite trainer box",
       "tcg_product": 630689,
       "max_price": 120,
-      "min_price": 25,
+      "min_price": 70,
       "market_price": 148,
       "floor": 74,
       "cap_after_shipping": false,
@@ -263,7 +273,9 @@
         "price": 76.0,
         "url": "https://www.ebay.com/itm/318470309849?_skw=pokemon+white+flare+elite+trainer+box&hash=item4a264f47d9:g:4HEAAeSwZKtqMzEn",
         "title": "Pokemon Scarlet And Violet White Flare Elite Trainer Box",
-        "end": "2026-06-24T23:44:41.000Z"
+        "end": "2026-06-24T23:44:41.000Z",
+        "ship": null,
+        "item_price": 76.0
       },
       "listings": [
         {
@@ -337,7 +349,9 @@
         "price": 177.5,
         "url": "https://www.ebay.com/itm/358681435275?_skw=pokemon+center+white+flare+elite+trainer+box&hash=item5383145c8b:g:ohkAAeSwMm1qL5M0",
         "title": "White Flare POKEMON CENTER S&V Elite Trainer Box ETB (New/Sealed)",
-        "end": "2026-06-22T05:53:46.000Z"
+        "end": "2026-06-22T05:53:46.000Z",
+        "ship": null,
+        "item_price": 177.5
       },
       "listings": [
         {
@@ -365,13 +379,17 @@
         "price": 138.94,
         "url": "https://www.ebay.com/itm/398089739268?_skw=pokemon+center+pitch+black+elite+trainer+box&hash=item5cafff5c04:g:qs4AAeSwwQBqKaWK",
         "title": "*PRESALE* Pokemon Pitch Black Elite Trainer Box ETB Pokemon Center Exclusive 1PC",
-        "end": null
+        "end": null,
+        "ship": null,
+        "item_price": 138.94
       },
       "best_auction": {
         "price": 150.0,
         "url": "https://www.ebay.com/itm/318463861925?_skw=pokemon+center+pitch+black+elite+trainer+box&hash=item4a25ece4a5:g:tuEAAeSwBrJqMVfJ",
         "title": "Pokemon Center Pitch Black Elite Trainer Box (ETB) Preorder July 17 Mega Evo",
-        "end": "2026-06-26T14:16:16.000Z"
+        "end": "2026-06-26T14:16:16.000Z",
+        "ship": 0.0,
+        "item_price": 150.0
       },
       "listings": [
         {

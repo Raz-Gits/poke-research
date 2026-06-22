@@ -508,12 +508,19 @@ function wlBestCell(icon, label, best, market) {
   const ends = best.end ? ` · ends ${String(best.end).slice(0, 10)}` : '';
   const pct = (market && best.price) ? Math.round((1 - best.price / market) * 100) : null;
   const under = (pct && pct > 0) ? ` · ${pct}% under` : '';
+  // When the seller didn't list shipping, the headline price is item-only — say so.
+  const shipWarn = best.ship == null
+    ? el('span', { class: 'wl-bestship-warn',
+      title: 'Seller didn’t list shipping — verify the real all-in price on eBay.',
+      text: '⚠ + shipping not listed' })
+    : null;
   return el('a', { class: 'wl-bestcell wl-bestcell--link', href: best.url || '#',
     target: '_blank', rel: 'noopener', title: best.title || '' }, [
     el('span', { class: 'wl-bestlabel', text: `${icon} ${label}` }),
     el('span', { class: 'wl-bestprice', text: USD0(best.price) }),
     el('span', { class: 'wl-bestmeta', text: `view${ends}${under}` }),
-  ]);
+    shipWarn,
+  ].filter(Boolean));
 }
 
 /* TCGplayer realized-price trend: one ▲/▼ chip per window. Up = heating (red),
@@ -556,18 +563,31 @@ function wlSparkline(series) {
   return el('div', { class: 'wl-sparkwrap', title: `${n} TCGplayer market points`, html: svg });
 }
 
-/* One under-cap listing row, linking out to the live eBay listing. */
+/* One under-cap listing row, linking out to the live eBay listing. The price is
+   all-in (item + shipping) when eBay gave a shipping cost; when it didn't, we flag
+   it so you know the shown price is item-only and the real all-in is higher. */
 function wlListingRow(it) {
   const tag = it.kind === 'Buy It Now' ? '🟢' : '🔨';
-  const ends = it.end ? ` · ends ${String(it.end).slice(0, 10)}` : '';
-  const ship = (it.ship != null && it.item_price != null && it.price > it.item_price + 0.001)
-    ? ` (${USD0(it.item_price)} + ${USD0(it.ship)} ship)` : '';
-  const meta = `${ship}${ends}`;
+  let shipNode;
+  if (it.ship == null) {
+    shipNode = el('span', { class: 'wl-listing-ship wl-listing-ship--warn',
+      title: 'Seller didn’t list shipping — the real all-in price is higher. Check the listing.',
+      text: '+ ship not listed' });
+  } else if (it.item_price != null && it.price > it.item_price + 0.001) {
+    shipNode = el('span', { class: 'wl-listing-ship',
+      text: `${USD0(it.item_price)} + ${USD0(it.ship)} ship` });
+  } else {
+    shipNode = el('span', { class: 'wl-listing-ship wl-listing-ship--free', text: 'free ship' });
+  }
+  // Auctions show their end (time-sensitive); BIN end dates are GTC noise.
+  const ends = (it.kind === 'Auction' && it.end)
+    ? el('span', { class: 'wl-listing-meta', text: `ends ${String(it.end).slice(0, 10)}` }) : null;
   return el('a', { class: 'wl-listing', href: it.url || '#', target: '_blank', rel: 'noopener',
     title: it.title || '' }, [
     el('span', { class: 'wl-listing-price', text: USD0(it.price) }),
     el('span', { class: 'wl-listing-title', text: `${tag} ${it.title || ''}` }),
-    meta ? el('span', { class: 'wl-listing-meta', text: meta }) : null,
+    shipNode,
+    ends,
   ].filter(Boolean));
 }
 

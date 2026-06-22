@@ -516,4 +516,8 @@ input[type=range].sig-slider.is-stub::-moz-range-thumb { background:var(--steel)
 .wl-listing-price { font-weight:700; font-size:13px; flex:none; min-width:54px; }
 .wl-listing-title { font-size:12px; color:var(--slate); white-space:nowrap; overflow:hidden; text-overflow:ellipsis; flex:1; min-width:0; }
 .wl-listing-meta { font-size:11px; color:var(--steel); flex:none; white-space:nowrap; }
+.wl-listing-ship { font-size:11px; color:var(--steel); flex:none; white-space:nowrap; }
+.wl-listing-ship--warn { color:var(--brand-red-dark); font-weight:600; }
+.wl-listing-ship--free { color:var(--moss-dark); }
+.wl-bestship-warn { font-size:11px; font-weight:600; color:var(--brand-red-dark); }
 @media (max-width:720px) { .wl-grid { grid-template-columns:1fr; } }
