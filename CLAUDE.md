@@ -122,6 +122,36 @@ the inflated naive t (10→~6 after HAC), the presale-window effect (TCGCSV carr
 presale prices; headline fresh-cut excludes negative ages), and the ME variant
 bug — all fixed. Present these numbers honestly; never lead with the inflated IC.
 
+### 2026-06-21 accuracy audit (multi-agent) — SHIPPED
+A 5-agent backtest audit drove three backtest-proven changes (all on the 123-cut
+walk-forward, leak-free):
+- **LEAN 3-feature model** — `config.FEATURES = [char_premium, scarcity,
+  months_since_release]`. Dropped `set_rank` (within-cluster near-constant, corr
+  0.87 w/ scarcity), `pull_cost` (extreme-skew, duplicates rarity post-cluster),
+  and the 3 dead stubs. **all-cards IC +0.094 → +0.110, decile $-spread +30%**,
+  fresh held (+0.26). set_rank/pull_cost still COMPUTED for display + sealed-EV,
+  just not model inputs. R²(log) 0.92 → 0.90 (in-sample fit, not accuracy).
+- **Leaderboard GATING** (`config.GATE_DEAD_LO/HI`, `build._surfaced`) — the
+  mature MID-PRICE zone [$20,$100) (non-fresh) is wrong-signed (IC −0.05), so we
+  don't surface over/under calls there; fresh + cheap + marquee $100+ stay.
+  **`surfaced` (gated) IC = +0.134** — the new honest headline on the Track
+  Record (`backtest.json.headline.surfaced`; frontend `trHeadlineCard` +
+  `cardHasEdge`/'no edge' verdict for dead-zone cards).
+- **Mature is NEAR-EFFICIENT, measured-dry** — every feature set, alpha sweep,
+  and a momentum feature fail to lift mature IC above ~0. Don't keep trying to
+  squeeze a price-structural mature edge; the honest ceiling there is ~0.
+- **Demand is the only untried lever for mature, but DATA-BLOCKED** (3 snapshot
+  dates, the old collector swept a budget-truncated VARIABLE slice → 0 day-over-
+  day same-card overlap; `compute()` wasn't as-of-aware). PREP shipped, NOT a
+  model feature: (a) `market_dynamics.load_history(as_of=)` + `compute(as_of=)`
+  now gate out future snapshots (no look-ahead), drop undated rows; regression
+  test `tests/test_demand_asof.py`; (b) collector now sweeps a FIXED valuable-
+  first universe (`config.DEMAND_UNIVERSE_SIZE=150`, price-ordered) so the same
+  top cards get a daily count and diffs accrue. First forward (not retrospective)
+  validation on mature&liquid is ~5-6 weeks out; never present pre-accrual demand
+  as real accuracy. DEFERRED: leave-one-out displayed residuals (0 verdict
+  changes, ~1% magnitude, slider-coherence subtlety — not worth the risk yet).
+
 ## Character premium — how it works (important, heavily iterated)
 
 Popularity is a **durable, price-INDEPENDENT** signal (so an Eevee reads as

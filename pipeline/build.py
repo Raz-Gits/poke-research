@@ -230,6 +230,18 @@ def build_leaderboard(card_records: List[dict]) -> dict:
     """
     floor = getattr(config, "LEADERBOARD_MIN_PRICE", 0.0)
     size = getattr(config, "LEADERBOARD_SIZE", 50)
+    # GATING: only surface cards where the model has measured edge. A mature
+    # (non-fresh) card priced in the dead zone [GATE_DEAD_LO, GATE_DEAD_HI) is
+    # wrong-signed in the backtest (IC -0.05), so we don't publish a call on it.
+    fresh_months = config.GATE_FRESH_AGE_DAYS / 30.4375
+    def _surfaced(r: dict) -> bool:
+        price = r.get("market_price") or 0.0
+        if config.GATE_DEAD_LO <= price < config.GATE_DEAD_HI:
+            msr = (r.get("features") or {}).get("months_since_release")
+            if msr is None or msr > fresh_months:
+                return False
+        return True
+
     pool = [
         r
         for r in card_records
@@ -237,6 +249,7 @@ def build_leaderboard(card_records: List[dict]) -> dict:
         and r.get("market_price") is not None
         and r.get("expected_price") is not None
         and r["market_price"] >= floor
+        and _surfaced(r)
     ]
 
     def raw_diff(r: dict) -> float:
@@ -430,11 +443,15 @@ def build(today: Optional[date] = None) -> dict:
         # above the leaderboard floor (~850 cards), most valuable first. Sweeping
         # all ~2900 (incl. penny commons) just invites eBay rate-limiting for no
         # benefit. The collector's own circuit-breakers cap time on top of this.
+        # FIXED, valuable-first universe of a stable size, swept FULLY every day so
+        # the same cards get a daily active-listing count and day-over-day demand
+        # diffs accrue (the old variable ~850-card slice got budget-truncated at a
+        # different point each day -> zero same-card overlap -> demand never built).
         to_sweep = sorted(
             (c for c in cards if (c.get("market_price") or 0) >= config.LEADERBOARD_MIN_PRICE),
             key=lambda c: -(c.get("market_price") or 0),
-        )
-        print(f"  eBay sweep: {len(to_sweep)} cards >= ${config.LEADERBOARD_MIN_PRICE:g} (valuable-first)")
+        )[: config.DEMAND_UNIVERSE_SIZE]
+        print(f"  eBay sweep: top {len(to_sweep)} cards by price (fixed daily demand universe)")
         ebay.collect_snapshot(to_sweep, out_dir=config.SNAPSHOTS, snapshot_date=snap_date)
     ebay_history = _load_ebay_history(config.SNAPSHOTS)
     dynamics = build_dynamics(cards, ebay_history)

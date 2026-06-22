@@ -23,7 +23,7 @@ the module still self-tests in isolation.
 from __future__ import annotations
 
 import json
-from datetime import datetime
+from datetime import date, datetime
 from pathlib import Path
 from typing import Dict, List, Optional
 
@@ -51,24 +51,33 @@ NEUTRAL = {
 # ---------------------------------------------------------------------------
 # Date helpers
 # ---------------------------------------------------------------------------
-def _snap_date(snap: dict) -> datetime:
-    """Best-effort parse of a snapshot's date; missing => epoch (sorts first)."""
+def _snap_date(snap: dict) -> Optional[datetime]:
+    """Parse a snapshot row's date; None if missing/unparseable.
+
+    Returns None (not the epoch) on failure so callers DROP an undated row rather
+    than sort it to the start of history and mis-anchor the day-over-day diff.
+    """
     raw = snap.get("date")
     if not raw:
-        return datetime.min
+        return None
     for fmt in ("%Y-%m-%d", "%Y/%m/%d", "%Y-%m-%dT%H:%M:%S"):
         try:
             return datetime.strptime(raw, fmt)
         except (ValueError, TypeError):
             continue
-    return datetime.min
+    return None
 
 
 # ---------------------------------------------------------------------------
 # History loading
 # ---------------------------------------------------------------------------
-def load_history(snap_dir) -> Dict[str, List[dict]]:
+def load_history(snap_dir, as_of: Optional[date] = None) -> Dict[str, List[dict]]:
     """Load every ``ebay-<date>.json`` snapshot into per-card history.
+
+    ``as_of`` (AS-OF GATE): when given, snapshots dated AFTER ``as_of`` are not
+    loaded — so a backtest that recomputes demand at an evaluation date T can
+    never read a snapshot from the future. This is the prerequisite that lets the
+    demand feed become a model feature without look-ahead leakage.
 
     Reads all ``ebay-<YYYY-MM-DD>.json`` files in ``snap_dir`` in date order,
     stamps each per-card row with its file ``date``, and groups them into
@@ -91,6 +100,13 @@ def load_history(snap_dir) -> Dict[str, List[dict]]:
     history: Dict[str, List[dict]] = {}
     for f in sorted(snap_dir.glob("ebay-*.json")):
         snap_date = f.stem.replace("ebay-", "")  # ebay-YYYY-MM-DD.json
+        # AS-OF GATE + drop files whose date doesn't parse (rather than mis-anchor).
+        try:
+            file_date = datetime.strptime(snap_date, "%Y-%m-%d").date()
+        except ValueError:
+            continue
+        if as_of is not None and file_date > as_of:
+            continue
         try:
             rows = json.loads(f.read_text())
         except (json.JSONDecodeError, OSError):
@@ -104,12 +120,14 @@ def load_history(snap_dir) -> Dict[str, List[dict]]:
             stamped["date"] = snap_date
             history.setdefault(card_id, []).append(stamped)
 
-    # Sort each card's rows by date, then backfill flow fields via day-over-day
-    # diff so demand_pressure has est_sold to work with even from counts-only
-    # snapshots.
+    # Sort each card's rows by date (dropping any undated row), then backfill flow
+    # fields via day-over-day diff so demand_pressure has est_sold to work with
+    # even from counts-only snapshots.
     for card_id, rows in history.items():
+        rows = [r for r in rows if _snap_date(r) is not None]
         rows.sort(key=_snap_date)
         if diff_row is None:
+            history[card_id] = rows
             continue
         prev: Optional[dict] = None
         filled: List[dict] = []
@@ -157,8 +175,13 @@ def _window_sum(snaps: List[dict], window: int, key: str) -> Optional[float]:
 # ---------------------------------------------------------------------------
 # Public compute
 # ---------------------------------------------------------------------------
-def compute(card_id: str, history: Dict[str, List[dict]]) -> dict:
+def compute(card_id: str, history: Dict[str, List[dict]],
+            as_of: Optional[date] = None) -> dict:
     """Compute market-dynamics signals for one card from its snapshot history.
+
+    ``as_of`` (AS-OF GATE): when given, only snapshots dated on/before ``as_of``
+    are used — so recomputing demand at a historical evaluation date never reads
+    future snapshots (the no-look-ahead guarantee the backtest needs).
 
     Parameters
     ----------
@@ -182,7 +205,9 @@ def compute(card_id: str, history: Dict[str, List[dict]]) -> dict:
     * ``demand_pressure`` = 100 * est_sold(7d) / (latest active + est_sold(7d))
     * ``supply_saturation`` = mean(active 7d) / mean(active 30d)
     """
-    snaps = history.get(card_id) or []
+    snaps = [s for s in (history.get(card_id) or []) if _snap_date(s) is not None]
+    if as_of is not None:
+        snaps = [s for s in snaps if _snap_date(s).date() <= as_of]
     snaps = sorted(snaps, key=_snap_date)
 
     # Need at least two days to infer any flow at all.

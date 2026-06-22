@@ -1,11 +1,11 @@
 {
-  "built_at": "2026-06-20T15:29:28",
-  "built_for_date": "2026-06-20",
+  "built_at": "2026-06-21T23:00:46",
+  "built_for_date": "2026-06-21",
   "sets": 15,
   "cards": 2937,
   "priced": 2936,
   "clusters": 16,
-  "model_r2_log": 0.915388,
+  "model_r2_log": 0.904069,
   "predictions_logged": 2936,
   "sources": {
     "cards": "pokemontcg.io (cached, normalized)",
@@ -17,11 +17,6 @@
   "signal_status": {
     "char_premium": "live",
     "scarcity": "live",
-    "pull_cost": "live",
-    "months_since_release": "live",
-    "set_rank": "live",
-    "demand_pressure": "stub",
-    "grading_intensity": "stub",
-    "universal_appeal": "stub"
+    "months_since_release": "live"
   }
 }

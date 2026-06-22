@@ -238,6 +238,14 @@ BASE_FLOOR = 2.0       # minimum price to enter the universe at all
 MATURE_AGE = 90        # days since release to count a card as "mature"
 FRESH_AGE = 35         # days since release to count a card as a "fresh release"
 MATURE_FLOOR = 10.0    # price floor for the honest "mature & liquid" headline
+# Gating predicate (mirrors config): a card is SURFACED — we publish an over/under
+# call — when it's FRESH or its price is OUTSIDE the mature mid-price dead zone
+# [GATE_DEAD_LO, GATE_DEAD_HI). The 'surfaced' headline IC is the honest accuracy
+# of what the leaderboard actually shows.
+def _is_surfaced(age: Optional[int], price: float) -> bool:
+    if age is not None and 0 <= age <= FRESH_AGE:
+        return True
+    return not (config.GATE_DEAD_LO <= price < config.GATE_DEAD_HI)
 
 
 def _age_days(card: Optional[dict], T: date) -> Optional[int]:
@@ -315,6 +323,9 @@ def run(horizons: Sequence[int] = HORIZONS, band: float = BAND,
     fresh = ic_over(primary, lambda age, a, rg: age is not None and 0 <= age <= FRESH_AGE, LAG)
     fresh_rows = [r for r in flat if r[2] is not None and 0 <= r[2] <= FRESH_AGE]
     fresh_mean_ret = round(float(np.mean([r[1] for r in fresh_rows])), 4) if fresh_rows else None
+    # Surfaced/gated universe (fresh OR outside the mature mid-price dead zone) —
+    # where the model has edge. The honest IC of what the leaderboard shows.
+    surfaced = ic_over(primary, lambda age, a, rg: _is_surfaced(age, a), LAG)
 
     # --- floor sensitivity ----------------------------------------------------
     floor_sensitivity = []
@@ -421,6 +432,10 @@ def run(horizons: Sequence[int] = HORIZONS, band: float = BAND,
                         f"{(fresh_mean_ret or 0)*100:.0f}%)"},
             "all_cards": all_stats and {**all_stats,
                 "note": "floor $2, all ages — inflated by the presale/fresh + cheap-card effects below"},
+            "surfaced": surfaced and {**surfaced,
+                "note": f"the GATED universe the site surfaces — fresh (<={FRESH_AGE}d) OR price "
+                        f"outside the mature dead zone [${config.GATE_DEAD_LO:.0f},${config.GATE_DEAD_HI:.0f}); "
+                        f"the honest IC of what users actually see"},
         },
         "hit_rates": hit_rates,
         "decile": decile,

@@ -75,13 +75,28 @@ function sealedLine(sealed) {
    ±15% of its expected price is "fair", NOT a deal — so we don't flag a 2% gap
    as undervalued/overvalued. Honest verdict for the pill, modal, and slider. */
 const CARD_BAND = 0.15;
-function residualVerdict(residual) {
+/* Gating mirror of pipeline/config.py: the model is wrong-signed on MATURE
+   MID-PRICE cards (price in [$20,$100) and not fresh), so we don't publish an
+   over/under call there — we say 'no edge'. Pass the card to opt a row in. */
+const GATE_DEAD_LO = 20, GATE_DEAD_HI = 100, GATE_FRESH_MONTHS = 35 / 30.4375;
+function cardHasEdge(card) {
+  if (!card) return true;
+  const p = card.market_price || 0;
+  if (p >= GATE_DEAD_LO && p < GATE_DEAD_HI) {
+    const msr = card.features && card.features.months_since_release;
+    if (msr == null || msr > GATE_FRESH_MONTHS) return false;  // mature mid-price dead zone
+  }
+  return true;
+}
+function residualVerdict(residual, card) {
+  if (card && !cardHasEdge(card)) return { dir: 'flat', label: 'no edge', cls: 'delta--flat', pd: 'pd-flat', noEdge: true };
   if (residual == null) return { dir: 'flat', label: 'fair', cls: 'delta--flat', pd: 'pd-flat' };
   if (residual < -CARD_BAND) return { dir: 'under', label: 'undervalued', cls: 'delta--down', pd: 'pd-down' };
   if (residual >  CARD_BAND) return { dir: 'over',  label: 'overvalued',  cls: 'delta--up',   pd: 'pd-up' };
   return { dir: 'flat', label: 'fair', cls: 'delta--flat', pd: 'pd-flat' };
 }
-function deltaPill(residual) {
+function deltaPill(residual, card) {
+  if (card && !cardHasEdge(card)) return el('span', { class: 'delta delta--flat', title: 'Mature mid-price — the model has no measured edge here', text: 'no edge' });
   if (residual == null) return el('span', { class: 'delta delta--flat', text: '—' });
   const v = residualVerdict(residual);
   return el('span', { class: `delta ${v.cls}`, text: signedPct(residual) });
@@ -802,7 +817,7 @@ function miniCard(c) {
     ]),
     el('div', { class: 'mini-card-foot' }, [
       el('span', { class: 'lb-price', text: USD(c.market_price) }),
-      deltaPill(c.residual_pct),
+      deltaPill(c.residual_pct, c),
     ]),
   ]);
   node.addEventListener('click', () => openModal(c.id));
@@ -855,10 +870,11 @@ function buildModalContent(card) {
   const bigImg = el('img', { src: card.image_large || card.image_small || PLACEHOLDER, alt: card.name, loading: 'lazy' });
   bigImg.addEventListener('error', () => imgFallback(bigImg));
 
-  /* big delta — respects the ±15% verdict band ("fair" inside it) */
-  const verdict = residualVerdict(card.residual_pct);
+  /* big delta — respects the ±15% verdict band ("fair" inside it) and the gating
+     ("no edge" for mature mid-price cards the model can't call) */
+  const verdict = residualVerdict(card.residual_pct, card);
   const deltaBig = el('div', { class: 'price-delta-big' }, [
-    el('div', { class: `pd-num ${verdict.pd}`, text: signedPct(card.residual_pct) }),
+    el('div', { class: `pd-num ${verdict.pd}`, text: verdict.noEdge ? '—' : signedPct(card.residual_pct) }),
     el('div', { class: `pd-label ${verdict.pd}`, text: verdict.label }),
   ]);
 
@@ -1122,9 +1138,10 @@ function viewTrackRecord() {
   const p = bt.panel, h = bt.headline, hr = bt.hit_rates || {}, dec = bt.decile || {};
 
   const heads = el('div', { style: 'display:flex;flex-wrap:wrap;gap:14px;margin-top:6px' }, [
+    h.surfaced ? trHeadlineCard('What the site surfaces (gated)', h.surfaced, 'The honest headline') : null,
     h.fresh_release ? trHeadlineCard('Fresh releases (≤35 days old)', h.fresh_release, 'Strong & robust') : null,
-    h.mature_liquid ? trHeadlineCard('Mature & liquid (>90d, >$10)', h.mature_liquid, '≈ no edge — honest') : null,
     h.all_cards ? trHeadlineCard('All cards ($2+)', h.all_cards, 'Modest') : null,
+    h.mature_liquid ? trHeadlineCard('Mature & liquid (>90d, >$10)', h.mature_liquid, '≈ no edge — honest') : null,
   ]);
 
   const freshPct = (h.fresh_release && h.fresh_release.mean_fwd_return != null)

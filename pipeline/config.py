@@ -81,18 +81,24 @@ SETS = {
 MIN_CLUSTER_SIZE = 12          # below this, fall back to the global model
 RIDGE_ALPHA = 1.0              # L2 regularization for the per-cluster ridge
 
-# Feature set fed to the price model. `live` = computable today from free data;
-# `stub` = needs a paid/scraped feed (eBay/PSA/Trends) — implemented as a
-# pluggable signal that returns a neutral value until its feed is wired.
+# Feature set fed to the price model. LEAN 3-feature set, adopted 2026-06-21 after
+# the multi-agent walk-forward backtest audit. We dropped:
+#   * set_rank  — a within-cluster near-constant (std 0.01-0.10) collinear with
+#                 scarcity (corr 0.87): redundant after clustering.
+#   * pull_cost — extreme right-skew (max ~12.6k) that duplicates rarity once we
+#                 cluster on supertype·rarity.
+#   * the 3 dead stubs (demand_pressure / grading_intensity / universal_appeal) —
+#                 std=0 so ridge zeroed them anyway, but they shipped 3 useless
+#                 sliders AND were a silent look-ahead trap (a future non-neutral
+#                 stub with leakage could slip into the model unnoticed).
+# Measured lift on 123 weekly cuts: all-cards IC +0.094 -> +0.110, decile $-spread
+# +18%, fresh-release IC held (~+0.26). set_rank/pull_cost are STILL computed
+# (signals.py / build.py) for display + sealed-EV — they are just not model inputs.
+# Re-add a feature ONLY when its feed has enough non-leaking history to backtest.
 FEATURES = {
     "char_premium":          {"label": "Character Premium",   "status": "live",  "min": 0, "max": 10},
     "scarcity":              {"label": "Scarcity Score",      "status": "live",  "min": 0, "max": 10},
-    "pull_cost":             {"label": "Cost to pull ($)",          "status": "live", "min": 0, "max": 30000},
     "months_since_release":  {"label": "Months Since Release","status": "live",  "min": 0, "max": 60},
-    "set_rank":              {"label": "In-Set Rarity Rank",  "status": "live",  "min": 0, "max": 1},
-    "demand_pressure":       {"label": "Demand Pressure (%)", "status": "stub",  "min": 0, "max": 20},
-    "grading_intensity":     {"label": "Grading Intensity",   "status": "stub",  "min": 0, "max": 10},
-    "universal_appeal":      {"label": "Universal Appeal",    "status": "stub",  "min": 0, "max": 10},
 }
 
 # Market-dynamics windows (days) for demand pressure / supply saturation shift.
@@ -104,3 +110,21 @@ DYN_LONG_WINDOW = 30
 # site ("the raw value difference between the market price and what we expect").
 LEADERBOARD_MIN_PRICE = 2.0
 LEADERBOARD_SIZE = 50
+
+# Leaderboard gating (2026-06-21 backtest audit). The model only has measured edge
+# where the walk-forward IC is positive: fresh releases (+0.26) and the cheap/low-
+# mid + marquee price tiers ($2-20 IC +0.09..+0.14, $100+ IC +0.03). The MATURE
+# MID-PRICE zone [$20,$100) is significantly WRONG-signed (IC -0.05), so we do NOT
+# surface over/under calls there. A card is SURFACED on the leaderboard if it's
+# FRESH or its price is OUTSIDE the dead zone — keeping marquee chase cards in.
+GATE_FRESH_AGE_DAYS = 35
+GATE_DEAD_LO = 20.0     # \  cards in [GATE_DEAD_LO, GATE_DEAD_HI) that are NOT fresh
+GATE_DEAD_HI = 100.0    # /  are the measured dead zone — suppressed from surfacing
+
+# Demand collector: sweep a FIXED, valuable-first universe of this size EVERY day
+# (not the old budget-truncated variable slice). The SAME cards then get an active-
+# listing count daily, so day-over-day demand diffs actually accrue. Small enough
+# to finish inside the collector's ~7-min time budget (live sweep is ~2s/card, so
+# ~150 completes with margin; price-ordered, so the SAME top cards are covered
+# first every day and day-over-day demand diffs accrue reliably).
+DEMAND_UNIVERSE_SIZE = 150
