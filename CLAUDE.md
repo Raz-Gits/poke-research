@@ -159,7 +159,7 @@ rating" flags are art-driven Illustration Rares (card art ≠ character fame).
   lots). Already-ended/sold listings are dropped (`_hours_left < 0`) so neither
   the site nor the phone shows stale results. First run primes silently (no alert
   storm). **Phone-alert gate (`_push_worthy`):** only Buy-It-Nows + auctions in
-  their FINAL hour (`PUSH_AUCTION_WINDOW_H` = 1h — owner's choice: auction prices
+  their final 30 min (`PUSH_AUCTION_WINDOW_H` = 0.5h — owner's choice: auction prices
   climb to the close, so an at/under-cap bid is only meaningful late) ping the
   phone; auctions with more time left ride the site until they enter that closing
   window, THEN ping (priming silences only currently-worthy ones, so a far-off
