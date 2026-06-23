@@ -670,6 +670,43 @@ function wlTrend(t) {
   ]);
 }
 
+/* % change of the TCGplayer sealed series over the last `days` (client-side, for
+   horizons we don't precompute). Returns null if the series doesn't reach back. */
+function trendOver(series, days) {
+  if (!series || series.length < 2) return null;
+  const last = series[series.length - 1];
+  const cutMs = Date.parse(last.date) - days * 86400000;
+  let base = null;
+  for (const pt of series) { if (Date.parse(pt.date) <= cutMs) base = pt; }
+  if (!base || !base.market) return null;
+  return (last.market - base.market) / base.market;
+}
+
+/* Forward-leaning "trajectory" read: a plain-language momentum classification from
+   the 30/90/180d sealed move. NOT a guaranteed forecast and reprint-blind — it's the
+   shape of the recent move, to be read alongside the print/reprint fundamentals. */
+function wlTrajectory(t) {
+  if (!t || t.trend_30d == null) return null;
+  const t30 = t.trend_30d, t90 = t.trend_90d || 0, t180 = trendOver(t.series, 180) || 0;
+  const n = (t.series || []).length;
+  const conf = n < 20 ? 'low' : (n < 45 ? 'med' : 'high');
+  let label, dir;
+  if (t30 <= -0.04 && t90 <= 0) { label = 'Falling'; dir = 'down'; }
+  else if (t30 <= -0.03 && t180 > 0.15) { label = 'Cooling after run'; dir = 'down'; }
+  else if (t30 >= 0.05 && t90 >= 0.10) { label = 'Accelerating ↑'; dir = 'up'; }
+  else if (t30 >= 0.02 && t90 >= 0) { label = 'Steady ↑'; dir = 'up'; }
+  else if (Math.abs(t30) < 0.03) { label = 'Flat / digesting'; dir = 'flat'; }
+  else { label = 'Choppy'; dir = 'flat'; }
+  const cls = dir === 'up' ? 'wl-traj--up' : (dir === 'down' ? 'wl-traj--down' : 'wl-traj--flat');
+  return el('div', { class: 'wl-traj' }, [
+    el('span', { class: 'wl-trajlabel', text: 'Trajectory' }),
+    el('span', { class: `wl-trajchip ${cls}`,
+      title: 'Momentum from TCGplayer sealed market (30/90/180d). A read on the recent move, not a guaranteed forecast — check reprint/print status too.',
+      text: label }),
+    conf === 'low' ? el('span', { class: 'wl-trajconf', text: 'thin data' }) : null,
+  ].filter(Boolean));
+}
+
 /* Tiny inline SVG of the TCGplayer market series — the visual trend line. */
 function wlSparkline(series) {
   const vals = (series || []).map((p) => p.market).filter((v) => v != null);
@@ -836,7 +873,7 @@ function watchCard(w) {
   return el('div', { class: 'table-card wl-card' }, [
     thumb,
     el('div', { class: 'wl-body' }, [
-      head, meta, wlTrend(trend), wlSparkline(trend && trend.series),
+      head, meta, wlTrend(trend), wlTrajectory(trend), wlSparkline(trend && trend.series),
       best, wlFloorRow(w), wlListingsPanel(w.listings), cta,
     ]),
   ].filter(Boolean));

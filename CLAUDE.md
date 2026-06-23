@@ -215,7 +215,8 @@ rating" flags are art-driven Illustration Rares (card art ≠ character fame).
   `docs/data/watchlist.json`, written by **`../ebay_deals.py`** (lives in the
   parent `~/Pokemon Bot`, NOT this repo — same place as the restock `monitor.py`).
   That watcher polls eBay Browse for a small watchlist (`../deals_watchlist.json`:
-  6 ETBs incl. Pokémon Center variants) and pushes a phone alert (ntfy, reusing
+  11 ETBs incl. Pokémon Center variants — Ascended Heroes, Prismatic, White Flare,
+  PC Pitch Black, Surging Sparks (+PC), and 151 (+PC)) and pushes a phone alert (ntfy, reusing
   the restock monitor's `config.NTFY_TOPIC`) when a deal lands at/under the per-
   product `max_price` cap. Notify-only, manual buy — same clean-monitor boundary
   as the restock alerter (no scraping/auto-checkout; Browse API's intended use).
@@ -226,7 +227,7 @@ rating" flags are art-driven Illustration Rares (card art ≠ character fame).
   lots). Already-ended/sold listings are dropped (`_hours_left < 0`) so neither
   the site nor the phone shows stale results. First run primes silently (no alert
   storm). **Phone-alert gate (`_push_worthy`):** only Buy-It-Nows + auctions in
-  their final 30 min (`PUSH_AUCTION_WINDOW_H` = 0.5h — owner's choice: auction prices
+  their final 15 min (`PUSH_AUCTION_WINDOW_H` = 0.25h — owner's choice: auction prices
   climb to the close, so an at/under-cap bid is only meaningful late) ping the
   phone; auctions with more time left ride the site until they enter that closing
   window, THEN ping (priming silences only currently-worthy ones, so a far-off
@@ -243,7 +244,13 @@ rating" flags are art-driven Illustration Rares (card art ≠ character fame).
     `~/Library/LaunchAgents/com.razsela.ebay-deals.plist` (label
     `com.razsela.ebay-deals`, KeepAlive, `PYTHONUNBUFFERED=1`, log →
     `~/Pokemon Bot/ebay_deals.log`), mirroring the restock `com.razsela.pokemon-
-    monitor`. Runs the loop (180s sweeps). `launchctl unload …plist` to pause.
+    monitor`. **Quiet hours 02:30–07:00 local — zero Browse calls** (owner asleep);
+    awake sweeps auto-paced from the live watch count to a `DAILY_CALL_BUDGET`
+    (~4,600 calls/day, well under eBay's ~5k cap) packed into the awake window, so
+    they run a bit QUICKER while up (~168s for 11 watches) and the interval is
+    recomputed every pass (adding watches never blows the budget; `_sweep_interval`,
+    `_in_quiet_hours`). `launchctl bootout gui/$UID/com.razsela.ebay-deals` pauses;
+    `launchctl bootstrap gui/$UID <plist>` reloads (and loads any code changes).
   - **Commits are MANUAL by owner's choice** — do NOT add periodic auto-commit of
     `watchlist.json` (every-sweep pushes would burn Netlify build minutes for no
     real gain; the phone is the real-time trigger, the site is just a browsing
@@ -264,6 +271,25 @@ rating" flags are art-driven Illustration Rares (card art ≠ character fame).
     caps (`cap_after_shipping`/`cap_no_shipping`). Skipped: the "auction re-alert"
     finding (a non-issue — `seen` is item-id-keyed, so a fired auction never
     re-pings) and a still-open offer to add the STANDARD (non-PC) Pitch Black watch.
+  - **Watches 8–11 + deal-quality upgrades (2026-06-22):** added Surging Sparks ETB
+    (+PC) and 151 ETB (+PC) → 11 watches. Three new mechanics in `ebay_deals.py`:
+    (1) **Self-adjusting % caps** — a watch may set `cap_pct_after_shipping` /
+    `cap_pct_no_shipping` / `max_pct`; `apply_pct_caps()` re-derives the dollar caps
+    from the daily-refreshed `market_price` each sweep so caps track market instead
+    of going stale (absolute cap is the seed/fallback; all 11 watches now carry pcts
+    derived to preserve their then-current caps). (2) **"Lowest in N days" deal
+    quality** — `watch_floor_history.json` (in `docs/data`, written by the local
+    watcher) logs each watch's cheapest in-cap **Buy-It-Now per day**;
+    `BEST_PRICE_WINDOW_DAYS=14`. A BIN at/under the prior N-day floor gets a 🔥
+    "lowest in 14d" tag in the phone alert + a 🔥 badge / eBay-floor sparkline on the
+    dashboard (`floor_today`/`window_low`/`is_window_low`/`floor_history` in
+    watchlist.json; `wlFloorRow`/`floorSparkSvg` + `.chip--fire`/`.wl-floor` in the
+    frontend). Needs ~2 weeks to accrue before the flag fires meaningfully. (3) the
+    **quiet-hours + budget pacing** above. NOTE: these watcher files live in the
+    non-git parent, so only the *data + dashboard* they produce is in this repo.
+    A `MARKET_RESEARCH_2026-06-22.md` audit found our card signal labels contradict
+    real SOLD trends on chase cards because the TCGplayer-"market" anchor sits above
+    sold — the standing fix direction is to anchor trend signals to sold data.
 - eBay demand feed is LIVE (Production keys in `.env` + GitHub secrets). Daily
   snapshots accrue via the `daily-refresh` GitHub Action (`.github/workflows/`,
   14:00 UTC: fetch → build [collects eBay, valuable-first, idempotent] → push →

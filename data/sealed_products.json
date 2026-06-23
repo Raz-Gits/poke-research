@@ -1,11 +1,16 @@
 {
-  "_note": "Sealed products tracked for the TCGplayer price-history TREND on the Watchlists tab. productId -> {label, group}. Source = TCGplayer's own price API via the tcgcsv mirror (same clean feed used for card history) — NOT a scrape. Mirrors the 6 ETBs in ../../deals_watchlist.json (kept here too because the daily Action runs in CI and can't see that parent file).",
+  "_note": "Sealed products tracked for the TCGplayer price-history TREND on the Watchlists tab. productId -> {label, group}. Source = TCGplayer's own price API via the tcgcsv mirror (same clean feed used for card history) — NOT a scrape. Mirrors the 11 ETBs in ../../deals_watchlist.json (kept here too because the daily Action runs in CI and can't see that parent file).",
   "products": {
     "668496": {"label": "Ascended Heroes ETB", "group": 24541},
     "668497": {"label": "Pokémon Center Ascended Heroes ETB", "group": 24541},
     "593355": {"label": "Prismatic Evolutions ETB", "group": 23821},
     "593324": {"label": "Pokémon Center Prismatic Evolutions ETB", "group": 23821},
     "630689": {"label": "White Flare ETB", "group": 24326},
-    "630688": {"label": "Pokémon Center White Flare ETB", "group": 24326}
+    "630688": {"label": "Pokémon Center White Flare ETB", "group": 24326},
+    "503313": {"label": "151 ETB", "group": 23237},
+    "501999": {"label": "Pokémon Center 151 ETB", "group": 23237},
+    "565630": {"label": "Surging Sparks ETB", "group": 23651},
+    "565632": {"label": "Pokémon Center Surging Sparks ETB", "group": 23651},
+    "692949": {"label": "Pokémon Center Pitch Black ETB", "group": 24688}
   }
 }

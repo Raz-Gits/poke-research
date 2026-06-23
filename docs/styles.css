@@ -537,6 +537,15 @@ input[type=range].sig-slider.is-stub::-moz-range-thumb { background:var(--steel)
 .wl-trend--flat { background:var(--surface); color:var(--steel); }
 .wl-capnote { font-size:11px; font-weight:600; color:var(--brand-teal); }
 .wl-capnote--dyn { color:var(--moss-dark); }
+
+/* Forward "trajectory" chip — plain-language momentum read */
+.wl-traj { display:flex; align-items:center; gap:8px; flex-wrap:wrap; margin-top:-2px; }
+.wl-trajlabel { font-size:11px; font-weight:600; color:var(--steel); text-transform:uppercase; letter-spacing:.04em; }
+.wl-trajchip { font-size:12px; font-weight:700; padding:3px 10px; border-radius:var(--r-pill); }
+.wl-traj--up { background:var(--teal-light); color:var(--moss-dark); }
+.wl-traj--down { background:var(--surface-yellow); color:var(--brand-red-dark); }
+.wl-traj--flat { background:var(--surface); color:var(--steel); }
+.wl-trajconf { font-size:10px; font-weight:600; color:var(--steel); font-style:italic; }
 .wl-sparkwrap { line-height:0; }
 
 /* eBay-floor / "lowest in N days" deal-quality strip */
