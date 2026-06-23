@@ -1,5 +1,5 @@
 {
-  "updated": "2026-06-23T02:29:42.910061+00:00",
+  "updated": "2026-06-23T02:42:14.302776+00:00",
   "watches": [
     {
       "label": "Ascended Heroes ETB",
@@ -17,7 +17,7 @@
       "window_low": null,
       "is_window_low": false,
       "floor_history": [],
-      "under_cap": 34,
+      "under_cap": 33,
       "best_bin": null,
       "best_auction": {
         "price": 93.0,
@@ -156,7 +156,7 @@
       "window_low": null,
       "is_window_low": false,
       "floor_history": [],
-      "under_cap": 7,
+      "under_cap": 8,
       "best_bin": null,
       "best_auction": {
         "price": 90.0,
@@ -175,6 +175,15 @@
           "end": "2026-06-23T23:25:33.000Z",
           "ship": null,
           "item_price": 90.0
+        },
+        {
+          "price": 91.0,
+          "kind": "Auction",
+          "url": "https://www.ebay.com/itm/198379906275?_skw=pokemon+prismatic+evolutions+elite+trainer+box&hash=item2e305d24e3:g:hVcAAeSwCDZqFJ~n",
+          "title": "Pokemon Scarlet & Violet Prismatic Evolutions Elite Trainer Box #ED",
+          "end": "2026-06-23T03:20:00.000Z",
+          "ship": 4.99,
+          "item_price": 91.0
         },
         {
           "price": 91.0,
@@ -210,15 +219,6 @@
           "title": "Pokemon Scarlet & Violet Prismatic Evolutions Elite Trainer Box #XD",
           "end": "2026-06-24T00:51:00.000Z",
           "ship": 4.99,
-          "item_price": 102.5
-        },
-        {
-          "price": 102.5,
-          "kind": "Auction",
-          "url": "https://www.ebay.com/itm/178247283243?_skw=pokemon+prismatic+evolutions+elite+trainer+box&hash=item29805db22b:g:nusAAeSwh05qLg2O",
-          "title": "Pokemon Prismatic Evolutions ETB Elite Trainer Box- 100% FACTORY SEALE",
-          "end": "2026-06-30T02:03:52.000Z",
-          "ship": null,
           "item_price": 102.5
         }
       ]
@@ -378,12 +378,12 @@
       "cap_pct": 0.7895,
       "floor_today": 138.97,
       "best_window_days": 14,
-      "window_low": 138.94,
+      "window_low": 138.97,
       "is_window_low": false,
       "floor_history": [
         [
           "2026-06-22",
-          138.94
+          138.97
         ]
       ],
       "under_cap": 2,
@@ -574,51 +574,30 @@
       "cap_after_shipping": true,
       "cap_is_dynamic": true,
       "cap_pct": 0.8361,
-      "floor_today": 463.04,
+      "floor_today": null,
       "best_window_days": 14,
-      "window_low": 463.04,
+      "window_low": null,
       "is_window_low": false,
-      "floor_history": [
-        [
-          "2026-06-22",
-          463.04
-        ]
-      ],
-      "under_cap": 8,
-      "best_bin": {
-        "price": 463.04,
-        "url": "https://www.ebay.com/itm/235515473064?_skw=pokemon+151+elite+trainer+box&hash=item36d5d0eca8:g:rlgAAeSwGMRqKf01",
-        "title": "Pok\u00e9mon CENTER 151 DESTINED EVOLVING MEGA PRISMATIC ELITE TRAINER ETB PRESALE",
-        "end": null,
-        "ship": 132.31,
-        "item_price": 330.73
-      },
+      "floor_history": [],
+      "under_cap": 4,
+      "best_bin": null,
       "best_auction": {
-        "price": 370.0,
+        "price": 380.0,
         "url": "https://www.ebay.com/itm/188515638358?_skw=pokemon+151+elite+trainer+box&hash=item2be4685c56:g:N8IAAeSwVnxqMBPb",
         "title": "Pokemon TCG Scarlet & Violet 3.5 151 Elite Trainer Box Lot A",
         "end": "2026-06-23T02:50:01.000Z",
         "ship": 0.0,
-        "item_price": 370.0
+        "item_price": 380.0
       },
       "listings": [
         {
-          "price": 370.0,
+          "price": 380.0,
           "kind": "Auction",
           "url": "https://www.ebay.com/itm/188515638358?_skw=pokemon+151+elite+trainer+box&hash=item2be4685c56:g:N8IAAeSwVnxqMBPb",
           "title": "Pokemon TCG Scarlet & Violet 3.5 151 Elite Trainer Box Lot A",
           "end": "2026-06-23T02:50:01.000Z",
           "ship": 0.0,
-          "item_price": 370.0
-        },
-        {
-          "price": 405.0,
-          "kind": "Auction",
-          "url": "https://www.ebay.com/itm/188515635736?_skw=pokemon+151+elite+trainer+box&hash=item2be4685218:g:3bUAAeSwuMZqMBNq",
-          "title": "Pokemon TCG Scarlet & Violet 3.5 151 Elite Trainer Box Lot C",
-          "end": "2026-06-23T02:40:01.000Z",
-          "ship": 0.0,
-          "item_price": 405.0
+          "item_price": 380.0
         },
         {
           "price": 405.0,
@@ -630,31 +609,13 @@
           "item_price": 405.0
         },
         {
-          "price": 449.0,
-          "kind": "Auction",
-          "url": "https://www.ebay.com/itm/188515635103?_skw=pokemon+151+elite+trainer+box&hash=item2be4684f9f:g:3c8AAeSwonJqMBMF",
-          "title": "Pokemon TCG Scarlet & Violet 3.5 151 Elite Trainer Box Lot D",
-          "end": "2026-06-23T02:35:01.000Z",
-          "ship": 0.0,
-          "item_price": 449.0
-        },
-        {
-          "price": 449.44,
+          "price": 464.99,
           "kind": "Auction",
           "url": "https://www.ebay.com/itm/188515637061?_skw=pokemon+151+elite+trainer+box&hash=item2be4685745:g:3vIAAeSwnudqMBOi",
           "title": "Pokemon TCG Scarlet & Violet 3.5 151 Elite Trainer Box Lot B",
           "end": "2026-06-23T02:45:01.000Z",
           "ship": 0.0,
-          "item_price": 449.44
-        },
-        {
-          "price": 463.04,
-          "kind": "Buy It Now",
-          "url": "https://www.ebay.com/itm/235515473064?_skw=pokemon+151+elite+trainer+box&hash=item36d5d0eca8:g:rlgAAeSwGMRqKf01",
-          "title": "Pok\u00e9mon CENTER 151 DESTINED EVOLVING MEGA PRISMATIC ELITE TRAINER ETB ",
-          "end": null,
-          "ship": 132.31,
-          "item_price": 330.73
+          "item_price": 464.99
         },
         {
           "price": 465.0,
@@ -664,15 +625,6 @@
           "end": "2026-06-25T20:58:02.000Z",
           "ship": 0.0,
           "item_price": 465.0
-        },
-        {
-          "price": 486.09,
-          "kind": "Buy It Now",
-          "url": "https://www.ebay.com/itm/236729934263?_skw=pokemon+151+elite+trainer+box&hash=item371e3421b7:g:o50AAeSwE1NqKlY4",
-          "title": "Pok\u00e9mon CENTER 151 DESTINED EVOLVING MEGA PRISMATIC ELITE TRAINER ETB ",
-          "end": null,
-          "ship": 133.21,
-          "item_price": 352.88
         }
       ]
     },
@@ -687,24 +639,24 @@
       "cap_after_shipping": true,
       "cap_is_dynamic": true,
       "cap_pct": 0.7885,
-      "floor_today": 926.16,
+      "floor_today": 972.55,
       "best_window_days": 14,
-      "window_low": 926.16,
+      "window_low": 972.55,
       "is_window_low": false,
       "floor_history": [
         [
           "2026-06-22",
-          926.16
+          972.55
         ]
       ],
-      "under_cap": 5,
+      "under_cap": 2,
       "best_bin": {
-        "price": 926.16,
-        "url": "https://www.ebay.com/itm/236285466700?_skw=pokemon+center+151+elite+trainer+box&hash=item3703b6184c:g:99EAAeSwxN1oqd5e",
-        "title": "POKEMON CENTER DESTINED ELITE TRAINER BOX EVOLVING 151 BUILD & BATTLE STADIUM",
+        "price": 972.55,
+        "url": "https://www.ebay.com/itm/389976160575?_skw=pokemon+center+151+elite+trainer+box&hash=item5acc63f93f:g:W-sAAeSweFVp-SMD",
+        "title": "151 Pokemon Center Elite Trainer Box NewSealed (READ DESCRIPTION) ",
         "end": null,
-        "ship": 132.31,
-        "item_price": 793.85
+        "ship": null,
+        "item_price": 972.55
       },
       "best_auction": {
         "price": 700.0,
@@ -723,33 +675,6 @@
           "end": "2026-06-28T01:37:34.000Z",
           "ship": null,
           "item_price": 700.0
-        },
-        {
-          "price": 926.16,
-          "kind": "Buy It Now",
-          "url": "https://www.ebay.com/itm/236285466700?_skw=pokemon+center+151+elite+trainer+box&hash=item3703b6184c:g:99EAAeSwxN1oqd5e",
-          "title": "POKEMON CENTER DESTINED ELITE TRAINER BOX EVOLVING 151 BUILD & BATTLE ",
-          "end": null,
-          "ship": 132.31,
-          "item_price": 793.85
-        },
-        {
-          "price": 926.16,
-          "kind": "Buy It Now",
-          "url": "https://www.ebay.com/itm/236067597164?_skw=pokemon+center+151+elite+trainer+box&hash=item36f6b9ab6c:g:WvkAAOSwZFJoB-1l",
-          "title": "1X POKEMON CENTER ETB 151 PALDEAN | EVOLVING SKIES | PRISMATIC ELITE T",
-          "end": null,
-          "ship": 132.31,
-          "item_price": 793.85
-        },
-        {
-          "price": 970.53,
-          "kind": "Buy It Now",
-          "url": "https://www.ebay.com/itm/236729934499?_skw=pokemon+center+151+elite+trainer+box&hash=item371e3422a3:g:99EAAeSwxN1oqd5e",
-          "title": "POKEMON CENTER DESTINED ELITE TRAINER BOX EVOLVING 151 BUILD & BATTLE ",
-          "end": null,
-          "ship": 133.21,
-          "item_price": 837.32
         },
         {
           "price": 972.55,
