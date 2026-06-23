@@ -760,18 +760,65 @@ function wlListingsPanel(listings) {
   return wrap;
 }
 
+/* Mini SVG of the watch's recent eBay Buy-It-Now floor (cheapest under-cap BIN per
+   day). Distinct from the TCGplayer sparkline above — this is the real deal floor. */
+function floorSparkSvg(vals) {
+  if (!vals || vals.length < 3) return null;
+  const w = 120, h = 28, pad = 3, n = vals.length;
+  const min = Math.min(...vals), max = Math.max(...vals), range = (max - min) || 1;
+  const xy = vals.map((v, i) => [
+    pad + (i / (n - 1)) * (w - 2 * pad),
+    pad + (1 - (v - min) / range) * (h - 2 * pad),
+  ]);
+  const pts = xy.map((p) => `${p[0].toFixed(1)},${p[1].toFixed(1)}`).join(' ');
+  const [lx, ly] = xy[n - 1];
+  const stroke = vals[n - 1] <= vals[0] ? 'var(--moss-dark)' : 'var(--brand-red-dark)';
+  const svg = `<svg viewBox="0 0 ${w} ${h}" width="${w}" height="${h}" class="wl-spark" preserveAspectRatio="none" aria-hidden="true">`
+    + `<polyline points="${pts}" fill="none" stroke="${stroke}" stroke-width="1.5" stroke-linejoin="round" stroke-linecap="round"/>`
+    + `<circle cx="${lx.toFixed(1)}" cy="${ly.toFixed(1)}" r="2.2" fill="${stroke}"/></svg>`;
+  return el('div', { class: 'wl-sparkwrap', title: `${n} daily eBay floor points`, html: svg });
+}
+
+/* "Lowest in N days" deal-quality strip: where today's cheapest BIN sits vs the
+   recent eBay floor. The 🔥 badge (also in the header) means a genuine new low. */
+function wlFloorRow(w) {
+  const days = w.best_window_days || 14;
+  const hist = (w.floor_history || []).map((p) => p[1]).filter((v) => v != null);
+  if (w.window_low == null && !hist.length) return null;       // nothing logged yet
+  const parts = [el('span', { class: 'wl-floorlabel', text: `eBay floor ${days}d` })];
+  if (w.window_low != null) {
+    parts.push(el('span', { class: 'wl-floorval', text: USD0(w.window_low) }));
+  }
+  if (w.floor_today != null) {
+    parts.push(el('span', { class: 'wl-floortoday',
+      text: `· cheapest now ${USD0(w.floor_today)}` }));
+  }
+  if (w.is_window_low) {
+    parts.push(el('span', { class: 'wl-floorflag', text: `🔥 new ${days}d low` }));
+  }
+  const spark = floorSparkSvg(hist);
+  if (spark) parts.push(spark);
+  return el('div', { class: 'wl-floor' }, parts);
+}
+
 function watchCard(w) {
   const under = w.under_cap || 0;
+  const days = w.best_window_days || 14;
   const trend = STATE.sealedTrend && STATE.sealedTrend.products
     ? STATE.sealedTrend.products[String(w.tcg_product)] : null;
   const head = el('div', { class: 'wl-head' }, [
     el('h3', { class: 'wl-title', text: w.label }),
     el('span', { class: under > 0 ? 'chip chip--teal' : 'badge-stub',
       text: under > 0 ? `${under} under ${USD0(w.max_price)}` : `none under ${USD0(w.max_price)}` }),
-  ]);
+    w.is_window_low ? el('span', { class: 'chip chip--fire', text: `🔥 ${days}d low` }) : null,
+  ].filter(Boolean));
   const capNote = w.cap_after_shipping ? ' <span class="wl-capnote">incl. ship</span>' : '';
+  // Self-adjusting cap: show that the cap tracks market, and at what % of it.
+  const dynNote = (w.cap_is_dynamic && w.cap_pct)
+    ? ` &middot; <span class="wl-capnote wl-capnote--dyn" title="Cap auto-tracks TCGplayer market — ${Math.round(w.cap_pct * 100)}% of it">↺ ${Math.round(w.cap_pct * 100)}% of market</span>`
+    : '';
   const meta = el('p', { class: 'wl-meta', html:
-    `TCGplayer market <strong>${USD0(w.market_price)}</strong> &middot; your cap <strong>${USD0(w.max_price)}</strong>${capNote} &middot; ignore &lt; ${USD0(w.floor)}` });
+    `TCGplayer market <strong>${USD0(w.market_price)}</strong> &middot; your cap <strong>${USD0(w.max_price)}</strong>${capNote}${dynNote} &middot; ignore &lt; ${USD0(w.floor)}` });
   const best = el('div', { class: 'wl-best' }, [
     wlBestCell('🟢', 'Buy It Now', w.best_bin, w.market_price),
     wlBestCell('🔨', 'Auction', bestAuctionShown(w.best_auction), w.market_price),
@@ -790,7 +837,7 @@ function watchCard(w) {
     thumb,
     el('div', { class: 'wl-body' }, [
       head, meta, wlTrend(trend), wlSparkline(trend && trend.series),
-      best, wlListingsPanel(w.listings), cta,
+      best, wlFloorRow(w), wlListingsPanel(w.listings), cta,
     ]),
   ].filter(Boolean));
 }

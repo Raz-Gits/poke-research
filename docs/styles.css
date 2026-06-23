@@ -172,6 +172,7 @@ button { font-family:inherit; cursor:pointer; }
 .chip--teal { background:var(--teal-light); color:var(--moss-dark); }
 .chip--lavender { background:var(--surface-pricing-featured); color:#3A2EA0; }
 .chip--iq { background:var(--surface-pricing-featured); color:#3A2EA0; }
+.chip--fire { background:var(--surface-yellow); color:var(--brand-red-dark); }
 
 .badge-stub {
   display:inline-flex; align-items:center; gap:6px;
@@ -535,7 +536,24 @@ input[type=range].sig-slider.is-stub::-moz-range-thumb { background:var(--steel)
 .wl-trend--down { background:var(--teal-light); color:var(--moss-dark); }
 .wl-trend--flat { background:var(--surface); color:var(--steel); }
 .wl-capnote { font-size:11px; font-weight:600; color:var(--brand-teal); }
+.wl-capnote--dyn { color:var(--moss-dark); }
 .wl-sparkwrap { line-height:0; }
+
+/* eBay-floor / "lowest in N days" deal-quality strip */
+.wl-floor {
+  display:flex; align-items:center; gap:8px; flex-wrap:wrap;
+  font-size:12px; color:var(--steel);
+  padding:7px 10px; border-radius:var(--r-pill);
+  background:var(--surface); margin-top:-2px;
+}
+.wl-floorlabel { font-weight:600; color:var(--slate); }
+.wl-floorval { font-weight:700; color:var(--moss-dark); }
+.wl-floortoday { color:var(--steel); }
+.wl-floorflag {
+  font-size:11px; font-weight:700; color:var(--brand-red-dark);
+  background:var(--surface-yellow); padding:2px 8px; border-radius:var(--r-pill);
+}
+.wl-floor .wl-sparkwrap { margin-left:auto; }
 .wl-spark { display:block; width:150px; height:34px; }
 .wl-listings-wrap { display:flex; flex-direction:column; gap:8px; border-top:1px solid var(--hairline-soft); padding-top:10px; }
 .wl-seg { display:flex; gap:4px; flex-wrap:wrap; }
