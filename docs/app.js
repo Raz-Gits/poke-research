@@ -813,16 +813,20 @@ function floorSparkSvg(vals) {
   const svg = `<svg viewBox="0 0 ${w} ${h}" width="${w}" height="${h}" class="wl-spark" preserveAspectRatio="none" aria-hidden="true">`
     + `<polyline points="${pts}" fill="none" stroke="${stroke}" stroke-width="1.5" stroke-linejoin="round" stroke-linecap="round"/>`
     + `<circle cx="${lx.toFixed(1)}" cy="${ly.toFixed(1)}" r="2.2" fill="${stroke}"/></svg>`;
-  return el('div', { class: 'wl-sparkwrap', title: `${n} daily eBay floor points`, html: svg });
+  return el('div', { class: 'wl-sparkwrap', title: `${n} daily cheapest-in-cap BIN points`, html: svg });
 }
 
-/* "Lowest in N days" deal-quality strip: where today's cheapest BIN sits vs the
-   recent eBay floor. The 🔥 badge (also in the header) means a genuine new low. */
+/* Deal-quality strip: where today's cheapest under-cap Buy-It-Now sits vs the
+   cheapest this monitor has SEEN over the window. Honest scope (Codex #3): it's the
+   lowest IN-CAP BIN observed by the watcher — not a full-market floor, and it has
+   small gaps (quiet hours / only awake sweeps). The 🔥 badge = a fresh observed low. */
 function wlFloorRow(w) {
   const days = w.best_window_days || 14;
   const hist = (w.floor_history || []).map((p) => p[1]).filter((v) => v != null);
   if (w.window_low == null && !hist.length) return null;       // nothing logged yet
-  const parts = [el('span', { class: 'wl-floorlabel', text: `eBay floor ${days}d` })];
+  const parts = [el('span', { class: 'wl-floorlabel',
+    title: `Cheapest under-cap Buy-It-Now this monitor observed in ${days} days — not a full-market floor (quiet-hours gaps; in-cap only).`,
+    text: `cheapest BIN seen ${days}d` })];
   if (w.window_low != null) {
     parts.push(el('span', { class: 'wl-floorval', text: USD0(w.window_low) }));
   }
@@ -831,7 +835,7 @@ function wlFloorRow(w) {
       text: `· cheapest now ${USD0(w.floor_today)}` }));
   }
   if (w.is_window_low) {
-    parts.push(el('span', { class: 'wl-floorflag', text: `🔥 new ${days}d low` }));
+    parts.push(el('span', { class: 'wl-floorflag', text: `🔥 cheapest seen in ${days}d` }));
   }
   const spark = floorSparkSvg(hist);
   if (spark) parts.push(spark);
@@ -847,7 +851,9 @@ function watchCard(w) {
     el('h3', { class: 'wl-title', text: w.label }),
     el('span', { class: under > 0 ? 'chip chip--teal' : 'badge-stub',
       text: under > 0 ? `${under} under ${USD0(w.max_price)}` : `none under ${USD0(w.max_price)}` }),
-    w.is_window_low ? el('span', { class: 'chip chip--fire', text: `🔥 ${days}d low` }) : null,
+    w.is_window_low ? el('span', { class: 'chip chip--fire',
+      title: `Cheapest under-cap Buy-It-Now this monitor has observed in ${days} days (in-cap only).`,
+      text: `🔥 cheapest ${days}d` }) : null,
   ].filter(Boolean));
   const capNote = w.cap_after_shipping ? ' <span class="wl-capnote">incl. ship</span>' : '';
   // Self-adjusting cap: show that the cap tracks market, and at what % of it.
