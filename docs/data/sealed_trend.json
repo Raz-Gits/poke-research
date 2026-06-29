@@ -1,12 +1,12 @@
 {
-  "updated": "2026-06-28",
+  "updated": "2026-06-29",
   "products": {
     "668496": {
       "label": "Ascended Heroes ETB",
       "group": 24541,
-      "latest": 186.33,
-      "trend_30d": 0.0508,
-      "trend_90d": 0.5128,
+      "latest": 209.54,
+      "trend_30d": 0.1816,
+      "trend_90d": 0.7012,
       "series": [
         {
           "date": "2025-12-18",
@@ -147,15 +147,19 @@
         {
           "date": "2026-06-28",
           "market": 186.33
+        },
+        {
+          "date": "2026-06-29",
+          "market": 209.54
         }
       ]
     },
     "668497": {
       "label": "Pokémon Center Ascended Heroes ETB",
       "group": 24541,
-      "latest": 488.58,
-      "trend_30d": -0.0546,
-      "trend_90d": 0.2601,
+      "latest": 490.14,
+      "trend_30d": -0.0516,
+      "trend_90d": 0.2641,
       "series": [
         {
           "date": "2025-12-25",
@@ -292,15 +296,19 @@
         {
           "date": "2026-06-28",
           "market": 488.58
+        },
+        {
+          "date": "2026-06-29",
+          "market": 490.14
         }
       ]
     },
     "593355": {
       "label": "Prismatic Evolutions ETB",
       "group": 23821,
-      "latest": 201.91,
-      "trend_30d": 0.2477,
-      "trend_90d": -0.0062,
+      "latest": 193.31,
+      "trend_30d": 0.1946,
+      "trend_90d": -0.0485,
       "series": [
         {
           "date": "2024-11-07",
@@ -673,15 +681,19 @@
         {
           "date": "2026-06-28",
           "market": 201.91
+        },
+        {
+          "date": "2026-06-29",
+          "market": 193.31
         }
       ]
     },
     "593324": {
       "label": "Pokémon Center Prismatic Evolutions ETB",
       "group": 23821,
-      "latest": 513.91,
-      "trend_30d": 0.0107,
-      "trend_90d": -0.1223,
+      "latest": 513.27,
+      "trend_30d": 0.0094,
+      "trend_90d": -0.1234,
       "series": [
         {
           "date": "2024-11-14",
@@ -1050,15 +1062,19 @@
         {
           "date": "2026-06-28",
           "market": 513.91
+        },
+        {
+          "date": "2026-06-29",
+          "market": 513.27
         }
       ]
     },
     "630689": {
       "label": "White Flare ETB",
       "group": 24326,
-      "latest": 146.21,
-      "trend_30d": 0.2007,
-      "trend_90d": 0.5123,
+      "latest": 144.89,
+      "trend_30d": 0.1899,
+      "trend_90d": 0.4987,
       "series": [
         {
           "date": "2025-05-15",
@@ -1323,6 +1339,10 @@
         {
           "date": "2026-06-28",
           "market": 146.21
+        },
+        {
+          "date": "2026-06-29",
+          "market": 144.89
         }
       ]
     },
@@ -1588,15 +1608,19 @@
         {
           "date": "2026-06-28",
           "market": 257.22
+        },
+        {
+          "date": "2026-06-29",
+          "market": 257.22
         }
       ]
     },
     "503313": {
       "label": "151 ETB",
       "group": 23237,
-      "latest": 606.64,
-      "trend_30d": -0.0848,
-      "trend_90d": -0.0072,
+      "latest": 607.0,
+      "trend_30d": -0.0843,
+      "trend_90d": -0.0066,
       "series": [
         {
           "date": "2024-02-08",
@@ -2117,6 +2141,10 @@
         {
           "date": "2026-06-28",
           "market": 606.64
+        },
+        {
+          "date": "2026-06-29",
+          "market": 607.0
         }
       ]
     },
@@ -2646,6 +2674,10 @@
         {
           "date": "2026-06-28",
           "market": 1383.95
+        },
+        {
+          "date": "2026-06-29",
+          "market": 1383.95
         }
       ]
     },
@@ -3055,15 +3087,19 @@
         {
           "date": "2026-06-28",
           "market": 135.45
+        },
+        {
+          "date": "2026-06-29",
+          "market": 135.45
         }
       ]
     },
     "565632": {
       "label": "Pokémon Center Surging Sparks ETB",
       "group": 23651,
-      "latest": 287.59,
-      "trend_30d": 0.0342,
-      "trend_90d": 0.1444,
+      "latest": 288.29,
+      "trend_30d": 0.0368,
+      "trend_90d": 0.1471,
       "series": [
         {
           "date": "2024-09-19",
@@ -3456,14 +3492,18 @@
         {
           "date": "2026-06-28",
           "market": 287.59
+        },
+        {
+          "date": "2026-06-29",
+          "market": 288.29
         }
       ]
     },
     "692949": {
       "label": "Pokémon Center Pitch Black ETB",
       "group": 24688,
-      "latest": 552.78,
-      "trend_30d": -0.0975,
+      "latest": 549.86,
+      "trend_30d": -0.1023,
       "trend_90d": null,
       "series": [
         {
@@ -3517,6 +3557,10 @@
         {
           "date": "2026-06-28",
           "market": 552.78
+        },
+        {
+          "date": "2026-06-29",
+          "market": 549.86
         }
       ]
     }
