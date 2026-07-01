@@ -1040,12 +1040,12 @@ function sealedWatchlistPanel() {
   const banner = el('div', { class: 'table-card', style: 'padding:16px 22px;margin-bottom:24px;box-shadow:none;background:var(--surface-soft);display:flex;gap:14px;align-items:center;flex-wrap:wrap' }, [
     el('span', { class: 'chip chip--lavender', text: '📲 phone alerts' }),
     el('p', { class: 'body-sm', style: 'margin:0;color:var(--slate);max-width:72ch;flex:1', html:
-      `Real-time alerts hit your phone the moment a deal appears — this snapshot is from <strong>${updated ? updated.toLocaleString() : 'the last run'}</strong>. Tap any price to open the live listing on eBay. The “>50% under market → ignore” rule strips out code cards, empty boxes and proxies.` }),
+      `Real-time alerts hit your phone the moment a deal appears — this snapshot is from <strong>${updated ? updated.toLocaleString() : 'the last run'}</strong>. Auctions appear here only in their final 10 minutes — the same gate as your phone alerts. Tap any price to open the live listing on eBay. The “>50% under market → ignore” rule strips out code cards, empty boxes and proxies.` }),
     refreshBtn,
   ]);
   return el('div', {}, [banner,
     el('div', { class: 'wl-grid' }, wl.watches.map(watchCard)),
-    el('p', { class: 'caption', html: 'Prices are eBay <em>asking</em> prices (Buy-It-Now) or current auction bids — not sold comps. You buy manually on eBay; this is a notify-only monitor.' }),
+    el('p', { class: 'caption', html: 'Prices are eBay <em>asking</em> prices (Buy-It-Now) or current auction bids — not sold comps. Auctions only show in their final 10 minutes (matching phone alerts). You buy manually on eBay; this is a notify-only monitor.' }),
   ]);
 }
 
@@ -1053,12 +1053,21 @@ function sealedWatchlistPanel() {
    the Sealed Deals panel. The snapshot is whatever was last deployed. */
 async function refreshSealedWatchlist(btn) {
   if (btn) { btn.disabled = true; btn.textContent = '⟳ Refreshing…'; }
+  let ok = false, prevUpdated = STATE.watchlist && STATE.watchlist.updated;
   try {
     const r = await fetch('./data/watchlist.json?t=' + Date.now(), { cache: 'no-store' });
-    if (r.ok) STATE.watchlist = await r.json();
+    if (r.ok) { STATE.watchlist = await r.json(); ok = true; }
   } catch (_) { /* keep the data we have */ }
   WL_ACTIVE = 'sealed';
   viewWatchlists();
+  // Confirm on the freshly-rendered button so a click is never a no-op to the eye.
+  const fresh = document.querySelector('.wl-refresh');
+  if (fresh) {
+    const changed = ok && STATE.watchlist && STATE.watchlist.updated !== prevUpdated;
+    fresh.textContent = !ok ? '⚠ Offline' : (changed ? '✓ Updated' : '✓ Up to date');
+    fresh.disabled = false;
+    setTimeout(() => { if (fresh.isConnected) fresh.textContent = '⟳ Refresh'; }, 2000);
+  }
 }
 
 function viewWatchlists() {
