@@ -1,14 +1,15 @@
 {
-  "updated": "2026-07-01T02:09:08.282878+00:00",
+  "updated": "2026-07-07T23:59:21.206743+00:00",
   "watches": [
     {
       "label": "Ascended Heroes ETB",
       "query": "pokemon ascended heroes elite trainer box",
       "tcg_product": 668496,
-      "max_price": 135,
+      "notify": true,
+      "max_price": 133,
       "min_price": 25,
-      "market_price": 175,
-      "floor": 88,
+      "market_price": 172,
+      "floor": 86,
       "cap_after_shipping": true,
       "cap_is_dynamic": true,
       "cap_pct": 0.7735,
@@ -44,9 +45,37 @@
         [
           "2026-06-30",
           88.0
+        ],
+        [
+          "2026-07-01",
+          88.0
+        ],
+        [
+          "2026-07-02",
+          88.0
+        ],
+        [
+          "2026-07-03",
+          88.0
+        ],
+        [
+          "2026-07-04",
+          88.0
+        ],
+        [
+          "2026-07-05",
+          88.0
+        ],
+        [
+          "2026-07-06",
+          88.0
+        ],
+        [
+          "2026-07-07",
+          88.0
         ]
       ],
-      "under_cap": 23,
+      "under_cap": 14,
       "best_bin": {
         "price": 88.0,
         "url": "https://www.ebay.com/itm/117218767526?_skw=pokemon+ascended+heroes+elite+trainer+box&hash=item1b4ac872a6:g:ProAAeSwamJqF5Ho",
@@ -72,14 +101,15 @@
       "label": "Pok\u00e9mon Center Ascended Heroes ETB",
       "query": "pokemon center ascended heroes elite trainer box",
       "tcg_product": 668497,
-      "max_price": 430,
+      "notify": true,
+      "max_price": 414,
       "min_price": 80,
-      "market_price": 490,
-      "floor": 245,
+      "market_price": 472,
+      "floor": 236,
       "cap_after_shipping": true,
       "cap_is_dynamic": true,
       "cap_pct": 0.8772,
-      "floor_today": null,
+      "floor_today": 385.39,
       "best_window_days": 14,
       "window_low": 375.0,
       "is_window_low": false,
@@ -107,21 +137,67 @@
         [
           "2026-06-30",
           405.39
+        ],
+        [
+          "2026-07-01",
+          410.0
+        ],
+        [
+          "2026-07-02",
+          398.25
+        ],
+        [
+          "2026-07-03",
+          384.07
+        ],
+        [
+          "2026-07-04",
+          384.07
+        ],
+        [
+          "2026-07-05",
+          384.19
+        ],
+        [
+          "2026-07-06",
+          384.19
+        ],
+        [
+          "2026-07-07",
+          384.19
         ]
       ],
-      "under_cap": 7,
-      "best_bin": null,
+      "under_cap": 2,
+      "best_bin": {
+        "price": 385.39,
+        "url": "https://www.ebay.com/itm/800282988758?_skw=pokemon+center+ascended+heroes+elite+trainer+box&hash=itemba549550d6:g:DBMAAeSwCNRqR8x5",
+        "title": "Pokemon Center Ascended Heroes Elite Trainer Box ETB Small Rip| Trusted Seller\u2705",
+        "end": null,
+        "ship": null,
+        "item_price": 385.39
+      },
       "best_auction": null,
-      "listings": []
+      "listings": [
+        {
+          "price": 385.39,
+          "kind": "Buy It Now",
+          "url": "https://www.ebay.com/itm/800282988758?_skw=pokemon+center+ascended+heroes+elite+trainer+box&hash=itemba549550d6:g:DBMAAeSwCNRqR8x5",
+          "title": "Pokemon Center Ascended Heroes Elite Trainer Box ETB Small Rip| Truste",
+          "end": null,
+          "ship": null,
+          "item_price": 385.39
+        }
+      ]
     },
     {
       "label": "Prismatic Evolutions ETB",
       "query": "pokemon prismatic evolutions elite trainer box",
       "tcg_product": 593355,
-      "max_price": 130,
+      "notify": true,
+      "max_price": 105,
       "min_price": 25,
-      "market_price": 212,
-      "floor": 106,
+      "market_price": 172,
+      "floor": 86,
       "cap_after_shipping": false,
       "cap_is_dynamic": true,
       "cap_pct": 0.6111,
@@ -130,7 +206,7 @@
       "window_low": null,
       "is_window_low": false,
       "floor_history": [],
-      "under_cap": 13,
+      "under_cap": 6,
       "best_bin": null,
       "best_auction": null,
       "listings": []
@@ -139,6 +215,7 @@
       "label": "Pok\u00e9mon Center Prismatic Evolutions ETB",
       "query": "pokemon center prismatic evolutions elite trainer box",
       "tcg_product": 593324,
+      "notify": true,
       "max_price": 397,
       "min_price": 100,
       "market_price": 510,
@@ -151,7 +228,7 @@
       "window_low": null,
       "is_window_low": false,
       "floor_history": [],
-      "under_cap": 3,
+      "under_cap": 2,
       "best_bin": null,
       "best_auction": null,
       "listings": []
@@ -160,10 +237,11 @@
       "label": "White Flare ETB",
       "query": "pokemon white flare elite trainer box",
       "tcg_product": 630689,
-      "max_price": 118,
+      "notify": true,
+      "max_price": 120,
       "min_price": 70,
-      "market_price": 145,
-      "floor": 72,
+      "market_price": 148,
+      "floor": 74,
       "cap_after_shipping": false,
       "cap_is_dynamic": true,
       "cap_pct": 0.8108,
@@ -185,7 +263,7 @@
           105.0
         ]
       ],
-      "under_cap": 6,
+      "under_cap": 5,
       "best_bin": null,
       "best_auction": null,
       "listings": []
@@ -194,10 +272,11 @@
       "label": "Pok\u00e9mon Center White Flare ETB",
       "query": "pokemon center white flare elite trainer box",
       "tcg_product": 630688,
-      "max_price": 214,
+      "notify": true,
+      "max_price": 217,
       "min_price": 80,
-      "market_price": 257,
-      "floor": 128,
+      "market_price": 261,
+      "floor": 130,
       "cap_after_shipping": true,
       "cap_is_dynamic": true,
       "cap_pct": 0.8333,
@@ -215,16 +294,17 @@
       "label": "Black Bolt ETB",
       "query": "pokemon black bolt elite trainer box",
       "tcg_product": 630686,
-      "max_price": 142,
+      "notify": true,
+      "max_price": 141,
       "min_price": 70,
-      "market_price": 175,
-      "floor": 88,
+      "market_price": 174,
+      "floor": 87,
       "cap_after_shipping": true,
       "cap_is_dynamic": true,
       "cap_pct": 0.81,
       "floor_today": null,
       "best_window_days": 14,
-      "window_low": 133.84,
+      "window_low": 133.69,
       "is_window_low": false,
       "floor_history": [
         [
@@ -234,9 +314,13 @@
         [
           "2026-06-29",
           133.84
+        ],
+        [
+          "2026-07-01",
+          133.69
         ]
       ],
-      "under_cap": 7,
+      "under_cap": 1,
       "best_bin": null,
       "best_auction": null,
       "listings": []
@@ -245,10 +329,11 @@
       "label": "Pok\u00e9mon Center Black Bolt ETB",
       "query": "pokemon center black bolt elite trainer box",
       "tcg_product": 630687,
+      "notify": true,
       "max_price": 247,
       "min_price": 100,
-      "market_price": 298,
-      "floor": 149,
+      "market_price": 297,
+      "floor": 148,
       "cap_after_shipping": true,
       "cap_is_dynamic": true,
       "cap_pct": 0.83,
@@ -257,7 +342,7 @@
       "window_low": null,
       "is_window_low": false,
       "floor_history": [],
-      "under_cap": 1,
+      "under_cap": 0,
       "best_bin": null,
       "best_auction": null,
       "listings": []
@@ -266,14 +351,15 @@
       "label": "Black Bolt Booster Bundle",
       "query": "pokemon black bolt booster bundle",
       "tcg_product": 630431,
-      "max_price": 65,
+      "notify": true,
+      "max_price": 68,
       "min_price": 30,
-      "market_price": 81,
-      "floor": 40,
+      "market_price": 85,
+      "floor": 42,
       "cap_after_shipping": true,
       "cap_is_dynamic": true,
       "cap_pct": 0.8025,
-      "floor_today": 52.04,
+      "floor_today": null,
       "best_window_days": 14,
       "window_low": 51.81,
       "is_window_low": false,
@@ -289,38 +375,42 @@
         [
           "2026-06-30",
           51.81
+        ],
+        [
+          "2026-07-01",
+          52.04
+        ],
+        [
+          "2026-07-02",
+          52.05
+        ],
+        [
+          "2026-07-03",
+          52.38
+        ],
+        [
+          "2026-07-04",
+          52.38
+        ],
+        [
+          "2026-07-05",
+          52.4
         ]
       ],
-      "under_cap": 10,
-      "best_bin": {
-        "price": 52.04,
-        "url": "https://www.ebay.com/itm/366457883242?_skw=pokemon+black+bolt+booster+bundle&var=636203196411&hash=item5552978a6a:g:N-0AAeSwqvlqIw7e",
-        "title": "Pokemon TCG Booster Bundle 151 / Prismatic / Phantasmal / Mega / Black Bolt",
-        "end": null,
-        "ship": null,
-        "item_price": 52.04
-      },
+      "under_cap": 12,
+      "best_bin": null,
       "best_auction": null,
-      "listings": [
-        {
-          "price": 52.04,
-          "kind": "Buy It Now",
-          "url": "https://www.ebay.com/itm/366457883242?_skw=pokemon+black+bolt+booster+bundle&var=636203196411&hash=item5552978a6a:g:N-0AAeSwqvlqIw7e",
-          "title": "Pokemon TCG Booster Bundle 151 / Prismatic / Phantasmal / Mega / Black",
-          "end": null,
-          "ship": null,
-          "item_price": 52.04
-        }
-      ]
+      "listings": []
     },
     {
       "label": "White Flare Booster Bundle",
       "query": "pokemon white flare booster bundle",
       "tcg_product": 630696,
-      "max_price": 65,
+      "notify": true,
+      "max_price": 69,
       "min_price": 30,
-      "market_price": 76,
-      "floor": 38,
+      "market_price": 81,
+      "floor": 40,
       "cap_after_shipping": true,
       "cap_is_dynamic": true,
       "cap_pct": 0.85,
@@ -340,9 +430,37 @@
         [
           "2026-06-30",
           55.0
+        ],
+        [
+          "2026-07-01",
+          55.0
+        ],
+        [
+          "2026-07-02",
+          55.0
+        ],
+        [
+          "2026-07-03",
+          55.0
+        ],
+        [
+          "2026-07-04",
+          55.0
+        ],
+        [
+          "2026-07-05",
+          55.0
+        ],
+        [
+          "2026-07-06",
+          55.0
+        ],
+        [
+          "2026-07-07",
+          55.0
         ]
       ],
-      "under_cap": 14,
+      "under_cap": 24,
       "best_bin": {
         "price": 55.0,
         "url": "https://www.ebay.com/itm/406878287258?_skw=pokemon+white+flare+booster+bundle&hash=item5ebbd5f59a:g:ayoAAeSwl6Zp5nX0",
@@ -361,6 +479,51 @@
           "end": null,
           "ship": null,
           "item_price": 55.0
+        },
+        {
+          "price": 60.0,
+          "kind": "Buy It Now",
+          "url": "https://www.ebay.com/itm/158064789409?_skw=pokemon+white+flare+booster+bundle&hash=item24cd6547a1:g:z5EAAeSww~9qTY-u",
+          "title": "Pokemon TCG Scarlet & Violet White Flare Booster Bundle Factory Sealed",
+          "end": null,
+          "ship": null,
+          "item_price": 60.0
+        },
+        {
+          "price": 63.99,
+          "kind": "Buy It Now",
+          "url": "https://www.ebay.com/itm/366509576766?_skw=pokemon+white+flare+booster+bundle&hash=item5555ac523e:g:XfEAAeSwWW5qQZzD",
+          "title": "Pok\u00e9mon TCG Scarlet & Violet White Flare Booster Bundle Sealed- 6 Pack",
+          "end": null,
+          "ship": null,
+          "item_price": 63.99
+        },
+        {
+          "price": 64.99,
+          "kind": "Buy It Now",
+          "url": "https://www.ebay.com/itm/188613230846?_skw=pokemon+white+flare+booster+bundle&hash=item2bea3980fe:g:RiIAAeSwze9qTVYx",
+          "title": "Pokemon TCG Scarlet & Violet White Flare Booster Bundle New Sealed",
+          "end": null,
+          "ship": null,
+          "item_price": 64.99
+        },
+        {
+          "price": 65.0,
+          "kind": "Buy It Now",
+          "url": "https://www.ebay.com/itm/336503801011?_skw=pokemon+white+flare+booster+bundle&hash=item4e593084b3:g:DzkAAeSwxfNpxpVB",
+          "title": "Pok\u00e9mon Scarlet & Violet White Flare Booster Bundle Box 2025 English",
+          "end": null,
+          "ship": null,
+          "item_price": 65.0
+        },
+        {
+          "price": 65.0,
+          "kind": "Buy It Now",
+          "url": "https://www.ebay.com/itm/227421364085?_skw=pokemon+white+flare+booster+bundle&hash=item34f35e9f75:g:R3EAAeSw9PpqTVNV",
+          "title": "Pok\u00e9mon White Flare TCG Booster Bundle Factory Sealed Brand  New",
+          "end": null,
+          "ship": null,
+          "item_price": 65.0
         }
       ]
     },
@@ -368,10 +531,11 @@
       "label": "Ascended Heroes Booster Bundle",
       "query": "pokemon ascended heroes booster bundle",
       "tcg_product": 668541,
-      "max_price": 74,
+      "notify": true,
+      "max_price": 70,
       "min_price": 35,
-      "market_price": 92,
-      "floor": 46,
+      "market_price": 87,
+      "floor": 44,
       "cap_after_shipping": true,
       "cap_is_dynamic": true,
       "cap_pct": 0.8065,
@@ -385,199 +549,76 @@
           65.0
         ]
       ],
-      "under_cap": 18,
+      "under_cap": 9,
       "best_bin": null,
       "best_auction": null,
       "listings": []
     },
     {
-      "label": "151 Booster Bundle",
-      "query": "pokemon 151 booster bundle",
-      "tcg_product": 502000,
-      "max_price": 151,
-      "min_price": 60,
-      "market_price": 187,
-      "floor": 94,
+      "label": "30th Celebration ETB",
+      "query": "pokemon 30th celebration elite trainer box",
+      "tcg_product": 704143,
+      "notify": false,
+      "max_price": 200,
+      "min_price": 100,
+      "market_price": 269,
+      "floor": 134,
       "cap_after_shipping": true,
       "cap_is_dynamic": true,
-      "cap_pct": 0.8065,
-      "floor_today": 95.56,
+      "cap_pct": 0.7435,
+      "floor_today": 200.0,
       "best_window_days": 14,
-      "window_low": 95.56,
+      "window_low": 200.0,
       "is_window_low": false,
       "floor_history": [
         [
-          "2026-06-30",
-          95.56
+          "2026-07-07",
+          200.0
         ]
       ],
-      "under_cap": 25,
+      "under_cap": 1,
       "best_bin": {
-        "price": 95.56,
-        "url": "https://www.ebay.com/itm/298421783412?_skw=pokemon+151+booster+bundle&hash=item457b530b74:g:ef8AAeSw6sVqQ5Qm",
-        "title": "POKEMON TCG SCARLET & VIOLET 151 BOOSTER BUNDLE BOX FACTORY SEALED NEW -ORIGINAL",
+        "price": 200.0,
+        "url": "https://www.ebay.com/itm/137492277609?_skw=pokemon+30th+celebration+elite+trainer+box&hash=item20032da969:g:28gAAeSwIxRqTTVV",
+        "title": "Pok\u00e9mon 30th Anniversary Celebrations Elite Trainer Box ETB CONFIRMED PRSALE",
         "end": null,
         "ship": 0.0,
-        "item_price": 95.56
+        "item_price": 200.0
       },
       "best_auction": null,
       "listings": [
         {
-          "price": 95.56,
+          "price": 200.0,
           "kind": "Buy It Now",
-          "url": "https://www.ebay.com/itm/298421783412?_skw=pokemon+151+booster+bundle&hash=item457b530b74:g:ef8AAeSw6sVqQ5Qm",
-          "title": "POKEMON TCG SCARLET & VIOLET 151 BOOSTER BUNDLE BOX FACTORY SEALED NEW",
+          "url": "https://www.ebay.com/itm/137492277609?_skw=pokemon+30th+celebration+elite+trainer+box&hash=item20032da969:g:28gAAeSwIxRqTTVV",
+          "title": "Pok\u00e9mon 30th Anniversary Celebrations Elite Trainer Box ETB CONFIRMED ",
           "end": null,
           "ship": 0.0,
-          "item_price": 95.56
-        },
-        {
-          "price": 99.0,
-          "kind": "Buy It Now",
-          "url": "https://www.ebay.com/itm/198458637369?_skw=pokemon+151+booster+bundle&hash=item2e350e7c39:g:ojwAAeSw95xqQDJ-",
-          "title": "Pokemon 151 English Booster Bundle New Sealed",
-          "end": null,
-          "ship": 0.0,
-          "item_price": 99.0
-        },
-        {
-          "price": 100.0,
-          "kind": "Buy It Now",
-          "url": "https://www.ebay.com/itm/800263181205?_skw=pokemon+151+booster+bundle&hash=itemba53671395:g:qOEAAeSwGGJqQsTa",
-          "title": "Pokemon TCG 151 Booster Bundle Factory Sealed",
-          "end": null,
-          "ship": 0.0,
-          "item_price": 100.0
-        },
-        {
-          "price": 107.88,
-          "kind": "Buy It Now",
-          "url": "https://www.ebay.com/itm/306994616473?_skw=pokemon+151+booster+bundle&hash=item477a4e1899:g:XnQAAeSw5xRqKbXB",
-          "title": "Pokemon TCG Scarlet & Violet 151 Booster Bundle Sealed New (6 packs)",
-          "end": null,
-          "ship": 5.0,
-          "item_price": 102.88
-        },
-        {
-          "price": 108.19,
-          "kind": "Buy It Now",
-          "url": "https://www.ebay.com/itm/157934436570?_skw=pokemon+151+booster+bundle&hash=item24c5a040da:g:UEwAAeSwAxtqD6El",
-          "title": "Pok\u00e9mon TCG Scarlet & Violet 151 Booster Bundle Sealed New (6 packs)",
-          "end": null,
-          "ship": 0.0,
-          "item_price": 108.19
-        },
-        {
-          "price": 110.0,
-          "kind": "Buy It Now",
-          "url": "https://www.ebay.com/itm/800263186898?_skw=pokemon+151+booster+bundle&hash=itemba536729d2:g:0HgAAeSwIDZqQsV5",
-          "title": "Pokemon 151 English Booster Bundle New Sealed",
-          "end": null,
-          "ship": 0.0,
-          "item_price": 110.0
+          "item_price": 200.0
         }
       ]
     },
     {
-      "label": "151 ETB",
-      "query": "pokemon 151 elite trainer box",
-      "tcg_product": 503313,
-      "max_price": 510,
-      "min_price": 150,
-      "market_price": 610,
-      "floor": 305,
+      "label": "30th Celebration UPC (Day/Night)",
+      "query": "pokemon 30th celebration ultra premium collection",
+      "tcg_product": 704191,
+      "notify": false,
+      "max_price": 700,
+      "min_price": 300,
+      "market_price": 966,
+      "floor": 483,
       "cap_after_shipping": true,
       "cap_is_dynamic": true,
-      "cap_pct": 0.8361,
+      "cap_pct": 0.7246,
       "floor_today": null,
       "best_window_days": 14,
-      "window_low": 506.0,
+      "window_low": null,
       "is_window_low": false,
-      "floor_history": [
-        [
-          "2026-06-26",
-          506.0
-        ]
-      ],
-      "under_cap": 6,
+      "floor_history": [],
+      "under_cap": 0,
       "best_bin": null,
       "best_auction": null,
       "listings": []
-    },
-    {
-      "label": "Pok\u00e9mon Center 151 ETB",
-      "query": "pokemon center 151 elite trainer box",
-      "tcg_product": 501999,
-      "max_price": 1091,
-      "min_price": 300,
-      "market_price": 1384,
-      "floor": 692,
-      "cap_after_shipping": true,
-      "cap_is_dynamic": true,
-      "cap_pct": 0.7885,
-      "floor_today": 974.46,
-      "best_window_days": 14,
-      "window_low": 967.85,
-      "is_window_low": false,
-      "floor_history": [
-        [
-          "2026-06-22",
-          972.55
-        ],
-        [
-          "2026-06-23",
-          972.55
-        ],
-        [
-          "2026-06-24",
-          970.49
-        ],
-        [
-          "2026-06-25",
-          967.85
-        ],
-        [
-          "2026-06-26",
-          967.85
-        ],
-        [
-          "2026-06-27",
-          970.2
-        ],
-        [
-          "2026-06-28",
-          970.2
-        ],
-        [
-          "2026-06-29",
-          970.2
-        ],
-        [
-          "2026-06-30",
-          970.2
-        ]
-      ],
-      "under_cap": 2,
-      "best_bin": {
-        "price": 974.46,
-        "url": "https://www.ebay.com/itm/389976160575?_skw=pokemon+center+151+elite+trainer+box&hash=item5acc63f93f:g:W-sAAeSweFVp-SMD",
-        "title": "151 Pokemon Center Elite Trainer Box NewSealed (READ DESCRIPTION) ",
-        "end": null,
-        "ship": null,
-        "item_price": 974.46
-      },
-      "best_auction": null,
-      "listings": [
-        {
-          "price": 974.46,
-          "kind": "Buy It Now",
-          "url": "https://www.ebay.com/itm/389976160575?_skw=pokemon+center+151+elite+trainer+box&hash=item5acc63f93f:g:W-sAAeSweFVp-SMD",
-          "title": "151 Pokemon Center Elite Trainer Box NewSealed (READ DESCRIPTION) ",
-          "end": null,
-          "ship": null,
-          "item_price": 974.46
-        }
-      ]
     }
   ]
 }
