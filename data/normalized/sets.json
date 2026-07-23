@@ -42,6 +42,20 @@
   "etb_price": 110.0
  },
  {
+  "set_id": "sv6pt5",
+  "name": "Shrouded Fable",
+  "series": "Scarlet & Violet",
+  "release_date": "2024-08-02",
+  "printed_total": 64,
+  "total": 99,
+  "logo": "https://images.pokemontcg.io/sv6pt5/logo.png",
+  "symbol": "https://images.pokemontcg.io/sv6pt5/symbol.png",
+  "pack_price": 10.0,
+  "retail_pack_price": 4.49,
+  "packs_per_etb": 9,
+  "etb_price": 110.0
+ },
+ {
   "set_id": "sv7",
   "name": "Stellar Crown",
   "series": "Scarlet & Violet",
@@ -194,19 +208,5 @@
   "retail_pack_price": 4.49,
   "packs_per_etb": 9,
   "etb_price": 120.0
- },
- {
-  "set_id": "sv6pt5",
-  "name": "Shrouded Fable",
-  "series": "Scarlet & Violet",
-  "release_date": "2024-08-02",
-  "printed_total": 64,
-  "total": 99,
-  "logo": "https://images.pokemontcg.io/sv6pt5/logo.png",
-  "symbol": "https://images.pokemontcg.io/sv6pt5/symbol.png",
-  "pack_price": 10.0,
-  "retail_pack_price": 4.49,
-  "packs_per_etb": 9,
-  "etb_price": 110.0
  }
 ]
