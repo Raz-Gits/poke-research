@@ -1,5 +1,19 @@
 [
  {
+  "set_id": "sv3pt5",
+  "name": "151",
+  "series": "Scarlet & Violet",
+  "release_date": "2023-09-22",
+  "printed_total": 165,
+  "total": 207,
+  "logo": "https://images.pokemontcg.io/sv3pt5/logo.png",
+  "symbol": "https://images.pokemontcg.io/sv3pt5/symbol.png",
+  "pack_price": 12.0,
+  "retail_pack_price": 4.49,
+  "packs_per_etb": 9,
+  "etb_price": 135.0
+ },
+ {
   "set_id": "sv8pt5",
   "name": "Prismatic Evolutions",
   "series": "Scarlet & Violet",
@@ -12,6 +26,20 @@
   "retail_pack_price": 4.99,
   "packs_per_etb": 9,
   "etb_price": 155.0
+ },
+ {
+  "set_id": "sv8",
+  "name": "Surging Sparks",
+  "series": "Scarlet & Violet",
+  "release_date": "2024-11-08",
+  "printed_total": 191,
+  "total": 252,
+  "logo": "https://images.pokemontcg.io/sv8/logo.png",
+  "symbol": "https://images.pokemontcg.io/sv8/symbol.png",
+  "pack_price": 7.0,
+  "retail_pack_price": 4.49,
+  "packs_per_etb": 9,
+  "etb_price": 120.0
  },
  {
   "set_id": "sv4pt5",
@@ -68,20 +96,6 @@
   "retail_pack_price": 4.49,
   "packs_per_etb": 9,
   "etb_price": 70.0
- },
- {
-  "set_id": "sv5",
-  "name": "Temporal Forces",
-  "series": "Scarlet & Violet",
-  "release_date": "2024-03-22",
-  "printed_total": 162,
-  "total": 218,
-  "logo": "https://images.pokemontcg.io/sv5/logo.png",
-  "symbol": "https://images.pokemontcg.io/sv5/symbol.png",
-  "pack_price": 6.0,
-  "retail_pack_price": 4.49,
-  "packs_per_etb": 9,
-  "etb_price": 130.0
  },
  {
   "set_id": "sv9",
@@ -182,31 +196,17 @@
   "etb_price": 92.0
  },
  {
-  "set_id": "sv3pt5",
-  "name": "151",
+  "set_id": "sv5",
+  "name": "Temporal Forces",
   "series": "Scarlet & Violet",
-  "release_date": "2023-09-22",
-  "printed_total": 165,
-  "total": 207,
-  "logo": "https://images.pokemontcg.io/sv3pt5/logo.png",
-  "symbol": "https://images.pokemontcg.io/sv3pt5/symbol.png",
-  "pack_price": 12.0,
+  "release_date": "2024-03-22",
+  "printed_total": 162,
+  "total": 218,
+  "logo": "https://images.pokemontcg.io/sv5/logo.png",
+  "symbol": "https://images.pokemontcg.io/sv5/symbol.png",
+  "pack_price": 6.0,
   "retail_pack_price": 4.49,
   "packs_per_etb": 9,
-  "etb_price": 135.0
- },
- {
-  "set_id": "sv8",
-  "name": "Surging Sparks",
-  "series": "Scarlet & Violet",
-  "release_date": "2024-11-08",
-  "printed_total": 191,
-  "total": 252,
-  "logo": "https://images.pokemontcg.io/sv8/logo.png",
-  "symbol": "https://images.pokemontcg.io/sv8/symbol.png",
-  "pack_price": 7.0,
-  "retail_pack_price": 4.49,
-  "packs_per_etb": 9,
-  "etb_price": 120.0
+  "etb_price": 130.0
  }
 ]
