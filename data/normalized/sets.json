@@ -14,6 +14,20 @@
   "etb_price": 135.0
  },
  {
+  "set_id": "sv8pt5",
+  "name": "Prismatic Evolutions",
+  "series": "Scarlet & Violet",
+  "release_date": "2025-01-17",
+  "printed_total": 131,
+  "total": 180,
+  "logo": "https://images.pokemontcg.io/sv8pt5/logo.png",
+  "symbol": "https://images.pokemontcg.io/sv8pt5/symbol.png",
+  "pack_price": 18.0,
+  "retail_pack_price": 4.99,
+  "packs_per_etb": 9,
+  "etb_price": 155.0
+ },
+ {
   "set_id": "sv4pt5",
   "name": "Paldean Fates",
   "series": "Scarlet & Violet",
@@ -180,20 +194,6 @@
   "retail_pack_price": 4.99,
   "packs_per_etb": 9,
   "etb_price": 92.0
- },
- {
-  "set_id": "sv8pt5",
-  "name": "Prismatic Evolutions",
-  "series": "Scarlet & Violet",
-  "release_date": "2025-01-17",
-  "printed_total": 131,
-  "total": 180,
-  "logo": "https://images.pokemontcg.io/sv8pt5/logo.png",
-  "symbol": "https://images.pokemontcg.io/sv8pt5/symbol.png",
-  "pack_price": 18.0,
-  "retail_pack_price": 4.99,
-  "packs_per_etb": 9,
-  "etb_price": 155.0
  },
  {
   "set_id": "sv8",
