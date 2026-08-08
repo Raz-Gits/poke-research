@@ -1,19 +1,5 @@
 [
  {
-  "set_id": "sv3pt5",
-  "name": "151",
-  "series": "Scarlet & Violet",
-  "release_date": "2023-09-22",
-  "printed_total": 165,
-  "total": 207,
-  "logo": "https://images.pokemontcg.io/sv3pt5/logo.png",
-  "symbol": "https://images.pokemontcg.io/sv3pt5/symbol.png",
-  "pack_price": 12.0,
-  "retail_pack_price": 4.49,
-  "packs_per_etb": 9,
-  "etb_price": 135.0
- },
- {
   "set_id": "sv8pt5",
   "name": "Prismatic Evolutions",
   "series": "Scarlet & Violet",
@@ -84,6 +70,20 @@
   "etb_price": 130.0
  },
  {
+  "set_id": "sv6",
+  "name": "Twilight Masquerade",
+  "series": "Scarlet & Violet",
+  "release_date": "2024-05-24",
+  "printed_total": 167,
+  "total": 226,
+  "logo": "https://images.pokemontcg.io/sv6/logo.png",
+  "symbol": "https://images.pokemontcg.io/sv6/symbol.png",
+  "pack_price": 5.0,
+  "retail_pack_price": 4.49,
+  "packs_per_etb": 9,
+  "etb_price": 70.0
+ },
+ {
   "set_id": "sv5",
   "name": "Temporal Forces",
   "series": "Scarlet & Violet",
@@ -96,6 +96,20 @@
   "retail_pack_price": 4.49,
   "packs_per_etb": 9,
   "etb_price": 130.0
+ },
+ {
+  "set_id": "sv9",
+  "name": "Journey Together",
+  "series": "Scarlet & Violet",
+  "release_date": "2025-03-28",
+  "printed_total": 159,
+  "total": 190,
+  "logo": "https://images.pokemontcg.io/sv9/logo.png",
+  "symbol": "https://images.pokemontcg.io/sv9/symbol.png",
+  "pack_price": 6.81,
+  "retail_pack_price": 4.49,
+  "packs_per_etb": 9,
+  "etb_price": 131.08
  },
  {
   "set_id": "sv10",
@@ -168,32 +182,18 @@
   "etb_price": 92.0
  },
  {
-  "set_id": "sv6",
-  "name": "Twilight Masquerade",
+  "set_id": "sv3pt5",
+  "name": "151",
   "series": "Scarlet & Violet",
-  "release_date": "2024-05-24",
-  "printed_total": 167,
-  "total": 226,
-  "logo": "https://images.pokemontcg.io/sv6/logo.png",
-  "symbol": "https://images.pokemontcg.io/sv6/symbol.png",
-  "pack_price": 5.0,
+  "release_date": "2023-09-22",
+  "printed_total": 165,
+  "total": 207,
+  "logo": "https://images.pokemontcg.io/sv3pt5/logo.png",
+  "symbol": "https://images.pokemontcg.io/sv3pt5/symbol.png",
+  "pack_price": 12.0,
   "retail_pack_price": 4.49,
   "packs_per_etb": 9,
-  "etb_price": 70.0
- },
- {
-  "set_id": "sv9",
-  "name": "Journey Together",
-  "series": "Scarlet & Violet",
-  "release_date": "2025-03-28",
-  "printed_total": 159,
-  "total": 190,
-  "logo": "https://images.pokemontcg.io/sv9/logo.png",
-  "symbol": "https://images.pokemontcg.io/sv9/symbol.png",
-  "pack_price": 6.81,
-  "retail_pack_price": 4.49,
-  "packs_per_etb": 9,
-  "etb_price": 131.08
+  "etb_price": 135.0
  },
  {
   "set_id": "me1",
