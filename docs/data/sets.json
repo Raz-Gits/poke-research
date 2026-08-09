@@ -12,13 +12,13 @@
     "retail_pack_price": 4.49,
     "packs_per_etb": 9,
     "etb_price": 135.0,
-    "ev_per_pack": 10.888454454423265,
-    "pack_signal_pct": -0.09262879546472795,
-    "ev_per_etb": 97.99609008980939,
-    "etb_signal_pct": -0.27410303637178235,
-    "signal_pct": -0.27410303637178235,
-    "avg_loss_per_pack": 1.1115455455767353,
-    "raw_value_per_pack": 10.888454454423265
+    "ev_per_pack": 10.855151300097752,
+    "pack_signal_pct": -0.09540405832518732,
+    "ev_per_etb": 97.69636170087978,
+    "etb_signal_pct": -0.2763232466601498,
+    "signal_pct": -0.2763232466601498,
+    "avg_loss_per_pack": 1.1448486999022478,
+    "raw_value_per_pack": 10.855151300097752
   },
   {
     "set_id": "sv4pt5",
@@ -147,13 +147,13 @@
         "listings": 909
       }
     },
-    "ev_per_pack": 6.597212224711956,
-    "pack_signal_pct": -0.5141964488430077,
-    "ev_per_etb": 59.3749100224076,
-    "etb_signal_pct": -0.6733154881848276,
-    "signal_pct": -0.6733154881848276,
-    "avg_loss_per_pack": 6.9827877752880445,
-    "raw_value_per_pack": 6.597212224711956
+    "ev_per_pack": 6.546416057859821,
+    "pack_signal_pct": -0.5179369618659926,
+    "ev_per_etb": 58.91774452073839,
+    "etb_signal_pct": -0.675830841701577,
+    "signal_pct": -0.675830841701577,
+    "avg_loss_per_pack": 7.033583942140179,
+    "raw_value_per_pack": 6.546416057859821
   },
   {
     "set_id": "sv5",
@@ -198,6 +198,27 @@
     "raw_value_per_pack": 4.9325953407914565
   },
   {
+    "set_id": "me3",
+    "name": "Perfect Order",
+    "series": "Mega Evolution",
+    "release_date": "2026-03-27",
+    "printed_total": 88,
+    "total": 124,
+    "logo": "https://images.scrydex.com/pokemon/me3-logo/logo",
+    "symbol": "https://images.scrydex.com/pokemon/me3-symbol/symbol",
+    "pack_price": 6.0,
+    "retail_pack_price": 4.99,
+    "packs_per_etb": 9,
+    "etb_price": 90.0,
+    "ev_per_pack": 2.420936112323232,
+    "pack_signal_pct": -0.5965106479461281,
+    "ev_per_etb": 21.788425010909087,
+    "etb_signal_pct": -0.7579063887676767,
+    "signal_pct": -0.7579063887676767,
+    "avg_loss_per_pack": 3.579063887676768,
+    "raw_value_per_pack": 2.420936112323232
+  },
+  {
     "set_id": "sv7",
     "name": "Stellar Crown",
     "series": "Scarlet & Violet",
@@ -217,27 +238,6 @@
     "signal_pct": -0.7588108058460001,
     "avg_loss_per_pack": 2.516156084442225,
     "raw_value_per_pack": 3.483843915557775
-  },
-  {
-    "set_id": "me3",
-    "name": "Perfect Order",
-    "series": "Mega Evolution",
-    "release_date": "2026-03-27",
-    "printed_total": 88,
-    "total": 124,
-    "logo": "https://images.scrydex.com/pokemon/me3-logo/logo",
-    "symbol": "https://images.scrydex.com/pokemon/me3-symbol/symbol",
-    "pack_price": 6.0,
-    "retail_pack_price": 4.99,
-    "packs_per_etb": 9,
-    "etb_price": 90.0,
-    "ev_per_pack": 2.4052286967676766,
-    "pack_signal_pct": -0.5991285505387206,
-    "ev_per_etb": 21.64705827090909,
-    "etb_signal_pct": -0.7594771303232324,
-    "signal_pct": -0.7594771303232324,
-    "avg_loss_per_pack": 3.5947713032323234,
-    "raw_value_per_pack": 2.4052286967676766
   },
   {
     "set_id": "me4",
@@ -288,13 +288,13 @@
         "listings": 82
       }
     },
-    "ev_per_pack": 3.0964252277684836,
-    "pack_signal_pct": -0.5871433029642023,
-    "ev_per_etb": 27.867827049916354,
-    "etb_signal_pct": -0.768135227141057,
-    "signal_pct": -0.768135227141057,
-    "avg_loss_per_pack": 4.403574772231517,
-    "raw_value_per_pack": 3.0964252277684836
+    "ev_per_pack": 3.139821052168344,
+    "pack_signal_pct": -0.5813571930442208,
+    "ev_per_etb": 28.258389469515095,
+    "etb_signal_pct": -0.7648856854187944,
+    "signal_pct": -0.7648856854187944,
+    "avg_loss_per_pack": 4.360178947831656,
+    "raw_value_per_pack": 3.139821052168344
   },
   {
     "set_id": "sv8",
