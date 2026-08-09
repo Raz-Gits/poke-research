@@ -1,5 +1,5 @@
 {
-  "updated": "2026-07-07T23:59:21.206743+00:00",
+  "updated": "2026-08-09T17:01:39.569006+00:00",
   "watches": [
     {
       "label": "Ascended Heroes ETB",
@@ -13,179 +13,166 @@
       "cap_after_shipping": true,
       "cap_is_dynamic": true,
       "cap_pct": 0.7735,
-      "floor_today": 88.0,
+      "floor_today": null,
       "best_window_days": 14,
-      "window_low": 88.0,
-      "is_window_low": true,
+      "window_low": null,
+      "is_window_low": false,
       "floor_history": [
         [
-          "2026-06-23",
+          "2026-07-11",
           88.0
         ],
         [
-          "2026-06-24",
-          135.0
-        ],
-        [
-          "2026-06-25",
+          "2026-07-12",
           88.0
         ],
         [
-          "2026-06-26",
-          159.95
-        ],
-        [
-          "2026-06-28",
-          149.99
-        ],
-        [
-          "2026-06-29",
-          135.0
-        ],
-        [
-          "2026-06-30",
+          "2026-07-13",
           88.0
         ],
         [
-          "2026-07-01",
+          "2026-07-14",
           88.0
         ],
         [
-          "2026-07-02",
+          "2026-07-15",
           88.0
         ],
         [
-          "2026-07-03",
+          "2026-07-16",
           88.0
         ],
         [
-          "2026-07-04",
+          "2026-07-17",
           88.0
         ],
         [
-          "2026-07-05",
+          "2026-07-18",
           88.0
         ],
         [
-          "2026-07-06",
+          "2026-07-19",
           88.0
         ],
         [
-          "2026-07-07",
+          "2026-07-20",
+          88.0
+        ],
+        [
+          "2026-07-21",
+          88.0
+        ],
+        [
+          "2026-07-22",
+          88.0
+        ],
+        [
+          "2026-07-23",
+          88.0
+        ],
+        [
+          "2026-07-24",
           88.0
         ]
       ],
-      "under_cap": 14,
-      "best_bin": {
-        "price": 88.0,
-        "url": "https://www.ebay.com/itm/117218767526?_skw=pokemon+ascended+heroes+elite+trainer+box&hash=item1b4ac872a6:g:ProAAeSwamJqF5Ho",
-        "title": "Rare Factory Sealed Pokemon Mega Evolution Ascended Heroes Elite Trainer Box",
-        "end": null,
-        "ship": null,
-        "item_price": 88.0
-      },
+      "under_cap": 11,
+      "best_bin": null,
       "best_auction": null,
-      "listings": [
-        {
-          "price": 88.0,
-          "kind": "Buy It Now",
-          "url": "https://www.ebay.com/itm/117218767526?_skw=pokemon+ascended+heroes+elite+trainer+box&hash=item1b4ac872a6:g:ProAAeSwamJqF5Ho",
-          "title": "Rare Factory Sealed Pokemon Mega Evolution Ascended Heroes Elite Train",
-          "end": null,
-          "ship": null,
-          "item_price": 88.0
-        }
-      ]
+      "listings": []
     },
     {
       "label": "Pok\u00e9mon Center Ascended Heroes ETB",
       "query": "pokemon center ascended heroes elite trainer box",
       "tcg_product": 668497,
       "notify": true,
-      "max_price": 414,
+      "max_price": 375,
       "min_price": 80,
-      "market_price": 472,
-      "floor": 236,
+      "market_price": 428,
+      "floor": 214,
       "cap_after_shipping": true,
       "cap_is_dynamic": true,
       "cap_pct": 0.8772,
-      "floor_today": 385.39,
+      "floor_today": 256.13,
       "best_window_days": 14,
-      "window_low": 375.0,
+      "window_low": 199.0,
       "is_window_low": false,
       "floor_history": [
         [
-          "2026-06-25",
-          404.4
+          "2026-07-27",
+          383.47
         ],
         [
-          "2026-06-26",
-          375.0
+          "2026-07-28",
+          251.92
         ],
         [
-          "2026-06-27",
-          405.39
+          "2026-07-29",
+          370.0
         ],
         [
-          "2026-06-28",
-          405.39
+          "2026-07-30",
+          254.09
         ],
         [
-          "2026-06-29",
-          405.39
+          "2026-07-31",
+          254.09
         ],
         [
-          "2026-06-30",
-          405.39
+          "2026-08-01",
+          255.41
         ],
         [
-          "2026-07-01",
-          410.0
+          "2026-08-02",
+          255.41
         ],
         [
-          "2026-07-02",
-          398.25
+          "2026-08-03",
+          255.41
         ],
         [
-          "2026-07-03",
-          384.07
+          "2026-08-04",
+          255.02
         ],
         [
-          "2026-07-04",
-          384.07
+          "2026-08-05",
+          253.68
         ],
         [
-          "2026-07-05",
-          384.19
+          "2026-08-06",
+          255.5
         ],
         [
-          "2026-07-06",
-          384.19
+          "2026-08-07",
+          199.0
         ],
         [
-          "2026-07-07",
-          384.19
+          "2026-08-08",
+          256.13
+        ],
+        [
+          "2026-08-09",
+          256.13
         ]
       ],
-      "under_cap": 2,
+      "under_cap": 6,
       "best_bin": {
-        "price": 385.39,
-        "url": "https://www.ebay.com/itm/800282988758?_skw=pokemon+center+ascended+heroes+elite+trainer+box&hash=itemba549550d6:g:DBMAAeSwCNRqR8x5",
-        "title": "Pokemon Center Ascended Heroes Elite Trainer Box ETB Small Rip| Trusted Seller\u2705",
+        "price": 256.13,
+        "url": "https://www.ebay.com/itm/407104613571?_skw=pokemon+center+ascended+heroes+elite+trainer+box&hash=item5ec9536cc3:g:xtMAAeSwEbBqaQZE",
+        "title": "[PRE-ORDER] Pok\u00e9mon TCG: Ascended Heroes Pok\u00e9mon Center Elite Trainer Box (DE)",
         "end": null,
-        "ship": null,
-        "item_price": 385.39
+        "ship": 27.26,
+        "item_price": 228.87
       },
       "best_auction": null,
       "listings": [
         {
-          "price": 385.39,
+          "price": 256.13,
           "kind": "Buy It Now",
-          "url": "https://www.ebay.com/itm/800282988758?_skw=pokemon+center+ascended+heroes+elite+trainer+box&hash=itemba549550d6:g:DBMAAeSwCNRqR8x5",
-          "title": "Pokemon Center Ascended Heroes Elite Trainer Box ETB Small Rip| Truste",
+          "url": "https://www.ebay.com/itm/407104613571?_skw=pokemon+center+ascended+heroes+elite+trainer+box&hash=item5ec9536cc3:g:xtMAAeSwEbBqaQZE",
+          "title": "[PRE-ORDER] Pok\u00e9mon TCG: Ascended Heroes Pok\u00e9mon Center Elite Trainer ",
           "end": null,
-          "ship": null,
-          "item_price": 385.39
+          "ship": 27.26,
+          "item_price": 228.87
         }
       ]
     },
@@ -194,10 +181,10 @@
       "query": "pokemon prismatic evolutions elite trainer box",
       "tcg_product": 593355,
       "notify": true,
-      "max_price": 105,
+      "max_price": 97,
       "min_price": 25,
-      "market_price": 172,
-      "floor": 86,
+      "market_price": 159,
+      "floor": 80,
       "cap_after_shipping": false,
       "cap_is_dynamic": true,
       "cap_pct": 0.6111,
@@ -206,7 +193,7 @@
       "window_low": null,
       "is_window_low": false,
       "floor_history": [],
-      "under_cap": 6,
+      "under_cap": 2,
       "best_bin": null,
       "best_auction": null,
       "listings": []
@@ -216,19 +203,24 @@
       "query": "pokemon center prismatic evolutions elite trainer box",
       "tcg_product": 593324,
       "notify": true,
-      "max_price": 397,
+      "max_price": 369,
       "min_price": 100,
-      "market_price": 510,
-      "floor": 255,
+      "market_price": 474,
+      "floor": 237,
       "cap_after_shipping": true,
       "cap_is_dynamic": true,
       "cap_pct": 0.7782,
       "floor_today": null,
       "best_window_days": 14,
-      "window_low": null,
+      "window_low": 298.78,
       "is_window_low": false,
-      "floor_history": [],
-      "under_cap": 2,
+      "floor_history": [
+        [
+          "2026-08-05",
+          298.78
+        ]
+      ],
+      "under_cap": 3,
       "best_bin": null,
       "best_auction": null,
       "listings": []
@@ -238,9 +230,9 @@
       "query": "pokemon white flare elite trainer box",
       "tcg_product": 630689,
       "notify": true,
-      "max_price": 120,
+      "max_price": 121,
       "min_price": 70,
-      "market_price": 148,
+      "market_price": 149,
       "floor": 74,
       "cap_after_shipping": false,
       "cap_is_dynamic": true,
@@ -251,19 +243,63 @@
       "is_window_low": false,
       "floor_history": [
         [
-          "2026-06-22",
-          115.0
+          "2026-07-22",
+          120.0
         ],
         [
-          "2026-06-26",
-          112.13
+          "2026-07-25",
+          120.0
         ],
         [
-          "2026-06-28",
+          "2026-07-26",
+          120.0
+        ],
+        [
+          "2026-07-27",
           105.0
+        ],
+        [
+          "2026-07-28",
+          123.89
+        ],
+        [
+          "2026-07-29",
+          123.89
+        ],
+        [
+          "2026-07-30",
+          124.05
+        ],
+        [
+          "2026-08-01",
+          124.81
+        ],
+        [
+          "2026-08-02",
+          124.81
+        ],
+        [
+          "2026-08-03",
+          124.81
+        ],
+        [
+          "2026-08-04",
+          105.0
+        ],
+        [
+          "2026-08-05",
+          124.45
+        ],
+        [
+          "2026-08-06",
+          108.5
+        ],
+        [
+          "2026-08-07",
+          108.5
         ]
       ],
-      "under_cap": 5,
+      "under_cap": 4,
       "best_bin": null,
       "best_auction": null,
       "listings": []
@@ -273,19 +309,76 @@
       "query": "pokemon center white flare elite trainer box",
       "tcg_product": 630688,
       "notify": true,
-      "max_price": 217,
+      "max_price": 220,
       "min_price": 80,
-      "market_price": 261,
-      "floor": 130,
+      "market_price": 264,
+      "floor": 132,
       "cap_after_shipping": true,
       "cap_is_dynamic": true,
       "cap_pct": 0.8333,
       "floor_today": null,
       "best_window_days": 14,
-      "window_low": null,
+      "window_low": 186.92,
       "is_window_low": false,
-      "floor_history": [],
-      "under_cap": 0,
+      "floor_history": [
+        [
+          "2026-07-20",
+          206.04
+        ],
+        [
+          "2026-07-21",
+          205.72
+        ],
+        [
+          "2026-07-22",
+          204.88
+        ],
+        [
+          "2026-07-23",
+          204.86
+        ],
+        [
+          "2026-07-24",
+          203.95
+        ],
+        [
+          "2026-07-25",
+          203.95
+        ],
+        [
+          "2026-07-26",
+          191.28
+        ],
+        [
+          "2026-07-27",
+          191.28
+        ],
+        [
+          "2026-07-28",
+          186.92
+        ],
+        [
+          "2026-07-29",
+          186.92
+        ],
+        [
+          "2026-07-30",
+          186.92
+        ],
+        [
+          "2026-07-31",
+          188.06
+        ],
+        [
+          "2026-08-01",
+          189.65
+        ],
+        [
+          "2026-08-02",
+          189.65
+        ]
+      ],
+      "under_cap": 1,
       "best_bin": null,
       "best_auction": null,
       "listings": []
@@ -304,13 +397,9 @@
       "cap_pct": 0.81,
       "floor_today": null,
       "best_window_days": 14,
-      "window_low": 133.69,
+      "window_low": 105.0,
       "is_window_low": false,
       "floor_history": [
-        [
-          "2026-06-28",
-          133.84
-        ],
         [
           "2026-06-29",
           133.84
@@ -318,9 +407,57 @@
         [
           "2026-07-01",
           133.69
+        ],
+        [
+          "2026-07-08",
+          120.0
+        ],
+        [
+          "2026-07-09",
+          130.0
+        ],
+        [
+          "2026-07-10",
+          120.0
+        ],
+        [
+          "2026-07-13",
+          132.0
+        ],
+        [
+          "2026-07-14",
+          99.99
+        ],
+        [
+          "2026-07-18",
+          145.58
+        ],
+        [
+          "2026-07-19",
+          126.0
+        ],
+        [
+          "2026-07-24",
+          137.5
+        ],
+        [
+          "2026-07-26",
+          115.0
+        ],
+        [
+          "2026-07-27",
+          105.0
+        ],
+        [
+          "2026-07-29",
+          130.0
+        ],
+        [
+          "2026-08-07",
+          137.5
         ]
       ],
-      "under_cap": 1,
+      "under_cap": 3,
       "best_bin": null,
       "best_auction": null,
       "listings": []
@@ -330,18 +467,51 @@
       "query": "pokemon center black bolt elite trainer box",
       "tcg_product": 630687,
       "notify": true,
-      "max_price": 247,
+      "max_price": 241,
       "min_price": 100,
-      "market_price": 297,
-      "floor": 148,
+      "market_price": 290,
+      "floor": 145,
       "cap_after_shipping": true,
       "cap_is_dynamic": true,
       "cap_pct": 0.83,
       "floor_today": null,
       "best_window_days": 14,
-      "window_low": null,
+      "window_low": 205.68,
       "is_window_low": false,
-      "floor_history": [],
+      "floor_history": [
+        [
+          "2026-07-16",
+          181.35
+        ],
+        [
+          "2026-07-25",
+          226.53
+        ],
+        [
+          "2026-07-26",
+          226.53
+        ],
+        [
+          "2026-07-27",
+          223.33
+        ],
+        [
+          "2026-07-28",
+          205.68
+        ],
+        [
+          "2026-07-29",
+          225.91
+        ],
+        [
+          "2026-07-30",
+          225.91
+        ],
+        [
+          "2026-07-31",
+          227.29
+        ]
+      ],
       "under_cap": 0,
       "best_bin": null,
       "best_auction": null,
@@ -352,26 +522,18 @@
       "query": "pokemon black bolt booster bundle",
       "tcg_product": 630431,
       "notify": true,
-      "max_price": 68,
+      "max_price": 75,
       "min_price": 30,
-      "market_price": 85,
-      "floor": 42,
+      "market_price": 94,
+      "floor": 47,
       "cap_after_shipping": true,
       "cap_is_dynamic": true,
       "cap_pct": 0.8025,
       "floor_today": null,
       "best_window_days": 14,
-      "window_low": 51.81,
+      "window_low": 65.0,
       "is_window_low": false,
       "floor_history": [
-        [
-          "2026-06-28",
-          51.81
-        ],
-        [
-          "2026-06-29",
-          51.81
-        ],
         [
           "2026-06-30",
           51.81
@@ -395,9 +557,41 @@
         [
           "2026-07-05",
           52.4
+        ],
+        [
+          "2026-07-15",
+          46.5
+        ],
+        [
+          "2026-07-16",
+          46.5
+        ],
+        [
+          "2026-07-18",
+          60.0
+        ],
+        [
+          "2026-07-20",
+          59.0
+        ],
+        [
+          "2026-07-23",
+          65.0
+        ],
+        [
+          "2026-07-28",
+          65.0
+        ],
+        [
+          "2026-07-30",
+          65.0
+        ],
+        [
+          "2026-08-07",
+          72.0
         ]
       ],
-      "under_cap": 12,
+      "under_cap": 11,
       "best_bin": null,
       "best_auction": null,
       "listings": []
@@ -407,149 +601,135 @@
       "query": "pokemon white flare booster bundle",
       "tcg_product": 630696,
       "notify": true,
-      "max_price": 69,
+      "max_price": 71,
       "min_price": 30,
-      "market_price": 81,
-      "floor": 40,
+      "market_price": 84,
+      "floor": 42,
       "cap_after_shipping": true,
       "cap_is_dynamic": true,
       "cap_pct": 0.85,
-      "floor_today": 55.0,
+      "floor_today": null,
       "best_window_days": 14,
-      "window_low": 55.0,
-      "is_window_low": true,
+      "window_low": 60.0,
+      "is_window_low": false,
       "floor_history": [
-        [
-          "2026-06-28",
-          55.0
-        ],
-        [
-          "2026-06-29",
-          55.0
-        ],
-        [
-          "2026-06-30",
-          55.0
-        ],
-        [
-          "2026-07-01",
-          55.0
-        ],
-        [
-          "2026-07-02",
-          55.0
-        ],
-        [
-          "2026-07-03",
-          55.0
-        ],
-        [
-          "2026-07-04",
-          55.0
-        ],
-        [
-          "2026-07-05",
-          55.0
-        ],
-        [
-          "2026-07-06",
-          55.0
-        ],
         [
           "2026-07-07",
           55.0
+        ],
+        [
+          "2026-07-08",
+          55.0
+        ],
+        [
+          "2026-07-09",
+          55.0
+        ],
+        [
+          "2026-07-10",
+          55.0
+        ],
+        [
+          "2026-07-11",
+          55.0
+        ],
+        [
+          "2026-07-12",
+          55.0
+        ],
+        [
+          "2026-07-13",
+          55.0
+        ],
+        [
+          "2026-07-14",
+          55.0
+        ],
+        [
+          "2026-07-15",
+          55.0
+        ],
+        [
+          "2026-07-17",
+          56.0
+        ],
+        [
+          "2026-07-19",
+          59.49
+        ],
+        [
+          "2026-07-22",
+          60.0
+        ],
+        [
+          "2026-07-28",
+          60.0
+        ],
+        [
+          "2026-08-07",
+          66.0
         ]
       ],
-      "under_cap": 24,
-      "best_bin": {
-        "price": 55.0,
-        "url": "https://www.ebay.com/itm/406878287258?_skw=pokemon+white+flare+booster+bundle&hash=item5ebbd5f59a:g:ayoAAeSwl6Zp5nX0",
-        "title": "Pok\u00e9mon White Flare Booster Bundle",
-        "end": null,
-        "ship": null,
-        "item_price": 55.0
-      },
+      "under_cap": 10,
+      "best_bin": null,
       "best_auction": null,
-      "listings": [
-        {
-          "price": 55.0,
-          "kind": "Buy It Now",
-          "url": "https://www.ebay.com/itm/406878287258?_skw=pokemon+white+flare+booster+bundle&hash=item5ebbd5f59a:g:ayoAAeSwl6Zp5nX0",
-          "title": "Pok\u00e9mon White Flare Booster Bundle",
-          "end": null,
-          "ship": null,
-          "item_price": 55.0
-        },
-        {
-          "price": 60.0,
-          "kind": "Buy It Now",
-          "url": "https://www.ebay.com/itm/158064789409?_skw=pokemon+white+flare+booster+bundle&hash=item24cd6547a1:g:z5EAAeSww~9qTY-u",
-          "title": "Pokemon TCG Scarlet & Violet White Flare Booster Bundle Factory Sealed",
-          "end": null,
-          "ship": null,
-          "item_price": 60.0
-        },
-        {
-          "price": 63.99,
-          "kind": "Buy It Now",
-          "url": "https://www.ebay.com/itm/366509576766?_skw=pokemon+white+flare+booster+bundle&hash=item5555ac523e:g:XfEAAeSwWW5qQZzD",
-          "title": "Pok\u00e9mon TCG Scarlet & Violet White Flare Booster Bundle Sealed- 6 Pack",
-          "end": null,
-          "ship": null,
-          "item_price": 63.99
-        },
-        {
-          "price": 64.99,
-          "kind": "Buy It Now",
-          "url": "https://www.ebay.com/itm/188613230846?_skw=pokemon+white+flare+booster+bundle&hash=item2bea3980fe:g:RiIAAeSwze9qTVYx",
-          "title": "Pokemon TCG Scarlet & Violet White Flare Booster Bundle New Sealed",
-          "end": null,
-          "ship": null,
-          "item_price": 64.99
-        },
-        {
-          "price": 65.0,
-          "kind": "Buy It Now",
-          "url": "https://www.ebay.com/itm/336503801011?_skw=pokemon+white+flare+booster+bundle&hash=item4e593084b3:g:DzkAAeSwxfNpxpVB",
-          "title": "Pok\u00e9mon Scarlet & Violet White Flare Booster Bundle Box 2025 English",
-          "end": null,
-          "ship": null,
-          "item_price": 65.0
-        },
-        {
-          "price": 65.0,
-          "kind": "Buy It Now",
-          "url": "https://www.ebay.com/itm/227421364085?_skw=pokemon+white+flare+booster+bundle&hash=item34f35e9f75:g:R3EAAeSw9PpqTVNV",
-          "title": "Pok\u00e9mon White Flare TCG Booster Bundle Factory Sealed Brand  New",
-          "end": null,
-          "ship": null,
-          "item_price": 65.0
-        }
-      ]
+      "listings": []
     },
     {
       "label": "Ascended Heroes Booster Bundle",
       "query": "pokemon ascended heroes booster bundle",
       "tcg_product": 668541,
       "notify": true,
-      "max_price": 70,
+      "max_price": 69,
       "min_price": 35,
-      "market_price": 87,
-      "floor": 44,
+      "market_price": 85,
+      "floor": 42,
       "cap_after_shipping": true,
       "cap_is_dynamic": true,
       "cap_pct": 0.8065,
       "floor_today": null,
       "best_window_days": 14,
-      "window_low": 65.0,
+      "window_low": 52.99,
       "is_window_low": false,
       "floor_history": [
         [
           "2026-06-28",
           65.0
+        ],
+        [
+          "2026-07-13",
+          65.0
+        ],
+        [
+          "2026-07-14",
+          60.0
+        ],
+        [
+          "2026-07-19",
+          49.99
+        ],
+        [
+          "2026-07-23",
+          62.27
+        ],
+        [
+          "2026-07-24",
+          62.02
+        ],
+        [
+          "2026-08-03",
+          52.99
+        ],
+        [
+          "2026-08-04",
+          60.0
+        ],
+        [
+          "2026-08-07",
+          65.0
         ]
       ],
-      "under_cap": 9,
+      "under_cap": 28,
       "best_bin": null,
       "best_auction": null,
       "listings": []
@@ -559,63 +739,143 @@
       "query": "pokemon 30th celebration elite trainer box",
       "tcg_product": 704143,
       "notify": false,
-      "max_price": 200,
+      "max_price": 143,
       "min_price": 100,
-      "market_price": 269,
-      "floor": 134,
+      "market_price": 193,
+      "floor": 100,
       "cap_after_shipping": true,
       "cap_is_dynamic": true,
       "cap_pct": 0.7435,
-      "floor_today": 200.0,
+      "floor_today": null,
       "best_window_days": 14,
-      "window_low": 200.0,
+      "window_low": null,
       "is_window_low": false,
       "floor_history": [
         [
           "2026-07-07",
           200.0
+        ],
+        [
+          "2026-07-08",
+          200.0
+        ],
+        [
+          "2026-07-10",
+          149.99
+        ],
+        [
+          "2026-07-11",
+          155.57
+        ],
+        [
+          "2026-07-12",
+          127.32
+        ],
+        [
+          "2026-07-13",
+          127.32
+        ],
+        [
+          "2026-07-14",
+          140.0
+        ],
+        [
+          "2026-07-15",
+          127.19
+        ],
+        [
+          "2026-07-16",
+          128.62
+        ],
+        [
+          "2026-07-17",
+          128.03
+        ],
+        [
+          "2026-07-18",
+          141.23
+        ],
+        [
+          "2026-07-19",
+          127.78
+        ],
+        [
+          "2026-07-20",
+          147.96
         ]
       ],
-      "under_cap": 1,
-      "best_bin": {
-        "price": 200.0,
-        "url": "https://www.ebay.com/itm/137492277609?_skw=pokemon+30th+celebration+elite+trainer+box&hash=item20032da969:g:28gAAeSwIxRqTTVV",
-        "title": "Pok\u00e9mon 30th Anniversary Celebrations Elite Trainer Box ETB CONFIRMED PRSALE",
-        "end": null,
-        "ship": 0.0,
-        "item_price": 200.0
-      },
+      "under_cap": 0,
+      "best_bin": null,
       "best_auction": null,
-      "listings": [
-        {
-          "price": 200.0,
-          "kind": "Buy It Now",
-          "url": "https://www.ebay.com/itm/137492277609?_skw=pokemon+30th+celebration+elite+trainer+box&hash=item20032da969:g:28gAAeSwIxRqTTVV",
-          "title": "Pok\u00e9mon 30th Anniversary Celebrations Elite Trainer Box ETB CONFIRMED ",
-          "end": null,
-          "ship": 0.0,
-          "item_price": 200.0
-        }
-      ]
+      "listings": []
     },
     {
       "label": "30th Celebration UPC (Day/Night)",
       "query": "pokemon 30th celebration ultra premium collection",
       "tcg_product": 704191,
       "notify": false,
-      "max_price": 700,
+      "max_price": 388,
       "min_price": 300,
-      "market_price": 966,
-      "floor": 483,
+      "market_price": 535,
+      "floor": 300,
       "cap_after_shipping": true,
       "cap_is_dynamic": true,
       "cap_pct": 0.7246,
       "floor_today": null,
       "best_window_days": 14,
-      "window_low": null,
+      "window_low": 499.99,
       "is_window_low": false,
-      "floor_history": [],
-      "under_cap": 0,
+      "floor_history": [
+        [
+          "2026-07-07",
+          604.5
+        ],
+        [
+          "2026-07-08",
+          659.5
+        ],
+        [
+          "2026-07-23",
+          500.0
+        ],
+        [
+          "2026-07-24",
+          500.0
+        ],
+        [
+          "2026-07-25",
+          500.0
+        ],
+        [
+          "2026-07-26",
+          499.99
+        ],
+        [
+          "2026-07-27",
+          499.99
+        ],
+        [
+          "2026-07-30",
+          499.99
+        ],
+        [
+          "2026-07-31",
+          499.99
+        ],
+        [
+          "2026-08-01",
+          499.99
+        ],
+        [
+          "2026-08-02",
+          499.99
+        ],
+        [
+          "2026-08-03",
+          499.99
+        ]
+      ],
+      "under_cap": 1,
       "best_bin": null,
       "best_auction": null,
       "listings": []
