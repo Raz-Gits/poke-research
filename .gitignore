@@ -14,3 +14,9 @@ data/_trends_fetch.log
 # formula-eval scratch runners (keep the reusable harness experiments/eval_formula.py)
 experiments/_run_*.py
 experiments/_paired_diff_check.py
+.env.*
+!.env.example
+!*.env.sops
+!.env.*.sops
+node_modules/
+*.bak-devsync

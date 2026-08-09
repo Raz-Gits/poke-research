@@ -1,0 +1,10 @@
+
+# --- devsync: keep checkouts identical on macOS and Windows ---
+* text=auto eol=lf
+*.env.sops -text
+*.sops -text
+*.png binary
+*.jpg binary
+*.pdf binary
+*.sh text eol=lf
+*.bat text eol=crlf
