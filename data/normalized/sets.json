@@ -28,6 +28,20 @@
   "etb_price": 155.0
  },
  {
+  "set_id": "sv8",
+  "name": "Surging Sparks",
+  "series": "Scarlet & Violet",
+  "release_date": "2024-11-08",
+  "printed_total": 191,
+  "total": 252,
+  "logo": "https://images.pokemontcg.io/sv8/logo.png",
+  "symbol": "https://images.pokemontcg.io/sv8/symbol.png",
+  "pack_price": 7.0,
+  "retail_pack_price": 4.49,
+  "packs_per_etb": 9,
+  "etb_price": 120.0
+ },
+ {
   "set_id": "sv4pt5",
   "name": "Paldean Fates",
   "series": "Scarlet & Violet",
@@ -96,34 +110,6 @@
   "retail_pack_price": 4.49,
   "packs_per_etb": 9,
   "etb_price": 130.0
- },
- {
-  "set_id": "sv9",
-  "name": "Journey Together",
-  "series": "Scarlet & Violet",
-  "release_date": "2025-03-28",
-  "printed_total": 159,
-  "total": 190,
-  "logo": "https://images.pokemontcg.io/sv9/logo.png",
-  "symbol": "https://images.pokemontcg.io/sv9/symbol.png",
-  "pack_price": 6.81,
-  "retail_pack_price": 4.49,
-  "packs_per_etb": 9,
-  "etb_price": 131.08
- },
- {
-  "set_id": "sv10",
-  "name": "Destined Rivals",
-  "series": "Scarlet & Violet",
-  "release_date": "2025-05-30",
-  "printed_total": 182,
-  "total": 244,
-  "logo": "https://images.pokemontcg.io/sv10/logo.png",
-  "symbol": "https://images.pokemontcg.io/sv10/symbol.png",
-  "pack_price": 10.62,
-  "retail_pack_price": 4.49,
-  "packs_per_etb": 9,
-  "etb_price": 208.13
  },
  {
   "set_id": "zsv10pt5",
@@ -196,17 +182,31 @@
   "etb_price": 92.0
  },
  {
-  "set_id": "sv8",
-  "name": "Surging Sparks",
+  "set_id": "sv9",
+  "name": "Journey Together",
   "series": "Scarlet & Violet",
-  "release_date": "2024-11-08",
-  "printed_total": 191,
-  "total": 252,
-  "logo": "https://images.pokemontcg.io/sv8/logo.png",
-  "symbol": "https://images.pokemontcg.io/sv8/symbol.png",
-  "pack_price": 7.0,
+  "release_date": "2025-03-28",
+  "printed_total": 159,
+  "total": 190,
+  "logo": "https://images.pokemontcg.io/sv9/logo.png",
+  "symbol": "https://images.pokemontcg.io/sv9/symbol.png",
+  "pack_price": 6.81,
   "retail_pack_price": 4.49,
   "packs_per_etb": 9,
-  "etb_price": 120.0
+  "etb_price": 131.08
+ },
+ {
+  "set_id": "sv10",
+  "name": "Destined Rivals",
+  "series": "Scarlet & Violet",
+  "release_date": "2025-05-30",
+  "printed_total": 182,
+  "total": 244,
+  "logo": "https://images.pokemontcg.io/sv10/logo.png",
+  "symbol": "https://images.pokemontcg.io/sv10/symbol.png",
+  "pack_price": 10.62,
+  "retail_pack_price": 4.49,
+  "packs_per_etb": 9,
+  "etb_price": 208.13
  }
 ]
