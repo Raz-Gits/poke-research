@@ -1,5 +1,19 @@
 [
  {
+  "set_id": "sv3pt5",
+  "name": "151",
+  "series": "Scarlet & Violet",
+  "release_date": "2023-09-22",
+  "printed_total": 165,
+  "total": 207,
+  "logo": "https://images.pokemontcg.io/sv3pt5/logo.png",
+  "symbol": "https://images.pokemontcg.io/sv3pt5/symbol.png",
+  "pack_price": 12.0,
+  "retail_pack_price": 4.49,
+  "packs_per_etb": 9,
+  "etb_price": 135.0
+ },
+ {
   "set_id": "sv8pt5",
   "name": "Prismatic Evolutions",
   "series": "Scarlet & Violet",
@@ -40,34 +54,6 @@
   "retail_pack_price": 4.49,
   "packs_per_etb": 9,
   "etb_price": 110.0
- },
- {
-  "set_id": "sv6pt5",
-  "name": "Shrouded Fable",
-  "series": "Scarlet & Violet",
-  "release_date": "2024-08-02",
-  "printed_total": 64,
-  "total": 99,
-  "logo": "https://images.pokemontcg.io/sv6pt5/logo.png",
-  "symbol": "https://images.pokemontcg.io/sv6pt5/symbol.png",
-  "pack_price": 10.0,
-  "retail_pack_price": 4.49,
-  "packs_per_etb": 9,
-  "etb_price": 110.0
- },
- {
-  "set_id": "sv7",
-  "name": "Stellar Crown",
-  "series": "Scarlet & Violet",
-  "release_date": "2024-09-13",
-  "printed_total": 142,
-  "total": 175,
-  "logo": "https://images.pokemontcg.io/sv7/logo.png",
-  "symbol": "https://images.pokemontcg.io/sv7/symbol.png",
-  "pack_price": 6.0,
-  "retail_pack_price": 4.49,
-  "packs_per_etb": 9,
-  "etb_price": 130.0
  },
  {
   "set_id": "sv6",
@@ -126,20 +112,6 @@
   "etb_price": 208.13
  },
  {
-  "set_id": "zsv10pt5",
-  "name": "Black Bolt",
-  "series": "Scarlet & Violet",
-  "release_date": "2025-07-18",
-  "printed_total": 86,
-  "total": 172,
-  "logo": "https://images.pokemontcg.io/zsv10pt5/logo.png",
-  "symbol": "https://images.pokemontcg.io/zsv10pt5/symbol.png",
-  "pack_price": 13.58,
-  "retail_pack_price": 4.49,
-  "packs_per_etb": 9,
-  "etb_price": 172.27
- },
- {
   "set_id": "me1",
   "name": "Mega Evolution",
   "series": "Mega Evolution",
@@ -196,17 +168,45 @@
   "etb_price": 92.0
  },
  {
-  "set_id": "sv3pt5",
-  "name": "151",
+  "set_id": "sv6pt5",
+  "name": "Shrouded Fable",
   "series": "Scarlet & Violet",
-  "release_date": "2023-09-22",
-  "printed_total": 165,
-  "total": 207,
-  "logo": "https://images.pokemontcg.io/sv3pt5/logo.png",
-  "symbol": "https://images.pokemontcg.io/sv3pt5/symbol.png",
-  "pack_price": 12.0,
+  "release_date": "2024-08-02",
+  "printed_total": 64,
+  "total": 99,
+  "logo": "https://images.pokemontcg.io/sv6pt5/logo.png",
+  "symbol": "https://images.pokemontcg.io/sv6pt5/symbol.png",
+  "pack_price": 10.0,
   "retail_pack_price": 4.49,
   "packs_per_etb": 9,
-  "etb_price": 135.0
+  "etb_price": 110.0
+ },
+ {
+  "set_id": "sv7",
+  "name": "Stellar Crown",
+  "series": "Scarlet & Violet",
+  "release_date": "2024-09-13",
+  "printed_total": 142,
+  "total": 175,
+  "logo": "https://images.pokemontcg.io/sv7/logo.png",
+  "symbol": "https://images.pokemontcg.io/sv7/symbol.png",
+  "pack_price": 6.0,
+  "retail_pack_price": 4.49,
+  "packs_per_etb": 9,
+  "etb_price": 130.0
+ },
+ {
+  "set_id": "zsv10pt5",
+  "name": "Black Bolt",
+  "series": "Scarlet & Violet",
+  "release_date": "2025-07-18",
+  "printed_total": 86,
+  "total": 172,
+  "logo": "https://images.pokemontcg.io/zsv10pt5/logo.png",
+  "symbol": "https://images.pokemontcg.io/zsv10pt5/symbol.png",
+  "pack_price": 13.58,
+  "retail_pack_price": 4.49,
+  "packs_per_etb": 9,
+  "etb_price": 172.27
  }
 ]
