@@ -1,33 +1,5 @@
 [
  {
-  "set_id": "sv3pt5",
-  "name": "151",
-  "series": "Scarlet & Violet",
-  "release_date": "2023-09-22",
-  "printed_total": 165,
-  "total": 207,
-  "logo": "https://images.pokemontcg.io/sv3pt5/logo.png",
-  "symbol": "https://images.pokemontcg.io/sv3pt5/symbol.png",
-  "pack_price": 12.0,
-  "retail_pack_price": 4.49,
-  "packs_per_etb": 9,
-  "etb_price": 135.0
- },
- {
-  "set_id": "sv8pt5",
-  "name": "Prismatic Evolutions",
-  "series": "Scarlet & Violet",
-  "release_date": "2025-01-17",
-  "printed_total": 131,
-  "total": 180,
-  "logo": "https://images.pokemontcg.io/sv8pt5/logo.png",
-  "symbol": "https://images.pokemontcg.io/sv8pt5/symbol.png",
-  "pack_price": 18.0,
-  "retail_pack_price": 4.99,
-  "packs_per_etb": 9,
-  "etb_price": 155.0
- },
- {
   "set_id": "sv8",
   "name": "Surging Sparks",
   "series": "Scarlet & Violet",
@@ -168,18 +140,18 @@
   "etb_price": 120.19
  },
  {
-  "set_id": "me2pt5",
-  "name": "Ascended Heroes",
+  "set_id": "me3",
+  "name": "Perfect Order",
   "series": "Mega Evolution",
-  "release_date": "2026-01-30",
-  "printed_total": 217,
-  "total": 295,
-  "logo": "https://images.scrydex.com/pokemon/me2pt5-logo/logo",
-  "symbol": "https://images.scrydex.com/pokemon/me2pt5-symbol/symbol",
-  "pack_price": 13.58,
+  "release_date": "2026-03-27",
+  "printed_total": 88,
+  "total": 124,
+  "logo": "https://images.scrydex.com/pokemon/me3-logo/logo",
+  "symbol": "https://images.scrydex.com/pokemon/me3-symbol/symbol",
+  "pack_price": 6.0,
   "retail_pack_price": 4.99,
   "packs_per_etb": 9,
-  "etb_price": 181.75
+  "etb_price": 90.0
  },
  {
   "set_id": "me4",
@@ -196,17 +168,45 @@
   "etb_price": 92.0
  },
  {
-  "set_id": "me3",
-  "name": "Perfect Order",
-  "series": "Mega Evolution",
-  "release_date": "2026-03-27",
-  "printed_total": 88,
-  "total": 124,
-  "logo": "https://images.scrydex.com/pokemon/me3-logo/logo",
-  "symbol": "https://images.scrydex.com/pokemon/me3-symbol/symbol",
-  "pack_price": 6.0,
+  "set_id": "sv3pt5",
+  "name": "151",
+  "series": "Scarlet & Violet",
+  "release_date": "2023-09-22",
+  "printed_total": 165,
+  "total": 207,
+  "logo": "https://images.pokemontcg.io/sv3pt5/logo.png",
+  "symbol": "https://images.pokemontcg.io/sv3pt5/symbol.png",
+  "pack_price": 12.0,
+  "retail_pack_price": 4.49,
+  "packs_per_etb": 9,
+  "etb_price": 135.0
+ },
+ {
+  "set_id": "sv8pt5",
+  "name": "Prismatic Evolutions",
+  "series": "Scarlet & Violet",
+  "release_date": "2025-01-17",
+  "printed_total": 131,
+  "total": 180,
+  "logo": "https://images.pokemontcg.io/sv8pt5/logo.png",
+  "symbol": "https://images.pokemontcg.io/sv8pt5/symbol.png",
+  "pack_price": 18.0,
   "retail_pack_price": 4.99,
   "packs_per_etb": 9,
-  "etb_price": 90.0
+  "etb_price": 155.0
+ },
+ {
+  "set_id": "me2pt5",
+  "name": "Ascended Heroes",
+  "series": "Mega Evolution",
+  "release_date": "2026-01-30",
+  "printed_total": 217,
+  "total": 295,
+  "logo": "https://images.scrydex.com/pokemon/me2pt5-logo/logo",
+  "symbol": "https://images.scrydex.com/pokemon/me2pt5-symbol/symbol",
+  "pack_price": 13.58,
+  "retail_pack_price": 4.99,
+  "packs_per_etb": 9,
+  "etb_price": 181.75
  }
 ]
