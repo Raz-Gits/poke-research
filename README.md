@@ -34,6 +34,14 @@ is exactly the demand/hype the stubbed feeds would capture.
 - eBay market dynamics, PSA pop, Google Trends → **stubs** with documented real-API paths.
   `collectors/ebay.py` seeds a daily snapshot so price/volume history accumulates from day one.
 
+## A note on the eBay data
+
+The daily snapshots in `data/snapshots/` hold per-card aggregates: active listing
+counts, flow, and average price. The raw eBay item IDs behind those aggregates are
+deliberately **not** committed. They live in the GitHub Actions cache for exactly one
+day, which is all `collectors.ebay.diff_snapshots` needs to compute new and ended
+listings exactly. See `scripts/ebay_ids_sidecar.py`.
+
 ## Run it locally
 
 ```bash

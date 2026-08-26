@@ -39,6 +39,18 @@ jobs:
         continue-on-error: true
         run: python -m pipeline.fetch
 
+      - name: Restore yesterday's eBay item IDs (kept out of git)
+        uses: actions/cache@v4
+        with:
+          path: .ebay_ids_cache
+          key: ebay-ids-${{ github.run_id }}
+          restore-keys: |
+            ebay-ids-
+
+      - name: Inject cached IDs into the newest snapshot so the diff stays exact
+        continue-on-error: true
+        run: python scripts/ebay_ids_sidecar.py restore
+
       - name: Build — collect eBay snapshot (valuable-first) + recompute everything
         env:
           EBAY_APP_ID: ${{ secrets.EBAY_APP_ID }}
@@ -48,6 +60,13 @@ jobs:
       - name: Append today's TCGplayer sealed-price point (Watchlists trend)
         continue-on-error: true   # optional trend feed must never block the core refresh
         run: python -m collectors.sealed_history
+
+      - name: Move eBay item IDs out of the snapshots before committing
+        # This repository is public. The aggregates belong in git; the raw eBay
+        # listing IDs do not. Worst case on failure is that tomorrow's diff uses
+        # the NET fallback collectors/ebay.py already implements.
+        continue-on-error: true
+        run: python scripts/ebay_ids_sidecar.py stash
 
       - name: Commit & push refreshed data (triggers Netlify)
         run: |

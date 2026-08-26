@@ -20,3 +20,6 @@ experiments/_paired_diff_check.py
 !.env.*.sops
 node_modules/
 *.bak-devsync
+
+# eBay item IDs live in the Actions cache, never in git (public repo).
+.ebay_ids_cache/
