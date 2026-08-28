@@ -168,6 +168,20 @@
   "etb_price": 120.19
  },
  {
+  "set_id": "me2pt5",
+  "name": "Ascended Heroes",
+  "series": "Mega Evolution",
+  "release_date": "2026-01-30",
+  "printed_total": 217,
+  "total": 295,
+  "logo": "https://images.scrydex.com/pokemon/me2pt5-logo/logo",
+  "symbol": "https://images.scrydex.com/pokemon/me2pt5-symbol/symbol",
+  "pack_price": 13.58,
+  "retail_pack_price": 4.99,
+  "packs_per_etb": 9,
+  "etb_price": 181.75
+ },
+ {
   "set_id": "me3",
   "name": "Perfect Order",
   "series": "Mega Evolution",
@@ -194,19 +208,5 @@
   "retail_pack_price": 4.99,
   "packs_per_etb": 9,
   "etb_price": 92.0
- },
- {
-  "set_id": "me2pt5",
-  "name": "Ascended Heroes",
-  "series": "Mega Evolution",
-  "release_date": "2026-01-30",
-  "printed_total": 217,
-  "total": 295,
-  "logo": "https://images.scrydex.com/pokemon/me2pt5-logo/logo",
-  "symbol": "https://images.scrydex.com/pokemon/me2pt5-symbol/symbol",
-  "pack_price": 13.58,
-  "retail_pack_price": 4.99,
-  "packs_per_etb": 9,
-  "etb_price": 181.75
  }
 ]
