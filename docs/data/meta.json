@@ -1,11 +1,11 @@
 {
-  "built_at": "2026-09-03T17:37:57",
-  "built_for_date": "2026-09-03",
+  "built_at": "2026-09-04T17:31:20",
+  "built_for_date": "2026-09-04",
   "sets": 15,
   "cards": 2937,
   "priced": 2936,
   "clusters": 16,
-  "model_r2_log": 0.904131,
+  "model_r2_log": 0.904208,
   "predictions_logged": 2936,
   "sources": {
     "cards": "pokemontcg.io (cached, normalized)",
