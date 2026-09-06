@@ -1,12 +1,12 @@
 {
-  "updated": "2026-09-05",
+  "updated": "2026-09-06",
   "products": {
     "668496": {
       "label": "Ascended Heroes ETB",
       "group": 24541,
-      "latest": 167.61,
-      "trend_30d": -0.0427,
-      "trend_90d": -0.0672,
+      "latest": 166.82,
+      "trend_30d": -0.0424,
+      "trend_90d": -0.0716,
       "series": [
         {
           "date": "2025-12-18",
@@ -395,15 +395,19 @@
         {
           "date": "2026-09-05",
           "market": 167.61
+        },
+        {
+          "date": "2026-09-06",
+          "market": 166.82
         }
       ]
     },
     "668497": {
       "label": "Pokémon Center Ascended Heroes ETB",
       "group": 24541,
-      "latest": 400.16,
-      "trend_30d": -0.0429,
-      "trend_90d": -0.2317,
+      "latest": 395.5,
+      "trend_30d": -0.0007,
+      "trend_90d": -0.2406,
       "series": [
         {
           "date": "2025-12-25",
@@ -788,14 +792,18 @@
         {
           "date": "2026-09-05",
           "market": 400.16
+        },
+        {
+          "date": "2026-09-06",
+          "market": 395.5
         }
       ]
     },
     "668541": {
       "label": "Ascended Heroes Booster Bundle",
       "group": 24541,
-      "latest": 88.68,
-      "trend_30d": 0.0451,
+      "latest": 88.66,
+      "trend_30d": 0.0301,
       "trend_90d": null,
       "series": [
         {
@@ -1037,15 +1045,19 @@
         {
           "date": "2026-09-05",
           "market": 88.68
+        },
+        {
+          "date": "2026-09-06",
+          "market": 88.66
         }
       ]
     },
     "593355": {
       "label": "Prismatic Evolutions ETB",
       "group": 23821,
-      "latest": 150.71,
-      "trend_30d": -0.0766,
-      "trend_90d": -0.0343,
+      "latest": 150.54,
+      "trend_30d": -0.0646,
+      "trend_90d": -0.0354,
       "series": [
         {
           "date": "2024-11-07",
@@ -1666,15 +1678,19 @@
         {
           "date": "2026-09-05",
           "market": 150.71
+        },
+        {
+          "date": "2026-09-06",
+          "market": 150.54
         }
       ]
     },
     "593324": {
       "label": "Pokémon Center Prismatic Evolutions ETB",
       "group": 23821,
-      "latest": 430.9,
-      "trend_30d": -0.0962,
-      "trend_90d": -0.1561,
+      "latest": 427.7,
+      "trend_30d": -0.1009,
+      "trend_90d": -0.1623,
       "series": [
         {
           "date": "2024-11-14",
@@ -2291,15 +2307,19 @@
         {
           "date": "2026-09-05",
           "market": 430.9
+        },
+        {
+          "date": "2026-09-06",
+          "market": 427.7
         }
       ]
     },
     "630689": {
       "label": "White Flare ETB",
       "group": 24326,
-      "latest": 153.72,
-      "trend_30d": -0.0145,
-      "trend_90d": 0.1833,
+      "latest": 153.84,
+      "trend_30d": -0.0062,
+      "trend_90d": 0.1842,
       "series": [
         {
           "date": "2025-05-15",
@@ -2812,6 +2832,10 @@
         {
           "date": "2026-09-05",
           "market": 153.72
+        },
+        {
+          "date": "2026-09-06",
+          "market": 153.84
         }
       ]
     },
@@ -2819,7 +2843,7 @@
       "label": "Pokémon Center White Flare ETB",
       "group": 24326,
       "latest": 237.98,
-      "trend_30d": -0.1051,
+      "trend_30d": -0.0987,
       "trend_90d": -0.0607,
       "series": [
         {
@@ -3325,14 +3349,18 @@
         {
           "date": "2026-09-05",
           "market": 237.98
+        },
+        {
+          "date": "2026-09-06",
+          "market": 237.98
         }
       ]
     },
     "630696": {
       "label": "White Flare Booster Bundle",
       "group": 24326,
-      "latest": 85.93,
-      "trend_30d": 0.059,
+      "latest": 86.06,
+      "trend_30d": 0.0666,
       "trend_90d": null,
       "series": [
         {
@@ -3574,14 +3602,18 @@
         {
           "date": "2026-09-05",
           "market": 85.93
+        },
+        {
+          "date": "2026-09-06",
+          "market": 86.06
         }
       ]
     },
     "630686": {
       "label": "Black Bolt ETB",
       "group": 24325,
-      "latest": 167.61,
-      "trend_30d": -0.0482,
+      "latest": 167.78,
+      "trend_30d": -0.0467,
       "trend_90d": null,
       "series": [
         {
@@ -3823,6 +3855,10 @@
         {
           "date": "2026-09-05",
           "market": 167.61
+        },
+        {
+          "date": "2026-09-06",
+          "market": 167.78
         }
       ]
     },
@@ -3830,7 +3866,7 @@
       "label": "Pokémon Center Black Bolt ETB",
       "group": 24325,
       "latest": 274.66,
-      "trend_30d": -0.0607,
+      "trend_30d": -0.0565,
       "trend_90d": null,
       "series": [
         {
@@ -4072,14 +4108,18 @@
         {
           "date": "2026-09-05",
           "market": 274.66
+        },
+        {
+          "date": "2026-09-06",
+          "market": 274.66
         }
       ]
     },
     "630431": {
       "label": "Black Bolt Booster Bundle",
       "group": 24325,
-      "latest": 98.86,
-      "trend_30d": 0.0228,
+      "latest": 99.33,
+      "trend_30d": 0.0538,
       "trend_90d": null,
       "series": [
         {
@@ -4321,14 +4361,18 @@
         {
           "date": "2026-09-05",
           "market": 98.86
+        },
+        {
+          "date": "2026-09-06",
+          "market": 99.33
         }
       ]
     },
     "704143": {
       "label": "30th Celebration ETB",
       "group": 24722,
-      "latest": 186.19,
-      "trend_30d": -0.0361,
+      "latest": 185.07,
+      "trend_30d": -0.047,
       "trend_90d": null,
       "series": [
         {
@@ -4570,14 +4614,18 @@
         {
           "date": "2026-09-05",
           "market": 186.19
+        },
+        {
+          "date": "2026-09-06",
+          "market": 185.07
         }
       ]
     },
     "704190": {
       "label": "30th Celebration UPC [Day]",
       "group": 24722,
-      "latest": 616.75,
-      "trend_30d": 0.0345,
+      "latest": 616.12,
+      "trend_30d": 0.1268,
       "trend_90d": null,
       "series": [
         {
@@ -4819,14 +4867,18 @@
         {
           "date": "2026-09-05",
           "market": 616.75
+        },
+        {
+          "date": "2026-09-06",
+          "market": 616.12
         }
       ]
     },
     "704191": {
       "label": "30th Celebration UPC [Night]",
       "group": 24722,
-      "latest": 668.01,
-      "trend_30d": 0.0175,
+      "latest": 666.47,
+      "trend_30d": 0.1415,
       "trend_90d": null,
       "series": [
         {
@@ -5068,6 +5120,10 @@
         {
           "date": "2026-09-05",
           "market": 668.01
+        },
+        {
+          "date": "2026-09-06",
+          "market": 666.47
         }
       ]
     },
@@ -5075,7 +5131,7 @@
       "label": "151 ETB",
       "group": 23237,
       "latest": 565.05,
-      "trend_30d": -0.0625,
+      "trend_30d": -0.06,
       "trend_90d": -0.1096,
       "series": [
         {
@@ -5845,6 +5901,10 @@
         {
           "date": "2026-09-05",
           "market": 565.05
+        },
+        {
+          "date": "2026-09-06",
+          "market": 565.05
         }
       ]
     },
@@ -5852,7 +5912,7 @@
       "label": "Pokémon Center 151 ETB",
       "group": 23237,
       "latest": 1320.55,
-      "trend_30d": -0.0314,
+      "trend_30d": -0.0287,
       "trend_90d": -0.0303,
       "series": [
         {
@@ -6622,14 +6682,18 @@
         {
           "date": "2026-09-05",
           "market": 1320.55
+        },
+        {
+          "date": "2026-09-06",
+          "market": 1320.55
         }
       ]
     },
     "502000": {
       "label": "151 Booster Bundle",
       "group": 23237,
-      "latest": 176.96,
-      "trend_30d": -0.0603,
+      "latest": 176.29,
+      "trend_30d": -0.0512,
       "trend_90d": null,
       "series": [
         {
@@ -6871,15 +6935,19 @@
         {
           "date": "2026-09-05",
           "market": 176.96
+        },
+        {
+          "date": "2026-09-06",
+          "market": 176.29
         }
       ]
     },
     "565630": {
       "label": "Surging Sparks ETB",
       "group": 23651,
-      "latest": 123.12,
-      "trend_30d": 0.0245,
-      "trend_90d": -0.0295,
+      "latest": 121.22,
+      "trend_30d": 0.0175,
+      "trend_90d": -0.0445,
       "series": [
         {
           "date": "2024-09-05",
@@ -7528,6 +7596,10 @@
         {
           "date": "2026-09-05",
           "market": 123.12
+        },
+        {
+          "date": "2026-09-06",
+          "market": 121.22
         }
       ]
     },
@@ -8177,15 +8249,19 @@
         {
           "date": "2026-09-05",
           "market": 270.21
+        },
+        {
+          "date": "2026-09-06",
+          "market": 270.21
         }
       ]
     },
     "692949": {
       "label": "Pokémon Center Pitch Black ETB",
       "group": 24688,
-      "latest": 124.05,
-      "trend_30d": 0.058,
-      "trend_90d": -0.7975,
+      "latest": 123.74,
+      "trend_30d": -0.0051,
+      "trend_90d": -0.798,
       "series": [
         {
           "date": "2026-05-07",
@@ -8486,6 +8562,10 @@
         {
           "date": "2026-09-05",
           "market": 124.05
+        },
+        {
+          "date": "2026-09-06",
+          "market": 123.74
         }
       ]
     }
