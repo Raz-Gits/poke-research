@@ -141,42 +141,6 @@
     "raw_value_per_pack": 4.527885395598035
   },
   {
-    "set_id": "me2pt5",
-    "name": "Ascended Heroes",
-    "series": "Mega Evolution",
-    "release_date": "2026-01-30",
-    "printed_total": 217,
-    "total": 295,
-    "logo": "https://images.scrydex.com/pokemon/me2pt5-logo/logo",
-    "symbol": "https://images.scrydex.com/pokemon/me2pt5-symbol/symbol",
-    "pack_price": 13.58,
-    "retail_pack_price": 4.99,
-    "packs_per_etb": 9,
-    "etb_price": 181.75,
-    "sealed": {
-      "as_of": "2026-06-18",
-      "pack": {
-        "price": 13.58,
-        "change_24h": -21.46,
-        "sold_today": 23,
-        "listings": 15725
-      },
-      "etb": {
-        "price": 181.75,
-        "change_24h": 0.4,
-        "sold_today": 14,
-        "listings": 909
-      }
-    },
-    "ev_per_pack": 5.894424646822017,
-    "pack_signal_pct": -0.5659481114269501,
-    "ev_per_etb": 53.049821821398154,
-    "etb_signal_pct": -0.7081165236786897,
-    "signal_pct": -0.7081165236786897,
-    "avg_loss_per_pack": 7.685575353177983,
-    "raw_value_per_pack": 5.894424646822017
-  },
-  {
     "set_id": "sv8pt5",
     "name": "Prismatic Evolutions",
     "series": "Scarlet & Violet",
@@ -219,27 +183,6 @@
     "raw_value_per_pack": 3.4667030514625288
   },
   {
-    "set_id": "me3",
-    "name": "Perfect Order",
-    "series": "Mega Evolution",
-    "release_date": "2026-03-27",
-    "printed_total": 88,
-    "total": 124,
-    "logo": "https://images.scrydex.com/pokemon/me3-logo/logo",
-    "symbol": "https://images.scrydex.com/pokemon/me3-symbol/symbol",
-    "pack_price": 6.0,
-    "retail_pack_price": 4.99,
-    "packs_per_etb": 9,
-    "etb_price": 90.0,
-    "ev_per_pack": 2.2985814140404037,
-    "pack_signal_pct": -0.6169030976599327,
-    "ev_per_etb": 20.687232726363632,
-    "etb_signal_pct": -0.7701418585959596,
-    "signal_pct": -0.7701418585959596,
-    "avg_loss_per_pack": 3.7014185859595963,
-    "raw_value_per_pack": 2.2985814140404037
-  },
-  {
     "set_id": "me1",
     "name": "Mega Evolution",
     "series": "Mega Evolution",
@@ -276,27 +219,6 @@
     "raw_value_per_pack": 2.9997767539556963
   },
   {
-    "set_id": "me4",
-    "name": "Chaos Rising",
-    "series": "Mega Evolution",
-    "release_date": "2026-05-22",
-    "printed_total": 86,
-    "total": 122,
-    "logo": "https://images.scrydex.com/pokemon/me4-logo/logo",
-    "symbol": "https://images.scrydex.com/pokemon/me4-symbol/symbol",
-    "pack_price": 6.0,
-    "retail_pack_price": 4.99,
-    "packs_per_etb": 9,
-    "etb_price": 92.0,
-    "ev_per_pack": 2.1817148218983355,
-    "pack_signal_pct": -0.6363808630169441,
-    "ev_per_etb": 19.63543339708502,
-    "etb_signal_pct": -0.786571376118641,
-    "signal_pct": -0.786571376118641,
-    "avg_loss_per_pack": 3.8182851781016645,
-    "raw_value_per_pack": 2.1817148218983355
-  },
-  {
     "set_id": "sv8",
     "name": "Surging Sparks",
     "series": "Scarlet & Violet",
@@ -309,13 +231,13 @@
     "retail_pack_price": 4.49,
     "packs_per_etb": 9,
     "etb_price": 120.0,
-    "ev_per_pack": 2.7954341585210107,
-    "pack_signal_pct": -0.600652263068427,
-    "ev_per_etb": 25.158907426689098,
-    "etb_signal_pct": -0.7903424381109242,
-    "signal_pct": -0.7903424381109242,
-    "avg_loss_per_pack": 4.204565841478989,
-    "raw_value_per_pack": 2.7954341585210107
+    "ev_per_pack": 2.7964919992359762,
+    "pack_signal_pct": -0.6005011429662891,
+    "ev_per_etb": 25.168427993123785,
+    "etb_signal_pct": -0.7902631000573018,
+    "signal_pct": -0.7902631000573018,
+    "avg_loss_per_pack": 4.203508000764024,
+    "raw_value_per_pack": 2.7964919992359762
   },
   {
     "set_id": "sv9",
@@ -388,5 +310,83 @@
     "signal_pct": -0.8466644624106043,
     "avg_loss_per_pack": 7.074030506835452,
     "raw_value_per_pack": 3.545969493164547
+  },
+  {
+    "set_id": "me2pt5",
+    "name": "Ascended Heroes",
+    "series": "Mega Evolution",
+    "release_date": "2026-01-30",
+    "printed_total": 217,
+    "total": 295,
+    "logo": "https://images.scrydex.com/pokemon/me2pt5-logo/logo",
+    "symbol": "https://images.scrydex.com/pokemon/me2pt5-symbol/symbol",
+    "pack_price": 13.58,
+    "retail_pack_price": 4.99,
+    "packs_per_etb": 9,
+    "etb_price": 181.75,
+    "sealed": {
+      "as_of": "2026-06-18",
+      "pack": {
+        "price": 13.58,
+        "change_24h": -21.46,
+        "sold_today": 23,
+        "listings": 15725
+      },
+      "etb": {
+        "price": 181.75,
+        "change_24h": 0.4,
+        "sold_today": 14,
+        "listings": 909
+      }
+    },
+    "ev_per_pack": 0.0,
+    "pack_signal_pct": -1.0,
+    "ev_per_etb": 0.0,
+    "etb_signal_pct": -1.0,
+    "signal_pct": -1.0,
+    "avg_loss_per_pack": 13.58,
+    "raw_value_per_pack": 0.0
+  },
+  {
+    "set_id": "me3",
+    "name": "Perfect Order",
+    "series": "Mega Evolution",
+    "release_date": "2026-03-27",
+    "printed_total": 88,
+    "total": 124,
+    "logo": "https://images.scrydex.com/pokemon/me3-logo/logo",
+    "symbol": "https://images.scrydex.com/pokemon/me3-symbol/symbol",
+    "pack_price": 6.0,
+    "retail_pack_price": 4.99,
+    "packs_per_etb": 9,
+    "etb_price": 90.0,
+    "ev_per_pack": 0.0,
+    "pack_signal_pct": -1.0,
+    "ev_per_etb": 0.0,
+    "etb_signal_pct": -1.0,
+    "signal_pct": -1.0,
+    "avg_loss_per_pack": 6.0,
+    "raw_value_per_pack": 0.0
+  },
+  {
+    "set_id": "me4",
+    "name": "Chaos Rising",
+    "series": "Mega Evolution",
+    "release_date": "2026-05-22",
+    "printed_total": 86,
+    "total": 122,
+    "logo": "https://images.scrydex.com/pokemon/me4-logo/logo",
+    "symbol": "https://images.scrydex.com/pokemon/me4-symbol/symbol",
+    "pack_price": 6.0,
+    "retail_pack_price": 4.99,
+    "packs_per_etb": 9,
+    "etb_price": 92.0,
+    "ev_per_pack": 0.0,
+    "pack_signal_pct": -1.0,
+    "ev_per_etb": 0.0,
+    "etb_signal_pct": -1.0,
+    "signal_pct": -1.0,
+    "avg_loss_per_pack": 6.0,
+    "raw_value_per_pack": 0.0
   }
 ]

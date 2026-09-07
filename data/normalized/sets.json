@@ -28,6 +28,20 @@
   "etb_price": 155.0
  },
  {
+  "set_id": "sv8",
+  "name": "Surging Sparks",
+  "series": "Scarlet & Violet",
+  "release_date": "2024-11-08",
+  "printed_total": 191,
+  "total": 252,
+  "logo": "https://images.pokemontcg.io/sv8/logo.png",
+  "symbol": "https://images.pokemontcg.io/sv8/symbol.png",
+  "pack_price": 7.0,
+  "retail_pack_price": 4.49,
+  "packs_per_etb": 9,
+  "etb_price": 120.0
+ },
+ {
   "set_id": "sv4pt5",
   "name": "Paldean Fates",
   "series": "Scarlet & Violet",
@@ -54,20 +68,6 @@
   "retail_pack_price": 4.49,
   "packs_per_etb": 9,
   "etb_price": 110.0
- },
- {
-  "set_id": "sv7",
-  "name": "Stellar Crown",
-  "series": "Scarlet & Violet",
-  "release_date": "2024-09-13",
-  "printed_total": 142,
-  "total": 175,
-  "logo": "https://images.pokemontcg.io/sv7/logo.png",
-  "symbol": "https://images.pokemontcg.io/sv7/symbol.png",
-  "pack_price": 6.0,
-  "retail_pack_price": 4.49,
-  "packs_per_etb": 9,
-  "etb_price": 130.0
  },
  {
   "set_id": "sv6",
@@ -196,17 +196,17 @@
   "etb_price": 92.0
  },
  {
-  "set_id": "sv8",
-  "name": "Surging Sparks",
+  "set_id": "sv7",
+  "name": "Stellar Crown",
   "series": "Scarlet & Violet",
-  "release_date": "2024-11-08",
-  "printed_total": 191,
-  "total": 252,
-  "logo": "https://images.pokemontcg.io/sv8/logo.png",
-  "symbol": "https://images.pokemontcg.io/sv8/symbol.png",
-  "pack_price": 7.0,
+  "release_date": "2024-09-13",
+  "printed_total": 142,
+  "total": 175,
+  "logo": "https://images.pokemontcg.io/sv7/logo.png",
+  "symbol": "https://images.pokemontcg.io/sv7/symbol.png",
+  "pack_price": 6.0,
   "retail_pack_price": 4.49,
   "packs_per_etb": 9,
-  "etb_price": 120.0
+  "etb_price": 130.0
  }
 ]
