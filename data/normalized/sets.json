@@ -154,18 +154,18 @@
   "etb_price": 172.27
  },
  {
-  "set_id": "me1",
-  "name": "Mega Evolution",
+  "set_id": "me2pt5",
+  "name": "Ascended Heroes",
   "series": "Mega Evolution",
-  "release_date": "2025-09-26",
-  "printed_total": 132,
-  "total": 188,
-  "logo": "https://images.pokemontcg.io/me1/logo.png",
-  "symbol": "https://images.pokemontcg.io/me1/symbol.png",
-  "pack_price": 7.5,
+  "release_date": "2026-01-30",
+  "printed_total": 217,
+  "total": 295,
+  "logo": "https://images.scrydex.com/pokemon/me2pt5-logo/logo",
+  "symbol": "https://images.scrydex.com/pokemon/me2pt5-symbol/symbol",
+  "pack_price": 13.58,
   "retail_pack_price": 4.99,
   "packs_per_etb": 9,
-  "etb_price": 120.19
+  "etb_price": 181.75
  },
  {
   "set_id": "me3",
@@ -182,20 +182,6 @@
   "etb_price": 90.0
  },
  {
-  "set_id": "me2pt5",
-  "name": "Ascended Heroes",
-  "series": "Mega Evolution",
-  "release_date": "2026-01-30",
-  "printed_total": 217,
-  "total": 295,
-  "logo": "https://images.scrydex.com/pokemon/me2pt5-logo/logo",
-  "symbol": "https://images.scrydex.com/pokemon/me2pt5-symbol/symbol",
-  "pack_price": 13.58,
-  "retail_pack_price": 4.99,
-  "packs_per_etb": 9,
-  "etb_price": 181.75
- },
- {
   "set_id": "me4",
   "name": "Chaos Rising",
   "series": "Mega Evolution",
@@ -208,5 +194,19 @@
   "retail_pack_price": 4.99,
   "packs_per_etb": 9,
   "etb_price": 92.0
+ },
+ {
+  "set_id": "me1",
+  "name": "Mega Evolution",
+  "series": "Mega Evolution",
+  "release_date": "2025-09-26",
+  "printed_total": 132,
+  "total": 188,
+  "logo": "https://images.pokemontcg.io/me1/logo.png",
+  "symbol": "https://images.pokemontcg.io/me1/symbol.png",
+  "pack_price": 7.5,
+  "retail_pack_price": 4.99,
+  "packs_per_etb": 9,
+  "etb_price": 120.19
  }
 ]
