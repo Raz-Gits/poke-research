@@ -12,13 +12,13 @@
     "retail_pack_price": 4.49,
     "packs_per_etb": 9,
     "etb_price": 135.0,
-    "ev_per_pack": 10.797814480083089,
-    "pack_signal_pct": -0.10018212665974262,
-    "ev_per_etb": 97.1803303207478,
-    "etb_signal_pct": -0.2801457013277941,
-    "signal_pct": -0.2801457013277941,
-    "avg_loss_per_pack": 1.2021855199169114,
-    "raw_value_per_pack": 10.797814480083089
+    "ev_per_pack": 10.793747933162269,
+    "pack_signal_pct": -0.10052100556981092,
+    "ev_per_etb": 97.14373139846042,
+    "etb_signal_pct": -0.28041680445584877,
+    "signal_pct": -0.28041680445584877,
+    "avg_loss_per_pack": 1.206252066837731,
+    "raw_value_per_pack": 10.793747933162269
   },
   {
     "set_id": "sv4pt5",
@@ -33,13 +33,13 @@
     "retail_pack_price": 4.49,
     "packs_per_etb": 9,
     "etb_price": 110.0,
-    "ev_per_pack": 6.796628583333331,
-    "pack_signal_pct": -0.3203371416666669,
-    "ev_per_etb": 61.16965724999998,
-    "etb_signal_pct": -0.443912206818182,
-    "signal_pct": -0.443912206818182,
-    "avg_loss_per_pack": 3.203371416666669,
-    "raw_value_per_pack": 6.796628583333331
+    "ev_per_pack": 6.796682999999998,
+    "pack_signal_pct": -0.3203317000000002,
+    "ev_per_etb": 61.170146999999986,
+    "etb_signal_pct": -0.44390775454545467,
+    "signal_pct": -0.44390775454545467,
+    "avg_loss_per_pack": 3.203317000000002,
+    "raw_value_per_pack": 6.796682999999998
   },
   {
     "set_id": "sv6",
@@ -54,13 +54,13 @@
     "retail_pack_price": 4.49,
     "packs_per_etb": 9,
     "etb_price": 70.0,
-    "ev_per_pack": 3.6995518530633413,
-    "pack_signal_pct": -0.2600896293873317,
-    "ev_per_etb": 33.29596667757007,
-    "etb_signal_pct": -0.5243433331775704,
-    "signal_pct": -0.5243433331775704,
-    "avg_loss_per_pack": 1.3004481469366587,
-    "raw_value_per_pack": 3.6995518530633413
+    "ev_per_pack": 3.7141404943825465,
+    "pack_signal_pct": -0.2571719011234907,
+    "ev_per_etb": 33.427264449442916,
+    "etb_signal_pct": -0.5224676507222441,
+    "signal_pct": -0.5224676507222441,
+    "avg_loss_per_pack": 1.2858595056174535,
+    "raw_value_per_pack": 3.7141404943825465
   },
   {
     "set_id": "sv6pt5",
@@ -75,13 +75,13 @@
     "retail_pack_price": 4.49,
     "packs_per_etb": 9,
     "etb_price": 110.0,
-    "ev_per_pack": 4.870689331619048,
-    "pack_signal_pct": -0.5129310668380952,
-    "ev_per_etb": 43.83620398457143,
-    "etb_signal_pct": -0.6014890546857143,
-    "signal_pct": -0.6014890546857143,
-    "avg_loss_per_pack": 5.129310668380952,
-    "raw_value_per_pack": 4.870689331619048
+    "ev_per_pack": 4.837673158952381,
+    "pack_signal_pct": -0.516232684104762,
+    "ev_per_etb": 43.53905843057143,
+    "etb_signal_pct": -0.6041903779038961,
+    "signal_pct": -0.6041903779038961,
+    "avg_loss_per_pack": 5.162326841047619,
+    "raw_value_per_pack": 4.837673158952381
   },
   {
     "set_id": "zsv10pt5",
@@ -111,13 +111,13 @@
         "listings": 118
       }
     },
-    "ev_per_pack": 7.162366428659199,
-    "pack_signal_pct": -0.4725797917040354,
-    "ev_per_etb": 64.46129785793279,
-    "etb_signal_pct": -0.6258123999655612,
-    "signal_pct": -0.6258123999655612,
-    "avg_loss_per_pack": 6.417633571340801,
-    "raw_value_per_pack": 7.162366428659199
+    "ev_per_pack": 7.164757007843268,
+    "pack_signal_pct": -0.47240375494526743,
+    "ev_per_etb": 64.48281307058942,
+    "etb_signal_pct": -0.6256875075718964,
+    "signal_pct": -0.6256875075718964,
+    "avg_loss_per_pack": 6.415242992156732,
+    "raw_value_per_pack": 7.164757007843268
   },
   {
     "set_id": "sv5",
@@ -168,13 +168,13 @@
         "listings": 909
       }
     },
-    "ev_per_pack": 5.69037287805745,
-    "pack_signal_pct": -0.5809740148705854,
-    "ev_per_etb": 51.21335590251705,
-    "etb_signal_pct": -0.7182208753644179,
-    "signal_pct": -0.7182208753644179,
-    "avg_loss_per_pack": 7.88962712194255,
-    "raw_value_per_pack": 5.69037287805745
+    "ev_per_pack": 5.675884172151327,
+    "pack_signal_pct": -0.5820409298857638,
+    "ev_per_etb": 51.08295754936194,
+    "etb_signal_pct": -0.7189383353542672,
+    "signal_pct": -0.7189383353542672,
+    "avg_loss_per_pack": 7.904115827848673,
+    "raw_value_per_pack": 5.675884172151327
   },
   {
     "set_id": "sv8pt5",
@@ -210,34 +210,13 @@
     "retail_pack_price": 4.49,
     "packs_per_etb": 9,
     "etb_price": 130.0,
-    "ev_per_pack": 3.389482398229845,
-    "pack_signal_pct": -0.43508626696169245,
-    "ev_per_etb": 30.505341584068606,
-    "etb_signal_pct": -0.7653435262763953,
-    "signal_pct": -0.7653435262763953,
-    "avg_loss_per_pack": 2.610517601770155,
-    "raw_value_per_pack": 3.389482398229845
-  },
-  {
-    "set_id": "me3",
-    "name": "Perfect Order",
-    "series": "Mega Evolution",
-    "release_date": "2026-03-27",
-    "printed_total": 88,
-    "total": 124,
-    "logo": "https://images.scrydex.com/pokemon/me3-logo/logo",
-    "symbol": "https://images.scrydex.com/pokemon/me3-symbol/symbol",
-    "pack_price": 6.0,
-    "retail_pack_price": 4.99,
-    "packs_per_etb": 9,
-    "etb_price": 90.0,
-    "ev_per_pack": 2.3178166534343427,
-    "pack_signal_pct": -0.6136972244276095,
-    "ev_per_etb": 20.860349880909084,
-    "etb_signal_pct": -0.7682183346565657,
-    "signal_pct": -0.7682183346565657,
-    "avg_loss_per_pack": 3.6821833465656573,
-    "raw_value_per_pack": 2.3178166534343427
+    "ev_per_pack": 3.396136471186372,
+    "pack_signal_pct": -0.43397725480227134,
+    "ev_per_etb": 30.56522824067735,
+    "etb_signal_pct": -0.7648828596870972,
+    "signal_pct": -0.7648828596870972,
+    "avg_loss_per_pack": 2.603863528813628,
+    "raw_value_per_pack": 3.396136471186372
   },
   {
     "set_id": "me1",
@@ -267,13 +246,34 @@
         "listings": 82
       }
     },
-    "ev_per_pack": 3.0371203402249636,
-    "pack_signal_pct": -0.5950506213033382,
-    "ev_per_etb": 27.33408306202467,
-    "etb_signal_pct": -0.7725760623843525,
-    "signal_pct": -0.7725760623843525,
-    "avg_loss_per_pack": 4.462879659775036,
-    "raw_value_per_pack": 3.0371203402249636
+    "ev_per_pack": 3.0321413180083625,
+    "pack_signal_pct": -0.5957144909322184,
+    "ev_per_etb": 27.289271862075264,
+    "etb_signal_pct": -0.7729488987263893,
+    "signal_pct": -0.7729488987263893,
+    "avg_loss_per_pack": 4.467858681991638,
+    "raw_value_per_pack": 3.0321413180083625
+  },
+  {
+    "set_id": "me3",
+    "name": "Perfect Order",
+    "series": "Mega Evolution",
+    "release_date": "2026-03-27",
+    "printed_total": 88,
+    "total": 124,
+    "logo": "https://images.scrydex.com/pokemon/me3-logo/logo",
+    "symbol": "https://images.scrydex.com/pokemon/me3-symbol/symbol",
+    "pack_price": 6.0,
+    "retail_pack_price": 4.99,
+    "packs_per_etb": 9,
+    "etb_price": 90.0,
+    "ev_per_pack": 2.2079556578787876,
+    "pack_signal_pct": -0.6320073903535354,
+    "ev_per_etb": 19.87160092090909,
+    "etb_signal_pct": -0.7792044342121213,
+    "signal_pct": -0.7792044342121213,
+    "avg_loss_per_pack": 3.7920443421212124,
+    "raw_value_per_pack": 2.2079556578787876
   },
   {
     "set_id": "sv8",
@@ -288,13 +288,13 @@
     "retail_pack_price": 4.49,
     "packs_per_etb": 9,
     "etb_price": 120.0,
-    "ev_per_pack": 2.7958295941629108,
-    "pack_signal_pct": -0.6005957722624414,
-    "ev_per_etb": 25.162466347466196,
-    "etb_signal_pct": -0.7903127804377817,
-    "signal_pct": -0.7903127804377817,
-    "avg_loss_per_pack": 4.20417040583709,
-    "raw_value_per_pack": 2.7958295941629108
+    "ev_per_pack": 2.7836023751399908,
+    "pack_signal_pct": -0.6023425178371442,
+    "ev_per_etb": 25.052421376259918,
+    "etb_signal_pct": -0.7912298218645007,
+    "signal_pct": -0.7912298218645007,
+    "avg_loss_per_pack": 4.21639762486001,
+    "raw_value_per_pack": 2.7836023751399908
   },
   {
     "set_id": "me4",
@@ -309,13 +309,13 @@
     "retail_pack_price": 4.99,
     "packs_per_etb": 9,
     "etb_price": 92.0,
-    "ev_per_pack": 2.072956962267206,
-    "pack_signal_pct": -0.6545071729554657,
-    "ev_per_etb": 18.656612660404853,
-    "etb_signal_pct": -0.7972107319521212,
-    "signal_pct": -0.7972107319521212,
-    "avg_loss_per_pack": 3.927043037732794,
-    "raw_value_per_pack": 2.072956962267206
+    "ev_per_pack": 2.017877037519117,
+    "pack_signal_pct": -0.6636871604134805,
+    "ev_per_etb": 18.160893337672054,
+    "etb_signal_pct": -0.8025989854600865,
+    "signal_pct": -0.8025989854600865,
+    "avg_loss_per_pack": 3.982122962480883,
+    "raw_value_per_pack": 2.017877037519117
   },
   {
     "set_id": "sv9",
@@ -345,13 +345,13 @@
         "listings": 128
       }
     },
-    "ev_per_pack": 2.2845534709612947,
-    "pack_signal_pct": -0.6645295931040683,
-    "ev_per_etb": 20.560981238651653,
-    "etb_signal_pct": -0.8431417360493466,
-    "signal_pct": -0.8431417360493466,
-    "avg_loss_per_pack": 4.525446529038705,
-    "raw_value_per_pack": 2.2845534709612947
+    "ev_per_pack": 2.3564964970677367,
+    "pack_signal_pct": -0.6539652720899064,
+    "ev_per_etb": 21.20846847360963,
+    "etb_signal_pct": -0.8382021019712418,
+    "signal_pct": -0.8382021019712418,
+    "avg_loss_per_pack": 4.4535035029322625,
+    "raw_value_per_pack": 2.3564964970677367
   },
   {
     "set_id": "sv10",
@@ -381,12 +381,12 @@
         "listings": 165
       }
     },
-    "ev_per_pack": 3.5221341983158663,
-    "pack_signal_pct": -0.6683489455446453,
-    "ev_per_etb": 31.699207784842798,
-    "etb_signal_pct": -0.8476951531021822,
-    "signal_pct": -0.8476951531021822,
-    "avg_loss_per_pack": 7.097865801684133,
-    "raw_value_per_pack": 3.5221341983158663
+    "ev_per_pack": 3.5077333621645828,
+    "pack_signal_pct": -0.6697049564816777,
+    "ev_per_etb": 31.569600259481245,
+    "etb_signal_pct": -0.8483178770024444,
+    "signal_pct": -0.8483178770024444,
+    "avg_loss_per_pack": 7.1122666378354165,
+    "raw_value_per_pack": 3.5077333621645828
   }
 ]
