@@ -4,7 +4,7 @@ Free Pokémon TCG analytics site modeled on mycollectrics.com ("Collectrics IQ /
 Price Lab"), aiming to match-or-beat it. Scores cards as over/under/fair-valued
 from a clustered price model, surfaces undervalued/overvalued cards + sealed EV.
 
-- **Local:** `~/Pokemon Bot/poke-research` · **GitHub:** Raz-Gits/poke-research (**private**)
+- **Local:** `~/Pokemon Bot/poke-research` · **GitHub:** Raz-Gits/poke-research (**public**)
 - **Live:** deployed on **Netlify** (auto-deploys from `main` on every push;
   `netlify.toml` pins publish dir = `docs`). GitHub Pages is **disabled**.
 - **Owner:** values accuracy and honest signals; this is a clean analytics tool —
