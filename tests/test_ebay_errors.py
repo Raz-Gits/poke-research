@@ -184,6 +184,38 @@ def test_structurally_unusable_page_is_unknown(monkeypatch, body):
     assert "item_ids" not in row
 
 
+# Codex verification 2, follow-up 1: listings the page check accepted but the
+# parser later dropped used to become a false zero.
+@pytest.mark.parametrize(
+    "summary",
+    [
+        {"itemId": "a", "price": {"value": "0", "currency": "USD"}},
+        {"itemId": "a", "price": {"value": "0.00", "currency": "USD"}},
+        {"itemId": "a", "price": {"value": "-1", "currency": "USD"}},
+        {"itemId": "", "price": {"value": "5", "currency": "USD"}},
+        {"itemId": "   ", "price": {"value": "5", "currency": "USD"}},
+        {"itemId": "a", "price": {"value": "5", "currency": ""}},
+        {"itemId": "a", "price": {"value": "5", "currency": 840}},
+    ],
+    ids=["zero-price", "zero-price-decimal", "negative-price", "blank-id", "whitespace-id",
+         "empty-currency", "non-string-currency"],
+)
+def test_unusable_single_listing_is_unknown_not_zero(monkeypatch, summary):
+    monkeypatch.setattr(ebay, "_browse_request", lambda *_a, **_k: {"total": 1, "itemSummaries": [summary]})
+    row = ebay._fetch_card_market(_card("c1", "Pikachu"), "tok")
+    assert row["active_listings"] is None
+    assert "item_ids" not in row
+
+
+def test_zero_price_listing_is_skipped_next_to_a_valid_one(monkeypatch):
+    body = _page(["good"])
+    body["itemSummaries"].append({"itemId": "free", "title": "Test card", "price": {"value": "0", "currency": "USD"}})
+    body["total"] = 2
+    monkeypatch.setattr(ebay, "_browse_request", lambda *_a, **_k: body)
+    row = ebay._fetch_card_market(_card("c1", "Pikachu"), "tok")
+    assert row["active_listings"] == 1 and row["item_ids"] == ["good"]
+
+
 def test_usable_listings_count_even_next_to_unusable_ones(monkeypatch):
     body = _page(["a", "b"])
     body["itemSummaries"].append({"title": "no id or price"})

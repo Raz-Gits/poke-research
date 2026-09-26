@@ -312,21 +312,32 @@ def _browse_request(token: str, q: str, offset: int) -> Optional[dict]:
 
 
 def _summary_is_usable(it) -> bool:
-    """True for a listing we can read at all: an object with an ``itemId`` and a
-    ``price`` object carrying a currency and a finite numeric value.
+    """True for a listing we can read at all: an object with a non-empty
+    ``itemId`` and a ``price`` object carrying a non-empty string currency and a
+    finite value strictly greater than zero.
 
-    Graded or non-USD listings are still usable here; they are dropped later by
-    business rules, and a page of only those is a real zero.
+    The same predicate filters listings during parsing, so a listing the page
+    check accepted can never be silently dropped later and turn into a false
+    zero (Codex verification 2, follow-up 1). Graded or non-USD listings are
+    still usable here; they are dropped later by business rules, and a page of
+    only those is a real zero.
     """
-    if not isinstance(it, dict) or it.get("itemId") is None:
+    if not isinstance(it, dict):
+        return False
+    iid = it.get("itemId")
+    if iid is None or not str(iid).strip():
         return False
     price = it.get("price")
-    if not isinstance(price, dict) or not price.get("currency"):
+    if not isinstance(price, dict):
+        return False
+    currency = price.get("currency")
+    if not isinstance(currency, str) or not currency.strip():
         return False
     try:
-        return math.isfinite(float(price.get("value")))
+        val = float(price.get("value"))
     except (TypeError, ValueError):
         return False
+    return math.isfinite(val) and val > 0
 
 
 def _is_valid_page(data, first_page: bool = True) -> bool:
@@ -385,20 +396,15 @@ def _fetch_card_market(card: dict, token: str) -> Dict[str, Optional[float]]:
             return _empty_row()
         summaries = data.get("itemSummaries") or []
         for it in summaries:
+            if not _summary_is_usable(it):
+                continue  # same rule as the page check: unreadable listings never count
             title = str(it.get("title") or "")
             if _is_graded(f" {title} "):
                 continue
-            price = it.get("price") or {}
-            if str(price.get("currency")) != "USD":
+            price = it["price"]
+            if price["currency"] != "USD":
                 continue
-            try:
-                val = float(price.get("value"))
-            except (TypeError, ValueError):
-                continue
-            iid = it.get("itemId")
-            if iid is None:
-                continue
-            items.append((str(iid), val))
+            items.append((str(it["itemId"]), float(price["value"])))
         # Stop early if we've consumed all results.
         if len(summaries) < PAGE_LIMIT:
             break
