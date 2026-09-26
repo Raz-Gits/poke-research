@@ -649,7 +649,7 @@ function viewMovers() {
     : el('div', { class: 'table-card', style: 'padding:20px 24px;display:flex;gap:16px;align-items:center;flex-wrap:wrap;margin-bottom:24px;box-shadow:none;background:var(--surface-soft)' }, [
         el('span', { class: 'badge-stub', text: 'awaiting eBay data' }),
         el('p', { class: 'body-sm', style: 'margin:0;color:var(--slate);max-width:62ch', html:
-          'Real movers compare 7 days of daily <strong>eBay</strong> active-listing snapshots with 30 days of them, and this build does not have enough of that history yet. Until it does, this shows the cards whose market price diverges most from the model.' }),
+          'Real movers compare 7 days of daily <strong>eBay</strong> active-listing snapshots with 30 days of them, and this build has no current eBay observations to compare (too little history, or the latest sweep returned no valid counts). Until it does, this shows the cards whose market price diverges most from the model.' }),
       ]);
 
   const section = el('section', { class: 'section container' }, [
@@ -1502,7 +1502,9 @@ function buildModalContent(card) {
         psaPanel(card),
         el('p', { class: 'caption', html: dynLive
           ? `Demand pressure = est. sold (7d) ÷ total supply; supply saturation = active listings 7-day vs 30-day average. Inferred from daily eBay active-listing snapshots${dyn.active_listings != null ? ` (${dyn.active_listings.toLocaleString()} active, ${(dyn.sold_7d ?? 0).toLocaleString()} est. sold this week)` : ''}.`
-          : 'No eBay demand read for this card yet: the daily eBay sweep covers only the most valuable cards, and a card needs a few days of snapshots. Shown as <strong>awaiting data</strong>.' }),
+          : (dyn.basis && dyn.basis.reason === 'no_current_observation')
+            ? `No current eBay read for this card: the latest daily sweep did not return a valid listing count for it${dyn.basis.last_observed ? ` (last valid read ${dyn.basis.last_observed})` : ''}, so older days are not shown as a live signal. Shown as <strong>awaiting data</strong>.`
+            : 'No eBay demand read for this card yet: the daily eBay sweep covers only the most valuable cards, and a card needs a few days of snapshots. Shown as <strong>awaiting data</strong>.' }),
         signalsPanel,
       ]),
     ]),

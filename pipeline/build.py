@@ -159,15 +159,18 @@ def build_sets(
 
 
 def build_dynamics(
-    cards: List[dict], ebay_history: Dict[str, List[dict]]
+    cards: List[dict], ebay_history: Dict[str, List[dict]],
+    current_date: Optional[date] = None,
 ) -> Dict[str, dict]:
     """Compute market-dynamics signals per card from the eBay snapshot history.
 
-    With the collector stubbed this is the neutral ``awaiting_data`` fallback for
-    every card; the schema is the deliverable and a real feed drops straight in.
+    Cards without a valid observation on ``current_date`` (today's sweep failed
+    for them, or did not reach them) get the neutral ``awaiting_data`` result,
+    never a live signal built from older days (Codex verification, follow-up 2).
     """
     return {
-        c["id"]: market_dynamics.compute(c["id"], ebay_history) for c in cards
+        c["id"]: market_dynamics.compute(c["id"], ebay_history, current_date=current_date)
+        for c in cards
     }
 
 
@@ -287,13 +290,21 @@ def build_leaderboard(card_records: List[dict]) -> dict:
     overvalued = [_leader_row(r) for r in sorted(pool, key=raw_diff)[:size]]  # biggest $ premium
 
     # Movers: prefer real saturation shift; fall back to dollar-gap magnitude.
+    # Only cards with a current valid eBay observation (dynamics status "ok")
+    # can be ranked on saturation (Codex verification, follow-up 2).
+    def has_current_read(r: dict) -> bool:
+        return (r.get("dynamics") or {}).get("status") == "ok"
+
     def saturation_shift(r: dict) -> float:
+        if not has_current_read(r):
+            return 0.0
         sat = (r.get("dynamics") or {}).get("supply_saturation")
         return abs(sat - 1.0) if sat is not None else 0.0
 
     have_real_shift = any(saturation_shift(r) > 0.0 for r in pool)
     if have_real_shift:
-        movers_sorted = sorted(pool, key=saturation_shift, reverse=True)
+        movers_sorted = sorted((r for r in pool if has_current_read(r)),
+                               key=saturation_shift, reverse=True)
         movers_basis = "saturation_shift"
     else:
         movers_sorted = sorted(pool, key=lambda r: abs(raw_diff(r)), reverse=True)
@@ -540,7 +551,7 @@ def build(today: Optional[date] = None) -> dict:
         print(f"  eBay sweep: top {len(to_sweep)} cards by price (fixed daily demand universe)")
         ebay.collect_snapshot(to_sweep, out_dir=config.SNAPSHOTS, snapshot_date=snap_date)
     ebay_history = _load_ebay_history(config.SNAPSHOTS)
-    dynamics = build_dynamics(cards, ebay_history)
+    dynamics = build_dynamics(cards, ebay_history, current_date=snap_date)
 
     # --- 6b. plain-language market-signal labels (rules layer, NOT a model input) ---
     # Fuse recent price move (daily snapshot-<date>.json history) + demand/supply

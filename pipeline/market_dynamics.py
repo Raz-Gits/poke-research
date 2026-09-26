@@ -176,12 +176,20 @@ def _window_sum(snaps: List[dict], window: int, key: str) -> Optional[float]:
 # Public compute
 # ---------------------------------------------------------------------------
 def compute(card_id: str, history: Dict[str, List[dict]],
-            as_of: Optional[date] = None) -> dict:
+            as_of: Optional[date] = None,
+            current_date: Optional[date] = None) -> dict:
     """Compute market-dynamics signals for one card from its snapshot history.
 
     ``as_of`` (AS-OF GATE): when given, only snapshots dated on/before ``as_of``
     are used — so recomputing demand at a historical evaluation date never reads
     future snapshots (the no-look-ahead guarantee the backtest needs).
+
+    ``current_date`` (Codex verification, follow-up 2): when given, the card
+    must have a row for that date. Whenever the latest row has no valid
+    ``active_listings`` (the request failed, the sweep did not reach the card,
+    or the card has no row for ``current_date``), the result is
+    ``awaiting_data`` with ``basis.reason = "no_current_observation"``: a
+    signal is never reported as live ("ok") from older observations alone.
 
     Parameters
     ----------
@@ -222,6 +230,21 @@ def compute(card_id: str, history: Dict[str, List[dict]],
 
     latest = snaps[-1]
     active = latest.get("active_listings")
+
+    # No current valid observation -> awaiting data, never "ok" from older rows.
+    stale = current_date is not None and _snap_date(latest).date() < current_date
+    if active is None or stale:
+        last_valid = next((s for s in reversed(snaps) if s.get("active_listings") is not None), None)
+        out = dict(NEUTRAL)
+        out["active_listings"] = None
+        out["sold_7d"] = None
+        out["new_7d"] = None
+        out["basis"] = {
+            "days": len(snaps),
+            "reason": "no_current_observation",
+            "last_observed": last_valid.get("date") if last_valid else None,
+        }
+        return out
 
     sold_7d = _window_sum(snaps, DYN_SHORT_WINDOW, "est_sold")
     new_7d = _window_sum(snaps, DYN_SHORT_WINDOW, "new_listings")
