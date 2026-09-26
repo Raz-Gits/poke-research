@@ -406,6 +406,33 @@ def _snapshot_is_live(path: Path) -> bool:
     return any((row or {}).get("active_listings") for row in data.values())
 
 
+EBAY_RECENT_DAYS = 3  # a live eBay snapshot at most this many days old counts as recent
+
+
+def _ebay_source_status(snap_dir: Path, today: date) -> tuple:
+    """Describe the eBay feed from the snapshots on disk, not from a constant.
+
+    Returns ``(text, latest_live_date_or_None)``. A snapshot counts as live when
+    at least one card has a positive active-listing count (the same test as
+    :func:`_snapshot_is_live`), so neutral no-key snapshots never count.
+    Future-dated files are ignored.
+    """
+    for f in sorted(Path(snap_dir).glob("ebay-*.json"), reverse=True):
+        d = f.stem.replace("ebay-", "")
+        try:
+            fdate = date.fromisoformat(d)
+        except ValueError:
+            continue
+        if fdate > today or not _snapshot_is_live(f):
+            continue
+        age = (today - fdate).days
+        if age <= EBAY_RECENT_DAYS:
+            return f"eBay Browse API active listings (latest snapshot {d})", d
+        return (f"eBay Browse API active listings, but the latest live snapshot is {d} "
+                f"({age} days old)"), d
+    return "no live eBay snapshot yet (the collector writes neutral rows without API keys)", None
+
+
 def _load_price_status() -> dict:
     """The price-freshness record fetch.py writes (empty dict if absent/unreadable).
 
@@ -558,6 +585,7 @@ def build(today: Optional[date] = None) -> dict:
     signal_status = {
         name: meta.get("status", "live") for name, meta in config.FEATURES.items()
     }
+    ebay_text, ebay_latest = _ebay_source_status(config.SNAPSHOTS, snap_date)
     meta = {
         "built_at": datetime.now().replace(microsecond=0).isoformat(),
         # When prices were last fetched live for every set (None if unknown).
@@ -570,10 +598,13 @@ def build(today: Optional[date] = None) -> dict:
         "clusters": len(model_payload["clusters"]),
         "model_r2_log": round(result.r2_log(), 6),
         "predictions_logged": n_pred,
+        # Date of the newest eBay snapshot with real listing data (None if none).
+        "ebay_latest_snapshot": ebay_latest,
         "sources": {
             "cards": "pokemontcg.io (cached, normalized)",
-            "prices": "pokemontcg.io TCGplayer market prices (cached)",
-            "ebay": "stub (awaiting Browse API key)",
+            "prices": ("TCGplayer market prices via pokemontcg.io, and via TCGdex for "
+                       "sets pokemontcg.io does not price"),
+            "ebay": ebay_text,
             "psa": (f"PSA Public API pop ({n_psa} cards mapped)" if n_psa
                     else "stub (awaiting PSA spec map)"),
             "trends": "stub (awaiting Google Trends feed)",

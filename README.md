@@ -13,7 +13,9 @@ Inspired by the Collectrics "IQ / Price Lab" approach; rebuilt from scratch on p
 - **Signals**: *live:* character premium, scarcity, pull cost, months-since-release, in-set rank,
   plus eBay demand pressure and supply saturation from the daily eBay sweep (shown next to the
   model, not fed into it). *Partial:* PSA grading intensity, for a few hand-mapped cards.
-  *Not wired in yet:* Google-Trends appeal.
+  *Not wired in yet:* Google-Trends appeal. The price model itself uses three of these:
+  character premium, scarcity and months since release (`config.FEATURES`). Pull cost and
+  in-set rank are computed for display and sealed EV only.
 - **Interactive**: open any card → "View Market Signals" → drag the sliders and watch the
   expected price recompute live (client-side, from the card's cluster coefficients).
 

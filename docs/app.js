@@ -391,20 +391,22 @@ function viewHome() {
     statCard('bg-coral', fresh.kicker, fresh.label, fresh.sub),
   ]);
 
-  /* how it works */
+  /* how it works (the signal count comes from model.json, like the feature names) */
+  const nFeat = ((STATE.model && STATE.model.features) || []).length;
+  const nFeatWord = ['No', 'One', 'Two', 'Three', 'Four', 'Five', 'Six'][nFeat] || String(nFeat);
   const explain = el('section', { class: 'section container' }, [
     el('div', { class: 'section-head' }, [
       el('div', {}, [
         el('p', { class: 'micro section-eyebrow', text: 'How it works' }),
-        el('h2', { class: 'h2', text: 'Three signals, one honest model' }),
+        el('h2', { class: 'h2', text: `${nFeatWord} signals, one honest model` }),
         el('p', { class: 'section-sub', text:
-          'Live signals come straight from pokemontcg.io prices and set composition. Feed-dependent signals are clearly stubbed until their data source is wired.' }),
+          'The model uses only inputs computed from card data and set composition. eBay demand and PSA grading data are shown next to it, not fed into it, until they have enough history to test.' }),
       ]),
     ]),
     el('div', { class: 'explainer-row' }, [
       explainerCard('bg-yellow', '◎', 'Sealed EV', 'Per-card pull rates × market prices roll up to an expected value per pack and per Elite Trainer Box, versus what each actually costs.'),
-      explainerCard('bg-teal', '◈', 'Fair-price model', 'A ridge regression per rarity cluster predicts log price from scarcity, character premium and in-set rank — recomputed live as you move sliders.'),
-      explainerCard('bg-coral', '◇', 'Honest stubs', 'Demand pressure, grading intensity and supply saturation need eBay / PSA feeds we don’t have yet, so they’re labeled "awaiting data".'),
+      explainerCard('bg-teal', '◈', 'Fair-price model', `A ridge regression per rarity cluster predicts log price from ${modelFeatureList()}, recomputed live as you move the sliders.`),
+      explainerCard('bg-coral', '◇', 'Shown, not modeled', 'eBay demand pressure and supply saturation come from a daily eBay listing sweep of the most valuable cards. They sit next to the model, not inside it. PSA grading data covers a few cards so far, and Google Trends is not wired in yet.'),
     ]),
   ]);
 
@@ -418,6 +420,17 @@ function viewHome() {
 
   setView([hero, statRow, explain, links]);
   highlightNav(null);
+}
+/* The model's actual inputs, read from model.json (config.FEATURES), so this
+   copy cannot drift from the code, e.g. "character premium, scarcity score and
+   months since release". */
+function modelFeatureList() {
+  const m = STATE.model || {};
+  const meta = m.feature_meta || {};
+  const names = (m.features || []).map((f) => String((meta[f] && meta[f].label) || f).toLowerCase());
+  if (!names.length) return 'its input signals';
+  if (names.length === 1) return names[0];
+  return names.slice(0, -1).join(', ') + ' and ' + names[names.length - 1];
 }
 function statCard(bg, kicker, big, label) {
   return el('div', { class: `stat-card ${bg}` }, [
@@ -548,7 +561,7 @@ function viewPriceLab() {
         el('p', { class: 'micro section-eyebrow', text: 'Price Lab' }),
         el('h2', { class: 'h2', text: 'Undervalued & overvalued cards' }),
         el('p', { class: 'section-sub', text:
-          'The model predicts a fair price for each card from scarcity, rarity and character premium. The delta is how far the live market sits from that estimate. For how accurate these calls actually are, see the Track Record. Open any card to tune the signals yourself.' }),
+          `The model predicts a fair price for each card from ${modelFeatureList()}, with a separate model per rarity cluster. The delta is how far the live market sits from that estimate. For how accurate these calls actually are, see the Track Record. Open any card to tune the signals yourself.` }),
       ]),
       el('span', { class: 'chip chip--lavender', html: `In-sample fit&nbsp;${(STATE.meta.model_r2_log ?? 0).toFixed(2)} · ${STATE.meta.clusters} clusters` }),
     ]),
@@ -625,7 +638,7 @@ function viewMovers() {
     : el('div', { class: 'table-card', style: 'padding:20px 24px;display:flex;gap:16px;align-items:center;flex-wrap:wrap;margin-bottom:24px;box-shadow:none;background:var(--surface-soft)' }, [
         el('span', { class: 'badge-stub', text: 'awaiting eBay data' }),
         el('p', { class: 'body-sm', style: 'margin:0;color:var(--slate);max-width:62ch', html:
-          'Real day-over-day movers need the <strong>eBay Browse API</strong> (active-listing snapshots, diffed daily to estimate sold/unsold) — which isn’t wired yet. Until then we fall back to the cards whose market price diverges most from the model.' }),
+          'Real movers compare 7 days of daily <strong>eBay</strong> active-listing snapshots with 30 days of them, and this build does not have enough of that history yet. Until it does, this shows the cards whose market price diverges most from the model.' }),
       ]);
 
   const section = el('section', { class: 'section container' }, [
@@ -1477,7 +1490,7 @@ function buildModalContent(card) {
         psaPanel(card),
         el('p', { class: 'caption', html: dynLive
           ? `Demand pressure = est. sold (7d) ÷ total supply; supply saturation = active listings 7-day vs 30-day average. Inferred from daily eBay active-listing snapshots${dyn.active_listings != null ? ` (${dyn.active_listings.toLocaleString()} active, ${(dyn.sold_7d ?? 0).toLocaleString()} est. sold this week)` : ''}.`
-          : 'Demand pressure & supply saturation need an eBay feed — shown as <strong>awaiting data</strong>.' }),
+          : 'No eBay demand read for this card yet: the daily eBay sweep covers only the most valuable cards, and a card needs a few days of snapshots. Shown as <strong>awaiting data</strong>.' }),
         signalsPanel,
       ]),
     ]),
@@ -1748,6 +1761,10 @@ function wireChrome() {
   if (meta) {
     const fb = $('#footerBuilt');
     if (fb) fb.textContent = refreshInfo(meta).footer;
+    /* eBay source line: the date of the newest live snapshot when the build
+       publishes it; older data keeps the static text in index.html. */
+    const fe = $('#footerEbay');
+    if (fe && meta.ebay_latest_snapshot) fe.textContent = `eBay listings (snapshot ${meta.ebay_latest_snapshot})`;
   }
 }
 
