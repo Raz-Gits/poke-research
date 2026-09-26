@@ -51,11 +51,20 @@ function imgFallback(node) { node.onerror = null; node.src = PLACEHOLDER; }
    about the prices. */
 function ageOf(iso) {
   if (!iso) return null;
-  const t = new Date(iso).getTime();
-  if (Number.isNaN(t)) return null;
-  const days = Math.floor((Date.now() - t) / 86400000);
+  const s = String(iso);
+  /* A bare YYYY-MM-DD is a calendar date: parse it as local midnight, or it
+     would be read as UTC and could show the previous day. */
+  const dateOnly = /^\d{4}-\d{2}-\d{2}$/.test(s);
+  const d = dateOnly ? new Date(+s.slice(0, 4), +s.slice(5, 7) - 1, +s.slice(8, 10)) : new Date(s);
+  if (Number.isNaN(d.getTime())) return null;
+  /* Count calendar days in the viewer's time zone, so the label and the date
+     always agree (a build from last night reads "Yesterday", not "Today"). */
+  const day0 = (x) => new Date(x.getFullYear(), x.getMonth(), x.getDate()).getTime();
+  const days = Math.round((day0(new Date()) - day0(d)) / 86400000);
+  const pad = (n) => String(n).padStart(2, '0');
+  const date = `${d.getFullYear()}-${pad(d.getMonth() + 1)}-${pad(d.getDate())}`;
   const label = days <= 0 ? 'Today' : days === 1 ? 'Yesterday' : `${days} days ago`;
-  return { date: String(iso).slice(0, 10), days, label };
+  return { date, days, label };
 }
 function refreshInfo(meta) {
   const p = ageOf(meta && meta.prices_as_of);
