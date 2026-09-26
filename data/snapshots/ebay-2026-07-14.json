@@ -5473,10 +5473,10 @@
   },
   "me4-93": {
     "active_listings": 155,
-    "new_listings": 155,
-    "ended_listings": 0,
-    "est_sold": 0,
-    "est_unsold": 0,
+    "new_listings": null,
+    "ended_listings": null,
+    "est_sold": null,
+    "est_unsold": null,
     "avg_price": 8.54
   },
   "sv4pt5-122": {

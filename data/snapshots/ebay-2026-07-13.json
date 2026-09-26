@@ -5464,11 +5464,11 @@
     "avg_price": 4.09
   },
   "me4-93": {
-    "active_listings": 0,
-    "new_listings": 0,
-    "ended_listings": 151,
-    "est_sold": 91,
-    "est_unsold": 60,
+    "active_listings": null,
+    "new_listings": null,
+    "ended_listings": null,
+    "est_sold": null,
+    "est_unsold": null,
     "avg_price": null
   },
   "sv3pt5-194": {

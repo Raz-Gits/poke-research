@@ -3201,10 +3201,10 @@
   },
   "sv5-198": {
     "active_listings": 169,
-    "new_listings": 169,
-    "ended_listings": 0,
-    "est_sold": 0,
-    "est_unsold": 0,
+    "new_listings": null,
+    "ended_listings": null,
+    "est_sold": null,
+    "est_unsold": null,
     "avg_price": 8.88
   },
   "sv6-221": {
@@ -3217,10 +3217,10 @@
   },
   "sv8-208": {
     "active_listings": 158,
-    "new_listings": 158,
-    "ended_listings": 0,
-    "est_sold": 0,
-    "est_unsold": 0,
+    "new_listings": null,
+    "ended_listings": null,
+    "est_sold": null,
+    "est_unsold": null,
     "avg_price": 10.94
   },
   "sv10-189": {
@@ -3865,10 +3865,10 @@
   },
   "sv10-244": {
     "active_listings": 172,
-    "new_listings": 172,
-    "ended_listings": 0,
-    "est_sold": 0,
-    "est_unsold": 0,
+    "new_listings": null,
+    "ended_listings": null,
+    "est_sold": null,
+    "est_unsold": null,
     "avg_price": 10.88
   },
   "zsv10pt5-121": {

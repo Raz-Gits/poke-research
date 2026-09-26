@@ -3224,11 +3224,11 @@
     "avg_price": 10.71
   },
   "sv5-198": {
-    "active_listings": 0,
-    "new_listings": 0,
-    "ended_listings": 170,
-    "est_sold": 102,
-    "est_unsold": 68,
+    "active_listings": null,
+    "new_listings": null,
+    "ended_listings": null,
+    "est_sold": null,
+    "est_unsold": null,
     "avg_price": null
   },
   "sv8-211": {
@@ -3304,11 +3304,11 @@
     "avg_price": 13.88
   },
   "sv8-208": {
-    "active_listings": 0,
-    "new_listings": 0,
-    "ended_listings": 150,
-    "est_sold": 90,
-    "est_unsold": 60,
+    "active_listings": null,
+    "new_listings": null,
+    "ended_listings": null,
+    "est_sold": null,
+    "est_unsold": null,
     "avg_price": null
   },
   "sv4pt5-150": {
@@ -3728,11 +3728,11 @@
     "avg_price": 7.87
   },
   "sv10-244": {
-    "active_listings": 0,
-    "new_listings": 0,
-    "ended_listings": 171,
-    "est_sold": 103,
-    "est_unsold": 68,
+    "active_listings": null,
+    "new_listings": null,
+    "ended_listings": null,
+    "est_sold": null,
+    "est_unsold": null,
     "avg_price": null
   },
   "sv4pt5-240": {
