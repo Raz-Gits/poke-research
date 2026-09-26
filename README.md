@@ -46,9 +46,12 @@ have enough history to backtest.
 
 The daily snapshots in `data/snapshots/` hold per-card aggregates: active listing
 counts, flow, and average price. The raw eBay item IDs behind those aggregates are
-deliberately **not** committed. They live in the GitHub Actions cache for exactly one
-day, which is all `collectors.ebay.diff_snapshots` needs to compute new and ended
-listings exactly. See `scripts/ebay_ids_sidecar.py`.
+deliberately **not** committed. They are kept in the GitHub Actions cache, because
+`collectors.ebay.diff_snapshots` only needs yesterday's IDs to count new and ended
+listings exactly. Each run saves a new cache entry, and GitHub deletes entries that
+go unused for 7 days. The step that strips the IDs fails the run if it errors, and a
+separate check (`scripts/check_no_item_ids.py`) refuses the commit if any staged
+file still has an `item_ids` key. See `scripts/ebay_ids_sidecar.py`.
 
 ## Run it locally
 

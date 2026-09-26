@@ -63,10 +63,16 @@ jobs:
 
       - name: Move eBay item IDs out of the snapshots before committing
         # This repository is public. The aggregates belong in git; the raw eBay
-        # listing IDs do not. Worst case on failure is that tomorrow's diff uses
-        # the NET fallback collectors/ebay.py already implements.
-        continue-on-error: true
+        # listing IDs do not. No continue-on-error: if this step fails, the run
+        # stops here and nothing is committed that day.
         run: python scripts/ebay_ids_sidecar.py stash
+
+      - name: Refuse to commit raw eBay item IDs
+        # Second, independent guard: stage exactly what the next step commits,
+        # then fail the run if any staged JSON file still has an "item_ids" key.
+        run: |
+          git add docs/data data/snapshots data/normalized
+          python scripts/check_no_item_ids.py
 
       - name: Commit & push refreshed data (triggers Netlify)
         run: |

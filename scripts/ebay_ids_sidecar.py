@@ -22,9 +22,14 @@ Two modes, both run from the daily workflow:
               files without them.
 
 Both modes are no-ops when there is nothing to do, and neither raises on a
-missing file: the workflow guards them with continue-on-error, and the worst
-case is that collectors/ebay.py falls back to its existing NET math for one
-day, which it is already written to do.
+missing file. The workflow treats them differently on failure:
+
+    restore   guarded with continue-on-error. Worst case, collectors/ebay.py
+              falls back to its existing NET math for one day.
+
+    stash     fails closed. If it errors, the run stops before the commit, so
+              no snapshot with IDs is ever committed. scripts/check_no_item_ids.py
+              then checks the staged files again right before the commit.
 """
 
 from __future__ import annotations
