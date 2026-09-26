@@ -152,6 +152,76 @@ def test_valid_page_is_counted(monkeypatch):
 
 
 # ---------------------------------------------------------------------------
+# Codex verification, follow-up 1: bodies that still slipped through as zero
+# ---------------------------------------------------------------------------
+@pytest.mark.parametrize(
+    "body",
+    [
+        {"itemSummaries": []},                                   # empty, no total
+        {"total": 5, "itemSummaries": []},                       # claims results, returns none
+        {"itemSummaries": [{}]},                                 # no total, unusable summary
+        {"total": 1, "itemSummaries": [{}]},                     # every summary unusable
+        {"total": 2, "itemSummaries": [                          # each misses a required field
+            {"itemId": "a", "title": "x"},
+            {"title": "y", "price": {"value": "5", "currency": "USD"}},
+        ]},
+        {"total": 1, "itemSummaries": [{"itemId": "a", "price": {"currency": "USD"}}]},  # no value
+        {"total": 1, "itemSummaries": [{"itemId": "a", "price": {"value": "5"}}]},      # no currency
+        {"total": 1, "itemSummaries": [{"itemId": "a", "price": {"value": "NaN", "currency": "USD"}}]},
+        {"total": -1},
+        {"total": "0"},
+        {"total": True},
+        {"total": 0.0},
+    ],
+    ids=["empty-no-total", "total5-empty", "no-total-empty-object", "all-unusable",
+         "each-missing-a-field", "no-value", "no-currency", "nan-value",
+         "negative-total", "string-total", "bool-total", "float-total"],
+)
+def test_structurally_unusable_page_is_unknown(monkeypatch, body):
+    monkeypatch.setattr(ebay, "_browse_request", lambda *_a, **_k: body)
+    row = ebay._fetch_card_market(_card("c1", "Pikachu"), "tok")
+    assert row["active_listings"] is None
+    assert "item_ids" not in row
+
+
+def test_usable_listings_count_even_next_to_unusable_ones(monkeypatch):
+    body = _page(["a", "b"])
+    body["itemSummaries"].append({"title": "no id or price"})
+    body["total"] = 3
+    monkeypatch.setattr(ebay, "_browse_request", lambda *_a, **_k: body)
+    row = ebay._fetch_card_market(_card("c1", "Pikachu"), "tok")
+    assert row["active_listings"] == 2 and row["item_ids"] == ["a", "b"]
+
+
+def test_only_graded_or_foreign_listings_is_a_real_zero(monkeypatch):
+    """Structurally fine listings removed by business rules are a real observation."""
+    body = {"total": 2, "itemSummaries": [
+        {"itemId": "a", "title": "Pikachu PSA 10", "price": {"value": "90", "currency": "USD"}},
+        {"itemId": "b", "title": "Pikachu", "price": {"value": "40", "currency": "GBP"}},
+    ]}
+    monkeypatch.setattr(ebay, "_browse_request", lambda *_a, **_k: body)
+    row = ebay._fetch_card_market(_card("c1", "Pikachu"), "tok")
+    assert row["active_listings"] == 0 and row["item_ids"] == []
+
+
+def test_exhausted_429_retries_give_unknown(monkeypatch):
+    calls = {"n": 0}
+
+    def always_429(*_a, **_k):
+        calls["n"] += 1
+        raise urllib.error.HTTPError("https://x", 429, "Too Many", None, None)
+
+    monkeypatch.setattr(ebay.urllib.request, "urlopen", always_429)
+    assert ebay._browse_request("tok", "q", 0) is None
+    assert calls["n"] == 4  # every backoff attempt used
+
+    calls["n"] = 0
+    row = ebay._fetch_card_market(_card("c1", "Pikachu"), "tok")  # real _browse_request
+    assert row["active_listings"] is None and "item_ids" not in row
+    assert calls["n"] == 4
+
+
+# ---------------------------------------------------------------------------
 # diff_row: an unknown day never produces ended listings or sales
 # ---------------------------------------------------------------------------
 YESTERDAY = {"active_listings": 3, "avg_price": 50.0, "item_ids": ["a", "b", "c"]}

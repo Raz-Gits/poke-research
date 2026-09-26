@@ -63,6 +63,7 @@ from __future__ import annotations
 import base64
 import json
 import logging
+import math
 import os
 import random
 import time
@@ -310,21 +311,50 @@ def _browse_request(token: str, q: str, offset: int) -> Optional[dict]:
     return None
 
 
-def _is_valid_page(data) -> bool:
+def _summary_is_usable(it) -> bool:
+    """True for a listing we can read at all: an object with an ``itemId`` and a
+    ``price`` object carrying a currency and a finite numeric value.
+
+    Graded or non-USD listings are still usable here; they are dropped later by
+    business rules, and a page of only those is a real zero.
+    """
+    if not isinstance(it, dict) or it.get("itemId") is None:
+        return False
+    price = it.get("price")
+    if not isinstance(price, dict) or not price.get("currency"):
+        return False
+    try:
+        return math.isfinite(float(price.get("value")))
+    except (TypeError, ValueError):
+        return False
+
+
+def _is_valid_page(data, first_page: bool = True) -> bool:
     """True only for a Browse search response we can count listings from.
 
-    A page with results carries an ``itemSummaries`` list of objects. A page
-    with no results leaves ``itemSummaries`` out and reports ``total: 0``.
-    Anything else (None from a failed request, an error body, a list, a wrong
-    type) is not a count of zero, it is an unknown.
+    Every valid page reports ``total`` as a non-negative integer. A genuinely
+    empty result is ``total: 0`` with ``itemSummaries`` absent or empty, and
+    that is the only way to record zero listings. Everything else is an
+    unknown, never a zero: None from a failed request, an error body, a missing,
+    negative or non-integer ``total``, an empty first page that claims
+    ``total > 0``, an ``itemSummaries`` that is not a list of objects, or a page
+    where not one summary is usable (see :func:`_summary_is_usable`).
     """
     if not isinstance(data, dict):
         return False
+    total = data.get("total")
+    if not isinstance(total, int) or isinstance(total, bool) or total < 0:
+        return False
     summaries = data.get("itemSummaries")
     if summaries is None:
-        total = data.get("total")
-        return isinstance(total, int) and not isinstance(total, bool) and total == 0
-    return isinstance(summaries, list) and all(isinstance(it, dict) for it in summaries)
+        summaries = []
+    if not isinstance(summaries, list) or not all(isinstance(it, dict) for it in summaries):
+        return False
+    if not summaries:
+        # Empty is only a real zero when eBay itself says there are no results
+        # (later pages may legitimately run out).
+        return total == 0 or not first_page
+    return any(_summary_is_usable(it) for it in summaries)
 
 
 def _is_graded(title: str) -> bool:
@@ -349,7 +379,7 @@ def _fetch_card_market(card: dict, token: str) -> Dict[str, Optional[float]]:
     for page in range(MAX_PAGES_PER_CARD):
         data = _browse_request(token, q, offset=page * PAGE_LIMIT)
         time.sleep(REQUEST_PAUSE_S)
-        if not _is_valid_page(data):
+        if not _is_valid_page(data, first_page=(page == 0)):
             log.warning("eBay: no valid response for %s (q=%r); recording it as unknown",
                         card.get("id"), q)
             return _empty_row()
