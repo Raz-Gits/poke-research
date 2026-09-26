@@ -105,14 +105,20 @@ function sealedLine(sealed) {
    older than this. Verdicts stay visible; the reader decides. */
 const SEALED_STALE_DAYS = 14;
 function sealedPriceInfo(sets) {
+  /* Freshness is judged by the OLDEST pasted date, so one fresh paste cannot
+     make the whole page look fresh; a range is shown when the dates differ
+     (Codex verification, follow-up 4). */
   const dates = (sets || []).map((s) => s.sealed && s.sealed.as_of).filter(Boolean).sort();
-  const asOf = dates.length ? dates[dates.length - 1] : null;
-  const age = ageOf(asOf);
+  const oldest = dates.length ? dates[0] : null;
+  const newest = dates.length ? dates[dates.length - 1] : null;
+  const age = ageOf(oldest);
   return {
-    asOf,
+    oldest,
+    newest,
+    label: !oldest ? null : (oldest === newest ? oldest : `${oldest} to ${newest}`),
     days: age ? age.days : null,
     stale: !!age && age.days > SEALED_STALE_DAYS,
-    nPasted: (sets || []).filter((s) => s.sealed && s.sealed.as_of).length,
+    nPasted: dates.length,
     nSets: (sets || []).length,
   };
 }
@@ -504,13 +510,15 @@ function viewSets() {
     el('div', { class: 'table-scroll' }, el('table', { class: 'lb' }, [head, body])));
 
   const sealed = sealedPriceInfo(STATE.sets);
-  const sealedChip = sealed.asOf
+  const sealedChip = sealed.label
     ? el('span', { class: `chip ${sealed.stale ? 'chip--yellow' : 'chip--teal'}`,
-        text: `sealed prices as of ${sealed.asOf}` })
+        text: `sealed prices as of ${sealed.label}` })
     : el('span', { class: 'chip chip--yellow', text: 'sealed prices: estimates' });
   const staleNote = sealed.stale
     ? el('p', { class: 'stale-note', text:
-        `Stale: the pasted sealed prices are ${sealed.days} days old (TCGplayer, ${sealed.asOf}). ` +
+        (sealed.oldest === sealed.newest
+          ? `Stale: the pasted sealed prices are ${sealed.days} days old (TCGplayer, ${sealed.oldest}). `
+          : `Stale: the oldest pasted sealed prices are ${sealed.days} days old (TCGplayer pastes from ${sealed.label}; each set shows its own date). `) +
         'The EV verdicts below compare today’s card prices with those old pack and ETB prices, so check current sealed prices before acting on a verdict.' })
     : null;
 
@@ -528,7 +536,7 @@ function viewSets() {
     table,
     el('p', { class: 'caption', html: 'Pull rates are estimates, not official odds (official odds are never published). Most come from community pack-opening samples, but some tiers are still rough estimates or placeholders, so treat each set’s EV as approximate. ' +
       `Card prices refresh daily; pack and ETB prices do not. ${sealed.nPasted} of ${sealed.nSets} sets use a TCGplayer price paste` +
-      (sealed.asOf ? ` from ${sealed.asOf}` : '') + '; the rest use rough estimates set by hand in the config (Paldean Fates and Shrouded Fable ETB prices are lower-confidence).' }),
+      (sealed.label ? ` from ${sealed.label}` : '') + '; the rest use rough estimates set by hand in the config (Paldean Fates and Shrouded Fable ETB prices are lower-confidence).' }),
   ].filter(Boolean));
 
   setView(section);
