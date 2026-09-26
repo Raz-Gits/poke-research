@@ -267,7 +267,13 @@ def _build_query(card: dict) -> str:
 
 
 def _browse_request(token: str, q: str, offset: int) -> Optional[dict]:
-    """One Browse item_summary/search call, with 429 backoff. None on error."""
+    """One Browse item_summary/search call, with 429 backoff. None on error.
+
+    None covers every failure: a timeout, a non-429 HTTP error, a 429 that
+    outlasts the backoff, or a body that is not JSON. None means "we do not
+    know how many listings there are", never "there are none"; the caller
+    records the card as unknown (see :func:`_fetch_card_market`).
+    """
     params = urllib.parse.urlencode(
         {
             "q": q,
@@ -304,6 +310,23 @@ def _browse_request(token: str, q: str, offset: int) -> Optional[dict]:
     return None
 
 
+def _is_valid_page(data) -> bool:
+    """True only for a Browse search response we can count listings from.
+
+    A page with results carries an ``itemSummaries`` list of objects. A page
+    with no results leaves ``itemSummaries`` out and reports ``total: 0``.
+    Anything else (None from a failed request, an error body, a list, a wrong
+    type) is not a count of zero, it is an unknown.
+    """
+    if not isinstance(data, dict):
+        return False
+    summaries = data.get("itemSummaries")
+    if summaries is None:
+        total = data.get("total")
+        return isinstance(total, int) and not isinstance(total, bool) and total == 0
+    return isinstance(summaries, list) and all(isinstance(it, dict) for it in summaries)
+
+
 def _is_graded(title: str) -> bool:
     """Heuristic: drop graded slabs so avg_price reflects raw singles."""
     t = title.lower()
@@ -315,14 +338,21 @@ def _fetch_card_market(card: dict, token: str) -> Dict[str, Optional[float]]:
 
     Records only the two directly-observable fields; flow fields stay None and
     are filled later by :func:`diff_snapshots` against yesterday's file.
+
+    If any page request fails or comes back malformed, the card is recorded as
+    UNKNOWN: an all-None row with no ``item_ids``. It is never recorded as zero
+    listings, because diffing a false zero against yesterday would read every
+    listing as ended and invent sales. Only a valid response can produce zero.
     """
     q = _build_query(card)
     items: List[Tuple[str, float]] = []  # (item_id, price) for plausible listings
     for page in range(MAX_PAGES_PER_CARD):
         data = _browse_request(token, q, offset=page * PAGE_LIMIT)
         time.sleep(REQUEST_PAUSE_S)
-        if not data:
-            break
+        if not _is_valid_page(data):
+            log.warning("eBay: no valid response for %s (q=%r); recording it as unknown",
+                        card.get("id"), q)
+            return _empty_row()
         summaries = data.get("itemSummaries") or []
         for it in summaries:
             title = str(it.get("title") or "")
@@ -405,6 +435,11 @@ def diff_row(prev_row: Optional[dict], curr_row: dict) -> dict:
         row["item_ids"] = cur_ids
     prev_ids = prev_row.get("item_ids")
 
+    # An unknown count on either day (the request failed, or there is no usable
+    # yesterday) means no diff at all: neutral flow, never "everything ended".
+    if cur_active is None or prev_active is None:
+        return row
+
     # GROSS flow when BOTH days carry item ids: a listing that's in yesterday's
     # set but not today's actually ENDED (sold or pulled), even if an equal number
     # of new listings appeared and the net count is unchanged. Net-delta hides that
@@ -415,8 +450,6 @@ def diff_row(prev_row: Optional[dict], curr_row: dict) -> dict:
         ended = len(prev_set - cur_set)
         row["new_listings"] = new
         row["ended_listings"] = ended
-    elif cur_active is None or prev_active is None:
-        return row  # no usable diff yet -> neutral flow
     else:
         # NET fallback (older snapshots / simulation without ids).
         delta = int(cur_active) - int(prev_active)
@@ -535,6 +568,7 @@ def collect_snapshot(
     # Cards not reached are left as neutral rows so the history loader is happy.
     snapshot: Dict[str, dict] = {}
     calls = 0
+    n_unknown = 0
     consec_fail = 0
     start = time.monotonic()
     aborted = False
@@ -556,6 +590,8 @@ def collect_snapshot(
         row = _fetch_card_market(card, token)
         snapshot[card["id"]] = row
         calls += MAX_PAGES_PER_CARD
+        if row.get("active_listings") is None:
+            n_unknown += 1  # request failed or malformed: recorded as unknown
         consec_fail = 0 if row.get("active_listings") else consec_fail + 1
 
     # Fill flow fields by diffing yesterday's snapshot, if we have one.
@@ -569,7 +605,8 @@ def collect_snapshot(
             log.warning("Could not diff against %s: %s", prev_path.name, exc)
 
     out_path.write_text(json.dumps(snapshot, indent=2))
-    log.info("LIVE eBay snapshot written: %s (%s cards, %s API calls)", out_path, len(snapshot), calls)
+    log.info("LIVE eBay snapshot written: %s (%s cards, %s API calls, %s unknown after request errors)",
+             out_path, len(snapshot), calls, n_unknown)
     return out_path
 
 
