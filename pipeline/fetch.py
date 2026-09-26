@@ -5,6 +5,12 @@ Stdlib only so it runs without the numpy venv. Produces:
   data/normalized/cards.json      list[NormalizedCard]
   data/normalized/sets.json       list[SetRecord]
   data/snapshots/snapshot-<date>.json   {card_id: market_price}  (history seed)
+  data/normalized/price_fetch.json      price freshness record (see below)
+
+price_fetch.json holds ``prices_as_of``: the last time EVERY configured set came
+back from a live fetch with at least one priced card. On a partial or total
+failure it is carried forward unchanged, so every published price is at least
+as fresh as ``prices_as_of``. build.py publishes it next to ``built_at``.
 
 NormalizedCard schema (the contract every downstream module reads):
   id, name, base_name, number, rarity, set_id, set_name, series,
@@ -19,7 +25,7 @@ import time
 import urllib.error
 import urllib.parse
 import urllib.request
-from datetime import date
+from datetime import date, datetime, timezone
 
 from pipeline import config, pricing_tcgdex
 
@@ -152,10 +158,53 @@ def normalize_card(c: dict) -> dict:
     }
 
 
+def _utc_now_iso() -> str:
+    return datetime.now(timezone.utc).replace(microsecond=0).isoformat()
+
+
+def next_price_status(prev: dict | None, now_iso: str,
+                      sets_live: list[str], sets_not_live: list[str]) -> dict:
+    """Fold one fetch attempt into the persisted price-freshness record.
+
+    ``prices_as_of`` moves to ``now_iso`` only when every configured set came
+    back live with at least one priced card (``sets_not_live`` is empty). On a
+    partial or total failure it is carried forward unchanged (None if there was
+    never a full success), so it is a true lower bound on price freshness.
+    """
+    prev = prev if isinstance(prev, dict) else {}
+    ok = bool(sets_live) and not sets_not_live
+    return {
+        "prices_as_of": now_iso if ok else prev.get("prices_as_of"),
+        "last_attempt_at": now_iso,
+        "last_attempt_ok": ok,
+        "sets_live": sorted(sets_live),
+        "sets_not_live": sorted(sets_not_live),
+    }
+
+
+def _record_price_status(sets_live: list[str]) -> dict:
+    """Write data/normalized/price_fetch.json for this attempt and return it."""
+    sets_not_live = [s for s in config.SETS if s not in set(sets_live)]
+    path = config.PRICE_FETCH_STATUS
+    try:
+        prev = json.loads(path.read_text())
+    except (OSError, ValueError):
+        prev = None
+    status = next_price_status(prev, _utc_now_iso(), sets_live, sets_not_live)
+    path.write_text(json.dumps(status, indent=1))
+    if status["last_attempt_ok"]:
+        print(f"  prices_as_of -> {status['prices_as_of']} (all {len(sets_live)} sets live)", flush=True)
+    else:
+        print(f"  prices_as_of kept at {status['prices_as_of']}: not live this run: "
+              f"{status['sets_not_live']}", flush=True)
+    return status
+
+
 def main() -> None:
     all_cards: list[dict] = []
     set_records: list[dict] = []
     failed_sets: list[str] = []
+    live_priced_sets: list[str] = []  # fetched live AND at least one card priced
     for set_id, cfg in config.SETS.items():
         print(f"  fetching {set_id} ({cfg['name']}) ...", flush=True)
         try:
@@ -198,6 +247,8 @@ def main() -> None:
                     c["market_price"], c["price_variant"], c["price_updated"] = hit
                     filled += 1
             print(f"    filled {filled}/{len(set_cards)} cards from TCGdex", flush=True)
+        if any(c["market_price"] is not None for c in set_cards):
+            live_priced_sets.append(set_id)
         all_cards.extend(set_cards)
 
     # If a set's live fetch failed, carry its cards from the last good cache so a
@@ -219,6 +270,7 @@ def main() -> None:
         # Return cleanly so the daily-refresh BUILD step still runs on existing data.
         print("  no cards fetched — leaving existing normalized data untouched so "
               "the build can run on cached prices.", flush=True)
+        _record_price_status([])  # prices_as_of carried forward unchanged
         return
 
     (config.NORMALIZED / "cards.json").write_text(json.dumps(all_cards, indent=1))
@@ -227,6 +279,10 @@ def main() -> None:
     # Seed a price snapshot for today (history for trends / movers / demand).
     snap = {c["id"]: c["market_price"] for c in all_cards if c["market_price"] is not None}
     (config.SNAPSHOTS / f"snapshot-{date.today().isoformat()}.json").write_text(json.dumps(snap))
+
+    # Only after the data above is written: advance prices_as_of if every set
+    # came back live, otherwise carry it forward.
+    _record_price_status(live_priced_sets)
 
     priced = sum(1 for c in all_cards if c["market_price"] is not None)
     print(f"\n  {len(all_cards)} cards across {len(set_records)} sets "

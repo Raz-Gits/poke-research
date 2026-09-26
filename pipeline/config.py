@@ -20,6 +20,10 @@ SNAPSHOTS = DATA / "snapshots"
 SITE_DATA = ROOT / "docs" / "data"  # GitHub Pages serves /docs as the site root
 for _p in (RAW, NORMALIZED, SNAPSHOTS, SITE_DATA):
     _p.mkdir(parents=True, exist_ok=True)
+# Written by fetch.py after every attempt: when prices last came back live for
+# every set (prices_as_of) and what happened on the latest attempt. build.py
+# publishes prices_as_of so the site never mistakes the build time for price age.
+PRICE_FETCH_STATUS = NORMALIZED / "price_fetch.json"
 
 # ---------------------------------------------------------------------------
 # Data source: pokemontcg.io (free; optional key raises rate limits)

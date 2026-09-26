@@ -43,14 +43,34 @@ const PLACEHOLDER = 'data:image/svg+xml;utf8,' + encodeURIComponent(
 );
 function imgFallback(node) { node.onerror = null; node.src = PLACEHOLDER; }
 
-/* "Prices refreshed" freshness from meta.built_at (last fetch+build). */
-function refreshInfo(builtAt) {
-  if (!builtAt) return { label: '—', sub: 'unknown', days: null };
-  const days = Math.floor((Date.now() - new Date(builtAt).getTime()) / 86400000);
-  const date = builtAt.slice(0, 10);
+/* Freshness shown on the home page and footer.
+   meta.prices_as_of = the last time prices were fetched live for every set.
+   meta.built_at     = when the site was rebuilt, which can happen on cached prices.
+   Only prices_as_of may be called "Prices refreshed". Data built before that
+   field existed has only built_at, so we say "Site built" and claim nothing
+   about the prices. */
+function ageOf(iso) {
+  if (!iso) return null;
+  const t = new Date(iso).getTime();
+  if (Number.isNaN(t)) return null;
+  const days = Math.floor((Date.now() - t) / 86400000);
   const label = days <= 0 ? 'Today' : days === 1 ? 'Yesterday' : `${days} days ago`;
-  const sub = days >= 3 ? `as of ${date} · refresh recommended` : `as of ${date}`;
-  return { label, sub, days };
+  return { date: String(iso).slice(0, 10), days, label };
+}
+function refreshInfo(meta) {
+  const p = ageOf(meta && meta.prices_as_of);
+  if (p) {
+    const sub = p.days >= 3 ? `as of ${p.date} · refresh recommended` : `as of ${p.date}`;
+    return { kicker: 'Prices refreshed', label: p.label, sub, days: p.days,
+      footer: `Prices last refreshed ${p.date} · ${p.label}` };
+  }
+  const b = ageOf(meta && meta.built_at);
+  if (b) {
+    return { kicker: 'Site built', label: b.label, sub: `on ${b.date}`, days: b.days,
+      footer: `Site built ${b.date}` };
+  }
+  return { kicker: 'Site built', label: 'Unknown', sub: 'no date published', days: null,
+    footer: 'Site build date unknown' };
 }
 
 /* Per-set "sealed heat" line from the manual TCGplayer feed (pack momentum +
@@ -344,11 +364,11 @@ function viewHome() {
     ]));
 
   /* pastel stat cards from meta.json */
-  const fresh = refreshInfo(meta.built_at);
+  const fresh = refreshInfo(meta);
   const statRow = el('div', { class: 'stat-row container' }, [
     statCard('bg-yellow', 'Tracked', meta.cards.toLocaleString(), 'cards in the corpus'),
     statCard('bg-teal', 'Coverage', String(meta.sets), 'Scarlet & Violet sets'),
-    statCard('bg-coral', 'Prices refreshed', fresh.label, fresh.sub),
+    statCard('bg-coral', fresh.kicker, fresh.label, fresh.sub),
   ]);
 
   /* how it works */
@@ -1674,12 +1694,11 @@ function wireChrome() {
     if (e.key === 'Escape' && !$('#modalBackdrop').hidden) closeModal();
   });
 
-  /* footer: last refresh + freshness */
+  /* footer: price freshness (or only the build date, for older data) */
   const meta = STATE.meta;
   if (meta) {
-    const fresh = refreshInfo(meta.built_at);
     const fb = $('#footerBuilt');
-    if (fb) fb.textContent = `Prices last refreshed ${(meta.built_at || '').slice(0, 10)} · ${fresh.label}`;
+    if (fb) fb.textContent = refreshInfo(meta).footer;
   }
 }
 

@@ -406,6 +406,19 @@ def _snapshot_is_live(path: Path) -> bool:
     return any((row or {}).get("active_listings") for row in data.values())
 
 
+def _load_price_status() -> dict:
+    """The price-freshness record fetch.py writes (empty dict if absent/unreadable).
+
+    Its ``prices_as_of`` is the last time every set's prices came back live. It
+    is NOT the build time: a build can run on cached prices after a failed fetch.
+    """
+    try:
+        data = json.loads(config.PRICE_FETCH_STATUS.read_text())
+    except (OSError, ValueError):
+        return {}
+    return data if isinstance(data, dict) else {}
+
+
 def _load_psa_pop() -> Dict[str, dict]:
     """card_id -> PSA population row from ``data/psa_pop.json`` (empty if absent).
 
@@ -547,6 +560,9 @@ def build(today: Optional[date] = None) -> dict:
     }
     meta = {
         "built_at": datetime.now().replace(microsecond=0).isoformat(),
+        # When prices were last fetched live for every set (None if unknown).
+        # Separate from built_at: the site states price age from this field.
+        "prices_as_of": _load_price_status().get("prices_as_of"),
         "built_for_date": built_at,
         "sets": len(sets),
         "cards": len(cards),

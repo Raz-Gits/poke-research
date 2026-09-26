@@ -82,7 +82,7 @@ fetch(cached) → pullrates/ev → signals → market_dynamics → model.fit →
 - `sets.json`: EV leaderboard rows (per set_record + ev fields)
 - `leaderboard.json`: `{undervalued:[top 50 by residual_pct asc], overvalued:[top 50 desc], movers:[by saturation shift, fallback price-change]}`
 - `model.json` (from model.export)
-- `meta.json`: `{built_at, sets, cards, priced, sources, signal_status}`
+- `meta.json`: `{built_at, prices_as_of, sets, cards, priced, sources, signal_status}` (`prices_as_of` = last time every set's prices were fetched live; `built_at` = build time only)
 
 ## Frontend  (site/index.html, site/app.js, site/styles.css) — plain JS, no build step
 Loads `./data/*.json`. **Look & feel MUST follow `DESIGN.md`** (Miro-inspired: white canvas,
