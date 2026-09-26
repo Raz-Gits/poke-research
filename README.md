@@ -86,3 +86,14 @@ CONTRACT.md the build spec every module conforms to
 Estimates, not financial advice. Pull-rate and pack-price inputs are rough and tunable. Built for
 fun and learning. Card data via pokemontcg.io; design language adapted from Miro. Not affiliated
 with Nintendo / The Pokémon Company / Collectrics.
+
+- **The Track Record backtest is exploratory.** Its gates, price floor and feature set were
+  chosen after looking at the same price history it reports, so its numbers are likely
+  optimistic. Its "surfaced" figure applies only the mid-price gate, not the chase-premium gate
+  the live site also uses. It is run by hand, not by the daily refresh.
+- **Pull rates are estimates, not official odds.** Most come from community pack-opening
+  samples, but some tiers are still rough estimates or placeholders (marked in the comments in
+  `pipeline/pullrates.py`), so sealed EV is approximate.
+- **"Fair price" is a model estimate.** It is less reliable for small clusters: as of 2026-09-25
+  the smallest cluster models are fit on 12 or 13 cards for three features plus an intercept.
+  The card view on the site shows how many cards each estimate is fit on.

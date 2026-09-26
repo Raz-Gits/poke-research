@@ -9,10 +9,14 @@ of that rarity in the set, so a single specific card's per-pack pull rate is::
 and its "pull cost" — the expected dollars of packs you must rip to land one
 copy — is ``pack_price / pull_rate``.
 
-PULL RATES ARE REAL, MEASURED DATA (not my guesses), but NOT official: The
-Pokémon Company never publishes pull rates, so these come from large community
+PULL RATES ARE MOSTLY MEASURED DATA, but NOT official: The Pokémon Company
+never publishes pull rates, so most of these come from large community
 pack-opening studies (1,000-8,000+ packs each). They carry a sample-size margin
-and every pack is independent — treat them as the best available estimate.
+and every pack is independent, so treat them as the best available estimate.
+Some tiers are still rough: the comments below mark them ESTIMATE, PROVISIONAL
+or PLACEHOLDER (e.g. ACE SPEC, the newer Mega-era tiers, the Journey Together
+and Destined Rivals Hyper Rares). Those marks are comments only; nothing in the
+code reads them, so the site shows a general pull-rate caveat instead.
 
 Structure:
   * ``BASE_TIER_PROB`` — measured rates for a STANDARD Scarlet & Violet set

@@ -517,7 +517,7 @@ function viewSets() {
     ]),
     staleNote,
     table,
-    el('p', { class: 'caption', html: 'Pull rates are sourced from large community / TCGplayer-style samples (SIR &amp; Hyper Rare per set). ' +
+    el('p', { class: 'caption', html: 'Pull rates are estimates, not official odds (official odds are never published). Most come from community pack-opening samples, but some tiers are still rough estimates or placeholders, so treat each set’s EV as approximate. ' +
       `Card prices refresh daily; pack and ETB prices do not. ${sealed.nPasted} of ${sealed.nSets} sets use a TCGplayer price paste` +
       (sealed.asOf ? ` from ${sealed.asOf}` : '') + '; the rest use rough estimates set by hand in the config (Paldean Fates and Shrouded Fable ETB prices are lower-confidence).' }),
   ].filter(Boolean));
@@ -568,7 +568,7 @@ function viewPriceLab() {
         html: `Squared log correlation, in-sample&nbsp;${(STATE.meta.model_r2_log ?? 0).toFixed(2)} · ${STATE.meta.clusters} clusters` }),
     ]),
     el('div', { class: 'lab-grid' }, [under, over]),
-    el('p', { class: 'caption', html: 'Expected price is a statistical <strong>estimate</strong>, not an appraisal. Green = trading below the model (potential value); red = trading above (potential premium).' }),
+    el('p', { class: 'caption', html: 'Expected price is a statistical <strong>estimate</strong>, not an appraisal, and it is less reliable for cards in small clusters (open a card to see how many cards its estimate is fit on). Green = trading below the model (potential value); red = trading above (potential premium).' }),
   ]);
 
   setView(section);
@@ -1475,6 +1475,7 @@ function buildModalContent(card) {
         el('h3', { class: 'h2 modal-title', text: card.name }),
         el('div', { class: 'modal-setline', text: `${card.set_name} · ${card.series} · ${card.release_date}` }),
         priceBlock,
+        fairPriceNote(card),
         signalBanner(card),
         (card.features && card.features.pull_cost)
           ? el('p', { class: 'caption', html:
@@ -1497,6 +1498,24 @@ function buildModalContent(card) {
       ]),
     ]),
   ]);
+}
+
+/* "Fair price" is a model estimate. Say how many cards it was fit on (the
+   cluster's n, already in model.json) and flag small clusters. A card whose
+   cluster was too small for its own model uses the global model. */
+const SMALL_CLUSTER_N = 30;
+function fairPriceNote(card) {
+  const m = STATE.model || {};
+  const own = m.clusters && m.clusters[card.cluster];
+  const n = (own || m.global || {}).n;
+  if (!n) return el('p', { class: 'caption', text: 'The expected price is a model estimate; it is less reliable for small clusters.' });
+  const base = own
+    ? `The expected price is a model estimate fit on ${n.toLocaleString()} priced cards in this card’s cluster (${card.cluster}).`
+    : `This card’s cluster is too small for its own model, so its expected price comes from the global model (${n.toLocaleString()} cards).`;
+  const tail = (own && n < SMALL_CLUSTER_N)
+    ? ' That is a small sample, so treat this estimate as rough.'
+    : ' Estimates from small clusters are less reliable.';
+  return el('p', { class: 'caption', text: base + tail });
 }
 
 /* shared gauge shell */
@@ -1616,8 +1635,13 @@ function viewTrackRecord() {
   }
   const p = bt.panel, h = bt.headline, hr = bt.hit_rates || {}, dec = bt.decile || {};
 
+  /* The backtest's "surfaced" gate is only the mature $20 to $100 dead zone. The
+     live site also hides mature chase-premium cards (build._edge), which this
+     backtest does not replicate yet, so do not present it as what users see. */
+  const surfacedNote = 'Fresh cards (35 days or younger) plus cards priced outside the mature $20 to $100 zone. ' +
+    'The live site also hides mature chase-premium cards; this backtest does not apply that gate yet, so it does not exactly match what the site shows.';
   const heads = el('div', { style: 'display:flex;flex-wrap:wrap;gap:14px;margin-top:6px' }, [
-    h.surfaced ? trHeadlineCard('What the site surfaces (gated)', h.surfaced, 'The honest headline') : null,
+    h.surfaced ? trHeadlineCard('Gated cards (mid-price gate only)', Object.assign({}, h.surfaced, { note: surfacedNote }), 'Exploratory') : null,
     h.fresh_release ? trHeadlineCard('Fresh releases (≤35 days old)', h.fresh_release, 'Strong & robust') : null,
     h.all_cards ? trHeadlineCard('All cards ($2+)', h.all_cards, 'Modest') : null,
     h.mature_liquid ? trHeadlineCard('Mature & liquid (>90d, >$10)', h.mature_liquid, '≈ no edge — honest') : null,
@@ -1659,6 +1683,10 @@ function viewTrackRecord() {
       ]),
       el('span', { class: 'chip chip--lavender', text: p.n_dates + ' weeks · ' + p.primary_horizon_days + 'd horizon' }),
     ]),
+    el('p', { class: 'stale-note', style: 'margin:6px 0 14px', text:
+      'Exploratory, not a confirmed result. The gates, price floor and model features were chosen after looking at this same price history, ' +
+      'so these numbers are likely optimistic; a clean test needs a later period the rules never saw. ' +
+      `The backtest runs by hand, not in the daily refresh, and covers data up to ${p.last_date}.` }),
     heads,
     verdict,
     el('div', { class: 'lab-grid', style: 'margin-top:20px' }, [ageTable, floorTable]),

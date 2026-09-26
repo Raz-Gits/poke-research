@@ -240,8 +240,11 @@ FRESH_AGE = 35         # days since release to count a card as a "fresh release"
 MATURE_FLOOR = 10.0    # price floor for the honest "mature & liquid" headline
 # Gating predicate (mirrors config): a card is SURFACED — we publish an over/under
 # call — when it's FRESH or its price is OUTSIDE the mature mid-price dead zone
-# [GATE_DEAD_LO, GATE_DEAD_HI). The 'surfaced' headline IC is the honest accuracy
-# of what the leaderboard actually shows.
+# [GATE_DEAD_LO, GATE_DEAD_HI). Known gap (Codex review, finding 6): production
+# (build._edge) ALSO hides mature cards priced above CHASE_PREMIUM_MULT x the
+# model estimate. This predicate does not, so the 'surfaced' IC does not exactly
+# match what the leaderboard shows. The gates were also tuned on this same
+# history (finding 7), so treat the number as exploratory.
 def _is_surfaced(age: Optional[int], price: float) -> bool:
     if age is not None and 0 <= age <= FRESH_AGE:
         return True
@@ -433,9 +436,10 @@ def run(horizons: Sequence[int] = HORIZONS, band: float = BAND,
             "all_cards": all_stats and {**all_stats,
                 "note": "floor $2, all ages — inflated by the presale/fresh + cheap-card effects below"},
             "surfaced": surfaced and {**surfaced,
-                "note": f"the GATED universe the site surfaces — fresh (<={FRESH_AGE}d) OR price "
-                        f"outside the mature dead zone [${config.GATE_DEAD_LO:.0f},${config.GATE_DEAD_HI:.0f}); "
-                        f"the honest IC of what users actually see"},
+                "note": f"fresh (<={FRESH_AGE}d) OR price outside the mature dead zone "
+                        f"[${config.GATE_DEAD_LO:.0f},${config.GATE_DEAD_HI:.0f}). Exploratory: the gates "
+                        f"were tuned on this history, and the live site's chase-premium gate is not "
+                        f"applied here, so this does not exactly match what users see"},
         },
         "hit_rates": hit_rates,
         "decile": decile,
