@@ -430,8 +430,8 @@ def run(horizons: Sequence[int] = HORIZONS, band: float = BAND,
             "mature_liquid": mature and {**mature,
                 "note": f"cards >{MATURE_AGE}d old & >=${MATURE_FLOOR:.0f} — the honest steady-state edge"},
             "fresh_release": fresh and {**fresh, "mean_fwd_return": fresh_mean_ret,
-                "note": f"cards <={FRESH_AGE}d old — the model's strongest, most real signal "
-                        f"(fresh chase cards are overpriced and crash; avg {PRIMARY_HORIZON}d return "
+                "note": f"cards <={FRESH_AGE}d old: the strongest segment in this exploratory "
+                        f"replay (fresh chase cards tended to fall; avg {PRIMARY_HORIZON}d return "
                         f"{(fresh_mean_ret or 0)*100:.0f}%)"},
             "all_cards": all_stats and {**all_stats,
                 "note": "floor $2, all ages — inflated by the presale/fresh + cheap-card effects below"},

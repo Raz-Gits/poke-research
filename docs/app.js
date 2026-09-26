@@ -1651,20 +1651,25 @@ function viewTrackRecord() {
      backtest does not replicate yet, so do not present it as what users see. */
   const surfacedNote = 'Fresh cards (35 days or younger) plus cards priced outside the mature $20 to $100 zone. ' +
     'The live site also hides mature chase-premium cards; this backtest does not apply that gate yet, so it does not exactly match what the site shows.';
+  /* Keep the fresh-release card as modest as the exploratory caveat above it
+     (Codex verification, follow-up 3); backtest.json's own note says "most real signal". */
+  const freshNote = 'Cards 35 days old or younger: the strongest segment in this exploratory replay' +
+    ((h.fresh_release && h.fresh_release.mean_fwd_return != null)
+      ? `, with an average ${p.primary_horizon_days}-day return of ${signedPct(h.fresh_release.mean_fwd_return, 0)}.` : '.');
   const heads = el('div', { style: 'display:flex;flex-wrap:wrap;gap:14px;margin-top:6px' }, [
     h.surfaced ? trHeadlineCard('Gated cards (mid-price gate only)', Object.assign({}, h.surfaced, { note: surfacedNote }), 'Exploratory') : null,
-    h.fresh_release ? trHeadlineCard('Fresh releases (≤35 days old)', h.fresh_release, 'Strong & robust') : null,
+    h.fresh_release ? trHeadlineCard('Fresh releases (≤35 days old)', Object.assign({}, h.fresh_release, { note: freshNote }), 'Strongest historical segment') : null,
     h.all_cards ? trHeadlineCard('All cards ($2+)', h.all_cards, 'Modest') : null,
-    h.mature_liquid ? trHeadlineCard('Mature & liquid (>90d, >$10)', h.mature_liquid, '≈ no edge — honest') : null,
+    h.mature_liquid ? trHeadlineCard('Mature & liquid (>90d, >$10)', h.mature_liquid, '≈ no edge') : null,
   ]);
 
   const freshPct = (h.fresh_release && h.fresh_release.mean_fwd_return != null)
     ? Math.round(Math.abs(h.fresh_release.mean_fwd_return) * 100) + '%' : '~10%';
   const verdict = el('div', { style: 'background:var(--surface-soft,#F7F7FB);border-radius:16px;padding:18px 20px;margin-top:18px' }, [
-    el('p', { class: 'h3', style: 'margin:0 0 6px', text: 'What the numbers say' }),
+    el('p', { class: 'h3', style: 'margin:0 0 6px', text: 'What this replay suggests' }),
     el('p', { class: 'section-sub', style: 'margin:0', html:
-      'The model is genuinely good at <strong>one valuable thing</strong>: spotting freshly-released cards that are overpriced and about to fall. Fresh cards drop about <strong>' + freshPct +
-      '</strong> in their first month, and the model reliably ranks which fall hardest. On established, liquid cards it has little measurable edge — treat it as a value gauge, not a crystal ball.' }),
+      'In this exploratory replay, the clearest result was on <strong>freshly released cards</strong>: they fell about <strong>' + freshPct +
+      '</strong> in their first month on average, and ranking which would fall hardest was the model’s strongest historical segment. On established, liquid cards it showed little measurable edge, so treat it as a value gauge, not a crystal ball. None of this has been confirmed yet on data the rules never saw.' }),
   ]);
 
   const ageTable = trMiniTable('Edge by card age (since release)',
