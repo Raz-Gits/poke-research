@@ -83,9 +83,29 @@ function sealedLine(sealed) {
   const col = up ? 'var(--success-accent)' : 'var(--brand-red-dark)';
   const listed = p.listings == null ? '—'
     : p.listings >= 1000 ? (p.listings / 1000).toFixed(1) + 'k' : String(p.listings);
+  /* These figures are from a hand-pasted TCGplayer dump, so show the day they
+     describe instead of implying they are today's 24h numbers. */
+  const when = sealed.as_of ? `24h to ${sealed.as_of}` : '24h';
   return el('div', { class: 'lb-sub', html:
     `📦 ${USD(p.price)} <span style="color:${col};font-weight:600">${up ? '▲' : '▼'} ${Math.abs(ch).toFixed(1)}%</span>` +
-    ` · ${(p.sold_today ?? 0).toLocaleString()} sold · ${listed} listed <span style="opacity:.55">24h</span>` });
+    ` · ${(p.sold_today ?? 0).toLocaleString()} sold · ${listed} listed <span style="opacity:.55">${when}</span>` });
+}
+
+/* Sealed (pack / ETB) prices come from a TCGplayer dump pasted by hand, not a
+   daily feed, so the Sets page shows their date and flags them once they are
+   older than this. Verdicts stay visible; the reader decides. */
+const SEALED_STALE_DAYS = 14;
+function sealedPriceInfo(sets) {
+  const dates = (sets || []).map((s) => s.sealed && s.sealed.as_of).filter(Boolean).sort();
+  const asOf = dates.length ? dates[dates.length - 1] : null;
+  const age = ageOf(asOf);
+  return {
+    asOf,
+    days: age ? age.days : null,
+    stale: !!age && age.days > SEALED_STALE_DAYS,
+    nPasted: (sets || []).filter((s) => s.sealed && s.sealed.as_of).length,
+    nSets: (sets || []).length,
+  };
 }
 
 /* residual_pct convention (from real data):
@@ -461,6 +481,17 @@ function viewSets() {
   const table = el('div', { class: 'table-card' },
     el('div', { class: 'table-scroll' }, el('table', { class: 'lb' }, [head, body])));
 
+  const sealed = sealedPriceInfo(STATE.sets);
+  const sealedChip = sealed.asOf
+    ? el('span', { class: `chip ${sealed.stale ? 'chip--yellow' : 'chip--teal'}`,
+        text: `sealed prices as of ${sealed.asOf}` })
+    : el('span', { class: 'chip chip--yellow', text: 'sealed prices: estimates' });
+  const staleNote = sealed.stale
+    ? el('p', { class: 'stale-note', text:
+        `Stale: the pasted sealed prices are ${sealed.days} days old (TCGplayer, ${sealed.asOf}). ` +
+        'The EV verdicts below compare today’s card prices with those old pack and ETB prices, so check current sealed prices before acting on a verdict.' })
+    : null;
+
   const section = el('section', { class: 'section container' }, [
     el('div', { class: 'section-head' }, [
       el('div', {}, [
@@ -469,11 +500,14 @@ function viewSets() {
         el('p', { class: 'section-sub', text:
           'Sealed expected value = Σ (per-card pull rate × market price), shown per single pack and per Elite Trainer Box (9 packs), each vs what that product costs. Green “Undervalued” = the cards inside are worth more than the sealed product (good to rip / hold); red “Overvalued” = you pay a premium for sealed (buy singles). A value signal, not a price-trend forecast.' }),
       ]),
-      el('span', { class: 'chip chip--teal', text: 'live · pokemontcg.io' }),
+      sealedChip,
     ]),
+    staleNote,
     table,
-    el('p', { class: 'caption', html: 'Pull rates are sourced from large community / TCGplayer-style samples (SIR &amp; Hyper Rare per set). Pack &amp; ETB prices are TCGplayer-sourced estimates — Paldean Fates and Shrouded Fable ETB prices are lower-confidence.' }),
-  ]);
+    el('p', { class: 'caption', html: 'Pull rates are sourced from large community / TCGplayer-style samples (SIR &amp; Hyper Rare per set). ' +
+      `Card prices refresh daily; pack and ETB prices do not. ${sealed.nPasted} of ${sealed.nSets} sets use a TCGplayer price paste` +
+      (sealed.asOf ? ` from ${sealed.asOf}` : '') + '; the rest use rough estimates set by hand in the config (Paldean Fates and Shrouded Fable ETB prices are lower-confidence).' }),
+  ].filter(Boolean));
 
   setView(section);
   highlightNav('sets');
