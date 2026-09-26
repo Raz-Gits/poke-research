@@ -212,9 +212,15 @@ class ModelResult:
         return self.predictions.get(card_id)
 
     def r2_log(self) -> float:
-        """R^2 in log space = squared correlation of expected vs actual log-price.
+        """Squared correlation of expected vs actual log-price, in-sample.
 
-        Computed only over cards with a real market price.
+        The name says R^2, but this is corr(log actual, log predicted)^2, not
+        the coefficient of determination 1 - SSE/SST: it ignores predictions
+        that are systematically too high or too low. It is measured on the same
+        cards the model was fit on, so it is fit, not accuracy. Published as
+        meta.json ``model_r2_log`` (name kept for the frontend) and labeled
+        "squared log correlation, in-sample". Computed only over cards with a
+        real market price.
         """
         actual, pred = [], []
         for p in self.predictions.values():
@@ -563,9 +569,9 @@ def _self_test() -> None:
     if small:
         print(f"  Clusters using global fallback: {small}")
 
-    # 4) Report R^2 in log space.
+    # 4) Report the squared log correlation (in-sample; not 1 - SSE/SST).
     r2 = result.r2_log()
-    print(f"\nR^2 (corr of expected vs actual, log space): {r2:.4f}")
+    print(f"\nSquared log correlation, in-sample (corr of expected vs actual, log space, squared): {r2:.4f}")
 
     # 5) Three most-underpriced cards by residual_pct (most negative first).
     print("\n3 most-underpriced cards (market far below expected):")

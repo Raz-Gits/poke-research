@@ -23,8 +23,12 @@ Inspired by the Collectrics "IQ / Price Lab" approach; rebuilt from scratch on p
 
 Ridge regression on `log(market_price)`, **one model per rarity cluster** (+ a global fallback),
 the clustering step the original author called out as necessary to fit thousands of cards.
-In-sample **R²(log) ≈ 0.90** across **2,936 priced cards / 15 sets / 16 clusters**, as of
-2026-09-24 (`docs/data/meta.json`, rebuilt daily). The residual
+**Squared log correlation, in-sample ≈ 0.90** across **2,936 priced cards / 15 sets / 16
+clusters**, as of 2026-09-24 (`docs/data/meta.json` key `model_r2_log`, rebuilt daily). That is
+the square of the correlation between log market price and log predicted price, measured on the
+same cards the model was fit on. It is not a standard R² (1 - SSE/SST), it does not penalize
+predictions that are all too high or all too low, and it is not out-of-sample accuracy; the Track
+Record page is the forward test. The residual
 `(market − expected)/expected` is the over/under signal. Chase cards (Umbreon, Mew, Charizard)
 correctly sit at the top of expected price and read as "trading above fundamentals". That premium
 is the demand and hype the eBay and PSA signals track, which stay out of the model until they

@@ -563,7 +563,9 @@ function viewPriceLab() {
         el('p', { class: 'section-sub', text:
           `The model predicts a fair price for each card from ${modelFeatureList()}, with a separate model per rarity cluster. The delta is how far the live market sits from that estimate. For how accurate these calls actually are, see the Track Record. Open any card to tune the signals yourself.` }),
       ]),
-      el('span', { class: 'chip chip--lavender', html: `In-sample fit&nbsp;${(STATE.meta.model_r2_log ?? 0).toFixed(2)} · ${STATE.meta.clusters} clusters` }),
+      el('span', { class: 'chip chip--lavender',
+        title: 'Square of the correlation between log market price and log model price, on the same cards the model was fit on. Not a standard R², and not out-of-sample accuracy (see the Track Record).',
+        html: `Squared log correlation, in-sample&nbsp;${(STATE.meta.model_r2_log ?? 0).toFixed(2)} · ${STATE.meta.clusters} clusters` }),
     ]),
     el('div', { class: 'lab-grid' }, [under, over]),
     el('p', { class: 'caption', html: 'Expected price is a statistical <strong>estimate</strong>, not an appraisal. Green = trading below the model (potential value); red = trading above (potential premium).' }),

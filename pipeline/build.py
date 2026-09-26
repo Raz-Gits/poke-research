@@ -503,7 +503,7 @@ def build(today: Optional[date] = None) -> dict:
     # signals.py deliberately omits pull_cost so it never imports pullrates; we
     # compute it here per card. Uses the SECONDARY (real market) loose-pack price
     # -> what it would ACTUALLY cost in packs today to hit this exact card. Tested
-    # stronger than the MSRP basis (model R²(log) 0.955 -> 0.961) and matches the
+    # stronger than the MSRP basis (squared log correlation 0.955 -> 0.961) and matches the
     # reference site's pull-cost magnitudes (e.g. Ascended Heroes SIR ~$21k).
     pull_costs: Dict[str, float] = {}
     for c in cards:
@@ -596,7 +596,11 @@ def build(today: Optional[date] = None) -> dict:
         "cards": len(cards),
         "priced": len(priced),
         "clusters": len(model_payload["clusters"]),
+        # Key name kept for the frontend. The value is corr(log actual, log
+        # predicted)^2 on the training cards, not 1 - SSE/SST and not
+        # out-of-sample; the label below says so for anyone reading the JSON.
         "model_r2_log": round(result.r2_log(), 6),
+        "model_r2_log_label": "squared log correlation, in-sample",
         "predictions_logged": n_pred,
         # Date of the newest eBay snapshot with real listing data (None if none).
         "ebay_latest_snapshot": ebay_latest,
