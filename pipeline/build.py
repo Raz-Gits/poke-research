@@ -2,7 +2,7 @@
 
 This is the single command that turns the cached, normalized pokemontcg.io data
 into the JSON the static frontend consumes. It wires every owned module together
-in the order the contract mandates and writes ``site/data/*.json``.
+in the order the contract mandates and writes ``docs/data/*.json`` (config.SITE_DATA).
 
 Pipeline (see CONTRACT.md, "Build orchestrator")::
 
@@ -11,10 +11,10 @@ Pipeline (see CONTRACT.md, "Build orchestrator")::
       -> ev.ev_for_set            (per set)
       -> signals.compute_features
       -> inject real pull_cost     (pullrates.pull_cost per card)
-      -> market_dynamics.compute   (stub; eBay snapshot history)
+      -> market_dynamics.compute   (daily eBay snapshot history; display only)
       -> model.fit + model.export
       -> iq_score                  (0-100 blend of scarcity, char_premium, set_rank)
-      -> write site/data/{cards,sets,leaderboard,model,meta}.json
+      -> write docs/data/{cards,sets,leaderboard,model,meta}.json
 
 Run from the project root::
 
@@ -41,9 +41,8 @@ from collectors import ebay
 # card's normalized live signals. It is intentionally separate from
 # residual_pct (the over/under-valuation signal). scarcity and char_premium are
 # already on a 0-10 scale; set_rank is already 0-1. We normalize each to 0-1
-# and blend. momentum (a price/saturation trend) is folded in only when real
-# market history exists; with the eBay feed stubbed it is absent, so the blend
-# uses the three live signals.
+# and blend. momentum (a price/saturation trend) is supported but build() does
+# not pass it today, so the blend uses the three live signals.
 IQ_WEIGHTS = {
     "scarcity": 0.40,       # rarity + out-of-print pressure
     "char_premium": 0.35,   # character desirability
@@ -62,7 +61,7 @@ def iq_score(feats: Dict[str, float], momentum: Optional[float] = None) -> float
     momentum:
         Optional 0-1 market-momentum signal. When present it is blended in with
         a small weight and the live weights are rescaled so the result stays in
-        [0, 100]. With the eBay feed stubbed this is ``None`` for every card.
+        [0, 100]. build() does not pass it today, so it is ``None`` for every card.
 
     Returns
     -------
@@ -120,8 +119,8 @@ def _load_ebay_history(out_dir: Path) -> Dict[str, List[dict]]:
     file date, and backfills the day-over-day flow fields
     (``new_listings``/``ended_listings``/``est_sold``/``est_unsold``) via
     ``collectors.ebay.diff_row`` so demand pressure works even from counts-only
-    snapshots. Returns ``{card_id: [rows sorted by date]}``. With the collector
-    stubbed (no key, no history) every row is neutral, so compute() returns the
+    snapshots. Returns ``{card_id: [rows sorted by date]}``. Without eBay keys
+    or history every row is neutral, so compute() returns the
     awaiting-data fallback — which is exactly what we surface honestly in the UI.
     """
     return market_dynamics.load_history(out_dir)
@@ -257,8 +256,8 @@ def build_leaderboard(card_records: List[dict]) -> dict:
     * ``undervalued`` — biggest positive ``expected - market`` (largest $ discount).
     * ``overvalued``  — biggest negative ``expected - market`` (largest $ premium).
     * ``movers``      — biggest market movers. Primary key is the saturation
-      shift from market_dynamics (``|supply_saturation - 1|``); with the eBay
-      feed stubbed there is no real shift, so we fall back to the largest
+      shift from market_dynamics (``|supply_saturation - 1|``); when no card
+      has a current eBay read there is no real shift, so we fall back to the largest
       absolute dollar gap and flag ``awaiting_data`` so the UI never implies a
       feed we don't have.
     """
@@ -473,7 +472,7 @@ def _load_psa_pop() -> Dict[str, dict]:
 
 
 def build(today: Optional[date] = None) -> dict:
-    """Run the whole pipeline on the cached data and write ``site/data/*.json``.
+    """Run the whole pipeline on the cached data and write ``docs/data/*.json``.
 
     Returns a small summary dict (also the basis of meta.json). ``today`` is
     threaded through so months_since_release / the build timestamp are

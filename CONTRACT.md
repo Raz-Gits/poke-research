@@ -1,4 +1,20 @@
-# Price Lab — build contract (single source of truth)
+# Price Lab build contract (historical design document)
+
+> **Historical design document, not maintained since 2026-06-17.** This was the build
+> spec for the first version of the site. It is no longer the single source of truth:
+> for the current system see `README.md`, `pipeline/config.py` (`FEATURES`, `SETS`) and
+> the code. Three statements below were corrected on 2026-09-26 and are marked
+> "Corrected". Other known differences from today's system:
+>
+> - The model uses three features (`char_premium`, `scarcity`, `months_since_release`).
+>   `char_premium` no longer uses price, `set_rank` is a rarity-tier percentile, `pull_cost`
+>   and `set_rank` are computed for display and sealed EV only, and the demand, grading and
+>   appeal stubs were removed from the model.
+> - Sealed EV is per pack and per Elite Trainer Box (`packs_per_etb`, `etb_price`), not
+>   per booster box.
+> - Pull rates live in `pipeline/pullrates.py` as `BASE_TIER_PROB` plus per-set overrides;
+>   the table below is the original placeholder.
+> - eBay demand pressure and supply saturation are shown next to the model, not fed into it.
 
 A Pokémon card analytics site, faithful to the "Collectrics IQ Price Lab" design but
 built on free data (pokemontcg.io) with paid feeds (eBay/PSA/Trends) left as pluggable stubs.
@@ -57,6 +73,8 @@ Required functions:
   mapping `card_id -> {active_listings, new_listings, ended_listings, est_sold, est_unsold, avg_price}`.
   v1 = clean STUB (no eBay key yet): write empty/neutral, but document the real eBay Browse API path
   (active listings only; estimate sold/unsold by diffing daily snapshots). Schema is the deliverable.
+  **Corrected 2026-09-26:** the collector is live, not a stub. The daily GitHub Action sweeps the
+  Browse API; only a run without keys still writes neutral rows.
 - `pipeline/market_dynamics.py`: `compute(card_id, ebay_snaps) -> dict` with
   `demand_pressure = est_sold / total_supply` (%), `supply_saturation = supply_7d_avg / supply_30d_avg`
   (>1 loosening, <1 tightening). Neutral fallback when no eBay history: `{demand_pressure: None,
@@ -77,14 +95,16 @@ Required functions:
 This is the at-a-glance "card score"; the residual_pct is the over/under signal. Keep both.
 
 ## Build orchestrator  (pipeline/build.py) — written in the Integrate phase
-fetch(cached) → pullrates/ev → signals → market_dynamics → model.fit → iq_score → write `site/data/`:
+fetch(cached) → pullrates/ev → signals → market_dynamics → model.fit → iq_score → write `docs/data/`
+(**Corrected 2026-09-26:** the original said `site/data/`):
 - `cards.json`: each card + `expected_price, residual_pct, iq_score, features{}, cluster, dynamics{}, image_small`
 - `sets.json`: EV leaderboard rows (per set_record + ev fields)
 - `leaderboard.json`: `{undervalued:[top 50 by residual_pct asc], overvalued:[top 50 desc], movers:[by saturation shift, fallback price-change]}`
 - `model.json` (from model.export)
 - `meta.json`: `{built_at, prices_as_of, sets, cards, priced, sources, signal_status}` (`prices_as_of` = last time every set's prices were fetched live; `built_at` = build time only)
 
-## Frontend  (site/index.html, site/app.js, site/styles.css) — plain JS, no build step
+## Frontend  (docs/index.html, docs/app.js, docs/styles.css), plain JS, no build step
+**Corrected 2026-09-26:** the original said `site/`; Netlify publishes `docs/`.
 Loads `./data/*.json`. **Look & feel MUST follow `DESIGN.md`** (Miro-inspired: white canvas,
 black-pill CTAs, canary-yellow "Poke Research" wordmark, pastel feature cards, Hanken Grotesk,
 pill everything). Title the site **Poke Research**. Views (hash routing):
