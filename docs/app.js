@@ -1082,6 +1082,7 @@ function myCardsPanel() {
 }
 
 /* ---------- sealed-ETB deal monitor (the original watchlist) ---------- */
+const WATCHLIST_STALE_DAYS = 7;  /* older than this: warn that listings have likely ended */
 function sealedWatchlistPanel() {
   const wl = STATE.watchlist;
   if (!wl || !wl.watches || !wl.watches.length) {
@@ -1091,18 +1092,25 @@ function sealedWatchlistPanel() {
     ]);
   }
   const updated = wl.updated ? new Date(wl.updated) : null;
+  const age = ageOf(wl.updated);
   const refreshBtn = el('button', { class: 'button button-secondary button-sm wl-refresh', type: 'button',
     text: '⟳ Refresh', title: 'Re-pull the latest published deal snapshot',
     onclick: (e) => refreshSealedWatchlist(e.currentTarget) });
+  /* The deal list is published by hand from a local watcher, not by the daily
+     refresh, so it can be weeks old. Say so plainly once it is. */
+  const staleNote = (age && age.days > WATCHLIST_STALE_DAYS)
+    ? el('p', { class: 'stale-note', text:
+        `This list is ${age.days} days old; most listings have likely ended. Treat the prices below as history, not live deals.` })
+    : (!age ? el('p', { class: 'stale-note', text: 'This list has no update date, so its age is unknown; listings may have ended.' }) : null);
   const banner = el('div', { class: 'table-card', style: 'padding:16px 22px;margin-bottom:24px;box-shadow:none;background:var(--surface-soft);display:flex;gap:14px;align-items:center;flex-wrap:wrap' }, [
-    el('span', { class: 'chip chip--lavender', text: '📲 phone alerts' }),
+    el('span', { class: 'chip chip--lavender', text: 'snapshot' }),
     el('p', { class: 'body-sm', style: 'margin:0;color:var(--slate);max-width:72ch;flex:1', html:
-      `Real-time alerts hit your phone the moment a deal appears — this snapshot is from <strong>${updated ? updated.toLocaleString() : 'the last run'}</strong>. Auctions appear here only in their final 10 minutes — the same gate as your phone alerts. Tap any price to open the live listing on eBay. The “>50% under market → ignore” rule strips out code cards, empty boxes and proxies.` }),
+      `A published snapshot of our eBay deal monitor, last updated <strong>${updated && !Number.isNaN(updated.getTime()) ? updated.toLocaleString() : 'at an unknown time'}</strong>. The monitor’s real-time phone alerts go to its owner only; this page changes only when a new snapshot is published. Auctions show here only when they end within 24 hours. Tap any price to open the listing on eBay (it may have ended). The “>50% under market → ignore” rule strips out code cards, empty boxes and proxies.` }),
     refreshBtn,
   ]);
-  return el('div', {}, [banner,
+  return el('div', {}, [staleNote, banner,
     el('div', { class: 'wl-grid' }, wl.watches.map(watchCard)),
-    el('p', { class: 'caption', html: 'Prices are eBay <em>asking</em> prices (Buy-It-Now) or current auction bids — not sold comps. Auctions only show in their final 10 minutes (matching phone alerts). You buy manually on eBay; this is a notify-only monitor.' }),
+    el('p', { class: 'caption', html: 'Prices are eBay <em>asking</em> prices (Buy It Now) or auction bids at the time of the snapshot, not sold comps. Auctions show only when they end within 24 hours. You buy manually on eBay; this is a notify-only monitor.' }),
   ]);
 }
 
@@ -1121,21 +1129,28 @@ async function refreshSealedWatchlist(btn) {
   const fresh = document.querySelector('.wl-refresh');
   if (fresh) {
     const changed = ok && STATE.watchlist && STATE.watchlist.updated !== prevUpdated;
-    fresh.textContent = !ok ? '⚠ Offline' : (changed ? '✓ Updated' : '✓ Up to date');
+    /* "No newer data", not "Up to date": an unchanged file can still be weeks old. */
+    fresh.textContent = !ok ? '⚠ Offline' : (changed ? '✓ Updated' : 'No newer data');
     fresh.disabled = false;
     setTimeout(() => { if (fresh.isConnected) fresh.textContent = '⟳ Refresh'; }, 2000);
   }
 }
 
 function viewWatchlists() {
+  /* Was a "live · eBay" chip; the deal list is a dated snapshot, so show its date. */
+  const wlAge = ageOf(STATE.watchlist && STATE.watchlist.updated);
+  const wlChip = wlAge
+    ? el('span', { class: `chip ${wlAge.days > WATCHLIST_STALE_DAYS ? 'chip--yellow' : 'chip--teal'}`,
+        text: `deal list last updated ${wlAge.date}` })
+    : null;
   const head = el('div', { class: 'section-head' }, [
     el('div', {}, [
       el('p', { class: 'micro section-eyebrow', text: 'Watchlists' }),
       el('h2', { class: 'h2', text: 'Watchlists' }),
       el('p', { class: 'section-sub', text: 'Your personal card portfolio, plus our sealed-ETB deal monitor — in one place.' }),
     ]),
-    el('span', { class: 'chip chip--teal', text: 'live · eBay' }),
-  ]);
+    wlChip,
+  ].filter(Boolean));
   const body = el('div', {});
   const nWatch = Object.keys(STATE.myWatch).length;
   const views = [
