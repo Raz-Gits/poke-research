@@ -530,3 +530,11 @@ Codex re-checked the ten commits above against this repository and returned **DO
 7. **This record** gained this section and short update notes under findings 2 and 15.
 
 Checks after the verification pass, on `6044b83`: 76 tests in 9 files, all passing (53 after the first pass, 7 before this review). The offline build, run the way the workflow runs it, completed and all 11 JSON files under `docs/data` parsed; the regenerated data was discarded. Built offline today, it has no current eBay read, so every card correctly shows awaiting data and Movers falls back to price gaps. A separate offline build as of 2026-09-25 gave the saturation values in the table, 50 Movers that all have a current read, and no full-confidence label on a card without one. `node --check docs/app.js` passes. The workflow YAML still differs from `origin/main` only by the two approved changes. Headless Chrome loaded the committed data and a local build with `prices_as_of`, and 11 routes and card views rendered their expected text each time, with no JavaScript exceptions or console errors.
+
+**Second verification.** Codex checked the commits again and returned **PUSH_WITH_FOLLOWUPS**: no blocker for today's run, three smaller gaps, each fixed in its own commit:
+
+- `87fdb8f`: a listing now needs a non-empty `itemId`, a non-empty string currency and a price above 0, and the parser uses the same check, so a page of only zero-price, negative-price or blank-ID listings is recorded as unknown, not 0 (8 new tests).
+- `b6a0ab1`: the current-observation gate now runs before the short-history fallback and needs a valid row dated exactly the build date, so a one-row stale card gets `no_current_observation` and a future-dated row never counts as current (4 new tests).
+- `b86ba2c`: the eBay circuit breaker now counts only unknown rows; a confirmed 0 is a successful response and resets it (2 new tests).
+
+Checks on `b86ba2c`: 90 tests passing, the offline build completed and every JSON file under `docs/data` parsed (regenerated data discarded), `node --check docs/app.js` passes, and the workflow is unchanged since the first pass.
