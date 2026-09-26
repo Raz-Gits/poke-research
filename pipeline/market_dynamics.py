@@ -216,7 +216,31 @@ def compute(card_id: str, history: Dict[str, List[dict]],
     snaps = [s for s in (history.get(card_id) or []) if _snap_date(s) is not None]
     if as_of is not None:
         snaps = [s for s in snaps if _snap_date(s).date() <= as_of]
+    if current_date is not None:
+        # A row dated after current_date is never "current" and never used.
+        snaps = [s for s in snaps if _snap_date(s).date() <= current_date]
     snaps = sorted(snaps, key=_snap_date)
+
+    # Current-observation gate, checked BEFORE the short-history fallback
+    # (Codex verification 2, follow-up 2): a card with any history needs a
+    # valid row dated exactly current_date (or, without current_date, a valid
+    # latest row). Otherwise it is awaiting data, never "ok" and never showing
+    # a stale count. A card with no history at all keeps the plain fallback.
+    if snaps:
+        latest = snaps[-1]
+        is_current = current_date is None or _snap_date(latest).date() == current_date
+        if latest.get("active_listings") is None or not is_current:
+            last_valid = next((s for s in reversed(snaps) if s.get("active_listings") is not None), None)
+            out = dict(NEUTRAL)
+            out["active_listings"] = None
+            out["sold_7d"] = None
+            out["new_7d"] = None
+            out["basis"] = {
+                "days": len(snaps),
+                "reason": "no_current_observation",
+                "last_observed": last_valid.get("date") if last_valid else None,
+            }
+            return out
 
     # Need at least two days to infer any flow at all.
     if len(snaps) < 2:
@@ -230,21 +254,6 @@ def compute(card_id: str, history: Dict[str, List[dict]],
 
     latest = snaps[-1]
     active = latest.get("active_listings")
-
-    # No current valid observation -> awaiting data, never "ok" from older rows.
-    stale = current_date is not None and _snap_date(latest).date() < current_date
-    if active is None or stale:
-        last_valid = next((s for s in reversed(snaps) if s.get("active_listings") is not None), None)
-        out = dict(NEUTRAL)
-        out["active_listings"] = None
-        out["sold_7d"] = None
-        out["new_7d"] = None
-        out["basis"] = {
-            "days": len(snaps),
-            "reason": "no_current_observation",
-            "last_observed": last_valid.get("date") if last_valid else None,
-        }
-        return out
 
     sold_7d = _window_sum(snaps, DYN_SHORT_WINDOW, "est_sold")
     new_7d = _window_sum(snaps, DYN_SHORT_WINDOW, "new_listings")

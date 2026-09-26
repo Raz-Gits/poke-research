@@ -59,6 +59,39 @@ def test_card_missing_from_todays_sweep_is_awaiting_data():
     assert r["basis"]["last_observed"] == "2026-09-12"
 
 
+def test_one_row_stale_card_gets_the_reason_and_no_stale_count():
+    """Codex verification 2, follow-up 2: the gate runs before the short-history fallback."""
+    hist = _hist({"2026-09-10": {"active_listings": 42, "avg_price": 10.0}})
+    r = md.compute("c1", hist, current_date=date(2026, 9, 13))
+    assert r["status"] == "awaiting_data"
+    assert r["active_listings"] is None                 # not the stale 42
+    assert r["basis"]["reason"] == "no_current_observation"
+    assert r["basis"]["last_observed"] == "2026-09-10"
+
+
+def test_one_row_current_card_keeps_its_count():
+    hist = _hist({"2026-09-13": {"active_listings": 42, "avg_price": 10.0}})
+    r = md.compute("c1", hist, current_date=date(2026, 9, 13))
+    assert r["status"] == "awaiting_data" and r["active_listings"] == 42  # too short for flow, but current
+    assert "reason" not in r["basis"]
+
+
+def test_future_dated_row_is_not_current():
+    """Only a row dated exactly current_date counts; a later row is ignored."""
+    days = dict(DAYS)                                    # valid rows up to 2026-09-12
+    days["2026-09-20"] = {"active_listings": 999, "avg_price": 10.0}
+    r = md.compute("c1", _hist(days), current_date=date(2026, 9, 13))
+    assert r["status"] == "awaiting_data"
+    assert r["basis"]["last_observed"] == "2026-09-12"   # the future row was not used
+    r_today = md.compute("c1", _hist(days), current_date=date(2026, 9, 12))
+    assert r_today["status"] == "ok" and r_today["active_listings"] == 100 + 5 * 11
+
+
+def test_no_history_keeps_the_plain_fallback():
+    r = md.compute("c1", {}, current_date=date(2026, 9, 13))
+    assert r["status"] == "awaiting_data" and "reason" not in r["basis"]
+
+
 def test_awaiting_card_never_gets_full_confidence():
     days = dict(DAYS)
     days["2026-09-13"] = dict(NULL_ROW)
