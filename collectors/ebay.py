@@ -102,8 +102,9 @@ SWEEP_TIME_BUDGET_S = 1800 # hard wall-clock cap (30 min): if rate-limiting drag
                           # sweep past this, stop and write what we have. A sweep
                           # must NEVER hang for an hour again. Raised to 30 min when
                           # DEMAND_UNIVERSE_SIZE went to 850 (~2s/card → ~28-min run).
-MAX_CONSECUTIVE_FAILS = 30  # if this many cards in a row come back empty (likely
-                          # quota/rate exhaustion), abort early — don't grind.
+MAX_CONSECUTIVE_FAILS = 30  # if this many cards in a row come back unknown (failed
+                          # or malformed requests: likely quota/rate exhaustion), abort
+                          # early rather than grind; a confirmed 0 is a success and resets the count.
 
 # Price-sanity band, anchored to the card's TCGplayer market_price.
 # eBay free-text search matches same-name printings: a chase Illustration Rare
@@ -626,9 +627,14 @@ def collect_snapshot(
         row = _fetch_card_market(card, token)
         snapshot[card["id"]] = row
         calls += MAX_PAGES_PER_CARD
+        # Only an unknown row (failed or malformed request) counts toward the
+        # breaker; a confirmed 0 is a successful response (Codex verification 2,
+        # follow-up 3).
         if row.get("active_listings") is None:
-            n_unknown += 1  # request failed or malformed: recorded as unknown
-        consec_fail = 0 if row.get("active_listings") else consec_fail + 1
+            n_unknown += 1
+            consec_fail += 1
+        else:
+            consec_fail = 0
 
     # Fill flow fields by diffing yesterday's snapshot, if we have one.
     prev_path = out_dir / f"ebay-{(snapshot_date - timedelta(days=1)).isoformat()}.json"

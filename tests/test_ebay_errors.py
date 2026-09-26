@@ -253,6 +253,35 @@ def test_exhausted_429_retries_give_unknown(monkeypatch):
     assert calls["n"] == 4
 
 
+# Codex verification 2, follow-up 3: only unknown rows trip the breaker.
+def _sweep(monkeypatch, tmp_path, n_cards, response, limit=3):
+    monkeypatch.setattr(ebay, "MAX_CONSECUTIVE_FAILS", limit)
+    monkeypatch.setattr(ebay, "_ebay_credentials", lambda: ("app", "cert"))
+    monkeypatch.setattr(ebay, "_get_app_token", lambda *_a: "tok")
+    calls = {"n": 0}
+
+    def fake_browse(*_a, **_k):
+        calls["n"] += 1
+        return response
+
+    monkeypatch.setattr(ebay, "_browse_request", fake_browse)
+    cards = [_card(f"c{i}", f"Card{i}") for i in range(n_cards)]
+    snap = json.loads(ebay.collect_snapshot(cards, out_dir=tmp_path, snapshot_date=date(2026, 9, 26)).read_text())
+    return calls["n"], snap
+
+
+def test_confirmed_zeros_do_not_trip_the_breaker(monkeypatch, tmp_path):
+    n, snap = _sweep(monkeypatch, tmp_path, 8, {"total": 0})   # 8 valid empty results, limit 3
+    assert n == 8                                              # every card was queried
+    assert all(r["active_listings"] == 0 for r in snap.values())
+
+
+def test_unknown_rows_still_trip_the_breaker(monkeypatch, tmp_path):
+    n, snap = _sweep(monkeypatch, tmp_path, 8, None)           # 8 failed requests, limit 3
+    assert n == 3                                              # sweep stopped after 3 in a row
+    assert all(r["active_listings"] is None for r in snap.values())
+
+
 # ---------------------------------------------------------------------------
 # diff_row: an unknown day never produces ended listings or sales
 # ---------------------------------------------------------------------------
