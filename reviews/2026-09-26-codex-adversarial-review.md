@@ -300,20 +300,20 @@ The current normalized catalog includes individual source timestamps from 2025�
 | # | Finding (short) | Decision | Commit(s) |
 |---|---|---|---|
 | 1 | Failed price pull published as fresh | Partly fixed | `9705045`, `377f8de` |
-| 2 | eBay errors become zero listings | Fixed | `f4c6950` |
+| 2 | eBay errors become zero listings | Fixed (completed in the verification pass) | `f4c6950`, `0c775d1`, `92a66cb`, `6044b83` |
 | 3 | Partial eBay snapshots accepted as complete | Deferred | none |
 | 4 | Sidecar failure can commit raw item IDs | Fixed | `69f8115` |
 | 5 | Failed-set cache problem can shrink the catalog | Deferred | none |
-| 6 | Backtest does not test what the site surfaces | Labeled now, fix later | `019dedb` |
-| 7 | Gate selected on the same backtest that advertises it | Labeled now, fix later | `019dedb` |
-| 8 | Months-old sealed prices labeled "live" | Partly fixed | `28dc553`, `377f8de` |
+| 6 | Backtest does not test what the site surfaces | Labeled now, fix later | `019dedb`, `e2bef5e` |
+| 7 | Gate selected on the same backtest that advertises it | Labeled now, fix later | `019dedb`, `e2bef5e` |
+| 8 | Months-old sealed prices labeled "live" | Partly fixed | `28dc553`, `377f8de`, `e7db31d` |
 | 9 | Pull-rate sourcing claim contradicts the inputs | Labeled now, fix later | `019dedb` |
 | 10 | "R²" is squared correlation | Fixed | `b34bc47` |
 | 11 | Thin clusters shown as precise fair prices | Labeled now, fix later | `019dedb` |
 | 12 | "Live eBay" deal monitor is weeks stale | Partly fixed | `06835b7`, `377f8de` |
 | 13 | Unpinned dependencies run with secrets | Deferred | none |
 | 14 | No CI quality gate or deploy check | Deferred | none (one check added under 4) |
-| 15 | Disclosures contradict the running system | Fixed | `855dba5` |
+| 15 | Disclosures contradict the running system | Fixed (completed in the verification pass) | `855dba5`, `0e6f3ce` |
 | + | Per-card stale price dates | Deferred | none |
 
 ### 1. A failed price pull is published as a successful fresh update
@@ -339,6 +339,8 @@ The current normalized catalog includes individual source timestamps from 2025�
 **How:** In `collectors/ebay.py`, `_is_valid_page()` accepts only a dict whose `itemSummaries` is a list of objects, or a dict with no `itemSummaries` and `total == 0`. Anything else (None from a timeout, 5xx, non-429 error or exhausted 429 backoff, an error body, a list, wrong types) makes `_fetch_card_market()` return an all-None row with no `item_ids`. `diff_row()` returns neutral flow when either day's count is unknown, so neither the error day nor the day after it invents ended or new listings. The sweep log now reports how many cards ended up unknown, and unknown rows still count toward the consecutive-failure breaker. `tests/test_ebay_errors.py` (24 tests) covers the error paths through the real `_browse_request()`, seven malformed bodies, the real-empty case, the day after an unknown, and an end-to-end `collect_snapshot()` with no network. 9 of those tests failed on the old code; the normal gross and net diff tests pass before and after with the same numbers.
 
 **Still open:** whether to null the three 2026-09-14 rows by hand. That is an edit to committed data, so it is not in this change; left alone, the sv5-198 label corrects itself when the day leaves the 30-day window around 2026-10-14.
+
+**Update (verification pass):** Codex found malformed bodies that still became zero, and live signals built from older rows when the latest read was unknown; both are fixed (`0c775d1`, `92a66cb`). The three rows, plus a fourth on 2026-07-13, were set to null with my approval (`6044b83`). See "Verification pass" below.
 
 ### 3. Partial eBay snapshots are accepted as complete and cannot be repaired by a same-day rerun
 
@@ -488,6 +490,8 @@ The current normalized catalog includes individual source timestamps from 2025�
 
 **Not changed:** the promo banner "Beta · prices updated daily" states the schedule, and the stat card now shows the real price date beside it.
 
+**Update (verification pass):** `CONTRACT.md` still called itself the single source of truth while saying eBay is a stub and the build writes `site/data`. It is now marked as a historical document with those statements corrected (`0e6f3ce`).
+
 ### Additional observed stale data (per-card price dates)
 
 **Decision:** Deferred.
@@ -503,3 +507,26 @@ The current normalized catalog includes individual source timestamps from 2025�
 The most useful thing Codex did was follow each failure to what a reader of the site would see. I had hardened the eBay collector for rate limits and hangs, but I never asked what value a failed request leaves behind; it left a zero, the diff turned that zero into sales, and it had already happened on 2026-09-14. The privacy step's failure mode was written up in terms of diff accuracy, and I missed that a crash there commits the raw IDs. I had treated `built_at` as price freshness, left "live" on data that was a hand paste from June and a deal list from August, kept the name R² on a squared correlation, and let the backtest's "surfaced" number fall out of step with the site the day after I added the chase gate. None of these were visible from inside any one file.
 
 Codex could not run the tests: its sandbox had no Python executable, and it said so. We ran them ourselves on Python 3.12 (a venv built from `requirements.txt` plus pytest). Before these changes the suite had 7 tests in 2 files, all passing. After them it has 53 tests in 8 files, all passing. On the last code commit (`377f8de`) we also ran an offline build exactly as the workflow invokes it (eBay keys unset, outbound HTTP pointed at a dead proxy): it completed and every JSON file under `docs/data` parsed, and the regenerated data was discarded rather than committed. `node --check docs/app.js` passes. The workflow YAML parses and differs from `origin/main` only by the two approved changes. The site loaded in headless Chrome twice, once on the committed data and once on a local build that includes `prices_as_of`, and every route (home, Sets, Price Lab, Movers, Watchlists, Track Record, Search and three card views) rendered its expected text with no JavaScript exceptions or console errors; the only error logged was a missing favicon.
+
+### Verification pass
+
+Codex re-checked the ten commits above against this repository and returned **DO_NOT_PUSH**. It found no regression that would break the workflow, and it confirmed that the item-ID guard, `prices_as_of`, the deal-monitor labels, the eBay source status and the fit-metric label work as described. It also found one incomplete fix and five smaller gaps. Like the first pass, it could not run the tests in its sandbox. I approved fixing all of them, one commit each:
+
+1. **High: eBay page validation still allowed false zeros** (`0c775d1`). `{"itemSummaries": []}` with no `total`, `{"total": 5, "itemSummaries": []}`, and pages whose summaries all lack an `itemId`, price, currency or value still became zero listings. `_is_valid_page()` now requires a non-negative integer `total`, treats an empty first page that claims results as unknown, and treats a page with no usable summary as unknown. The only way to record zero is a genuinely empty result. A page of well-formed listings that the business rules drop (graded, non-USD) is still a real zero. 15 new tests, including exhausted 429 retries; 8 of them failed on the previous commit.
+2. **A latest unknown row could still be a live signal** (`92a66cb`). `market_dynamics.compute()` now returns the existing `awaiting_data` result, with `basis.reason = "no_current_observation"`, whenever the card has no valid read on the build date. The signal label then drops to price-only, and Movers ranks only cards with a current read. On the 2026-09-25 data, 71 cards were published as live eBay signals although they were not in that day's sweep (some last read in July); they now show awaiting data, and the 807 cards swept that day stay live. One consequence I accept: on a day the whole sweep fails, every eBay signal shows awaiting data instead of yesterday's numbers. 8 new tests.
+3. **Track Record copy was stronger than its caveat** (`e2bef5e`). "Strong & robust", "genuinely good" and "reliably ranks" became "strongest historical segment" and "in this exploratory replay", and the summary says the result has not been confirmed on data the rules never saw.
+4. **Sealed freshness used the newest paste date** (`e7db31d`). One fresh paste could have made the whole Sets page look fresh. Staleness now uses the oldest pasted date, and the chip, note and caption show a date range when the dates differ. Checked in headless Chrome against scratch copies of the site with mixed and all-fresh dates.
+5. **`CONTRACT.md` contradicted the running system** (`0e6f3ce`). It is now marked as a historical design document, not maintained since 2026-06-17, with the eBay-stub and `site/` statements corrected in place, and `build.py`'s docstrings fixed the same way. Codex also noted that the run time it had been told (about 18:00 UTC) does not match the workflow. The repository only documents the 14:00 UTC schedule; the daily data commits over the last two weeks landed between about 16:50 and 19:15 UTC.
+6. **Data correction** (`6044b83`). Codex confirmed four stored observations where a card's listings fell to 0 for one day and came back the next, which is the finding 2 failure in the data. On those days all six fields are now null. On the following day only the four flow fields are null, because they were diffed against the false zero; that day's valid count and price are kept.
+
+   | Card | Day nulled | Listings (day before, day, day after) | Estimated sales removed | Saturation as of 2026-09-25, before → after |
+   |---|---|---|---:|---|
+   | sv5-198 | 2026-09-14 | 170, 0, 169 | 102 | 1.0560 → 1.0208 ("Supply building" becomes "Quiet") |
+   | sv8-208 | 2026-09-14 | 150, 0, 158 | 90 | 1.0191 → 0.9851 |
+   | sv10-244 | 2026-09-14 | 171, 0, 172 | 103 | 1.0238 → 0.9897 |
+   | me4-93 | 2026-07-13 | 151, 0, 155 | 91 | 0.9367 → 0.9367 (the July day is outside its current 30-row window) |
+
+   me4-93 was not in the 2026-09-25 sweep (last read 2026-09-23), so after item 2 it shows awaiting data either way. I left zsv10pt5-97 (1, 0, 1 on 2026-07-14) alone on purpose: one listing disappearing and coming back can be a real relisting, and the snapshots alone do not prove it was an error. Only the four snapshot files are committed; the next daily Action rebuilds the site from them.
+7. **This record** gained this section and short update notes under findings 2 and 15.
+
+Checks after the verification pass, on `6044b83`: 76 tests in 9 files, all passing (53 after the first pass, 7 before this review). The offline build, run the way the workflow runs it, completed and all 11 JSON files under `docs/data` parsed; the regenerated data was discarded. Built offline today, it has no current eBay read, so every card correctly shows awaiting data and Movers falls back to price gaps. A separate offline build as of 2026-09-25 gave the saturation values in the table, 50 Movers that all have a current read, and no full-confidence label on a card without one. `node --check docs/app.js` passes. The workflow YAML still differs from `origin/main` only by the two approved changes. Headless Chrome loaded the committed data and a local build with `prices_as_of`, and 11 routes and card views rendered their expected text each time, with no JavaScript exceptions or console errors.
