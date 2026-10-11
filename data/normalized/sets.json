@@ -14,6 +14,34 @@
   "etb_price": 135.0
  },
  {
+  "set_id": "sv8pt5",
+  "name": "Prismatic Evolutions",
+  "series": "Scarlet & Violet",
+  "release_date": "2025-01-17",
+  "printed_total": 131,
+  "total": 180,
+  "logo": "https://images.pokemontcg.io/sv8pt5/logo.png",
+  "symbol": "https://images.pokemontcg.io/sv8pt5/symbol.png",
+  "pack_price": 18.0,
+  "retail_pack_price": 4.99,
+  "packs_per_etb": 9,
+  "etb_price": 155.0
+ },
+ {
+  "set_id": "sv8",
+  "name": "Surging Sparks",
+  "series": "Scarlet & Violet",
+  "release_date": "2024-11-08",
+  "printed_total": 191,
+  "total": 252,
+  "logo": "https://images.pokemontcg.io/sv8/logo.png",
+  "symbol": "https://images.pokemontcg.io/sv8/symbol.png",
+  "pack_price": 7.0,
+  "retail_pack_price": 4.49,
+  "packs_per_etb": 9,
+  "etb_price": 120.0
+ },
+ {
   "set_id": "sv4pt5",
   "name": "Paldean Fates",
   "series": "Scarlet & Violet",
@@ -54,20 +82,6 @@
   "retail_pack_price": 4.49,
   "packs_per_etb": 9,
   "etb_price": 130.0
- },
- {
-  "set_id": "sv6",
-  "name": "Twilight Masquerade",
-  "series": "Scarlet & Violet",
-  "release_date": "2024-05-24",
-  "printed_total": 167,
-  "total": 226,
-  "logo": "https://images.pokemontcg.io/sv6/logo.png",
-  "symbol": "https://images.pokemontcg.io/sv6/symbol.png",
-  "pack_price": 5.0,
-  "retail_pack_price": 4.49,
-  "packs_per_etb": 9,
-  "etb_price": 70.0
  },
  {
   "set_id": "sv5",
@@ -168,6 +182,20 @@
   "etb_price": 90.0
  },
  {
+  "set_id": "sv6",
+  "name": "Twilight Masquerade",
+  "series": "Scarlet & Violet",
+  "release_date": "2024-05-24",
+  "printed_total": 167,
+  "total": 226,
+  "logo": "https://images.pokemontcg.io/sv6/logo.png",
+  "symbol": "https://images.pokemontcg.io/sv6/symbol.png",
+  "pack_price": 5.0,
+  "retail_pack_price": 4.49,
+  "packs_per_etb": 9,
+  "etb_price": 70.0
+ },
+ {
   "set_id": "me4",
   "name": "Chaos Rising",
   "series": "Mega Evolution",
@@ -180,33 +208,5 @@
   "retail_pack_price": 4.99,
   "packs_per_etb": 9,
   "etb_price": 92.0
- },
- {
-  "set_id": "sv8pt5",
-  "name": "Prismatic Evolutions",
-  "series": "Scarlet & Violet",
-  "release_date": "2025-01-17",
-  "printed_total": 131,
-  "total": 180,
-  "logo": "https://images.pokemontcg.io/sv8pt5/logo.png",
-  "symbol": "https://images.pokemontcg.io/sv8pt5/symbol.png",
-  "pack_price": 18.0,
-  "retail_pack_price": 4.99,
-  "packs_per_etb": 9,
-  "etb_price": 155.0
- },
- {
-  "set_id": "sv8",
-  "name": "Surging Sparks",
-  "series": "Scarlet & Violet",
-  "release_date": "2024-11-08",
-  "printed_total": 191,
-  "total": 252,
-  "logo": "https://images.pokemontcg.io/sv8/logo.png",
-  "symbol": "https://images.pokemontcg.io/sv8/symbol.png",
-  "pack_price": 7.0,
-  "retail_pack_price": 4.49,
-  "packs_per_etb": 9,
-  "etb_price": 120.0
  }
 ]
