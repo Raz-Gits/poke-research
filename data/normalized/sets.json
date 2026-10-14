@@ -28,34 +28,6 @@
   "etb_price": 155.0
  },
  {
-  "set_id": "sv8",
-  "name": "Surging Sparks",
-  "series": "Scarlet & Violet",
-  "release_date": "2024-11-08",
-  "printed_total": 191,
-  "total": 252,
-  "logo": "https://images.pokemontcg.io/sv8/logo.png",
-  "symbol": "https://images.pokemontcg.io/sv8/symbol.png",
-  "pack_price": 7.0,
-  "retail_pack_price": 4.49,
-  "packs_per_etb": 9,
-  "etb_price": 120.0
- },
- {
-  "set_id": "sv4pt5",
-  "name": "Paldean Fates",
-  "series": "Scarlet & Violet",
-  "release_date": "2024-01-26",
-  "printed_total": 91,
-  "total": 245,
-  "logo": "https://images.pokemontcg.io/sv4pt5/logo.png",
-  "symbol": "https://images.pokemontcg.io/sv4pt5/symbol.png",
-  "pack_price": 10.0,
-  "retail_pack_price": 4.49,
-  "packs_per_etb": 9,
-  "etb_price": 110.0
- },
- {
   "set_id": "sv6pt5",
   "name": "Shrouded Fable",
   "series": "Scarlet & Violet",
@@ -70,6 +42,20 @@
   "etb_price": 110.0
  },
  {
+  "set_id": "sv7",
+  "name": "Stellar Crown",
+  "series": "Scarlet & Violet",
+  "release_date": "2024-09-13",
+  "printed_total": 142,
+  "total": 175,
+  "logo": "https://images.pokemontcg.io/sv7/logo.png",
+  "symbol": "https://images.pokemontcg.io/sv7/symbol.png",
+  "pack_price": 6.0,
+  "retail_pack_price": 4.49,
+  "packs_per_etb": 9,
+  "etb_price": 130.0
+ },
+ {
   "set_id": "sv6",
   "name": "Twilight Masquerade",
   "series": "Scarlet & Violet",
@@ -82,20 +68,6 @@
   "retail_pack_price": 4.49,
   "packs_per_etb": 9,
   "etb_price": 70.0
- },
- {
-  "set_id": "sv5",
-  "name": "Temporal Forces",
-  "series": "Scarlet & Violet",
-  "release_date": "2024-03-22",
-  "printed_total": 162,
-  "total": 218,
-  "logo": "https://images.pokemontcg.io/sv5/logo.png",
-  "symbol": "https://images.pokemontcg.io/sv5/symbol.png",
-  "pack_price": 6.0,
-  "retail_pack_price": 4.49,
-  "packs_per_etb": 9,
-  "etb_price": 130.0
  },
  {
   "set_id": "sv9",
@@ -140,18 +112,18 @@
   "etb_price": 172.27
  },
  {
-  "set_id": "me1",
-  "name": "Mega Evolution",
+  "set_id": "me3",
+  "name": "Perfect Order",
   "series": "Mega Evolution",
-  "release_date": "2025-09-26",
-  "printed_total": 132,
-  "total": 188,
-  "logo": "https://images.pokemontcg.io/me1/logo.png",
-  "symbol": "https://images.pokemontcg.io/me1/symbol.png",
-  "pack_price": 7.5,
+  "release_date": "2026-03-27",
+  "printed_total": 88,
+  "total": 124,
+  "logo": "https://images.scrydex.com/pokemon/me3-logo/logo",
+  "symbol": "https://images.scrydex.com/pokemon/me3-symbol/symbol",
+  "pack_price": 6.0,
   "retail_pack_price": 4.99,
   "packs_per_etb": 9,
-  "etb_price": 120.19
+  "etb_price": 90.0
  },
  {
   "set_id": "me4",
@@ -168,18 +140,60 @@
   "etb_price": 92.0
  },
  {
-  "set_id": "sv7",
-  "name": "Stellar Crown",
+  "set_id": "sv8",
+  "name": "Surging Sparks",
   "series": "Scarlet & Violet",
-  "release_date": "2024-09-13",
-  "printed_total": 142,
-  "total": 175,
-  "logo": "https://images.pokemontcg.io/sv7/logo.png",
-  "symbol": "https://images.pokemontcg.io/sv7/symbol.png",
+  "release_date": "2024-11-08",
+  "printed_total": 191,
+  "total": 252,
+  "logo": "https://images.pokemontcg.io/sv8/logo.png",
+  "symbol": "https://images.pokemontcg.io/sv8/symbol.png",
+  "pack_price": 7.0,
+  "retail_pack_price": 4.49,
+  "packs_per_etb": 9,
+  "etb_price": 120.0
+ },
+ {
+  "set_id": "sv4pt5",
+  "name": "Paldean Fates",
+  "series": "Scarlet & Violet",
+  "release_date": "2024-01-26",
+  "printed_total": 91,
+  "total": 245,
+  "logo": "https://images.pokemontcg.io/sv4pt5/logo.png",
+  "symbol": "https://images.pokemontcg.io/sv4pt5/symbol.png",
+  "pack_price": 10.0,
+  "retail_pack_price": 4.49,
+  "packs_per_etb": 9,
+  "etb_price": 110.0
+ },
+ {
+  "set_id": "sv5",
+  "name": "Temporal Forces",
+  "series": "Scarlet & Violet",
+  "release_date": "2024-03-22",
+  "printed_total": 162,
+  "total": 218,
+  "logo": "https://images.pokemontcg.io/sv5/logo.png",
+  "symbol": "https://images.pokemontcg.io/sv5/symbol.png",
   "pack_price": 6.0,
   "retail_pack_price": 4.49,
   "packs_per_etb": 9,
   "etb_price": 130.0
+ },
+ {
+  "set_id": "me1",
+  "name": "Mega Evolution",
+  "series": "Mega Evolution",
+  "release_date": "2025-09-26",
+  "printed_total": 132,
+  "total": 188,
+  "logo": "https://images.pokemontcg.io/me1/logo.png",
+  "symbol": "https://images.pokemontcg.io/me1/symbol.png",
+  "pack_price": 7.5,
+  "retail_pack_price": 4.99,
+  "packs_per_etb": 9,
+  "etb_price": 120.19
  },
  {
   "set_id": "me2pt5",
@@ -194,19 +208,5 @@
   "retail_pack_price": 4.99,
   "packs_per_etb": 9,
   "etb_price": 181.75
- },
- {
-  "set_id": "me3",
-  "name": "Perfect Order",
-  "series": "Mega Evolution",
-  "release_date": "2026-03-27",
-  "printed_total": 88,
-  "total": 124,
-  "logo": "https://images.scrydex.com/pokemon/me3-logo/logo",
-  "symbol": "https://images.scrydex.com/pokemon/me3-symbol/symbol",
-  "pack_price": 6.0,
-  "retail_pack_price": 4.99,
-  "packs_per_etb": 9,
-  "etb_price": 90.0
  }
 ]
