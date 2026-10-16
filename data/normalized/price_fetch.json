@@ -1,15 +1,14 @@
 {
  "prices_as_of": "2026-10-09T19:09:48+00:00",
- "last_attempt_at": "2026-10-15T17:57:48+00:00",
+ "last_attempt_at": "2026-10-16T17:45:32+00:00",
  "last_attempt_ok": false,
  "sets_live": [
   "me1",
-  "me2pt5",
   "me3",
   "me4",
   "sv10",
-  "sv3pt5",
   "sv4pt5",
+  "sv5",
   "sv6",
   "sv6pt5",
   "sv7",
@@ -18,7 +17,8 @@
   "zsv10pt5"
  ],
  "sets_not_live": [
-  "sv5",
+  "me2pt5",
+  "sv3pt5",
   "sv8pt5"
  ]
 }
