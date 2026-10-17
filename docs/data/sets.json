@@ -153,13 +153,13 @@
     "retail_pack_price": 4.99,
     "packs_per_etb": 9,
     "etb_price": 155.0,
-    "ev_per_pack": 4.389094360460194,
-    "pack_signal_pct": -0.756161424418878,
-    "ev_per_etb": 39.501849244141745,
-    "etb_signal_pct": -0.7451493597152146,
-    "signal_pct": -0.7451493597152146,
-    "avg_loss_per_pack": 13.610905639539805,
-    "raw_value_per_pack": 4.389094360460194
+    "ev_per_pack": 4.348321270092227,
+    "pack_signal_pct": -0.7584265961059873,
+    "ev_per_etb": 39.134891430830045,
+    "etb_signal_pct": -0.7475168294785158,
+    "signal_pct": -0.7475168294785158,
+    "avg_loss_per_pack": 13.651678729907772,
+    "raw_value_per_pack": 4.348321270092227
   },
   {
     "set_id": "me2pt5",
