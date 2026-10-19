@@ -240,6 +240,27 @@
     "raw_value_per_pack": 2.5965845120695303
   },
   {
+    "set_id": "me3",
+    "name": "Perfect Order",
+    "series": "Mega Evolution",
+    "release_date": "2026-03-27",
+    "printed_total": 88,
+    "total": 124,
+    "logo": "https://images.scrydex.com/pokemon/me3-logo/logo",
+    "symbol": "https://images.scrydex.com/pokemon/me3-symbol/symbol",
+    "pack_price": 6.0,
+    "retail_pack_price": 4.99,
+    "packs_per_etb": 9,
+    "etb_price": 90.0,
+    "ev_per_pack": 1.8833197829292927,
+    "pack_signal_pct": -0.6861133695117845,
+    "ev_per_etb": 16.949878046363633,
+    "etb_signal_pct": -0.8116680217070708,
+    "signal_pct": -0.8116680217070708,
+    "avg_loss_per_pack": 4.116680217070707,
+    "raw_value_per_pack": 1.8833197829292927
+  },
+  {
     "set_id": "me4",
     "name": "Chaos Rising",
     "series": "Mega Evolution",
@@ -252,13 +273,13 @@
     "retail_pack_price": 4.99,
     "packs_per_etb": 9,
     "etb_price": 92.0,
-    "ev_per_pack": 1.8038355293139903,
-    "pack_signal_pct": -0.699360745114335,
-    "ev_per_etb": 16.23451976382591,
+    "ev_per_pack": 1.8038355293139896,
+    "pack_signal_pct": -0.6993607451143351,
+    "ev_per_etb": 16.234519763825908,
     "etb_signal_pct": -0.8235378286540661,
     "signal_pct": -0.8235378286540661,
-    "avg_loss_per_pack": 4.19616447068601,
-    "raw_value_per_pack": 1.8038355293139903
+    "avg_loss_per_pack": 4.196164470686011,
+    "raw_value_per_pack": 1.8038355293139896
   },
   {
     "set_id": "sv9",
@@ -366,27 +387,6 @@
     "etb_signal_pct": -1.0,
     "signal_pct": -1.0,
     "avg_loss_per_pack": 13.58,
-    "raw_value_per_pack": 0.0
-  },
-  {
-    "set_id": "me3",
-    "name": "Perfect Order",
-    "series": "Mega Evolution",
-    "release_date": "2026-03-27",
-    "printed_total": 88,
-    "total": 124,
-    "logo": "https://images.scrydex.com/pokemon/me3-logo/logo",
-    "symbol": "https://images.scrydex.com/pokemon/me3-symbol/symbol",
-    "pack_price": 6.0,
-    "retail_pack_price": 4.99,
-    "packs_per_etb": 9,
-    "etb_price": 90.0,
-    "ev_per_pack": 0.0,
-    "pack_signal_pct": -1.0,
-    "ev_per_etb": 0.0,
-    "etb_signal_pct": -1.0,
-    "signal_pct": -1.0,
-    "avg_loss_per_pack": 6.0,
     "raw_value_per_pack": 0.0
   }
 ]
