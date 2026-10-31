@@ -1,7 +1,7 @@
 {
-  "built_at": "2026-10-30T19:11:56",
+  "built_at": "2026-10-31T18:17:18",
   "prices_as_of": "2026-10-09T19:09:48+00:00",
-  "built_for_date": "2026-10-30",
+  "built_for_date": "2026-10-31",
   "sets": 15,
   "cards": 2937,
   "priced": 2936,
@@ -9,11 +9,11 @@
   "model_r2_log": 0.900897,
   "model_r2_log_label": "squared log correlation, in-sample",
   "predictions_logged": 2936,
-  "ebay_latest_snapshot": "2026-10-30",
+  "ebay_latest_snapshot": "2026-10-31",
   "sources": {
     "cards": "pokemontcg.io (cached, normalized)",
     "prices": "TCGplayer market prices via pokemontcg.io, and via TCGdex for sets pokemontcg.io does not price",
-    "ebay": "eBay Browse API active listings (latest snapshot 2026-10-30)",
+    "ebay": "eBay Browse API active listings (latest snapshot 2026-10-31)",
     "psa": "PSA Public API pop (3 cards mapped)",
     "trends": "stub (awaiting Google Trends feed)"
   },
