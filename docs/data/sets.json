@@ -246,13 +246,13 @@
         "listings": 909
       }
     },
-    "ev_per_pack": 4.126998980962083,
-    "pack_signal_pct": -0.6960972768069158,
-    "ev_per_etb": 37.142990828658746,
-    "etb_signal_pct": -0.7956369142852339,
-    "signal_pct": -0.7956369142852339,
-    "avg_loss_per_pack": 9.453001019037917,
-    "raw_value_per_pack": 4.126998980962083
+    "ev_per_pack": 4.070487335327426,
+    "pack_signal_pct": -0.7002586645561542,
+    "ev_per_etb": 36.63438601794684,
+    "etb_signal_pct": -0.7984352901350931,
+    "signal_pct": -0.7984352901350931,
+    "avg_loss_per_pack": 9.509512664672574,
+    "raw_value_per_pack": 4.070487335327426
   },
   {
     "set_id": "me3",
@@ -267,13 +267,13 @@
     "retail_pack_price": 4.99,
     "packs_per_etb": 9,
     "etb_price": 90.0,
-    "ev_per_pack": 1.9863543112121205,
-    "pack_signal_pct": -0.6689409481313132,
-    "ev_per_etb": 17.877188800909085,
-    "etb_signal_pct": -0.8013645688787879,
-    "signal_pct": -0.8013645688787879,
-    "avg_loss_per_pack": 4.0136456887878795,
-    "raw_value_per_pack": 1.9863543112121205
+    "ev_per_pack": 1.9808046062626254,
+    "pack_signal_pct": -0.6698658989562292,
+    "ev_per_etb": 17.82724145636363,
+    "etb_signal_pct": -0.8019195393737375,
+    "signal_pct": -0.8019195393737375,
+    "avg_loss_per_pack": 4.019195393737375,
+    "raw_value_per_pack": 1.9808046062626254
   },
   {
     "set_id": "sv8",
@@ -309,13 +309,13 @@
     "retail_pack_price": 4.99,
     "packs_per_etb": 9,
     "etb_price": 92.0,
-    "ev_per_pack": 1.7684498624988756,
-    "pack_signal_pct": -0.7052583562501874,
-    "ev_per_etb": 15.916048762489881,
-    "etb_signal_pct": -0.826999469972936,
-    "signal_pct": -0.826999469972936,
-    "avg_loss_per_pack": 4.231550137501125,
-    "raw_value_per_pack": 1.7684498624988756
+    "ev_per_pack": 1.7563209635739994,
+    "pack_signal_pct": -0.7072798394043334,
+    "ev_per_etb": 15.806888672165995,
+    "etb_signal_pct": -0.8281859926938478,
+    "signal_pct": -0.8281859926938478,
+    "avg_loss_per_pack": 4.243679036426,
+    "raw_value_per_pack": 1.7563209635739994
   },
   {
     "set_id": "sv9",
