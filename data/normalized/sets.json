@@ -28,14 +28,14 @@
   "etb_price": 155.0
  },
  {
-  "set_id": "sv4pt5",
-  "name": "Paldean Fates",
+  "set_id": "sv6pt5",
+  "name": "Shrouded Fable",
   "series": "Scarlet & Violet",
-  "release_date": "2024-01-26",
-  "printed_total": 91,
-  "total": 245,
-  "logo": "https://images.pokemontcg.io/sv4pt5/logo.png",
-  "symbol": "https://images.pokemontcg.io/sv4pt5/symbol.png",
+  "release_date": "2024-08-02",
+  "printed_total": 64,
+  "total": 99,
+  "logo": "https://images.pokemontcg.io/sv6pt5/logo.png",
+  "symbol": "https://images.pokemontcg.io/sv6pt5/symbol.png",
   "pack_price": 10.0,
   "retail_pack_price": 4.49,
   "packs_per_etb": 9,
@@ -70,20 +70,6 @@
   "etb_price": 70.0
  },
  {
-  "set_id": "sv5",
-  "name": "Temporal Forces",
-  "series": "Scarlet & Violet",
-  "release_date": "2024-03-22",
-  "printed_total": 162,
-  "total": 218,
-  "logo": "https://images.pokemontcg.io/sv5/logo.png",
-  "symbol": "https://images.pokemontcg.io/sv5/symbol.png",
-  "pack_price": 6.0,
-  "retail_pack_price": 4.49,
-  "packs_per_etb": 9,
-  "etb_price": 130.0
- },
- {
   "set_id": "sv9",
   "name": "Journey Together",
   "series": "Scarlet & Violet",
@@ -112,20 +98,6 @@
   "etb_price": 208.13
  },
  {
-  "set_id": "zsv10pt5",
-  "name": "Black Bolt",
-  "series": "Scarlet & Violet",
-  "release_date": "2025-07-18",
-  "printed_total": 86,
-  "total": 172,
-  "logo": "https://images.pokemontcg.io/zsv10pt5/logo.png",
-  "symbol": "https://images.pokemontcg.io/zsv10pt5/symbol.png",
-  "pack_price": 13.58,
-  "retail_pack_price": 4.49,
-  "packs_per_etb": 9,
-  "etb_price": 172.27
- },
- {
   "set_id": "me1",
   "name": "Mega Evolution",
   "series": "Mega Evolution",
@@ -152,6 +124,48 @@
   "retail_pack_price": 4.99,
   "packs_per_etb": 9,
   "etb_price": 181.75
+ },
+ {
+  "set_id": "sv4pt5",
+  "name": "Paldean Fates",
+  "series": "Scarlet & Violet",
+  "release_date": "2024-01-26",
+  "printed_total": 91,
+  "total": 245,
+  "logo": "https://images.pokemontcg.io/sv4pt5/logo.png",
+  "symbol": "https://images.pokemontcg.io/sv4pt5/symbol.png",
+  "pack_price": 10.0,
+  "retail_pack_price": 4.49,
+  "packs_per_etb": 9,
+  "etb_price": 110.0
+ },
+ {
+  "set_id": "sv5",
+  "name": "Temporal Forces",
+  "series": "Scarlet & Violet",
+  "release_date": "2024-03-22",
+  "printed_total": 162,
+  "total": 218,
+  "logo": "https://images.pokemontcg.io/sv5/logo.png",
+  "symbol": "https://images.pokemontcg.io/sv5/symbol.png",
+  "pack_price": 6.0,
+  "retail_pack_price": 4.49,
+  "packs_per_etb": 9,
+  "etb_price": 130.0
+ },
+ {
+  "set_id": "zsv10pt5",
+  "name": "Black Bolt",
+  "series": "Scarlet & Violet",
+  "release_date": "2025-07-18",
+  "printed_total": 86,
+  "total": 172,
+  "logo": "https://images.pokemontcg.io/zsv10pt5/logo.png",
+  "symbol": "https://images.pokemontcg.io/zsv10pt5/symbol.png",
+  "pack_price": 13.58,
+  "retail_pack_price": 4.49,
+  "packs_per_etb": 9,
+  "etb_price": 172.27
  },
  {
   "set_id": "me3",
@@ -194,19 +208,5 @@
   "retail_pack_price": 4.49,
   "packs_per_etb": 9,
   "etb_price": 120.0
- },
- {
-  "set_id": "sv6pt5",
-  "name": "Shrouded Fable",
-  "series": "Scarlet & Violet",
-  "release_date": "2024-08-02",
-  "printed_total": 64,
-  "total": 99,
-  "logo": "https://images.pokemontcg.io/sv6pt5/logo.png",
-  "symbol": "https://images.pokemontcg.io/sv6pt5/symbol.png",
-  "pack_price": 10.0,
-  "retail_pack_price": 4.49,
-  "packs_per_etb": 9,
-  "etb_price": 110.0
  }
 ]
